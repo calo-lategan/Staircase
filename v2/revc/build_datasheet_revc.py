@@ -51,6 +51,9 @@ F = re.sub(r'<td class="strong">net W ≥ 2,900 mm³ at the pin holes, or a mid 
            f'<td class="strong">About 70 deep, same widths and 5 mm walls: at least 20 mm of metal round every Ø20 hole (edge {AC["rails"]["edge_util_20mm"]:.2f}); net W about 7,200 mm³ against 2,900 needed ({AC["rails"]["util_net"]:.2f})</td><td>ULS crowd, pole push</td>', F)
 F = re.sub(r'<tr><th scope="row">Right lower rail hole</th>.*?</tr>', '', F, flags=re.S)
 F = F.replace("The rails then take ≈ 14 kN each way: fine with the 65 mm rails", f"The rails then take ≈ {AC['pole_fix']['F_kN']:.0f} kN each way: fine with the deeper rails ({AC['rails']['lateral_left']:.2f} left, {AC['rails']['lateral_right']:.2f} right)")
+F = F.replace("on the outside face of the rails, bolted to both", "on the outside face of the rails: a strap and Ø12 cross-pin at the upper rail (no hole across the pole there), a Ø16 pin at the lower rail")
+F = F.replace(">change brief</a>", ">change list</a>")
+F = F.replace("+87 mm if the pitch line", "+87 mm if the pitch line")
 F = F.replace("<td class=\"strong\">≤ 120</td><td>R7</td>", "<td class=\"strong\">≤ 120: a lip at least 5 mm down on the step’s front edge (35 mm gives the recommended 100)</td><td>R7</td>")
 F = F.replace("Cleaned by the owner on 26 Sep: the second base (axle and jacks), one of each pair of axle tubes and 8 extra blocks on the right poles. Still drawn twice:",
               "Still drawn twice:")

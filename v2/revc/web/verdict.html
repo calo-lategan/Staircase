@@ -1,0 +1,209 @@
+<title>Stair Load Verdict Rev C</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root {
+  --paper:#EFF2F2; --surface:#FFFFFF; --ink:#15202A; --ink2:#4B5966; --rule:#D3DADE; --soft:#E6EBED;
+  --accent:#1E5A86; --accentbg:#E1ECF4; --new:#C2410C; --newbg:#FDEBDD; --old:#8A96A0;
+  --pass:#2F7A4F; --passbg:#E2F1E7; --warn:#9A620E; --warnbg:#FBEFD8; --fail:#B42318; --failbg:#FBE3E0;
+  --display:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper:#0E151B; --surface:#152029; --ink:#E3E9ED; --ink2:#9DACB8; --rule:#27353F; --soft:#1B2833;
+    --accent:#7DB7E3; --accentbg:#16283A; --new:#FB923C; --newbg:#3A2112; --old:#6B7985;
+    --pass:#6CC790; --passbg:#17301F; --warn:#E6B45A; --warnbg:#382B12; --fail:#FF8C80; --failbg:#3A1B18; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper:#0E151B; --surface:#152029; --ink:#E3E9ED; --ink2:#9DACB8; --rule:#27353F; --soft:#1B2833;
+  --accent:#7DB7E3; --accentbg:#16283A; --new:#FB923C; --newbg:#3A2112; --old:#6B7985;
+    --pass:#6CC790; --passbg:#17301F; --warn:#E6B45A; --warnbg:#382B12; --fail:#FF8C80; --failbg:#3A1B18; color-scheme:dark;
+}
+* { box-sizing:border-box; }
+body { background:var(--paper); color:var(--ink); font:15.5px/1.6 var(--body); margin:0; padding-inline:16px; padding-block:28px 64px; }
+.wrap { max-width:1120px; margin:0 auto; display:grid; gap:34px; }
+h1,h2,h3 { font-family:var(--display); text-wrap:balance; margin:0; letter-spacing:.01em; }
+h1 { font-size:clamp(34px,5vw,52px); line-height:1.02; }
+h2 { font-size:27px; font-weight:600; }
+h3 { font-size:21px; font-weight:600; line-height:1.15; }
+p { margin:0; max-width:72ch; }
+a { color:var(--accent); }
+a:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.mono { font-family:var(--mono); font-variant-numeric:tabular-nums; }
+.eyebrow { font:600 12px/1 var(--mono); letter-spacing:.12em; text-transform:uppercase; color:var(--accent); }
+header.top { display:grid; gap:12px; }
+header.top p { color:var(--ink2); font-size:16.5px; }
+.result { display:flex; flex-wrap:wrap; gap:0; border:1px solid var(--rule); background:var(--surface); }
+.result div { flex:1 1 180px; padding:12px 16px; border-right:1px solid var(--rule); display:grid; gap:2px; }
+.result div:last-child { border-right:0; }
+.result span { font-size:12.5px; color:var(--ink2); }
+.result b { font:600 23px/1.15 var(--display); font-variant-numeric:tabular-nums; }
+.result b s { color:var(--ink2); font-weight:500; font-size:18px; margin-right:6px; }
+section { display:grid; gap:16px; }
+section > h2 { border-top:2px solid var(--ink); padding-top:12px; }
+.rules { margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:10px; counter-reset:r; }
+.rules li { background:var(--surface); border:1px solid var(--rule); padding:12px 14px; font-size:14.5px; }
+.rules li b { display:block; font-family:var(--display); font-size:17px; font-weight:600; }
+/* figures */
+.figs { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr)); gap:16px; }
+.fig { margin:0; background:var(--surface); border:1px solid var(--rule); }
+.fig:first-child { grid-column:1 / -1; }
+.shot { position:relative; }
+.shot img { width:100%; height:auto; display:block; }
+.mk { position:absolute; transform:translate(-50%,-50%); width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff;
+      font:600 13px/28px var(--mono); text-align:center; text-decoration:none; box-shadow:0 0 0 3px rgba(255,255,255,.85); }
+.mk.new { background:var(--new); }
+.mk:hover, .mk:focus-visible { transform:translate(-50%,-50%) scale(1.15); outline:none; }
+.fig figcaption { padding:9px 12px; font-size:13.5px; color:var(--ink2); border-top:1px solid var(--rule); }
+.fig figcaption b { color:var(--ink); font-family:var(--mono); font-weight:500; margin-right:6px; }
+.key { display:flex; flex-wrap:wrap; gap:14px; font-size:13px; color:var(--ink2); align-items:center; }
+.key i { display:inline-block; width:14px; height:14px; border-radius:50%; vertical-align:-2px; margin-right:6px; }
+/* summary table */
+.tw { overflow-x:auto; border:1px solid var(--rule); background:var(--surface); }
+table { border-collapse:collapse; width:100%; font-size:14px; }
+th, td { padding:8px 12px; border-bottom:1px solid var(--rule); text-align:left; vertical-align:top; }
+thead th { font:600 11.5px/1.2 var(--mono); letter-spacing:.06em; text-transform:uppercase; color:var(--ink2); background:var(--soft); }
+tbody tr:last-child > * { border-bottom:0; }
+tbody th { font-weight:500; }
+td.strong { font-weight:600; }
+/* change cards */
+.cards { display:grid; gap:14px; }
+.card { background:var(--surface); border:1px solid var(--rule); padding:16px 18px; display:grid; gap:12px; scroll-margin-top:16px; }
+.card:target { box-shadow:0 0 0 2px var(--accent); }
+.card header { display:flex; gap:12px; align-items:center; }
+.num { flex:none; width:36px; height:36px; border-radius:50%; background:var(--accent); color:#fff; font:600 16px/36px var(--mono); text-align:center; }
+.meta { color:var(--ink2); font-size:13px; }
+.nowto { display:grid; grid-template-columns:1fr 1.5fr; gap:10px; }
+.nowto > div { padding:10px 12px; display:grid; gap:4px; min-width:0; }
+.now { background:var(--soft); }
+.to { background:var(--newbg); }
+.nowto span, .how > span { font:600 11px/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--ink2); }
+.to span { color:var(--new); }
+.how ul { margin:6px 0 0; padding-left:20px; display:grid; gap:3px; }
+.refs { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.refs figure { margin:0; border:1px solid var(--rule); background:var(--paper); }
+.refs img { width:100%; height:auto; display:block; }
+.refs figcaption { font:500 12px/1 var(--mono); color:var(--ink2); padding:7px 9px; letter-spacing:.04em; }
+@media (max-width: 640px) { .refs { grid-template-columns:1fr; } }
+.tagc { font:600 11px/1 var(--mono); letter-spacing:.06em; text-transform:uppercase; color:var(--warn); background:var(--warnbg); padding:4px 7px; vertical-align:middle; margin-left:6px; }
+.card.consider { border-style:dashed; }
+.cnote { background:var(--warnbg); padding:10px 12px; font-size:14px; max-width:none; }
+.st.none, .st.site { color:var(--ink2); background:var(--soft); }
+.st.cond { color:var(--accent); background:var(--accentbg); }
+.whyload { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.whyload > div { border:1px solid var(--rule); padding:10px 12px; display:grid; gap:6px; align-content:start; min-width:0; }
+.whyload > div > span { font:600 11px/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--ink2); }
+.why ul { margin:0; padding:0; list-style:none; display:grid; gap:6px; font-size:14px; }
+.ref { display:inline-block; font:600 11.5px/1.4 var(--mono); color:var(--accent); background:var(--accentbg); padding:0 5px; margin-right:6px; }
+.load p { font-size:14px; }
+.ba { display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:13px; }
+.ba div { padding:6px 8px; background:var(--soft); }
+.ba div:last-child { background:var(--passbg); }
+.ba i { display:block; font:600 10.5px/1.3 var(--mono); letter-spacing:.08em; text-transform:uppercase; font-style:normal; color:var(--ink2); }
+.st { display:inline-block; font:600 11px/1 var(--mono); letter-spacing:.05em; text-transform:uppercase; padding:4px 7px; white-space:nowrap; }
+.st.pass { color:var(--pass); background:var(--passbg); } .st.part, .st.test { color:var(--warn); background:var(--warnbg); } .st.open { color:var(--fail); background:var(--failbg); }
+@media (max-width: 760px) { .whyload { grid-template-columns:1fr; } }
+.draw { overflow-x:auto; border:1px solid var(--rule); background:var(--paper); padding:8px; }
+.sec { display:block; width:100%; min-width:520px; height:auto; max-height:320px; }
+.sec .old { fill:none; stroke:var(--old); stroke-width:2; stroke-dasharray:5 4; }
+.sec .old2 { fill:var(--soft); stroke:var(--old); stroke-width:1.5; }
+.sec .new { fill:var(--new); stroke:var(--new); stroke-width:1; }
+.sec .new2 { fill:var(--accent); stroke:var(--accent); stroke-width:1; }
+.sec .newf { fill:var(--newbg); stroke:var(--new); stroke-width:1.5; }
+.sec .void { fill:var(--paper); stroke:none; }
+.sec .rib { stroke:var(--new); stroke-width:1.5; }
+.sec .dim { stroke:var(--ink2); stroke-width:1.2; }
+.sec .axle { fill:none; stroke:var(--ink2); stroke-width:1.5; stroke-dasharray:3 3; }
+.sec .grd { stroke:var(--ink); stroke-width:2; }
+.sec .newl { stroke:var(--new); stroke-width:4; }
+.sec .old2l { stroke:var(--old); stroke-width:4; }
+.sec .postl { stroke:var(--ink2); stroke-width:6; }
+.sec text { fill:var(--ink); font-family:var(--mono); font-size:13px; }
+.sec .tag { fill:var(--ink2); font-size:12px; letter-spacing:.08em; }
+.sec .note { fill:var(--new); font-size:12.5px; }
+.sec .note2 { fill:var(--accent); font-size:12.5px; }
+.notmodel { margin:0; padding-left:20px; display:grid; gap:8px; color:var(--ink2); max-width:80ch; }
+.notmodel b { color:var(--ink); }
+footer { color:var(--ink2); font-size:12.5px; border-top:1px solid var(--rule); padding-top:12px; display:grid; gap:4px; }
+@media (max-width: 700px) { .nowto { grid-template-columns:1fr; } }
+@media (prefers-reduced-motion: reduce) { .mk:hover { transform:translate(-50%,-50%); } }
+</style>
+<style>
+.control { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); border:1px solid var(--rule); background:var(--surface); }
+.control div { padding:10px 14px; border-right:1px solid var(--rule); display:grid; gap:3px; } .control div:last-child { border-right:0; }
+.control span { font:500 11px/1 var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--ink2); } .control b { font:500 13.5px/1.3 var(--mono); }
+.verdict { display:grid; grid-template-columns:1fr 1fr; border:1.5px solid var(--ink); background:var(--surface); }
+.verdict > div { padding:18px 20px; display:grid; gap:10px; align-content:start; }
+.verdict > div + div { border-left:1.5px solid var(--ink); }
+.stamp { justify-self:start; font:700 15px/1 var(--display); letter-spacing:.14em; text-transform:uppercase; padding:6px 10px; border:2px solid currentColor; }
+.stamp.fail { color:var(--fail); } .stamp.pass { color:var(--pass); }
+.big { font:600 42px/1 var(--display); font-variant-numeric:tabular-nums; } .big small { font:500 16px var(--body); color:var(--ink2); margin-left:6px; }
+@media (max-width:760px) { .verdict { grid-template-columns:1fr; } .verdict > div + div { border-left:0; border-top:1.5px solid var(--ink); } }
+td.bad { color:var(--fail); font-weight:600; } td.ok { color:var(--pass); }
+tr.grp td { font:600 11px/1.2 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--accent); background:var(--paper); padding-top:12px; }
+.bars { background:var(--surface); border:1px solid var(--rule); padding:14px 16px; display:grid; gap:8px; }
+.brow { display:grid; grid-template-columns:minmax(140px,300px) minmax(0,1fr) 48px; gap:12px; align-items:center; font-size:13.5px; }
+.btrack { position:relative; height:12px; background:var(--soft); } .btrack i { position:absolute; inset:0 auto 0 0; background:var(--pass); }
+.btrack::after { content:""; position:absolute; right:0; top:-4px; bottom:-4px; border-left:2px solid var(--ink); }
+.brow b { text-align:right; font-weight:500; }
+@media (max-width:560px) { .brow { grid-template-columns:minmax(0,1fr) 44px; } .brow span { grid-column:1 / -1; } }
+.conds { margin:0; padding:0; list-style:none; display:grid; gap:8px; }
+.conds li { background:var(--surface); border:1px solid var(--rule); border-left:3px solid var(--accent); padding:10px 14px; font-size:14.5px; }
+.conds li.must { border-left-color:var(--fail); }
+</style>
+<main class="wrap">
+  <div class="control" role="group" aria-label="Document control">
+    <div><span>Document</span><b>Load verdict</b></div><div><span>Revision</span><b>C · 27 Sep 2026</b></div>
+    <div><span>Model</span><b>25 Sep, cleaned 26 Sep · 35°</b></div><div><span>Basis</span><b>Aug-2026 events sheet · EN 1999-1-1</b></div>
+  </div>
+  <header class="top">
+    <div class="eyebrow">Load verdict · folding stair unit · Rev C</div>
+    <h1>Does the stair hold an event crowd?</h1>
+    <p>As drawn, no. With the Rev C changes, yes, on every load the events sheet asks for. Loads are factored by EN 1990
+       (1.35 × self-weight + 1.5 × crowd); aluminium is EN AW-6082-T6. A value of 1.00 means the part is exactly at its limit.</p>
+  </header>
+  <section>
+    <div class="verdict">
+      <div><span class="stamp fail">As drawn: does not comply</span>
+        <div class="big">1.1<small>of 7.5 kN/m² crowd carried</small></div>
+        <p>The fold lock pegs, rails, step pins, steps, poles and supports all fail. The handrail poles are 30× too weak, so nobody can lean on the barrier.</p></div>
+      <div><span class="stamp pass">With the Rev C changes: complies</span>
+        <div class="big">0.96<small>highest use of any part</small></div>
+        <p>Every check on this page passes. The tightest is the base axle. What to draw is in the <a href="#">change list</a>; how to build it is in the <a href="#">manufacturing guide</a>.</p></div>
+    </div>
+  </section>
+  <section>
+    <h2>Every check, now and after</h2>
+    <p>“Now” is the model as drawn. “After” is the same model with the Rev C changes, under the same loads and formulas. R-numbers are rows of the events sheet.</p>
+    <div class="tw"><table><thead><tr><th>Ref</th><th>Check</th><th>Now</th><th>Use</th><th>After Rev C</th><th>Use</th><th>Result</th></tr></thead><tbody><tr class="grp"><td colspan="7">Crowd on the stair</td></tr><tr><td class="mono">R113</td><th scope="row">Crowd 7.5 kN/m²: steps</th><td>208 MPa</td><td class="mono ok">0.91</td><td>box step, 0.41 of its strength</td><td class="mono ok">0.41</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R113</td><th scope="row">Crowd 7.5 kN/m²: fold lock (pole pegs)</th><td>Ø2 pegs, carries ≈ 1.1 kN/m²</td><td class="mono bad">6.62</td><td>Ø12 pegs</td><td class="mono ok">0.58</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R113</td><th scope="row">Crowd 7.5 kN/m²: guide rails at the pin holes</th><td>20–25 deep</td><td class="mono bad">6.95</td><td>about 70 deep</td><td class="mono ok">0.40</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R170</td><th scope="row">Step pins</th><td>Ø10</td><td class="mono bad">5.30</td><td>Ø20</td><td class="mono ok">0.66</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R170</td><th scope="row">Metal round the pin holes</th><td>7.5 mm, needs 10.1</td><td class="mono bad">1.34</td><td>20 mm</td><td class="mono ok">0.87</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R115</td><th scope="row">Side frame sag ≤ L/250 (7.3 mm)</th><td>10.7 mm</td><td class="mono bad">1.46</td><td>0.9 mm</td><td class="mono ok">0.12</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R177</td><th scope="row">First vertical frequency ≥ 6 Hz</th><td>≈ 6 Hz with step flex</td><td class="mono ok">1.00</td><td>≈ 22 Hz (frame 32, steps 29)</td><td class="mono ok">0.28</td><td><span class="st pass">Pass</span></td></tr><tr class="grp"><td colspan="7">Point loads on a step</td></tr><tr><td class="mono">R114</td><th scope="row">4 kN on 200 × 200 at the front edge</th><td>828 MPa</td><td class="mono bad">3.64</td><td>A extruded (welded box 0.82)</td><td class="mono ok">0.41</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R115</td><th scope="row">Sag under 4 kN ≤ 12.2 mm</th><td>58.3 mm</td><td class="mono bad">4.78</td><td>3.6 mm</td><td class="mono ok">0.29</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R115</td><th scope="row">Sag under a crowd ≤ 4.9 mm</th><td>17.5 mm</td><td class="mono bad">3.60</td><td>1.1 mm</td><td class="mono ok">0.24</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R115</td><th scope="row">Sag under one person < 10 mm</th><td>18.8 mm</td><td class="mono bad">1.88</td><td>1.2 mm</td><td class="mono ok">0.12</td><td><span class="st pass">Pass</span></td></tr><tr class="grp"><td colspan="7">Barrier and handrail</td></tr><tr><td class="mono">R179</td><th scope="row">1.5 kN at the top of a pole</th><td>hollow 25 × 10 × 2</td><td class="mono bad">30.47</td><td>solid 25 × 55 (worst barrier load)</td><td class="mono ok">0.84</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R142</td><th scope="row">3.0 kN/m on the top rail</th><td>0.16 kN/m carried</td><td class="mono bad">18.60</td><td>covered by the row above</td><td class="mono ok">0.84</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R142</td><th scope="row">Pole fixing, upper rail</th><td>not drawn</td><td class="mono">—</td><td>strap + 2 × M12</td><td class="mono ok">0.17</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R142</td><th scope="row">Pole fixing, lower rail</th><td>not drawn</td><td class="mono">—</td><td>Ø16 pin (bearing on the rail)</td><td class="mono ok">0.65</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R142</td><th scope="row">Rails under the pole push</th><td>can’t take it</td><td class="mono">—</td><td>70-deep rails, right side</td><td class="mono ok">0.82</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R143</td><th scope="row">1.25 kN on the handrail: brackets</th><td>15 wide</td><td class="mono bad">2.51</td><td>25 wide</td><td class="mono ok">0.90</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R178</td><th scope="row">1.0 kN/m down on the top rail</th><td>U 25 × 25 × 5</td><td class="mono ok">0.04</td><td>no change</td><td class="mono ok">0.04</td><td><span class="st pass">Pass</span></td></tr><tr class="grp"><td colspan="7">Supports</td></tr><tr><td class="mono">R147</td><th scope="row">Base axle</th><td>Ø25 × 2.5, 70 mm off the jack</td><td class="mono bad">6.04</td><td>48.3 × 4 tube, clamped base</td><td class="mono ok">0.96</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R147</td><th scope="row">Top axle</th><td>Ø25 × 2.5</td><td class="mono bad">3.85</td><td>48.3 × 4 tube</td><td class="mono ok">0.61</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R150</td><th scope="row">Base hook lock</th><td>not drawn, 17.7 kN</td><td class="mono">—</td><td>Ø14 keeper pin</td><td class="mono ok">0.81</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R150</td><th scope="row">Top hook lock</th><td>not drawn, 11.3 kN</td><td class="mono">—</td><td>Ø12 keeper pin</td><td class="mono ok">0.71</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R174</td><th scope="row">Jacks, base held by a scaffold clamp</th><td>M24</td><td class="mono bad">1.71</td><td>M30</td><td class="mono ok">0.88</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R174</td><th scope="row">Jacks on the ground</th><td>M24</td><td class="mono ok">0.08</td><td>M24</td><td class="mono ok">0.82</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R73</td><th scope="row">Footplates</th><td>100 × 100 × 5</td><td class="mono bad">2.66</td><td>150 × 150 × 8</td><td class="mono ok">0.89</td><td><span class="st pass">Pass</span></td></tr><tr><td class="mono">R170</td><th scope="row">Top landing bracket</th><td>Ø20 pin, 5 mm plate</td><td class="mono ok">0.38</td><td>no change</td><td class="mono ok">0.38</td><td><span class="st pass">Pass</span></td></tr></tbody></table></div>
+    <p class="meta">Sag and frequency after the changes come from re-running the side-frame model with the 70-deep rails. The step frequency is an estimate from the step’s own sag; the combined value uses Dunkerley’s rule.</p>
+  </section>
+  <section>
+    <h2>Closest to the limit after the changes</h2>
+    <div class="bars"><div class="brow"><span>Base axle</span><div class="btrack"><i style="width:96.0%"></i></div><b class="mono">0.96</b></div><div class="brow"><span>1.25 kN on the handrail: brackets</span><div class="btrack"><i style="width:90.4%"></i></div><b class="mono">0.90</b></div><div class="brow"><span>Footplates</span><div class="btrack"><i style="width:89.0%"></i></div><b class="mono">0.89</b></div><div class="brow"><span>Jacks, base held by a scaffold clamp</span><div class="btrack"><i style="width:87.8%"></i></div><b class="mono">0.88</b></div><div class="brow"><span>Metal round the pin holes</span><div class="btrack"><i style="width:87.0%"></i></div><b class="mono">0.87</b></div><div class="brow"><span>3.0 kN/m on the top rail</span><div class="btrack"><i style="width:84.0%"></i></div><b class="mono">0.84</b></div><div class="brow"><span>1.5 kN at the top of a pole</span><div class="btrack"><i style="width:84.0%"></i></div><b class="mono">0.84</b></div><div class="brow"><span>Jacks on the ground</span><div class="btrack"><i style="width:82.1%"></i></div><b class="mono">0.82</b></div><div class="brow"><span>Rails under the pole push</span><div class="btrack"><i style="width:82.0%"></i></div><b class="mono">0.82</b></div><div class="brow"><span>Base hook lock</span><div class="btrack"><i style="width:81.4%"></i></div><b class="mono">0.81</b></div></div>
+    <p class="meta">The black line is 1.00. The base axle only reaches 0.96 when the jacks are clamped to a scaffold. On the ground it is 0.60.</p>
+  </section>
+  <section>
+    <h2>Geometry and detailing</h2>
+    <div class="tw"><table><thead><tr><th>Ref</th><th>Requirement</th><th>As drawn</th><th>After Rev C</th><th>Status</th></tr></thead><tbody><tr><td class="mono">R7</td><th scope="row">Open gap under each step ≤ 120</th><td>125 mm</td><td>a lip at least 5 mm down on the front edge (35 mm gives 100)</td><td><span class="st cond">Change F1</span></td></tr><tr><td class="mono">R63</td><th scope="row">Top rail ≥ 1,100 above datum</th><td>1,112 above the step · 1,013 above the pitch line</td><td>no change, or +87 mm if measured from the pitch line</td><td><span class="st cond">Decide F6</span></td></tr><tr><td class="mono">R64</td><th scope="row">Handrail graspable, 25–50 mm</th><td>U 25 × 25 channel</td><td>owner’s padding, finished shape 25–50 mm</td><td><span class="st cond">Owner</span></td></tr><tr><td class="mono">R16 R17</td><th scope="row">Slip resistance, contrasting nosings</th><td>not specified</td><td>serrated step tops, anodised contrast nosing; pendulum test</td><td><span class="st cond">Specify</span></td></tr><tr><td class="mono">R65 R68</td><th scope="row">Side infill, toe board</th><td>none</td><td>not fitted by decision; the scaffold edge protection covers it</td><td><span class="st cond">By others</span></td></tr><tr><td class="mono">R9 R4 R5 R8</td><th scope="row">Pitch 35°, going 250, rise 175, 2R + G 600</th><td>as drawn</td><td>no change</td><td><span class="st pass">Pass</span></td></tr></tbody></table></div>
+  </section>
+  <section>
+    <h2>Conditions of use after the changes</h2>
+    <ul class="conds">
+      <li class="must">All 12 poles fitted and fixed (strap and pins) before anyone steps on. Without them each side folds flat.</li>
+      <li class="must">Hook keeper pins in at the base and the top, and a collar each side of every hook.</li>
+      <li class="must">The top landing brackets anchored to the landing or cabin for 11.3 kN per side. That fixing is outside this model.</li>
+      <li class="must">Jacks clamped to a scaffold: use M30 jacks on 150 × 150 × 8 footplates. On the ground, M24 is enough.</li>
+      <li>Standard 35° stair only. The catwalk and steep states were not re-checked in Rev C.</li>
+      <li>The top rail height reference (F6) must be agreed with the approver.</li>
+      <li>These capacities are calculated, not tested. Before sign-off, load one finished unit to the crowd load and compare its sag with the 0.9 mm frame and 1.1 mm step predicted here.</li>
+    </ul>
+  </section>
+  <footer>
+    <span>Rev C set: <a href="#">datasheet</a> · <a href="#">change list</a> · <a href="#">manufacturing guide</a>.</span>
+    <span>Numbers: v2/final/final_results.json (as drawn); v2/revc/after_changes.json, frame_after.json, pole_fixing.json (after). Loads: v2/spec/sheet_2026-09-23_events.txt.</span>
+  </footer>
+</main>

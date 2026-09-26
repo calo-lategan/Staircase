@@ -1,0 +1,35 @@
+{
+ "demand_W_mm3": 10584.0,
+ "R1_solid_25x55": {
+  "gross": 0.8397223140495869,
+  "hole_at_upper_rail": 2.6241322314049587
+ },
+ "R2_rhs_80x40x3": {
+  "gross": 0.7579870088016444,
+  "hole_at_upper_rail": 1.0395171705961215
+ },
+ "strap_upper": {
+  "F_kN": 14.391616596551598,
+  "bolt_tension": 0.16936414492543164,
+  "pull_through_5mm_wall": 0.15671161196117583,
+  "strap_5x40_6082": 0.1583077825620676
+ },
+ "pin_lower": {
+  "V_kN": 15.550944256526549,
+  "shear": 0.5462150530042196,
+  "bearing_rail_5mm": 0.6479560106886062,
+  "bearing_rhs_2x3mm": 0.5399633422405051
+ },
+ "crosspin_upper": {
+  "F_kN": 5.891794209530463,
+  "double_shear": 0.1839509126112248,
+  "bearing_solid_25": 0.06546438010589403,
+  "bearing_rhs_2x3mm": 0.27276825044122516,
+  "section_loss_solid": 0.01320510894064613,
+  "section_loss_rhs": 0.001966762871241039
+ },
+ "rails_in_5083": {
+  "net": 0.8063394967329348,
+  "lateral_right": 1.64
+ }
+}

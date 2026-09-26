@@ -1,0 +1,209 @@
+<title>Stair Manufacturing Guide Rev C</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root {
+  --paper:#EFF2F2; --surface:#FFFFFF; --ink:#15202A; --ink2:#4B5966; --rule:#D3DADE; --soft:#E6EBED;
+  --accent:#1E5A86; --accentbg:#E1ECF4; --new:#C2410C; --newbg:#FDEBDD; --old:#8A96A0;
+  --pass:#2F7A4F; --passbg:#E2F1E7; --warn:#9A620E; --warnbg:#FBEFD8; --fail:#B42318; --failbg:#FBE3E0;
+  --display:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper:#0E151B; --surface:#152029; --ink:#E3E9ED; --ink2:#9DACB8; --rule:#27353F; --soft:#1B2833;
+    --accent:#7DB7E3; --accentbg:#16283A; --new:#FB923C; --newbg:#3A2112; --old:#6B7985;
+    --pass:#6CC790; --passbg:#17301F; --warn:#E6B45A; --warnbg:#382B12; --fail:#FF8C80; --failbg:#3A1B18; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper:#0E151B; --surface:#152029; --ink:#E3E9ED; --ink2:#9DACB8; --rule:#27353F; --soft:#1B2833;
+  --accent:#7DB7E3; --accentbg:#16283A; --new:#FB923C; --newbg:#3A2112; --old:#6B7985;
+    --pass:#6CC790; --passbg:#17301F; --warn:#E6B45A; --warnbg:#382B12; --fail:#FF8C80; --failbg:#3A1B18; color-scheme:dark;
+}
+* { box-sizing:border-box; }
+body { background:var(--paper); color:var(--ink); font:15.5px/1.6 var(--body); margin:0; padding-inline:16px; padding-block:28px 64px; }
+.wrap { max-width:1120px; margin:0 auto; display:grid; gap:34px; }
+h1,h2,h3 { font-family:var(--display); text-wrap:balance; margin:0; letter-spacing:.01em; }
+h1 { font-size:clamp(34px,5vw,52px); line-height:1.02; }
+h2 { font-size:27px; font-weight:600; }
+h3 { font-size:21px; font-weight:600; line-height:1.15; }
+p { margin:0; max-width:72ch; }
+a { color:var(--accent); }
+a:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.mono { font-family:var(--mono); font-variant-numeric:tabular-nums; }
+.eyebrow { font:600 12px/1 var(--mono); letter-spacing:.12em; text-transform:uppercase; color:var(--accent); }
+header.top { display:grid; gap:12px; }
+header.top p { color:var(--ink2); font-size:16.5px; }
+.result { display:flex; flex-wrap:wrap; gap:0; border:1px solid var(--rule); background:var(--surface); }
+.result div { flex:1 1 180px; padding:12px 16px; border-right:1px solid var(--rule); display:grid; gap:2px; }
+.result div:last-child { border-right:0; }
+.result span { font-size:12.5px; color:var(--ink2); }
+.result b { font:600 23px/1.15 var(--display); font-variant-numeric:tabular-nums; }
+.result b s { color:var(--ink2); font-weight:500; font-size:18px; margin-right:6px; }
+section { display:grid; gap:16px; }
+section > h2 { border-top:2px solid var(--ink); padding-top:12px; }
+.rules { margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:10px; counter-reset:r; }
+.rules li { background:var(--surface); border:1px solid var(--rule); padding:12px 14px; font-size:14.5px; }
+.rules li b { display:block; font-family:var(--display); font-size:17px; font-weight:600; }
+/* figures */
+.figs { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr)); gap:16px; }
+.fig { margin:0; background:var(--surface); border:1px solid var(--rule); }
+.fig:first-child { grid-column:1 / -1; }
+.shot { position:relative; }
+.shot img { width:100%; height:auto; display:block; }
+.mk { position:absolute; transform:translate(-50%,-50%); width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff;
+      font:600 13px/28px var(--mono); text-align:center; text-decoration:none; box-shadow:0 0 0 3px rgba(255,255,255,.85); }
+.mk.new { background:var(--new); }
+.mk:hover, .mk:focus-visible { transform:translate(-50%,-50%) scale(1.15); outline:none; }
+.fig figcaption { padding:9px 12px; font-size:13.5px; color:var(--ink2); border-top:1px solid var(--rule); }
+.fig figcaption b { color:var(--ink); font-family:var(--mono); font-weight:500; margin-right:6px; }
+.key { display:flex; flex-wrap:wrap; gap:14px; font-size:13px; color:var(--ink2); align-items:center; }
+.key i { display:inline-block; width:14px; height:14px; border-radius:50%; vertical-align:-2px; margin-right:6px; }
+/* summary table */
+.tw { overflow-x:auto; border:1px solid var(--rule); background:var(--surface); }
+table { border-collapse:collapse; width:100%; font-size:14px; }
+th, td { padding:8px 12px; border-bottom:1px solid var(--rule); text-align:left; vertical-align:top; }
+thead th { font:600 11.5px/1.2 var(--mono); letter-spacing:.06em; text-transform:uppercase; color:var(--ink2); background:var(--soft); }
+tbody tr:last-child > * { border-bottom:0; }
+tbody th { font-weight:500; }
+td.strong { font-weight:600; }
+/* change cards */
+.cards { display:grid; gap:14px; }
+.card { background:var(--surface); border:1px solid var(--rule); padding:16px 18px; display:grid; gap:12px; scroll-margin-top:16px; }
+.card:target { box-shadow:0 0 0 2px var(--accent); }
+.card header { display:flex; gap:12px; align-items:center; }
+.num { flex:none; width:36px; height:36px; border-radius:50%; background:var(--accent); color:#fff; font:600 16px/36px var(--mono); text-align:center; }
+.meta { color:var(--ink2); font-size:13px; }
+.nowto { display:grid; grid-template-columns:1fr 1.5fr; gap:10px; }
+.nowto > div { padding:10px 12px; display:grid; gap:4px; min-width:0; }
+.now { background:var(--soft); }
+.to { background:var(--newbg); }
+.nowto span, .how > span { font:600 11px/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--ink2); }
+.to span { color:var(--new); }
+.how ul { margin:6px 0 0; padding-left:20px; display:grid; gap:3px; }
+.refs { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.refs figure { margin:0; border:1px solid var(--rule); background:var(--paper); }
+.refs img { width:100%; height:auto; display:block; }
+.refs figcaption { font:500 12px/1 var(--mono); color:var(--ink2); padding:7px 9px; letter-spacing:.04em; }
+@media (max-width: 640px) { .refs { grid-template-columns:1fr; } }
+.tagc { font:600 11px/1 var(--mono); letter-spacing:.06em; text-transform:uppercase; color:var(--warn); background:var(--warnbg); padding:4px 7px; vertical-align:middle; margin-left:6px; }
+.card.consider { border-style:dashed; }
+.cnote { background:var(--warnbg); padding:10px 12px; font-size:14px; max-width:none; }
+.st.none, .st.site { color:var(--ink2); background:var(--soft); }
+.st.cond { color:var(--accent); background:var(--accentbg); }
+.whyload { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.whyload > div { border:1px solid var(--rule); padding:10px 12px; display:grid; gap:6px; align-content:start; min-width:0; }
+.whyload > div > span { font:600 11px/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--ink2); }
+.why ul { margin:0; padding:0; list-style:none; display:grid; gap:6px; font-size:14px; }
+.ref { display:inline-block; font:600 11.5px/1.4 var(--mono); color:var(--accent); background:var(--accentbg); padding:0 5px; margin-right:6px; }
+.load p { font-size:14px; }
+.ba { display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:13px; }
+.ba div { padding:6px 8px; background:var(--soft); }
+.ba div:last-child { background:var(--passbg); }
+.ba i { display:block; font:600 10.5px/1.3 var(--mono); letter-spacing:.08em; text-transform:uppercase; font-style:normal; color:var(--ink2); }
+.st { display:inline-block; font:600 11px/1 var(--mono); letter-spacing:.05em; text-transform:uppercase; padding:4px 7px; white-space:nowrap; }
+.st.pass { color:var(--pass); background:var(--passbg); } .st.part, .st.test { color:var(--warn); background:var(--warnbg); } .st.open { color:var(--fail); background:var(--failbg); }
+@media (max-width: 760px) { .whyload { grid-template-columns:1fr; } }
+.draw { overflow-x:auto; border:1px solid var(--rule); background:var(--paper); padding:8px; }
+.sec { display:block; width:100%; min-width:520px; height:auto; max-height:320px; }
+.sec .old { fill:none; stroke:var(--old); stroke-width:2; stroke-dasharray:5 4; }
+.sec .old2 { fill:var(--soft); stroke:var(--old); stroke-width:1.5; }
+.sec .new { fill:var(--new); stroke:var(--new); stroke-width:1; }
+.sec .new2 { fill:var(--accent); stroke:var(--accent); stroke-width:1; }
+.sec .newf { fill:var(--newbg); stroke:var(--new); stroke-width:1.5; }
+.sec .void { fill:var(--paper); stroke:none; }
+.sec .rib { stroke:var(--new); stroke-width:1.5; }
+.sec .dim { stroke:var(--ink2); stroke-width:1.2; }
+.sec .axle { fill:none; stroke:var(--ink2); stroke-width:1.5; stroke-dasharray:3 3; }
+.sec .grd { stroke:var(--ink); stroke-width:2; }
+.sec .newl { stroke:var(--new); stroke-width:4; }
+.sec .old2l { stroke:var(--old); stroke-width:4; }
+.sec .postl { stroke:var(--ink2); stroke-width:6; }
+.sec text { fill:var(--ink); font-family:var(--mono); font-size:13px; }
+.sec .tag { fill:var(--ink2); font-size:12px; letter-spacing:.08em; }
+.sec .note { fill:var(--new); font-size:12.5px; }
+.sec .note2 { fill:var(--accent); font-size:12.5px; }
+.notmodel { margin:0; padding-left:20px; display:grid; gap:8px; color:var(--ink2); max-width:80ch; }
+.notmodel b { color:var(--ink); }
+footer { color:var(--ink2); font-size:12.5px; border-top:1px solid var(--rule); padding-top:12px; display:grid; gap:4px; }
+@media (max-width: 700px) { .nowto { grid-template-columns:1fr; } }
+@media (prefers-reduced-motion: reduce) { .mk:hover { transform:translate(-50%,-50%); } }
+</style>
+<style>
+.control { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); border:1px solid var(--rule); background:var(--surface); }
+.control div { padding:10px 14px; border-right:1px solid var(--rule); display:grid; gap:3px; } .control div:last-child { border-right:0; }
+.control span { font:500 11px/1 var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--ink2); } .control b { font:500 13.5px/1.3 var(--mono); }
+.routes { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.route { background:var(--surface); border:1px solid var(--rule); border-top:4px solid var(--accent); padding:16px 18px; display:grid; gap:10px; align-content:start; }
+.route.r2 { border-top-color:var(--new); }
+.route .tag { font:600 11px/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--ink2); }
+.route dl { margin:0; display:grid; gap:6px; font-size:14px; }
+.route dl div { display:grid; grid-template-columns:130px 1fr; gap:10px; }
+.route dt { color:var(--ink2); } .route dd { margin:0; font-weight:500; }
+@media (max-width:760px) { .routes { grid-template-columns:1fr; } }
+.u { font-family:var(--mono); color:var(--pass); } .u.bad { color:var(--fail); }
+.rules { counter-reset:none; }
+table.mf td { min-width:120px; } table.mf th[scope=row] { min-width:130px; }
+</style>
+<main class="wrap">
+  <div class="control" role="group" aria-label="Document control">
+    <div><span>Document</span><b>Manufacturing guide</b></div><div><span>Revision</span><b>C · 27 Sep 2026</b></div>
+    <div><span>Builds</span><b>Rev C change list</b></div><div><span>Material</span><b>6082-T6 · 5083-H111</b></div>
+  </div>
+  <header class="top">
+    <div class="eyebrow">Manufacturing guide · folding stair unit · Rev C</div>
+    <h1>How to build it</h1>
+    <p>Two ways to make the Rev C stair. Both pass every check in the <a href="#">load verdict</a>. Route 1 is the one drawn in the
+       <a href="#">change list</a> and has the most margin on the steps. Route 2 uses stock sections and simpler processes to cut tooling and machining.
+       The outside shape of the steps, the rails, the pins and the supports are the same in both.</p>
+  </header>
+  <section>
+    <h2>The two routes</h2>
+    <div class="routes">
+      <div class="route"><span class="tag">Route 1 · best strength</span><h3>Extruded steps, solid cut poles</h3>
+        <dl><div><dt>Weight per unit</dt><dd class="mono">≈ 98 kg</dd></div>
+        <div><dt>Highest use</dt><dd class="mono">0.96</dd></div>
+        <div><dt>Steps at 4 kN</dt><dd class="mono">0.41</dd></div>
+        <div><dt>Structural welds</dt><dd>none</dd></div>
+        <div><dt>Cost drivers</dt><dd>an extrusion die for the step; CNC or waterjet time on 12 poles</dd></div>
+        <div><dt>Best for</dt><dd>a production run, where the die cost is spread over many units</dd></div></dl></div>
+      <div class="route r2"><span class="tag">Route 2 · lower cost</span><h3>Bent-sheet steps, tube poles</h3>
+        <dl><div><dt>Weight per unit</dt><dd class="mono">≈ 88 kg</dd></div>
+        <div><dt>Highest use</dt><dd class="mono">0.96</dd></div>
+        <div><dt>Steps at 4 kN</dt><dd class="mono">0.82</dd></div>
+        <div><dt>Structural welds</dt><dd>step bottoms and webs only (5083, no strength loss)</dd></div>
+        <div><dt>Cost drivers</dt><dd>press-brake bending and welding labour per step</dd></div>
+        <div><dt>Best for</dt><dd>a first batch or prototype; no special tooling</dd></div></dl></div>
+    </div>
+    <p class="meta">Route 2 is lighter because a hollow tube carries the barrier load with less metal than a solid bar. Weights are for the aluminium structure; jacks are extra. No prices are quoted: get quotes on the parts that differ (steps and poles).</p>
+  </section>
+  <section>
+    <h2>Rules for both routes</h2>
+    <ol class="rules">
+      <li><b>6082-T6 for everything structural</b>Rails, poles, pins, axles, hooks and brackets. The only exception is the Route 2 step (5083-H111). Pure aluminium (1000 series) is too weak.</li>
+      <li><b>No welds on rails, poles, pins or axles</b>A weld halves the strength of 6082-T6 next to it. Join these parts with pins, bolts or rivets.</li>
+      <li><b>No hole across the pole at the upper rail</b>The pole bends most there; a Ø16 hole would take it from 0.84 to 2.6. Use the strap and the centre-line cross-pin.</li>
+      <li><b>Holes: 20 mm of metal to any edge</b>Drill and ream on a jig; hole centres within ± 0.5 mm so steps and poles fit every unit. About 0.5 mm clearance per side on pins.</li>
+      <li><b>Isolate stainless from aluminium</b>Nylon washers and sleeves under every stainless bolt, stops the aluminium corroding at the joint.</li>
+      <li><b>Captive locking pins</b>Hook keepers and step pins on lanyards or with R-clips, so they can’t be lost on site.</li>
+      <li><b>Finish</b>Deburr every cut. Serrated step tops for grip, anodised contrast strip on each front edge. Anodise or leave mill finish; don’t paint over the bearing faces.</li>
+      <li><b>Prove the first unit</b>Load one finished unit to the crowd load (7.5 kN/m²) and measure the sag against the load verdict before building the rest.</li>
+    </ol>
+  </section>
+  <section>
+    <h2>Part by part</h2>
+    <p>“Use” is the share of the part’s strength taken by the worst event load (1.00 = at the limit).</p>
+    <div class="tw"><table class="mf"><thead><tr><th>Part</th><th>Qty</th><th>Route 1 · best strength</th><th>Use</th><th>Route 2 · lower cost</th><th>Use</th></tr></thead><tbody><tr><th scope="row">Steps (F1)</th><td class="mono">6</td><td>One 6082-T6 extrusion, 280 × 50 box with two inner webs (3 top, 2 bottom and walls, 2 webs). No welds. Drain holes punched or CNC-cut after extruding. End plates riveted or screwed to the webs.</td><td class="mono"><span class="u">0.41</span></td><td>Same outside shape, bent from 5083-H111 sheet on a press brake: top and both walls in one piece, bottom and webs welded or riveted in. 5083 doesn’t lose strength when welded. Or buy a press-locked grating panel, 3 × 50 bars every 46 mm with an 8 mm front bar (0.81, 6.2 kg).</td><td class="mono"><span class="u">0.82</span></td></tr><tr><th scope="row">Guide rails (F2)</th><td class="mono">4</td><td>6082-T6 extruded channel, about 70 deep, 5 mm walls (left U 35 wide, right inverted U 25 wide). Holes CNC-drilled and reamed to Ø20 H9. Hooks cut from the same channel or bolted on as 10 mm plate.</td><td class="mono"><span class="u">0.82</span></td><td>Same 6082-T6 extruded channel from stock lengths, holes drilled on a jig. Don’t bend the rails from sheet: 5 mm 6082-T6 cracks in a tight bend, and 5083 is too weak here.</td><td class="mono"><span class="u">0.82</span></td></tr><tr><th scope="row">Poles (F4)</th><td class="mono">12</td><td>Waterjet or CNC-cut from 25 mm 6082-T6 plate: 55 across at the rails, tapering to 15 at the top, with the locking tab in the same piece. Solid, so it won’t dent or hold water.</td><td class="mono"><span class="u">0.84</span></td><td>6082-T6 rectangular tube 80 × 40 × 3 from stock, cut to length, 80 across the stair. The locking tab and pegs aren’t needed: the strap, cross-pin and lower pin do the locking.</td><td class="mono"><span class="u">0.76</span></td></tr><tr><th scope="row">Pole fixing, upper rail</th><td class="mono">12</td><td>5 × 40 6082-T6 strap bent round the pole, 2 × M12 A4-70 into the rail, plus a Ø12 cross-pin along the stair through the middle of the pole.</td><td class="mono"><span class="u">0.18</span></td><td>Same strap and cross-pin; the pin bears on the tube’s two 3 mm walls.</td><td class="mono"><span class="u">0.27</span></td></tr><tr><th scope="row">Pole fixing, lower rail</th><td class="mono">12</td><td>One Ø16 6082-T6 pin across the stair through the pole and the rail.</td><td class="mono"><span class="u">0.65</span></td><td>Same pin.</td><td class="mono"><span class="u">0.65</span></td></tr><tr><th scope="row">Pole locking pegs (F3)</th><td class="mono">48</td><td>Ø12 6082-T6 or stainless pins pressed through the locking tab, 2 per rail.</td><td class="mono"><span class="u">0.58</span></td><td>Not used.</td><td class="mono">—</td></tr><tr><th scope="row">Step pins (F2)</th><td class="mono">24</td><td>Ø20 6082-T6 bar, turned, with castle nut and split pin; acetal bushes and washers.</td><td class="mono"><span class="u">0.66</span></td><td>Ø20 stainless bar cut to length, drilled for R-clips instead of turned threads.</td><td class="mono"><span class="u">0.66</span></td></tr><tr><th scope="row">Axles and collars (F5)</th><td class="mono">2</td><td>48.3 × 4 6082-T6 tube, one piece support to support, with bolted split collars each side of every hook.</td><td class="mono"><span class="u">0.96</span></td><td>Standard 48.3 × 4 aluminium scaffold tube; scaffold clamps used as the collars.</td><td class="mono"><span class="u">0.96</span></td></tr><tr><th scope="row">Hook locks (F5)</th><td class="mono">4</td><td>Ø14 keeper pin at the base, Ø12 at the top, captive on a lanyard with a spring detent.</td><td class="mono"><span class="u">0.81</span></td><td>Same pins with R-clips.</td><td class="mono"><span class="u">0.81</span></td></tr><tr><th scope="row">Base jacks</th><td class="mono">2</td><td>M30 jacks on 150 × 150 × 8 footplates, so the unit can stand on the ground or be clamped to a scaffold.</td><td class="mono"><span class="u">0.88</span></td><td>Standard M24 scaffold base jacks, on the ground only. Use M30 if the base is clamped to a scaffold.</td><td class="mono"><span class="u">0.82</span></td></tr><tr><th scope="row">Handrail brackets (F8)</th><td class="mono">12</td><td>25 × 5 6082-T6 flat, bent on a jig.</td><td class="mono"><span class="u">0.90</span></td><td>Same.</td><td class="mono"><span class="u">0.90</span></td></tr></tbody></table></div>
+    <p class="meta">Top landing brackets, top rails and handrails are unchanged in both routes. The landing fixing (11.3 kN per side) is by others.</p>
+  </section>
+  <section>
+    <h2>Which to choose</h2>
+    <p>For a first batch, Route 2: stock tube and bent sheet, no die, and every part still passes. For a production run, Route 1: the extruded step has twice the margin, there are no welds anywhere, and the solid poles take knocks on site without denting. If Route 2 is chosen, tell Gerald: only cards F1, F3 and F4 in the change list change.</p>
+  </section>
+  <footer>
+    <span>Rev C set: <a href="#">datasheet</a> · <a href="#">load verdict</a> · <a href="#">change list</a>.</span>
+    <span>Numbers: v2/revc/after_changes.json and pole_fixing.json. EN 1999-1-1: 6082-T6 f₀ 250 MPa (125 next to a weld), 5083-H111 f₀ 125 MPa.</span>
+  </footer>
+</main>

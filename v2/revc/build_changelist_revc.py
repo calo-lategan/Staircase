@@ -6,7 +6,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); FIN = os.path.join(HERE, ".."
 sys.path.insert(0, os.path.join(HERE, "..", "brief"))
 import final_diagrams as D
 def J(n): return json.load(open(os.path.join(FIN, n)))
-R = J("final_results.json"); AC = json.load(open(os.path.join(HERE, "after_changes.json")))
+R = J("final_results.json"); AC = json.load(open(os.path.join(HERE, "after_changes.json"))); PF = json.load(open(os.path.join(HERE, "pole_fixing.json")))
 GRT = J("tread_grating.json"); UBX = J("tread_ubox.json"); BOX = J("tread_box2.json")
 LINKS = json.load(open(os.path.join(HERE, "links.json"))) if os.path.exists(os.path.join(HERE, "links.json")) else {}
 MK = json.load(open(os.path.join(HERE, "web", "img", "f_markers.json")))
@@ -88,10 +88,10 @@ cards = [
          ["Draw each pole and its locking end as a single part.", "Add the upper-rail pegs."], D.f3_pegs()),
     card("f4", "Poles: solid, deeper across the stair, bolted outside the rails", "12 per unit · needed to pass",
          f"Hollow 25 × 10 × 2 poles, 10 mm across the stair, passing through the rails. Under the barrier loads they are {poles['R142']:.0f}–{poles['R179']:.0f}× too weak.",
-         f"Solid 6082-T6, 25 along the stair × 55 across at the rails, tapering to 15 at the top rail. Each pole stands on the outside face of the rails with two fixings into each rail (Ø16 pins or M12 bolts); its locking tab and pegs (F3) stay part of the same piece.",
-         f"People push the top rail outward, and each pole bends like a 1 m lever where it meets the rails, so depth across the stair is what counts. 25 × 55 is at {AC['poles']['R1_tapered_solid_25x55']['util']:.2f} under the worst barrier load. A 55 mm pole can’t pass through a 35 mm rail, hence outside mounting. The push reaches the rails as about {AC['pole_fix']['F_kN']:.0f} kN each way, which the deeper rails from F2 carry ({AC['rails']['lateral_left']:.2f} / {AC['rails']['lateral_right']:.2f}).",
+         f"Solid 6082-T6, 25 along the stair × 55 across at the rails, tapering to 15 at the top rail. Each pole stands on the outside face of the rails. <b>Upper rail:</b> a 5 × 40 strap round the pole, bolted to the rail with 2 × M12, plus a Ø12 cross-pin through the pole along the stair at the middle of its 55 depth. <b>Lower rail:</b> one Ø16 pin through the pole into the rail. <b>No bolt hole across the pole at the upper rail.</b> Its locking tab and pegs (F3) stay part of the same piece.",
+         f"People push the top rail outward, and each pole bends like a 1 m lever where it meets the rails, so depth across the stair is what counts. 25 × 55 is at {AC['poles']['R1_tapered_solid_25x55']['util']:.2f} under the worst barrier load. A 55 mm pole can’t pass through a 35 mm rail, hence outside mounting. The push reaches the rails as about {AC['pole_fix']['F_kN']:.0f} kN each way, which the deeper rails from F2 carry ({AC['rails']['lateral_left']:.2f} / {AC['rails']['lateral_right']:.2f}). The pole bends most where it meets the upper rail: a Ø16 hole through its depth there would leave 8 of its 25 mm and take it to {PF['R1_solid_25x55']['hole_at_upper_rail']:.1f}×, hence the strap (bolts {PF['strap_upper']['bolt_tension']:.2f}). The Ø12 cross-pin sits on the pole’s centre line, where it costs about 1 % of its strength. At the lower rail the pole barely bends, so a through-pin is fine ({PF['pin_lower']['bearing_rail_5mm']:.2f}).",
          [("f4_where.jpg", "Where: the 12 poles"), ("f4_close1.jpg", "Poles along the left side")],
-         ["Keep 25 along the stair; the 55 is across the stair.", "The middle handrail between two units side by side isn’t a barrier (no drop there) and can stay as it is."],
+         ["Keep 25 along the stair; the 55 is across the stair.", "Upper rail: strap and Ø12 cross-pin, no hole across the pole. Lower rail: Ø16 pin across.", "The middle handrail between two units side by side isn’t a barrier (no drop there) and can stay as it is."],
          D.f4_pole(55)),
     card("f5", "Supports: one axle each end, collars, hook locks", "base and top · needed to pass",
          "At the base and the top, the axle tube stops about 34 mm short of the right-hand support. Each hook sits about 70 mm from its jack, so the Ø25 × 2.5 tube bends between them. Nothing stops the rails sliding sideways along the axle. The hook locks aren’t drawn.",
@@ -103,7 +103,7 @@ cards = [
          D.f5_base()),
     card("f6", "Top rail height: confirm the measuring line", "decision · no drawing change yet",
          "Top of the top rail: 1,112 mm above the step surface at each pole, 1,013 mm above the pitch line (the line joining the step front edges). Handrail: 903 mm above the pitch line.",
-         "If the approver measures from the pitch line, raise the top rail about 90 mm (raise the pole tops or pivot posts). If from the step surface, no change.",
+         "If the approver measures from the pitch line, raise the top rail about 87 mm (raise the pole tops or pivot posts). If from the step surface, no change.",
          "The code sheet gives 1,100 mm “above datum (floor / pitch line)”, and it measures the handrail from the pitch line. The handrail passes either way (900–1,000).",
          [("f6_where.jpg", "Where: both top rails"), ("f6_close1.jpg", "Top rail on the pole tops")], [], D.f6_height(), crit=False, decide=True),
     card("f8", "Handrail brackets 25 wide", "12 per unit",
@@ -128,9 +128,9 @@ mk = "".join(f'<a class="mk{" fcrit" if k in ("f1", "f2", "f3", "f4", "f5") else
 summary = [("F1", "Steps", "open J + L, grating front to back", "A thin closed box (C open grating is the alternative)", "R113 R114 R115 R7"),
            ("F2", "Step pins and rails", "Ø10 pins, rails 20–25 deep", "Ø20 pins, rails about 70 deep, 20 mm metal round each hole", "R113 R170"),
            ("F3", "Pole locking pegs", "2 mm, lower rail only", "12 mm, 2 per rail, notches lined up", "R78 R104"),
-           ("F4", "Poles", "hollow 25 × 10 × 2 through the rails", "solid 25 × 55 tapering to 15, outside the rails, bolted", "R142 R143 R179"),
+           ("F4", "Poles", "hollow 25 × 10 × 2 through the rails", "solid 25 × 55 tapering to 15, outside the rails: strap at the upper rail, Ø16 pin at the lower", "R142 R143 R179"),
            ("F5", "Supports", "Ø25 × 2.5 axle short of the right support; no collars; no hook lock", "one 48.3 × 4 tube each end (or jacks under hooks), collars, hook locks, landing bolts", "R147 R150 R73"),
-           ("F6", "Top rail height", "1,013 above the pitch line", "decide the measuring line; +90 mm if the pitch line", "R63"),
+           ("F6", "Top rail height", "1,013 above the pitch line", "decide the measuring line; +87 mm if the pitch line", "R63"),
            ("F7", "Handrail", "U 25 × 25 channel", "no change (owner’s padding)", "R64"),
            ("F8", "Handrail brackets", "15 wide", "25 wide", "R143"),
            ("F9", "Drawing", "duplicates, empty faces, line-to-line fits", "delete copies, add clearances", "—")]
@@ -177,6 +177,7 @@ page = f"""<title>Stair Change List Rev C</title>
   <section>
     <h2>The changes</h2>
     <div class="cards">{"".join(cards)}</div>
+    <p class="cnote"><b>If the lower-cost build route is chosen</b> (see the <a href="{mg}">manufacturing guide</a>), only three cards change. F1 keeps the same outside shape but is bent from 5083 sheet. F3 is dropped: the F4 fixings do the locking. F4 becomes a hollow 80 × 40 × 3 tube, 80 across the stair, with the same strap, cross-pin and lower pin. Draw the cards as written unless you’re told Route 2.</p>
     <p class="cnote"><b>F7 Handrail: no change.</b> The owner adds foam or padding that rounds it off and keeps it cool. For the grip rule (R64) the padded shape should end up 25–50 mm across.</p>
   </section>
   <footer>
