@@ -34,9 +34,10 @@ def pins_def(d=16.0):
 
 DEFAULT = dict(
     mode="skin",            # 'skin' (slotted skin + ribs) or 'grating' (bearing bars + cross rods, no skin)
-    tb=3.0, tb_top=3.0, box_mid=False, t_mid=2.0, box_w=50.0,
+    tb=3.0, tb_top=3.0, tb_bot=None, tn_bot=None, tn_top=None, box_mid=False, t_mid=2.0, box_w=50.0,
     ts=2.5,                 # skin thickness
-    ws=10.0, wsol=10.0, Lb=15.0, slot_x0=None, slot_x1=None,   # slot width (x), solid strip between rows, bridge at each rib
+    ws=10.0, wsol=10.0, Lb=15.0, slot_x0=None, slot_x1=None,   # slot width, solid strip between slots, bridge at each rib (dir y)
+    slot_dir="y", Ls=40.0, Lbx=10.0, b_r=12.0,                  # dir 'x': slot length (x), bridge (x), solid strip over each rib (y)
     p_r=60.0, tr=2.5, rib_through_box=False, bulb=(10.0, 3.0),  # rib pitch, web t, bottom flange b x t (None = none)
     rib_x1=None,            # rib front end (default: nosing inner wall)
     tn=2.5, nose_w=55.0, lip=0.0, t_lip=3.0,                    # nosing walls, width, optional lip below z 25 (owner option)
@@ -77,23 +78,39 @@ def geometry(D):
     g["ribs"] = [round(Y0 + off + k * D["p_r"], 4) for k in range(n)]
     sx0 = D["slot_x0"] if D["slot_x0"] is not None else g["x_f"] + D["tb"] / 2 + 6.0
     sx1 = D["slot_x1"] if D["slot_x1"] is not None else g["x_ni"] - 6.0
-    rows = []
-    x = sx0
-    while x + D["ws"] <= sx1 + 1e-9:
-        rows.append((round(x, 4), round(x + D["ws"], 4))); x += D["ws"] + D["wsol"]
-    # centre the rows in the available band
-    if rows:
-        shift = (sx1 - rows[-1][1]) / 2
-        rows = [(round(a + shift, 4), round(b + shift, 4)) for a, b in rows]
+    if D["slot_dir"] == "y":
+        rows = []
+        x = sx0
+        while x + D["ws"] <= sx1 + 1e-9:
+            rows.append((round(x, 4), round(x + D["ws"], 4))); x += D["ws"] + D["wsol"]
+        if rows:
+            shift = (sx1 - rows[-1][1]) / 2
+            rows = [(round(a + shift, 4), round(b + shift, 4)) for a, b in rows]
+        ys_slots = []
+        edges = [Y0] + g["ribs"] + [Y1]
+        for a, b in zip(edges[:-1], edges[1:]):
+            ya = a + D["Lb"] / 2; yb = b - D["Lb"] / 2
+            if a == Y0: ya = a + max(D["Lb"], 20.0)
+            if b == Y1: yb = b - max(D["Lb"], 20.0)
+            if yb - ya >= 15.0: ys_slots.append((round(ya, 4), round(yb, 4)))
+    else:
+        # slots long in x (along the ribs): x segments Ls with bridges Lbx; columns ws wide in each rib bay
+        rows = []
+        n = max(1, int((sx1 - sx0 + D["Lbx"]) // (D["Ls"] + D["Lbx"])))
+        Ls = (sx1 - sx0 - (n - 1) * D["Lbx"]) / n
+        for k in range(n):
+            a = sx0 + k * (Ls + D["Lbx"]); rows.append((round(a, 4), round(a + Ls, 4)))
+        ys_slots = []
+        edges = [Y0] + g["ribs"] + [Y1]
+        for a, b in zip(edges[:-1], edges[1:]):
+            lo = a + (D["b_r"] / 2 if a != Y0 else 20.0); hi = b - (D["b_r"] / 2 if b != Y1 else 20.0)
+            avail = hi - lo
+            nc = int((avail + D["wsol"]) // (D["ws"] + D["wsol"]))
+            if nc <= 0: continue
+            used = nc * D["ws"] + (nc - 1) * D["wsol"]; y = lo + (avail - used) / 2
+            for k in range(nc):
+                ys_slots.append((round(y, 4), round(y + D["ws"], 4))); y += D["ws"] + D["wsol"]
     g["slot_rows"] = rows
-    # slots in y: between ribs, bridge Lb centred on each rib; also a bridge next to the end plates
-    ys_slots = []
-    edges = [Y0] + g["ribs"] + [Y1]
-    for a, b in zip(edges[:-1], edges[1:]):
-        ya = a + D["Lb"] / 2; yb = b - D["Lb"] / 2
-        if a == Y0: ya = a + max(D["Lb"], 20.0)
-        if b == Y1: yb = b - max(D["Lb"], 20.0)
-        if yb - ya >= 15.0: ys_slots.append((round(ya, 4), round(yb, 4)))
     g["slot_ys"] = ys_slots
     return g
 
@@ -190,7 +207,7 @@ def build(D):
     # ---- back box
     plate_yz(g["x_r"], g["z_b"], g["z_top"], D["tb"], "box rear wall")
     plate_yz(g["x_f"], g["z_b"], g["z_top"], D["tb"], "box front wall")
-    plate_xy(g["z_b"], g["x_r"], g["x_f"], D["tb"], "box bottom")
+    plate_xy(g["z_b"], g["x_r"], g["x_f"], D["tb_bot"] or D["tb"], "box bottom")
     plate_xy(g["z_top"], g["x_r"], g["x_f"], D["tb_top"], "box top", top=True)
     if D["box_mid"]:
         plate_xy(25.0, g["x_r"], g["x_f"], D["t_mid"], "box mid web")
@@ -208,9 +225,11 @@ def build(D):
     plate_yz(g["x_n"], g["z_nb"] if not D["lip"] else 25.0 - D["lip"], g["z_top"], D["tn"], "nosing front wall")
     if D["lip"]:
         pass  # front wall above already runs down to 25 - lip (lip thickness taken = tn)
-    plate_yz(g["x_ni"], g["z_nb"], g["z_top"], D["tn"], "nosing inner wall")
-    plate_xy(g["z_nb"], g["x_ni"], g["x_n"], D["tn"], "nosing bottom")
-    plate_xy(g["z_top"], g["x_ni"], g["x_n"], max(D["tn"], D["ts"]), "nosing top", top=True)
+    if D.get("nose_type", "box") in ("box", "C"):
+        plate_yz(g["x_ni"], g["z_nb"], g["z_top"], D["tn"], "nosing inner wall")
+    if D.get("nose_type", "box") == "box":
+        plate_xy(g["z_nb"], g["x_ni"], g["x_n"], D["tn_bot"] or D["tn"], "nosing bottom")
+    plate_xy(g["z_top"], g["x_ni"], g["x_n"], D["tn_top"] or max(D["tn"], D["ts"]), "nosing top", top=True)
     # ---- deck
     rows = g["slot_rows"]; sy = g["slot_ys"]
     def hole(xm, ym):
@@ -345,6 +364,10 @@ def solve(D, load, swf=1.0, label="", want_modes=False):
     res["by_part"] = by_part
     res["pins"] = {n: [round(v, 1) for v in ops.nodeReaction(b)[:3]] for n, (c, b) in pins.items()}
     res["mass_model_kg"] = mass(D, elems, beams)
+    mp = {}
+    for e in elems.values(): mp[e["part"]] = mp.get(e["part"], 0.0) + e["t"] * e["area"] * RHO * 1e3
+    for b in beams.values(): mp[b["part"]] = mp.get(b["part"], 0.0) + b["A"] * b["L"] * RHO * 1e3
+    res["mass_parts"] = {k: round(v, 3) for k, v in mp.items()}
     res["open_area"] = open_area(D, g)
     if want_modes:
         # lumped mass from self-weight (+ extra), first vertical mode
