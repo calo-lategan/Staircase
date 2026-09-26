@@ -1,0 +1,108 @@
+{
+ "parts": {
+  "rails 4 (guide rails)": {
+   "RC_R": 21.24846,
+   "OPT": 23.68521,
+   "tag_RC_R": "C",
+   "tag_OPT": "C (placeholder: RC_R section widened for the box pole)",
+   "src": "RC_R: inv. U 82 / U 94 x 70 x 5 (poles_barrier C3, steps_pins_rails 70 deep) x (1761+1849) per side; OPT: rail_design.md (pending)"
+  },
+  "barrier poles 12": {
+   "RC_R": 43.47289705669585,
+   "OPT": 26.998272,
+   "tag_RC_R": "C",
+   "tag_OPT": "C",
+   "src": "pole_opt.py: RC_R solid 25x55 sqrt-taper 6082-T651 plate, 1,344 long (40 latch + 167 rail zone + 1,137 arm), tongue 35, top 60 at 30; OPT custom 6082-T6 box 25 along x 80 across x 5.5 / 2.5 walls, util 0.87 (R179 1.5 kN, arm 1,137)"
+  },
+  "pole fold locks (latch pins, 2 levels x 12)": {
+   "RC_R": 0.36,
+   "OPT": 0.8400000000000001,
+   "tag_RC_R": "E",
+   "tag_OPT": "E",
+   "src": "RC_R: one O10 A4 double-ended spring latch per pole (poles_barrier C3); OPT adds the upper-rail vertical lock that frame_pole_inplane.py shows is needed"
+  },
+  "top rails 2 + handrails 2": {
+   "RC_R": 6.05826,
+   "OPT": 4.4506968256147825,
+   "tag_RC_R": "C",
+   "tag_OPT": "C",
+   "src": "RC_R: U 25x25x5 x 1,726 (final_results.py mass table); OPT: O40 x 2 round tube 6082/6060 (R64 grip 25-50, target 40): 1.25 kN over a 305 span -> 0.36"
+  },
+  "top-rail pivots / saddles 12 + O8 pins": {
+   "RC_R": 0.85,
+   "OPT": 0.54,
+   "tag_RC_R": "E",
+   "tag_OPT": "E",
+   "src": "RC_R: repo pivots 0.61 kg (final_results.py) + O8 pins; OPT: pressed-in end plug saddle in the box pole top"
+  },
+  "handrail brackets 12 + screws": {
+   "RC_R": 1.908,
+   "OPT": 1.02,
+   "tag_RC_R": "E",
+   "tag_OPT": "E",
+   "src": "RC_R: waterjet 25 mm plate S-profile 16 deep (poles_barrier A5), 2 x M8; OPT: 12 mm plate S-profile 18 deep (W 648 mm3 -> 0.64), 2 x M6 in rivnuts"
+  },
+  "axles 2 (48.3 x 4 x 1,470)": {
+   "RC_R": 4.419006952199493,
+   "OPT": 4.419006952199493,
+   "tag_RC_R": "C",
+   "tag_OPT": "C",
+   "src": "after_changes.py sizes, length 1,470 per supports.md 'missing for Gerald' 1; 48.3x4 is already the lightest tube that passes held (0.96)"
+  },
+  "axle collars 8 (split, 2 x M8)": {
+   "RC_R": 1.2,
+   "OPT": 0.8,
+   "tag_RC_R": "E",
+   "tag_OPT": "E",
+   "src": "supports.md M3; OPT: 20 wide collar, one M8"
+  },
+  "hooks 4 (10 mm plate, bore 49) + 8 x M12 bolts": {
+   "RC_R": 2.68,
+   "OPT": 1.96,
+   "tag_RC_R": "E",
+   "tag_OPT": "E",
+   "src": "hook_b() of final_results.py with r_i 24.5: base held 65 mm, top 46 mm (supports C1); OPT: base hook over the axle (supports A1) -> ring in bearing"
+  },
+  "hook keeper pins 4 (+ R-clip, lanyard)": {
+   "RC_R": 0.32,
+   "OPT": 0.32,
+   "tag_RC_R": "E",
+   "tag_OPT": "E",
+   "src": "supports.md C4/C5, double-cheek O14 / O12"
+  },
+  "step pins 24 (A4, headed, nut, washer)": {
+   "RC_R": 4.224,
+   "OPT": 2.496,
+   "tag_RC_R": "E",
+   "tag_OPT": "E",
+   "src": "RC_R: O20 x ~30 shank + M20 thin nut (Rev C F2, steps_pins_rails C4); OPT: O16 with the end plate against the rail wall (steps_pins_rails Alt-2: 0.65)"
+  },
+  "caps, end plugs, returns": {
+   "RC_R": 0.68,
+   "OPT": 0.6,
+   "tag_RC_R": "E",
+   "tag_OPT": "E",
+   "src": "8 rail end caps, 12 pole caps, 8 rail/handrail end returns (R71)"
+  }
+ },
+ "step": {
+  "kg_each": null,
+  "src": "step_optimisation.md (pending)",
+  "includes_end_plates": true,
+  "includes_pins": false
+ },
+ "rail": {
+  "kg_unit": null,
+  "src": "rail_design.md (pending)"
+ },
+ "non_step": {
+  "RC_R": 87.42062400889536,
+  "OPT": 68.12918577781426
+ },
+ "relaxations_kg": {
+  "A. barrier poles + top rail on ONE exposed side only; other side: 6 short lock posts through both rails (fold lock kept)": -11.567290206403696,
+  "B. 4 poles per side instead of 6 (8 total, 457 mm spacing on the slope)": -9.799424,
+  "C. top axle replaced by 2 stub pins in the landing brackets (the steps and base axle keep the sides together)": -1.7095034760997465,
+  "D. rails narrower on a pole-free side (with A): web back to the step-pin-only width": null
+ }
+}

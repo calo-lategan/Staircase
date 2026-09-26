@@ -1,0 +1,173 @@
+{
+ "note": "ULS crowd, in-plane pole moments (N mm), slot H forces (N)",
+ "cases": {
+  "solid 25x55 (Rev C) | vert.lock lower only | L base pinned": {
+   "M_inplane_max_Nmm": 1440301.939592548,
+   "N_max": 7527.220938752464,
+   "sigma_MPa": 251.39815672888108,
+   "util_inplane_alone": 1.1061518896070768,
+   "uz_max_ULS_mm": 400.5286028131029
+  },
+  "solid 25x55 (Rev C) | vert.lock lower only | R base pinned": {
+   "M_inplane_max_Nmm": 1387736.1441008556,
+   "N_max": 7287.805832972542,
+   "sigma_MPa": 242.22303606124024,
+   "util_inplane_alone": 1.0657813586694571,
+   "uz_max_ULS_mm": 383.05372400073054
+  },
+  "solid 25x55 (Rev C) | vert.lock lower only | L base slides": {
+   "M_inplane_max_Nmm": 1435916.5022208414,
+   "N_max": 7660.285484521062,
+   "sigma_MPa": 250.63269856945593,
+   "util_inplane_alone": 1.1027838737056062,
+   "uz_max_ULS_mm": 389.5208853940678
+  },
+  "solid 25x55 (Rev C) | vert.lock lower only | R base slides": {
+   "M_inplane_max_Nmm": 1407539.40908094,
+   "N_max": 7708.631337044528,
+   "sigma_MPa": 245.67960594867316,
+   "util_inplane_alone": 1.080990266174162,
+   "uz_max_ULS_mm": 383.8858551133902
+  },
+  "solid 25x55 (Rev C) | vert.lock both rails | L base pinned": {
+   "M_inplane_max_Nmm": 15565.796408273189,
+   "N_max": 5190.211907346011,
+   "sigma_MPa": 2.7169390094440473,
+   "util_inplane_alone": 0.01195453164155381,
+   "uz_max_ULS_mm": 0.5080245046156919
+  },
+  "solid 25x55 (Rev C) | vert.lock both rails | R base pinned": {
+   "M_inplane_max_Nmm": 17268.61307857196,
+   "N_max": 4807.996346148598,
+   "sigma_MPa": 3.014157919168924,
+   "util_inplane_alone": 0.013262294844343266,
+   "uz_max_ULS_mm": 0.5711632251011426
+  },
+  "solid 25x55 (Rev C) | vert.lock both rails | L base slides": {
+   "M_inplane_max_Nmm": 29907.009195487437,
+   "N_max": 6035.239513248495,
+   "sigma_MPa": 5.220132514121444,
+   "util_inplane_alone": 0.022968583062134354,
+   "uz_max_ULS_mm": 0.9211683332700499
+  },
+  "solid 25x55 (Rev C) | vert.lock both rails | R base slides": {
+   "M_inplane_max_Nmm": 31880.32576449894,
+   "N_max": 5899.584791013573,
+   "sigma_MPa": 5.564565951621633,
+   "util_inplane_alone": 0.024484090187135186,
+   "uz_max_ULS_mm": 0.9811925027426843
+  },
+  "I 25x75 tf6 tw4 | vert.lock lower only | L base pinned": {
+   "M_inplane_max_Nmm": 1389206.838049429,
+   "N_max": 7648.691690365675,
+   "sigma_MPa": 1087.9697685369251,
+   "util_inplane_alone": 4.787066981562471,
+   "uz_max_ULS_mm": 1628.3661973307321
+  },
+  "I 25x75 tf6 tw4 | vert.lock lower only | R base pinned": {
+   "M_inplane_max_Nmm": 1351141.1731588612,
+   "N_max": 7453.17327386237,
+   "sigma_MPa": 1058.1583023924418,
+   "util_inplane_alone": 4.655896530526745,
+   "uz_max_ULS_mm": 1574.2094052349073
+  },
+  "I 25x75 tf6 tw4 | vert.lock lower only | L base slides": {
+   "M_inplane_max_Nmm": 1524313.7886056385,
+   "N_max": 8548.360722421086,
+   "sigma_MPa": 1193.7799860641865,
+   "util_inplane_alone": 5.252631938682421,
+   "uz_max_ULS_mm": 1776.7845969913772
+  },
+  "I 25x75 tf6 tw4 | vert.lock lower only | R base slides": {
+   "M_inplane_max_Nmm": 1351090.6090076908,
+   "N_max": 7749.243559847674,
+   "sigma_MPa": 1058.1187026249065,
+   "util_inplane_alone": 4.655722291549589,
+   "uz_max_ULS_mm": 1564.3811081494257
+  },
+  "I 25x75 tf6 tw4 | vert.lock both rails | L base pinned": {
+   "M_inplane_max_Nmm": 9046.557143190312,
+   "N_max": 5062.4688566488885,
+   "sigma_MPa": 7.084892192837472,
+   "util_inplane_alone": 0.03117352564848488,
+   "uz_max_ULS_mm": 0.5217535866438159
+  },
+  "I 25x75 tf6 tw4 | vert.lock both rails | R base pinned": {
+   "M_inplane_max_Nmm": 9961.930069065893,
+   "N_max": 4696.5241836257965,
+   "sigma_MPa": 7.801774692270136,
+   "util_inplane_alone": 0.034327808645988604,
+   "uz_max_ULS_mm": 0.584408542674112
+  },
+  "I 25x75 tf6 tw4 | vert.lock both rails | L base slides": {
+   "M_inplane_max_Nmm": 16754.939649594955,
+   "N_max": 5921.214759210369,
+   "sigma_MPa": 13.121780942292897,
+   "util_inplane_alone": 0.05773583614608875,
+   "uz_max_ULS_mm": 0.9444892862347294
+  },
+  "I 25x75 tf6 tw4 | vert.lock both rails | R base slides": {
+   "M_inplane_max_Nmm": 17844.541066734626,
+   "N_max": 5800.18489766862,
+   "sigma_MPa": 13.97511204399366,
+   "util_inplane_alone": 0.06149049299357211,
+   "uz_max_ULS_mm": 1.0065709894641395
+  },
+  "box 25x70 tf6 tw3 | vert.lock lower only | L base pinned": {
+   "M_inplane_max_Nmm": 1408278.8587508043,
+   "N_max": 7342.018997368278,
+   "sigma_MPa": 303.53977539719716,
+   "util_inplane_alone": 1.3355750117476677,
+   "uz_max_ULS_mm": 475.45382893369595
+  },
+  "box 25x70 tf6 tw3 | vert.lock lower only | R base pinned": {
+   "M_inplane_max_Nmm": 1381170.9523632114,
+   "N_max": 7220.261032025426,
+   "sigma_MPa": 297.6969497627365,
+   "util_inplane_alone": 1.3098665789560406,
+   "uz_max_ULS_mm": 463.8090894417734
+  },
+  "box 25x70 tf6 tw3 | vert.lock lower only | L base slides": {
+   "M_inplane_max_Nmm": 1480153.6278926148,
+   "N_max": 7861.3646303273445,
+   "sigma_MPa": 319.0316299730607,
+   "util_inplane_alone": 1.4037391718814674,
+   "uz_max_ULS_mm": 492.9442698988002
+  },
+  "box 25x70 tf6 tw3 | vert.lock lower only | R base slides": {
+   "M_inplane_max_Nmm": 1396541.3109492229,
+   "N_max": 7612.875698827054,
+   "sigma_MPa": 301.0098697600663,
+   "util_inplane_alone": 1.3244434269442917,
+   "uz_max_ULS_mm": 463.9919022657692
+  },
+  "box 25x70 tf6 tw3 | vert.lock both rails | L base pinned": {
+   "M_inplane_max_Nmm": 12957.324277229563,
+   "N_max": 5068.504440971569,
+   "sigma_MPa": 2.7928156958542183,
+   "util_inplane_alone": 0.012288389061758562,
+   "uz_max_ULS_mm": 0.5127482222331479
+  },
+  "box 25x70 tf6 tw3 | vert.lock both rails | R base pinned": {
+   "M_inplane_max_Nmm": 14324.969392450344,
+   "N_max": 4701.349310689405,
+   "sigma_MPa": 3.0875972929204623,
+   "util_inplane_alone": 0.013585428088850035,
+   "uz_max_ULS_mm": 0.574434471356857
+  },
+  "box 25x70 tf6 tw3 | vert.lock both rails | L base slides": {
+   "M_inplane_max_Nmm": 24636.33756468881,
+   "N_max": 5890.926074771649,
+   "sigma_MPa": 5.310104830820603,
+   "util_inplane_alone": 0.023364461255610657,
+   "uz_max_ULS_mm": 0.9219693613173379
+  },
+  "box 25x70 tf6 tw3 | vert.lock both rails | R base slides": {
+   "M_inplane_max_Nmm": 26248.434762218687,
+   "N_max": 5763.544524207289,
+   "sigma_MPa": 5.657575516910948,
+   "util_inplane_alone": 0.024893332274408174,
+   "uz_max_ULS_mm": 0.9811201102724064
+  }
+ }
+}

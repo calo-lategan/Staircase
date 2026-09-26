@@ -1,0 +1,543 @@
+{
+ "source": "25.9.2026 final STEP LADDER-standard.ifc",
+ "blend": "FINAL_standard.blend",
+ "out": "FINAL_standard.ifc",
+ "products_before": 685,
+ "removed": 33,
+ "products_after": 652,
+ "blend_objects": 632,
+ "unmeshable_kept": 20,
+ "matches_blend": true,
+ "reshaped": 0,
+ "moved": 0,
+ "removed_elements": [
+  {
+   "guid": "0eiv8JGcn4LQJkq71ho8FI",
+   "id": 11070,
+   "name": "Undefined",
+   "material": "F04_Emerald_Green",
+   "lo": [
+    8.636294,
+    -17.088461,
+    1.655006
+   ],
+   "hi": [
+    8.661294,
+    -17.078441,
+    1.680006
+   ]
+  },
+  {
+   "guid": "0gdx0K04PJjjhY21hMZdF$",
+   "id": 7033,
+   "name": "Undefined",
+   "material": "F04_Emerald_Green",
+   "lo": [
+    9.136294,
+    -17.108481,
+    1.305006
+   ],
+   "hi": [
+    9.161294,
+    -17.098461,
+    1.330006
+   ]
+  },
+  {
+   "guid": "0phcq_xaHFQB0EA3C$KPyc",
+   "id": 100,
+   "name": "Undefined",
+   "material": null,
+   "lo": [
+    9.283794,
+    -18.523539,
+    -0.005999
+   ],
+   "hi": [
+    9.733794,
+    -17.002119,
+    0.2125
+   ]
+  },
+  {
+   "guid": "111BT0wOr3IBkUM9u8ikfk",
+   "id": 2587,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.885781,
+    -17.080961,
+    -0.124949
+   ],
+   "hi": [
+    9.985781,
+    -16.980961,
+    -0.119949
+   ]
+  },
+  {
+   "guid": "14hqhOR8D5vOTnr8xiLHOq",
+   "id": 2498,
+   "name": "Undefined",
+   "material": null,
+   "lo": [
+    9.923431,
+    -16.993277,
+    -0.039349
+   ],
+   "hi": [
+    9.935931,
+    -16.993277,
+    -0.026849
+   ]
+  },
+  {
+   "guid": "17V1DL2El$JMRwxBIiecO1",
+   "id": 6929,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.921733,
+    -18.419557,
+    -0.024588
+   ],
+   "hi": [
+    9.952139,
+    -18.389152,
+    -0.021588
+   ]
+  },
+  {
+   "guid": "1Gwfo5h35k0vdDW2et94f4",
+   "id": 7667,
+   "name": "Undefined",
+   "material": "F04_Emerald_Green",
+   "lo": [
+    8.886294,
+    -17.088461,
+    1.480006
+   ],
+   "hi": [
+    8.911294,
+    -17.078441,
+    1.505006
+   ]
+  },
+  {
+   "guid": "1M4j$iPdCLQXyL3X41kp49",
+   "id": 7708,
+   "name": "Undefined",
+   "material": "F04_Emerald_Green",
+   "lo": [
+    9.386294,
+    -17.088461,
+    1.130006
+   ],
+   "hi": [
+    9.411294,
+    -17.078441,
+    1.155006
+   ]
+  },
+  {
+   "guid": "1VrlYAGA0POdNikV_tNQkl",
+   "id": 7660,
+   "name": "Undefined",
+   "material": "F04_Emerald_Green",
+   "lo": [
+    8.886294,
+    -17.108481,
+    1.480006
+   ],
+   "hi": [
+    8.911294,
+    -17.098461,
+    1.505006
+   ]
+  },
+  {
+   "guid": "1cUz7ex4fwoGiBrRgPLgMS",
+   "id": 6749,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.923781,
+    -18.416278,
+    -0.119949
+   ],
+   "hi": [
+    9.947781,
+    -18.392277,
+    -0.071849
+   ]
+  },
+  {
+   "guid": "1nk3j6agX2_uvspkMFKGfH",
+   "id": 2579,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.917975,
+    -17.048769,
+    -0.058088
+   ],
+   "hi": [
+    9.953587,
+    -17.012998,
+    -0.058088
+   ]
+  },
+  {
+   "guid": "1y0JLRABfDCQsrdC739Myh",
+   "id": 5271,
+   "name": "Undefined",
+   "material": null,
+   "lo": [
+    9.923431,
+    -18.441961,
+    -0.039349
+   ],
+   "hi": [
+    9.935931,
+    -18.441961,
+    -0.026849
+   ]
+  },
+  {
+   "guid": "1yeB$w4gN6J7fy156hfdKp",
+   "id": 6899,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.923781,
+    -18.416278,
+    -0.105555
+   ],
+   "hi": [
+    9.947781,
+    -18.392277,
+    -0.057455
+   ]
+  },
+  {
+   "guid": "2$apMBXbUOHrIstEBYnJVh",
+   "id": 5337,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.917975,
+    -18.42224,
+    -0.058088
+   ],
+   "hi": [
+    9.953587,
+    -18.386469,
+    -0.058088
+   ]
+  },
+  {
+   "guid": "22$w3cv_mDAswUrPNTDXWs",
+   "id": 7258,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    8.123321,
+    -18.352352,
+    0.948225
+   ],
+   "hi": [
+    8.148323,
+    -17.043277,
+    0.973227
+   ]
+  },
+  {
+   "guid": "24sMwAzBr7CBylpMdgzty1",
+   "id": 2559,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.923431,
+    -18.352352,
+    -0.051849
+   ],
+   "hi": [
+    9.948431,
+    -17.043277,
+    -0.026849
+   ]
+  },
+  {
+   "guid": "2CbC9np1xqf2slJRzOvakx",
+   "id": 5326,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.923431,
+    -18.391961,
+    -0.051849
+   ],
+   "hi": [
+    9.948431,
+    -17.082886,
+    -0.026849
+   ]
+  },
+  {
+   "guid": "2EN4XbAhfCOA6FTe2AA9mZ",
+   "id": 5170,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.917818,
+    -17.048924,
+    -0.058088
+   ],
+   "hi": [
+    9.953744,
+    -17.012998,
+    -0.026849
+   ]
+  },
+  {
+   "guid": "2H2lLlZQHCJv7iRJqK3S1_",
+   "id": 5183,
+   "name": "Undefined",
+   "material": null,
+   "lo": [
+    9.623431,
+    -16.993278,
+    -0.089349
+   ],
+   "hi": [
+    9.635931,
+    -16.993278,
+    -0.076849
+   ]
+  },
+  {
+   "guid": "2Xxy8GvCw5I2MzsALngR4v",
+   "id": 7040,
+   "name": "Undefined",
+   "material": "F04_Emerald_Green",
+   "lo": [
+    9.136294,
+    -17.088461,
+    1.305006
+   ],
+   "hi": [
+    9.161294,
+    -17.078441,
+    1.330006
+   ]
+  },
+  {
+   "guid": "2h__u_rCGfYhpHCTQaEAmu",
+   "id": 6888,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.885781,
+    -18.42224,
+    -0.073877
+   ],
+   "hi": [
+    9.985781,
+    -18.386315,
+    -0.058088
+   ]
+  },
+  {
+   "guid": "2jVgdox5z2o8pJrPtNhMcA",
+   "id": 5100,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.885781,
+    -17.048924,
+    -0.073877
+   ],
+   "hi": [
+    9.985781,
+    -17.012998,
+    -0.058088
+   ]
+  },
+  {
+   "guid": "2mabg6t$y6gPYrooHhudZt",
+   "id": 5343,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.885781,
+    -18.454278,
+    -0.124949
+   ],
+   "hi": [
+    9.985781,
+    -18.354277,
+    -0.119949
+   ]
+  },
+  {
+   "guid": "33atrnwf55ahaX7Vo0MvFB",
+   "id": 6949,
+   "name": "Undefined",
+   "material": null,
+   "lo": [
+    9.623431,
+    -18.441961,
+    -0.089349
+   ],
+   "hi": [
+    9.635931,
+    -18.441961,
+    -0.076849
+   ]
+  },
+  {
+   "guid": "34m4S9tMB8GeRLWgSWjdV5",
+   "id": 11063,
+   "name": "Undefined",
+   "material": "F04_Emerald_Green",
+   "lo": [
+    8.636294,
+    -17.108481,
+    1.655006
+   ],
+   "hi": [
+    8.661294,
+    -17.098461,
+    1.680006
+   ]
+  },
+  {
+   "guid": "39cLHpI79kA56F1pflCVYw",
+   "id": 6936,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.917818,
+    -18.42224,
+    -0.058088
+   ],
+   "hi": [
+    9.953744,
+    -18.386315,
+    -0.026849
+   ]
+  },
+  {
+   "guid": "3M0C9fptQZL6IhUqbHGZj8",
+   "id": 6909,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.927,
+    -18.414291,
+    -0.058088
+   ],
+   "hi": [
+    9.946873,
+    -18.394418,
+    -0.018088
+   ]
+  },
+  {
+   "guid": "3Y2q59aSLEhvpXp3jErLCr",
+   "id": 5163,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.921733,
+    -17.046086,
+    -0.024588
+   ],
+   "hi": [
+    9.952139,
+    -17.015681,
+    -0.021588
+   ]
+  },
+  {
+   "guid": "3a_Ss2oMzx6lfRX2bpmMNS",
+   "id": 5232,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.623431,
+    -18.352352,
+    -0.101849
+   ],
+   "hi": [
+    9.648431,
+    -17.043277,
+    -0.076849
+   ]
+  },
+  {
+   "guid": "3j7geLXo24GMnRCeViImR7",
+   "id": 7701,
+   "name": "Undefined",
+   "material": "F04_Emerald_Green",
+   "lo": [
+    9.386294,
+    -17.108481,
+    1.130006
+   ],
+   "hi": [
+    9.411294,
+    -17.098461,
+    1.155006
+   ]
+  },
+  {
+   "guid": "3qL9PFhG540xtPbqX5Scg5",
+   "id": 5138,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.927,
+    -17.04082,
+    -0.058088
+   ],
+   "hi": [
+    9.946873,
+    -17.020947,
+    -0.018088
+   ]
+  },
+  {
+   "guid": "3vabWlzffcvZBKsExFORV3",
+   "id": 5111,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.923781,
+    -17.042961,
+    -0.105555
+   ],
+   "hi": [
+    9.947781,
+    -17.018961,
+    -0.057455
+   ]
+  },
+  {
+   "guid": "3ytZQeNSfCiwL4AewZRl8T",
+   "id": 4853,
+   "name": "Undefined",
+   "material": "E08_Lime_Depth",
+   "lo": [
+    9.923781,
+    -17.042961,
+    -0.119949
+   ],
+   "hi": [
+    9.947781,
+    -17.018961,
+    -0.071849
+   ]
+  }
+ ]
+}
