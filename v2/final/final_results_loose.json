@@ -1,0 +1,1806 @@
+{
+ "model": "25.9.2026 final STEP LADDER-standard.ifc (standard 35 deg)",
+ "material": "EN AW-6082-T6, f_o 250 (t<=5), gM1 1.1, gM2 1.25",
+ "tread": {
+  "checks": [
+   {
+    "ref": "R113",
+    "check": "Frame stress (von Mises) - ULS crowd",
+    "value": 213.3,
+    "limit": 227.27,
+    "unit": "MPa",
+    "util": 0.939,
+    "status": "PASS",
+    "note": "at front lip x=277.5 y=482.5 z=48.8"
+   },
+   {
+    "ref": "R113",
+    "check": "Grating bar 3x25 stress - ULS crowd",
+    "value": 98.02,
+    "limit": 227.27,
+    "unit": "MPa",
+    "util": 0.431,
+    "status": "PASS",
+    "note": "bar at y=1205.0"
+   },
+   {
+    "ref": "R114",
+    "check": "Frame stress (von Mises) - ULS 4 kN patch front, mid-span",
+    "value": 844.42,
+    "limit": 227.27,
+    "unit": "MPa",
+    "util": 3.715,
+    "status": "FAIL",
+    "note": "at front lip x=277.5 y=582.5 z=48.8"
+   },
+   {
+    "ref": "R114",
+    "check": "Grating bar 3x25 stress - ULS 4 kN patch front, mid-span",
+    "value": 252.73,
+    "limit": 227.27,
+    "unit": "MPa",
+    "util": 1.112,
+    "status": "FAIL",
+    "note": "bar at y=1205.0"
+   },
+   {
+    "ref": "R114",
+    "check": "Frame stress (von Mises) - ULS 4 kN patch centre, mid-span",
+    "value": 689.19,
+    "limit": 227.27,
+    "unit": "MPa",
+    "util": 3.032,
+    "status": "FAIL",
+    "note": "at front lip x=277.5 y=582.5 z=48.8"
+   },
+   {
+    "ref": "R114",
+    "check": "Grating bar 3x25 stress - ULS 4 kN patch centre, mid-span",
+    "value": 189.95,
+    "limit": 227.27,
+    "unit": "MPa",
+    "util": 0.836,
+    "status": "PASS",
+    "note": "bar at y=1205.0"
+   },
+   {
+    "ref": "R114",
+    "check": "Frame stress (von Mises) - ULS 4 kN patch back, mid-span",
+    "value": 537.61,
+    "limit": 227.27,
+    "unit": "MPa",
+    "util": 2.365,
+    "status": "FAIL",
+    "note": "at front lip x=277.5 y=602.5 z=48.8"
+   },
+   {
+    "ref": "R114",
+    "check": "Grating bar 3x25 stress - ULS 4 kN patch back, mid-span",
+    "value": 130.3,
+    "limit": 227.27,
+    "unit": "MPa",
+    "util": 0.573,
+    "status": "PASS",
+    "note": "bar at y=1205.0"
+   },
+   {
+    "ref": "R114",
+    "check": "Frame stress (von Mises) - ULS 4 kN patch front, at left end",
+    "value": 404.99,
+    "limit": 227.27,
+    "unit": "MPa",
+    "util": 1.782,
+    "status": "FAIL",
+    "note": "at front lip x=277.5 y=182.5 z=48.8"
+   },
+   {
+    "ref": "R114",
+    "check": "Grating bar 3x25 stress - ULS 4 kN patch front, at left end",
+    "value": 325.96,
+    "limit": 227.27,
+    "unit": "MPa",
+    "util": 1.434,
+    "status": "FAIL",
+    "note": "bar at y=25.0"
+   },
+   {
+    "ref": "R114",
+    "check": "Frame stress (von Mises) - ULS 4 kN patch back, at left end",
+    "value": 237.04,
+    "limit": 227.27,
+    "unit": "MPa",
+    "util": 1.043,
+    "status": "FAIL",
+    "note": "at front lip x=277.5 y=202.5 z=48.8"
+   },
+   {
+    "ref": "R114",
+    "check": "Grating bar 3x25 stress - ULS 4 kN patch back, at left end",
+    "value": 179.0,
+    "limit": 227.27,
+    "unit": "MPa",
+    "util": 0.788,
+    "status": "PASS",
+    "note": "bar at y=25.0"
+   },
+   {
+    "ref": "R114",
+    "check": "Frame stress (von Mises) - ULS 4 kN patch front, at right end",
+    "value": 407.05,
+    "limit": 227.27,
+    "unit": "MPa",
+    "util": 1.791,
+    "status": "FAIL",
+    "note": "at front lip x=277.5 y=1047.5 z=48.8"
+   },
+   {
+    "ref": "R114",
+    "check": "Grating bar 3x25 stress - ULS 4 kN patch front, at right end",
+    "value": 346.57,
+    "limit": 227.27,
+    "unit": "MPa",
+    "util": 1.525,
+    "status": "FAIL",
+    "note": "bar at y=1205.0"
+   },
+   {
+    "ref": "R115",
+    "check": "Crowd 7.5 kN/m2: nosing deflection vs L/250",
+    "value": 18.12,
+    "limit": 4.86,
+    "unit": "mm",
+    "util": 3.727,
+    "status": "FAIL",
+    "note": "twist 2.79 deg; back edge 4.75 mm"
+   },
+   {
+    "ref": "R115",
+    "check": "One person 1 kN at the nosing: deflection < 10 mm",
+    "value": 19.31,
+    "limit": 10.0,
+    "unit": "mm",
+    "util": 1.931,
+    "status": "FAIL",
+    "note": ""
+   },
+   {
+    "ref": "R115 / EN 12811",
+    "check": "4 kN patch (front): deflection vs L/100 (and <= 25 mm)",
+    "value": 60.08,
+    "limit": 12.16,
+    "unit": "mm",
+    "util": 4.942,
+    "status": "FAIL",
+    "note": "twist 10.0 deg"
+   },
+   {
+    "ref": "R115 / EN 12811",
+    "check": "4 kN patch (centre): deflection vs L/100 (and <= 25 mm)",
+    "value": 49.54,
+    "limit": 12.16,
+    "unit": "mm",
+    "util": 4.075,
+    "status": "FAIL",
+    "note": "twist 7.6 deg"
+   },
+   {
+    "ref": "R115 / EN 12811",
+    "check": "4 kN patch (back): deflection vs L/100 (and <= 25 mm)",
+    "value": 39.01,
+    "limit": 12.16,
+    "unit": "mm",
+    "util": 3.209,
+    "status": "FAIL",
+    "note": "twist 5.2 deg"
+   },
+   {
+    "ref": "R170",
+    "check": "Pin L_rear shear (ULS 4 kN patch back, at left end)",
+    "value": 3293.37,
+    "limit": 11121.24,
+    "unit": "N",
+    "util": 0.296,
+    "status": "PASS",
+    "note": ""
+   },
+   {
+    "ref": "R170",
+    "check": "Pin L_rear bearing on the 5 mm rail wall",
+    "value": 3293.37,
+    "limit": 15000.0,
+    "unit": "N",
+    "util": 0.22,
+    "status": "PASS",
+    "note": ""
+   },
+   {
+    "ref": "R170",
+    "check": "Pin L_rear bending, cap -> wall lever 6.75 mm",
+    "value": 22230.26,
+    "limit": 29452.43,
+    "unit": "Nmm",
+    "util": 0.755,
+    "status": "PASS",
+    "note": ""
+   },
+   {
+    "ref": "R170",
+    "check": "Pin L_rear bending incl. rail torsion (+15.0 mm)",
+    "value": 69157.6,
+    "limit": 29452.43,
+    "unit": "Nmm",
+    "util": 2.348,
+    "status": "FAIL",
+    "note": "upper bound: the pin holds the rail's twist"
+   },
+   {
+    "ref": "R170",
+    "check": "Pin L_front shear (ULS 4 kN patch front, at left end)",
+    "value": 4120.58,
+    "limit": 11121.24,
+    "unit": "N",
+    "util": 0.371,
+    "status": "PASS",
+    "note": ""
+   },
+   {
+    "ref": "R170",
+    "check": "Pin L_front bearing on the 5 mm rail wall",
+    "value": 4120.58,
+    "limit": 15000.0,
+    "unit": "N",
+    "util": 0.275,
+    "status": "PASS",
+    "note": ""
+   },
+   {
+    "ref": "R170",
+    "check": "Pin L_front bending, cap -> wall lever 6.75 mm",
+    "value": 27813.94,
+    "limit": 29452.43,
+    "unit": "Nmm",
+    "util": 0.944,
+    "status": "PASS",
+    "note": ""
+   },
+   {
+    "ref": "R170",
+    "check": "Pin L_front bending incl. rail torsion (+15.0 mm)",
+    "value": 89569.95,
+    "limit": 29452.43,
+    "unit": "Nmm",
+    "util": 3.041,
+    "status": "FAIL",
+    "note": "upper bound: the pin holds the rail's twist"
+   },
+   {
+    "ref": "R170",
+    "check": "Pin R_rear shear (ULS 4 kN patch back, mid-span)",
+    "value": 1840.01,
+    "limit": 11121.24,
+    "unit": "N",
+    "util": 0.165,
+    "status": "PASS",
+    "note": ""
+   },
+   {
+    "ref": "R170",
+    "check": "Pin R_rear bearing on the 5 mm rail wall",
+    "value": 1840.01,
+    "limit": 15000.0,
+    "unit": "N",
+    "util": 0.123,
+    "status": "PASS",
+    "note": ""
+   },
+   {
+    "ref": "R170",
+    "check": "Pin R_rear bending, cap -> wall lever 14.0 mm",
+    "value": 25760.2,
+    "limit": 29452.43,
+    "unit": "Nmm",
+    "util": 0.875,
+    "status": "PASS",
+    "note": ""
+   },
+   {
+    "ref": "R170",
+    "check": "Pin R_rear bending incl. rail torsion (+10.0 mm)",
+    "value": 42809.62,
+    "limit": 29452.43,
+    "unit": "Nmm",
+    "util": 1.454,
+    "status": "FAIL",
+    "note": "upper bound: the pin holds the rail's twist"
+   },
+   {
+    "ref": "R170",
+    "check": "Pin R_front shear (ULS 4 kN patch front, at right end)",
+    "value": 4062.57,
+    "limit": 11121.24,
+    "unit": "N",
+    "util": 0.365,
+    "status": "PASS",
+    "note": ""
+   },
+   {
+    "ref": "R170",
+    "check": "Pin R_front bearing on the 5 mm rail wall",
+    "value": 4062.57,
+    "limit": 15000.0,
+    "unit": "N",
+    "util": 0.271,
+    "status": "PASS",
+    "note": ""
+   },
+   {
+    "ref": "R170",
+    "check": "Pin R_front bending, cap -> wall lever 14.0 mm",
+    "value": 56875.96,
+    "limit": 29452.43,
+    "unit": "Nmm",
+    "util": 1.931,
+    "status": "FAIL",
+    "note": ""
+   },
+   {
+    "ref": "R170",
+    "check": "Pin R_front bending incl. rail torsion (+10.0 mm)",
+    "value": 97427.74,
+    "limit": 29452.43,
+    "unit": "Nmm",
+    "util": 3.308,
+    "status": "FAIL",
+    "note": "upper bound: the pin holds the rail's twist"
+   }
+  ],
+  "cases": {
+   "SLS crowd 7.5 kN/m2": {
+    "lip": -18.12392225347973,
+    "back": -4.7455245589146005,
+    "twist": 2.7851704371065527,
+    "vm": 142.5374310629566,
+    "bar": 65.49198571980776,
+    "pins": {
+     "L_rear": [
+      -156.7,
+      0.0,
+      475.8
+     ],
+     "L_front": [
+      156.7,
+      0.0,
+      687.8
+     ],
+     "R_rear": [
+      -74.6,
+      0.0,
+      484.2
+     ],
+     "R_front": [
+      74.6,
+      0.0,
+      665.6
+     ]
+    }
+   },
+   "ULS crowd": {
+    "lip": -27.12103444528774,
+    "back": -7.098372937895029,
+    "twist": 4.164338910241138,
+    "vm": 213.29667079310403,
+    "bar": 98.019729631348,
+    "pins": {
+     "L_rear": [
+      -234.1,
+      0.0,
+      711.3
+     ],
+     "L_front": [
+      234.1,
+      0.0,
+      1029.2
+     ],
+     "R_rear": [
+      -111.5,
+      0.0,
+      723.9
+     ],
+     "R_front": [
+      111.5,
+      0.0,
+      996.0
+     ]
+    }
+   },
+   "SLS person 1 kN at nosing (100x100)": {
+    "lip": -19.303097297338947,
+    "back": -2.578230388401707,
+    "twist": 3.4803106485930484,
+    "vm": 188.7441719011776,
+    "bar": 58.31840868721441,
+    "pins": {
+     "L_rear": [
+      169.3,
+      0.0,
+      35.1
+     ],
+     "L_front": [
+      -169.3,
+      0.0,
+      497.3
+     ],
+     "R_rear": [
+      74.6,
+      0.0,
+      28.0
+     ],
+     "R_front": [
+      -74.6,
+      0.0,
+      503.0
+     ]
+    }
+   },
+   "SLS 4 kN patch front, mid-span": {
+    "lip": -60.06538370275003,
+    "back": -11.599516256000905,
+    "twist": 9.995139790098676,
+    "vm": 563.2798004597555,
+    "bar": 168.6328067883219,
+    "pins": {
+     "L_rear": [
+      129.6,
+      0.0,
+      526.5
+     ],
+     "L_front": [
+      -129.6,
+      0.0,
+      1507.4
+     ],
+     "R_rear": [
+      24.0,
+      0.0,
+      525.3
+     ],
+     "R_front": [
+      -24.0,
+      0.0,
+      1504.1
+     ]
+    }
+   },
+   "ULS 4 kN patch front, mid-span": {
+    "lip": -90.03318075664,
+    "back": -17.37935472262384,
+    "twist": 14.799160985390328,
+    "vm": 844.4200648876663,
+    "bar": 252.73089341423332,
+    "pins": {
+     "L_rear": [
+      195.3,
+      0.0,
+      787.4
+     ],
+     "L_front": [
+      -195.3,
+      0.0,
+      2258.7
+     ],
+     "R_rear": [
+      36.5,
+      0.0,
+      785.6
+     ],
+     "R_front": [
+      -36.5,
+      0.0,
+      2253.8
+     ]
+    }
+   },
+   "SLS 4 kN patch centre, mid-span": {
+    "lip": -49.526077970131745,
+    "back": -12.832494573093173,
+    "twist": 7.600153395356171,
+    "vm": 459.79147935294475,
+    "bar": 126.77776972350094,
+    "pins": {
+     "L_rear": [
+      -262.7,
+      0.0,
+      830.0
+     ],
+     "L_front": [
+      262.7,
+      0.0,
+      1203.9
+     ],
+     "R_rear": [
+      -173.8,
+      0.0,
+      848.1
+     ],
+     "R_front": [
+      173.8,
+      0.0,
+      1181.3
+     ]
+    }
+   },
+   "ULS 4 kN patch centre, mid-span": {
+    "lip": -74.22424084908796,
+    "back": -19.22882275915297,
+    "twist": 11.309014554614704,
+    "vm": 689.1877603175619,
+    "bar": 189.9497752059917,
+    "pins": {
+     "L_rear": [
+      -393.1,
+      0.0,
+      1242.6
+     ],
+     "L_front": [
+      393.1,
+      0.0,
+      1803.5
+     ],
+     "R_rear": [
+      -260.2,
+      0.0,
+      1269.7
+     ],
+     "R_front": [
+      260.2,
+      0.0,
+      1769.7
+     ]
+    }
+   },
+   "SLS 4 kN patch back, mid-span": {
+    "lip": -39.002857505326794,
+    "back": -14.061330247637356,
+    "twist": 5.182345838605521,
+    "vm": 358.7372342791201,
+    "bar": 87.00909346146514,
+    "pins": {
+     "L_rear": [
+      -653.8,
+      0.0,
+      1133.6
+     ],
+     "L_front": [
+      653.8,
+      0.0,
+      900.3
+     ],
+     "R_rear": [
+      -371.0,
+      0.0,
+      1170.9
+     ],
+     "R_front": [
+      371.0,
+      0.0,
+      858.5
+     ]
+    }
+   },
+   "ULS 4 kN patch back, mid-span": {
+    "lip": -58.43940153980021,
+    "back": -21.072076751070114,
+    "twist": 7.738026246878728,
+    "vm": 537.6114739425875,
+    "bar": 130.29677421481026,
+    "pins": {
+     "L_rear": [
+      -979.7,
+      0.0,
+      1698.1
+     ],
+     "L_front": [
+      979.7,
+      0.0,
+      1348.0
+     ],
+     "R_rear": [
+      -556.0,
+      0.0,
+      1754.0
+     ],
+     "R_front": [
+      556.0,
+      0.0,
+      1285.4
+     ]
+    }
+   },
+   "ULS 4 kN patch front, at left end": {
+    "lip": -25.5003571426653,
+    "back": -5.12596470520736,
+    "twist": 4.237228216019795,
+    "vm": 404.99381047049314,
+    "bar": 325.959875305013,
+    "pins": {
+     "L_rear": [
+      -148.7,
+      0.0,
+      1361.3
+     ],
+     "L_front": [
+      148.7,
+      0.0,
+      4117.9
+     ],
+     "R_rear": [
+      -18.9,
+      0.0,
+      161.8
+     ],
+     "R_front": [
+      18.9,
+      0.0,
+      444.6
+     ]
+    }
+   },
+   "ULS 4 kN patch back, at left end": {
+    "lip": -16.68279713041494,
+    "back": -6.079329489458089,
+    "twist": 2.2081204866296456,
+    "vm": 237.04046944424454,
+    "bar": 179.00168629626546,
+    "pins": {
+     "L_rear": [
+      -902.5,
+      0.0,
+      3167.3
+     ],
+     "L_front": [
+      902.5,
+      0.0,
+      2311.8
+     ],
+     "R_rear": [
+      -132.7,
+      0.0,
+      347.3
+     ],
+     "R_front": [
+      132.7,
+      0.0,
+      259.0
+     ]
+    }
+   },
+   "ULS 4 kN patch front, at right end": {
+    "lip": -26.545736889611536,
+    "back": -5.165550720336197,
+    "twist": 4.4455825517053205,
+    "vm": 407.0523265615521,
+    "bar": 346.57255358122563,
+    "pins": {
+     "L_rear": [
+      33.6,
+      -0.0,
+      158.0
+     ],
+     "L_front": [
+      -33.6,
+      0.0,
+      455.0
+     ],
+     "R_rear": [
+      194.7,
+      0.0,
+      1414.5
+     ],
+     "R_front": [
+      -194.7,
+      0.0,
+      4057.9
+     ]
+    }
+   }
+  }
+ },
+ "rails": {
+  "pinned_base": {
+   "Lo_L | ULS crowd, all treads": {
+    "sigma": 617.3617118194817,
+    "util": 2.7163915320057197,
+    "s": 1672,
+    "N": 10705,
+    "M": 339082,
+    "section": "net (pin station)"
+   },
+   "Up_L | ULS crowd, all treads": {
+    "sigma": 468.19339525199354,
+    "util": 2.0600509391087716,
+    "s": 1641,
+    "N": 1581,
+    "M": -274444,
+    "section": "net (pin station)"
+   },
+   "Lo_L | ULS crowd, lower 3 treads": {
+    "sigma": 122.5907871766789,
+    "util": 0.5393994635773872,
+    "s": 0,
+    "N": 6391,
+    "M": -144089,
+    "section": "gross"
+   },
+   "Up_L | ULS crowd, lower 3 treads": {
+    "sigma": 195.91942574014456,
+    "util": 0.8620454732566362,
+    "s": 421,
+    "N": 3176,
+    "M": 108194,
+    "section": "net (pin station)"
+   },
+   "Lo_L | ULS crowd, upper 3 treads": {
+    "sigma": 528.0336860663737,
+    "util": 2.323348218692044,
+    "s": 1672,
+    "N": 7979,
+    "M": 293134,
+    "section": "net (pin station)"
+   },
+   "Up_L | ULS crowd, upper 3 treads": {
+    "sigma": 365.5832019733163,
+    "util": 1.6085660886825919,
+    "s": 1641,
+    "N": 1287,
+    "M": -214157,
+    "section": "net (pin station)"
+   },
+   "Lo_R | ULS crowd, all treads": {
+    "sigma": 679.8475199325021,
+    "util": 2.9913290877030096,
+    "s": 1716,
+    "N": 7967,
+    "M": 370109,
+    "section": "net (pin station)"
+   },
+   "Up_R | ULS crowd, all treads": {
+    "sigma": 1172.0443084581211,
+    "util": 5.156994957215733,
+    "s": 1671,
+    "N": 1361,
+    "M": -251690,
+    "section": "net (pin station)"
+   },
+   "Lo_R | ULS crowd, lower 3 treads": {
+    "sigma": 264.6874894606435,
+    "util": 1.1646249536268316,
+    "s": 0,
+    "N": 5186,
+    "M": -318248,
+    "section": "gross"
+   },
+   "Up_R | ULS crowd, lower 3 treads": {
+    "sigma": 487.1439544610251,
+    "util": 2.1434333996285106,
+    "s": 450,
+    "N": 2649,
+    "M": 101838,
+    "section": "net (pin station)"
+   },
+   "Lo_R | ULS crowd, upper 3 treads": {
+    "sigma": 563.9063820736868,
+    "util": 2.4811880811242224,
+    "s": 1716,
+    "N": 6165,
+    "M": 308363,
+    "section": "net (pin station)"
+   },
+   "Up_R | ULS crowd, upper 3 treads": {
+    "sigma": 896.7745123502897,
+    "util": 3.945807854341275,
+    "s": 1671,
+    "N": 1102,
+    "M": -192496,
+    "section": "net (pin station)"
+   }
+  },
+  "sliding_base": {
+   "Lo_L | ULS crowd, all treads | base slides": {
+    "sigma": 1108.503897687434,
+    "util": 4.877417149824709,
+    "s": 1672,
+    "N": -2549,
+    "M": 652939,
+    "section": "net (pin station)"
+   },
+   "Up_L | ULS crowd, all treads | base slides": {
+    "sigma": 655.9623925041042,
+    "util": 2.8862345270180585,
+    "s": 1641,
+    "N": 1914,
+    "M": -385307,
+    "section": "net (pin station)"
+   },
+   "Lo_L | ULS crowd, upper 3 treads | base slides": {
+    "sigma": 901.9524677250222,
+    "util": 3.968590857990098,
+    "s": 1672,
+    "N": -2075,
+    "M": 531270,
+    "section": "net (pin station)"
+   },
+   "Up_L | ULS crowd, upper 3 treads | base slides": {
+    "sigma": 508.05401131413294,
+    "util": 2.235437649782185,
+    "s": 1641,
+    "N": 1540,
+    "M": -298275,
+    "section": "net (pin station)"
+   },
+   "Lo_L | ULS crowd, lower 3 treads | base slides": {
+    "sigma": 249.48713376135834,
+    "util": 1.0977433885499768,
+    "s": 1672,
+    "N": -574,
+    "M": 146955,
+    "section": "net (pin station)"
+   },
+   "Up_L | ULS crowd, lower 3 treads | base slides": {
+    "sigma": 195.10440394954472,
+    "util": 0.8584593773779968,
+    "s": 421,
+    "N": 3478,
+    "M": 106908,
+    "section": "net (pin station)"
+   },
+   "Lo_R | ULS crowd, all treads | base slides": {
+    "sigma": 1127.6255707759806,
+    "util": 4.961552511414315,
+    "s": 1716,
+    "N": -2492,
+    "M": 647089,
+    "section": "net (pin station)"
+   },
+   "Up_R | ULS crowd, all treads | base slides": {
+    "sigma": 1578.9291578405255,
+    "util": 6.947288294498312,
+    "s": 1671,
+    "N": 1638,
+    "M": -339325,
+    "section": "net (pin station)"
+   },
+   "Lo_R | ULS crowd, upper 3 treads | base slides": {
+    "sigma": 915.2048769544564,
+    "util": 4.026901458599609,
+    "s": 1716,
+    "N": -2022,
+    "M": 525191,
+    "section": "net (pin station)"
+   },
+   "Up_R | ULS crowd, upper 3 treads | base slides": {
+    "sigma": 1215.2964973163223,
+    "util": 5.347304588191818,
+    "s": 1671,
+    "N": 1319,
+    "M": -261100,
+    "section": "net (pin station)"
+   },
+   "Lo_R | ULS crowd, lower 3 treads | base slides": {
+    "sigma": 246.07727064446604,
+    "util": 1.0827399908356508,
+    "s": 1716,
+    "N": -543,
+    "M": 141212,
+    "section": "net (pin station)"
+   },
+   "Up_R | ULS crowd, lower 3 treads | base slides": {
+    "sigma": 493.7599087025263,
+    "util": 2.172543598291116,
+    "s": 450,
+    "N": 2930,
+    "M": 102895,
+    "section": "net (pin station)"
+   }
+  },
+  "sections": {
+   "Lo_L": {
+    "gross": {
+     "A": 375,
+     "I": 21614.583333333336,
+     "zc": 9.166666666666666,
+     "W_top": 1365.1315789473686,
+     "W_bot": 2357.954545454546
+    },
+    "net": {
+     "A": 225.0,
+     "I": 11406.25,
+     "zc": 5.833333333333333,
+     "W_top": 595.1086956521739,
+     "W_bot": 1955.357142857143
+    }
+   },
+   "Up_L": {
+    "gross": {
+     "A": 375,
+     "I": 21614.583333333336,
+     "zc": 9.166666666666666,
+     "W_top": 1365.1315789473686,
+     "W_bot": 2357.954545454546
+    },
+    "net": {
+     "A": 225.0,
+     "I": 11406.25,
+     "zc": 5.833333333333333,
+     "W_top": 595.1086956521739,
+     "W_bot": 1955.357142857143
+    }
+   },
+   "Lo_R": {
+    "gross": {
+     "A": 325,
+     "I": 18946.3141025641,
+     "zc": 14.807692307692308,
+     "W_top": 1858.8836477987422,
+     "W_bot": 1279.4913419913419
+    },
+    "net": {
+     "A": 187.5,
+     "I": 10597.65625,
+     "zc": 18.25,
+     "W_top": 1570.023148148148,
+     "W_bot": 580.693493150685
+    }
+   },
+   "Up_R": {
+    "gross": {
+     "A": 275,
+     "I": 9891.098484848484,
+     "zc": 12.045454545454545,
+     "W_top": 1243.4523809523807,
+     "W_bot": 821.1477987421383
+    },
+    "net": {
+     "A": 162.5,
+     "I": 3389.9238782051284,
+     "zc": 15.673076923076923,
+     "W_top": 783.4490740740741,
+     "W_bot": 216.2896216768916
+    }
+   }
+  }
+ },
+ "components": [
+  {
+   "base": "slides",
+   "item": "Base axle O25x2.5",
+   "ref": "R147/R160",
+   "check": "Bending at the hook (hook 70 mm inboard of the jack)",
+   "value": 496.7,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 2.19,
+   "status": "FAIL",
+   "note": "R = 6426 N per side; W = 906 mm3. The model has two overlapping tubes at every axle position (duplicates)"
+  },
+  {
+   "base": "slides",
+   "item": "Base axle O25x2.5",
+   "ref": "R147",
+   "check": "Shear",
+   "value": 6426.3,
+   "limit": 14761.8,
+   "unit": "N",
+   "util": 0.44,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "base": "slides",
+   "item": "Top axle O25x2.5",
+   "ref": "R147",
+   "check": "Bending at the hook on the landing brackets",
+   "value": 342.7,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 1.51,
+   "status": "FAIL",
+   "note": "R = 4434 N; bracket span assumed like the base"
+  },
+  {
+   "base": "slides",
+   "item": "Hook plate 10 mm (base)",
+   "ref": "R150/R170",
+   "check": "Throat: N/A + M/W (curved beam, M = R x r_centroid)",
+   "value": 277.2,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 1.22,
+   "status": "FAIL",
+   "note": "approximate (hand): a plane-stress FE of the hook with contact is recommended for the final sign-off"
+  },
+  {
+   "base": "slides",
+   "item": "Hook plate 10 mm (base)",
+   "ref": "R170",
+   "check": "Bearing of the axle on the hook",
+   "value": 6426.3,
+   "limit": 75000.0,
+   "unit": "N",
+   "util": 0.09,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "base": "slides",
+   "item": "Hook plate 10 mm (top)",
+   "ref": "R150/R170",
+   "check": "Throat: N/A + M/W (curved beam, M = R x r_centroid)",
+   "value": 191.3,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 0.84,
+   "status": "PASS",
+   "note": "approximate (hand): a plane-stress FE of the hook with contact is recommended for the final sign-off"
+  },
+  {
+   "base": "slides",
+   "item": "Hook plate 10 mm (top)",
+   "ref": "R170",
+   "check": "Bearing of the axle on the hook",
+   "value": 4433.8,
+   "limit": 75000.0,
+   "unit": "N",
+   "util": 0.06,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "base": "slides",
+   "item": "Base jack rod M24",
+   "ref": "R147/R174",
+   "check": "Axial (stress area 353 mm2)",
+   "value": 18.2,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 0.08,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "base": "slides",
+   "item": "Footplate 100x100x5",
+   "ref": "R73/R174",
+   "check": "Plate bending as a cantilever from the rod (uniform ground pressure)",
+   "value": 111.4,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 0.49,
+   "status": "PASS",
+   "note": "ground pressure 0.64 MPa; R73 recommends 150x150 base plates"
+  },
+  {
+   "base": "slides",
+   "item": "Top bracket pin O20",
+   "ref": "R170",
+   "check": "Pin shear (single shear)",
+   "value": 4433.8,
+   "limit": 44485.0,
+   "unit": "N",
+   "util": 0.1,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "base": "slides",
+   "item": "Top bracket plate 5 mm",
+   "ref": "R170",
+   "check": "Pin bearing on the 5 mm plate",
+   "value": 4433.8,
+   "limit": 30000.0,
+   "unit": "N",
+   "util": 0.15,
+   "status": "PASS",
+   "note": "the bracket's fixing to the landing / cabin is not modelled: the anchor design must follow from this reaction"
+  },
+  {
+   "base": "slides",
+   "item": "Latch pins O2 (per pole)",
+   "ref": "R78/R104",
+   "check": "Vertical transfer between the rails through the pole (double shear)",
+   "value": 5891.1,
+   "limit": 889.7,
+   "unit": "N",
+   "util": 6.62,
+   "status": "FAIL",
+   "note": "without these pins the side frame is a mechanism (0.55-0.68 m deflection at ULS)"
+  },
+  {
+   "base": "slides",
+   "item": "Tread pins O10 (with link force)",
+   "ref": "R170",
+   "check": "Shear: link force + tread reaction",
+   "value": 11795.1,
+   "limit": 11121.2,
+   "unit": "N",
+   "util": 1.06,
+   "status": "FAIL",
+   "note": "link 10495 N (top tread)"
+  },
+  {
+   "base": "slides",
+   "item": "Tread pins O10 (with link force)",
+   "ref": "R170",
+   "check": "Bending, lever 6.75 mm (left) - 14 mm (right)",
+   "value": 165130.9,
+   "limit": 29452.4,
+   "unit": "Nmm",
+   "util": 5.61,
+   "status": "FAIL",
+   "note": ""
+  },
+  {
+   "base": "slides",
+   "item": "Pole RHS 25x10x2",
+   "ref": "R142",
+   "check": "Line load 3.0 kN/m at the top rail: bending across the stair",
+   "value": 4226.4,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 18.6,
+   "status": "FAIL",
+   "note": "H_k = 916 N per pole, arm 1050 mm, W = 341 mm3"
+  },
+  {
+   "base": "slides",
+   "item": "Pole RHS 25x10x2",
+   "ref": "R143",
+   "check": "Point load 1.25 kN at the top rail over a pole: bending across the stair",
+   "value": 5770.1,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 25.39,
+   "status": "FAIL",
+   "note": "H_k = 1250 N per pole, arm 1050 mm, W = 341 mm3"
+  },
+  {
+   "base": "slides",
+   "item": "Pole RHS 25x10x2",
+   "ref": "R179",
+   "check": "Post load 1.5 kN at the top of a pole: bending across the stair",
+   "value": 6924.1,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 30.47,
+   "status": "FAIL",
+   "note": "H_k = 1500 N per pole, arm 1050 mm, W = 341 mm3"
+  },
+  {
+   "base": "slides",
+   "item": "Pole RHS 25x10x2",
+   "ref": "R142 (5.0)",
+   "check": "Viewing crowd 5.0 kN/m: bending across the stair",
+   "value": 7044.0,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 30.99,
+   "status": "FAIL",
+   "note": "H_k = 1526 N per pole, arm 1050 mm, W = 341 mm3"
+  },
+  {
+   "base": "slides",
+   "item": "Top rail U25x25x5",
+   "ref": "R178",
+   "check": "Vertical 1.0 kN/m, span 305 (continuous, wL2/10)",
+   "value": 9.2,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 0.04,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "base": "slides",
+   "item": "Top rail U25x25x5",
+   "ref": "R142",
+   "check": "Horizontal 3.0 kN/m, span 305",
+   "value": 19.5,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 0.09,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "base": "slides",
+   "item": "Handrail bracket 15x5 bent flat",
+   "ref": "R143",
+   "check": "1.25 kN on the handrail at a bracket: bending over the 57 mm offset",
+   "value": 570.0,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 2.51,
+   "status": "FAIL",
+   "note": "bracket thickness 5 mm assumed (15 mm measured width); zig-zag path makes it softer still"
+  },
+  {
+   "base": "held",
+   "item": "Base axle O25x2.5",
+   "ref": "R147/R160",
+   "check": "Bending at the hook (hook 70 mm inboard of the jack)",
+   "value": 1371.1,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 6.03,
+   "status": "FAIL",
+   "note": "R = 17740 N per side; W = 906 mm3. The model has two overlapping tubes at every axle position (duplicates)"
+  },
+  {
+   "base": "held",
+   "item": "Base axle O25x2.5",
+   "ref": "R147",
+   "check": "Shear",
+   "value": 17739.9,
+   "limit": 14761.8,
+   "unit": "N",
+   "util": 1.2,
+   "status": "FAIL",
+   "note": ""
+  },
+  {
+   "base": "held",
+   "item": "Top axle O25x2.5",
+   "ref": "R147",
+   "check": "Bending at the hook on the landing brackets",
+   "value": 874.3,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 3.85,
+   "status": "FAIL",
+   "note": "R = 11312 N; bracket span assumed like the base"
+  },
+  {
+   "base": "held",
+   "item": "Hook plate 10 mm (base)",
+   "ref": "R150/R170",
+   "check": "Throat: N/A + M/W (curved beam, M = R x r_centroid)",
+   "value": 765.3,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 3.37,
+   "status": "FAIL",
+   "note": "approximate (hand): a plane-stress FE of the hook with contact is recommended for the final sign-off"
+  },
+  {
+   "base": "held",
+   "item": "Hook plate 10 mm (base)",
+   "ref": "R170",
+   "check": "Bearing of the axle on the hook",
+   "value": 17739.9,
+   "limit": 75000.0,
+   "unit": "N",
+   "util": 0.24,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "base": "held",
+   "item": "Hook plate 10 mm (top)",
+   "ref": "R150/R170",
+   "check": "Throat: N/A + M/W (curved beam, M = R x r_centroid)",
+   "value": 488.0,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 2.15,
+   "status": "FAIL",
+   "note": "approximate (hand): a plane-stress FE of the hook with contact is recommended for the final sign-off"
+  },
+  {
+   "base": "held",
+   "item": "Hook plate 10 mm (top)",
+   "ref": "R170",
+   "check": "Bearing of the axle on the hook",
+   "value": 11311.9,
+   "limit": 75000.0,
+   "unit": "N",
+   "util": 0.15,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "base": "held",
+   "item": "Base jack rod M24",
+   "ref": "R147/R174",
+   "check": "Axial (stress area 353 mm2)",
+   "value": 39.7,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 0.17,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "base": "held",
+   "item": "Footplate 100x100x5",
+   "ref": "R73/R174",
+   "check": "Plate bending as a cantilever from the rod (uniform ground pressure)",
+   "value": 243.1,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 1.07,
+   "status": "FAIL",
+   "note": "ground pressure 1.40 MPa; R73 recommends 150x150 base plates"
+  },
+  {
+   "base": "held",
+   "item": "Top bracket pin O20",
+   "ref": "R170",
+   "check": "Pin shear (single shear)",
+   "value": 11311.9,
+   "limit": 44485.0,
+   "unit": "N",
+   "util": 0.25,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "base": "held",
+   "item": "Top bracket plate 5 mm",
+   "ref": "R170",
+   "check": "Pin bearing on the 5 mm plate",
+   "value": 11311.9,
+   "limit": 30000.0,
+   "unit": "N",
+   "util": 0.38,
+   "status": "PASS",
+   "note": "the bracket's fixing to the landing / cabin is not modelled: the anchor design must follow from this reaction"
+  },
+  {
+   "base": "held",
+   "item": "Latch pins O2 (per pole)",
+   "ref": "R78/R104",
+   "check": "Vertical transfer between the rails through the pole (double shear)",
+   "value": 4382.7,
+   "limit": 889.7,
+   "unit": "N",
+   "util": 4.93,
+   "status": "FAIL",
+   "note": "without these pins the side frame is a mechanism (0.55-0.68 m deflection at ULS)"
+  },
+  {
+   "base": "held",
+   "item": "Tread pins O10 (with link force)",
+   "ref": "R170",
+   "check": "Shear: link force + tread reaction",
+   "value": 9352.9,
+   "limit": 11121.2,
+   "unit": "N",
+   "util": 0.84,
+   "status": "PASS",
+   "note": "link 8053 N (top tread)"
+  },
+  {
+   "base": "held",
+   "item": "Tread pins O10 (with link force)",
+   "ref": "R170",
+   "check": "Bending, lever 6.75 mm (left) - 14 mm (right)",
+   "value": 130941.2,
+   "limit": 29452.4,
+   "unit": "Nmm",
+   "util": 4.45,
+   "status": "FAIL",
+   "note": ""
+  },
+  {
+   "base": "held",
+   "item": "Pole RHS 25x10x2",
+   "ref": "R142",
+   "check": "Line load 3.0 kN/m at the top rail: bending across the stair",
+   "value": 4226.4,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 18.6,
+   "status": "FAIL",
+   "note": "H_k = 916 N per pole, arm 1050 mm, W = 341 mm3"
+  },
+  {
+   "base": "held",
+   "item": "Pole RHS 25x10x2",
+   "ref": "R143",
+   "check": "Point load 1.25 kN at the top rail over a pole: bending across the stair",
+   "value": 5770.1,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 25.39,
+   "status": "FAIL",
+   "note": "H_k = 1250 N per pole, arm 1050 mm, W = 341 mm3"
+  },
+  {
+   "base": "held",
+   "item": "Pole RHS 25x10x2",
+   "ref": "R179",
+   "check": "Post load 1.5 kN at the top of a pole: bending across the stair",
+   "value": 6924.1,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 30.47,
+   "status": "FAIL",
+   "note": "H_k = 1500 N per pole, arm 1050 mm, W = 341 mm3"
+  },
+  {
+   "base": "held",
+   "item": "Pole RHS 25x10x2",
+   "ref": "R142 (5.0)",
+   "check": "Viewing crowd 5.0 kN/m: bending across the stair",
+   "value": 7044.0,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 30.99,
+   "status": "FAIL",
+   "note": "H_k = 1526 N per pole, arm 1050 mm, W = 341 mm3"
+  },
+  {
+   "base": "held",
+   "item": "Top rail U25x25x5",
+   "ref": "R178",
+   "check": "Vertical 1.0 kN/m, span 305 (continuous, wL2/10)",
+   "value": 9.2,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 0.04,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "base": "held",
+   "item": "Top rail U25x25x5",
+   "ref": "R142",
+   "check": "Horizontal 3.0 kN/m, span 305",
+   "value": 19.5,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 0.09,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "base": "held",
+   "item": "Handrail bracket 15x5 bent flat",
+   "ref": "R143",
+   "check": "1.25 kN on the handrail at a bracket: bending over the 57 mm offset",
+   "value": 570.0,
+   "limit": 227.3,
+   "unit": "MPa",
+   "util": 2.51,
+   "status": "FAIL",
+   "note": "bracket thickness 5 mm assumed (15 mm measured width); zig-zag path makes it softer still"
+  }
+ ],
+ "frame_envelope": {
+  "R_base": 17739.918177149346,
+  "R_top": 11311.944982028044,
+  "link": 8052.942381848828,
+  "latch": 4382.746481012893,
+  "uplift_top": 3165.966395711925,
+  "H_base": 10860.139990968744,
+  "V_base": 14027.189893507366
+ },
+ "frame_envelopes": {
+  "slides": {
+   "R_base": 6426.315557102123,
+   "R_top": 4433.821684408107,
+   "link": 10495.06402867053,
+   "latch": 5891.148659860047,
+   "uplift_top": 0,
+   "H_base": 1.7998559087573085e-06,
+   "V_base": 6426.315557102123
+  },
+  "held": {
+   "R_base": 17739.918177149346,
+   "R_top": 11311.944982028044,
+   "link": 8052.942381848828,
+   "latch": 4382.746481012893,
+   "uplift_top": 3165.966395711925,
+   "H_base": 10860.139990968744,
+   "V_base": 14027.189893507366
+  }
+ },
+ "frame_sls": {
+  "L base pinned": {
+   "defl_sls": 4.089242139383073,
+   "defl_G03Q": 1.4417065154383122,
+   "f1": 14.782909793705187
+  },
+  "R base pinned": {
+   "defl_sls": 6.560043767351367,
+   "defl_G03Q": 2.2615439179972547,
+   "f1": 11.803093417272349
+  },
+  "L base slides": {
+   "defl_sls": 8.023986968498056,
+   "defl_G03Q": 2.8174198992890753,
+   "f1": 10.574809890500637
+  },
+  "R base slides": {
+   "defl_sls": 10.722356011258263,
+   "defl_G03Q": 3.6883129341944625,
+   "f1": 9.242393961802863
+  }
+ },
+ "pole_options": {
+  "options": {
+   "as modelled: hollow RHS 25x10x2": {
+    "R142 line 3.0 kN/m": 18.6,
+    "R143 point 1.25 kN": 25.4,
+    "R179 post 1.5 kN": 30.48,
+    "R142 viewing 5.0 kN/m": 31.01
+   },
+   "solid bar 25x10 (same size)": {
+    "R142 line 3.0 kN/m": 15.23,
+    "R143 point 1.25 kN": 20.79,
+    "R179 post 1.5 kN": 24.95,
+    "R142 viewing 5.0 kN/m": 25.38
+   },
+   "solid bar 25x25 (max across that fits the left 35 U web slot, 25 inner)": {
+    "R142 line 3.0 kN/m": 2.44,
+    "R143 point 1.25 kN": 3.33,
+    "R179 post 1.5 kN": 3.99,
+    "R142 viewing 5.0 kN/m": 4.06
+   },
+   "solid bar 25x15 (max across that fits the right 25 inverted-U web slot, 15 inner)": {
+    "R142 line 3.0 kN/m": 6.77,
+    "R143 point 1.25 kN": 9.24,
+    "R179 post 1.5 kN": 11.09,
+    "R142 viewing 5.0 kN/m": 11.28
+   }
+  },
+  "required_solid_depth_across_mm": {
+   "R142 line 3.0 kN/m": 39.0,
+   "R143 point 1.25 kN": 45.6,
+   "R179 post 1.5 kN": 49.9,
+   "R142 viewing 5.0 kN/m": 50.4
+  }
+ },
+ "mass": {
+  "parts": {
+   "treads 6x (frame J+L 775 mm2 x 1200 + end plates + pins)": 16.2490374,
+   "grating bars 360x (3x25x270)": 19.683,
+   "longitudinal flats 12x (2.7x25x1177)": 2.5740990000000004,
+   "rails 4x (375/375/325/275 mm2)": 6.587865,
+   "poles 12x RHS 25x10x2 (1138)": 4.5720288,
+   "lock pins 12x (25x10x245)": 1.9845,
+   "top rails + handrails 4x U25x25x5 (1726)": 6.05826,
+   "top posts / pivots 16+16": 0.60912,
+   "handrail brackets 12x": 0.327888,
+   "axles (3 positions, O25x2.5 x 1309; duplicates not counted)": 1.8735324299999998,
+   "hooks 10 mm (4) + washers/spacers/nuts": 0.6819999999999999
+  },
+  "total_kg": 61.20133063
+ },
+ "sizes": {
+  "tread": "closed box: 5 mm serrated deck + 3 mm bottom plate + 5 mm front and back webs, 280 x 50, end caps as now (FE-verified: 4 kN at the nosing 156 MPa = 0.68 and 8.2 mm local deck deflection < 12.2; crowd 1.5 mm < 4.9; one person 1.8 mm < 10; twist 0.2 deg)",
+  "tread_minimum_I": "I >= 176,000 mm4 for 4 kN / L/100 and >= 157,000 mm4 for crowd L/250 - with a CLOSED section (no twist)",
+  "pole_solid_6082": "solid 25 (along the stair) x 39 (across) for 3.0 kN/m; 25 x 50 for the 1.5 kN post load / 5.0 kN/m viewing",
+  "tread_pins": "O20 aluminium 6082-T6 (shear 44 kN, M_Rd 235 kNmm) or O16 steel 8.8, for 11.8 kN + 165 kNmm",
+  "latch_pins": "O8 (aluminium 14 kN double shear, steel 8.8: 39 kN) for 5.9 kN per pole - or a positive fold lock",
+  "axle": "as drawn (base free to slide): jacks straight under the hooks and the O25x2.5 passes (shear 0.44), or O35x3 with the 70 mm offset; top axle O30x3. If the base is fixed: O45x5, or jacks under the hooks with O30x3",
+  "hooks": "10 mm plate ring width >= 25.5 mm at the base (now about 22), top passes at 22 (0.84); if the base is fixed: >= 57.5 base / >= 40.0 top, plus a keeper against 3.2 kN uplift at the top",
+  "footplate": "150 x 150 x 8 (R73); 100 x 100 x 5 is strong enough (0.49) when the base is free to slide",
+  "rail_hole_lo_r": "Lo_R hole centre >= 15.2 mm above the free edge of the leg (now 12.5) for the top-tread link force",
+  "rails": "net section at the pin stations must reach W >= 2,900 mm3 (now 216-595 mm3): about 5 x; or add a mid support and a proper fold lock, then re-run"
+ },
+ "lo_r_hole_edge": {
+  "rule": "EN 1999-1-1 T8.8: a >= F gMp/(2 t f0) + 2 d0/3, a = hole edge to free edge = 12.5 - 5 = 7.5 mm, t 5, d0 10",
+  "worst": [
+   {
+    "F_perp": 7060.585144369242,
+    "slide": true,
+    "loaded": "all",
+    "tread": 5,
+    "link": -9647
+   },
+   {
+    "F_perp": 5738.867533448181,
+    "slide": true,
+    "loaded": [
+     3,
+     4,
+     5
+    ],
+    "tread": 5,
+    "link": -7675
+   },
+   {
+    "F_perp": 5692.571054681727,
+    "slide": false,
+    "loaded": "all",
+    "tread": 5,
+    "link": -7606
+   },
+   {
+    "F_perp": 4667.941285737543,
+    "slide": false,
+    "loaded": [
+     3,
+     4,
+     5
+    ],
+    "tread": 5,
+    "link": -6078
+   },
+   {
+    "F_perp": 1519.7926369948887,
+    "slide": true,
+    "loaded": [
+     0,
+     1,
+     2
+    ],
+    "tread": 5,
+    "link": -2267
+   },
+   {
+    "F_perp": 1455.9973480813696,
+    "slide": false,
+    "loaded": "all",
+    "tread": 4,
+    "link": -1287
+   }
+  ],
+  "a_have": 7.5,
+  "a_req": [
+   10.2,
+   9.54,
+   9.51,
+   9.0,
+   7.43,
+   7.39
+  ]
+ },
+ "tread_box_check": {
+  "ULS 4 kN front patch": {
+   "nosing": -3.9124932385363644,
+   "uz_min": -12.269026272635031,
+   "twist": 0.2538269950965192,
+   "vm": 155.581109506076,
+   "part": "front web",
+   "pins": {
+    "L_rear": [
+     190.1,
+     0.0,
+     606.4
+    ],
+    "L_front": [
+     -190.1,
+     0.0,
+     2427.6
+    ],
+    "R_rear": [
+     104.0,
+     0.0,
+     860.5
+    ],
+    "R_front": [
+     -104.0,
+     0.0,
+     2171.6
+    ]
+   }
+  },
+  "SLS 4 kN front patch": {
+   "nosing": -2.6119870688058118,
+   "uz_min": -8.184093420828356,
+   "twist": 0.16924447685691638,
+   "vm": 103.75703680080466,
+   "part": "front web",
+   "pins": {
+    "L_rear": [
+     126.6,
+     0.0,
+     406.5
+    ],
+    "L_front": [
+     -126.6,
+     0.0,
+     1621.5
+    ],
+    "R_rear": [
+     69.3,
+     0.0,
+     575.9
+    ],
+    "R_front": [
+     -69.3,
+     0.0,
+     1450.7
+    ]
+   }
+  },
+  "SLS crowd (going 250)": {
+   "nosing": -0.8267372917011244,
+   "uz_min": -1.445521032154477,
+   "twist": 0.0054862106912390305,
+   "vm": 13.486364987744185,
+   "part": "rear wall",
+   "pins": {
+    "L_rear": [
+     -38.1,
+     0.0,
+     475.7
+    ],
+    "L_front": [
+     38.1,
+     0.0,
+     683.8
+    ],
+    "R_rear": [
+     -15.2,
+     0.0,
+     497.4
+    ],
+    "R_front": [
+     15.2,
+     0.0,
+     648.3
+    ]
+   }
+  },
+  "SLS person nosing": {
+   "nosing": -0.8137966068216572,
+   "uz_min": -1.7981008847410527,
+   "twist": 0.09659543261706693,
+   "vm": 36.297828168686365,
+   "part": "front web",
+   "pins": {
+    "L_rear": [
+     89.7,
+     0.0,
+     -18.6
+    ],
+    "L_front": [
+     -89.7,
+     0.0,
+     558.8
+    ],
+    "R_rear": [
+     45.5,
+     0.0,
+     61.6
+    ],
+    "R_front": [
+     -45.5,
+     0.0,
+     477.7
+    ]
+   }
+  },
+  "ULS crowd": {
+   "nosing": -1.2346186451090564,
+   "uz_min": -2.1611552839339447,
+   "twist": 0.008190532514085946,
+   "vm": 20.165096016853177,
+   "part": "rear wall",
+   "pins": {
+    "L_rear": [
+     -56.9,
+     0.0,
+     710.3
+    ],
+    "L_front": [
+     56.9,
+     0.0,
+     1021.0
+    ],
+    "R_rear": [
+     -22.8,
+     0.0,
+     742.7
+    ],
+    "R_front": [
+     22.8,
+     0.0,
+     968.1
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,170 @@
+{
+ "B1 box 5 top / 3 bottom / 5 walls": {
+  "util": {
+   "welded corners": 1.1112438097806867,
+   "bent top U": 0.5556219048903434,
+   "bent top U, riveted webs": 0.5556219048903434,
+   "extruded": 0.5556219048903434
+  },
+  "where": {
+   "welded corners": [
+    "ULS 4 kN centre, mid-span",
+    "deck",
+    3.8,
+    47.5,
+    126.3,
+    "HAZ"
+   ],
+   "bent top U": [
+    "ULS 4 kN centre, mid-span",
+    "deck",
+    3.8,
+    47.5,
+    126.3,
+    "parent"
+   ],
+   "bent top U, riveted webs": [
+    "ULS 4 kN centre, mid-span",
+    "deck",
+    3.8,
+    47.5,
+    126.3,
+    "parent"
+   ],
+   "extruded": [
+    "ULS 4 kN centre, mid-span",
+    "deck",
+    3.8,
+    47.5,
+    126.3,
+    "parent"
+   ]
+  }
+ },
+ "B2 box 4 / 2 / 3, one mid web 3": {
+  "util": {
+   "welded corners": 0.8059551865942126,
+   "bent top U": 0.8059551865942126,
+   "bent top U, riveted webs": 0.6205482139989404,
+   "extruded": 0.4029775932971063
+  },
+  "where": {
+   "welded corners": [
+    "ULS 4 kN front, mid-span",
+    "deck",
+    141.2,
+    47.5,
+    91.6,
+    "HAZ"
+   ],
+   "bent top U": [
+    "ULS 4 kN front, mid-span",
+    "deck",
+    141.2,
+    47.5,
+    91.6,
+    "HAZ"
+   ],
+   "bent top U, riveted webs": [
+    "ULS 4 kN front, mid-span",
+    "bottom",
+    276.2,
+    2.5,
+    70.5,
+    "HAZ"
+   ],
+   "extruded": [
+    "ULS 4 kN front, mid-span",
+    "deck",
+    141.2,
+    47.5,
+    91.6,
+    "parent"
+   ]
+  }
+ },
+ "B3 box 3 / 2 / 3, one mid web 3": {
+  "util": {
+   "welded corners": 1.3864869463140785,
+   "bent top U": 1.3864869463140785,
+   "bent top U, riveted webs": 0.6932434731570393,
+   "extruded": 0.6932434731570393
+  },
+  "where": {
+   "welded corners": [
+    "ULS 4 kN front, mid-span",
+    "deck",
+    141.2,
+    47.5,
+    157.6,
+    "HAZ"
+   ],
+   "bent top U": [
+    "ULS 4 kN front, mid-span",
+    "deck",
+    141.2,
+    47.5,
+    157.6,
+    "HAZ"
+   ],
+   "bent top U, riveted webs": [
+    "ULS 4 kN front, mid-span",
+    "deck",
+    141.2,
+    47.5,
+    157.6,
+    "parent"
+   ],
+   "extruded": [
+    "ULS 4 kN front, mid-span",
+    "deck",
+    141.2,
+    47.5,
+    157.6,
+    "parent"
+   ]
+  }
+ },
+ "B4 box 3 / 2 / 2, two webs 2": {
+  "util": {
+   "welded corners": 0.822538595098961,
+   "bent top U": 0.822538595098961,
+   "bent top U, riveted webs": 0.6425016956084006,
+   "extruded": 0.4112692975494805
+  },
+  "where": {
+   "welded corners": [
+    "ULS 4 kN front, mid-span",
+    "deck",
+    186.2,
+    47.5,
+    93.5,
+    "HAZ"
+   ],
+   "bent top U": [
+    "ULS 4 kN front, mid-span",
+    "deck",
+    186.2,
+    47.5,
+    93.5,
+    "HAZ"
+   ],
+   "bent top U, riveted webs": [
+    "ULS 4 kN front, mid-span",
+    "bottom",
+    276.2,
+    2.5,
+    73.0,
+    "HAZ"
+   ],
+   "extruded": [
+    "ULS 4 kN front, mid-span",
+    "deck",
+    186.2,
+    47.5,
+    93.5,
+    "parent"
+   ]
+  }
+ }
+}

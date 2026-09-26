@@ -1,0 +1,581 @@
+"""SketchUp change brief (plain language) -> web/index.html + web/img/*.jpg
+Sizes = verified lightweight all-aluminium spec (v2/loadtest/lightweight_final.json, 1.8 mm treads) with the left
+rails kept as open channels so side-by-side units still nest (v2/datasheet/left_channel_check.json).
+Run: uvx --with pillow python v2/brief/build_brief.py
+"""
+import json, os, html
+from PIL import Image
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+E = html.escape
+CALL = json.load(open(os.path.join(HERE, "img", "callouts.json")))
+LC = json.load(open(os.path.join(HERE, "..", "datasheet", "left_channel_check.json")))["left U-channels, 4 mm walls"]
+REPORT = "https://claude.ai/artifact/1ZGWmdUZyFepc1gGMdCkok"
+DATASHEET = "https://claude.ai/artifact/GLipbqMzpRje8YZFLYTeL7"
+os.makedirs(os.path.join(HERE, "web", "img"), exist_ok=True)
+for k, v in CALL.items():
+    im = Image.open(os.path.join(HERE, "img", v["file"])).convert("RGB")
+    im = im.resize((1200, round(im.height * 1200 / im.width)), Image.LANCZOS)
+    im.save(os.path.join(HERE, "web", "img", v["file"]), quality=84, optimize=True, progressive=True)
+    v["w2"], v["h2"] = im.size
+
+# ------------------------------------------------------------------ figures: marker label = change number
+FIGS = [
+    ("A", "overview", "Standard stair, right-hand side", {1: 1, 2: 2, 3: 2, 4: 4, 5: 6, 6: 7, 7: 8, 8: 9, 9: 10, 10: 11}, {7, 8}),
+    ("B", "post", "Bottom of a handrail post", {1: 4, 2: 5, 3: 2}, set()),
+    ("C", "nested", "Two units side by side: the left channel with the neighbour’s right rail inside", {1: 3, 3: 3}, set()),
+    ("D", "pin", "Centre handrail pin passing through both nested rails", {1: 12}, set()),
+    ("E", "hook", "Top hook dropping over the axle of the unit below", {2: 10}, set()),
+    ("F", "catwalk", "Flat catwalk seen from the side", {1: 11, 2: 11, 3: 11, 4: 2}, {3}),
+]
+
+
+def figure(fid, key, cap, mapping, new):
+    v = CALL[key]
+    marks = []
+    for c in v["calls"]:
+        if c["n"] in mapping and c["ok"]:
+            n = mapping[c["n"]]
+            cls = "mk new" if c["n"] in new else "mk"
+            marks.append(f'<a class="{cls}" href="#c{n}" style="left:{c["x"]}%;top:{c["y"]}%" aria-label="Change {n}">{n}</a>')
+    return f"""
+    <figure class="fig" id="fig{fid}">
+      <div class="shot"><img src="img/{v['file']}" alt="{E(cap)}" width="{v['w2']}" height="{v['h2']}" loading="lazy">{''.join(marks)}</div>
+      <figcaption><b>Fig {fid}</b> {E(cap)}</figcaption>
+    </figure>"""
+
+
+# ------------------------------------------------------------------ small to-scale section drawings (mm)
+def svg(w, h, body, label):
+    return f'<svg class="sec" viewBox="0 0 {w} {h}" role="img" aria-label="{E(label)}">{body}</svg>'
+
+
+def rect(x, y, w, h, cls="new"):
+    return f'<rect class="{cls}" x="{x}" y="{y}" width="{w}" height="{h}"/>'
+
+
+def txt(x, y, s, cls="lbl", anchor="start"):
+    return f'<text class="{cls}" x="{x}" y="{y}" text-anchor="{anchor}">{E(s)}</text>'
+
+
+def tread_svg():
+    s = 1.0
+    b = ""
+    # before: two solid planks at rise 175 / going 250, 280 x 50
+    ox, oy = 10, 40
+    b += txt(ox, 16, "NOW", "tag")
+    b += rect(ox + 250, oy, 280, 50, "old") + rect(ox, oy + 175, 280, 50, "old")
+    b += f'<line class="dim" x1="{ox + 262}" y1="{oy + 50}" x2="{ox + 262}" y2="{oy + 175}"/>' + txt(ox + 268, oy + 118, "gap 125")
+    b += txt(ox + 390, oy + 30, "280 × 50", "lbl", "middle")
+    # after: hollow 285 x 40 + 35 mm lip at the front (front = left, downhill)
+    ox2 = 600
+    b += txt(ox2, 16, "CHANGE TO", "tag")
+    for (x, y) in ((ox2 + 250, oy), (ox2, oy + 175)):
+        b += rect(x, y, 285, 40, "new") + rect(x + 3, y + 3, 279, 34, "void")
+        for k in range(1, 4):
+            b += f'<line class="rib" x1="{x + 285 * k / 4}" y1="{y + 2}" x2="{x + 285 * k / 4}" y2="{y + 38}"/>'
+        b += rect(x, y + 40, 2.5, 35, "new")
+    b += f'<line class="dim" x1="{ox2 + 262}" y1="{oy + 75}" x2="{ox2 + 262}" y2="{oy + 175}"/>' + txt(ox2 + 268, oy + 130, "gap 100")
+    b += txt(ox2 + 392, oy + 26, "285 × 40", "lbl", "middle") + txt(ox2 + 250 - 6, oy + 70, "lip 35", "lbl", "end")
+    return svg(1180, 280, b, "Tread: 280 x 50 plank now, 285 x 40 hollow plank with a 35 mm front lip after")
+
+
+def rails_svg():
+    k = 3.2   # px per mm
+    b = ""
+
+    def uchan(x, y, slot, wall, depth, cls):
+        W, H = slot + 2 * wall, depth + wall
+        return (rect(x, y, wall * k, H * k, cls) + rect(x + (wall + slot) * k, y, wall * k, H * k, cls)
+                + rect(x, y + depth * k, W * k, wall * k, cls))
+
+    def box(x, y, w, h, t, cls):
+        return rect(x, y, w * k, h * k, cls) + rect(x + t * k, y + t * k, (w - 2 * t) * k, (h - 2 * t) * k, "void")
+
+    # NOW: left U 35 x 25 (5 mm) with the right inverted channel 25 x 20 nested
+    x0, y0 = 20, 40
+    b += txt(x0, 18, "NOW (upper pair)", "tag")
+    b += uchan(x0, y0, 25, 5, 20, "old")
+    b += rect(x0 + 5 * k, y0 - 1 * k, 25 * k, 5 * k, "old2") + rect(x0 + 5 * k, y0, 5 * k, 20 * k, "old2") + rect(x0 + 25 * k, y0, 5 * k, 20 * k, "old2")
+    b += txt(x0 + 17.5 * k, y0 + 25 * k + 22, "35 wide", "lbl", "middle")
+    # AFTER: upper U 33 x 29 with 25 x 25 box; lower U 33 x 49 with 25 x 45 box
+    x1 = 250
+    b += txt(x1, 18, "CHANGE TO", "tag")
+    b += uchan(x1, y0, 25, 4, 25, "new") + box(x1 + 4 * k, y0, 25, 25, 2.5, "new2")
+    b += txt(x1 + 16.5 * k, y0 + 29 * k + 22, "upper: 33 × 29", "lbl", "middle")
+    x2 = x1 + 160
+    b += uchan(x2, y0, 25, 4, 45, "new") + box(x2 + 4 * k, y0, 25, 45, 3, "new2")
+    b += txt(x2 + 16.5 * k, y0 + 49 * k + 22, "lower: 33 × 49", "lbl", "middle")
+    b += txt(x2 + 130, y0 + 40, "left channel (4 mm walls,", "note") + txt(x2 + 130, y0 + 58, "25 mm slot)", "note")
+    b += txt(x2 + 130, y0 + 92, "right rail of the next", "note2") + txt(x2 + 130, y0 + 110, "unit sits inside", "note2")
+    b += txt(x2 + 130, y0 + 144, "right rails on their own:", "note2") + txt(x2 + 130, y0 + 162, "25×25×2.5 and 25×45×3", "note2")
+    return svg(760, 250, b, "Guide rails: left channels 33 x 29 and 33 x 49 with 4 mm walls; right rails 25 x 25 x 2.5 and 25 x 45 x 3 fit inside")
+
+
+def post_svg():
+    k = 2.2
+    b = txt(10, 18, "NOW", "tag") + rect(30, 60, 25 * k, 10 * k, "old") + txt(30 + 12.5 * k, 60 + 10 * k + 22, "flat 25 × 10", "lbl", "middle")
+    b += txt(230, 18, "CHANGE TO", "tag") + rect(250, 30, 60 * k, 60 * k, "new") + rect(250 + 4 * k, 30 + 4 * k, 52 * k, 52 * k, "void")
+    b += txt(250 + 30 * k, 30 + 60 * k + 22, "square tube 60 × 60 × 4", "lbl", "middle")
+    return svg(560, 205, b, "Post: flat 25 x 10 now, square tube 60 x 60 x 4 after")
+
+
+def rails_round_svg():
+    k = 2.2
+    b = txt(10, 18, "NOW", "tag")
+    b += rect(20, 40, 25 * k, 25 * k, "old") + rect(20 + 3.8 * k, 40 + 3.8 * k, 17.4 * k, 17.4 * k, "void") + txt(20 + 12.5 * k, 40 + 25 * k + 20, "top rail 25□", "lbl", "middle")
+    b += rect(110, 40, 25 * k, 25 * k, "old") + txt(110 + 12.5 * k, 40 + 25 * k + 20, "handrail 25■", "lbl", "middle")
+    b += txt(240, 18, "CHANGE TO", "tag")
+    for (cx, D, t, lab) in ((290, 40, 2, "top rail Ø40×2"), (420, 48.3, 3, "handrail Ø48.3×3"), (545, 30, 2, "middle rail Ø30×2 (new)")):
+        r = D / 2 * k
+        b += f'<circle class="new" cx="{cx}" cy="{40 + r}" r="{r}"/><circle class="void" cx="{cx}" cy="{40 + r}" r="{r - t * k}"/>'
+        b += txt(cx, 40 + 2 * r + 20, lab, "lbl", "middle")
+    return svg(660, 175, b, "Rails: square bars now; round tubes 40, 48.3 and a new 30 mm middle rail after")
+
+
+def heights_svg():
+    s = 0.2
+    base = 260
+    b = f'<line class="grd" x1="20" y1="{base}" x2="560" y2="{base}"/>' + txt(24, base + 16, "step line (along the stair)", "note")
+    rows = [(150, "toe board top 150 (new)", "new"), (575, "middle rail 575 (new)", "new"), (1000, "handrail ≈ 1,000", "old2"),
+            (1127, "top rail ≥ 1,100 (unchanged)", "old2")]
+    for h, lab, cls in rows:
+        y = base - h * s
+        b += f'<line class="{cls}l" x1="60" y1="{y}" x2="400" y2="{y}"/>' + txt(410, y + 4, lab, "lbl")
+    b += rect(60, base - 150 * s, 340, 150 * s, "newf")
+    for x in (60, 230, 400):
+        b += f'<line class="postl" x1="{x}" y1="{base}" x2="{x}" y2="{base - 1127 * s}"/>'
+    b += txt(60, base - 1127 * s - 10, "posts at steps 1, 3 and 6 (60 × 60)", "note")
+    return svg(640, 300, b, "Side view of rail heights: toe board 150, middle rail 575, handrail about 1000, top rail at least 1100")
+
+
+def hook_svg():
+    k = 2.6
+    b = txt(10, 18, "NOW", "tag") + txt(260, 18, "CHANGE TO", "tag")
+    for (x0, t, throat, cls) in ((40, 5, 11.9, "old"), (300, 10, 22, "new")):
+        r_in = 12.6 * k
+        cx, cy = x0 + 60, 110
+        r_out = r_in + throat * k
+        b += (f'<path class="{cls}" d="M {cx - r_out} {cy} A {r_out} {r_out} 0 0 1 {cx + r_out} {cy} L {cx + r_out} {cy + 25} '
+              f'L {cx + r_in} {cy + 25} L {cx + r_in} {cy} A {r_in} {r_in} 0 0 0 {cx - r_in} {cy} L {cx - r_in} {cy - 5} L {cx - r_out} {cy - 5} Z"/>')
+        b += f'<circle class="axle" cx="{cx}" cy="{cy}" r="{12.6 * k}"/>'
+        b += txt(cx, cy + 60, f"{t:g} mm plate, {throat:g} mm round the hook", "lbl", "middle")
+    return svg(560, 200, b, "Top hook: 5 mm plate with 11.9 mm of metal now, 10 mm plate with at least 22 mm after")
+
+
+CHANGES = [
+    dict(n=1, name="Steps (treads)", qty="6 per unit", figs="A",
+         now="Flat plank 280 deep × 50 thick.",
+         new="Hollow plank 285 deep × 40 thick: 1.8 mm walls, 5 ribs inside, serrated top. Add a lip turned down 35 mm along the front edge, "
+             "2 mm thick, stopping 30 mm short of each end so it clears the guide rails. Length stays 1,236. A 55 mm contrasting strip on the "
+             "front and back edges (colour only).",
+         how=["Keep the walking surface at exactly the same height as now: the plank gets thinner from underneath, so every riser stays 175.",
+              "Keep the pin holes exactly where they are.",
+              "You may model it solid and label it “hollow, 1.8 mm walls, 5 ribs”."],
+         why=[("R7", "Open gap between steps ≤ 120 mm (100 recommended), so a child cannot slip through. Now 125 mm; the thinner step alone "
+                     "would make it 135. The lip brings it to 100."),
+              ("R48", "Gap between planks on the flat catwalk ≤ 25 mm. Now 25.2; the deeper 285 plank makes it 20."),
+              ("R12", "Uniform risers: why the walking surface must not move."),
+              ("R17", "55 mm contrasting nosings on both edges of each step.")],
+         load=("Carries the crowd (7.5 kN/m²) and one foot (4 kN on a 200 mm square) across the 1.24 m span. The lip is part of the "
+               "section and stiffens the front edge.",
+               "Strong but heavy: 7.67 kN point capacity, 7.09 kg each", "4 kN point at 0.83 of capacity, 4.57 kg each (−15 kg per unit)"),
+         drawing="tread"),
+    dict(n=2, name="Right-hand guide rails", qty="2 per unit (upper + lower)", figs="A · B · F",
+         now="Small 25 mm wide rails about 20 mm deep (open underneath).",
+         new="Lower rail: box tube 25 wide × 45 deep, 3 mm wall; keep its top edge where it is and extend it downwards. "
+             "Upper rail: box tube 25 × 25, 2.5 mm wall; keep its bottom edge and extend it up 5 mm.",
+         how=["Swap each right-hand rail for the box tube, same length and angle.", "Keep every hole centre and the axle position unchanged."],
+         why=[("R113", "Stairs and platforms must carry 7.5 kN/m² of crowd."), ("R115", "Deflection no more than span/250 (7.3 mm) under the crowd.")],
+         load=("These rails are the side beams: every step hangs its load on them, and they carry it to the axles, hooks and feet. "
+               "The weaker right-hand side governs.",
+               "Standard stair holds 1.0 kN/m² (7.5× short); catwalk 0.55", "7.5 kN/m² at 0.81 of strength, 0.49 of the deflection limit"),
+         drawing=None),
+    dict(n=3, name="Left-hand guide rails (channels)", qty="2 per unit (upper + lower)", figs="C",
+         now="Open-top channels 35 wide × 25 deep, 5 mm walls, 25 mm slot.",
+         new="Keep them as open-top channels with the 25 mm slot, but 4 mm walls: lower 33 × 49 (slot 45 deep), upper 33 × 29 (slot 25 deep). "
+             "The new right-hand rail of a second unit must slide into the slot with its bottom on the channel floor.",
+         how=["Keep the slot centre-line where it is now.", "Deepen the lower channel downwards and the upper one upwards, matching the right-hand rails.",
+              "Do NOT close the channel into a box: the neighbouring unit nests inside it."],
+         why=[("R113 R115", "Same crowd load and deflection limit as change 2."),
+              ("R103 R105", "Side-by-side joins must stay aligned and flush; that works because the rails nest.")],
+         load=("Same side-beam job as change 2 on the other side of the unit.",
+               "Holds 2.0 kN/m² on the standard stair", "7.5 kN/m² at 0.83 of strength, 0.37 of the deflection limit"),
+         drawing="rails"),
+    dict(n=4, name="Handrail posts (outer sides)", qty="was 12, now 6 per unit", figs="A · B",
+         now="12 thin flats 25 × 10, one at every step on each side.",
+         new="6 square tubes 60 × 60 × 4: three per side, at steps 1, 3 and 6 counted from the bottom. Stand each one 15 mm clear OUTSIDE "
+             "the guide rail, on a base socket (bracket detail by the engineer; it must hold 3.4 kNm). Same heights as now; delete the other flats.",
+         how=["Delete the flats at steps 2, 4 and 5.", "Replace the flats at steps 1, 3 and 6 with 60 × 60 tubes, inner face 15 mm outside the rail.",
+              "Apply to all three handrail sets: catwalk, standard and steep."],
+         why=[("R142", "The top rail must hold a crowd pushing 3.0 kN per metre (circulation routes)."), ("R179", "Each post must hold 1.5 kN at the top."),
+              ("R3 R67", "Clear width between handrails 1,100 mm with the handrail 50 mm off the posts: moving the posts out gives 1,103 (now 1,023).")],
+         load=("Every sideways push on the rails ends up bending the posts at their base. The thin flats bend the weak way.",
+               "Rails hold 0.16 kN/m (19× short); a post 0.24 kN (6× short)", "3.0 kN/m at 0.93; 1.5 kN post load passes"),
+         drawing="post"),
+    dict(n=5, name="Lock pins at the removed posts", qty="6 per unit", figs="B",
+         now="The bottom end of each flat post is the lock pin.",
+         new="At steps 2, 4 and 5 (no post any more) add a separate Ø12 aluminium pin through both guide rails, on a short lanyard so it "
+             "can’t get lost. At steps 1, 3 and 6 the post socket carries the pin.",
+         how=["Model a ×12 pin through the same hole the old post pin used, plus a small ring for the lanyard."],
+         why=[("R104 R78", "Positive, captive locking of every fold joint.")],
+         load=("Without the pins the frame folds under load (it is a mechanism); locked, each side works as a stiff beam. Each pin takes the "
+               "locking shear.", "Loose pins can be lost", "8.7 kN locking shear at 0.59 of pin capacity"),
+         drawing=None),
+    dict(n=6, name="Top rail (guardrail)", qty="2 per unit", figs="A",
+         now="25 × 25 square hollow bar.",
+         new="Round tube Ø40 × 2 mm. Height unchanged (at least 1,100 above the step line).",
+         how=["Replace the profile; keep the rail centre-line and length."],
+         why=[("R63", "Top of the barrier at least 1,100 mm (unchanged)."), ("R142 R143 R178", "Crowd push 3.0 kN/m, a 1.25 kN point, and 1.0 kN/m of people leaning down on it.")],
+         load=("Now spans up to 915 mm between posts instead of 305, so it bends more; the round tube is sized for that.",
+               "Fine on its own, but its posts fail", "0.51 of capacity sideways, 0.31 downwards"),
+         drawing="round"),
+    dict(n=7, name="Handrail", qty="2 per unit", figs="A",
+         now="25 × 25 solid square bar, ending about 80 mm past the end steps.",
+         new="Round tube Ø48.3 × 3 mm with closed ends. On the standard (35°) stair set, run it 300 mm past the top and bottom steps. "
+             "In the double stair the two units’ handrails must join into one: make the 300 mm ends plug-in pieces and add a short joiner at the unit joint.",
+         how=["Replace the profile; keep its height.", "Stair set: add the 300 mm plug-in extensions.", "Model the joiner piece for the double stair."],
+         why=[("R64", "Graspable round rail 25–50 mm (48.3 is in range)."), ("R19 R71", "300 mm past both ends, closed ends."),
+              ("R72", "Continuous over the whole flight, so across the joint in a double stair.")],
+         load=("The 300 mm extension sticks out past the last post like a diving board; a 1.25 kN hand load on its tip sets the tube size.",
+               "Square bar, too short", "1.25 kN on the tip at 0.94 of capacity"),
+         drawing=None),
+    dict(n=8, name="New middle rail", qty="2 per unit (new)", figs="A (dashed)",
+         now="Nothing between the step line and the handrail.",
+         new="Round tube Ø30 × 2 mm on both sides, 575 mm above the step line, running between the end posts.",
+         how=["Add it to all three handrail sets, clamped to the posts."],
+         why=[("R65 R68", "No gap in the side bigger than 470 mm (now about 1,000)."), ("R70", "A lower rail near 600 mm for children.")],
+         load=("Takes a 1.25 kN push between posts and shares the crowd load with the rails above.", "—", "1.25 kN push at 0.84; crowd share 0.30"),
+         drawing="heights"),
+    dict(n=9, name="New toe board", qty="2 per unit (new)", figs="A (dashed)",
+         now="No toe board.",
+         new="Board 150 high along both sides, bottom at the step line: 1.5 mm aluminium with 25 mm folded returns top and bottom.",
+         how=["Model it as a long thin C shape fixed to the posts."],
+         why=[("R66", "150 mm toe board for events.")],
+         load=("Stops feet and objects slipping off the edge; takes a 1.25 kN kick.", "—", "1.25 kN at 0.45"),
+         drawing=None),
+    dict(n=10, name="Top hooks", qty="2 per unit", figs="E",
+         now="5 mm plate with about 12 mm of metal around the hook opening.",
+         new="10 mm plate with at least 22 mm of metal around the opening. The opening itself stays the same size (fits the axle).",
+         how=["Thicken the hook plate to 10 mm and grow the outline outwards; don’t change the opening."],
+         why=[("R113 R170", "The hook carries the whole top end of the stair when it hangs from a bar or the next unit.")],
+         load=("Half of the stair’s load goes through the two top hooks.", "1.36 kN capacity vs 4.1 kN needed (3× short)",
+               "Sized for the full top reaction, about 0.9 of capacity"),
+         drawing="hook"),
+    dict(n=11, name="Feet", qty="4 pads + 2 mid-feet per unit", figs="A · F",
+         now="Four small corner feet, about 75 × 73.",
+         new="Footplates at least 150 × 150 × 10 under the four corners. Add a foot under the middle of each lower guide rail that "
+             "only touches the ground in the flat catwalk position.",
+         how=["Pads: 150 × 150 plates under the existing feet (they also make room for the deeper lower rails).",
+              "Mid-foot: a short leg at the middle of each lower rail, reaching the ground when flat."],
+         why=[("R73", "Footplates at least 150 × 150."), ("R113", "The flat catwalk carrying 7.5 kN/m² needs a support mid-span.")],
+         load=("The mid-foot halves the catwalk span; without it the catwalk would need far deeper rails.",
+               "Catwalk holds 0.55 kN/m² (14× short)", "7.5 kN/m² at 0.53, deflection 0.57"),
+         drawing=None),
+    dict(n=12, name="Side-by-side lock and centre handrail", qty="per pair of units", figs="C · D",
+         now="Each unit brings its own handrail on the inner side.",
+         new="Where two units nest, captive ×12 pins at every step go through BOTH nested rails: that locks the pair. For wide stairs add a "
+             "centre handrail ×48.3 × 3 held only at the top and bottom of the flight (posts at the flight ends, engineer to size). "
+             "Posts can’t go between the steps there: the steps meet 5 mm apart.",
+         how=["Model the pins through both nested rails.", "Model the centre handrail as its own set with an end post at the bottom and at the top."],
+         why=[("R104", "Positive locking of the joined units."), ("R18 R109", "Centre handrail preferred on stairs over 28° and wider than 1.8 m.")],
+         load=("Thin posts at the join can’t take the 1.25 kN hand load a handrail must carry, so the centre rail spans end to end.",
+               "Slim posts hold 0.24 kN (5× short)", "1.25 kN at 0.91, 1.0 kN/m downwards at 0.77 (2.1 m span)"),
+         drawing=None),
+    dict(n=13, name="ID and rating plate", qty="1 per unit", figs="A",
+         now="None.",
+         new="A small plate (about 100 × 60) on the right-hand guide rail: unit ID, maximum load, standard, date.",
+         how=["Model a thin plate with two rivets near the bottom of the right-hand lower rail."],
+         why=[("R93", "Permanent ID and rating plate on every unit.")],
+         load=("No load; it tells the crew what the unit is rated for.", "—", "—"),
+         drawing=None),
+]
+DRAW = {"tread": tread_svg, "rails": rails_svg, "post": post_svg, "round": rails_round_svg, "heights": heights_svg, "hook": hook_svg}
+
+TABLE = [(1, "Steps", "280 × 50 plank", "285 × 40 hollow + 35 lip", "6"),
+         (2, "Right rails", "25 wide, ~20 deep", "box 25×45×3 / 25×25×2.5", "2"),
+         (3, "Left rails", "channel 35×25, 5 mm", "channel 33×49 / 33×29, 4 mm", "2"),
+         (4, "Posts", "12 flats 25×10", "6 tubes 60×60×4, 15 mm outside", "6"),
+         (5, "Lock pins", "post ends", "×12 pins on lanyards", "6"),
+         (6, "Top rail", "25×25 square", "×40×2 round", "2"),
+         (7, "Handrail", "25×25 solid", "×48.3×3, +300 ends, joiner", "2"),
+         (8, "Middle rail", "—", "×30×2 at 575", "2"),
+         (9, "Toe board", "—", "150 high, 1.5 mm", "2"),
+         (10, "Top hooks", "5 mm plate", "10 mm plate, 22 round opening", "2"),
+         (11, "Feet", "4 small feet", "150×150 pads + 2 mid-feet", "6"),
+         (12, "Side-by-side", "handrail each side", "pins through both rails + end-held centre rail", "per pair"),
+         (13, "ID plate", "—", "100×60 rating plate", "1")]
+
+COMPLY = [  # sheet row, requirement, how the brief meets it, status
+    ("R3", "Clear width 1,100 (industry anchor)", "Posts 15 mm outboard, handrail 50 mm off the posts: 1,103 mm (#4)", "pass"),
+    ("R4 R5", "Going ≥ 250 with riser ≤ 175", "Unchanged 250 / 175 on the standard stair (at the limit)", "pass"),
+    ("R6", "Closed risers preferred", "Lip part-closes each riser (#1); preferred, not required", "part"),
+    ("R7", "Open gap between steps ≤ 120 (100 rec)", "100 mm with the 35 mm lip (#1)", "pass"),
+    ("R8", "2 × rise + going 540–660", "600", "pass"),
+    ("R9", "Pitch ≤ 35°", "Standard 35°; steep 49.4° is crew-only", "part"),
+    ("R12", "Uniform risers", "Walking surface kept at the same height (#1)", "pass"),
+    ("R16 R94", "Slip PTV ≥ 36 (40 events)", "Serrated top; pendulum test on the finished step", "test"),
+    ("R17", "55 mm contrasting nosings, both edges", "Strip on front and back edges (#1)", "pass"),
+    ("R18 R109", "Handrails both sides; centre rail on wide stairs", "#4, #7 and the end-held centre rail (#12)", "pass"),
+    ("R19 R71", "Handrail 300 past both ends, closed ends", "#7", "pass"),
+    ("R48", "Deck gap ≤ 25", "20 mm (#1)", "pass"),
+    ("R63", "Top rail ≥ 1,100", "1,127, unchanged", "pass"),
+    ("R64", "Grip 25–50 (40 target)", "×48.3 in range; the 300 mm extension needs it", "pass"),
+    ("R65 R68", "No gap in the side over 470", "Toe board 150, middle rail 575, handrail 1,000, top rail 1,127: largest gap 425", "pass"),
+    ("R66", "Toe board 150", "#9", "pass"),
+    ("R67", "Handrail clear of objects ≥ 50 (100 ideal)", "50 mm; 100 would cut the clear width to 1,003", "part"),
+    ("R70", "Child rail about 600", "575 (#8)", "pass"),
+    ("R72", "Handrail continuous over the flight", "Plug-in ends and a joiner for the double stair (#7)", "pass"),
+    ("R73", "Footplates 150 × 150", "#11", "pass"),
+    ("R78 R104", "Positive, captive locking", "×12 captive pins (#5, #12)", "pass"),
+    ("R93", "ID and rating plate", "#13", "pass"),
+    ("R95", "No finger traps in moving joints (gap > 25 or < 8)", "The 20 mm gap between steps closes while folding: see decisions below", "open"),
+    ("R103 R108", "Module joins: gap ≤ 25, level within 4", "Nested join 5 mm, same level; double join 19 mm", "pass"),
+    ("R106", "Post spacing ≤ 2.5 m", "915 mm maximum", "pass"),
+    ("R113", "Crowd 7.5 kN/m²", "Side beams 0.81 (#2, #3), steps 0.83 (#1), catwalk 0.53 with mid-feet (#11)", "pass"),
+    ("R114", "4 kN on one step", "0.83 (#1)", "pass"),
+    ("R115", "Deflection ≤ span/250 and < 10 mm under one person", "0.49 of the limit; 0.5 mm under a person", "pass"),
+    ("R116 R176", "Sideways crowd load on the whole stair (3.0 kN/m, 10 % sway)", "Goes into hooks and feet: engineer to check", "open"),
+    ("R142", "Barrier 3.0 kN/m (circulation)", "Posts 0.93, handrail 0.94 (#4, #7)", "pass"),
+    ("R142", "Barrier 5.0 kN/m where people gather to watch", "Not covered: a catwalk used as a viewing platform needs more", "open"),
+    ("R143 R144 R145", "1.25 kN on top rail, middle rail, toe board", "0.51, 0.84, 0.45", "pass"),
+    ("R163", "Aluminium EN AW-6082-T6", "All parts", "pass"),
+    ("R166 R173", "Type test 1.2×; class C dynamic edge protection at 30–45°", "Physical test of the finished unit", "test"),
+    ("R177", "Natural frequency ≥ 6 Hz", "47 Hz", "pass"),
+    ("R178 R179", "Rail 1.0 kN/m downwards; post 1.5 kN", "0.31 and 0.93", "pass"),
+    ("R181", "Storm overturning (no people)", "Site wind check; catwalk anchors 3.7 kN or 1.5 t ballast", "open"),
+]
+
+cards = []
+for c in CHANGES:
+    why = "".join(f'<li><span class="ref">{E(r)}</span>{E(t)}</li>' for r, t in c["why"])
+    le, before, after = c["load"]
+    drawing = DRAW[c["drawing"]]() if c["drawing"] else ""
+    cards.append(f"""
+    <article class="card" id="c{c['n']}">
+      <header><span class="num">{c['n']}</span><div><h3>{E(c['name'])}</h3><p class="meta">{E(c['qty'])} · see Fig {E(c['figs'])}</p></div></header>
+      <div class="nowto">
+        <div class="now"><span>Now</span><p>{E(c['now'])}</p></div>
+        <div class="to"><span>Change to</span><p>{E(c['new'])}</p></div>
+      </div>
+      <div class="refs">
+        <figure><img src="img/chg/c{c['n']}_where.jpg" alt="{E(c['name'])}: where on the unit" width="1000" height="625" loading="lazy"><figcaption>Where on the unit</figcaption></figure>
+        <figure><img src="img/chg/c{c['n']}_close.jpg" alt="{E(c['name'])}: close-up" width="1000" height="625" loading="lazy"><figcaption>Close-up</figcaption></figure>
+      </div>
+      <div class="how"><span>In SketchUp</span><ul>{''.join(f'<li>{E(s)}</li>' for s in c['how'])}</ul></div>
+      {f'<div class="draw">{drawing}</div>' if drawing else ''}
+      <div class="whyload">
+        <div class="why"><span>Why (code sheet)</span><ul>{why}</ul></div>
+        <div class="load"><span>Load effect</span><p>{E(le)}</p>
+          <div class="ba"><div><i>Now</i>{E(before)}</div><div><i>After</i>{E(after)}</div></div></div>
+      </div>
+    </article>""")
+
+rows = "".join(f'<tr><td class="mono"><a href="#c{n}">{n}</a></td><th scope="row">{E(p)}</th><td>{E(a)}</td><td class="strong">{E(b)}</td><td class="mono">{E(q)}</td></tr>'
+               for n, p, a, b, q in TABLE)
+figs_html = "".join(figure(*f) for f in FIGS)
+ST_LBL = {"pass": "Pass", "part": "Partly", "test": "Test", "open": "Open"}
+comply_rows = "".join(f'<tr><td class="mono">{E(r)}</td><td>{E(q)}</td><td>{E(h)}</td><td><span class="st {k}">{ST_LBL[k]}</span></td></tr>' for r, q, h, k in COMPLY)
+
+page = f"""<title>Stair Unit Change Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root {{
+  --paper:#EFF2F2; --surface:#FFFFFF; --ink:#15202A; --ink2:#4B5966; --rule:#D3DADE; --soft:#E6EBED;
+  --accent:#1E5A86; --accentbg:#E1ECF4; --new:#C2410C; --newbg:#FDEBDD; --old:#8A96A0;
+  --pass:#2F7A4F; --passbg:#E2F1E7; --warn:#9A620E; --warnbg:#FBEFD8; --fail:#B42318; --failbg:#FBE3E0;
+  --display:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+}}
+@media (prefers-color-scheme: dark) {{
+  :root:not([data-theme="light"]) {{
+    --paper:#0E151B; --surface:#152029; --ink:#E3E9ED; --ink2:#9DACB8; --rule:#27353F; --soft:#1B2833;
+    --accent:#7DB7E3; --accentbg:#16283A; --new:#FB923C; --newbg:#3A2112; --old:#6B7985;
+    --pass:#6CC790; --passbg:#17301F; --warn:#E6B45A; --warnbg:#382B12; --fail:#FF8C80; --failbg:#3A1B18; color-scheme:dark;
+  }}
+}}
+:root[data-theme="dark"] {{
+  --paper:#0E151B; --surface:#152029; --ink:#E3E9ED; --ink2:#9DACB8; --rule:#27353F; --soft:#1B2833;
+  --accent:#7DB7E3; --accentbg:#16283A; --new:#FB923C; --newbg:#3A2112; --old:#6B7985;
+    --pass:#6CC790; --passbg:#17301F; --warn:#E6B45A; --warnbg:#382B12; --fail:#FF8C80; --failbg:#3A1B18; color-scheme:dark;
+}}
+* {{ box-sizing:border-box; }}
+body {{ background:var(--paper); color:var(--ink); font:15.5px/1.6 var(--body); margin:0; padding-inline:16px; padding-block:28px 64px; }}
+.wrap {{ max-width:1120px; margin:0 auto; display:grid; gap:34px; }}
+h1,h2,h3 {{ font-family:var(--display); text-wrap:balance; margin:0; letter-spacing:.01em; }}
+h1 {{ font-size:clamp(34px,5vw,52px); line-height:1.02; }}
+h2 {{ font-size:27px; font-weight:600; }}
+h3 {{ font-size:21px; font-weight:600; line-height:1.15; }}
+p {{ margin:0; max-width:72ch; }}
+a {{ color:var(--accent); }}
+a:focus-visible {{ outline:2px solid var(--accent); outline-offset:2px; }}
+.mono {{ font-family:var(--mono); font-variant-numeric:tabular-nums; }}
+.eyebrow {{ font:600 12px/1 var(--mono); letter-spacing:.12em; text-transform:uppercase; color:var(--accent); }}
+header.top {{ display:grid; gap:12px; }}
+header.top p {{ color:var(--ink2); font-size:16.5px; }}
+.result {{ display:flex; flex-wrap:wrap; gap:0; border:1px solid var(--rule); background:var(--surface); }}
+.result div {{ flex:1 1 180px; padding:12px 16px; border-right:1px solid var(--rule); display:grid; gap:2px; }}
+.result div:last-child {{ border-right:0; }}
+.result span {{ font-size:12.5px; color:var(--ink2); }}
+.result b {{ font:600 23px/1.15 var(--display); font-variant-numeric:tabular-nums; }}
+.result b s {{ color:var(--ink2); font-weight:500; font-size:18px; margin-right:6px; }}
+section {{ display:grid; gap:16px; }}
+section > h2 {{ border-top:2px solid var(--ink); padding-top:12px; }}
+.rules {{ margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:10px; counter-reset:r; }}
+.rules li {{ background:var(--surface); border:1px solid var(--rule); padding:12px 14px; font-size:14.5px; }}
+.rules li b {{ display:block; font-family:var(--display); font-size:17px; font-weight:600; }}
+/* figures */
+.figs {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr)); gap:16px; }}
+.fig {{ margin:0; background:var(--surface); border:1px solid var(--rule); }}
+.fig:first-child {{ grid-column:1 / -1; }}
+.shot {{ position:relative; }}
+.shot img {{ width:100%; height:auto; display:block; }}
+.mk {{ position:absolute; transform:translate(-50%,-50%); width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff;
+      font:600 13px/28px var(--mono); text-align:center; text-decoration:none; box-shadow:0 0 0 3px rgba(255,255,255,.85); }}
+.mk.new {{ background:var(--new); }}
+.mk:hover, .mk:focus-visible {{ transform:translate(-50%,-50%) scale(1.15); outline:none; }}
+.fig figcaption {{ padding:9px 12px; font-size:13.5px; color:var(--ink2); border-top:1px solid var(--rule); }}
+.fig figcaption b {{ color:var(--ink); font-family:var(--mono); font-weight:500; margin-right:6px; }}
+.key {{ display:flex; flex-wrap:wrap; gap:14px; font-size:13px; color:var(--ink2); align-items:center; }}
+.key i {{ display:inline-block; width:14px; height:14px; border-radius:50%; vertical-align:-2px; margin-right:6px; }}
+/* summary table */
+.tw {{ overflow-x:auto; border:1px solid var(--rule); background:var(--surface); }}
+table {{ border-collapse:collapse; width:100%; font-size:14px; }}
+th, td {{ padding:8px 12px; border-bottom:1px solid var(--rule); text-align:left; vertical-align:top; }}
+thead th {{ font:600 11.5px/1.2 var(--mono); letter-spacing:.06em; text-transform:uppercase; color:var(--ink2); background:var(--soft); }}
+tbody tr:last-child > * {{ border-bottom:0; }}
+tbody th {{ font-weight:500; }}
+td.strong {{ font-weight:600; }}
+/* change cards */
+.cards {{ display:grid; gap:14px; }}
+.card {{ background:var(--surface); border:1px solid var(--rule); padding:16px 18px; display:grid; gap:12px; scroll-margin-top:16px; }}
+.card:target {{ box-shadow:0 0 0 2px var(--accent); }}
+.card header {{ display:flex; gap:12px; align-items:center; }}
+.num {{ flex:none; width:36px; height:36px; border-radius:50%; background:var(--accent); color:#fff; font:600 16px/36px var(--mono); text-align:center; }}
+.meta {{ color:var(--ink2); font-size:13px; }}
+.nowto {{ display:grid; grid-template-columns:1fr 1.5fr; gap:10px; }}
+.nowto > div {{ padding:10px 12px; display:grid; gap:4px; min-width:0; }}
+.now {{ background:var(--soft); }}
+.to {{ background:var(--newbg); }}
+.nowto span, .how > span {{ font:600 11px/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--ink2); }}
+.to span {{ color:var(--new); }}
+.how ul {{ margin:6px 0 0; padding-left:20px; display:grid; gap:3px; }}
+.refs {{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }}
+.refs figure {{ margin:0; border:1px solid var(--rule); background:var(--paper); }}
+.refs img {{ width:100%; height:auto; display:block; }}
+.refs figcaption {{ font:500 12px/1 var(--mono); color:var(--ink2); padding:7px 9px; letter-spacing:.04em; }}
+@media (max-width: 640px) {{ .refs {{ grid-template-columns:1fr; }} }}
+.whyload {{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }}
+.whyload > div {{ border:1px solid var(--rule); padding:10px 12px; display:grid; gap:6px; align-content:start; min-width:0; }}
+.whyload > div > span {{ font:600 11px/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--ink2); }}
+.why ul {{ margin:0; padding:0; list-style:none; display:grid; gap:6px; font-size:14px; }}
+.ref {{ display:inline-block; font:600 11.5px/1.4 var(--mono); color:var(--accent); background:var(--accentbg); padding:0 5px; margin-right:6px; }}
+.load p {{ font-size:14px; }}
+.ba {{ display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:13px; }}
+.ba div {{ padding:6px 8px; background:var(--soft); }}
+.ba div:last-child {{ background:var(--passbg); }}
+.ba i {{ display:block; font:600 10.5px/1.3 var(--mono); letter-spacing:.08em; text-transform:uppercase; font-style:normal; color:var(--ink2); }}
+.st {{ display:inline-block; font:600 11px/1 var(--mono); letter-spacing:.05em; text-transform:uppercase; padding:4px 7px; white-space:nowrap; }}
+.st.pass {{ color:var(--pass); background:var(--passbg); }} .st.part, .st.test {{ color:var(--warn); background:var(--warnbg); }} .st.open {{ color:var(--fail); background:var(--failbg); }}
+@media (max-width: 760px) {{ .whyload {{ grid-template-columns:1fr; }} }}
+.draw {{ overflow-x:auto; border:1px solid var(--rule); background:var(--paper); padding:8px; }}
+.sec {{ display:block; width:100%; min-width:520px; height:auto; max-height:320px; }}
+.sec .old {{ fill:none; stroke:var(--old); stroke-width:2; stroke-dasharray:5 4; }}
+.sec .old2 {{ fill:var(--soft); stroke:var(--old); stroke-width:1.5; }}
+.sec .new {{ fill:var(--new); stroke:var(--new); stroke-width:1; }}
+.sec .new2 {{ fill:var(--accent); stroke:var(--accent); stroke-width:1; }}
+.sec .newf {{ fill:var(--newbg); stroke:var(--new); stroke-width:1.5; }}
+.sec .void {{ fill:var(--paper); stroke:none; }}
+.sec .rib {{ stroke:var(--new); stroke-width:1.5; }}
+.sec .dim {{ stroke:var(--ink2); stroke-width:1.2; }}
+.sec .axle {{ fill:none; stroke:var(--ink2); stroke-width:1.5; stroke-dasharray:3 3; }}
+.sec .grd {{ stroke:var(--ink); stroke-width:2; }}
+.sec .newl {{ stroke:var(--new); stroke-width:4; }}
+.sec .old2l {{ stroke:var(--old); stroke-width:4; }}
+.sec .postl {{ stroke:var(--ink2); stroke-width:6; }}
+.sec text {{ fill:var(--ink); font-family:var(--mono); font-size:13px; }}
+.sec .tag {{ fill:var(--ink2); font-size:12px; letter-spacing:.08em; }}
+.sec .note {{ fill:var(--new); font-size:12.5px; }}
+.sec .note2 {{ fill:var(--accent); font-size:12.5px; }}
+.notmodel {{ margin:0; padding-left:20px; display:grid; gap:8px; color:var(--ink2); max-width:80ch; }}
+.notmodel b {{ color:var(--ink); }}
+footer {{ color:var(--ink2); font-size:12.5px; border-top:1px solid var(--rule); padding-top:12px; display:grid; gap:4px; }}
+@media (max-width: 700px) {{ .nowto {{ grid-template-columns:1fr; }} }}
+@media (prefers-reduced-motion: reduce) {{ .mk:hover {{ transform:translate(-50%,-50%); }} }}
+</style>
+
+<main class="wrap">
+  <header class="top">
+    <div class="eyebrow">SketchUp change brief · folding stair unit</div>
+    <h1>Stair unit change brief</h1>
+    <p>Thirteen shape and size changes that turn the current model into the lighter, event-rated version. Nothing folds or moves differently:
+       the unit keeps its length, width, fold positions and every pin and axle hole. Everything stays aluminium. The sizes have already been
+       checked by the load test, so they just need drawing as written. The numbers on the pictures match the numbered changes.</p>
+    <div class="result">
+      <div><span>Weight per unit</span><b><s>71.6</s>≈ 69 kg</b></div>
+      <div><span>Crowd load on the stair</span><b><s>1.0</s>7.5 kN/m²</b></div>
+      <div><span>Push on the top rail</span><b><s>0.16</s>3.0 kN/m</b></div>
+      <div><span>Gap under each step</span><b><s>125</s>100 mm</b></div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Before you start</h2>
+    <ul class="rules">
+      <li><b>Holes stay put</b>Don’t move any pin hole, axle centre or hook opening. The folding depends on them.</li>
+      <li><b>Same overall unit</b>Length, width, fold angles (flat, 35°, 49.4°) and the gap between units stay as they are.</li>
+      <li><b>Left rails stay open</b>The left-hand rails must remain open-top channels: a second unit’s right-hand rails slide into them.</li>
+      <li><b>Three handrail sets</b>Apply changes 4–9 to the catwalk, standard and steep handrail sets. The 300 mm handrail extension is only for the standard stair.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Where the changes are</h2>
+    <div class="key"><span><i style="background:var(--accent)"></i>change to an existing part</span><span><i style="background:var(--new)"></i>new part: shows where it goes</span><span>Click a number to jump to its change. In each change’s own pictures, <b style="color:#E8590C">orange</b> = change or new part, <b style="color:#D11A1A">red</b> = remove.</span></div>
+    <div class="figs">{figs_html}</div>
+  </section>
+
+  <section>
+    <h2>All changes at a glance</h2>
+    <div class="tw"><table>
+      <thead><tr><th>#</th><th>Part</th><th>Now</th><th>Change to</th><th>Qty / unit</th></tr></thead>
+      <tbody>{rows}</tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>The changes</h2>
+    <div class="cards">{''.join(cards)}</div>
+  </section>
+
+  <section id="compliance">
+    <h2>Checked against the code compliance sheet</h2>
+    <p>Every row of the Aug-2026 events sheet that applies to this unit, and how the changes above meet it. Row numbers match the sheet.</p>
+    <div class="tw"><table>
+      <thead><tr><th>Row</th><th>Requirement</th><th>How it is met</th><th>Status</th></tr></thead>
+      <tbody>{comply_rows}</tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>Decisions and checks outside the model</h2>
+    <ul class="notmodel">
+      <li><b>Finger trap while folding (R95).</b> The 20 mm gap between steps closes as the unit folds. Either fold only when nobody is on it, by trained crew with gloves (a written procedure), or make the steps 298 deep so the gap is 7 mm (+1.3 kg per unit, still passes every check above).</li>
+      <li><b>Viewing platforms (R142).</b> The barriers are sized for 3.0 kN/m, which covers people walking through. A catwalk where people stand and watch against the rail needs 5.0 kN/m and bigger posts.</li>
+      <li><b>Engineer to check:</b> the post base brackets (3.4 kNm), the centre-rail end posts, and the sideways crowd load and 10 % sway into the hooks and feet (R116, R176).</li>
+      <li><b>Site:</b> a free-standing catwalk needs four ground anchors (3.7 kN each) or about 1.5 t of ballast; a double stair needs a trestle under the joint; storm overturning per site wind (R181).</li>
+      <li><b>Tests:</b> slip resistance of the step surface (R16), and a physical load test of the finished unit at 1.2× load, including class C edge protection at 35° (R166, R173).</li>
+      <li><b>Steep 49.4°</b> is for crew only (step-ladder use), not the public (R9).</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>Sizes: the verified lightweight all-aluminium specification in the <a href="{REPORT}">load verdict report</a>, with the left rails kept as open 4 mm channels so side-by-side units still nest (checked: {LC['standard']['stress']:.2f} of capacity).</span>
+    <span>Current design and ratings: <a href="{DATASHEET}">as-is datasheet</a>. Pictures: RIGGED3.blend, current geometry.</span>
+  </footer>
+</main>
+"""
+open(os.path.join(HERE, "web", "index.html"), "w", encoding="utf-8").write(page)
+print("brief written", len(page))

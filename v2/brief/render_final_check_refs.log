@@ -1,0 +1,37 @@
+00:04.782  blend            | Read blend: "C:\Users\USER\Desktop\Staircases\idea one\v2\final\FINAL_standard.blend"
+C:\Users\USER\Desktop\Staircases\idea one\v2\brief\render_final_check_refs.py:17: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  w = sc.world or bpy.data.worlds.new("W"); sc.world = w; w.use_nodes = True
+C:\Users\USER\Desktop\Staircases\idea one\v2\brief\render_final_check_refs.py:27: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes = True
+C:\Users\USER\Desktop\Staircases\idea one\v2\brief\render_final_check_refs.py:35: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mt = bpy.data.materials.new(name); mt.use_nodes = True
+00:07.516  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f_overview.jpg'
+00:08.172  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f1_where.jpg'
+00:08.891  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f1_close1.jpg'
+00:09.610  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f1_close2.jpg'
+00:10.235  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f2_where.jpg'
+00:10.969  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f2_close1.jpg'
+00:11.641  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f3_where.jpg'
+00:12.282  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f3_close1.jpg'
+00:12.891  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f4_where.jpg'
+00:13.469  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f4_close1.jpg'
+00:14.078  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f5_where.jpg'
+00:14.703  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f5_close1.jpg'
+00:15.344  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f5_close2.jpg'
+00:15.953  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f5_close3.jpg'
+00:16.610  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f6_where.jpg'
+00:17.297  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f6_close1.jpg'
+00:17.907  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f7_where.jpg'
+00:18.610  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f7_close1.jpg'
+00:19.235  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f8_where.jpg'
+00:19.875  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f8_close1.jpg'
+00:20.532  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f9_where.jpg'
+00:21.219  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f9_close1.jpg'
+00:21.844  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f9_close2.jpg'
+counts 378 102 14 16 14 0
+OVERVIEW dist 5.66
+MARKERS {'f1': [48.72, 59.24], 'f2': [50.66, 77.65], 'f3': [39.84, 61.33], 'f4': [39.24, 46.88], 'f5': [58.47, 92.58], 'f6': [38.64, 19.63], 'f7': [53.29, 42.78], 'f8': [54.95, 47.13], 'f9': [46.88, 24.52]}
+RENDERS done
+Blender 5.1.2 (hash ec6e62d40fa9 built 2026-05-19 01:37:34)
+
+Blender quit

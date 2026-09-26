@@ -1,0 +1,14 @@
+L20 lattice 20 x 20 (13 long b ULS 4 kN patch front, mid-span       lip  -41.78 min  -41.79 twist  6.88 vm  351.3 (front lip) u 1.55 | cross bars 179 | long bars 332 | eq 6122/6122
+L20 lattice 20 x 20 (13 long b ULS 4 kN patch centre, mid-span      lip  -34.33 min  -34.34 twist  5.12 vm  278.8 (front lip) u 1.23 | cross bars 148 | long bars 268 | eq 6122/6122
+L20 lattice 20 x 20 (13 long b ULS 4 kN patch front, at left end    lip  -11.70 min  -12.18 twist  1.93 vm  170.3 (flat) u 0.75 | cross bars 145 | long bars 170 | eq 6122/6122
+L20 lattice 20 x 20 (13 long b ULS crowd                            lip  -12.57 min  -12.57 twist  1.88 vm   91.8 (front lip) u 0.40 | cross bars 59 | long bars 87 | eq 3497/3497
+L20 lattice 20 x 20 (13 long b SLS 4 kN patch front, mid-span       lip  -27.88 min  -27.89 twist  4.61 vm  234.4 (front lip) u 1.03 | cross bars 119 | long bars 222 | eq 4090/4090
+L20 lattice 20 x 20 (13 long b SLS crowd 7.5 kN/m2                  lip   -8.41 min   -8.41 twist  1.25 vm   61.4 (front lip) u 0.27 | cross bars 39 | long bars 58 | eq 2340/2340
+L20 lattice 20 x 20 (13 long b SLS person 1 kN at nosing (100x100)  lip   -9.06 min   -9.06 twist  1.63 vm   80.6 (front lip) u 0.35 | cross bars 38 | long bars 75 | eq 1090/1090
+L40 lattice 20 x 40 (7 long ba ULS 4 kN patch front, mid-span       lip  -54.82 min  -54.83 twist  8.94 vm  472.5 (front lip) u 2.08 | cross bars 228 | long bars 463 | eq 6102/6102
+L40 lattice 20 x 40 (7 long ba ULS 4 kN patch centre, mid-span      lip  -45.33 min  -45.34 twist  6.76 vm  382.1 (front lip) u 1.68 | cross bars 172 | long bars 377 | eq 6102/6102
+L40 lattice 20 x 40 (7 long ba ULS 4 kN patch front, at left end    lip  -15.33 min  -15.98 twist  2.50 vm  239.9 (flat) u 1.06 | cross bars 198 | long bars 240 | eq 6102/6102
+L40 lattice 20 x 40 (7 long ba ULS crowd                            lip  -16.53 min  -16.54 twist  2.47 vm  125.3 (front lip) u 0.55 | cross bars 76 | long bars 122 | eq 3477/3477
+L40 lattice 20 x 40 (7 long ba SLS 4 kN patch front, mid-span       lip  -36.58 min  -36.59 twist  5.99 vm  315.2 (front lip) u 1.39 | cross bars 152 | long bars 309 | eq 4076/4076
+L40 lattice 20 x 40 (7 long ba SLS crowd 7.5 kN/m2                  lip  -11.05 min  -11.06 twist  1.65 vm   83.8 (front lip) u 0.37 | cross bars 51 | long bars 82 | eq 2326/2326
+L40 lattice 20 x 40 (7 long ba SLS person 1 kN at nosing (100x100)  lip  -11.77 min  -11.77 twist  2.09 vm  105.6 (front lip) u 0.46 | cross bars 53 | long bars 104 | eq 1076/1076

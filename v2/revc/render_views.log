@@ -1,0 +1,17 @@
+00:02.031  blend            | Read blend: "C:\Users\USER\Desktop\Staircases\idea one\v2\final\FINAL_standard.blend"
+C:\Users\USER\Desktop\Staircases\idea one\v2\final\render_final_views.py:14: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  sc.world = w; w.use_nodes = True
+C:\Users\USER\Desktop\Staircases\idea one\v2\final\render_final_views.py:26: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes = True
+00:04.625  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\revc\web\img\final_hero.jpg'
+00:05.437  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\revc\web\img\final_side.jpg'
+00:06.515  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\revc\web\img\final_tread_end.jpg'
+00:08.000  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\revc\web\img\final_tread_under.jpg'
+00:09.578  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\revc\web\img\final_lock.jpg'
+00:10.781  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\revc\web\img\final_base.jpg'
+00:12.078  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\revc\web\img\final_top.jpg'
+00:13.406  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\revc\web\img\final_pole_top.jpg'
+RENDERS done
+Blender 5.1.2 (hash ec6e62d40fa9 built 2026-05-19 01:37:34)
+
+Blender quit

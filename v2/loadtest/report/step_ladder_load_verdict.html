@@ -1,0 +1,657 @@
+<title>Step Ladder Load Verdict</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#F3F5F5; --surface:#FFFFFF; --ink:#16212B; --ink2:#4A5866; --rule:#D5DCE0; --accent:#1E5A86;
+  --pass:#2F7A4F; --passbg:#E2F1E7; --fail:#B42318; --failbg:#FBE3E0; --warn:#9A620E; --warnbg:#FBEFD8;
+  --na:#8793A0; --heat1:#F7C9C2; --heat2:#EE9A8E; --heat3:#DA5B4A;
+  --display:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E151B; --surface:#152029; --ink:#E3E9ED; --ink2:#9DACB8; --rule:#27353F; --accent:#7DB7E3;
+    --pass:#6CC790; --passbg:#17301F; --fail:#FF8C80; --failbg:#3A1B18; --warn:#E6B45A; --warnbg:#382B12;
+    --na:#6B7985; --heat1:#4A2420; --heat2:#6E2C25; --heat3:#9C3326; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E151B; --surface:#152029; --ink:#E3E9ED; --ink2:#9DACB8; --rule:#27353F; --accent:#7DB7E3;
+  --pass:#6CC790; --passbg:#17301F; --fail:#FF8C80; --failbg:#3A1B18; --warn:#E6B45A; --warnbg:#382B12;
+  --na:#6B7985; --heat1:#4A2420; --heat2:#6E2C25; --heat3:#9C3326; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:15px/1.6 var(--body);padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:44px}
+h1,h2,h3{font-family:var(--display);letter-spacing:.01em;line-height:1.1;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,5vw,52px);font-weight:700}
+h2{font-size:28px;font-weight:600}
+h3{font-size:19px;font-weight:600}
+p{margin:0;max-width:68ch}
+.lede{font-size:17px;color:var(--ink2)}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+section{display:flex;flex-direction:column;gap:16px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+code{font-family:var(--mono);font-size:.9em}
+
+/* title block, drawing-sheet style */
+.tblock{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1.5px solid var(--ink);background:var(--surface)}
+.tblock div{padding:10px 12px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);min-width:0}
+.tblock div:nth-child(4n){border-right:0}
+.tblock div:nth-last-child(-n+4){border-bottom:0}
+.tblock b{display:block;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-bottom:2px}
+.tblock span{font-size:14px;overflow-wrap:anywhere}
+@media (max-width:760px){.tblock{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .tblock div:nth-child(4n){border-right:1px solid var(--rule)} .tblock div:nth-child(2n){border-right:0}
+ .tblock div:nth-last-child(-n+4){border-bottom:1px solid var(--rule)} .tblock div:nth-last-child(-n+2){border-bottom:0}}
+
+/* verdict */
+.verdict{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border:1.5px solid var(--ink)}
+.verdict > div{padding:20px;display:flex;flex-direction:column;gap:10px;background:var(--surface)}
+.verdict > div + div{border-left:1.5px solid var(--ink)}
+.stamp{align-self:flex-start;font:700 15px var(--display);letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border:2px solid currentColor}
+.stamp.fail{color:var(--fail)} .stamp.pass{color:var(--pass)}
+.big{font:600 44px/1 var(--display)}
+@media (max-width:760px){.verdict{grid-template-columns:1fr}.verdict > div + div{border-left:0;border-top:1.5px solid var(--ink)}}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--rule);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);background:var(--paper)}
+tr:last-child td{border-bottom:0}
+td.r{text-align:right}
+.chip{display:inline-block;font:500 11px var(--mono);letter-spacing:.06em;padding:2px 7px;border-radius:3px}
+.chip.pass{background:var(--passbg);color:var(--pass)} .chip.fail{background:var(--failbg);color:var(--fail)}
+.chip.warn{background:var(--warnbg);color:var(--warn)}
+
+/* matrix */
+.toggle{display:inline-flex;border:1.5px solid var(--ink);align-self:flex-start}
+.toggle button{font:600 14px var(--display);letter-spacing:.06em;text-transform:uppercase;padding:7px 14px;border:0;background:var(--surface);color:var(--ink);cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.toggle button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#matrix td{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:center;white-space:nowrap;padding:8px 6px}
+#matrix td.st{font-family:var(--body);text-align:left;white-space:normal;min-width:190px}
+#matrix th{text-align:center} #matrix th:first-child{text-align:left}
+#matrix td.ok{color:var(--pass)} #matrix td.na{color:var(--na)}
+#matrix td.h1{background:var(--heat1)} #matrix td.h2{background:var(--heat2)} #matrix td.h3{background:var(--heat3);color:#fff}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--ink2)}
+.legend i{display:inline-block;width:14px;height:14px;vertical-align:-2px;margin-right:6px;border:1px solid var(--rule)}
+
+/* rating bars */
+.bars{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--rule);padding:18px}
+.bar{display:grid;grid-template-columns:110px minmax(0,1fr) 70px;align-items:center;gap:12px}
+.track{position:relative;height:22px;background:var(--paper);border:1px solid var(--rule)}
+.fill{position:absolute;inset:0 auto 0 0;background:var(--fail)}
+.fill.up{background:var(--pass);opacity:.35}
+.req{position:absolute;top:-6px;bottom:-6px;width:0;border-left:2px dashed var(--ink)}
+.scale{display:grid;grid-template-columns:110px minmax(0,1fr) 70px;gap:12px;font:12px var(--mono);color:var(--ink2)}
+.scale div:nth-child(2){display:flex;justify-content:space-between}
+
+/* figures */
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:860px){.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.grid3,.grid2{grid-template-columns:1fr}}
+figure{margin:0;display:flex;flex-direction:column;gap:6px}
+figure img,video{width:100%;height:auto;display:block;border:1px solid var(--rule);background:#3a3a3a}
+figcaption{font-size:13px;color:var(--ink2)}
+figcaption b{color:var(--ink);font-weight:600}
+.diagram{background:var(--surface);border:1px solid var(--rule);padding:12px;overflow-x:auto}
+.diagram svg{display:block;width:100%;min-width:560px;height:auto}
+ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;max-width:80ch}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+@media (max-width:760px){.cols{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* aluminium change list */
+.callout{max-width:none;padding:10px 14px;background:var(--warnbg);color:var(--ink);border:1px solid var(--warn)}
+.keyfigs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1.5px solid var(--ink);background:var(--surface)}
+.keyfigs div{padding:14px 16px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.keyfigs div + div{border-left:1px solid var(--rule)}
+.keyfigs b{font:600 24px/1.1 var(--display);font-family:var(--mono);font-size:19px}
+.keyfigs span{font-size:13px;color:var(--ink2)}
+@media (max-width:760px){.keyfigs{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .keyfigs div + div{border-left:0} .keyfigs div:nth-child(2n){border-left:1px solid var(--rule)}
+ .keyfigs div:nth-child(n+3){border-top:1px solid var(--rule)}}
+table.changes{font-size:13.5px}
+table.changes td{min-width:110px}
+table.changes td:first-child{min-width:170px}
+table.changes tr.grp td{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--paper);padding-top:12px}
+.ids{font:12px var(--mono);color:var(--ink2)}
+.u{font-family:var(--mono);font-weight:500;padding:1px 5px;border-radius:3px}
+.u.bad{background:var(--failbg);color:var(--fail)} .u.good{background:var(--passbg);color:var(--pass)}
+.sub{font-size:12px;color:var(--ink2)}
+
+.banner{display:block;padding:12px 16px;border:1.5px solid var(--accent);background:var(--surface);color:var(--ink);text-decoration:none}
+.banner:hover{background:var(--paper)} .banner:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wlab{font-size:13px} .wlab small{display:block;color:var(--ink2);font-size:12px}
+#wbars .bar{grid-template-columns:200px minmax(0,1fr) 72px}
+@media (max-width:560px){#wbars .bar{grid-template-columns:120px minmax(0,1fr) 64px}}
+.fill.ok{background:var(--pass)} .fill.old{background:var(--na)} .fill.bad{background:var(--fail)}
+</style>
+
+<div class="wrap">
+
+<header style="display:flex;flex-direction:column;gap:18px">
+  <div class="eyebrow">Step 2 &amp; 3 &middot; load test &amp; EN event compliance</div>
+  <h1>Folding step ladder: does it hold an event crowd?</h1>
+  <p class="lede">Every rigged state of the unit (single, end-to-end double, and side-by-side wide at catwalk 0&deg;, standard 35&deg; and steep 49.4&deg;) was checked against the Event column of the load-compliance workbook. The checks used hand calculations, an independent finite-element model and Blender rigid-body physics. Every member section was measured from the CAD mesh.</p>
+  <div class="tblock">
+    <div><b>Model</b><span>STEP LADDER RIGGED2.blend</span></div>
+    <div><b>Source CAD</b><span>final STEP LADDER 22-9-2026.ifc</span></div>
+    <div><b>Load basis</b><span>EN 1991-1-1 C5 &middot; EN 12811-1 &middot; EN 13374</span></div>
+    <div><b>Factors</b><span>EN 1990: &gamma;<sub>G</sub> 1.35 &middot; &gamma;<sub>Q</sub> 1.5</span></div>
+    <div><b>Material basis A</b><span>S355 structure + EN AW-6082-T6 treads</span></div>
+    <div><b>Material basis B</b><span>all aluminium (6061-T6 + 6082-T6)</span></div>
+    <div><b>States checked</b><span class="num">11 &times; 173 code checks</span></div>
+    <div><b>Date</b><span class="num">2026-09-23</span></div>
+  </div>
+</header>
+
+
+<!-- FINAL-AUDIT-BANNER -->
+<a class="banner" href="#final-audit">
+  <b>Update 25 Sep 2026.</b> The final model has been audited part by part. It carries about <b class="num">1.1 kN/m²</b> of the 7.5 needed; the steps, fold lock, rails, pins and poles fail. This report's tread verdict is corrected below &darr;
+</a>
+<!-- /FINAL-AUDIT-BANNER -->
+
+<a class="banner" href="#lightweight">
+  <b>Update 23 Sep 2026.</b> Re-checked against the Aug-2026 events compliance sheet (EN 13200 basis: 4 kN tread point load, L/250 deflection, 1.5 kN post load, toe boards, riser gaps). A lightweight all-aluminium design meets it at <b class="num">69.4 kg</b> per unit. See the full change list &darr;
+</a>
+
+
+<!-- FINAL-AUDIT -->
+<section id="final-audit">
+  <div class="eyebrow">Precise audit · 25 Sep 2026 final model</div>
+  <h2>The final model, part by part</h2>
+  <p>The 25 Sep model (<code>25.9.2026 final STEP LADDER-standard.ifc</code>, standard 35°) was measured part by part: 791 elements and 1,673 contacts. The steps were run as a shell FE that balances exactly, cross-checked by an independent thin-walled calculation within 12 %. Each side was run as a frame with every pin, hook and lock modelled. Results below take the worse of a sliding and a held base, since the hooks lock onto the axles.</p>
+  <div class="keyfigs">
+    <div><b class="num">≈ 1.1 kN/m²</b><span>crowd the unit carries (7.5 needed); the Ø2 latch pins govern</span></div>
+    <div><b class="num">3.64×</b><span>4 kN at the front of a step (828 MPa)</span></div>
+    <div><b class="num">0.16 kN/m</b><span>barrier line load carried (3.0 needed)</span></div>
+    <div><b class="num">61.2 kg</b><span>per unit, measured sections</span></div>
+  </div>
+  <div class="tbl"><table class="changes">
+    <thead><tr><th>Part</th><th>25 Sep model</th><th>Governing check</th><th>Util</th><th>Smallest that passes</th></tr></thead>
+    <tbody><tr><td><b>Handrail poles</b></td><td>RHS 25 × 10 × 2</td><td>1.5 kN post load (R179)</td><td class="num"><span class="u bad">30.47</span></td><td>Solid 6082-T6 25 × 55 (tapered to 15 at the top), on the outside face of the rails, bolted to both</td></tr><tr><td><b>Guide rails</b></td><td>U 35 × 25 × 5 / inverted U 25 × 25 and 25 × 20</td><td>Net section at the pin holes (R113)</td><td class="num"><span class="u bad">6.95</span></td><td>About 65 deep with Ø20 pins (net W ≥ 2,900 mm³, 18 mm to every edge)</td></tr><tr><td><b>Pole locking pegs</b></td><td>Ø2 pegs on each pole (one piece with it), 2 per rail</td><td>Rail-to-rail transfer (R78/R104)</td><td class="num"><span class="u bad">6.62</span></td><td>Ø12 pegs (they bend over 7.5 mm to the rail wall); add the upper pair; notches lined up</td></tr><tr><td><b>Step pins</b></td><td>Ø10, 6.75–14 mm lever</td><td>Bending with the frame link force (R170)</td><td class="num"><span class="u bad">5.30</span></td><td>Ø20 6082-T6</td></tr><tr><td><b>Steps</b></td><td>Open J + L, grating front to back, no deck</td><td>4 kN at the nosing (R114); sag L/250 (R115)</td><td class="num"><span class="u bad">3.64</span></td><td>Closed box 280 × 50: 5 mm top, 3 mm bottom, 5 mm walls (FE 0.68)</td></tr><tr><td><b>Base axle</b></td><td>Ø25 × 2.5, hook 70 mm from the jack, drawn as two tubes</td><td>Bending, base held (R147)</td><td class="num"><span class="u bad">6.04</span></td><td>One tube jack to jack (the kept tube stops 34 mm short): 48.3 × 4 scaffold tube, or jacks under the hooks with Ø30 × 3</td></tr><tr><td><b>Hooks</b></td><td>10 mm plate, ring ≈ 22 mm, lock not drawn</td><td>Throat (R150); lock carries the base reaction</td><td class="num"><span class="u bad">3.37</span></td><td>Ring ≥ 39 mm on the ground (57.5 clamped); lock for up to 17.7 kN per hook</td></tr></tbody>
+  </table></div>
+  <p class="callout"><b>Correction to this report.</b> The verdict above calls the treads “fine”. That treated the tread as a solid 280 × 50 plank. Measured part by part, the 22 Sep tread is an open J + L with a 5 mm deck. It fails 4 kN at the nosing (317 MPa, 1.39×) and L/250 under the crowd (7.7 mm against 4.86). The 25 Sep model removed the deck, which made it worse: 828 MPa and 17.5 mm. Only closed sections pass. Re-run on 26 Sep with the load on the top plate (an earlier box check loaded the bottom plate by mistake): a 280 × 50 box with a 3 mm top, 2 mm bottom and walls and two 2 mm inner webs passes at 0.41 (0.82 with every seam welded), about 5.9 kg per step. Three step designs with drain holes pass (all 280 × 50): A, that thin box with holes punched top and bottom (lightest); B, the owner’s sketch, a 25 mm box added on top of the J + L; C, an open grating with 50 mm bars running along the step. Open 25 mm lattices fail, even with bars every 10 mm.</p>
+  <p class="callout"><b>Base condition.</b> The hooks lock onto the axles, so the unit works anywhere between a base that slides (worst for the rails) and one the ground holds (worst for the supports). Held, each jack takes 10.9 kN sideways, the top hook locks 3.2 kN uplift, and the base axle reaches 6.0×. Both limits are checked; each part takes the worse. The steps are checked with their flats joined to the end plates, as confirmed.</p>
+  <p>Full results: <a href="https://claude.ai/artifact/GLipbqMzpRje8YZFLYTeL7">datasheet DS-FMS-FINAL, Rev B</a>. What to draw: <a href="https://claude.ai/artifact/Biz2ptYvZVvXxDctWsHCE5#final-check">change brief, 25 Sep model check</a>. Source: <code>v2/final/final_results.json</code>.</p>
+</section>
+<!-- /FINAL-AUDIT -->
+
+<section>
+  <div class="eyebrow">Verdict</div>
+  <div class="verdict">
+    <div>
+      <span class="stamp fail">Does not comply as modelled</span>
+      <div class="big num">78 <span style="font-size:20px;color:var(--ink2)">of 173 checks fail</span></div>
+      <p>No state carries the event crowd load of <b class="num">7.5 kN/m&sup2;</b>. Once the handrails lock it, the unit's girder carries <b class="num">0.66</b> (catwalk), <b class="num">1.47</b> (standard) and <b class="num">2.91 kN/m&sup2;</b> (steep). The treads are fine; the thin guide bars, 25&times;10 posts, 5&nbsp;mm hooks and free-standing stability are not. The all-aluminium basis is worse (86 fails).</p>
+    </div>
+    <div>
+      <span class="stamp pass">Complies with five upgrades</span>
+      <div class="big num">0 <span style="font-size:20px;color:var(--ink2)">of 166 checks fail</span></div>
+      <p>With the upgrades below, every code check passes in all 11 states. The tightest is a steep-stair post under a 1.25&nbsp;kN point load, at <b class="num">0.975</b>. One operating rule stays: the handrails must be inserted before anyone steps on. Without their lock pins the guide rails are a mechanism.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">What to change</div>
+  <h2>Upgrade specification</h2>
+  <p class="callout"><b>Material decision, 23 Sep 2026: everything aluminium.</b> The part-by-part aluminium list below is the one to build from. This steel-basis table stays for reference.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Member</th><th>As modelled</th><th>Required</th><th>Governs</th></tr></thead>
+    <tbody>
+      <tr><td>Lower guide bars (both sides)</td><td>20&ndash;25 &times; 25 sandwich, I = 7,562 mm&#8308;</td><td><b>25 &times; 45 solid flat, S355</b> (still fits the 25 mm channel)</td><td>Catwalk girder stress and L/100 deflection</td></tr>
+      <tr><td>Handrail posts</td><td>25 &times; 10 flat bar, weak axis</td><td><b>SHS 40 &times; 40 &times; 4, S355</b></td><td>1.25 kN point / 3.0 kN/m crowd line</td></tr>
+      <tr><td>Top hooks (4 per unit)</td><td>5 mm plate, 11.9 mm throat (2.04 kN each)</td><td><b>10 mm plate, 16 mm throat</b> (6.50 kN each)</td><td>Top reaction at ULS, 6.1 kN (double catwalk)</td></tr>
+      <tr><td>Free-standing catwalks</td><td>127 kg self-weight only</td><td><b>4 ground anchors per unit, &ge; 3.4 kN tension + 1.8 kN shear</b>, or &asymp; 1.4 t ballast</td><td>Crowd leaning on the guardrail (FoS 0.12 &rarr; 1.5)</td></tr>
+      <tr><td>End-to-end joints</td><td>Hooks + male connector only (0.32 kNm)</td><td><b>Support trestle under every joint</b>, 24.4 kN ULS (double catwalk)</td><td>Unsupported hinged joint is a mechanism</td></tr>
+      <tr><td>Operating rule</td><td>&mdash;</td><td><b>Insert the handrails before loading</b></td><td>Bottom minis lock the parallelogram</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="aluminium">
+  <div class="eyebrow">Actionable &middot; all aluminium</div>
+  <h2>Part-by-part change list</h2>
+  <p class="callout"><b>Superseded by the lightweight design below (69.4 kg).</b> This list met the earlier load basis at 107 kg; it stays here for the record.</p>
+  <p>Structure in EN AW-6061-T6 (f<sub>0</sub> 240 MPa, &gamma;<sub>M1</sub> 1.1, E 69 GPa); treads stay EN AW-6082-T6. With the parts as drawn, the all-aluminium unit fails 86 of 173 code checks. The changes below were re-run through the full check suite for all 11 states. Aluminium is about a third as stiff as steel, so deflection rather than strength sets most sizes.</p>
+  <div class="keyfigs">
+    <div><b class="num">0 / 166</b><span>code checks failing, all 11 states</span></div>
+    <div><b class="num">71.6 &rarr; 107.0 kg</b><span>self-weight per unit</span></div>
+    <div><b class="num">9.3 &middot; 19.3 &middot; 30+</b><span>kN/m&sup2; crowd capacity, catwalk &middot; standard &middot; steep (need 7.5)</span></div>
+    <div><b class="num">14.8 Hz</b><span>first vertical frequency (trigger 5 Hz)</span></div>
+  </div>
+
+  <div class="cols">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <h3>Why both guide bars grow, not just one</h3>
+      <p>At catwalk the upper and lower bars nearly stack. Today there are 34.7&nbsp;mm between the lower bar and the ground, 5.4&nbsp;mm between the bars, and 19.5&nbsp;mm under the tread ends. Deepening the lower bar alone needs 60&nbsp;mm, which would put it about 5&nbsp;mm below ground contact.</p>
+      <p>Splitting the growth works: the lower bar grows <b>down</b> to 50&nbsp;mm and the upper bar grows <b>up</b> to 35&nbsp;mm. The edges that carry the slots and pins don't move, so the rig kinematics stay the same. Adding 10&nbsp;mm foot pads brings ground clearance back to 15.2&nbsp;mm; the deck rises from 150 to 160&nbsp;mm.</p>
+      <p style="font-size:13px;color:var(--ink2)">Other combinations that pass were checked too: 30/50 sits at 0.997 in deflection (too tight); 20/60 and 25/55 touch the ground.</p>
+    </div>
+    <div class="diagram" aria-label="Guide bar stack at catwalk, to scale, now versus upgraded">
+      <svg viewBox="0 0 560 310" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Mono, monospace" font-size="11">
+        <line x1="20" y1="280" x2="540" y2="280" stroke="var(--ink)" stroke-width="2"/>
+        <text x="22" y="298" fill="var(--ink2)">ground &middot; scale 1.6 px/mm</text>
+        <!-- NOW -->
+        <text x="70" y="16" fill="var(--ink)" font-weight="600">NOW</text>
+        <rect x="70" y="120" width="110" height="80" fill="var(--paper)" stroke="var(--ink2)"/>
+        <text x="125" y="164" text-anchor="middle" fill="var(--ink2)">tread end</text>
+        <rect x="70" y="151.2" width="110" height="32" fill="var(--ink)" fill-opacity=".45"/>
+        <rect x="70" y="191.8" width="110" height="32.7" fill="var(--accent)" fill-opacity=".8"/>
+        <circle cx="92" cy="259.8" r="20.2" fill="none" stroke="var(--ink)" stroke-width="2"/>
+        <g fill="var(--ink2)">
+          <text x="188" y="140">gap 19.5</text>
+          <text x="188" y="171">upper 20</text>
+          <text x="188" y="190">gap 5.4</text>
+          <text x="188" y="211">lower 20.45</text>
+          <text x="188" y="256">clear 34.7</text>
+        </g>
+        <!-- UPGRADED -->
+        <text x="320" y="16" fill="var(--ink)" font-weight="600">UPGRADED</text>
+        <rect x="320" y="24" width="110" height="80" fill="var(--paper)" stroke="var(--ink2)"/>
+        <text x="375" y="68" text-anchor="middle" fill="var(--ink2)">tread end</text>
+        <rect x="320" y="111.1" width="110" height="56" fill="var(--ink)" fill-opacity=".45"/>
+        <rect x="320" y="175.7" width="110" height="80" fill="var(--accent)" fill-opacity=".8"/>
+        <rect x="324" y="264" width="44" height="16" fill="var(--pass)" fill-opacity=".55"/>
+        <circle cx="346" cy="243.8" r="20.2" fill="none" stroke="var(--ink)" stroke-width="2"/>
+        <g fill="var(--ink2)">
+          <text x="438" y="110">gap 4.5</text>
+          <text x="438" y="143">upper 35 (+15 up)</text>
+          <text x="438" y="173">gap 5.4</text>
+          <text x="438" y="219">lower 50 (+29.5 down)</text>
+          <text x="438" y="262">clear 15.2</text>
+          <text x="376" y="277" fill="var(--pass)">10 mm pad</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="tbl"><table class="changes">
+    <thead><tr><th>Part (rig name)</th><th>Qty / unit</th><th>Now</th><th>Change to</th><th>Governing check</th><th>Util now &rarr; after</th><th>Fabrication note</th></tr></thead>
+    <tbody>
+      <tr class="grp"><td colspan="7">Make deeper or thicker</td></tr>
+      <tr><td><b>Lower guide bars</b><br><span class="ids">MainRig_179 (R) &middot; MainRig_037 (L)</span></td><td class="num">2</td><td>R 20.45 deep &times; 25 sandwich (I 7,562 mm&#8308;); L 25 &times; 35 sandwich</td><td><b>Solid 6061-T6 flat, 50 mm deep</b>; widths kept (R 25, L 35); extra depth grows downward</td><td>Girder stress &amp; L/100 deflection, all locks (L4, L6)</td><td class="num"><span class="u bad">11.53</span> &rarr; <span class="u good">0.81</span><br><span class="sub">defl 7.27 &rarr; 0.91</span></td><td>Keep every peg slot, pin hole and lock-mini hole at the same distance from the top (working) edge; axle end holes unchanged</td></tr>
+      <tr><td><b>Upper guide bars</b><br><span class="ids">MainRig_118 (R) &middot; MainRig_026 (L)</span></td><td class="num">2</td><td>R 20 deep &times; 25 sandwich (I 9,878 mm&#8308;); L 25 &times; 35 sandwich</td><td><b>Solid 6061-T6 flat, 35 mm deep</b>; widths kept; extra depth grows upward (R +15, L +10)</td><td>Share of girder bending; lets the lower bar stay at 50 mm</td><td class="num">in girder <span class="u good">0.81</span></td><td>Nosing-pin slots stay put relative to the bottom (working) edge; leaves 4.5 mm under the tread ends at catwalk</td></tr>
+      <tr><td><b>Handrail posts</b><br><span class="ids">R 136 &middot; 134 &middot; 137 &middot; 144 &middot; 140 &middot; 132 &nbsp; L 158 &middot; 156 &middot; 160 &middot; 167 &middot; 163 &middot; 154</span></td><td class="num">12</td><td>25 &times; 10 flat bar, 1000 long (W 418 mm&sup3; weak axis)</td><td><b>SHS 50 &times; 50 &times; 4, 6061-T6</b>, 1000 long (W 10,461 mm&sup3;)</td><td>1.25 kN point at guardrail (L34); 3.0 kN/m crowd line (L33)</td><td class="num"><span class="u bad">23.90</span> &rarr; <span class="u good">0.96</span><br><span class="sub">line 20.74 &rarr; 0.89</span></td><td>Re-detail the top pivot for the 50 mm tube (pivot pin through the SHS); top mini post becomes a spigot into the tube</td></tr>
+      <tr><td><b>Top hooks</b><br><span class="ids">MainRig_000 &middot; 001 (L) &middot; 177 &middot; 178 (R)</span></td><td class="num">4</td><td>5 mm plate, 11.9 mm throat (1.27 kN capacity in aluminium)</td><td><b>10 mm plate, &ge; 22 mm throat</b> &mdash; or twin 5 mm hooks, one on each skin, each &ge; 22 mm throat</td><td>Top reaction 6.05 kN ULS per hook (L61)</td><td class="num"><span class="u bad">4.74</span> &rarr; <span class="u good">0.94</span></td><td>Twin option keeps the existing 5 mm skin planes; hook still wraps the 25.2 mm axle or bar</td></tr>
+
+      <tr class="grp"><td colspan="7">Add</td></tr>
+      <tr><td><b>Post base moment connection</b></td><td class="num">12</td><td>Post held only by its bottom mini (25 &times; 10 pin, 0.09 kNm)</td><td><b>Base socket carrying 2.18 kNm per post</b>: two fixings &ge; 100 mm apart, e.g. 2 &times; M12 A4-80 (21.8 kN each vs 32.4 kN), &ge; 5 mm aluminium where bolts bear</td><td>Fixed-base posts assumed in every barrier check</td><td class="num">new</td><td>Nylon sleeves and washers between stainless and aluminium; the bottom mini stays as the lock pin</td></tr>
+      <tr><td><b>Foot pads under axle ends</b></td><td class="num">4</td><td>Axle tubes stand directly on the ground</td><td><b>10 mm pads</b> (e.g. 60 &times; 60 aluminium, rubber-faced)</td><td>Catwalk ground clearance 5.2 &rarr; 15.2 mm</td><td class="num">fit</td><td>Deck height at catwalk goes from 150 to 160 mm</td></tr>
+      <tr><td><b>Ground anchors or ballast</b><br><span class="ids">free-standing catwalks</span></td><td class="num">4</td><td>107 kg self-weight only (FoS &asymp; 0.1)</td><td><b>4 anchors per unit, each &ge; 3.6 kN tension + 1.9 kN shear</b>, or &asymp; 1.5 t ballast per unit; side-by-side pair: &ge; 1.5 kN tension + 1.8 kN shear per anchor, or &asymp; 0.6 t</td><td>Overturning FoS 1.5 (L40); sliding (L7)</td><td class="num">new</td><td>Fix at the four axle feet</td></tr>
+      <tr><td><b>Joint trestle</b><br><span class="ids">every end-to-end joint</span></td><td class="num">1 / joint</td><td>Hooks + male connector only</td><td><b>Support trestle rated &ge; 24.2 kN ULS</b> (both sides together) under the joint</td><td>Unsupported hinged joint is a mechanism</td><td class="num">new</td><td>Seat it under the shared axle line</td></tr>
+
+      <tr class="grp"><td colspan="7">Keep as drawn (passes in aluminium)</td></tr>
+      <tr><td>Treads</td><td class="num">6</td><td colspan="2">280 &times; 50 extrusion, 6082-T6</td><td>7.5 kN/m&sup2;, 3 kN point, deflection</td><td class="num"><span class="u good">0.39</span></td><td>No change</td></tr>
+      <tr><td>Axles <span class="ids">006 &middot; 010</span></td><td class="num">2</td><td colspan="2">25.24 &times; 2.74 tube, now 6061-T6</td><td>Shear at supports</td><td class="num"><span class="u good">0.61</span></td><td>No change</td></tr>
+      <tr><td>Bottom minis (lock pins)</td><td class="num">12</td><td colspan="2">25 &times; 10 &times; 150, now 6061-T6</td><td>Lock force up to 8.7 kN: shear / bearing on 2 &times; 5 mm skins</td><td class="num"><span class="u good">0.28</span></td><td>No change</td></tr>
+      <tr><td>Guardrail and cyan handrail</td><td class="num">2 + 2</td><td colspan="2">25 &times; 25 hollow / solid</td><td>Bending between posts</td><td class="num"><span class="u good">0.31</span></td><td>No change</td></tr>
+
+      <tr class="grp"><td colspan="7">Geometry to settle against your compliance sheet</td></tr>
+      <tr><td>Steep first rise</td><td class="num">&mdash;</td><td colspan="2">211 mm vs 232 mm for the other rises</td><td>Rise uniformity &plusmn; 5 mm (G13)</td><td class="num"><span class="u bad">21 mm off</span></td><td>Raise the steep base 21 mm, or re-set tread 0</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:13px;color:var(--ink2)">Source: <code>v2/loadtest/upgrade_spec_alu.py</code> &rarr; <code>upgrade_spec_alu.json</code> (sizing + full re-run); <code>fit_search_alu.py</code> (bar depth / fit options). Util = demand &divide; capacity at ULS; deflection at SLS.</p>
+</section>
+
+<section id="lightweight">
+  <div class="eyebrow">Lightweight &middot; all aluminium &middot; Aug-2026 events sheet</div>
+  <h2>Under 70 kg and compliant</h2>
+  <p>The target was under 70&nbsp;kg per unit while meeting the updated events sheet. Structure is EN AW-6082-T6, the alloy the sheet names (row R163). Nothing in the Blender model has been changed; this is the specification to build or re-model from.</p>
+  <div class="keyfigs">
+    <div><b class="num">69.4 kg</b><span>recommended design, every check passing</span></div>
+    <div><b class="num">66.0 kg</b><span>if the extruder can hold 1.5 mm tread walls</span></div>
+    <div><b class="num">0.94</b><span>highest utilisation (handrail extension); posts 0.93</span></div>
+    <div><b class="num">&minus;37.6 kg</b><span>vs the earlier 107 kg upgrade</span></div>
+  </div>
+
+  <h3>Weight per unit</h3>
+  <div class="bars" id="wbars"></div>
+
+  <h3>What the Aug-2026 sheet changed</h3>
+  <p>Several values in the updated sheet are stricter than those the verdict above was tested against. Everything in this section uses the new values.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Item</th><th>Tested before</th><th>Aug-2026 events sheet</th><th>What it drives</th></tr></thead>
+    <tbody>
+      <tr><td>Tread point load</td><td class="num">3.0 kN</td><td><b>4.0 kN</b> on 200&times;200 (R114, EN 1991-1-1 Cat C)</td><td>Tread strength</td></tr>
+      <tr><td>Deflection</td><td>L/100 &le; 25 mm</td><td><b>L/250</b> under crowd UDL + <b>&lt; 10 mm</b> under one person (R115); L/100 kept as the floor</td><td>Girder and tread stiffness</td></tr>
+      <tr><td>Post point load</td><td class="num">1.25 kN</td><td><b>1.5 kN</b> (R179, EN 13374:2025)</td><td>Post size and base socket</td></tr>
+      <tr><td>Top-rail vertical load</td><td>&mdash;</td><td><b>1.0 kN/m</b> (R178)</td><td>Guardrail in-plane bending</td></tr>
+      <tr><td>Crowd sway</td><td class="num">2.5 %</td><td><b>10 %</b> of vertical imposed (R176)</td><td>1.4 kN per stair into base + hooks</td></tr>
+      <tr><td>Dynamics</td><td>5 Hz trigger</td><td><b>f<sub>1</sub> &ge; 6 Hz</b> where rhythmic movement is credible (R177)</td><td>Stair f<sub>1</sub> 46 Hz</td></tr>
+      <tr><td>Pattern loading</td><td>full UDL only</td><td><b>Asymmetric / half-span</b> cases required (R180)</td><td>Girder checked both halves</td></tr>
+      <tr><td>Barrier line load</td><td class="num">3.0 kN/m</td><td>3.0&ndash;5.0 kN/m, C5 recommended 3.0 (R142)</td><td>3.0 used; 5.0 needs larger posts</td></tr>
+      <tr><td>Aluminium</td><td>6061-T6</td><td><b>EN AW-6082-T6</b> / 6063-T6 (R163)</td><td>6082-T6 throughout</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Geometry against the sheet (as drawn)</h3>
+  <div class="tbl"><table class="changes">
+    <thead><tr><th>Row</th><th>Requirement</th><th>As drawn</th><th>Verdict</th><th>Change</th></tr></thead>
+    <tbody>
+      <tr><td class="num">R9</td><td>Stair pitch &le; 35&deg;</td><td class="num">35.0&deg; / 49.4&deg;</td><td><span class="u good">standard, at limit</span> <span class="u bad">steep</span></td><td>Steep becomes crew-only step-ladder mode (EN 131), not a public stair</td></tr>
+      <tr><td class="num">R4 R5</td><td>Going &ge; 250, riser &le; 200 (170 rec), riser &le; going &times; tan 35&deg;</td><td class="num">250 / 175 &middot; steep 199 / 232</td><td><span class="u good">standard, at limit</span> <span class="u bad">steep</span></td><td>Standard sits exactly on the limit; hold &plusmn;1 mm in fabrication</td></tr>
+      <tr><td class="num">R8</td><td>2h + g 540&ndash;660</td><td class="num">600 / 663</td><td><span class="u good">standard</span> <span class="u bad">steep</span></td><td>&mdash;</td></tr>
+      <tr><td class="num">R12</td><td>Uniform risers</td><td class="num">steep first rise 211 vs 232</td><td><span class="u bad">steep</span></td><td>Crew-only mode; raise steep base 21 mm if it must be uniform</td></tr>
+      <tr><td class="num">R7</td><td>Open-riser gap &le; 120 max / 100 rec</td><td class="num">125 mm</td><td><span class="u bad">fail</span></td><td>35 mm nosing lip on each tread &rarr; 100 mm</td></tr>
+      <tr><td class="num">R48</td><td>Deck gap &le; 25 (catwalk)</td><td class="num">25.2 mm</td><td><span class="u bad">fail</span></td><td>Tread depth 280 &rarr; 285 mm &rarr; 20.2 mm</td></tr>
+      <tr><td class="num">R65 R68</td><td>No gap &gt; 470 mm in side protection</td><td class="num">&asymp; 1,000 mm tread to handrail</td><td><span class="u bad">fail</span></td><td>Intermediate rail at 575 mm (also the ~600 mm child rail, R70)</td></tr>
+      <tr><td class="num">R66</td><td>Toe board 150 mm (event)</td><td>none</td><td><span class="u bad">fail</span></td><td>150 mm toe board both sides</td></tr>
+      <tr><td class="num">R19</td><td>Handrail 300 mm past top and bottom nosing</td><td class="num">&asymp; 80 mm</td><td><span class="u bad">fail</span></td><td>Stair handrail variant extended, returned ends</td></tr>
+      <tr><td class="num">R64</td><td>Grip 25&ndash;50 mm (40 target)</td><td>25&times;25 square bars</td><td><span class="u good">range</span></td><td>Round CHS: handrail 48.3, guardrail 40</td></tr>
+      <tr><td class="num">R103</td><td>Module join gap &le; 25, lip &le; 4</td><td class="num">wide 5 mm &middot; double 19 mm</td><td><span class="u good">wide</span> <span class="u good">double</span></td><td>Side-by-side units nest: the right rails slide inside the neighbour&rsquo;s left 25 mm channels, so tread ends meet 5 mm apart. <i>Corrected 23 Sep: the earlier 35 mm gap assumed flush plates.</i></td></tr>
+      <tr><td class="num">R18 R109</td><td>Centre handrail if &gt; 28&deg; and &gt; 1.8 m wide</td><td class="num">wide stair 2.54 m at 35&deg;</td><td><span class="u good">with rule</span></td><td>Wide stairs keep the inner handrail, one handrail whose pins pass through both nested rails; mini-only for wide catwalks</td></tr>
+      <tr><td class="num">R3</td><td>Clear width 1,100 (industry anchor, flow calc)</td><td class="num">1,023 between handrails</td><td><span class="u bad">single unit</span></td><td>Main public routes use the wide pair, or justify by EN 13200-1 flow calc</td></tr>
+      <tr><td class="num">R104</td><td>Positive, captive locking</td><td>loose lock pins</td><td><span class="u bad">fail</span></td><td>Captive pins (lanyard + spring detent)</td></tr>
+      <tr><td class="num">R16 R17</td><td>Slip PTV &ge; 40 wet; 55 mm contrasting nosings</td><td>not specified</td><td><span class="u bad">open</span></td><td>Serrated top + test; anodised contrast nosing insert</td></tr>
+      <tr><td class="num">R63 R106 R54</td><td>Rail &ge; 1.1 m; posts &le; 2.5 m; height:base &le; 3:1</td><td class="num">1,127 &middot; 305 &middot; 0.7:1</td><td><span class="u good">pass</span></td><td>&mdash;</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Treads: is a grating lighter?</h3>
+  <p>No, not at this span. The tread spans 1.24 m between the guide rails, and the new 4 kN point load on a 200 mm patch is carried only by the grating bars under the foot. The lightest bar grating that passes weighs 10.97 kg, more than today&rsquo;s tread. A hollow extruded plank uses its full width and its two skins, so it is much stiffer per kilogram.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Tread option (6082-T6)</th><th>Governing util</th><th>Mass each</th><th>Riser gap</th><th>Deck gap</th></tr></thead>
+    <tbody>
+      <tr><td>Current extrusion 280 &times; 50 (no lip)</td><td class="num"><span class="u good">0.52</span></td><td class="num">7.09 kg</td><td class="num"><span class="u bad">125</span></td><td class="num"><span class="u bad">25.2</span></td></tr>
+      <tr><td>Bar grating 45 &times; 3 @ 22, 30 mm lip</td><td class="num"><span class="u bad">1.40</span></td><td class="num">7.87 kg</td><td class="num">100</td><td class="num">20.2</td></tr>
+      <tr><td>Bar grating 50 &times; 3 @ 25, 25 mm lip</td><td class="num"><span class="u bad">1.16</span></td><td class="num">7.63 kg</td><td class="num">100</td><td class="num">20.2</td></tr>
+      <tr><td>Bar grating 50 &times; 4 @ 22, 25 mm lip (lightest passing grating)</td><td class="num"><span class="u good">0.83</span></td><td class="num">10.97 kg</td><td class="num">100</td><td class="num">20.2</td></tr>
+      <tr><td>Hollow plank 285 &times; 40, 2.0 mm skins, 5 webs, 35 mm lip</td><td class="num"><span class="u good">0.78</span></td><td class="num">4.94 kg</td><td class="num">100</td><td class="num">20.2</td></tr>
+      <tr><td><b>Hollow plank 285 &times; 40, 1.8 mm skins, 5 webs, 35 mm lip (recommended)</b></td><td class="num"><span class="u good">0.83</span></td><td class="num"><b>4.57 kg</b></td><td class="num">100</td><td class="num">20.2</td></tr>
+      <tr><td>Hollow plank 285 &times; 40, 1.5 mm skins (extruder to confirm)</td><td class="num"><span class="u good">0.93</span></td><td class="num">4.01 kg</td><td class="num">100</td><td class="num">20.2</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:13px;color:var(--ink2)">Governing check for every option is the 4 kN point load at mid-span (ULS). Slip resistance comes from a serrated top skin with drainage slots, so the plank keeps grating-like grip and drainage. 6005A-T6 extrudes more easily but is weaker: 2.0 mm walls pass (0.94), 1.8 mm do not (1.01).</p>
+
+  <h3>Guardrail and handrail</h3>
+  <div class="cols">
+    <p><b>Guardrail (magenta), 1.1 m: yes, lighter.</b> It is the rail the crowd leans on, so it takes the 3.0 kN/m line load and 1.5 kN point loads. But with posts clamped to it, a round <b>CHS 40&times;2</b> works at 0.51 utilisation. That replaces the 25&times;25 hollow bar and meets the 40 mm grip target.</p>
+    <p><b>Handrail (cyan), 1.0 m: lighter than today&rsquo;s solid 25&times;25 bar, but not thin.</b> The sheet adds a 300 mm extension past the top and bottom nosings, and that extension is a cantilever beyond the end post. <b>CHS 48.3&times;3</b> carries a 1.25 kN point load at its tip (0.94). The catwalk handrail variant has no extension and could drop to CHS 40&times;2.</p>
+  </div>
+
+  <h3>Part-by-part change list (lightweight, recommended)</h3>
+  <p class="callout"><b>Owner decisions, 23 Sep (evening), supersede the list below where they differ.</b> Keep the U-shaped guide rails and all 12 flat handrail poles; the lock pin is the bottom of each pole. With the scaffold supporting the flat catwalk mid-span, only the lower rails change: right upside-down U 25&times;42 (now ~21 deep) and left U 35&times;47 with a 42 mm slot. The upper rails are unchanged. Poles need hollow 25&times;70&times;3 for the full 3.0 kN/m crowd push, or 25&times;50&times;3 for point loads only. The 25&times;10 pin through the 25 mm rails limits what any pole can carry. Not fitted: middle/child rail, toe boards, feet (scaffold), centre handrail. Handrail change to be decided. Top rail unchanged; circular padding to be added by the owner. Full detail: <a href="https://claude.ai/artifact/Biz2ptYvZVvXxDctWsHCE5">Stair Unit Change Brief</a>.</p>
+  <p class="callout"><b>Update 23 Sep: side-by-side units nest.</b> The right guide rails of one unit slide inside the left 25 mm channels of the next, and one centre handrail pins through both. Three refinements follow and override the rows below. (1) The left guide bars stay <b>open-top channels</b>, 4 mm walls, 25 mm slot: lower 33&times;49, upper 33&times;29. They are not closed RHS, and they pass the girder check at 0.83. (2) The 60&times;60 posts mount on the <b>outside</b> face of the rails. (3) Between side-by-side units, a <b>slim centre handrail</b> replaces the two inner handrails; it is a grab rail, not a barrier. No cover strip is needed; the tread gap at the join is 5 mm. For the plain-language version for the SketchUp designer, see the <a href="https://claude.ai/artifact/Biz2ptYvZVvXxDctWsHCE5">Stair Unit Change Brief</a>.</p>
+  <div class="tbl"><table class="changes">
+    <thead><tr><th>Part (rig name)</th><th>Qty / unit</th><th>Now</th><th>Change to</th><th>Governing check</th><th>Util</th><th>Mass</th></tr></thead>
+    <tbody>
+      <tr class="grp"><td colspan="7">Replace or resize</td></tr>
+      <tr><td><b>Treads</b><br><span class="ids">MainRig_061 &middot; 079 &middot; 096 &middot; 019 &middot; 030 &middot; 042</span></td><td class="num">6</td><td>280 &times; 50 extrusion, open riser 125 mm, deck gap 25.2 mm</td><td><b>285 &times; 40 hollow plank, 6082-T6: 1.8 mm skins, 5 &times; 1.5 mm webs, integral 35 &times; 2 nosing lip</b>; serrated top with drainage slots, 55 mm contrasting nosing insert</td><td>4 kN point (R114); L/250 (R115)</td><td class="num"><span class="u good">0.83</span></td><td class="num">4.57 kg each</td></tr>
+      <tr><td><b>Lower guide bars</b><br><span class="ids">MainRig_179 (R) &middot; 037 (L)</span></td><td class="num">2</td><td>20&ndash;25 mm deep sandwich plates</td><td><b>RHS 25&times;45&times;3 (R), 35&times;45&times;3 (L)</b>; grows down 24.5 mm, working edge and all slots unchanged</td><td>Girder stress, half-span pattern; L/250</td><td class="num"><span class="u good">0.81</span><br><span class="sub">defl 0.49</span></td><td class="num" rowspan="2">7.12 kg<br><span class="sub">all 4 bars</span></td></tr>
+      <tr><td><b>Upper guide bars</b><br><span class="ids">MainRig_118 (R) &middot; 026 (L)</span></td><td class="num">2</td><td>20&ndash;25 mm deep sandwich plates</td><td><b>RHS 25&times;25&times;2.5 (R), 35&times;25&times;2.5 (L)</b>; grows up 5 mm</td><td>Share of girder bending</td><td class="num"><span class="u good">0.81</span></td></tr>
+      <tr><td><b>Handrail posts</b><br><span class="ids">keep at treads 0, 2, 5 each side</span></td><td class="num">6 <span class="sub">(was 12)</span></td><td>25 &times; 10 flat bar at every tread</td><td><b>SHS 60&times;60&times;4</b>, 1,000 long, at treads 0, 2 and 5 only; the other 6 posts are removed</td><td>1.5 kN post point (R179); 3.0 kN/m line (R142)</td><td class="num"><span class="u good">0.93</span></td><td class="num">14.52 kg</td></tr>
+      <tr><td><b>Guardrail</b><br><span class="ids">MainRig_125 &middot; 145</span></td><td class="num">2</td><td>25&times;25 hollow bar</td><td><b>CHS 40&times;2</b>, clamped moment-rigid to each post</td><td>Line + point + 1.0 kN/m vertical</td><td class="num"><span class="u good">0.51</span></td><td class="num">2.23 kg</td></tr>
+      <tr><td><b>Handrail</b><br><span class="ids">MainRig_127 &middot; 149</span></td><td class="num">2</td><td>25&times;25 solid bar</td><td><b>CHS 48.3&times;3</b>; stair variant extended 300 mm past both nosings, returned ends</td><td>1.25 kN at extension tip (R19, R143)</td><td class="num"><span class="u good">0.94</span></td><td class="num">6.01 kg</td></tr>
+      <tr><td><b>Top hooks</b><br><span class="ids">MainRig_000 &middot; 001 &middot; 177 &middot; 178</span></td><td class="num">4</td><td>5 mm plate, 11.9 mm throat</td><td><b>10 mm plate, &ge; 22 mm throat</b>, or twin 5 mm hooks (one on each skin)</td><td>Top reaction &asymp; 6 kN ULS</td><td class="num"><span class="u good">&lt; 0.95</span></td><td class="num">0.32 kg</td></tr>
+      <tr><td><b>Lock pins</b></td><td class="num">12</td><td>Loose bottom minis at every tread</td><td>6 post minis stay; <b>6 &Oslash;12 captive pins</b> at the treads without posts (lanyard + spring detent)</td><td>Lock force 8.7 kN (R104 captive)</td><td class="num"><span class="u good">0.59</span></td><td class="num">0.80 kg</td></tr>
+
+      <tr class="grp"><td colspan="7">Add</td></tr>
+      <tr><td><b>Intermediate rail</b></td><td class="num">2</td><td>&mdash;</td><td><b>CHS 30&times;2 at 575 mm</b> above the pitch line (gaps 425 / 425 mm; doubles as the ~600 mm child rail)</td><td>R65/R68 &le; 470 gap; 1.25 kN point</td><td class="num"><span class="u good">0.30</span></td><td class="num">1.64 kg</td></tr>
+      <tr><td><b>Toe boards</b></td><td class="num">2</td><td>&mdash;</td><td><b>150 &times; 25 &times; 1.5 channel</b>, both sides</td><td>R66 150 mm; 1.25 kN point</td><td class="num"><span class="u good">0.45</span></td><td class="num">2.80 kg</td></tr>
+      <tr><td><b>Post base moment sockets</b></td><td class="num">6</td><td>&mdash;</td><td>Socket carrying <b>3.44 kNm</b> per post: 2 &times; M14 A4-80 &ge; 100 mm apart (or 2 &times; M12 &ge; 110 mm), &ge; 5 mm aluminium in bearing, nylon isolation</td><td>Post base fixity</td><td class="num">new</td><td class="num">1.80 kg</td></tr>
+      <tr><td><b>Catwalk mid-feet</b></td><td class="num">2</td><td>&mdash;</td><td><b>10 mm rubber-faced pad</b> under each lower bar at mid-span: at catwalk the girder becomes two spans on the ground; at stair angles it lifts clear</td><td>Catwalk L/250 (0.57)</td><td class="num"><span class="u good">0.53</span></td><td class="num" rowspan="2">0.48 kg</td></tr>
+      <tr><td><b>Foot pads under axle ends</b></td><td class="num">4</td><td>&mdash;</td><td><b>10 mm pads</b> (lower bar leaves 10 mm ground clearance at catwalk; pads make it 20)</td><td>Fit</td><td class="num">fit</td></tr>
+      <tr><td><s>Wide-join cover strip</s></td><td class="num">&mdash;</td><td>&mdash;</td><td><b>Not needed.</b> Side-by-side units nest (right rails inside the left channels) and the tread ends meet 5 mm apart, inside R103. <i>Corrected 23 Sep.</i></td><td>R103</td><td class="num">&mdash;</td><td class="num">0</td></tr>
+      <tr><td><b>Anchors or ballast</b><br><span class="ids">free-standing catwalks</span></td><td class="num">4</td><td>&mdash;</td><td><b>&ge; 3.7 kN tension + 1.9 kN shear per anchor</b>, or &asymp; 1.5 t ballast per unit</td><td>EQU FoS 1.5 (R149)</td><td class="num">spec</td><td class="num">site kit</td></tr>
+      <tr><td><b>Joint trestle</b><br><span class="ids">double staircase / double steep</span></td><td class="num">1 / joint</td><td>&mdash;</td><td><b>Trestle &ge; 24 kN ULS</b> under the elevated joint. Double catwalk at ground level needs none: the shared axle sits on its feet</td><td>Unsupported joint = mechanism</td><td class="num">spec</td><td class="num">site kit</td></tr>
+
+      <tr class="grp"><td colspan="7">Keep</td></tr>
+      <tr><td>Axles <span class="ids">006 &middot; 010</span></td><td class="num">2</td><td colspan="2">25.2 &times; 2.7 tube, in 6082-T6</td><td>Support shear</td><td class="num"><span class="u good">&asymp; 0.6</span></td><td class="num">1.36 kg</td></tr>
+      <tr><td>Pivot heads, clamps, bolts</td><td class="num">&mdash;</td><td colspan="2">6 pivot heads, 18 rail clamps, brackets and fasteners</td><td>&mdash;</td><td class="num">&mdash;</td><td class="num">2.68 kg</td></tr>
+
+      <tr class="grp"><td colspan="7">Configuration rules</td></tr>
+      <tr><td colspan="7"><b>Steep (49.4&deg;)</b>: crew-only step-ladder mode to EN 131 Professional; signed &ldquo;not for public use&rdquo; (pitch, riser, going and uniformity fail EN 13200). &nbsp; <b>Wide staircase</b>: the inner handrail fitted, its lock pins through both nested rails (R109 centre-rail rule); the mini-handrail-only option is for wide catwalks. &nbsp; <b>Catwalks</b>: ground-level use with mid-feet; an elevated, bridging catwalk needs its own check. &nbsp; <b>Always</b>: handrails and lock pins in before anyone steps on.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Where the 69.4 kg goes</h3>
+  <div class="tbl"><table>
+    <tbody>
+      <tr><td>Treads 6 &times; 4.57</td><td class="num r">27.42</td><td>Posts 6 &times; SHS 60&times;60&times;4</td><td class="num r">14.52</td></tr>
+      <tr><td>Guide bars (4, RHS)</td><td class="num r">7.12</td><td>Handrails 2 &times; CHS 48.3&times;3</td><td class="num r">6.01</td></tr>
+      <tr><td>Toe boards 2&times;</td><td class="num r">2.80</td><td>Guardrails 2 &times; CHS 40&times;2</td><td class="num r">2.23</td></tr>
+      <tr><td>Post base sockets 6&times;</td><td class="num r">1.80</td><td>Intermediate rails 2 &times; CHS 30&times;2</td><td class="num r">1.64</td></tr>
+      <tr><td>Axles 2&times;</td><td class="num r">1.36</td><td>Brackets, bolts, spacers</td><td class="num r">1.20</td></tr>
+      <tr><td>Rail clamps 18&times;</td><td class="num r">1.08</td><td>Lock pins 12&times;</td><td class="num r">0.80</td></tr>
+      <tr><td>Hooks + male connectors</td><td class="num r">0.52</td><td>Feet + mid-feet</td><td class="num r">0.48</td></tr>
+      <tr><td>Pivot heads 6&times;</td><td class="num r">0.40</td><td><b>Total</b></td><td class="num r"><b>69.4 kg</b></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Still open</h3>
+  <ul class="plain">
+    <li>Extruder to confirm 1.8 mm walls on a 285 mm hollow in 6082-T6. At 2.0 mm the unit is 71.6 kg; 1.5 mm would give 66.0 kg.</li>
+    <li>Pin and slot holes through the RHS guide bars: net section to be checked in detailing (19 % margin at 0.81).</li>
+    <li>Welded 6082-T6 loses about half its strength in the heat-affected zone. Keep post sockets and hooks bolted, or size welds for it.</li>
+    <li>Site wind and storm overturning (R150, R181), EN 13200-1 flow calculation for the single-unit width (R3), EN 12811-3 physical type test (R166), fatigue (R141).</li>
+    <li>If the barrier must take the upper C5 value of 5.0 kN/m, posts grow to about SHS 70&times;70&times;4 (&asymp; +3 kg).</li>
+  </ul>
+  <p style="font-size:13px;color:var(--ink2)">Source: <code>v2/loadtest/lightweight_events_2026.py</code> &rarr; <code>lightweight_events_2026.json</code>, <code>lightweight_final.json</code>. Sheet copy: <code>v2/spec/sheet_2026-09-23_events.txt</code> (R# = row in that file).</p>
+</section>
+
+<section>
+  <div class="eyebrow">Per state</div>
+  <h2>Compliance matrix</h2>
+  <p>Governing utilisation in each check group (demand &divide; capacity; above 1.00 fails). Hover a cell for the governing check.</p>
+  <div class="toggle" role="group" aria-label="Design version">
+    <button id="bAsis" type="button" aria-pressed="true">As modelled</button>
+    <button id="bUpg" type="button" aria-pressed="false">With upgrades</button>
+  </div>
+  <div class="tbl"><table id="matrix"></table></div>
+  <div class="legend">
+    <span><i style="background:var(--surface)"></i>&le; 1.00 pass</span>
+    <span><i style="background:var(--heat1)"></i>1&ndash;3&times; over</span>
+    <span><i style="background:var(--heat2)"></i>3&ndash;10&times; over</span>
+    <span><i style="background:var(--heat3)"></i>&gt; 10&times; over</span>
+    <span style="color:var(--na)">&mdash; not applicable &middot; &ldquo;hooked&rdquo; = restrained at the top</span>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Capacity</div>
+  <h2>How much crowd each lock carries</h2>
+  <p>Maximum characteristic UDL on the girder in its realistic locked state (FE), basis A, against the event band of 5.0&ndash;7.5 kN/m&sup2;.</p>
+  <div class="bars" id="bars"></div>
+</section>
+
+<section>
+  <div class="eyebrow">Structural model</div>
+  <h2>Why the handrails are structural</h2>
+  <div class="cols">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <p>Each side is a parallelogram: an upper and a lower guide bar, joined by the six treads. Each tread is pinned to the lower bar at its rear and to the upper bar at its nosing. Fitting the measured bar spacing at the three locks gives one constant link of <span class="num">(199.9, 24.6) mm</span>. That fit predicts the third lock to 0.0 mm.</p>
+      <p>Pinned links can't carry shear, so on their own the two bars fold flat under load. Blender physics shows it: the unlocked girder racks <span class="num">401 mm</span>. Each post's bottom mini drops through the tread end into the lower bar and fixes the tread to it. That turns the girder into a rigid frame (Vierendeel) whose depth is the bar separation: <span class="num">25</span> mm at catwalk, <span class="num">136</span> at standard, <span class="num">169</span> at steep.</p>
+      <p>That is why the catwalk is weakest: the bars nearly stack, so the frame has almost no depth.</p>
+    </div>
+    <div class="diagram" aria-label="Side girder schematic">
+      <svg viewBox="0 0 640 330" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Mono, monospace" font-size="12">
+        <g stroke="var(--ink)" stroke-width="7" stroke-linecap="round" fill="none">
+          <line x1="70" y1="290" x2="560" y2="60" stroke="var(--accent)"/>
+          <line x1="118" y1="222" x2="580" y2="5" stroke-opacity=".55"/>
+        </g>
+        <g stroke="var(--ink)" stroke-width="3">
+          <line x1="130" y1="262" x2="178" y2="194"/><line x1="210" y1="224" x2="258" y2="156"/>
+          <line x1="290" y1="187" x2="338" y2="119"/><line x1="370" y1="149" x2="418" y2="81"/>
+          <line x1="450" y1="112" x2="498" y2="44"/><line x1="530" y1="74" x2="560" y2="30"/>
+        </g>
+        <g stroke="var(--fail)" stroke-width="3">
+          <line x1="150" y1="200" x2="150" y2="262"/><line x1="230" y1="162" x2="230" y2="224"/>
+          <line x1="310" y1="125" x2="310" y2="187"/><line x1="390" y1="87" x2="390" y2="149"/>
+          <line x1="470" y1="50" x2="470" y2="112"/>
+        </g>
+        <g fill="var(--surface)" stroke="var(--ink)" stroke-width="2">
+          <circle cx="130" cy="262" r="5"/><circle cx="178" cy="194" r="5"/><circle cx="210" cy="224" r="5"/><circle cx="258" cy="156" r="5"/>
+          <circle cx="290" cy="187" r="5"/><circle cx="338" cy="119" r="5"/><circle cx="370" cy="149" r="5"/><circle cx="418" cy="81" r="5"/>
+          <circle cx="450" cy="112" r="5"/><circle cx="498" cy="44" r="5"/>
+        </g>
+        <polygon points="70,290 58,312 82,312" fill="var(--ink)"/>
+        <circle cx="560" cy="60" r="7" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"/>
+        <g fill="var(--ink2)">
+          <text x="92" y="318">base axle (pin)</text>
+          <text x="470" y="84">top axle / hooks</text>
+          <text x="300" y="232" fill="var(--accent)">lower guide bar</text>
+          <text x="236" y="120">upper guide bar</text>
+          <text x="392" y="190" fill="var(--fail)">bottom mini = lock pin</text>
+          <text x="20" y="18">tread link (pinned both ends)</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Evidence</div>
+  <h2>Three methods, one answer</h2>
+  <p>The hand calculations follow the same rigour as <code>v2/spec/params.py</code>. The FE model is a numpy direct-stiffness frame for the girders, plus an out-of-plane grillage for the barriers. The Blender rigid-body runs happen in a separate headless process on proxies of the measured members.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Quantity</th><th>Hand calc</th><th>FE</th><th>Blender physics</th><th>Agreement</th></tr></thead>
+    <tbody>
+      <tr><td>Lower-bar moment, catwalk / standard / steep (kNm, ULS)</td><td class="num">3.143 / 2.137 / 1.371</td><td class="num">3.129 / 2.125 / 1.361</td><td>&mdash;</td><td><span class="chip pass">&le; 0.7 %</span></td></tr>
+      <tr><td>Top reaction per side, catwalk / standard / steep (N, char.)</td><td class="num">3,549 / 2,939 / 2,338</td><td>&mdash;</td><td class="num">3,559 / 2,947 / 2,343</td><td><span class="chip pass">&le; 0.3 %</span></td></tr>
+      <tr><td>Catwalk slides at (N, &mu; = 0.30)</td><td class="num">374</td><td>&mdash;</td><td class="num">376</td><td><span class="chip pass">0.5 %</span></td></tr>
+      <tr><td>Catwalk tips at (N, push at guardrail height)</td><td class="num">645</td><td>&mdash;</td><td class="num">646</td><td><span class="chip pass">0.2 %</span></td></tr>
+      <tr><td>Girder without the handrail lock</td><td>mechanism</td><td>singular stiffness</td><td class="num">racks 401 mm</td><td><span class="chip pass">all agree</span></td></tr>
+      <tr><td>Top hooks at ULS, as drawn / upgraded</td><td class="num">util 2.09 / 0.68</td><td>&mdash;</td><td>drops off bar / holds</td><td><span class="chip pass">all agree</span></td></tr>
+      <tr><td>Blender cloth, calibrated girder ribbon</td><td colspan="3">Rejected as a quantitative method. Blender cloth is a membrane solver: pinned ends make it a cable, and a collision-pad roller was numerically unstable (ULS/SLS sag ratio 6.1 against 1.48 linear). Qualitative only: an unsupported joint sags 2.5&times; more (95.9 vs 38.2 mm) even with both ends restrained.</td><td><span class="chip warn">not used</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="grid2">
+    <figure><img src="physics/A_unlocked.png" alt="Rigid-body run: unlocked guide rails racked flat under crowd load" loading="lazy"><figcaption><b>Unlocked.</b> Crowd load racks the parallelogram flat: treads rotate into the bar line.</figcaption></figure>
+    <figure><img src="physics/C_as_drawn_t5_w11.9.png" alt="Rigid-body run: as-drawn hooks break and the stair drops off the top bar" loading="lazy"><figcaption><b>As-drawn hooks at ULS.</b> The 2.04 kN joints break and the stair drops off the bar; the 10 &times; 16 hook holds.</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Step 1 deliverable</div>
+  <h2>The rigged states</h2>
+  <p>One rig drives every state. The treads match the pre-built originals at all three locks, the left side is restored to its own male-plate geometry, the handrail variants come straight from the catwalk, standard and steep originals, and a second unit hooks on end-to-end, or slides in side-by-side with its right rails nested inside the neighbour&rsquo;s left channels, one handrail locking both. The Staircase panel in Blender has a button for each state, Remove/Insert Handrails, and a Storyline toggle.</p>
+  <div class="grid3" id="gallery"></div>
+  <figure>
+    <video controls preload="metadata" playsinline src="storyline.mp4"></video>
+    <figcaption><b>Storyline</b> (1 min 54 s, updated 23 Sep evening). All eleven states in the model's design colours. The side-by-side join drops unit B in from above; end-to-end hooks and the static bar are taken with a single axle or bar, the moving unit's own axle left out. The camera goes close on each joint, and once on a handrail pole passing through both nested rails. The stair finishes at the cabin door.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="eyebrow">Read before sign-off</div>
+  <h2>Assumptions and open items</h2>
+  <div class="cols">
+    <ul class="plain">
+      <li>The IFC carries no material data. Basis A (S355 + 6082-T6) follows the v2 locked spec; basis B (all aluminium) is reported as a sensitivity.</li>
+      <li>Event loads: 7.5 kN/m&sup2; UDL, 3 kN tread point, 3.0 kN/m and 1.25 kN guardrail, factored per EN 1990.</li>
+      <li>The nosing pin isn't a separate CAD part. Its bearing check assumes a 20 mm contact on 2 &times; 5 mm skins (utilisation 0.02).</li>
+      <li>&ldquo;Mini handrail between units&rdquo; is modelled as the guardrail and its mini posts seated low on the rails, with the full inner handrail removed. Confirm this matches the design intent.</li>
+    </ul>
+    <ul class="plain">
+      <li>Geometry flag: the steep first rise is 211 mm against 232 mm for the rest, outside EN&rsquo;s &plusmn;5 mm uniformity.</li>
+      <li>In the catwalk originals, the lower-rail lock-pin hardware (top axle and brackets) sits 22.5 mm sideways. The rig keeps it rigid on the rails, as specified.</li>
+      <li>Vertical frequency is 6.2 Hz (&gt; 5 Hz trigger), self-weight only. A crowd-vibration assessment is still advised for catwalks.</li>
+      <li>Not covered here: fatigue, site wind, ground bearing, and the EN 12811-3 physical type test.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Files</div>
+  <div class="tbl"><table>
+    <tbody>
+      <tr><td>Hand calcs + FE (runnable)</td><td><code>v2/loadtest/loadtest_latest.py</code></td></tr>
+      <tr><td>Blender physics / cloth (headless)</td><td><code>v2/loadtest/blender_physics.py</code> &middot; <code>blender_cloth.py</code></td></tr>
+      <tr><td>Every check, both bases + upgraded</td><td><code>v2/loadtest/results_handcalc_fe.json</code> &middot; <code>.csv</code></td></tr>
+      <tr><td>Physics results</td><td><code>v2/loadtest/physics/results_physics.json</code> &middot; <code>results_cloth.json</code></td></tr>
+      <tr><td>Rig, UI, storyline</td><td><code>v2/out/Latest 21-09-2026/STEP LADDER RIGGED2.blend</code></td></tr>
+    </tbody>
+  </table></div>
+</section>
+</div>
+
+<script>
+const DATA = {"cols": [["tread", "Treads"], ["girder", "Guide-bar girder"], ["gdefl", "Girder deflection"], ["hook", "Top hooks"], ["axle", "Axles"], ["posts", "Posts"], ["rail", "Guardrail"], ["stab", "Stability"], ["freq", "Frequency"], ["joint", "End joint"]], "asis": {"SINGLE_CATWALK": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 7.246, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 803 / lower 2572 MPa"}, "gdefl": {"u": 2.488, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.376, "c": "Axle tube shear (per side)", "n": ""}, "posts": {"u": 14.046, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.99, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": 23.079, "c": "Sliding under crowd line load (mu=0.30, no crowd weight)", "n": ""}, "freq": {"u": 0.802, "c": "Vertical natural frequency >= 5 Hz (else dynamic check)", "n": "unbraced bars, self weight only"}}, "SINGLE_STANDARD": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 4.012, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 129 / lower 1424 MPa"}, "gdefl": {"u": 0.398, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.25, "c": "Axle tube shear (per side)", "n": ""}, "hook": {"u": 2.086, "c": "Top hook (5x11.9 throat) tension+bending", "n": "hook load 4.25 kN, e=18.6 mm"}, "posts": {"u": 14.247, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.976, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": null, "c": "Overturning", "n": "restrained by top hook/landing"}}, "SINGLE_STEEP": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 2.284, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 74 / lower 811 MPa"}, "gdefl": {"u": 0.189, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.157, "c": "Axle tube shear (per side)", "n": ""}, "hook": {"u": 1.375, "c": "Top hook (5x11.9 throat) tension+bending", "n": "hook load 2.80 kN, e=18.6 mm"}, "posts": {"u": 14.69, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.947, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": null, "c": "Overturning", "n": "restrained by top hook/landing"}}, "SINGLE_BAR": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 4.012, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 129 / lower 1424 MPa"}, "gdefl": {"u": 0.398, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.25, "c": "Axle tube shear (per side)", "n": ""}, "hook": {"u": 2.086, "c": "Top hook (5x11.9 throat) tension+bending", "n": "hook load 4.25 kN, e=18.6 mm"}, "posts": {"u": 14.247, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.976, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": null, "c": "Overturning", "n": "restrained by top hook/landing"}}, "DOUBLE_CATWALK": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 7.246, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 803 / lower 2572 MPa"}, "gdefl": {"u": 2.488, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.376, "c": "Axle tube shear (per side)", "n": ""}, "hook": {"u": 2.989, "c": "Top hook (5x11.9 throat) tension+bending", "n": "hook load 6.09 kN, e=18.6 mm"}, "posts": {"u": 14.046, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.99, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": 23.079, "c": "Sliding under crowd line load (mu=0.30, no crowd weight)", "n": ""}, "freq": {"u": 0.802, "c": "Vertical natural frequency >= 5 Hz (else dynamic check)", "n": "unbraced bars, self weight only"}, "joint": {"u": 38.791, "c": "Joint WITHOUT mid support: moment vs hook+connector couple", "n": "=> a support/trestle under the joint is REQUIRED"}}, "DOUBLE_STANDARD": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 4.012, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 129 / lower 1424 MPa"}, "gdefl": {"u": 0.398, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.25, "c": "Axle tube shear (per side)", "n": ""}, "hook": {"u": 2.086, "c": "Top hook (5x11.9 throat) tension+bending", "n": "hook load 4.25 kN, e=18.6 mm"}, "posts": {"u": 14.247, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.976, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": null, "c": "Overturning", "n": "restrained by top hook/landing"}, "joint": {"u": 26.358, "c": "Joint WITHOUT mid support: moment vs hook+connector couple", "n": "=> a support/trestle under the joint is REQUIRED"}}, "DOUBLE_STEEP": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 2.284, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 74 / lower 811 MPa"}, "gdefl": {"u": 0.189, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.157, "c": "Axle tube shear (per side)", "n": ""}, "hook": {"u": 1.375, "c": "Top hook (5x11.9 throat) tension+bending", "n": "hook load 2.80 kN, e=18.6 mm"}, "posts": {"u": 14.69, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.947, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": null, "c": "Overturning", "n": "restrained by top hook/landing"}, "joint": {"u": 16.933, "c": "Joint WITHOUT mid support: moment vs hook+connector couple", "n": "=> a support/trestle under the joint is REQUIRED"}}, "WIDE_CATWALK_FULL": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 7.246, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 803 / lower 2572 MPa"}, "gdefl": {"u": 2.488, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.376, "c": "Axle tube shear (per side)", "n": ""}, "posts": {"u": 14.046, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.99, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": 11.539, "c": "Sliding under crowd line load (mu=0.30, no crowd weight)", "n": ""}, "freq": {"u": 0.802, "c": "Vertical natural frequency >= 5 Hz (else dynamic check)", "n": "unbraced bars, self weight only"}}, "WIDE_CATWALK_MINI": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 7.246, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 803 / lower 2572 MPa"}, "gdefl": {"u": 2.488, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.376, "c": "Axle tube shear (per side)", "n": ""}, "posts": {"u": 14.046, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.99, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": 11.539, "c": "Sliding under crowd line load (mu=0.30, no crowd weight)", "n": ""}, "freq": {"u": 0.802, "c": "Vertical natural frequency >= 5 Hz (else dynamic check)", "n": "unbraced bars, self weight only"}}, "WIDE_STANDARD": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 4.012, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 129 / lower 1424 MPa"}, "gdefl": {"u": 0.398, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.25, "c": "Axle tube shear (per side)", "n": ""}, "hook": {"u": 2.086, "c": "Top hook (5x11.9 throat) tension+bending", "n": "hook load 4.25 kN, e=18.6 mm"}, "posts": {"u": 14.247, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.976, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": null, "c": "Overturning", "n": "restrained by top hook/landing"}}, "WIDE_STEEP": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 2.284, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 74 / lower 811 MPa"}, "gdefl": {"u": 0.189, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.157, "c": "Axle tube shear (per side)", "n": ""}, "hook": {"u": 1.375, "c": "Top hook (5x11.9 throat) tension+bending", "n": "hook load 2.80 kN, e=18.6 mm"}, "posts": {"u": 14.69, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.947, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": null, "c": "Overturning", "n": "restrained by top hook/landing"}}}, "upg": {"SINGLE_CATWALK": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 0.886, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 315 / lower 277 MPa"}, "gdefl": {"u": 0.61, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.386, "c": "Axle tube shear (per side)", "n": ""}, "posts": {"u": 0.932, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.99, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": 1.0, "c": "Overturning: 4 ground anchors (design tension per anchor)", "n": "specify anchors >= 3.4 kN tension + 1.8 kN shear each (or 1387 kg ballast)"}, "freq": {"u": 0.363, "c": "Vertical natural frequency >= 5 Hz (else dynamic check)", "n": "unbraced bars, self weight only"}}, "SINGLE_STANDARD": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 0.315, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 64 / lower 112 MPa"}, "gdefl": {"u": 0.042, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.258, "c": "Axle tube shear (per side)", "n": ""}, "hook": {"u": 0.677, "c": "Top hook (10x16.0 throat) tension+bending", "n": "hook load 4.40 kN, e=20.6 mm"}, "posts": {"u": 0.945, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.976, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": null, "c": "Overturning", "n": "restrained by top hook/landing"}}, "SINGLE_STEEP": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 0.18, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 34 / lower 64 MPa"}, "gdefl": {"u": 0.017, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.164, "c": "Axle tube shear (per side)", "n": ""}, "hook": {"u": 0.45, "c": "Top hook (10x16.0 throat) tension+bending", "n": "hook load 2.92 kN, e=20.6 mm"}, "posts": {"u": 0.975, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.947, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": null, "c": "Overturning", "n": "restrained by top hook/landing"}}, "SINGLE_BAR": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 0.315, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 64 / lower 112 MPa"}, "gdefl": {"u": 0.042, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.258, "c": "Axle tube shear (per side)", "n": ""}, "hook": {"u": 0.677, "c": "Top hook (10x16.0 throat) tension+bending", "n": "hook load 4.40 kN, e=20.6 mm"}, "posts": {"u": 0.945, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.976, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": null, "c": "Overturning", "n": "restrained by top hook/landing"}}, "DOUBLE_CATWALK": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 0.886, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 315 / lower 277 MPa"}, "gdefl": {"u": 0.61, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.386, "c": "Axle tube shear (per side)", "n": ""}, "hook": {"u": 0.964, "c": "Top hook (10x16.0 throat) tension+bending", "n": "hook load 6.27 kN, e=20.6 mm"}, "posts": {"u": 0.932, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.99, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": 1.0, "c": "Overturning: 4 ground anchors (design tension per anchor)", "n": "specify anchors >= 6.9 kN tension + 3.6 kN shear each (or 2774 kg ballast)"}, "freq": {"u": 0.363, "c": "Vertical natural frequency >= 5 Hz (else dynamic check)", "n": "unbraced bars, self weight only"}}, "DOUBLE_STANDARD": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 0.315, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 64 / lower 112 MPa"}, "gdefl": {"u": 0.042, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.258, "c": "Axle tube shear (per side)", "n": ""}, "hook": {"u": 0.677, "c": "Top hook (10x16.0 throat) tension+bending", "n": "hook load 4.40 kN, e=20.6 mm"}, "posts": {"u": 0.945, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.976, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": null, "c": "Overturning", "n": "restrained by top hook/landing"}}, "DOUBLE_STEEP": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 0.18, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 34 / lower 64 MPa"}, "gdefl": {"u": 0.017, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.164, "c": "Axle tube shear (per side)", "n": ""}, "hook": {"u": 0.45, "c": "Top hook (10x16.0 throat) tension+bending", "n": "hook load 2.92 kN, e=20.6 mm"}, "posts": {"u": 0.975, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.947, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": null, "c": "Overturning", "n": "restrained by top hook/landing"}}, "WIDE_CATWALK_FULL": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 0.886, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 315 / lower 277 MPa"}, "gdefl": {"u": 0.61, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.386, "c": "Axle tube shear (per side)", "n": ""}, "posts": {"u": 0.932, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.99, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": 1.0, "c": "Overturning: 4 ground anchors (design tension per anchor)", "n": "specify anchors >= 1.1 kN tension + 1.7 kN shear each (or 417 kg ballast)"}, "freq": {"u": 0.363, "c": "Vertical natural frequency >= 5 Hz (else dynamic check)", "n": "unbraced bars, self weight only"}}, "WIDE_CATWALK_MINI": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 0.886, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 315 / lower 277 MPa"}, "gdefl": {"u": 0.61, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.386, "c": "Axle tube shear (per side)", "n": ""}, "posts": {"u": 0.932, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.99, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": 1.0, "c": "Overturning: 4 ground anchors (design tension per anchor)", "n": "specify anchors >= 1.1 kN tension + 1.7 kN shear each (or 417 kg ballast)"}, "freq": {"u": 0.363, "c": "Vertical natural frequency >= 5 Hz (else dynamic check)", "n": "unbraced bars, self weight only"}}, "WIDE_STANDARD": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 0.315, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 64 / lower 112 MPa"}, "gdefl": {"u": 0.042, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.258, "c": "Axle tube shear (per side)", "n": ""}, "hook": {"u": 0.677, "c": "Top hook (10x16.0 throat) tension+bending", "n": "hook load 4.40 kN, e=20.6 mm"}, "posts": {"u": 0.945, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.976, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": null, "c": "Overturning", "n": "restrained by top hook/landing"}}, "WIDE_STEEP": {"tread": {"u": 0.393, "c": "Tread bending, 3 kN point", "n": ""}, "girder": {"u": 0.18, "c": "FE: girder stress, LOCKED Vierendeel (actual lock)", "n": "upper 34 / lower 64 MPa"}, "gdefl": {"u": 0.017, "c": "FE: girder deflection, LOCKED Vierendeel (SLS)", "n": ""}, "axle": {"u": 0.164, "c": "Axle tube shear (per side)", "n": ""}, "hook": {"u": 0.45, "c": "Top hook (10x16.0 throat) tension+bending", "n": "hook load 2.92 kN, e=20.6 mm"}, "posts": {"u": 0.975, "c": "Post bending, 1.25 kN point at top (single post)", "n": ""}, "rail": {"u": 0.947, "c": "Guardrail height >= 1100 above pitch line", "n": ""}, "stab": {"u": null, "c": "Overturning", "n": "restrained by top hook/landing"}}}, "rating": {"CATWALK": {"unbraced": 0.81, "truss": 5.87, "locked_fe": 0.66}, "STANDARD": {"unbraced": 1.33, "truss": 30.0, "locked_fe": 1.47}, "STEEP": {"unbraced": 2.3, "truss": 30.0, "locked_fe": 2.91}}, "ratingB": {"CATWALK": {"unbraced": 0.51, "truss": 3.62, "locked_fe": 0.41}, "STANDARD": {"unbraced": 0.84, "truss": 30.0, "locked_fe": 0.91}, "STEEP": {"unbraced": 1.43, "truss": 30.0, "locked_fe": 1.8}}, "spec": {"lower_guide_bar": "25 x 45 solid flat S355 (both sides)", "posts": "SHS 40x40x4 S355", "hooks": "10 mm plate, 16 mm throat, S355", "catwalk_free_standing": "4 ground anchors or ballast (see rows)", "double_joint": "support trestle under every end-to-end joint", "lock": "handrails/bottom minis inserted before any load (unlocked = mechanism)"}};
+const LABEL = {SINGLE_CATWALK:"Catwalk",SINGLE_STANDARD:"Standard stair",SINGLE_STEEP:"Steep steps",SINGLE_BAR:"Standard on hook bar",
+  DOUBLE_CATWALK:"Double catwalk",DOUBLE_STANDARD:"Double staircase",DOUBLE_STEEP:"Double steep",
+  WIDE_CATWALK_FULL:"Wide catwalk, handrails between",WIDE_CATWALK_MINI:"Wide catwalk, mini handrail",WIDE_STANDARD:"Wide staircase",WIDE_STEEP:"Wide steep staircase"};
+const ORDER = Object.keys(LABEL);
+function cell(v){
+  const td=document.createElement("td");
+  if(!v){td.textContent="—";td.className="na";return td;}
+  if(v.u===null){td.textContent="hooked";td.className="na";td.title=v.n;return td;}
+  td.textContent=v.u.toFixed(2);
+  td.title=v.c+(v.n?" — "+v.n:"");
+  td.className = v.u<=1 ? "ok" : v.u<=3 ? "h1" : v.u<=10 ? "h2" : "h3";
+  return td;
+}
+function render(which){
+  const t=document.getElementById("matrix"); t.innerHTML="";
+  const m=DATA[which], head=document.createElement("tr");
+  const th0=document.createElement("th"); th0.textContent="State"; head.appendChild(th0);
+  DATA.cols.forEach(([k,l])=>{const th=document.createElement("th");th.textContent=l;head.appendChild(th);});
+  const thead=document.createElement("thead"); thead.appendChild(head); t.appendChild(thead);
+  const tb=document.createElement("tbody");
+  ORDER.forEach(st=>{
+    const tr=document.createElement("tr"), td=document.createElement("td");
+    td.className="st"; td.textContent=LABEL[st]; tr.appendChild(td);
+    DATA.cols.forEach(([k])=>tr.appendChild(cell(m[st]&&m[st][k])));
+    tb.appendChild(tr);
+  });
+  t.appendChild(tb);
+  document.getElementById("bAsis").setAttribute("aria-pressed",which==="asis");
+  document.getElementById("bUpg").setAttribute("aria-pressed",which==="upg");
+  try{localStorage.setItem("sl_view",which)}catch(e){}
+}
+document.getElementById("bAsis").onclick=()=>render("asis");
+document.getElementById("bUpg").onclick=()=>render("upg");
+let start="asis"; try{start=localStorage.getItem("sl_view")||"asis"}catch(e){}
+render(start==="upg"?"upg":"asis");
+
+(function bars(){
+  const box=document.getElementById("bars"), max=8.0;
+  const rows=[["Catwalk","CATWALK"],["Standard 35°","STANDARD"],["Steep 49.4°","STEEP"]];
+  rows.forEach(([lab,k])=>{
+    const q=DATA.rating[k].locked_fe;
+    const r=document.createElement("div"); r.className="bar";
+    r.innerHTML=`<div>${lab}</div><div class="track"><div class="fill up" style="width:${7.5/max*100}%"></div><div class="fill" style="width:${q/max*100}%"></div><div class="req" style="left:${5/max*100}%;opacity:.45"></div><div class="req" style="left:${7.5/max*100}%"></div></div><div class="num">${q.toFixed(2)}</div>`;
+    box.appendChild(r);
+  });
+  const s=document.createElement("div"); s.className="scale";
+  s.innerHTML=`<div></div><div><span>0</span><span>2</span><span>4</span><span>6</span><span>8 kN/m²</span></div><div></div>`;
+  box.appendChild(s);
+  const n=document.createElement("p"); n.style.cssText="font-size:13px;color:var(--ink2)";
+  n.innerHTML="Solid red = as modelled. Pale green = the upgraded design, which clears 7.5. Dashed lines = event band 5.0 (faint) and 7.5 kN/m².";
+  box.appendChild(n);
+})();
+
+(function gallery(){
+  const g=document.getElementById("gallery");
+  ORDER.forEach(st=>{
+    const f=document.createElement("figure");
+    f.innerHTML=`<img src="states/${st}.png" alt="${LABEL[st]} rendered from the rig" loading="lazy"><figcaption><b>${LABEL[st]}</b></figcaption>`;
+    g.appendChild(f);
+  });
+})();
+(function weights(){
+  const box=document.getElementById("wbars"); if(!box) return;
+  const max=110, target=70;
+  const rows=[["As drawn, all aluminium","fails the checks","bad",71.6],
+              ["Earlier upgrade list","old load basis","old",107.0],
+              ["Lightweight, 2.0 mm tread walls","all checks pass","ok",71.6],
+              ["Lightweight, 1.8 mm (recommended)","all checks pass","ok",69.4],
+              ["Lightweight, 1.5 mm tread walls","extruder to confirm","ok",66.0]];
+  rows.forEach(([lab,sub,cls,kg])=>{
+    const r=document.createElement("div"); r.className="bar";
+    r.innerHTML=`<div class="wlab">${lab}<small>${sub}</small></div><div class="track"><div class="fill ${cls}" style="width:${kg/max*100}%"></div><div class="req" style="left:${target/max*100}%"></div></div><div class="num">${kg.toFixed(1)} kg</div>`;
+    box.appendChild(r);
+  });
+  const n=document.createElement("p"); n.style.cssText="font-size:13px;color:var(--ink2)";
+  n.textContent="Dashed line = 70 kg target. Installed weight in the standard-stair state, one handrail variant fitted.";
+  box.appendChild(n);
+})();
+</script>

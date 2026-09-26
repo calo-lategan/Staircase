@@ -1,0 +1,381 @@
+{
+ "rows": [
+  {
+   "ref": "R113/R128",
+   "check": "Profile stress (von Mises), ULS crowd",
+   "value": 92.97,
+   "limit": 227.27,
+   "unit": "MPa",
+   "util": 0.409,
+   "status": "PASS",
+   "note": "peak at x=253.8 y=620.0 z=27.5 (return)"
+  },
+  {
+   "ref": "R113/R114",
+   "check": "Profile stress (von Mises), ULS 4 kN patch front, mid-span",
+   "value": 316.78,
+   "limit": 227.27,
+   "unit": "MPa",
+   "util": 1.394,
+   "status": "FAIL",
+   "note": "peak at x=276.2 y=620.0 z=27.5 (return)"
+  },
+  {
+   "ref": "R113/R114",
+   "check": "Profile stress (von Mises), ULS 4 kN patch centre, mid-span",
+   "value": 258.19,
+   "limit": 227.27,
+   "unit": "MPa",
+   "util": 1.136,
+   "status": "FAIL",
+   "note": "peak at x=276.2 y=620.0 z=27.5 (return)"
+  },
+  {
+   "ref": "R113/R114",
+   "check": "Profile stress (von Mises), ULS 4 kN patch back, mid-span",
+   "value": 192.78,
+   "limit": 227.27,
+   "unit": "MPa",
+   "util": 0.848,
+   "status": "PASS",
+   "note": "peak at x=276.2 y=620.0 z=27.5 (return)"
+  },
+  {
+   "ref": "R113/R114",
+   "check": "Profile stress (von Mises), ULS 4 kN patch front, at left end (pin)",
+   "value": 134.55,
+   "limit": 227.27,
+   "unit": "MPa",
+   "util": 0.592,
+   "status": "PASS",
+   "note": "peak at x=276.2 y=175.0 z=27.5 (return)"
+  },
+  {
+   "ref": "R113/R114",
+   "check": "Profile stress (von Mises), ULS 4 kN patch back, at left end (pin)",
+   "value": 92.69,
+   "limit": 227.27,
+   "unit": "MPa",
+   "util": 0.408,
+   "status": "PASS",
+   "note": "peak at x=3.8 y=150.0 z=47.5 (deck)"
+  },
+  {
+   "ref": "EN1999 6.1.5",
+   "check": "Deck mid-plane compression vs class-4 local buckling (rho_c f_o/gM1), ULS 4 kN patch front, mid-span",
+   "value": 90.77,
+   "limit": 117.53,
+   "unit": "MPa",
+   "util": 0.772,
+   "status": "PASS",
+   "note": "beta = b/t = 54 > 22 eps -> class 4, rho_c = 0.517, t_eff = 2.59 mm"
+  },
+  {
+   "ref": "R114",
+   "check": "Deck local plate bending under the patch (von Mises at the surface), ULS 4 kN patch front, mid-span",
+   "value": 172.03,
+   "limit": 227.27,
+   "unit": "MPa",
+   "util": 0.757,
+   "status": "PASS",
+   "note": "5 mm deck spanning 275 mm between the rear wall and the front lip; at x=48.8 y=1210.0"
+  },
+  {
+   "ref": "R115",
+   "check": "Crowd 7.5 kN/m2: deflection at the nosing (front lip) vs L/250",
+   "value": 7.72,
+   "limit": 4.86,
+   "unit": "mm",
+   "util": 1.588,
+   "status": "FAIL",
+   "note": "back edge 1.89 mm; twist 1.21 deg (open section twists)"
+  },
+  {
+   "ref": "R115",
+   "check": "One person 1 kN at the nosing: deflection < 10 mm",
+   "value": 7.07,
+   "limit": 10.0,
+   "unit": "mm",
+   "util": 0.707,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "ref": "R115 (EN 12811)",
+   "check": "4 kN patch (front): deflection vs L/100 and 25 mm",
+   "value": 21.85,
+   "limit": 12.16,
+   "unit": "mm",
+   "util": 1.797,
+   "status": "FAIL",
+   "note": ""
+  },
+  {
+   "ref": "R115 (EN 12811)",
+   "check": "4 kN patch (centre): deflection vs L/100 and 25 mm",
+   "value": 17.53,
+   "limit": 12.16,
+   "unit": "mm",
+   "util": 1.442,
+   "status": "FAIL",
+   "note": ""
+  },
+  {
+   "ref": "R115 (EN 12811)",
+   "check": "4 kN patch (back): deflection vs L/100 and 25 mm",
+   "value": 13.06,
+   "limit": 12.16,
+   "unit": "mm",
+   "util": 1.074,
+   "status": "FAIL",
+   "note": ""
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin L_rear shear (ULS 4 kN patch back, at left end (pin))",
+   "value": 3781.98,
+   "limit": 11121.24,
+   "unit": "N",
+   "util": 0.34,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin L_rear bearing on the 5 mm rail wall",
+   "value": 3781.98,
+   "limit": 15000.0,
+   "unit": "N",
+   "util": 0.252,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin L_rear bending, cantilever cap->wall (7.0 mm) only",
+   "value": 26511.7,
+   "limit": 29452.43,
+   "unit": "Nmm",
+   "util": 0.9,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin L_rear bending incl. rail-torsion restraint (+15 mm to the rail shear centre)",
+   "value": 78061.86,
+   "limit": 29452.43,
+   "unit": "Nmm",
+   "util": 2.65,
+   "status": "FAIL",
+   "note": "the U-channel has almost no torsional stiffness (J ~ 3,100 mm4), so the offset of the pin load from its shear centre is held by the pin"
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin L_rear shear + bending interaction",
+   "value": 7.14,
+   "limit": 1.0,
+   "unit": "-",
+   "util": 7.14,
+   "status": "FAIL",
+   "note": ""
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin L_front shear (ULS 4 kN patch front, at left end (pin))",
+   "value": 4211.8,
+   "limit": 11121.24,
+   "unit": "N",
+   "util": 0.379,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin L_front bearing on the 5 mm rail wall",
+   "value": 4211.8,
+   "limit": 15000.0,
+   "unit": "N",
+   "util": 0.281,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin L_front bending, cantilever cap->wall (7.0 mm) only",
+   "value": 29524.71,
+   "limit": 29452.43,
+   "unit": "Nmm",
+   "util": 1.002,
+   "status": "FAIL",
+   "note": ""
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin L_front bending incl. rail-torsion restraint (+15 mm to the rail shear centre)",
+   "value": 88699.13,
+   "limit": 29452.43,
+   "unit": "Nmm",
+   "util": 3.012,
+   "status": "FAIL",
+   "note": "the U-channel has almost no torsional stiffness (J ~ 3,100 mm4), so the offset of the pin load from its shear centre is held by the pin"
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin L_front shear + bending interaction",
+   "value": 9.21,
+   "limit": 1.0,
+   "unit": "-",
+   "util": 9.213,
+   "status": "FAIL",
+   "note": ""
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin R_rear shear (ULS 4 kN patch back, mid-span)",
+   "value": 2058.71,
+   "limit": 11121.24,
+   "unit": "N",
+   "util": 0.185,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin R_rear bearing on the 5 mm rail wall",
+   "value": 2058.71,
+   "limit": 15000.0,
+   "unit": "N",
+   "util": 0.137,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin R_rear bending, cantilever cap->wall (14.0 mm) only",
+   "value": 28822.0,
+   "limit": 29452.43,
+   "unit": "Nmm",
+   "util": 0.979,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin R_rear bending incl. rail-torsion restraint (+10 mm to the rail shear centre)",
+   "value": 44119.72,
+   "limit": 29452.43,
+   "unit": "Nmm",
+   "util": 1.498,
+   "status": "FAIL",
+   "note": "the U-channel has almost no torsional stiffness (J ~ 3,100 mm4), so the offset of the pin load from its shear centre is held by the pin"
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin R_rear shear + bending interaction",
+   "value": 2.28,
+   "limit": 1.0,
+   "unit": "-",
+   "util": 2.278,
+   "status": "FAIL",
+   "note": ""
+  },
+  {
+   "ref": "EN1999 T8.8 geometry",
+   "check": "Right rail wall hole: edge distance below the O10 hole to the free bottom edge (R_rear)",
+   "value": 2.5,
+   "limit": 7.7,
+   "unit": "mm",
+   "util": 3.078,
+   "status": "FAIL",
+   "note": "inverted-U right rails: the pin pushes down toward the free edge; only 2.5 mm of wall below the hole"
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin R_front shear (ULS 4 kN patch front, mid-span)",
+   "value": 2454.43,
+   "limit": 11121.24,
+   "unit": "N",
+   "util": 0.221,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin R_front bearing on the 5 mm rail wall",
+   "value": 2454.43,
+   "limit": 15000.0,
+   "unit": "N",
+   "util": 0.164,
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin R_front bending, cantilever cap->wall (14.0 mm) only",
+   "value": 34362.07,
+   "limit": 29452.43,
+   "unit": "Nmm",
+   "util": 1.167,
+   "status": "FAIL",
+   "note": ""
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin R_front bending incl. rail-torsion restraint (+10 mm to the rail shear centre)",
+   "value": 57618.22,
+   "limit": 29452.43,
+   "unit": "Nmm",
+   "util": 1.956,
+   "status": "FAIL",
+   "note": "the U-channel has almost no torsional stiffness (J ~ 3,100 mm4), so the offset of the pin load from its shear centre is held by the pin"
+  },
+  {
+   "ref": "R170 / EN1999 T8.8",
+   "check": "Pin R_front shear + bending interaction",
+   "value": 3.88,
+   "limit": 1.0,
+   "unit": "-",
+   "util": 3.876,
+   "status": "FAIL",
+   "note": ""
+  },
+  {
+   "ref": "EN1999 T8.8 geometry",
+   "check": "Right rail wall hole: edge distance below the O10 hole to the free bottom edge (R_front)",
+   "value": 2.5,
+   "limit": 7.89,
+   "unit": "mm",
+   "util": 3.158,
+   "status": "FAIL",
+   "note": "inverted-U right rails: the pin pushes down toward the free edge; only 2.5 mm of wall below the hole"
+  }
+ ],
+ "pins": {
+  "L_rear": {
+   "case": "ULS 4 kN patch back, at left end (pin)",
+   "V": 3781.983338144154,
+   "M_cantilever": 26511.70320039052,
+   "M_with_rail_torsion": 78061.85892213044
+  },
+  "L_front": {
+   "case": "ULS 4 kN patch front, at left end (pin)",
+   "V": 4211.799076404286,
+   "M_cantilever": 29524.711525594044,
+   "M_with_rail_torsion": 88699.13432938646
+  },
+  "R_rear": {
+   "case": "ULS 4 kN patch back, mid-span",
+   "V": 2058.7146378262337,
+   "M_cantilever": 28822.004929567272,
+   "M_with_rail_torsion": 44119.717281052464
+  },
+  "R_front": {
+   "case": "ULS 4 kN patch front, mid-span",
+   "V": 2454.433337860289,
+   "M_cantilever": 34362.06673004405,
+   "M_with_rail_torsion": 57618.2203713374
+  }
+ },
+ "rho_c": 0.5171467764060357
+}

@@ -1,0 +1,11 @@
+00:01.375  blend            | Read blend: "C:\Users\USER\Desktop\Staircases\idea one\v2\out\Latest 21-09-2026\STEP LADDER RIGGED2.blend"
+C:\Users\USER\Desktop\Staircases\idea one\v2\story\build_story_v3.py:100: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mt.use_nodes = True
+C:\Users\USER\Desktop\Staircases\idea one\v2\story\build_story_v3.py:164: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  w.use_nodes = True
+Info: Saved as "STEP LADDER RIGGED3.blend"
+STORY_V3_DONE 2733 frames 51.9 s
+Blender 5.1.2 (hash ec6e62d40fa9 built 2026-05-19 01:37:34)
+scripts disabled for "C:\Users\USER\Desktop\Staircases\idea one\v2\out\Latest 21-09-2026\STEP LADDER RIGGED2.blend", skipping 'staircase_ui.py'
+
+Blender quit

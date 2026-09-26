@@ -1,0 +1,9427 @@
+[
+ {
+  "name": "HRC_A_000",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.05,
+  "lo": [
+   8.10882,
+   45.00024,
+   5.05
+  ],
+  "hi": [
+   8.13382,
+   45.01025,
+   6.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/51691.001",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_001",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.05,
+  "lo": [
+   8.41399,
+   45.00024,
+   5.05
+  ],
+  "hi": [
+   8.43898,
+   45.01025,
+   6.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/51672.001",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_002",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.41399,
+   45.00024,
+   4.9
+  ],
+  "hi": [
+   8.43898,
+   45.01025,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/51677.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_003",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.06,
+  "lo": [
+   8.71915,
+   45.00024,
+   5.05
+  ],
+  "hi": [
+   8.74415,
+   45.01025,
+   6.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/51653.001",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_004",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.05,
+  "lo": [
+   9.02431,
+   45.00024,
+   5.05
+  ],
+  "hi": [
+   9.04931,
+   45.01025,
+   6.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/51634.001",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_005",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.02431,
+   45.00024,
+   4.9
+  ],
+  "hi": [
+   9.04931,
+   45.01025,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/51639.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_006",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.05,
+  "lo": [
+   9.32948,
+   45.00024,
+   5.05
+  ],
+  "hi": [
+   9.35448,
+   45.01025,
+   6.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/51615.001",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_007",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.06,
+  "lo": [
+   9.63464,
+   45.00024,
+   5.05
+  ],
+  "hi": [
+   9.65964,
+   45.01025,
+   6.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/51482.001",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_008",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.63464,
+   45.00024,
+   4.9
+  ],
+  "hi": [
+   9.65964,
+   45.01025,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/52453.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_009",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.10882,
+   44.99525,
+   6.05
+  ],
+  "hi": [
+   8.13382,
+   45.01524,
+   6.15
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/51686.003",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_010",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.71915,
+   44.99525,
+   6.05
+  ],
+  "hi": [
+   8.74415,
+   45.01524,
+   6.15
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/51648.003",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_011",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.41399,
+   44.99525,
+   6.05
+  ],
+  "hi": [
+   8.43898,
+   45.01524,
+   6.15
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/51667.003",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_012",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.02431,
+   44.99525,
+   6.05
+  ],
+  "hi": [
+   9.04931,
+   45.01524,
+   6.15
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/51629.003",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_013",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.32948,
+   44.99525,
+   6.05
+  ],
+  "hi": [
+   9.35448,
+   45.01524,
+   6.15
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/51610.003",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_014",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.63464,
+   44.99525,
+   6.05
+  ],
+  "hi": [
+   9.65964,
+   45.01524,
+   6.15
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/51477.003",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_015",
+  "bone": "GuideFrame",
+  "role": "guardrail",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 16,
+  "faces": 28,
+  "closed": true,
+  "volume_cm3": 560.97,
+  "lo": [
+   8.01695,
+   44.99274,
+   6.13612
+  ],
+  "hi": [
+   9.74276,
+   45.01775,
+   6.16112
+  ],
+  "dims_mm": [
+   1725.8,
+   25.0,
+   25.0
+  ],
+  "mesh": "188/46388.003",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_016",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.10882,
+   45.00024,
+   4.9
+  ],
+  "hi": [
+   8.13382,
+   45.01025,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/52463.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_017",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.71915,
+   45.00024,
+   4.9
+  ],
+  "hi": [
+   8.74415,
+   45.01025,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/52468.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_018",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.32948,
+   45.00024,
+   4.9
+  ],
+  "hi": [
+   9.35448,
+   45.01025,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/51620.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_019",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 249.96,
+  "lo": [
+   8.08573,
+   46.24125,
+   5.05
+  ],
+  "hi": [
+   8.11073,
+   46.25124,
+   6.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/51596.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_020",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.08573,
+   46.24125,
+   4.9
+  ],
+  "hi": [
+   8.11073,
+   46.25124,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/52441.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_021",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.39089,
+   46.24125,
+   4.9
+  ],
+  "hi": [
+   8.41589,
+   46.25124,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/51582.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_022",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 249.95,
+  "lo": [
+   8.39089,
+   46.24125,
+   5.05
+  ],
+  "hi": [
+   8.41589,
+   46.25124,
+   6.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/51577.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_023",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 249.95,
+  "lo": [
+   8.69606,
+   46.24125,
+   5.05
+  ],
+  "hi": [
+   8.72106,
+   46.25124,
+   6.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/51558.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_024",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 249.96,
+  "lo": [
+   9.00122,
+   46.24125,
+   5.05
+  ],
+  "hi": [
+   9.02622,
+   46.25124,
+   6.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/51539.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_025",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.00122,
+   46.24125,
+   4.9
+  ],
+  "hi": [
+   9.02622,
+   46.25124,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/51544.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_026",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 249.95,
+  "lo": [
+   9.30638,
+   46.24125,
+   5.05
+  ],
+  "hi": [
+   9.33138,
+   46.25124,
+   6.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/51520.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_027",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.61155,
+   46.24125,
+   4.9
+  ],
+  "hi": [
+   9.63655,
+   46.25124,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/52431.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_028",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 249.96,
+  "lo": [
+   9.61155,
+   46.24125,
+   5.05
+  ],
+  "hi": [
+   9.63655,
+   46.25124,
+   6.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/51501.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_029",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.08573,
+   46.23624,
+   6.05
+  ],
+  "hi": [
+   8.11073,
+   46.25624,
+   6.15
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/51591.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_030",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.39089,
+   46.23624,
+   6.05
+  ],
+  "hi": [
+   8.41589,
+   46.25624,
+   6.15
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/51572.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_031",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.69606,
+   46.23624,
+   6.05
+  ],
+  "hi": [
+   8.72106,
+   46.25624,
+   6.15
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/51553.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_032",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.00122,
+   46.23624,
+   6.05
+  ],
+  "hi": [
+   9.02622,
+   46.25624,
+   6.15
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/51534.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_033",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.30638,
+   46.23624,
+   6.05
+  ],
+  "hi": [
+   9.33138,
+   46.25624,
+   6.15
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/51515.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_034",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.61155,
+   46.23624,
+   6.05
+  ],
+  "hi": [
+   9.63655,
+   46.25624,
+   6.15
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/51496.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_035",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.69606,
+   46.24125,
+   4.9
+  ],
+  "hi": [
+   8.72106,
+   46.25124,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/52446.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_036",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.30638,
+   46.24125,
+   4.9
+  ],
+  "hi": [
+   9.33138,
+   46.25124,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/51525.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_037",
+  "bone": "GuideFrame",
+  "role": "guardrail",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 16,
+  "faces": 28,
+  "closed": true,
+  "volume_cm3": 560.81,
+  "lo": [
+   7.99385,
+   46.23375,
+   6.13612
+  ],
+  "hi": [
+   9.71967,
+   46.25874,
+   6.16112
+  ],
+  "dims_mm": [
+   1725.8,
+   25.0,
+   25.0
+  ],
+  "mesh": "188/46383.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_038",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 1078.52,
+  "lo": [
+   8.01695,
+   45.08939,
+   6.025
+  ],
+  "hi": [
+   9.74276,
+   45.11438,
+   6.05
+  ],
+  "dims_mm": [
+   1725.8,
+   25.0,
+   25.0
+  ],
+  "mesh": "188/51740.001",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_039",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.71863,
+   45.01038,
+   5.94511
+  ],
+  "hi": [
+   8.74415,
+   45.1054,
+   6.04541
+  ],
+  "dims_mm": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "mesh": "188/51755.001",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_040",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.02379,
+   45.01038,
+   5.94511
+  ],
+  "hi": [
+   9.04931,
+   45.1054,
+   6.04541
+  ],
+  "dims_mm": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "mesh": "188/51760.001",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_041",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.41346,
+   45.01038,
+   5.94511
+  ],
+  "hi": [
+   8.43898,
+   45.1054,
+   6.04541
+  ],
+  "dims_mm": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "mesh": "188/51750.001",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_042",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.1083,
+   45.01038,
+   5.94511
+  ],
+  "hi": [
+   8.13382,
+   45.1054,
+   6.04541
+  ],
+  "dims_mm": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "mesh": "188/51745.001",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_043",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.63412,
+   45.01038,
+   5.94511
+  ],
+  "hi": [
+   9.65964,
+   45.1054,
+   6.04541
+  ],
+  "dims_mm": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "mesh": "188/51770.001",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_044",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.32895,
+   45.01038,
+   5.94511
+  ],
+  "hi": [
+   9.35448,
+   45.1054,
+   6.04541
+  ],
+  "dims_mm": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "mesh": "188/51765.001",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_045",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 1078.69,
+  "lo": [
+   7.99385,
+   46.13725,
+   6.025
+  ],
+  "hi": [
+   9.71967,
+   46.16225,
+   6.05
+  ],
+  "dims_mm": [
+   1725.8,
+   25.0,
+   25.0
+  ],
+  "mesh": "188/51703.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_046",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.61103,
+   46.14622,
+   5.94511
+  ],
+  "hi": [
+   9.63655,
+   46.24125,
+   6.04541
+  ],
+  "dims_mm": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "mesh": "188/51733.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_047",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.30586,
+   46.14622,
+   5.94511
+  ],
+  "hi": [
+   9.33138,
+   46.24125,
+   6.04541
+  ],
+  "dims_mm": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "mesh": "188/51728.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_048",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.0007,
+   46.14622,
+   5.94511
+  ],
+  "hi": [
+   9.02622,
+   46.24125,
+   6.04541
+  ],
+  "dims_mm": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "mesh": "188/51723.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_049",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.08521,
+   46.14622,
+   5.94511
+  ],
+  "hi": [
+   8.11073,
+   46.24125,
+   6.04541
+  ],
+  "dims_mm": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "mesh": "188/51708.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_050",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.69553,
+   46.14622,
+   5.94511
+  ],
+  "hi": [
+   8.72106,
+   46.24125,
+   6.04541
+  ],
+  "dims_mm": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "mesh": "188/51718.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_051",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.39037,
+   46.14622,
+   5.94511
+  ],
+  "hi": [
+   8.41589,
+   46.24125,
+   6.04541
+  ],
+  "dims_mm": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "mesh": "188/51713.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_052",
+  "bone": "GuideFrame",
+  "role": "deckbar",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 12,
+  "faces": 20,
+  "closed": true,
+  "volume_cm3": 193.85,
+  "lo": [
+   8.10882,
+   44.99274,
+   5.05
+  ],
+  "hi": [
+   9.65964,
+   45.01775,
+   5.055
+  ],
+  "dims_mm": [
+   1550.8,
+   25.0,
+   5.0
+  ],
+  "mesh": "188/52458.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_053",
+  "bone": "GuideFrame",
+  "role": "deckbar",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 12,
+  "faces": 20,
+  "closed": true,
+  "volume_cm3": 193.82,
+  "lo": [
+   8.08573,
+   46.23375,
+   5.05
+  ],
+  "hi": [
+   9.63655,
+   46.25874,
+   5.055
+  ],
+  "dims_mm": [
+   1550.8,
+   25.0,
+   5.0
+  ],
+  "mesh": "188/52436.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_054",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.10882,
+   45.00024,
+   4.9
+  ],
+  "hi": [
+   8.13382,
+   45.01025,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/51696.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_055",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.71915,
+   45.00024,
+   4.9
+  ],
+  "hi": [
+   8.74415,
+   45.01025,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/51658.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_056",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.08573,
+   46.24125,
+   4.9
+  ],
+  "hi": [
+   8.11073,
+   46.25124,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/51601.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_057",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.69606,
+   46.24125,
+   4.9
+  ],
+  "hi": [
+   8.72106,
+   46.25124,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/51563.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_058",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "R",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.61155,
+   46.24125,
+   4.9
+  ],
+  "hi": [
+   9.63655,
+   46.25124,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/51506.002",
+  "users": 2
+ },
+ {
+  "name": "HRC_A_059",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "CATWALK",
+  "side": "L",
+  "visible": true,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.63464,
+   45.00024,
+   4.9
+  ],
+  "hi": [
+   9.65964,
+   45.01025,
+   5.05
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/51487.002",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_000",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.59335,
+   -12.87588,
+   1.08156
+  ],
+  "hi": [
+   10.61835,
+   -12.85588,
+   1.18156
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/51362.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_001",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.59335,
+   -11.63504,
+   1.08156
+  ],
+  "hi": [
+   10.61835,
+   -11.61504,
+   1.18156
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/49821.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_002",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.39476,
+   -11.63504,
+   1.31326
+  ],
+  "hi": [
+   10.41975,
+   -11.61504,
+   1.41326
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/49859.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_003",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.39476,
+   -12.87588,
+   1.31326
+  ],
+  "hi": [
+   10.41975,
+   -12.85588,
+   1.41326
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/51381.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_004",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.19616,
+   -11.63504,
+   1.54495
+  ],
+  "hi": [
+   10.22116,
+   -11.61504,
+   1.64495
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/49886.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_005",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.19616,
+   -12.87588,
+   1.54495
+  ],
+  "hi": [
+   10.22116,
+   -12.85588,
+   1.64495
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/51405.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_006",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.99756,
+   -11.63504,
+   1.77665
+  ],
+  "hi": [
+   10.02256,
+   -11.61504,
+   1.87665
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/49910.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_007",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.99756,
+   -12.87588,
+   1.77665
+  ],
+  "hi": [
+   10.02256,
+   -12.85588,
+   1.87665
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/51429.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_008",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.60036,
+   -12.87588,
+   2.24005
+  ],
+  "hi": [
+   9.62536,
+   -12.85588,
+   2.34005
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/52321.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_009",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.60036,
+   -11.63504,
+   2.24005
+  ],
+  "hi": [
+   9.62536,
+   -11.61504,
+   2.34005
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/49968.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_010",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.79896,
+   -12.87588,
+   2.00835
+  ],
+  "hi": [
+   9.82396,
+   -12.85588,
+   2.10835
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/51453.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_011",
+  "bone": "GuideFrame",
+  "role": "toppost",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.79896,
+   -11.63504,
+   2.00835
+  ],
+  "hi": [
+   9.82396,
+   -11.61504,
+   2.10835
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/49934.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_012",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.59335,
+   -12.87088,
+   -0.06844
+  ],
+  "hi": [
+   10.61835,
+   -12.86088,
+   0.08156
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/51372.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_013",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.59335,
+   -11.63004,
+   -0.06844
+  ],
+  "hi": [
+   10.61835,
+   -11.62004,
+   0.08156
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/49833.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_014",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.0,
+  "lo": [
+   10.59335,
+   -12.87088,
+   0.08156
+  ],
+  "hi": [
+   10.61835,
+   -12.86088,
+   1.08156
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/51367.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_015",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.0,
+  "lo": [
+   10.59335,
+   -11.63004,
+   0.08156
+  ],
+  "hi": [
+   10.61835,
+   -11.62004,
+   1.08156
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/49826.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_016",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.0,
+  "lo": [
+   10.39476,
+   -12.87088,
+   0.31326
+  ],
+  "hi": [
+   10.41975,
+   -12.86088,
+   1.31326
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/51386.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_017",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.0,
+  "lo": [
+   10.39476,
+   -11.63004,
+   0.31326
+  ],
+  "hi": [
+   10.41975,
+   -11.62004,
+   1.31326
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/49864.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_018",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.0,
+  "lo": [
+   10.19616,
+   -12.87088,
+   0.54495
+  ],
+  "hi": [
+   10.22116,
+   -12.86088,
+   1.54495
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/51410.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_019",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.0,
+  "lo": [
+   10.19616,
+   -11.63004,
+   0.54495
+  ],
+  "hi": [
+   10.22116,
+   -11.62004,
+   1.54495
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/49891.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_020",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.01,
+  "lo": [
+   9.99756,
+   -12.87088,
+   0.77665
+  ],
+  "hi": [
+   10.02256,
+   -12.86088,
+   1.77665
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/51434.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_021",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.01,
+  "lo": [
+   9.99756,
+   -11.63004,
+   0.77665
+  ],
+  "hi": [
+   10.02256,
+   -11.62004,
+   1.77665
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/49915.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_022",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.01,
+  "lo": [
+   9.79896,
+   -12.87088,
+   1.00835
+  ],
+  "hi": [
+   9.82396,
+   -12.86088,
+   2.00835
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/51458.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_023",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.01,
+  "lo": [
+   9.79896,
+   -11.63004,
+   1.00835
+  ],
+  "hi": [
+   9.82396,
+   -11.62004,
+   2.00835
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/49939.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_024",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.01,
+  "lo": [
+   9.60036,
+   -11.63004,
+   1.24005
+  ],
+  "hi": [
+   9.62536,
+   -11.62004,
+   2.24005
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/49956.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_025",
+  "bone": "GuideFrame",
+  "role": "pole",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.01,
+  "lo": [
+   9.60036,
+   -12.87088,
+   1.24005
+  ],
+  "hi": [
+   9.62536,
+   -12.86088,
+   2.24005
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/52314.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_026",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 1078.69,
+  "lo": [
+   9.5341,
+   -11.73004,
+   0.96052
+  ],
+  "hi": [
+   10.67623,
+   -11.70504,
+   2.28713
+  ],
+  "dims_mm": [
+   1142.1,
+   25.0,
+   1326.6
+  ],
+  "mesh": "188/49675.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_027",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 1078.69,
+  "lo": [
+   9.5341,
+   -12.78588,
+   0.96052
+  ],
+  "hi": [
+   10.67623,
+   -12.76088,
+   2.28713
+  ],
+  "dims_mm": [
+   1142.1,
+   25.0,
+   1326.6
+  ],
+  "mesh": "188/51254.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_028",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.79896,
+   -12.87088,
+   0.78835
+  ],
+  "hi": [
+   9.82396,
+   -12.86088,
+   0.93835
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/51463.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_029",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.19616,
+   -12.87088,
+   0.32495
+  ],
+  "hi": [
+   10.22116,
+   -12.86088,
+   0.47495
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/51415.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_030",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.99756,
+   -12.87088,
+   0.55665
+  ],
+  "hi": [
+   10.02256,
+   -12.86088,
+   0.70665
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/51439.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_031",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.39476,
+   -12.87088,
+   0.09326
+  ],
+  "hi": [
+   10.41975,
+   -12.86088,
+   0.24326
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/51391.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_032",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 30,
+  "faces": 56,
+  "closed": true,
+  "volume_cm3": 81.62,
+  "lo": [
+   9.60036,
+   -12.87088,
+   0.99505
+  ],
+  "hi": [
+   9.62536,
+   -12.86088,
+   1.33888
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   343.8
+  ],
+  "mesh": "188/52380.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_033",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 30,
+  "faces": 56,
+  "closed": true,
+  "volume_cm3": 81.62,
+  "lo": [
+   9.99756,
+   -11.63004,
+   0.53165
+  ],
+  "hi": [
+   10.02256,
+   -11.62004,
+   0.87549
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   343.8
+  ],
+  "mesh": "188/52348.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_034",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.60036,
+   -11.63004,
+   0.99505
+  ],
+  "hi": [
+   9.62536,
+   -11.62004,
+   1.14505
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/49961.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_035",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.79896,
+   -11.63004,
+   0.76335
+  ],
+  "hi": [
+   9.82396,
+   -11.62004,
+   0.91335
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/49944.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_036",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.19616,
+   -11.63004,
+   0.29995
+  ],
+  "hi": [
+   10.22116,
+   -11.62004,
+   0.44995
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/49896.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_037",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.99756,
+   -12.86088,
+   1.68165
+  ],
+  "hi": [
+   10.02256,
+   -12.85086,
+   1.70665
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   25.0
+  ],
+  "mesh": "188/51281.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_038",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.99756,
+   -11.64006,
+   1.68165
+  ],
+  "hi": [
+   10.02256,
+   -11.63004,
+   1.70665
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   25.0
+  ],
+  "mesh": "188/49702.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_039",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.39476,
+   -11.63004,
+   0.06826
+  ],
+  "hi": [
+   10.41975,
+   -11.62004,
+   0.21826
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/49869.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_040",
+  "bone": "GuideFrame",
+  "role": "guardrail",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 1078.63,
+  "lo": [
+   9.54019,
+   -12.87838,
+   1.09726
+  ],
+  "hi": [
+   10.68232,
+   -12.85338,
+   2.42387
+  ],
+  "dims_mm": [
+   1142.1,
+   25.0,
+   1326.6
+  ],
+  "mesh": "188/46378.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_041",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.59835,
+   -11.70504,
+   0.97656
+  ],
+  "hi": [
+   10.61335,
+   -11.63006,
+   1.04656
+  ],
+  "dims_mm": [
+   15.0,
+   75.0,
+   70.0
+  ],
+  "mesh": "188/49644.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_042",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 16,
+  "faces": 34,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.59335,
+   -11.64006,
+   0.98656
+  ],
+  "hi": [
+   10.61835,
+   -11.63004,
+   1.01156
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   25.0
+  ],
+  "mesh": "188/49650.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_043",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.39975,
+   -11.70504,
+   1.20826
+  ],
+  "hi": [
+   10.41475,
+   -11.63006,
+   1.27826
+  ],
+  "dims_mm": [
+   15.0,
+   75.0,
+   70.0
+  ],
+  "mesh": "188/49656.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_044",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.39476,
+   -11.64006,
+   1.21826
+  ],
+  "hi": [
+   10.41975,
+   -11.64006,
+   1.24326
+  ],
+  "dims_mm": [
+   25.0,
+   0.0,
+   25.0
+  ],
+  "mesh": "188/49668.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_045",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.39476,
+   -11.64006,
+   1.21826
+  ],
+  "hi": [
+   10.41975,
+   -11.63004,
+   1.24326
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   25.0
+  ],
+  "mesh": "188/49663.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_046",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.19616,
+   -11.64006,
+   1.44995
+  ],
+  "hi": [
+   10.22116,
+   -11.63004,
+   1.47495
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   25.0
+  ],
+  "mesh": "188/49685.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_047",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.20116,
+   -11.70504,
+   1.43995
+  ],
+  "hi": [
+   10.21616,
+   -11.63006,
+   1.50995
+  ],
+  "dims_mm": [
+   15.0,
+   75.0,
+   70.0
+  ],
+  "mesh": "188/49680.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_048",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.19616,
+   -11.64006,
+   1.44995
+  ],
+  "hi": [
+   10.22116,
+   -11.64006,
+   1.47495
+  ],
+  "dims_mm": [
+   25.0,
+   0.0,
+   25.0
+  ],
+  "mesh": "188/49690.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_049",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.99756,
+   -11.64006,
+   1.68165
+  ],
+  "hi": [
+   10.02256,
+   -11.64006,
+   1.70665
+  ],
+  "dims_mm": [
+   25.0,
+   0.0,
+   25.0
+  ],
+  "mesh": "188/49707.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_050",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.00256,
+   -11.70504,
+   1.67165
+  ],
+  "hi": [
+   10.01756,
+   -11.63006,
+   1.74165
+  ],
+  "dims_mm": [
+   15.0,
+   75.0,
+   70.0
+  ],
+  "mesh": "188/49697.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_051",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.79896,
+   -11.64006,
+   1.91335
+  ],
+  "hi": [
+   9.82396,
+   -11.64006,
+   1.93835
+  ],
+  "dims_mm": [
+   25.0,
+   0.0,
+   25.0
+  ],
+  "mesh": "188/49724.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_052",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.79896,
+   -11.64006,
+   1.91335
+  ],
+  "hi": [
+   9.82396,
+   -11.63004,
+   1.93835
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   25.0
+  ],
+  "mesh": "188/49719.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_053",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.80396,
+   -11.70504,
+   1.90335
+  ],
+  "hi": [
+   9.81896,
+   -11.63006,
+   1.97335
+  ],
+  "dims_mm": [
+   15.0,
+   75.0,
+   70.0
+  ],
+  "mesh": "188/49714.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_054",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.60036,
+   -11.64006,
+   2.14505
+  ],
+  "hi": [
+   9.62536,
+   -11.64006,
+   2.17005
+  ],
+  "dims_mm": [
+   25.0,
+   0.0,
+   25.0
+  ],
+  "mesh": "188/49741.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_055",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.60536,
+   -11.70504,
+   2.13505
+  ],
+  "hi": [
+   9.62036,
+   -11.63006,
+   2.20505
+  ],
+  "dims_mm": [
+   15.0,
+   75.0,
+   70.0
+  ],
+  "mesh": "188/49731.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_056",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.60036,
+   -11.64006,
+   2.14505
+  ],
+  "hi": [
+   9.62536,
+   -11.63004,
+   2.17005
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   25.0
+  ],
+  "mesh": "188/49736.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_057",
+  "bone": "GuideFrame",
+  "role": "guardrail",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 1078.63,
+  "lo": [
+   9.54019,
+   -11.63754,
+   1.09726
+  ],
+  "hi": [
+   10.68232,
+   -11.61254,
+   2.42387
+  ],
+  "dims_mm": [
+   1142.1,
+   25.0,
+   1326.6
+  ],
+  "mesh": "188/49749.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_058",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 23.75,
+  "lo": [
+   10.39476,
+   -11.63004,
+   0.21826
+  ],
+  "hi": [
+   10.41975,
+   -11.62004,
+   0.31326
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   95.0
+  ],
+  "mesh": "188/49877.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_059",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 23.75,
+  "lo": [
+   10.19616,
+   -11.63004,
+   0.44995
+  ],
+  "hi": [
+   10.22116,
+   -11.62004,
+   0.54495
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   95.0
+  ],
+  "mesh": "188/49901.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_060",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 23.75,
+  "lo": [
+   9.99756,
+   -11.63004,
+   0.68165
+  ],
+  "hi": [
+   10.02256,
+   -11.62004,
+   0.77665
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   95.0
+  ],
+  "mesh": "188/49925.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_061",
+  "bone": "GuideFrame",
+  "role": "mini",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.99756,
+   -11.63004,
+   0.53165
+  ],
+  "hi": [
+   10.02256,
+   -11.62004,
+   0.68165
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/49920.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_062",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 23.75,
+  "lo": [
+   9.79896,
+   -11.63004,
+   0.91335
+  ],
+  "hi": [
+   9.82396,
+   -11.62004,
+   1.00835
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   95.0
+  ],
+  "mesh": "188/49949.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_063",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 23.75,
+  "lo": [
+   9.60036,
+   -11.63004,
+   1.14505
+  ],
+  "hi": [
+   9.62536,
+   -11.62004,
+   1.24005
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   95.0
+  ],
+  "mesh": "188/49973.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_064",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.59835,
+   -12.86086,
+   0.97656
+  ],
+  "hi": [
+   10.61335,
+   -12.78588,
+   1.04656
+  ],
+  "dims_mm": [
+   15.0,
+   75.0,
+   70.0
+  ],
+  "mesh": "188/51226.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_065",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 16,
+  "faces": 34,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.59335,
+   -12.86088,
+   0.98656
+  ],
+  "hi": [
+   10.61835,
+   -12.85086,
+   1.01156
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   25.0
+  ],
+  "mesh": "188/51231.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_066",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.39975,
+   -12.86086,
+   1.20826
+  ],
+  "hi": [
+   10.41475,
+   -12.78588,
+   1.27826
+  ],
+  "dims_mm": [
+   15.0,
+   75.0,
+   70.0
+  ],
+  "mesh": "188/51237.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_067",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.39476,
+   -12.86088,
+   1.21826
+  ],
+  "hi": [
+   10.41975,
+   -12.85086,
+   1.24326
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   25.0
+  ],
+  "mesh": "188/51242.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_068",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.39476,
+   -12.85086,
+   1.21826
+  ],
+  "hi": [
+   10.41975,
+   -12.85086,
+   1.24326
+  ],
+  "dims_mm": [
+   25.0,
+   0.0,
+   25.0
+  ],
+  "mesh": "188/51247.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_069",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.20116,
+   -12.86086,
+   1.43995
+  ],
+  "hi": [
+   10.21616,
+   -12.78588,
+   1.50995
+  ],
+  "dims_mm": [
+   15.0,
+   75.0,
+   70.0
+  ],
+  "mesh": "188/51259.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_070",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.19616,
+   -12.86088,
+   1.44995
+  ],
+  "hi": [
+   10.22116,
+   -12.85086,
+   1.47495
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   25.0
+  ],
+  "mesh": "188/51264.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_071",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.19616,
+   -12.85086,
+   1.44995
+  ],
+  "hi": [
+   10.22116,
+   -12.85086,
+   1.47495
+  ],
+  "dims_mm": [
+   25.0,
+   0.0,
+   25.0
+  ],
+  "mesh": "188/51269.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_072",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   10.00256,
+   -12.86086,
+   1.67165
+  ],
+  "hi": [
+   10.01756,
+   -12.78588,
+   1.74165
+  ],
+  "dims_mm": [
+   15.0,
+   75.0,
+   70.0
+  ],
+  "mesh": "188/51276.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_073",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.99756,
+   -12.85086,
+   1.68165
+  ],
+  "hi": [
+   10.02256,
+   -12.85086,
+   1.70665
+  ],
+  "dims_mm": [
+   25.0,
+   0.0,
+   25.0
+  ],
+  "mesh": "188/51286.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_074",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.79896,
+   -12.86088,
+   1.91335
+  ],
+  "hi": [
+   9.82396,
+   -12.85086,
+   1.93835
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   25.0
+  ],
+  "mesh": "188/51298.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_075",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.80396,
+   -12.86086,
+   1.90335
+  ],
+  "hi": [
+   9.81896,
+   -12.78588,
+   1.97335
+  ],
+  "dims_mm": [
+   15.0,
+   75.0,
+   70.0
+  ],
+  "mesh": "188/51293.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_076",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.79896,
+   -12.85086,
+   1.91335
+  ],
+  "hi": [
+   9.82396,
+   -12.85086,
+   1.93835
+  ],
+  "dims_mm": [
+   25.0,
+   0.0,
+   25.0
+  ],
+  "mesh": "188/51303.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_077",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.60036,
+   -12.86088,
+   2.14505
+  ],
+  "hi": [
+   9.62536,
+   -12.85086,
+   2.17005
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   25.0
+  ],
+  "mesh": "188/51315.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_078",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.60036,
+   -12.85086,
+   2.14505
+  ],
+  "hi": [
+   9.62536,
+   -12.85086,
+   2.17005
+  ],
+  "dims_mm": [
+   25.0,
+   0.0,
+   25.0
+  ],
+  "mesh": "188/51320.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_079",
+  "bone": "GuideFrame",
+  "role": "handrail",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.60536,
+   -12.86086,
+   2.13505
+  ],
+  "hi": [
+   9.62036,
+   -12.78588,
+   2.20505
+  ],
+  "dims_mm": [
+   15.0,
+   75.0,
+   70.0
+  ],
+  "mesh": "188/51310.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_080",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 17.5,
+  "lo": [
+   10.39476,
+   -12.87088,
+   0.24326
+  ],
+  "hi": [
+   10.41975,
+   -12.86088,
+   0.31326
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   70.0
+  ],
+  "mesh": "188/51396.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_081",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 17.5,
+  "lo": [
+   10.19616,
+   -12.87088,
+   0.47495
+  ],
+  "hi": [
+   10.22116,
+   -12.86088,
+   0.54495
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   70.0
+  ],
+  "mesh": "188/51420.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_082",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 17.5,
+  "lo": [
+   9.99756,
+   -12.87088,
+   0.70665
+  ],
+  "hi": [
+   10.02256,
+   -12.86088,
+   0.77665
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   70.0
+  ],
+  "mesh": "188/51444.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_083",
+  "bone": "GuideFrame",
+  "role": "fitting",
+  "variant": "STEEP",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 17.5,
+  "lo": [
+   9.79896,
+   -12.87088,
+   0.93835
+  ],
+  "hi": [
+   9.82396,
+   -12.86088,
+   1.00835
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   70.0
+  ],
+  "mesh": "188/51468.001",
+  "users": 2
+ },
+ {
+  "name": "HRS_A_084",
+  "bone": "GuideFrame",
+  "role": "guardrail",
+  "variant": "STEEP",
+  "side": "R",
+  "visible": false,
+  "verts": 12,
+  "faces": 20,
+  "closed": true,
+  "volume_cm3": 157.39,
+  "lo": [
+   9.60036,
+   -11.63754,
+   0.38293
+  ],
+  "hi": [
+   10.42355,
+   -11.61254,
+   1.34214
+  ],
+  "dims_mm": [
+   823.2,
+   25.0,
+   959.2
+  ],
+  "mesh": "188/52353.001",
+  "users": 2
+ },
+ {
+  "name": "MainRig_000",
+  "bone": "GuideRail_Lo_L",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 52,
+  "faces": 100,
+  "closed": true,
+  "volume_cm3": 4.87,
+  "lo": [
+   9.66705,
+   44.98771,
+   4.96486
+  ],
+  "hi": [
+   9.72104,
+   44.99271,
+   5.01191
+  ],
+  "dims_mm": [
+   54.0,
+   5.0,
+   47.1
+  ],
+  "mesh": "MainRig_000_orig",
+  "users": 2
+ },
+ {
+  "name": "MainRig_001",
+  "bone": "GuideRail_Lo_L",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 52,
+  "faces": 100,
+  "closed": true,
+  "volume_cm3": 4.87,
+  "lo": [
+   7.83433,
+   45.01771,
+   4.96486
+  ],
+  "hi": [
+   7.88832,
+   45.02271,
+   5.01191
+  ],
+  "dims_mm": [
+   54.0,
+   5.0,
+   47.1
+  ],
+  "mesh": "MainRig_001_orig",
+  "users": 2
+ },
+ {
+  "name": "MainRig_002",
+  "bone": "GuideRail_Lo_L",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 16,
+  "faces": 34,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.6674,
+   45.02471,
+   4.93809
+  ],
+  "hi": [
+   9.7399,
+   45.09971,
+   4.99093
+  ],
+  "dims_mm": [
+   72.5,
+   75.0,
+   52.8
+  ],
+  "mesh": "MainRig_002_orig",
+  "users": 2
+ },
+ {
+  "name": "MainRig_003",
+  "bone": "GuideRail_Lo_R",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 16,
+  "faces": 34,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.6674,
+   46.12971,
+   4.93809
+  ],
+  "hi": [
+   9.7399,
+   46.20471,
+   4.99093
+  ],
+  "dims_mm": [
+   72.5,
+   75.0,
+   52.8
+  ],
+  "mesh": "188/46683.006",
+  "users": 2
+ },
+ {
+  "name": "MainRig_004",
+  "bone": "GuideRail_Lo_L",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 16,
+  "faces": 34,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   7.81561,
+   45.02471,
+   4.93367
+  ],
+  "hi": [
+   7.86845,
+   45.09971,
+   5.00617
+  ],
+  "dims_mm": [
+   52.8,
+   75.0,
+   72.5
+  ],
+  "mesh": "MainRig_004_orig",
+  "users": 2
+ },
+ {
+  "name": "MainRig_005",
+  "bone": "GuideRail_Lo_L",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 60,
+  "faces": 116,
+  "closed": true,
+  "volume_cm3": 10.7,
+  "lo": [
+   9.6736,
+   45.04971,
+   4.95652
+  ],
+  "hi": [
+   9.71655,
+   45.07471,
+   4.99997
+  ],
+  "dims_mm": [
+   43.0,
+   25.0,
+   43.4
+  ],
+  "mesh": "MainRig_005_orig",
+  "users": 2
+ },
+ {
+  "name": "MainRig_006",
+  "bone": "GuideRail_Lo_R",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 97,
+  "faces": 194,
+  "closed": true,
+  "volume_cm3": 228.0,
+  "lo": [
+   9.67858,
+   44.96221,
+   4.97008
+  ],
+  "hi": [
+   9.70349,
+   46.26721,
+   4.99499
+  ],
+  "dims_mm": [
+   24.9,
+   1305.0,
+   24.9
+  ],
+  "mesh": "188/46645.009",
+  "users": 2
+ },
+ {
+  "name": "MainRig_007",
+  "bone": "GuideRail_Lo_R",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 60,
+  "faces": 116,
+  "closed": true,
+  "volume_cm3": 10.7,
+  "lo": [
+   9.6736,
+   46.15471,
+   4.95652
+  ],
+  "hi": [
+   9.71655,
+   46.17971,
+   4.99997
+  ],
+  "dims_mm": [
+   43.0,
+   25.0,
+   43.4
+  ],
+  "mesh": "188/46678.009",
+  "users": 2
+ },
+ {
+  "name": "MainRig_008",
+  "bone": "GuideRail_Up_L",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 75.01,
+  "lo": [
+   7.81139,
+   44.99271,
+   5.03186
+  ],
+  "hi": [
+   7.97539,
+   45.01771,
+   5.05186
+  ],
+  "dims_mm": [
+   164.0,
+   25.0,
+   20.0
+  ],
+  "mesh": "MainRig_008_orig",
+  "users": 2
+ },
+ {
+  "name": "MainRig_009",
+  "bone": "GuideRail_Lo_R",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 16,
+  "faces": 34,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   7.81561,
+   46.12971,
+   4.93367
+  ],
+  "hi": [
+   7.86845,
+   46.20471,
+   5.00617
+  ],
+  "dims_mm": [
+   52.8,
+   75.0,
+   72.5
+  ],
+  "mesh": "188/46711.004",
+  "users": 2
+ },
+ {
+  "name": "MainRig_010",
+  "bone": "GuideRail_Lo_R",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 97,
+  "faces": 194,
+  "closed": true,
+  "volume_cm3": 228.0,
+  "lo": [
+   7.8476,
+   44.96221,
+   4.97008
+  ],
+  "hi": [
+   7.8725,
+   46.26721,
+   4.99499
+  ],
+  "dims_mm": [
+   24.9,
+   1305.0,
+   24.9
+  ],
+  "mesh": "188/46690.004",
+  "users": 2
+ },
+ {
+  "name": "MainRig_011",
+  "bone": "GuideRail_Lo_R",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 60,
+  "faces": 116,
+  "closed": true,
+  "volume_cm3": 10.7,
+  "lo": [
+   7.83404,
+   46.15471,
+   4.95702
+  ],
+  "hi": [
+   7.87749,
+   46.17971,
+   4.99997
+  ],
+  "dims_mm": [
+   43.4,
+   25.0,
+   43.0
+  ],
+  "mesh": "188/46706.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_012",
+  "bone": "GuideRail_Lo_L",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 60,
+  "faces": 116,
+  "closed": true,
+  "volume_cm3": 10.7,
+  "lo": [
+   7.83404,
+   45.04971,
+   4.95702
+  ],
+  "hi": [
+   7.87749,
+   45.07471,
+   4.99997
+  ],
+  "dims_mm": [
+   43.4,
+   25.0,
+   43.0
+  ],
+  "mesh": "MainRig_012_orig",
+  "users": 2
+ },
+ {
+  "name": "MainRig_013",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.68,
+  "lo": [
+   8.8108,
+   46.22672,
+   5.03
+  ],
+  "hi": [
+   8.8258,
+   46.23372,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   7.0,
+   15.0
+  ],
+  "mesh": "188/46952.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_014",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.6108,
+   46.22472,
+   5.005
+  ],
+  "hi": [
+   8.6258,
+   46.22672,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/46957.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_015",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.68,
+  "lo": [
+   8.6108,
+   46.22672,
+   5.005
+  ],
+  "hi": [
+   8.6258,
+   46.23372,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   7.0,
+   15.0
+  ],
+  "mesh": "188/46962.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_016",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.8108,
+   45.01521,
+   5.03
+  ],
+  "hi": [
+   8.8258,
+   45.01721,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/46967.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_017",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.6108,
+   45.01571,
+   5.005
+  ],
+  "hi": [
+   8.6258,
+   45.01771,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/46977.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_018",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.6108,
+   45.02271,
+   5.005
+  ],
+  "hi": [
+   8.6258,
+   45.02471,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/46972.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_019",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 245,
+  "faces": 510,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.5933,
+   45.00972,
+   5.0
+  ],
+  "hi": [
+   8.8733,
+   46.24572,
+   5.05
+  ],
+  "dims_mm": [
+   280.0,
+   1236.0,
+   50.0
+  ],
+  "mesh": "188/46923.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_020",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.8108,
+   46.22472,
+   5.03
+  ],
+  "hi": [
+   8.8258,
+   46.22672,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/46944.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_021",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.61081,
+   46.23872,
+   5.005
+  ],
+  "hi": [
+   8.62581,
+   46.24072,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/46982.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_022",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.8108,
+   46.23871,
+   5.03
+  ],
+  "hi": [
+   8.8258,
+   46.24071,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/46987.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_023",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.61188,
+   45.00519,
+   5.00509
+  ],
+  "hi": [
+   8.62472,
+   45.01571,
+   5.01991
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/47089.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_024",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.81188,
+   45.00469,
+   5.03009
+  ],
+  "hi": [
+   8.82472,
+   45.01521,
+   5.04491
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/47479.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_025",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.61188,
+   46.24072,
+   5.00509
+  ],
+  "hi": [
+   8.62472,
+   46.25124,
+   5.01991
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/47523.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_026",
+  "bone": "GuideRail_Up_L",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 758,
+  "faces": 1229,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   7.9115,
+   44.98771,
+   5.02497
+  ],
+  "hi": [
+   9.76009,
+   45.02271,
+   5.05178
+  ],
+  "dims_mm": [
+   1848.6,
+   35.0,
+   26.8
+  ],
+  "mesh": "MainRig_026_orig",
+  "users": 2
+ },
+ {
+  "name": "MainRig_027",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.50564,
+   46.22472,
+   5.03
+  ],
+  "hi": [
+   8.52064,
+   46.22672,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/47916.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_028",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.81188,
+   46.24122,
+   5.03009
+  ],
+  "hi": [
+   8.82472,
+   46.25174,
+   5.04491
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/47893.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_029",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.68,
+  "lo": [
+   8.50564,
+   46.22672,
+   5.03
+  ],
+  "hi": [
+   8.52064,
+   46.23372,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   7.0,
+   15.0
+  ],
+  "mesh": "188/47921.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_030",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 245,
+  "faces": 510,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.28814,
+   45.00972,
+   5.0
+  ],
+  "hi": [
+   8.56814,
+   46.24572,
+   5.05
+  ],
+  "dims_mm": [
+   280.0,
+   1236.0,
+   50.0
+  ],
+  "mesh": "188/47910.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_031",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.30564,
+   46.22472,
+   5.005
+  ],
+  "hi": [
+   8.32064,
+   46.22672,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/47926.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_032",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.68,
+  "lo": [
+   8.30564,
+   46.22672,
+   5.005
+  ],
+  "hi": [
+   8.32064,
+   46.23372,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   7.0,
+   15.0
+  ],
+  "mesh": "188/47931.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_033",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.50564,
+   45.01521,
+   5.03
+  ],
+  "hi": [
+   8.52064,
+   45.01721,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/47936.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_034",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.30564,
+   45.02271,
+   5.005
+  ],
+  "hi": [
+   8.32064,
+   45.02471,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/47941.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_035",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.30564,
+   45.01571,
+   5.005
+  ],
+  "hi": [
+   8.32064,
+   45.01772,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/47946.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_036",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.30564,
+   46.23872,
+   5.005
+  ],
+  "hi": [
+   8.32064,
+   46.24072,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/47951.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_037",
+  "bone": "GuideRail_Lo_L",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 844,
+  "faces": 1423,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   7.88832,
+   44.98771,
+   4.99991
+  ],
+  "hi": [
+   9.66705,
+   45.02271,
+   5.02492
+  ],
+  "dims_mm": [
+   1778.7,
+   35.0,
+   25.0
+  ],
+  "mesh": "MainRig_037_orig",
+  "users": 2
+ },
+ {
+  "name": "MainRig_038",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.50564,
+   46.23871,
+   5.03
+  ],
+  "hi": [
+   8.52064,
+   46.24072,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/47956.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_039",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.30672,
+   45.00519,
+   5.00509
+  ],
+  "hi": [
+   8.31956,
+   45.01571,
+   5.01991
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/47963.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_040",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.50672,
+   45.00469,
+   5.03009
+  ],
+  "hi": [
+   8.51956,
+   45.01521,
+   5.04491
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/47978.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_041",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.30672,
+   46.24072,
+   5.00509
+  ],
+  "hi": [
+   8.31956,
+   46.25124,
+   5.01991
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/47993.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_042",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 245,
+  "faces": 510,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   7.98297,
+   45.00972,
+   5.0
+  ],
+  "hi": [
+   8.26297,
+   46.24572,
+   5.05
+  ],
+  "dims_mm": [
+   280.0,
+   1236.0,
+   50.0
+  ],
+  "mesh": "188/48025.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_043",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.50672,
+   46.24122,
+   5.03009
+  ],
+  "hi": [
+   8.51956,
+   46.25174,
+   5.04491
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/48008.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_044",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.68,
+  "lo": [
+   8.20047,
+   46.22672,
+   5.03
+  ],
+  "hi": [
+   8.21547,
+   46.23372,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   7.0,
+   15.0
+  ],
+  "mesh": "188/48036.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_045",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.20047,
+   46.22472,
+   5.03
+  ],
+  "hi": [
+   8.21547,
+   46.22672,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48031.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_046",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.00047,
+   46.22472,
+   5.005
+  ],
+  "hi": [
+   8.01547,
+   46.22672,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48041.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_047",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.68,
+  "lo": [
+   8.00047,
+   46.22672,
+   5.005
+  ],
+  "hi": [
+   8.01547,
+   46.23372,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   7.0,
+   15.0
+  ],
+  "mesh": "188/48046.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_048",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.00047,
+   45.02271,
+   5.005
+  ],
+  "hi": [
+   8.01547,
+   45.02471,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48056.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_049",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.20047,
+   45.01521,
+   5.03
+  ],
+  "hi": [
+   8.21547,
+   45.01721,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48051.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_050",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.00048,
+   46.23872,
+   5.005
+  ],
+  "hi": [
+   8.01548,
+   46.24072,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48066.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_051",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.00047,
+   45.01571,
+   5.005
+  ],
+  "hi": [
+   8.01547,
+   45.01772,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48061.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_052",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.20047,
+   46.23871,
+   5.03
+  ],
+  "hi": [
+   8.21547,
+   46.24072,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48071.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_053",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.00156,
+   45.00519,
+   5.00509
+  ],
+  "hi": [
+   8.01439,
+   45.01571,
+   5.01991
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/48078.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_054",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.61453,
+   45.00777,
+   5.00469
+  ],
+  "hi": [
+   8.62467,
+   45.00885,
+   5.01827
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/47470.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_055",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.20156,
+   45.00469,
+   5.03009
+  ],
+  "hi": [
+   8.21439,
+   45.01521,
+   5.04491
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/48093.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_056",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.00156,
+   46.24072,
+   5.00509
+  ],
+  "hi": [
+   8.01439,
+   46.25124,
+   5.01991
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/48108.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_057",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.61453,
+   46.24758,
+   5.00469
+  ],
+  "hi": [
+   8.62467,
+   46.24866,
+   5.01827
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/47884.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_058",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.81453,
+   45.00727,
+   5.02969
+  ],
+  "hi": [
+   8.82467,
+   45.00835,
+   5.04327
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/47485.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_059",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.20156,
+   46.24122,
+   5.03009
+  ],
+  "hi": [
+   8.21439,
+   46.25174,
+   5.04491
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/48123.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_060",
+  "bone": "Tread3",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.81453,
+   46.24809,
+   5.02969
+  ],
+  "hi": [
+   8.82467,
+   46.24916,
+   5.04327
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/47899.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_061",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 245,
+  "faces": 510,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.50879,
+   45.00972,
+   5.0
+  ],
+  "hi": [
+   9.78879,
+   46.24572,
+   5.05
+  ],
+  "dims_mm": [
+   280.0,
+   1236.0,
+   50.0
+  ],
+  "mesh": "188/48140.004",
+  "users": 2
+ },
+ {
+  "name": "MainRig_062",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   9.72629,
+   46.22472,
+   5.03
+  ],
+  "hi": [
+   9.74129,
+   46.22672,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48146.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_063",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.68,
+  "lo": [
+   9.72629,
+   46.22672,
+   5.03
+  ],
+  "hi": [
+   9.74129,
+   46.23372,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   7.0,
+   15.0
+  ],
+  "mesh": "188/48151.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_064",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   9.52629,
+   46.22472,
+   5.005
+  ],
+  "hi": [
+   9.54129,
+   46.22672,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48156.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_065",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.68,
+  "lo": [
+   9.52629,
+   46.22672,
+   5.005
+  ],
+  "hi": [
+   9.54129,
+   46.23372,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   7.0,
+   15.0
+  ],
+  "mesh": "188/48161.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_066",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   9.72629,
+   45.01521,
+   5.03
+  ],
+  "hi": [
+   9.74129,
+   45.01721,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48166.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_067",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   9.52629,
+   45.01571,
+   5.005
+  ],
+  "hi": [
+   9.54129,
+   45.01772,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48176.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_068",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   9.52629,
+   45.02271,
+   5.005
+  ],
+  "hi": [
+   9.54129,
+   45.02471,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48171.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_069",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.50936,
+   45.00727,
+   5.02969
+  ],
+  "hi": [
+   8.51951,
+   45.00835,
+   5.04327
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/47984.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_070",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   9.72629,
+   46.23871,
+   5.03
+  ],
+  "hi": [
+   9.74129,
+   46.24072,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48186.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_071",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   9.5263,
+   46.23872,
+   5.005
+  ],
+  "hi": [
+   9.5413,
+   46.24072,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48181.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_072",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.50936,
+   46.24809,
+   5.02969
+  ],
+  "hi": [
+   8.51951,
+   46.24916,
+   5.04327
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/48014.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_073",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.30936,
+   45.00777,
+   5.00469
+  ],
+  "hi": [
+   8.31951,
+   45.00885,
+   5.01827
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/47969.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_074",
+  "bone": "Tread4",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.30936,
+   46.24758,
+   5.00469
+  ],
+  "hi": [
+   8.31951,
+   46.24866,
+   5.01827
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/47999.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_075",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.52738,
+   45.00519,
+   5.00509
+  ],
+  "hi": [
+   9.54021,
+   45.01571,
+   5.01991
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/48193.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_076",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.72738,
+   45.00469,
+   5.03009
+  ],
+  "hi": [
+   9.74021,
+   45.01521,
+   5.04491
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/48208.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_077",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.52738,
+   46.24072,
+   5.00509
+  ],
+  "hi": [
+   9.54021,
+   46.25124,
+   5.01991
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/48223.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_078",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.72738,
+   46.24122,
+   5.03009
+  ],
+  "hi": [
+   9.74021,
+   46.25174,
+   5.04491
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/48238.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_079",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 245,
+  "faces": 510,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.20363,
+   45.00972,
+   5.0
+  ],
+  "hi": [
+   9.48363,
+   46.24572,
+   5.05
+  ],
+  "dims_mm": [
+   280.0,
+   1236.0,
+   50.0
+  ],
+  "mesh": "188/48255.004",
+  "users": 2
+ },
+ {
+  "name": "MainRig_080",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.68,
+  "lo": [
+   9.42113,
+   46.22672,
+   5.03
+  ],
+  "hi": [
+   9.43613,
+   46.23372,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   7.0,
+   15.0
+  ],
+  "mesh": "188/48266.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_081",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   9.42113,
+   46.22472,
+   5.03
+  ],
+  "hi": [
+   9.43613,
+   46.22672,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48261.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_082",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   9.22113,
+   46.22472,
+   5.005
+  ],
+  "hi": [
+   9.23613,
+   46.22672,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48271.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_083",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.68,
+  "lo": [
+   9.22113,
+   46.22672,
+   5.005
+  ],
+  "hi": [
+   9.23613,
+   46.23372,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   7.0,
+   15.0
+  ],
+  "mesh": "188/48276.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_084",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.0042,
+   45.00777,
+   5.00469
+  ],
+  "hi": [
+   8.01434,
+   45.00885,
+   5.01827
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/48084.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_085",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.2042,
+   45.00727,
+   5.02969
+  ],
+  "hi": [
+   8.21434,
+   45.00835,
+   5.04327
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/48099.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_086",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   9.22113,
+   45.01571,
+   5.005
+  ],
+  "hi": [
+   9.23613,
+   45.01772,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48291.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_087",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   9.42113,
+   45.01521,
+   5.03
+  ],
+  "hi": [
+   9.43613,
+   45.01721,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48281.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_088",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   9.22113,
+   45.02271,
+   5.005
+  ],
+  "hi": [
+   9.23613,
+   45.02471,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48286.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_089",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   9.22113,
+   46.23872,
+   5.005
+  ],
+  "hi": [
+   9.23613,
+   46.24072,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48296.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_090",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   9.42113,
+   46.23871,
+   5.03
+  ],
+  "hi": [
+   9.43613,
+   46.24072,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48301.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_091",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.0042,
+   46.24758,
+   5.00469
+  ],
+  "hi": [
+   8.01434,
+   46.24866,
+   5.01827
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/48114.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_092",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.22221,
+   45.00519,
+   5.00509
+  ],
+  "hi": [
+   9.23505,
+   45.01571,
+   5.01991
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/48308.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_093",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.42221,
+   45.00469,
+   5.03009
+  ],
+  "hi": [
+   9.43505,
+   45.01521,
+   5.04491
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/48323.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_094",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.42221,
+   46.24122,
+   5.03009
+  ],
+  "hi": [
+   9.43505,
+   46.25174,
+   5.04491
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/48353.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_095",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.22221,
+   46.24072,
+   5.00509
+  ],
+  "hi": [
+   9.23505,
+   46.25124,
+   5.01991
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/48338.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_096",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 245,
+  "faces": 510,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.89847,
+   45.00972,
+   5.0
+  ],
+  "hi": [
+   9.17847,
+   46.24572,
+   5.05
+  ],
+  "dims_mm": [
+   280.0,
+   1236.0,
+   50.0
+  ],
+  "mesh": "188/48370.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_097",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   9.11597,
+   46.22472,
+   5.03
+  ],
+  "hi": [
+   9.13097,
+   46.22672,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48376.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_098",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.68,
+  "lo": [
+   9.11597,
+   46.22672,
+   5.03
+  ],
+  "hi": [
+   9.13097,
+   46.23372,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   7.0,
+   15.0
+  ],
+  "mesh": "188/48381.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_099",
+  "bone": "Tread5",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.2042,
+   46.24809,
+   5.02969
+  ],
+  "hi": [
+   8.21434,
+   46.24916,
+   5.04327
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/48129.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_100",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.91597,
+   46.22472,
+   5.005
+  ],
+  "hi": [
+   8.93097,
+   46.22672,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48386.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_101",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.68,
+  "lo": [
+   8.91597,
+   46.22672,
+   5.005
+  ],
+  "hi": [
+   8.93097,
+   46.23372,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   7.0,
+   15.0
+  ],
+  "mesh": "188/48391.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_102",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   9.11597,
+   45.01521,
+   5.03
+  ],
+  "hi": [
+   9.13097,
+   45.01721,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48396.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_103",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.91597,
+   45.02271,
+   5.005
+  ],
+  "hi": [
+   8.93097,
+   45.02471,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48401.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_104",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.91597,
+   45.01571,
+   5.005
+  ],
+  "hi": [
+   8.93097,
+   45.01771,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48406.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_105",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   8.91597,
+   46.23872,
+   5.005
+  ],
+  "hi": [
+   8.93097,
+   46.24072,
+   5.02
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48411.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_106",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "volume_cm3": 0.19,
+  "lo": [
+   9.11597,
+   46.23871,
+   5.03
+  ],
+  "hi": [
+   9.13097,
+   46.24071,
+   5.045
+  ],
+  "dims_mm": [
+   15.0,
+   2.0,
+   15.0
+  ],
+  "mesh": "188/48416.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_107",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.91705,
+   45.00519,
+   5.00509
+  ],
+  "hi": [
+   8.92988,
+   45.01571,
+   5.01991
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/48423.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_108",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.11705,
+   45.00469,
+   5.03009
+  ],
+  "hi": [
+   9.12989,
+   45.01521,
+   5.04491
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/48438.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_109",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.53002,
+   45.00777,
+   5.00469
+  ],
+  "hi": [
+   9.54016,
+   45.00885,
+   5.01827
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/48199.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_110",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.73002,
+   45.00727,
+   5.02969
+  ],
+  "hi": [
+   9.74016,
+   45.00835,
+   5.04327
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/48214.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_111",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.53002,
+   46.24758,
+   5.00469
+  ],
+  "hi": [
+   9.54016,
+   46.24866,
+   5.01827
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/48229.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_112",
+  "bone": "Tread0",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.73002,
+   46.24809,
+   5.02969
+  ],
+  "hi": [
+   9.74016,
+   46.24916,
+   5.04327
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/48244.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_113",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.91705,
+   46.24072,
+   5.00509
+  ],
+  "hi": [
+   8.92988,
+   46.25124,
+   5.01991
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/48453.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_114",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.11705,
+   46.24122,
+   5.03009
+  ],
+  "hi": [
+   9.12988,
+   46.25174,
+   5.04491
+  ],
+  "dims_mm": [
+   12.8,
+   10.5,
+   14.8
+  ],
+  "mesh": "188/48468.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_115",
+  "bone": "GuideRail_Up_R",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 33.75,
+  "lo": [
+   7.81498,
+   46.23871,
+   5.02997
+  ],
+  "hi": [
+   7.97548,
+   46.25371,
+   5.04497
+  ],
+  "dims_mm": [
+   160.5,
+   15.0,
+   15.0
+  ],
+  "mesh": "188/48568.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_116",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.42485,
+   45.00727,
+   5.02969
+  ],
+  "hi": [
+   9.435,
+   45.00835,
+   5.04327
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/48329.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_117",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.22485,
+   46.24758,
+   5.00469
+  ],
+  "hi": [
+   9.235,
+   46.24866,
+   5.01827
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/48344.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_118",
+  "bone": "GuideRail_Up_R",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 580,
+  "faces": 1108,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   7.91148,
+   46.23371,
+   5.02997
+  ],
+  "hi": [
+   9.75659,
+   46.25871,
+   5.04998
+  ],
+  "dims_mm": [
+   1845.1,
+   25.0,
+   20.0
+  ],
+  "mesh": "188/48575.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_119",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.22485,
+   45.00777,
+   5.00469
+  ],
+  "hi": [
+   9.235,
+   45.00885,
+   5.01827
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/48314.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_120",
+  "bone": "Tread1",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.42485,
+   46.24809,
+   5.02969
+  ],
+  "hi": [
+   9.435,
+   46.24916,
+   5.04327
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/48359.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_121",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.91969,
+   45.00777,
+   5.00469
+  ],
+  "hi": [
+   8.92983,
+   45.00885,
+   5.01827
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/48429.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_122",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.11969,
+   45.00727,
+   5.02969
+  ],
+  "hi": [
+   9.12983,
+   45.00835,
+   5.04327
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/48444.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_123",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.91969,
+   46.24758,
+   5.00469
+  ],
+  "hi": [
+   8.92983,
+   46.24866,
+   5.01827
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/48459.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_124",
+  "bone": "Tread2",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.11969,
+   46.24809,
+   5.02969
+  ],
+  "hi": [
+   9.12983,
+   46.24916,
+   5.04327
+  ],
+  "dims_mm": [
+   10.1,
+   1.1,
+   13.6
+  ],
+  "mesh": "188/48474.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_125",
+  "bone": "HandrailUnit",
+  "role": "guardrail",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 16,
+  "faces": 28,
+  "closed": true,
+  "volume_cm3": 560.92,
+  "lo": [
+   8.02245,
+   46.23371,
+   6.13732
+  ],
+  "hi": [
+   9.74827,
+   46.25871,
+   6.16232
+  ],
+  "dims_mm": [
+   1725.8,
+   25.0,
+   25.0
+  ],
+  "mesh": "188/49981.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_126",
+  "bone": "HandrailUnit",
+  "role": "handrail",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.70234,
+   46.14619,
+   5.97758
+  ],
+  "hi": [
+   9.77197,
+   46.24121,
+   6.0681
+  ],
+  "dims_mm": [
+   69.6,
+   95.0,
+   90.5
+  ],
+  "mesh": "188/50016.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_127",
+  "bone": "HandrailUnit",
+  "role": "handrail",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 1078.72,
+  "lo": [
+   8.08782,
+   46.13721,
+   6.0429
+  ],
+  "hi": [
+   9.81364,
+   46.16221,
+   6.0679
+  ],
+  "dims_mm": [
+   1725.8,
+   25.0,
+   25.0
+  ],
+  "mesh": "188/50026.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_128",
+  "bone": "HandrailUnit",
+  "role": "handrail",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.09201,
+   46.14619,
+   5.97758
+  ],
+  "hi": [
+   9.16164,
+   46.24121,
+   6.0681
+  ],
+  "dims_mm": [
+   69.6,
+   95.0,
+   90.5
+  ],
+  "mesh": "188/50011.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_129",
+  "bone": "HandrailUnit",
+  "role": "handrail",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.39717,
+   46.14619,
+   5.97758
+  ],
+  "hi": [
+   9.46681,
+   46.24121,
+   6.0681
+  ],
+  "dims_mm": [
+   69.6,
+   95.0,
+   90.5
+  ],
+  "mesh": "188/50021.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_130",
+  "bone": "HandrailUnit",
+  "role": "handrail",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.48168,
+   46.14619,
+   5.97758
+  ],
+  "hi": [
+   8.55132,
+   46.24121,
+   6.0681
+  ],
+  "dims_mm": [
+   69.6,
+   95.0,
+   90.5
+  ],
+  "mesh": "188/50031.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_131",
+  "bone": "HandrailUnit",
+  "role": "handrail",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.17652,
+   46.14619,
+   5.97758
+  ],
+  "hi": [
+   8.24615,
+   46.24121,
+   6.0681
+  ],
+  "dims_mm": [
+   69.6,
+   95.0,
+   90.5
+  ],
+  "mesh": "188/50041.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_132",
+  "bone": "Pole5_R",
+  "role": "pole",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.05,
+  "lo": [
+   8.11034,
+   46.24121,
+   5.04992
+  ],
+  "hi": [
+   8.13534,
+   46.25121,
+   6.04992
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/50055.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_133",
+  "bone": "HandrailUnit",
+  "role": "handrail",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.78684,
+   46.14619,
+   5.97758
+  ],
+  "hi": [
+   8.85648,
+   46.24121,
+   6.0681
+  ],
+  "dims_mm": [
+   69.6,
+   95.0,
+   90.5
+  ],
+  "mesh": "188/50036.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_134",
+  "bone": "Pole1_R",
+  "role": "pole",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.05,
+  "lo": [
+   9.33122,
+   46.24121,
+   5.05004
+  ],
+  "hi": [
+   9.35622,
+   46.25121,
+   6.05004
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/50074.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_135",
+  "bone": "Pole5_R",
+  "role": "mini",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.11034,
+   46.24121,
+   4.89992
+  ],
+  "hi": [
+   8.13534,
+   46.25121,
+   5.04992
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/50060.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_136",
+  "bone": "Pole0_R",
+  "role": "pole",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.05,
+  "lo": [
+   9.63641,
+   46.24121,
+   5.05008
+  ],
+  "hi": [
+   9.66141,
+   46.25121,
+   6.05008
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/50104.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_137",
+  "bone": "Pole2_R",
+  "role": "pole",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.05,
+  "lo": [
+   9.02598,
+   46.24121,
+   5.04999
+  ],
+  "hi": [
+   9.05098,
+   46.25121,
+   6.04999
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/50123.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_138",
+  "bone": "Pole0_R",
+  "role": "mini",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.63641,
+   46.24121,
+   4.90008
+  ],
+  "hi": [
+   9.66141,
+   46.25121,
+   5.05008
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/50109.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_139",
+  "bone": "Pole2_R",
+  "role": "mini",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.02598,
+   46.24121,
+   4.89999
+  ],
+  "hi": [
+   9.05098,
+   46.25121,
+   5.04999
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/50128.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_140",
+  "bone": "Pole4_R",
+  "role": "pole",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.05,
+  "lo": [
+   8.41558,
+   46.24121,
+   5.04998
+  ],
+  "hi": [
+   8.44058,
+   46.25121,
+   6.04998
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/50142.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_141",
+  "bone": "Pole5_R",
+  "role": "toppost",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.1106,
+   46.23621,
+   6.05009
+  ],
+  "hi": [
+   8.13562,
+   46.25621,
+   6.1501
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/50050.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_142",
+  "bone": "Pole4_R",
+  "role": "mini",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.41558,
+   46.24121,
+   4.89998
+  ],
+  "hi": [
+   8.44058,
+   46.25121,
+   5.04998
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/50147.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_143",
+  "bone": "Pole1_R",
+  "role": "toppost",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.33139,
+   46.23621,
+   6.05007
+  ],
+  "hi": [
+   9.3564,
+   46.25621,
+   6.15008
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/50069.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_144",
+  "bone": "Pole3_R",
+  "role": "pole",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.05,
+  "lo": [
+   8.72077,
+   46.24121,
+   5.05001
+  ],
+  "hi": [
+   8.74577,
+   46.25121,
+   6.05001
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/50161.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_145",
+  "bone": "HandrailUnit",
+  "role": "guardrail",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 16,
+  "faces": 28,
+  "closed": true,
+  "volume_cm3": 561.0,
+  "lo": [
+   8.02245,
+   44.99271,
+   6.13732
+  ],
+  "hi": [
+   9.74827,
+   45.01771,
+   6.16232
+  ],
+  "dims_mm": [
+   1725.8,
+   25.0,
+   25.0
+  ],
+  "mesh": "188/50174.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_146",
+  "bone": "Pole4_R",
+  "role": "toppost",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.41582,
+   46.23621,
+   6.05011
+  ],
+  "hi": [
+   8.44084,
+   46.25621,
+   6.15012
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/50137.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_147",
+  "bone": "Pole0_R",
+  "role": "toppost",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 260,
+  "faces": 264,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.63656,
+   46.23621,
+   6.05007
+  ],
+  "hi": [
+   9.66157,
+   46.25621,
+   6.15008
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/50099.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_148",
+  "bone": "HandrailUnit",
+  "role": "handrail",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.09201,
+   45.01021,
+   5.97758
+  ],
+  "hi": [
+   9.16164,
+   45.10523,
+   6.0681
+  ],
+  "dims_mm": [
+   69.6,
+   95.0,
+   90.5
+  ],
+  "mesh": "188/50207.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_149",
+  "bone": "HandrailUnit",
+  "role": "handrail",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 1078.72,
+  "lo": [
+   8.08782,
+   45.08921,
+   6.0429
+  ],
+  "hi": [
+   9.81364,
+   45.11421,
+   6.0679
+  ],
+  "dims_mm": [
+   1725.8,
+   25.0,
+   25.0
+  ],
+  "mesh": "188/50222.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_150",
+  "bone": "HandrailUnit",
+  "role": "handrail",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.70234,
+   45.01021,
+   5.97758
+  ],
+  "hi": [
+   9.77197,
+   45.10523,
+   6.0681
+  ],
+  "dims_mm": [
+   69.6,
+   95.0,
+   90.5
+  ],
+  "mesh": "188/50212.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_151",
+  "bone": "Pole2_R",
+  "role": "toppost",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.02617,
+   46.23621,
+   6.05005
+  ],
+  "hi": [
+   9.05118,
+   46.25621,
+   6.15006
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/50118.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_152",
+  "bone": "Pole3_R",
+  "role": "toppost",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.72099,
+   46.23621,
+   6.05011
+  ],
+  "hi": [
+   8.746,
+   46.25621,
+   6.15012
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/50156.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_153",
+  "bone": "HandrailUnit",
+  "role": "handrail",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.39717,
+   45.01021,
+   5.97758
+  ],
+  "hi": [
+   9.46681,
+   45.10523,
+   6.0681
+  ],
+  "dims_mm": [
+   69.6,
+   95.0,
+   90.5
+  ],
+  "mesh": "188/50217.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_154",
+  "bone": "Pole5_L",
+  "role": "pole",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.05,
+  "lo": [
+   8.11034,
+   45.00021,
+   5.04992
+  ],
+  "hi": [
+   8.13534,
+   45.01021,
+   6.04992
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/50305.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_155",
+  "bone": "HandrailUnit",
+  "role": "handrail",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.48168,
+   45.01021,
+   5.97758
+  ],
+  "hi": [
+   8.55132,
+   45.10523,
+   6.0681
+  ],
+  "dims_mm": [
+   69.6,
+   95.0,
+   90.5
+  ],
+  "mesh": "188/50227.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_156",
+  "bone": "Pole1_L",
+  "role": "pole",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.05,
+  "lo": [
+   9.33122,
+   45.00021,
+   5.05004
+  ],
+  "hi": [
+   9.35622,
+   45.01021,
+   6.05004
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/50326.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_157",
+  "bone": "HandrailUnit",
+  "role": "handrail",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.17652,
+   45.01021,
+   5.97758
+  ],
+  "hi": [
+   8.24615,
+   45.10523,
+   6.0681
+  ],
+  "dims_mm": [
+   69.6,
+   95.0,
+   90.5
+  ],
+  "mesh": "188/50237.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_158",
+  "bone": "Pole0_L",
+  "role": "pole",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.05,
+  "lo": [
+   9.63641,
+   45.00021,
+   5.05008
+  ],
+  "hi": [
+   9.66141,
+   45.01021,
+   6.05008
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/50369.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_159",
+  "bone": "Pole0_L",
+  "role": "mini",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.63641,
+   45.00021,
+   4.90008
+  ],
+  "hi": [
+   9.66141,
+   45.0102,
+   5.05008
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/50374.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_160",
+  "bone": "Pole2_L",
+  "role": "pole",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.05,
+  "lo": [
+   9.02598,
+   45.00021,
+   5.04999
+  ],
+  "hi": [
+   9.05098,
+   45.01021,
+   6.04999
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/50388.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_161",
+  "bone": "Pole1_L",
+  "role": "toppost",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.33139,
+   44.9952,
+   6.05007
+  ],
+  "hi": [
+   9.3564,
+   45.01521,
+   6.15008
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/50321.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_162",
+  "bone": "Pole5_L",
+  "role": "toppost",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.1106,
+   44.99521,
+   6.05009
+  ],
+  "hi": [
+   8.13562,
+   45.01521,
+   6.1501
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/50300.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_163",
+  "bone": "Pole4_L",
+  "role": "pole",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.05,
+  "lo": [
+   8.41558,
+   45.00021,
+   5.04998
+  ],
+  "hi": [
+   8.44058,
+   45.01021,
+   6.04998
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/50407.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_164",
+  "bone": "Pole2_L",
+  "role": "mini",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.02598,
+   45.00021,
+   4.89999
+  ],
+  "hi": [
+   9.05098,
+   45.0102,
+   5.04999
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/50393.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_165",
+  "bone": "Pole4_L",
+  "role": "mini",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.41558,
+   45.00021,
+   4.89998
+  ],
+  "hi": [
+   8.44058,
+   45.0102,
+   5.04998
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   150.0
+  ],
+  "mesh": "188/50412.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_166",
+  "bone": "Pole0_L",
+  "role": "toppost",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 260,
+  "faces": 264,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.63656,
+   44.9952,
+   6.05007
+  ],
+  "hi": [
+   9.66157,
+   45.01521,
+   6.15008
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/50364.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_167",
+  "bone": "Pole3_L",
+  "role": "pole",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "volume_cm3": 250.05,
+  "lo": [
+   8.72077,
+   45.00021,
+   5.05001
+  ],
+  "hi": [
+   8.74577,
+   45.01022,
+   6.05001
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   1000.0
+  ],
+  "mesh": "188/50426.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_168",
+  "bone": "Pole2_L",
+  "role": "toppost",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   9.02617,
+   44.9952,
+   6.05006
+  ],
+  "hi": [
+   9.05118,
+   45.01521,
+   6.15006
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/50383.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_169",
+  "bone": "Pole4_L",
+  "role": "toppost",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.41582,
+   44.9952,
+   6.05011
+  ],
+  "hi": [
+   8.44084,
+   45.01521,
+   6.15012
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/50402.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_170",
+  "bone": "Pole3_L",
+  "role": "toppost",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.72099,
+   44.99521,
+   6.05011
+  ],
+  "hi": [
+   8.746,
+   45.01521,
+   6.15011
+  ],
+  "dims_mm": [
+   25.0,
+   20.0,
+   100.0
+  ],
+  "mesh": "188/50421.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_171",
+  "bone": "HandrailUnit",
+  "role": "handrail",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   8.78684,
+   45.01021,
+   5.97758
+  ],
+  "hi": [
+   8.85648,
+   45.10523,
+   6.0681
+  ],
+  "dims_mm": [
+   69.6,
+   95.0,
+   90.5
+  ],
+  "mesh": "188/50232.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_172",
+  "bone": "Pole3_L",
+  "role": "mini",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 30,
+  "faces": 56,
+  "closed": true,
+  "volume_cm3": 52.59,
+  "lo": [
+   8.72077,
+   45.00021,
+   4.90001
+  ],
+  "hi": [
+   8.74577,
+   45.01022,
+   5.12193
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   221.9
+  ],
+  "mesh": "188/52387.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_173",
+  "bone": "Pole5_L",
+  "role": "mini",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 30,
+  "faces": 56,
+  "closed": true,
+  "volume_cm3": 52.58,
+  "lo": [
+   8.11034,
+   45.00021,
+   4.89992
+  ],
+  "hi": [
+   8.13534,
+   45.01021,
+   5.12184
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   221.9
+  ],
+  "mesh": "188/52392.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_174",
+  "bone": "Pole1_L",
+  "role": "mini",
+  "variant": "STANDARD",
+  "side": "L",
+  "visible": false,
+  "verts": 30,
+  "faces": 56,
+  "closed": true,
+  "volume_cm3": 52.59,
+  "lo": [
+   9.33122,
+   45.00021,
+   4.90004
+  ],
+  "hi": [
+   9.35622,
+   45.01021,
+   5.12196
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   221.9
+  ],
+  "mesh": "188/52402.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_175",
+  "bone": "Pole3_R",
+  "role": "mini",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 30,
+  "faces": 56,
+  "closed": true,
+  "volume_cm3": 52.6,
+  "lo": [
+   8.72077,
+   46.24121,
+   4.90001
+  ],
+  "hi": [
+   8.74577,
+   46.25121,
+   5.12193
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   221.9
+  ],
+  "mesh": "188/52409.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_176",
+  "bone": "Pole1_R",
+  "role": "mini",
+  "variant": "STANDARD",
+  "side": "R",
+  "visible": false,
+  "verts": 30,
+  "faces": 56,
+  "closed": true,
+  "volume_cm3": 52.6,
+  "lo": [
+   9.33122,
+   46.24121,
+   4.90004
+  ],
+  "hi": [
+   9.35622,
+   46.25121,
+   5.12196
+  ],
+  "dims_mm": [
+   25.0,
+   10.0,
+   221.9
+  ],
+  "mesh": "188/52424.003",
+  "users": 2
+ },
+ {
+  "name": "MainRig_177",
+  "bone": "GuideRail_Lo_R",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 52,
+  "faces": 100,
+  "closed": true,
+  "volume_cm3": 4.87,
+  "lo": [
+   9.66705,
+   46.25367,
+   4.96486
+  ],
+  "hi": [
+   9.72104,
+   46.25867,
+   5.01191
+  ],
+  "dims_mm": [
+   54.0,
+   5.0,
+   47.1
+  ],
+  "mesh": "188/46602.007",
+  "users": 2
+ },
+ {
+  "name": "MainRig_178",
+  "bone": "GuideRail_Lo_R",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 52,
+  "faces": 100,
+  "closed": true,
+  "volume_cm3": 4.87,
+  "lo": [
+   7.83433,
+   46.23474,
+   4.96486
+  ],
+  "hi": [
+   7.88832,
+   46.23974,
+   5.01191
+  ],
+  "dims_mm": [
+   54.0,
+   5.0,
+   47.1
+  ],
+  "mesh": "188/46595.007",
+  "users": 2
+ },
+ {
+  "name": "MainRig_179",
+  "bone": "GuideRail_Lo_R",
+  "role": null,
+  "variant": null,
+  "side": null,
+  "visible": true,
+  "verts": 672,
+  "faces": 1034,
+  "closed": false,
+  "volume_cm3": null,
+  "lo": [
+   7.88544,
+   46.23289,
+   5.00441
+  ],
+  "hi": [
+   9.66419,
+   46.25853,
+   5.02601
+  ],
+  "dims_mm": [
+   1778.7,
+   25.6,
+   21.6
+  ],
+  "mesh": "188/48712.004",
+  "users": 2
+ }
+]

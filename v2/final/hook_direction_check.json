@@ -1,0 +1,50 @@
+{
+ "L_free_base": {
+  "F": 6426.315557102123,
+  "ang": 90.00000001604717,
+  "on_plate": false,
+  "cover_deg": 160
+ },
+ "L_free_top": {
+  "F": 4433.821684408107,
+  "ang": 89.98714021758315,
+  "on_plate": true,
+  "cover_deg": 182
+ },
+ "L_held_base": {
+  "F": 17739.918177149346,
+  "ang": 127.74777603864679,
+  "on_plate": false,
+  "cover_deg": 160
+ },
+ "L_held_top": {
+  "F": 11311.944982028044,
+  "ang": 343.7470666925904,
+  "on_plate": false,
+  "cover_deg": 182
+ },
+ "R_free_base": {
+  "F": 6291.981049365887,
+  "ang": 90.00000000013937,
+  "on_plate": false,
+  "cover_deg": 190
+ },
+ "R_free_top": {
+  "F": 4346.923417761175,
+  "ang": 90.00117143225901,
+  "on_plate": true,
+  "cover_deg": 187
+ },
+ "R_held_base": {
+  "F": 14981.085605776938,
+  "ang": 124.88663643841288,
+  "on_plate": false,
+  "cover_deg": 190
+ },
+ "R_held_top": {
+  "F": 8725.886550262214,
+  "ang": 349.1011906353278,
+  "on_plate": false,
+  "cover_deg": 187
+ }
+}

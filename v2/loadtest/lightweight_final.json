@@ -1,0 +1,215 @@
+{
+ "recommended (1.8 mm tread skins)": {
+  "tread": {
+   "A": 1369,
+   "I": 505265,
+   "util": 0.832,
+   "mass_each": 4.57,
+   "open_riser_gap": 100.0,
+   "deck_gap": 20.2,
+   "checks": {
+    "bend_udl": 0.298,
+    "bend_point": 0.832,
+    "defl_udl": 0.403,
+    "defl_point": 0.363,
+    "defl_person": 0.113,
+    "local_skin": 0.492
+   }
+  },
+  "girder": {
+   "standard": {
+    "stress": 0.806,
+    "defl_L250": 0.489,
+    "person_10mm": 0.045
+   },
+   "catwalk_midfoot": {
+    "stress": 0.529,
+    "defl_L250": 0.571,
+    "person_10mm": 0.07
+   },
+   "steep_crew": {
+    "stress": 0.231
+   },
+   "f1_standard_Hz": 47.42
+  },
+  "barrier": {
+   "post": 0.928,
+   "rails": {
+    "guard": 0.505,
+    "hand": 0.941,
+    "mid": 0.304,
+    "guard_vertical": 0.308
+   },
+   "M_base_kNm": 3.44,
+   "defl_mm": 27.5
+  },
+  "toe_board_util": 0.447,
+  "lock_pin_util": 0.586,
+  "anchors": {
+   "T_kN": 3.7,
+   "V_kN": 1.9,
+   "ballast_kg": 1502
+  },
+  "sway_kN": 1.4,
+  "mass": {
+   "treads 6x (285x40 hollow plank)": 27.41,
+   "guide bars 4x (RHS)": 7.12,
+   "axles 2x (tube 25.2x2.7)": 1.36,
+   "posts 6x SHS 60x60x4": 14.52,
+   "guardrails 2x CHS 40x2": 2.23,
+   "handrails 2x CHS 48.3x3 (+300 ext)": 6.01,
+   "intermediate rails 2x CHS 30x2": 1.64,
+   "toe boards 2x 150x25x1.5": 2.8,
+   "pivot heads 6x": 0.4,
+   "lock pins: 6 post minis + 6 dia-12 captive": 0.8,
+   "post base moment sockets 6x": 1.8,
+   "rail clamps 18x": 1.08,
+   "hooks 4x 10 mm + male connectors 2x": 0.52,
+   "rail brackets, spacers, bolts (lump)": 1.2,
+   "foot pads 4x + catwalk mid-feet 2x": 0.48,
+   "TOTAL": 69.4
+  }
+ },
+ "robust (2.0 mm tread skins)": {
+  "tread": {
+   "A": 1480,
+   "I": 542008,
+   "util": 0.778,
+   "mass_each": 4.94,
+   "open_riser_gap": 100.0,
+   "deck_gap": 20.2,
+   "checks": {
+    "bend_udl": 0.279,
+    "bend_point": 0.778,
+    "defl_udl": 0.375,
+    "defl_point": 0.338,
+    "defl_person": 0.105,
+    "local_skin": 0.398
+   }
+  },
+  "girder": {
+   "standard": {
+    "stress": 0.807,
+    "defl_L250": 0.49,
+    "person_10mm": 0.045
+   },
+   "catwalk_midfoot": {
+    "stress": 0.529,
+    "defl_L250": 0.572,
+    "person_10mm": 0.07
+   },
+   "steep_crew": {
+    "stress": 0.232
+   },
+   "f1_standard_Hz": 46.54
+  },
+  "barrier": {
+   "post": 0.928,
+   "rails": {
+    "guard": 0.505,
+    "hand": 0.941,
+    "mid": 0.304,
+    "guard_vertical": 0.308
+   },
+   "M_base_kNm": 3.44,
+   "defl_mm": 27.5
+  },
+  "toe_board_util": 0.447,
+  "lock_pin_util": 0.586,
+  "anchors": {
+   "T_kN": 3.69,
+   "V_kN": 1.89,
+   "ballast_kg": 1499
+  },
+  "sway_kN": 1.4,
+  "mass": {
+   "treads 6x (285x40 hollow plank)": 29.63,
+   "guide bars 4x (RHS)": 7.12,
+   "axles 2x (tube 25.2x2.7)": 1.36,
+   "posts 6x SHS 60x60x4": 14.52,
+   "guardrails 2x CHS 40x2": 2.23,
+   "handrails 2x CHS 48.3x3 (+300 ext)": 6.01,
+   "intermediate rails 2x CHS 30x2": 1.64,
+   "toe boards 2x 150x25x1.5": 2.8,
+   "pivot heads 6x": 0.4,
+   "lock pins: 6 post minis + 6 dia-12 captive": 0.8,
+   "post base moment sockets 6x": 1.8,
+   "rail clamps 18x": 1.08,
+   "hooks 4x 10 mm + male connectors 2x": 0.52,
+   "rail brackets, spacers, bolts (lump)": 1.2,
+   "foot pads 4x + catwalk mid-feet 2x": 0.48,
+   "TOTAL": 71.6
+  }
+ },
+ "thin-skin (1.5 mm tread skins, extruder to confirm)": {
+  "tread": {
+   "A": 1202,
+   "I": 448502,
+   "util": 0.932,
+   "mass_each": 4.01,
+   "open_riser_gap": 100.0,
+   "deck_gap": 20.2,
+   "checks": {
+    "bend_udl": 0.333,
+    "bend_point": 0.932,
+    "defl_udl": 0.454,
+    "defl_point": 0.409,
+    "defl_person": 0.127,
+    "local_skin": 0.708
+   }
+  },
+  "girder": {
+   "standard": {
+    "stress": 0.804,
+    "defl_L250": 0.488,
+    "person_10mm": 0.045
+   },
+   "catwalk_midfoot": {
+    "stress": 0.528,
+    "defl_L250": 0.57,
+    "person_10mm": 0.07
+   },
+   "steep_crew": {
+    "stress": 0.23
+   },
+   "f1_standard_Hz": 48.86
+  },
+  "barrier": {
+   "post": 0.928,
+   "rails": {
+    "guard": 0.505,
+    "hand": 0.941,
+    "mid": 0.304,
+    "guard_vertical": 0.308
+   },
+   "M_base_kNm": 3.44,
+   "defl_mm": 27.5
+  },
+  "toe_board_util": 0.447,
+  "lock_pin_util": 0.586,
+  "anchors": {
+   "T_kN": 3.71,
+   "V_kN": 1.9,
+   "ballast_kg": 1505
+  },
+  "sway_kN": 1.4,
+  "mass": {
+   "treads 6x (285x40 hollow plank)": 24.08,
+   "guide bars 4x (RHS)": 7.12,
+   "axles 2x (tube 25.2x2.7)": 1.36,
+   "posts 6x SHS 60x60x4": 14.52,
+   "guardrails 2x CHS 40x2": 2.23,
+   "handrails 2x CHS 48.3x3 (+300 ext)": 6.01,
+   "intermediate rails 2x CHS 30x2": 1.64,
+   "toe boards 2x 150x25x1.5": 2.8,
+   "pivot heads 6x": 0.4,
+   "lock pins: 6 post minis + 6 dia-12 captive": 0.8,
+   "post base moment sockets 6x": 1.8,
+   "rail clamps 18x": 1.08,
+   "hooks 4x 10 mm + male connectors 2x": 0.52,
+   "rail brackets, spacers, bolts (lump)": 1.2,
+   "foot pads 4x + catwalk mid-feet 2x": 0.48,
+   "TOTAL": 66.0
+  }
+ }
+}

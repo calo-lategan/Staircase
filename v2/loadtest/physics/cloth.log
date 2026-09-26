@@ -1,0 +1,5 @@
+00:57.235  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\loadtest\physics\E_cloth_double_unsupported.png'
+CLOTH_DONE {"calibration": {"bending_stiffness": 2509.9107440309144, "sag_mm": 9.6, "target_mm": 45.558}, "linearity_ULS": {"sag_mm": 58.4, "linear_prediction_mm": 14.2, "ratio": 6.083, "expected_ratio": 1.48}, "double_supported": {"max_sag_mm": 69.7, "per_span_mm": [60.2, 69.7], "single_span_mm": 9.6}, "double_unsupported": {"max_sag_mm": 101.9, "per_span_mm": [74.2, 101.9]}}
+Blender 5.1.2 (hash ec6e62d40fa9 built 2026-05-19 01:37:34)
+
+Blender quit

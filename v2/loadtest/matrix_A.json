@@ -1,0 +1,724 @@
+{
+"SINGLE_CATWALK": {
+"Tread UDL": [
+0.188,
+"PASS",
+""
+],
+"Tread point": [
+0.393,
+"PASS",
+""
+],
+"Tread defl": [
+0.243,
+"PASS",
+""
+],
+"Girder (locked FE)": [
+7.246,
+"FAIL",
+"upper 803 / lower 2572 MPa"
+],
+"Girder defl (FE)": [
+2.488,
+"FAIL",
+""
+],
+"Axle shear": [
+0.376,
+"PASS",
+""
+],
+"Post 1.25kN (FE)": [
+2.651,
+"FAIL",
+"top defl 347 mm (ULS)"
+],
+"Post 3kN/m (FE)": [
+9.705,
+"FAIL",
+"top defl 1350 mm (ULS)"
+],
+"Guard rail": [
+0.187,
+"PASS",
+""
+],
+"Rail height": [
+0.99,
+"PASS",
+""
+],
+"Overturning": [
+13.739,
+"FAIL",
+"FoS=0.12 (need 1.5); ballast/anchor 1444 kg"
+],
+"Sliding": [
+23.079,
+"FAIL",
+""
+],
+"Frequency": [
+0.802,
+"PASS",
+"unbraced bars, self weight only"
+]
+},
+"SINGLE_STANDARD": {
+"Tread UDL": [
+0.155,
+"PASS",
+""
+],
+"Tread point": [
+0.393,
+"PASS",
+""
+],
+"Tread defl": [
+0.243,
+"PASS",
+""
+],
+"Girder (locked FE)": [
+4.012,
+"FAIL",
+"upper 129 / lower 1424 MPa"
+],
+"Girder defl (FE)": [
+0.398,
+"PASS",
+""
+],
+"Top hook": [
+2.086,
+"FAIL",
+"hook load 4.25 kN, e=18.6 mm"
+],
+"Axle shear": [
+0.25,
+"PASS",
+""
+],
+"Post 1.25kN (FE)": [
+2.897,
+"FAIL",
+"top defl 322 mm (ULS)"
+],
+"Post 3kN/m (FE)": [
+12.189,
+"FAIL",
+"top defl 1359 mm (ULS)"
+],
+"Guard rail": [
+0.187,
+"PASS",
+""
+],
+"Rail height": [
+0.976,
+"PASS",
+""
+],
+"Overturning": [
+0.0,
+"PASS",
+"restrained: top hooked to landing/bar (bar must be anchored)"
+]
+},
+"SINGLE_STEEP": {
+"Tread UDL": [
+0.124,
+"PASS",
+""
+],
+"Tread point": [
+0.393,
+"PASS",
+""
+],
+"Tread defl": [
+0.243,
+"PASS",
+""
+],
+"Girder (locked FE)": [
+2.284,
+"FAIL",
+"upper 74 / lower 811 MPa"
+],
+"Girder defl (FE)": [
+0.189,
+"PASS",
+""
+],
+"Top hook": [
+1.375,
+"FAIL",
+"hook load 2.80 kN, e=18.6 mm"
+],
+"Axle shear": [
+0.157,
+"PASS",
+""
+],
+"Post 1.25kN (FE)": [
+3.032,
+"FAIL",
+"top defl 311 mm (ULS)"
+],
+"Post 3kN/m (FE)": [
+12.762,
+"FAIL",
+"top defl 1320 mm (ULS)"
+],
+"Guard rail": [
+0.187,
+"PASS",
+""
+],
+"Rail height": [
+0.947,
+"PASS",
+""
+],
+"Overturning": [
+0.0,
+"PASS",
+"restrained: top hooked to landing/bar (bar must be anchored)"
+]
+},
+"SINGLE_BAR": {
+"Tread UDL": [
+0.155,
+"PASS",
+""
+],
+"Tread point": [
+0.393,
+"PASS",
+""
+],
+"Tread defl": [
+0.243,
+"PASS",
+""
+],
+"Girder (locked FE)": [
+4.012,
+"FAIL",
+"upper 129 / lower 1424 MPa"
+],
+"Girder defl (FE)": [
+0.398,
+"PASS",
+""
+],
+"Top hook": [
+2.086,
+"FAIL",
+"hook load 4.25 kN, e=18.6 mm"
+],
+"Axle shear": [
+0.25,
+"PASS",
+""
+],
+"Post 1.25kN (FE)": [
+2.897,
+"FAIL",
+"top defl 322 mm (ULS)"
+],
+"Post 3kN/m (FE)": [
+12.189,
+"FAIL",
+"top defl 1359 mm (ULS)"
+],
+"Guard rail": [
+0.187,
+"PASS",
+""
+],
+"Rail height": [
+0.976,
+"PASS",
+""
+],
+"Overturning": [
+0.0,
+"PASS",
+"restrained: top hooked to landing/bar (bar must be anchored)"
+]
+},
+"DOUBLE_CATWALK": {
+"Tread UDL": [
+0.188,
+"PASS",
+""
+],
+"Tread point": [
+0.393,
+"PASS",
+""
+],
+"Tread defl": [
+0.243,
+"PASS",
+""
+],
+"Girder (locked FE)": [
+7.246,
+"FAIL",
+"upper 803 / lower 2572 MPa"
+],
+"Girder defl (FE)": [
+2.488,
+"FAIL",
+""
+],
+"Top hook": [
+2.989,
+"FAIL",
+"hook load 6.09 kN, e=18.6 mm"
+],
+"Axle shear": [
+0.376,
+"PASS",
+""
+],
+"Post 1.25kN (FE)": [
+2.651,
+"FAIL",
+"top defl 347 mm (ULS)"
+],
+"Post 3kN/m (FE)": [
+9.705,
+"FAIL",
+"top defl 1350 mm (ULS)"
+],
+"Guard rail": [
+0.187,
+"PASS",
+""
+],
+"Rail height": [
+0.99,
+"PASS",
+""
+],
+"Overturning": [
+13.739,
+"FAIL",
+"FoS=0.12 (need 1.5); ballast/anchor 2888 kg"
+],
+"Sliding": [
+23.079,
+"FAIL",
+""
+],
+"Frequency": [
+0.802,
+"PASS",
+"unbraced bars, self weight only"
+],
+"Joint unsupported": [
+38.791,
+"FAIL",
+"=> a support/trestle under the joint is REQUIRED"
+]
+},
+"DOUBLE_STANDARD": {
+"Tread UDL": [
+0.155,
+"PASS",
+""
+],
+"Tread point": [
+0.393,
+"PASS",
+""
+],
+"Tread defl": [
+0.243,
+"PASS",
+""
+],
+"Girder (locked FE)": [
+4.012,
+"FAIL",
+"upper 129 / lower 1424 MPa"
+],
+"Girder defl (FE)": [
+0.398,
+"PASS",
+""
+],
+"Top hook": [
+2.086,
+"FAIL",
+"hook load 4.25 kN, e=18.6 mm"
+],
+"Axle shear": [
+0.25,
+"PASS",
+""
+],
+"Post 1.25kN (FE)": [
+2.897,
+"FAIL",
+"top defl 322 mm (ULS)"
+],
+"Post 3kN/m (FE)": [
+12.189,
+"FAIL",
+"top defl 1359 mm (ULS)"
+],
+"Guard rail": [
+0.187,
+"PASS",
+""
+],
+"Rail height": [
+0.976,
+"PASS",
+""
+],
+"Overturning": [
+0.0,
+"PASS",
+"restrained: top hooked to landing/bar (bar must be anchored)"
+],
+"Joint unsupported": [
+26.358,
+"FAIL",
+"=> a support/trestle under the joint is REQUIRED"
+]
+},
+"DOUBLE_STEEP": {
+"Tread UDL": [
+0.124,
+"PASS",
+""
+],
+"Tread point": [
+0.393,
+"PASS",
+""
+],
+"Tread defl": [
+0.243,
+"PASS",
+""
+],
+"Girder (locked FE)": [
+2.284,
+"FAIL",
+"upper 74 / lower 811 MPa"
+],
+"Girder defl (FE)": [
+0.189,
+"PASS",
+""
+],
+"Top hook": [
+1.375,
+"FAIL",
+"hook load 2.80 kN, e=18.6 mm"
+],
+"Axle shear": [
+0.157,
+"PASS",
+""
+],
+"Post 1.25kN (FE)": [
+3.032,
+"FAIL",
+"top defl 311 mm (ULS)"
+],
+"Post 3kN/m (FE)": [
+12.762,
+"FAIL",
+"top defl 1320 mm (ULS)"
+],
+"Guard rail": [
+0.187,
+"PASS",
+""
+],
+"Rail height": [
+0.947,
+"PASS",
+""
+],
+"Overturning": [
+0.0,
+"PASS",
+"restrained: top hooked to landing/bar (bar must be anchored)"
+],
+"Joint unsupported": [
+16.933,
+"FAIL",
+"=> a support/trestle under the joint is REQUIRED"
+]
+},
+"WIDE_CATWALK_FULL": {
+"Tread UDL": [
+0.188,
+"PASS",
+""
+],
+"Tread point": [
+0.393,
+"PASS",
+""
+],
+"Tread defl": [
+0.243,
+"PASS",
+""
+],
+"Girder (locked FE)": [
+7.246,
+"FAIL",
+"upper 803 / lower 2572 MPa"
+],
+"Girder defl (FE)": [
+2.488,
+"FAIL",
+""
+],
+"Axle shear": [
+0.376,
+"PASS",
+""
+],
+"Post 1.25kN (FE)": [
+2.651,
+"FAIL",
+"top defl 347 mm (ULS)"
+],
+"Post 3kN/m (FE)": [
+9.705,
+"FAIL",
+"top defl 1350 mm (ULS)"
+],
+"Guard rail": [
+0.187,
+"PASS",
+""
+],
+"Rail height": [
+0.99,
+"PASS",
+""
+],
+"Overturning": [
+3.435,
+"FAIL",
+"FoS=0.49 (need 1.5); ballast/anchor 531 kg"
+],
+"Sliding": [
+11.539,
+"FAIL",
+""
+],
+"Frequency": [
+0.802,
+"PASS",
+"unbraced bars, self weight only"
+]
+},
+"WIDE_CATWALK_MINI": {
+"Tread UDL": [
+0.188,
+"PASS",
+""
+],
+"Tread point": [
+0.393,
+"PASS",
+""
+],
+"Tread defl": [
+0.243,
+"PASS",
+""
+],
+"Girder (locked FE)": [
+7.246,
+"FAIL",
+"upper 803 / lower 2572 MPa"
+],
+"Girder defl (FE)": [
+2.488,
+"FAIL",
+""
+],
+"Axle shear": [
+0.376,
+"PASS",
+""
+],
+"Post 1.25kN (FE)": [
+2.651,
+"FAIL",
+"top defl 347 mm (ULS)"
+],
+"Post 3kN/m (FE)": [
+9.705,
+"FAIL",
+"top defl 1350 mm (ULS)"
+],
+"Guard rail": [
+0.187,
+"PASS",
+""
+],
+"Rail height": [
+0.99,
+"PASS",
+""
+],
+"Overturning": [
+3.435,
+"FAIL",
+"FoS=0.49 (need 1.5); ballast/anchor 531 kg"
+],
+"Sliding": [
+11.539,
+"FAIL",
+""
+],
+"Frequency": [
+0.802,
+"PASS",
+"unbraced bars, self weight only"
+]
+},
+"WIDE_STANDARD": {
+"Tread UDL": [
+0.155,
+"PASS",
+""
+],
+"Tread point": [
+0.393,
+"PASS",
+""
+],
+"Tread defl": [
+0.243,
+"PASS",
+""
+],
+"Girder (locked FE)": [
+4.012,
+"FAIL",
+"upper 129 / lower 1424 MPa"
+],
+"Girder defl (FE)": [
+0.398,
+"PASS",
+""
+],
+"Top hook": [
+2.086,
+"FAIL",
+"hook load 4.25 kN, e=18.6 mm"
+],
+"Axle shear": [
+0.25,
+"PASS",
+""
+],
+"Post 1.25kN (FE)": [
+2.897,
+"FAIL",
+"top defl 322 mm (ULS)"
+],
+"Post 3kN/m (FE)": [
+12.189,
+"FAIL",
+"top defl 1359 mm (ULS)"
+],
+"Guard rail": [
+0.187,
+"PASS",
+""
+],
+"Rail height": [
+0.976,
+"PASS",
+""
+],
+"Overturning": [
+0.0,
+"PASS",
+"restrained: top hooked to landing/bar (bar must be anchored)"
+]
+},
+"WIDE_STEEP": {
+"Tread UDL": [
+0.124,
+"PASS",
+""
+],
+"Tread point": [
+0.393,
+"PASS",
+""
+],
+"Tread defl": [
+0.243,
+"PASS",
+""
+],
+"Girder (locked FE)": [
+2.284,
+"FAIL",
+"upper 74 / lower 811 MPa"
+],
+"Girder defl (FE)": [
+0.189,
+"PASS",
+""
+],
+"Top hook": [
+1.375,
+"FAIL",
+"hook load 2.80 kN, e=18.6 mm"
+],
+"Axle shear": [
+0.157,
+"PASS",
+""
+],
+"Post 1.25kN (FE)": [
+3.032,
+"FAIL",
+"top defl 311 mm (ULS)"
+],
+"Post 3kN/m (FE)": [
+12.762,
+"FAIL",
+"top defl 1320 mm (ULS)"
+],
+"Guard rail": [
+0.187,
+"PASS",
+""
+],
+"Rail height": [
+0.947,
+"PASS",
+""
+],
+"Overturning": [
+0.0,
+"PASS",
+"restrained: top hooked to landing/bar (bar must be anchored)"
+]
+}
+}

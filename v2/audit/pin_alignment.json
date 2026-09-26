@@ -1,0 +1,656 @@
+{
+ "SINGLE_CATWALK": [
+  {
+   "plane": "L_inner",
+   "tread": "Tread0",
+   "pin_d": 9.94310892390373,
+   "rail": "Up_L",
+   "hole_d": 9.943281405225068,
+   "offset": 0.00371137985589491,
+   "interference": 0.0036251391952255574
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread0",
+   "pin_d": 10.670353337020588,
+   "rail": "Lo_L",
+   "hole_d": 9.942843137593533,
+   "offset": 2.8736185812332615,
+   "interference": 3.2373736809467895
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread1",
+   "pin_d": 9.942984643259521,
+   "rail": "Up_L",
+   "hole_d": 9.942772632428445,
+   "offset": 0.29796030106714155,
+   "interference": 0.2980663064826796
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread1",
+   "pin_d": 10.670340774874132,
+   "rail": "Lo_L",
+   "hole_d": 9.942867463536484,
+   "offset": 2.8740716168892515,
+   "interference": 3.237808272558075
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread2",
+   "pin_d": 9.942964175184139,
+   "rail": "Up_L",
+   "hole_d": 9.942849937872442,
+   "offset": 0.5969024084364085,
+   "interference": 0.596959527092257
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread2",
+   "pin_d": 10.670485519598738,
+   "rail": "Lo_L",
+   "hole_d": 9.942772034209336,
+   "offset": 2.87358691280381,
+   "interference": 3.237443655498512
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread3",
+   "pin_d": 9.943000991357007,
+   "rail": "Up_L",
+   "hole_d": 9.942794324525497,
+   "offset": 0.8954687395480997,
+   "interference": 0.8955720729638541
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread3",
+   "pin_d": 10.670353336798328,
+   "rail": "Lo_L",
+   "hole_d": 9.942862296192727,
+   "offset": 2.8742371849905255,
+   "interference": 3.2379827052933257
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread4",
+   "pin_d": 9.943000991595527,
+   "rail": "Up_L",
+   "hole_d": 9.94299246048708,
+   "offset": 1.1935586207828606,
+   "interference": 1.1935628863370837
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread4",
+   "pin_d": 10.670353335909288,
+   "rail": "Lo_L",
+   "hole_d": 9.942908226876966,
+   "offset": 2.873627473083123,
+   "interference": 3.237350027599284
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread5",
+   "pin_d": 9.942961496368317,
+   "rail": "Up_L",
+   "hole_d": 9.943054870240866,
+   "offset": 1.491391139178746,
+   "interference": 1.4913444522424717
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread5",
+   "pin_d": 10.670353337020588,
+   "rail": "Lo_L",
+   "hole_d": 9.943075689465228,
+   "offset": 2.8742680205891262,
+   "interference": 3.2379068443668064
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread0",
+   "pin_d": 9.9431141941583,
+   "rail": "Up_R",
+   "hole_d": 9.943211863662848,
+   "offset": 0.027048899804138264,
+   "interference": 0.027000065051864475
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread0",
+   "pin_d": 9.943017340858724,
+   "rail": "Lo_R",
+   "hole_d": 9.943486796890774,
+   "offset": 0.4491688338684179,
+   "interference": 0.448934105852393
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread1",
+   "pin_d": 9.94298988448063,
+   "rail": "Up_R",
+   "hole_d": 9.9432291134445,
+   "offset": 0.026824228535223083,
+   "interference": 0.026704614053287834
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread1",
+   "pin_d": 9.943085777301842,
+   "rail": "Lo_R",
+   "hole_d": 9.943990075187875,
+   "offset": 0.25374441102153067,
+   "interference": 0.2532922620785145
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread2",
+   "pin_d": 9.942969416416037,
+   "rail": "Up_R",
+   "hole_d": 9.943094061465494,
+   "offset": 0.026549958311589905,
+   "interference": 0.026487635786861752
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread2",
+   "pin_d": 9.943141650670164,
+   "rail": "Lo_R",
+   "hole_d": 9.94416774986816,
+   "offset": 0.05781505446789676,
+   "interference": 0.05730200486889814
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread3",
+   "pin_d": 9.942997046015428,
+   "rail": "Up_R",
+   "hole_d": 9.942997993889788,
+   "offset": 0.026340655152806574,
+   "interference": 0.026340181215626757
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread3",
+   "pin_d": 9.94301734133576,
+   "rail": "Lo_R",
+   "hole_d": 9.943840707173448,
+   "offset": 0.1379010349616915,
+   "interference": 0.13748935204284773
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread4",
+   "pin_d": 9.942997075353261,
+   "rail": "Up_R",
+   "hole_d": 9.943229069558033,
+   "offset": 0.0267683619235528,
+   "interference": 0.026652364821167396
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread4",
+   "pin_d": 9.94299420811626,
+   "rail": "Lo_R",
+   "hole_d": 9.943616253477702,
+   "offset": 0.33298535236256527,
+   "interference": 0.3326743296818453
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread5",
+   "pin_d": 9.942957564845221,
+   "rail": "Up_R",
+   "hole_d": 9.943292498419144,
+   "offset": 0.027102004004358967,
+   "interference": 0.02693453721739747
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread5",
+   "pin_d": 9.942994207639224,
+   "rail": "Lo_R",
+   "hole_d": 9.944205174265885,
+   "offset": 0.5278909198599041,
+   "interference": 0.5272854365465731
+  }
+ ],
+ "SINGLE_STANDARD": [
+  {
+   "plane": "L_inner",
+   "tread": "Tread0",
+   "pin_d": 9.94310892390373,
+   "rail": "Up_L",
+   "hole_d": 9.943037227556289,
+   "offset": 0.04802638496163397,
+   "interference": 0.048062233135354404
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread0",
+   "pin_d": 10.670353337020588,
+   "rail": "Lo_L",
+   "hole_d": 9.942928986539709,
+   "offset": 0.022602635699216278,
+   "interference": 0.3863148109396555
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread1",
+   "pin_d": 9.943053065855151,
+   "rail": "Up_L",
+   "hole_d": 9.943082399187174,
+   "offset": 0.33613918842107054,
+   "interference": 0.33612452175505947
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread1",
+   "pin_d": 10.67048552026551,
+   "rail": "Lo_L",
+   "hole_d": 9.942930924519455,
+   "offset": 0.02268486099175889,
+   "interference": 0.3864621588647861
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread2",
+   "pin_d": 9.94296417423006,
+   "rail": "Up_L",
+   "hole_d": 9.942841463641315,
+   "offset": 0.6340539709898976,
+   "interference": 0.6341153262842703
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread2",
+   "pin_d": 10.670485519598738,
+   "rail": "Lo_L",
+   "hole_d": 9.942838610193762,
+   "offset": 0.023063962141832886,
+   "interference": 0.3868874168443206
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread3",
+   "pin_d": 9.942961466791857,
+   "rail": "Up_L",
+   "hole_d": 9.943113232699593,
+   "offset": 0.9319230504246148,
+   "interference": 0.9318471674707469
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread3",
+   "pin_d": 10.67035330879356,
+   "rail": "Lo_L",
+   "hole_d": 9.942883377240104,
+   "offset": 0.022962233645853786,
+   "interference": 0.3866971994225814
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread4",
+   "pin_d": 9.942961495414236,
+   "rail": "Up_L",
+   "hole_d": 9.942845628008387,
+   "offset": 1.2306751546954064,
+   "interference": 1.2307330883983312
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread4",
+   "pin_d": 10.67033287973977,
+   "rail": "Lo_L",
+   "hole_d": 9.9430491348453,
+   "offset": 0.02298883831448042,
+   "interference": 0.3866307107617155
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread5",
+   "pin_d": 9.942961495891277,
+   "rail": "Up_L",
+   "hole_d": 9.942873316628162,
+   "offset": 1.5281597551032426,
+   "interference": 1.5282038447347999
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread5",
+   "pin_d": 10.670353336798328,
+   "rail": "Lo_L",
+   "hole_d": 9.943204306826562,
+   "offset": 0.02229198427113292,
+   "interference": 0.3858664992570162
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread0",
+   "pin_d": 9.9431141941583,
+   "rail": "Up_R",
+   "hole_d": 9.94322738064444,
+   "offset": 0.022086993582597577,
+   "interference": 0.022030400339526857
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread0",
+   "pin_d": 9.943017340858724,
+   "rail": "Lo_R",
+   "hole_d": 9.943608306278684,
+   "offset": 2.8975037704275044,
+   "interference": 2.8972082877175245
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread1",
+   "pin_d": 9.943058321112726,
+   "rail": "Up_R",
+   "hole_d": 9.94304789765378,
+   "offset": 0.022624452018806643,
+   "interference": 0.022629663748279683
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread1",
+   "pin_d": 9.943141649954617,
+   "rail": "Lo_R",
+   "hole_d": 9.943890345314944,
+   "offset": 2.880366759659986,
+   "interference": 2.8799924119798224
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread2",
+   "pin_d": 9.942969415700478,
+   "rail": "Up_R",
+   "hole_d": 9.942975238678686,
+   "offset": 0.02212094794070525,
+   "interference": 0.022118036451601597
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread2",
+   "pin_d": 9.943141651147194,
+   "rail": "Lo_R",
+   "hole_d": 9.944151068847043,
+   "offset": 2.877941537184699,
+   "interference": 2.8774368283347735
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread3",
+   "pin_d": 9.942957536222831,
+   "rail": "Up_R",
+   "hole_d": 9.943062557421229,
+   "offset": 0.02160251124308643,
+   "interference": 0.021550000643888012
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread3",
+   "pin_d": 9.943065338295243,
+   "rail": "Lo_R",
+   "hole_d": 9.943825902591751,
+   "offset": 2.8884072853898553,
+   "interference": 2.8880270032416018
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread4",
+   "pin_d": 9.94295756556078,
+   "rail": "Up_R",
+   "hole_d": 9.943137807230558,
+   "offset": 0.022453537103700977,
+   "interference": 0.022363416268811775
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread4",
+   "pin_d": 9.942994206923666,
+   "rail": "Lo_R",
+   "hole_d": 9.943838291180937,
+   "offset": 2.9109472340850617,
+   "interference": 2.9105251919564266
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread5",
+   "pin_d": 9.9429575657993,
+   "rail": "Up_R",
+   "hole_d": 9.943239697948371,
+   "offset": 0.022098391402589238,
+   "interference": 0.021957325328053834
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread5",
+   "pin_d": 9.942994207400703,
+   "rail": "Lo_R",
+   "hole_d": 9.944077325157398,
+   "offset": 2.9468062189589133,
+   "interference": 2.9462646600805655
+  }
+ ],
+ "SINGLE_STEEP": [
+  {
+   "plane": "L_inner",
+   "tread": "Tread0",
+   "pin_d": 9.94310892390373,
+   "rail": "Up_L",
+   "hole_d": 9.942948728155228,
+   "offset": 0.08150765849839867,
+   "interference": 0.08158775637264881
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread0",
+   "pin_d": 10.670353337020588,
+   "rail": "Lo_L",
+   "hole_d": 9.943012667326373,
+   "offset": 3.2390759703983476,
+   "interference": 3.6027463052454545
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread1",
+   "pin_d": 9.943053066809222,
+   "rail": "Up_L",
+   "hole_d": 9.942993028878043,
+   "offset": 0.361076713189523,
+   "interference": 0.3611067321551129
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread1",
+   "pin_d": 10.670485519598738,
+   "rail": "Lo_L",
+   "hole_d": 9.942929468589844,
+   "offset": 3.239603125903954,
+   "interference": 3.603381151408402
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread2",
+   "pin_d": 9.942964175184139,
+   "rail": "Up_L",
+   "hole_d": 9.942833426853976,
+   "offset": 0.6577238626008155,
+   "interference": 0.6577892367658968
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread2",
+   "pin_d": 10.670485519820996,
+   "rail": "Lo_L",
+   "hole_d": 9.94290706217834,
+   "offset": 3.238560782852844,
+   "interference": 3.6023500116741713
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread3",
+   "pin_d": 9.942961466553339,
+   "rail": "Up_L",
+   "hole_d": 9.9429488593413,
+   "offset": 0.95568630093488,
+   "interference": 0.9556926045408991
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread3",
+   "pin_d": 10.67035330901582,
+   "rail": "Lo_L",
+   "hole_d": 9.94297199242779,
+   "offset": 3.2392887025771535,
+   "interference": 3.602979360871169
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread4",
+   "pin_d": 9.942961496845356,
+   "rail": "Up_L",
+   "hole_d": 9.942941186622775,
+   "offset": 1.2534264283439345,
+   "interference": 1.2534365834552252
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread4",
+   "pin_d": 10.670332879517508,
+   "rail": "Lo_L",
+   "hole_d": 9.942996056400153,
+   "offset": 3.239012414004377,
+   "interference": 3.6026808255630547
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread5",
+   "pin_d": 9.942961496129797,
+   "rail": "Up_L",
+   "hole_d": 9.94276184420439,
+   "offset": 1.551359458218169,
+   "interference": 1.551459284180872
+  },
+  {
+   "plane": "L_inner",
+   "tread": "Tread5",
+   "pin_d": 10.670353336131548,
+   "rail": "Lo_L",
+   "hole_d": 9.943045422077695,
+   "offset": 3.239963845972493,
+   "interference": 3.6036178029994197
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread0",
+   "pin_d": 9.9431141941583,
+   "rail": "Up_R",
+   "hole_d": 9.943261358496862,
+   "offset": 0.07668597336472589,
+   "interference": 0.07661239119544483
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread0",
+   "pin_d": 9.943017340858724,
+   "rail": "Lo_R",
+   "hole_d": 9.94351585299124,
+   "offset": 0.576601877437881,
+   "interference": 0.5763526213716226
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread1",
+   "pin_d": 9.943058321112726,
+   "rail": "Up_R",
+   "hole_d": 9.943133673038835,
+   "offset": 0.07626953180160767,
+   "interference": 0.07623185583855374
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread1",
+   "pin_d": 9.943141651147194,
+   "rail": "Lo_R",
+   "hole_d": 9.943988778966618,
+   "offset": 0.44448112512632776,
+   "interference": 0.4440575612166153
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread2",
+   "pin_d": 9.942969414984919,
+   "rail": "Up_R",
+   "hole_d": 9.943096623133961,
+   "offset": 0.0771092551143961,
+   "interference": 0.07704565103987537
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread2",
+   "pin_d": 9.943141650431647,
+   "rail": "Lo_R",
+   "hole_d": 9.944219048173291,
+   "offset": 0.37189401562335356,
+   "interference": 0.3713553167525312
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread3",
+   "pin_d": 9.942957536222831,
+   "rail": "Up_R",
+   "hole_d": 9.943073737679704,
+   "offset": 0.07675271073332032,
+   "interference": 0.07669461000488376
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread3",
+   "pin_d": 9.943065338772278,
+   "rail": "Lo_R",
+   "hole_d": 9.94384741804868,
+   "offset": 0.39563597656546157,
+   "interference": 0.39524493692726104
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread4",
+   "pin_d": 9.942957565083741,
+   "rail": "Up_R",
+   "hole_d": 9.943195848162363,
+   "offset": 0.0767906697302751,
+   "interference": 0.07667152819096401
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread4",
+   "pin_d": 9.9429942085933,
+   "rail": "Lo_R",
+   "hole_d": 9.943682342511716,
+   "offset": 0.5002798884800591,
+   "interference": 0.49993582152085114
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread5",
+   "pin_d": 9.94295756603782,
+   "rail": "Up_R",
+   "hole_d": 9.943253613750093,
+   "offset": 0.07586221170115359,
+   "interference": 0.07571418784501738
+  },
+  {
+   "plane": "R_inner",
+   "tread": "Tread5",
+   "pin_d": 9.94299420811626,
+   "rail": "Lo_R",
+   "hole_d": 9.944031995154548,
+   "offset": 0.6491917605251443,
+   "interference": 0.6486728670060007
+  }
+ ]
+}

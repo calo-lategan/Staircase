@@ -1,0 +1,47 @@
+Parts-per-Unit Compliance Checklist
+Every part of every unit and which compliance domains it must satisfy. X = applies. Use to confirm no part or domain is left unchecked.
+Unit Type || Part / Component || Geometry || Load / Structural || Edge Protection || Slip / Surface || Material / Marking || Stability / Anchorage || Key EN refs || Covered in workbook
+Stairs || Stringers / side beams || X || X ||  ||  || X || X || EN 12811-1; EN 1993/1999 || YES
+Stairs || Treads / steps || X || X ||  || X || X ||  || EN 12811-1; EN 16165 || YES
+Stairs || Risers (open/closed) || X || X ||  ||  ||  ||  || EN 13200; EN 1991-1-1 || YES
+Stairs || Landings / half-landings || X || X || X || X || X || X || EN 12811-1 || YES
+Stairs || Handrail + guardrail + toe board || X || X || X ||  || X ||  || EN 13374; EN 12811-1 || YES
+Stairs || Base plates / feet / sole boards ||  || X ||  ||  || X || X || EN 12811-1 || YES
+Stairs || Connections / couplers / pins ||  || X ||  ||  || X || X || EN 74-1; EN 12811-1 || YES
+Ladder (straight) || Stiles / side beams || X || X ||  ||  || X || X || EN 131-1/-2 || YES
+Ladder (straight) || Rungs || X || X ||  || X || X ||  || EN 131-1/-2 || YES
+Ladder (straight) || Feet / base || X || X ||  || X || X || X || EN 131-2 (slip) || YES
+Ladder (straight) || Top resting / hooks || X || X ||  ||  || X || X || EN 131 || YES
+Ladder (straight) || Stabiliser bar (>3 m) || X || X ||  ||  || X || X || EN 131-1 || YES
+Ladder (straight) || Rating / marking plate ||  ||  ||  ||  || X ||  || EN 131-3 || YES
+Ramp (Pod) || Deck / running surface || X || X ||  || X || X ||  || EN 17210; EN 16165 || YES
+Ramp (Pod) || Side kerb / upstand || X || X || X ||  || X ||  || EN 17210 / EN 12811-1 || YES
+Ramp (Pod) || Landings || X || X || X || X || X || X || EN 17210 / EN 12811-1 || YES
+Ramp (Pod) || Handrails both sides || X || X || X ||  || X ||  || EN 17210; EN 12811-1 || YES
+Ramp (Pod) || Support legs / frame ||  || X ||  ||  || X || X || EN 12811-1; EN 1993/1999 || YES
+Platform || Deck panels || X || X ||  || X || X ||  || EN 12811-1; EN 13374 || YES
+Platform || Bearers / transoms / frame || X || X ||  ||  || X || X || EN 12811-1; EN 1993/1999 || YES
+Platform || Guardrails + toe boards (perimeter) || X || X || X ||  || X ||  || EN 13374 || YES
+Platform || Trap-door / access hatch || X || X || X || X || X ||  || EN 12811-1 cl.5.8.3 || YES
+Platform || Standards / legs / base jacks || X || X ||  ||  || X || X || EN 12811-1; EN 1004-1 || YES
+Platform || Bracing / ties / outriggers || X || X ||  ||  || X || X || EN 12811-1; EN 1004-1; EN 1991-1-4 || YES
+Bridge || Deck / walking surface || X || X ||  || X || X ||  || EN 1991-2; EN 16165 || YES
+Bridge || Main beams / trusses || X || X ||  ||  || X || X || EN 1990; EN 1991-2; EN 1993/1999 || YES
+Bridge || Parapet / handrail + infill || X || X || X ||  || X ||  || EN 1991-2; EN 13374 || YES
+Bridge || Bearings / supports / abutpads ||  || X ||  ||  || X || X || EN 1990; EN 1993/1999 || YES
+Bridge || Approach ramp / steps || X || X || X || X || X || X || EN 17210; EN 1991-2 || YES
+All / shared || Material & corrosion protection ||  ||  ||  ||  || X ||  || EN 12811-2; EN ISO 1461 || YES
+All / shared || ID / load-rating marking ||  ||  ||  ||  || X ||  || EN 12811-1; EN 131-3 || YES
+All / shared || Wind / overturning stability ||  || X ||  ||  ||  || X || EN 1991-1-4; EN 12811-1 || YES
+All / shared || Design check & sign-off docs ||  ||  ||  ||  ||  || X || EN 1990; EN 13814; EN 17879 || YES
+Stairs || Anti-slip tread surface / nosing ||  ||  ||  || X || X ||  || EN 16165 / EN 13036-4 || YES
+Ramp (Pod) || Transition threshold / edge || X || X || X || X || X ||  || EN 17210 || YES
+Platform || Toe boards (perimeter) || X || X || X ||  || X ||  || EN 13374 || YES
+Platform || Integral access (ladder/stair) to deck || X || X || X || X || X || X || EN 1004-1; EN 12811-1 || YES
+Bridge || Expansion / articulation at bearings || X || X ||  ||  || X || X || EN 1991-1-5; EN 1993/1999 || YES
+Bridge || Anti-slip deck surface ||  ||  ||  || X || X ||  || EN 16165 / EN 13036-4 || YES
+All / shared || Walking-surface slip resistance ||  ||  ||  || X ||  ||  || EN 16165 / EN 13036-4 || YES
+All / shared || Fixings / pins / locking devices ||  || X ||  ||  || X || X || EN 74-1; EN 12811-1 || YES
+All / shared || Foundation / ground bearing ||  || X ||  ||  ||  || X || EN 1997; EN 12811-1 || YES
+All / shared || CE marking / Declaration of Performance ||  ||  ||  ||  || X ||  || EN 12811-1; EN 1004-1 || YES
+All / shared || Basis of design / load combinations ||  || X ||  ||  ||  || X || EN 1990 || YES

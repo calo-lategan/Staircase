@@ -1,0 +1,5 @@
+WARNING: numeric analysis returns -1 -- Umfpackgenlinsolver::solve
+WARNING Linear::solveCurrentStep() -the LinearSOE failed in solve()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1
+OpenSees > analyze failed, returned: -3 error flag
+hy=2.5: 46.4 s front 0.0 twist 0.0 vm body [0.0, 0.0, 0.0, 0.0, 0.0, -0.0, 0.0, -0.0, 1531, 'prof', 0, 47.5, 41.2, 16.2, 1] pins {'L_rear': [0.0, 0.0, 0.0], 'L_front': [0.0, 0.0, 0.0], 'R_rear': [0.0, 0.0, 0.0], 'R_front': [0.0, 0.0, 0.0]}

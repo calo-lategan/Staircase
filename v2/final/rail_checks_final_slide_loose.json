@@ -1,0 +1,98 @@
+{
+ "Lo_L | ULS crowd, all treads | base slides": {
+  "sigma": 1108.503897687434,
+  "util": 4.877417149824709,
+  "s": 1672,
+  "N": -2549,
+  "M": 652939,
+  "section": "net (pin station)"
+ },
+ "Up_L | ULS crowd, all treads | base slides": {
+  "sigma": 655.9623925041042,
+  "util": 2.8862345270180585,
+  "s": 1641,
+  "N": 1914,
+  "M": -385307,
+  "section": "net (pin station)"
+ },
+ "Lo_L | ULS crowd, upper 3 treads | base slides": {
+  "sigma": 901.9524677250222,
+  "util": 3.968590857990098,
+  "s": 1672,
+  "N": -2075,
+  "M": 531270,
+  "section": "net (pin station)"
+ },
+ "Up_L | ULS crowd, upper 3 treads | base slides": {
+  "sigma": 508.05401131413294,
+  "util": 2.235437649782185,
+  "s": 1641,
+  "N": 1540,
+  "M": -298275,
+  "section": "net (pin station)"
+ },
+ "Lo_L | ULS crowd, lower 3 treads | base slides": {
+  "sigma": 249.48713376135834,
+  "util": 1.0977433885499768,
+  "s": 1672,
+  "N": -574,
+  "M": 146955,
+  "section": "net (pin station)"
+ },
+ "Up_L | ULS crowd, lower 3 treads | base slides": {
+  "sigma": 195.10440394954472,
+  "util": 0.8584593773779968,
+  "s": 421,
+  "N": 3478,
+  "M": 106908,
+  "section": "net (pin station)"
+ },
+ "Lo_R | ULS crowd, all treads | base slides": {
+  "sigma": 1127.6255707759806,
+  "util": 4.961552511414315,
+  "s": 1716,
+  "N": -2492,
+  "M": 647089,
+  "section": "net (pin station)"
+ },
+ "Up_R | ULS crowd, all treads | base slides": {
+  "sigma": 1578.9291578405255,
+  "util": 6.947288294498312,
+  "s": 1671,
+  "N": 1638,
+  "M": -339325,
+  "section": "net (pin station)"
+ },
+ "Lo_R | ULS crowd, upper 3 treads | base slides": {
+  "sigma": 915.2048769544564,
+  "util": 4.026901458599609,
+  "s": 1716,
+  "N": -2022,
+  "M": 525191,
+  "section": "net (pin station)"
+ },
+ "Up_R | ULS crowd, upper 3 treads | base slides": {
+  "sigma": 1215.2964973163223,
+  "util": 5.347304588191818,
+  "s": 1671,
+  "N": 1319,
+  "M": -261100,
+  "section": "net (pin station)"
+ },
+ "Lo_R | ULS crowd, lower 3 treads | base slides": {
+  "sigma": 246.07727064446604,
+  "util": 1.0827399908356508,
+  "s": 1716,
+  "N": -543,
+  "M": 141212,
+  "section": "net (pin station)"
+ },
+ "Up_R | ULS crowd, lower 3 treads | base slides": {
+  "sigma": 493.7599087025263,
+  "util": 2.172543598291116,
+  "s": 450,
+  "N": 2930,
+  "M": 102895,
+  "section": "net (pin station)"
+ }
+}

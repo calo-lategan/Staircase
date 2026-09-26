@@ -1,0 +1,61 @@
+{
+ "A": {
+  "unlocked": {
+   "max_move_mm": 401.4,
+   "max_rot_deg": 170.31
+  },
+  "locked": {
+   "max_move_mm": 0.2,
+   "max_rot_deg": 0.1
+  }
+ },
+ "B": {
+  "CATWALK": {
+   "roller_N": 8590.0,
+   "axle_proxy_N": 1472,
+   "total_top_N": 7118.0,
+   "per_side_N": 3559.0
+  },
+  "STANDARD": {
+   "roller_N": 7365.0,
+   "axle_proxy_N": 1472,
+   "total_top_N": 5894.0,
+   "per_side_N": 2947.0
+  },
+  "STEEP": {
+   "roller_N": 6158.0,
+   "axle_proxy_N": 1472,
+   "total_top_N": 4687.0,
+   "per_side_N": 2343.0
+  }
+ },
+ "C": {
+  "as_drawn_t5_w11.9": {
+   "hook_capacity_N": 2038,
+   "max_move_mm": 3561.3,
+   "max_rot_deg": 206.96,
+   "result": "HOOK FAILED - stair drops off the bar"
+  },
+  "upgrade_t10_w16": {
+   "hook_capacity_N": 6504,
+   "max_move_mm": 0.3,
+   "max_rot_deg": 0.1,
+   "result": "HOLDS"
+  }
+ },
+ "D": {
+  "mu_0.30": {
+   "F_start_motion_N": 376.0,
+   "mode": "slide"
+  },
+  "mu_0.90": {
+   "F_start_motion_N": 646.0,
+   "mode": "tip"
+  },
+  "hand_slide_N_mu030": 374.0,
+  "hand_slide_N_mu090": 1121.0,
+  "hand_tip_N": 645.0,
+  "crowd_line_load_N": 5177.0
+ },
+ "secs": 21.7
+}

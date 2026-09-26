@@ -1,0 +1,3850 @@
+[
+ {
+  "dims": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol": 194.1,
+  "members": [
+   {
+    "name": "MainRig_020",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_014",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_016",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_018",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_017",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_021",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_022",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_027",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_031",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_033",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_034",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_035",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_036",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_038",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_045",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_046",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_049",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_048",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_051",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_050",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_052",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_062",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_064",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_066",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_068",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_067",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_071",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_070",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_081",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_082",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_087",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_088",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_086",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_089",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_090",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_097",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_100",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_102",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_103",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_104",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_105",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_106",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol": 250001.9,
+  "members": [
+   {
+    "name": "HRS_A_015",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_017",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_019",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "MainRig_132",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_134",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_136",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_137",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_140",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_144",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_154",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_156",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_158",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_160",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_163",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_167",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "HRS_A_014",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_016",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_018",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_026",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_023",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_022",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_006",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_004",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_001",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_000",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   7.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol": 679.3,
+  "members": [
+   {
+    "name": "MainRig_013",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_015",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_029",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_032",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_044",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_047",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_063",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_065",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_080",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_083",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_098",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_101",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "vol": 274.9,
+  "members": [
+   {
+    "name": "MainRig_023",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_024",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_039",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_040",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_053",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_055",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_075",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_076",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_092",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_093",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_107",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_108",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "vol": -18.1,
+  "members": [
+   {
+    "name": "MainRig_054",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_058",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_073",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_069",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_084",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_085",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_109",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_110",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_119",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_116",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_121",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_122",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "vol": 275.2,
+  "members": [
+   {
+    "name": "MainRig_025",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_028",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_041",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_043",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_056",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_059",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_077",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_078",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_095",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_094",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_113",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_114",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "vol": -18.1,
+  "members": [
+   {
+    "name": "MainRig_057",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_060",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_074",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_072",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_091",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_099",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_111",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_112",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_117",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_120",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_123",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_124",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   15.0,
+   70.0,
+   75.0
+  ],
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "vol": 8356.0,
+  "members": [
+   {
+    "name": "HRS_A_041",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_043",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_047",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_050",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_053",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_055",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_064",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_066",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_069",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_072",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_075",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_079",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol": 25094.3,
+  "members": [
+   {
+    "name": "HRS_A_002",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_004",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "MainRig_141",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_143",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_151",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_146",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_152",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_162",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_161",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_168",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_169",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_170",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.0,
+   95.0,
+   100.0
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol": 19356.2,
+  "members": [
+   {
+    "name": "MainRig_128",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_126",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_129",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_130",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_133",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_131",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_148",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_150",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_153",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_155",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_171",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_157",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol": 250011.4,
+  "members": [
+   {
+    "name": "HRS_A_021",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_023",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_024",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_020",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_022",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_007",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_028",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_024",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_019",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_003",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_025",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol": 44095.1,
+  "members": [
+   {
+    "name": "HRC_A_059",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_058",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_025",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_056",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_055",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_027",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_020",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_008",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_017",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol": 44093.4,
+  "members": [
+   {
+    "name": "HRC_A_036",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_057",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_021",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_018",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_005",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_002",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_054",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_035",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_016",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol": 37802.0,
+  "members": [
+   {
+    "name": "MainRig_135",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_138",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_139",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_142",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_159",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_164",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_165",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   50.0,
+   280.0,
+   1236.0
+  ],
+  "verts": 245,
+  "faces": 510,
+  "closed": false,
+  "vol": 2565945.6,
+  "members": [
+   {
+    "name": "MainRig_019",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_030",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_042",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_061",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_079",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_096",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   95.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol": 23750.2,
+  "members": [
+   {
+    "name": "HRS_A_058",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_059",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_060",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_062",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_063",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   221.9
+  ],
+  "verts": 30,
+  "faces": 56,
+  "closed": true,
+  "vol": 52590.3,
+  "members": [
+   {
+    "name": "MainRig_172",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_173",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_174",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_175",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_176",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.0,
+   35.0,
+   37.0
+  ],
+  "verts": 60,
+  "faces": 116,
+  "closed": true,
+  "vol": 10698.9,
+  "members": [
+   {
+    "name": "MainRig_007",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_011",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_005",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_012",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   5.0,
+   75.0,
+   85.0
+  ],
+  "verts": 16,
+  "faces": 34,
+  "closed": false,
+  "vol": 28228.9,
+  "members": [
+   {
+    "name": "MainRig_003",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_009",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_002",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_004",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol": 25171.0,
+  "members": [
+   {
+    "name": "HRS_A_003",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_005",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_007",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_010",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   70.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol": 17500.1,
+  "members": [
+   {
+    "name": "HRS_A_080",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_081",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_082",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_083",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.0,
+   1142.1,
+   1326.6
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol": 1078627.7,
+  "members": [
+   {
+    "name": "HRS_A_040",
+    "role": "guardrail",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_057",
+    "role": "guardrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   5.0,
+   37.6,
+   62.6
+  ],
+  "verts": 52,
+  "faces": 100,
+  "closed": true,
+  "vol": 4872.0,
+  "members": [
+   {
+    "name": "MainRig_178",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_001",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   5.0,
+   41.4,
+   61.4
+  ],
+  "verts": 52,
+  "faces": 100,
+  "closed": true,
+  "vol": 4872.0,
+  "members": [
+   {
+    "name": "MainRig_177",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_000",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.0,
+   25.0,
+   1305.0
+  ],
+  "verts": 97,
+  "faces": 194,
+  "closed": true,
+  "vol": 227995.4,
+  "members": [
+   {
+    "name": "MainRig_006",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_010",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 34,
+  "closed": false,
+  "vol": -29041.1,
+  "members": [
+   {
+    "name": "HRS_A_042",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_065",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   0.0,
+   25.0,
+   25.0
+  ],
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "vol": 2424974.1,
+  "members": [
+   {
+    "name": "HRS_A_044",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_048",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.0,
+   1142.1,
+   1326.6
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol": 1078688.0,
+  "members": [
+   {
+    "name": "HRS_A_026",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_027",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   0.0,
+   25.0,
+   25.0
+  ],
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "vol": 2425078.1,
+  "members": [
+   {
+    "name": "HRS_A_049",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_054",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol": 41463.6,
+  "members": [
+   {
+    "name": "HRS_A_013",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_012",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol": 25095.2,
+  "members": [
+   {
+    "name": "HRS_A_006",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_011",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.0,
+   1010.2,
+   1428.2
+  ],
+  "verts": 16,
+  "faces": 28,
+  "closed": true,
+  "vol": 560916.3,
+  "members": [
+   {
+    "name": "MainRig_125",
+    "role": "guardrail",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_145",
+    "role": "guardrail",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 264,
+  "closed": false,
+  "vol": 25090.5,
+  "members": [
+   {
+    "name": "MainRig_147",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   },
+   {
+    "name": "MainRig_166",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   0.0,
+   25.0,
+   25.0
+  ],
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "vol": -2677218.2,
+  "members": [
+   {
+    "name": "HRS_A_068",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_071",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   0.0,
+   25.0,
+   25.0
+  ],
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "vol": -2677333.1,
+  "members": [
+   {
+    "name": "HRS_A_073",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_078",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol": 19345.8,
+  "members": [
+   {
+    "name": "HRC_A_014",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_034",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol": 19913.6,
+  "members": [
+   {
+    "name": "HRC_A_031",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_010",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol": 20102.0,
+  "members": [
+   {
+    "name": "HRC_A_030",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_011",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol": 20292.4,
+  "members": [
+   {
+    "name": "HRC_A_029",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRC_A_009",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   343.8
+  ],
+  "verts": 30,
+  "faces": 56,
+  "closed": true,
+  "vol": 81618.6,
+  "members": [
+   {
+    "name": "HRS_A_033",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   },
+   {
+    "name": "HRS_A_032",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.0,
+   25.0,
+   1725.8
+  ],
+  "verts": 16,
+  "faces": 28,
+  "closed": true,
+  "vol": 560895.3,
+  "members": [
+   {
+    "name": "HRC_A_037",
+    "role": "guardrail",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.0,
+   25.0,
+   1725.8
+  ],
+  "verts": 16,
+  "faces": 28,
+  "closed": true,
+  "vol": 560977.4,
+  "members": [
+   {
+    "name": "HRC_A_015",
+    "role": "guardrail",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   15.0,
+   104.3,
+   122.9
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol": 33747.7,
+  "members": [
+   {
+    "name": "MainRig_115",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.0,
+   1074.5,
+   1500.1
+  ],
+  "verts": 580,
+  "faces": 1108,
+  "closed": false,
+  "vol": 500367.3,
+  "members": [
+   {
+    "name": "MainRig_118",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.0,
+   1172.8,
+   1363.5
+  ],
+  "verts": 672,
+  "faces": 1034,
+  "closed": false,
+  "vol": 381382.0,
+  "members": [
+   {
+    "name": "MainRig_179",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol": 2390138.8,
+  "members": [
+   {
+    "name": "HRS_A_045",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol": 2384346.1,
+  "members": [
+   {
+    "name": "HRS_A_046",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol": 2378657.2,
+  "members": [
+   {
+    "name": "HRS_A_038",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol": 2372853.0,
+  "members": [
+   {
+    "name": "HRS_A_052",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   0.0,
+   25.0,
+   25.0
+  ],
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "vol": 2425066.6,
+  "members": [
+   {
+    "name": "HRS_A_051",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol": 2367071.8,
+  "members": [
+   {
+    "name": "HRS_A_056",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol": 18214.6,
+  "members": [
+   {
+    "name": "HRS_A_001",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol": 30072.0,
+  "members": [
+   {
+    "name": "HRS_A_039",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol": 10763.7,
+  "members": [
+   {
+    "name": "HRS_A_036",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol": -8544.9,
+  "members": [
+   {
+    "name": "HRS_A_061",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol": -27854.0,
+  "members": [
+   {
+    "name": "HRS_A_035",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol": -47163.0,
+  "members": [
+   {
+    "name": "HRS_A_034",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol": 18942.9,
+  "members": [
+   {
+    "name": "HRS_A_009",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.0,
+   1010.2,
+   1428.2
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol": 1078675.8,
+  "members": [
+   {
+    "name": "MainRig_127",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.0,
+   1010.2,
+   1428.2
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol": 1078634.6,
+  "members": [
+   {
+    "name": "MainRig_149",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol": -2712053.5,
+  "members": [
+   {
+    "name": "HRS_A_067",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol": -2717846.2,
+  "members": [
+   {
+    "name": "HRS_A_070",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol": -2723754.1,
+  "members": [
+   {
+    "name": "HRS_A_037",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol": -2729534.0,
+  "members": [
+   {
+    "name": "HRS_A_074",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   0.0,
+   25.0,
+   25.0
+  ],
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "vol": -2677320.4,
+  "members": [
+   {
+    "name": "HRS_A_076",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol": -2735339.5,
+  "members": [
+   {
+    "name": "HRS_A_077",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol": 18719.3,
+  "members": [
+   {
+    "name": "HRS_A_000",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol": 27988.7,
+  "members": [
+   {
+    "name": "HRS_A_031",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol": 8680.3,
+  "members": [
+   {
+    "name": "HRS_A_029",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol": -10628.4,
+  "members": [
+   {
+    "name": "HRS_A_030",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol": -29937.5,
+  "members": [
+   {
+    "name": "HRS_A_028",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol": 19537.1,
+  "members": [
+   {
+    "name": "HRC_A_033",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol": 19727.1,
+  "members": [
+   {
+    "name": "HRC_A_032",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol": 19533.3,
+  "members": [
+   {
+    "name": "HRC_A_013",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol": 19721.4,
+  "members": [
+   {
+    "name": "HRC_A_012",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.0,
+   25.0,
+   1725.8
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol": 1078660.6,
+  "members": [
+   {
+    "name": "HRC_A_045",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol": -9958.7,
+  "members": [
+   {
+    "name": "HRC_A_049",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol": -10118.6,
+  "members": [
+   {
+    "name": "HRC_A_051",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol": -10279.6,
+  "members": [
+   {
+    "name": "HRC_A_050",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol": -10442.6,
+  "members": [
+   {
+    "name": "HRC_A_048",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol": -10601.2,
+  "members": [
+   {
+    "name": "HRC_A_047",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol": -10762.3,
+  "members": [
+   {
+    "name": "HRC_A_046",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.0,
+   25.0,
+   1725.8
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol": 1078619.2,
+  "members": [
+   {
+    "name": "HRC_A_038",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol": -9976.0,
+  "members": [
+   {
+    "name": "HRC_A_042",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol": -10135.6,
+  "members": [
+   {
+    "name": "HRC_A_041",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol": -10298.4,
+  "members": [
+   {
+    "name": "HRC_A_039",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol": -10458.2,
+  "members": [
+   {
+    "name": "HRC_A_040",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol": -10619.7,
+  "members": [
+   {
+    "name": "HRC_A_044",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol": -10781.0,
+  "members": [
+   {
+    "name": "HRC_A_043",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol": 19417.7,
+  "members": [
+   {
+    "name": "HRS_A_008",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.0,
+   823.2,
+   959.2
+  ],
+  "verts": 12,
+  "faces": 20,
+  "closed": true,
+  "vol": 157389.8,
+  "members": [
+   {
+    "name": "HRS_A_084",
+    "role": "guardrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   5.0,
+   25.0,
+   1550.8
+  ],
+  "verts": 12,
+  "faces": 20,
+  "closed": true,
+  "vol": 193849.4,
+  "members": [
+   {
+    "name": "HRC_A_053",
+    "role": "deckbar",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   5.0,
+   25.0,
+   1550.8
+  ],
+  "verts": 12,
+  "faces": 20,
+  "closed": true,
+  "vol": 193864.2,
+  "members": [
+   {
+    "name": "HRC_A_052",
+    "role": "deckbar",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "dims": [
+   25.0,
+   110.4,
+   122.9
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol": 75000.5,
+  "members": [
+   {
+    "name": "MainRig_008",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   35.0,
+   1082.1,
+   1499.1
+  ],
+  "verts": 758,
+  "faces": 1229,
+  "closed": false,
+  "vol": 817756.9,
+  "members": [
+   {
+    "name": "MainRig_026",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "dims": [
+   35.0,
+   1040.5,
+   1471.5
+  ],
+  "verts": 844,
+  "faces": 1423,
+  "closed": false,
+  "vol": 671013.1,
+  "members": [
+   {
+    "name": "MainRig_037",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ }
+]

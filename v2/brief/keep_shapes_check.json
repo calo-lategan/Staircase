@@ -1,0 +1,525 @@
+{
+ "7.5 | right | mid": {
+  "now": {
+   "standard": 3.722,
+   "catwalk_mid": 2.386
+  },
+  "options": [
+   {
+    "walls_mm": 5.0,
+    "lower": "inverted U 25 x 42, 5 mm walls",
+    "upper": "inverted U 25 x 20, 5 mm walls",
+    "mass_2bars_kg": 3.75,
+    "util": {
+     "standard": 0.971,
+     "catwalk_mid": 0.625
+    },
+    "steep_crew": 0.27
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "inverted U 25 x 42, 5 mm walls",
+    "upper": "inverted U 25 x 25, 5 mm walls",
+    "mass_2bars_kg": 4.0,
+    "util": {
+     "standard": 0.972,
+     "catwalk_mid": 0.599
+    },
+    "steep_crew": 0.263
+   },
+   {
+    "walls_mm": 6.0,
+    "lower": "inverted U 25 x 39, 6 mm walls",
+    "upper": "inverted U 25 x 20, 6 mm walls",
+    "mass_2bars_kg": 4.21,
+    "util": {
+     "standard": 0.997,
+     "catwalk_mid": 0.622
+    },
+    "steep_crew": 0.272
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "inverted U 25 x 42, 5 mm walls",
+    "upper": "inverted U 25 x 30, 5 mm walls",
+    "mass_2bars_kg": 4.25,
+    "util": {
+     "standard": 0.972,
+     "catwalk_mid": 0.588
+    },
+    "steep_crew": 0.257
+   },
+   {
+    "walls_mm": 6.0,
+    "lower": "inverted U 25 x 39, 6 mm walls",
+    "upper": "inverted U 25 x 25, 6 mm walls",
+    "mass_2bars_kg": 4.51,
+    "util": {
+     "standard": 0.997,
+     "catwalk_mid": 0.607
+    },
+    "steep_crew": 0.264
+   }
+  ]
+ },
+ "7.5 | right | ends": {
+  "now": {
+   "standard": 3.722,
+   "catwalk_ends": 15.807
+  },
+  "options": [
+   {
+    "walls_mm": 5.0,
+    "lower": "inverted U 25 x 109, 5 mm walls",
+    "upper": "inverted U 25 x 20, 5 mm walls",
+    "mass_2bars_kg": 6.96,
+    "util": {
+     "standard": 0.191,
+     "catwalk_ends": 0.987
+    },
+    "steep_crew": 0.071
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "inverted U 25 x 108, 5 mm walls",
+    "upper": "inverted U 25 x 25, 5 mm walls",
+    "mass_2bars_kg": 7.17,
+    "util": {
+     "standard": 0.173,
+     "catwalk_ends": 0.992
+    },
+    "steep_crew": 0.07
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "inverted U 25 x 107, 5 mm walls",
+    "upper": "inverted U 25 x 30, 5 mm walls",
+    "mass_2bars_kg": 7.37,
+    "util": {
+     "standard": 0.168,
+     "catwalk_ends": 0.995
+    },
+    "steep_crew": 0.069
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "inverted U 25 x 105, 5 mm walls",
+    "upper": "inverted U 25 x 40, 5 mm walls",
+    "mass_2bars_kg": 7.77,
+    "util": {
+     "standard": 0.174,
+     "catwalk_ends": 0.992
+    },
+    "steep_crew": 0.067
+   },
+   {
+    "walls_mm": 6.0,
+    "lower": "inverted U 25 x 103, 6 mm walls",
+    "upper": "inverted U 25 x 20, 6 mm walls",
+    "mass_2bars_kg": 7.89,
+    "util": {
+     "standard": 0.178,
+     "catwalk_ends": 0.977
+    },
+    "steep_crew": 0.068
+   }
+  ]
+ },
+ "7.5 | left | mid": {
+  "now": {
+   "standard": 2.474,
+   "catwalk_mid": 1.378
+  },
+  "options": [
+   {
+    "walls_mm": 5.0,
+    "lower": "U 35 x 40, 5 mm walls, 25 slot",
+    "upper": "U 35 x 20, 5 mm walls, 25 slot",
+    "mass_2bars_kg": 4.14,
+    "util": {
+     "standard": 0.996,
+     "catwalk_mid": 0.624
+    },
+    "steep_crew": 0.272
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "U 35 x 40, 5 mm walls, 25 slot",
+    "upper": "U 35 x 25, 5 mm walls, 25 slot",
+    "mass_2bars_kg": 4.39,
+    "util": {
+     "standard": 0.996,
+     "catwalk_mid": 0.609
+    },
+    "steep_crew": 0.265
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "U 35 x 40, 5 mm walls, 25 slot",
+    "upper": "U 35 x 30, 5 mm walls, 25 slot",
+    "mass_2bars_kg": 4.64,
+    "util": {
+     "standard": 0.996,
+     "catwalk_mid": 0.597
+    },
+    "steep_crew": 0.263
+   },
+   {
+    "walls_mm": 6.0,
+    "lower": "U 37 x 38, 6 mm walls, 25 slot",
+    "upper": "U 37 x 20, 6 mm walls, 25 slot",
+    "mass_2bars_kg": 4.85,
+    "util": {
+     "standard": 0.966,
+     "catwalk_mid": 0.598
+    },
+    "steep_crew": 0.261
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "U 35 x 40, 5 mm walls, 25 slot",
+    "upper": "U 35 x 40, 5 mm walls, 25 slot",
+    "mass_2bars_kg": 5.14,
+    "util": {
+     "standard": 0.997,
+     "catwalk_mid": 0.576
+    },
+    "steep_crew": 0.262
+   }
+  ]
+ },
+ "7.5 | left | ends": {
+  "now": {
+   "standard": 2.474,
+   "catwalk_ends": 10.222
+  },
+  "options": [
+   {
+    "walls_mm": 5.0,
+    "lower": "U 35 x 105, 5 mm walls, 25 slot",
+    "upper": "U 35 x 20, 5 mm walls, 25 slot",
+    "mass_2bars_kg": 7.26,
+    "util": {
+     "standard": 0.172,
+     "catwalk_ends": 0.991
+    },
+    "steep_crew": 0.07
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "U 35 x 104, 5 mm walls, 25 slot",
+    "upper": "U 35 x 25, 5 mm walls, 25 slot",
+    "mass_2bars_kg": 7.46,
+    "util": {
+     "standard": 0.168,
+     "catwalk_ends": 0.996
+    },
+    "steep_crew": 0.069
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "U 35 x 103, 5 mm walls, 25 slot",
+    "upper": "U 35 x 30, 5 mm walls, 25 slot",
+    "mass_2bars_kg": 7.66,
+    "util": {
+     "standard": 0.171,
+     "catwalk_ends": 0.999
+    },
+    "steep_crew": 0.068
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "U 35 x 101, 5 mm walls, 25 slot",
+    "upper": "U 35 x 40, 5 mm walls, 25 slot",
+    "mass_2bars_kg": 8.07,
+    "util": {
+     "standard": 0.177,
+     "catwalk_ends": 0.994
+    },
+    "steep_crew": 0.067
+   },
+   {
+    "walls_mm": 6.0,
+    "lower": "U 37 x 98, 6 mm walls, 25 slot",
+    "upper": "U 37 x 20, 6 mm walls, 25 slot",
+    "mass_2bars_kg": 8.31,
+    "util": {
+     "standard": 0.163,
+     "catwalk_ends": 0.988
+    },
+    "steep_crew": 0.066
+   }
+  ]
+ },
+ "5.0 | right | mid": {
+  "now": {
+   "standard": 2.53,
+   "catwalk_mid": 1.62
+  },
+  "options": [
+   {
+    "walls_mm": 5.0,
+    "lower": "inverted U 25 x 34, 5 mm walls",
+    "upper": "inverted U 25 x 20, 5 mm walls",
+    "mass_2bars_kg": 3.36,
+    "util": {
+     "standard": 0.989,
+     "catwalk_mid": 0.627
+    },
+    "steep_crew": 0.383
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "inverted U 25 x 34, 5 mm walls",
+    "upper": "inverted U 25 x 25, 5 mm walls",
+    "mass_2bars_kg": 3.61,
+    "util": {
+     "standard": 0.99,
+     "catwalk_mid": 0.591
+    },
+    "steep_crew": 0.384
+   },
+   {
+    "walls_mm": 6.0,
+    "lower": "inverted U 25 x 32, 6 mm walls",
+    "upper": "inverted U 25 x 20, 6 mm walls",
+    "mass_2bars_kg": 3.8,
+    "util": {
+     "standard": 0.994,
+     "catwalk_mid": 0.619
+    },
+    "steep_crew": 0.385
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "inverted U 25 x 34, 5 mm walls",
+    "upper": "inverted U 25 x 30, 5 mm walls",
+    "mass_2bars_kg": 3.86,
+    "util": {
+     "standard": 0.99,
+     "catwalk_mid": 0.566
+    },
+    "steep_crew": 0.383
+   },
+   {
+    "walls_mm": 6.0,
+    "lower": "inverted U 25 x 32, 6 mm walls",
+    "upper": "inverted U 25 x 25, 6 mm walls",
+    "mass_2bars_kg": 4.1,
+    "util": {
+     "standard": 0.995,
+     "catwalk_mid": 0.583
+    },
+    "steep_crew": 0.385
+   }
+  ]
+ },
+ "5.0 | right | ends": {
+  "now": {
+   "standard": 2.53,
+   "catwalk_ends": 10.729
+  },
+  "options": [
+   {
+    "walls_mm": 5.0,
+    "lower": "inverted U 25 x 94, 5 mm walls",
+    "upper": "inverted U 25 x 20, 5 mm walls",
+    "mass_2bars_kg": 6.24,
+    "util": {
+     "standard": 0.145,
+     "catwalk_ends": 0.979
+    },
+    "steep_crew": 0.085
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "inverted U 25 x 93, 5 mm walls",
+    "upper": "inverted U 25 x 25, 5 mm walls",
+    "mass_2bars_kg": 6.45,
+    "util": {
+     "standard": 0.148,
+     "catwalk_ends": 0.979
+    },
+    "steep_crew": 0.083
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "inverted U 25 x 92, 5 mm walls",
+    "upper": "inverted U 25 x 30, 5 mm walls",
+    "mass_2bars_kg": 6.65,
+    "util": {
+     "standard": 0.152,
+     "catwalk_ends": 0.976
+    },
+    "steep_crew": 0.082
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "inverted U 25 x 89, 5 mm walls",
+    "upper": "inverted U 25 x 40, 5 mm walls",
+    "mass_2bars_kg": 7.0,
+    "util": {
+     "standard": 0.161,
+     "catwalk_ends": 0.983
+    },
+    "steep_crew": 0.082
+   },
+   {
+    "walls_mm": 6.0,
+    "lower": "inverted U 25 x 88, 6 mm walls",
+    "upper": "inverted U 25 x 20, 6 mm walls",
+    "mass_2bars_kg": 7.03,
+    "util": {
+     "standard": 0.145,
+     "catwalk_ends": 0.987
+    },
+    "steep_crew": 0.081
+   }
+  ]
+ },
+ "5.0 | left | mid": {
+  "now": {
+   "standard": 1.683,
+   "catwalk_mid": 0.936
+  },
+  "options": [
+   {
+    "walls_mm": 5.0,
+    "lower": "U 35 x 33, 5 mm walls, 25 slot",
+    "upper": "U 35 x 20, 5 mm walls, 25 slot",
+    "mass_2bars_kg": 3.8,
+    "util": {
+     "standard": 0.979,
+     "catwalk_mid": 0.587
+    },
+    "steep_crew": 0.379
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "U 35 x 33, 5 mm walls, 25 slot",
+    "upper": "U 35 x 25, 5 mm walls, 25 slot",
+    "mass_2bars_kg": 4.05,
+    "util": {
+     "standard": 0.98,
+     "catwalk_mid": 0.57
+    },
+    "steep_crew": 0.38
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "U 35 x 33, 5 mm walls, 25 slot",
+    "upper": "U 35 x 30, 5 mm walls, 25 slot",
+    "mass_2bars_kg": 4.3,
+    "util": {
+     "standard": 0.98,
+     "catwalk_mid": 0.555
+    },
+    "steep_crew": 0.38
+   },
+   {
+    "walls_mm": 6.0,
+    "lower": "U 37 x 31, 6 mm walls, 25 slot",
+    "upper": "U 37 x 20, 6 mm walls, 25 slot",
+    "mass_2bars_kg": 4.45,
+    "util": {
+     "standard": 0.976,
+     "catwalk_mid": 0.577
+    },
+    "steep_crew": 0.378
+   },
+   {
+    "walls_mm": 6.0,
+    "lower": "U 37 x 31, 6 mm walls, 25 slot",
+    "upper": "U 37 x 25, 6 mm walls, 25 slot",
+    "mass_2bars_kg": 4.75,
+    "util": {
+     "standard": 0.977,
+     "catwalk_mid": 0.559
+    },
+    "steep_crew": 0.379
+   }
+  ]
+ },
+ "5.0 | left | ends": {
+  "now": {
+   "standard": 1.683,
+   "catwalk_ends": 6.942
+  },
+  "options": [
+   {
+    "walls_mm": 5.0,
+    "lower": "U 35 x 90, 5 mm walls, 25 slot",
+    "upper": "U 35 x 20, 5 mm walls, 25 slot",
+    "mass_2bars_kg": 6.54,
+    "util": {
+     "standard": 0.149,
+     "catwalk_ends": 0.985
+    },
+    "steep_crew": 0.084
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "U 35 x 89, 5 mm walls, 25 slot",
+    "upper": "U 35 x 25, 5 mm walls, 25 slot",
+    "mass_2bars_kg": 6.74,
+    "util": {
+     "standard": 0.152,
+     "catwalk_ends": 0.985
+    },
+    "steep_crew": 0.083
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "U 35 x 88, 5 mm walls, 25 slot",
+    "upper": "U 35 x 30, 5 mm walls, 25 slot",
+    "mass_2bars_kg": 6.94,
+    "util": {
+     "standard": 0.156,
+     "catwalk_ends": 0.982
+    },
+    "steep_crew": 0.082
+   },
+   {
+    "walls_mm": 5.0,
+    "lower": "U 35 x 85, 5 mm walls, 25 slot",
+    "upper": "U 35 x 40, 5 mm walls, 25 slot",
+    "mass_2bars_kg": 7.3,
+    "util": {
+     "standard": 0.166,
+     "catwalk_ends": 0.985
+    },
+    "steep_crew": 0.083
+   },
+   {
+    "walls_mm": 6.0,
+    "lower": "U 37 x 84, 6 mm walls, 25 slot",
+    "upper": "U 37 x 20, 6 mm walls, 25 slot",
+    "mass_2bars_kg": 7.5,
+    "util": {
+     "standard": 0.148,
+     "catwalk_ends": 0.974
+    },
+    "steep_crew": 0.08
+   }
+  ]
+ },
+ "poles": {
+  "width along the stair 25 mm": {
+   "3.0 kN/m crowd push + 1.5 kN post + 1.25 kN rail": 46.3,
+   "point loads only: 1.5 kN post + 1.25 kN rail": 31.5
+  },
+  "width along the stair 40 mm": {
+   "3.0 kN/m crowd push + 1.5 kN post + 1.25 kN rail": 38.2,
+   "point loads only: 1.5 kN post + 1.25 kN rail": 24.8
+  },
+  "width along the stair 60 mm": {
+   "3.0 kN/m crowd push + 1.5 kN post + 1.25 kN rail": 31.1,
+   "point loads only: 1.5 kN post + 1.25 kN rail": 19.8
+  },
+  "now (25 x 10)": {
+   "line": 20.27,
+   "post": 6.62,
+   "rail_point": 7.65
+  }
+ }
+}

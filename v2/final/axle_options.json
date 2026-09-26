@@ -1,0 +1,90 @@
+{
+ "friction": {
+  "ground mu 0.3": {
+   "H": 2440.5119560069493,
+   "V": 8135.039853356498,
+   "R_base": 8493.230953124457,
+   "V_top": 2728.019601264745
+  },
+  "ground mu 0.5": {
+   "H": 4943.318521385336,
+   "V": 9886.637042770672,
+   "R_base": 11053.596248251359,
+   "V_top": 976.4243451689922
+  }
+ },
+ "axle": [
+  [
+   "now 25 x 2.5",
+   "base free",
+   2.19,
+   0.44
+  ],
+  [
+   "now 25 x 2.5",
+   "ground mu 0.5",
+   3.76,
+   0.75
+  ],
+  [
+   "now 25 x 2.5",
+   "base held (scaffold clamp)",
+   6.04,
+   1.2
+  ],
+  [
+   "scaffold tube 48.3 x 4.0 (6082-T6)",
+   "base free",
+   0.35,
+   0.14
+  ],
+  [
+   "scaffold tube 48.3 x 4.0 (6082-T6)",
+   "ground mu 0.5",
+   0.6,
+   0.24
+  ],
+  [
+   "scaffold tube 48.3 x 4.0 (6082-T6)",
+   "base held (scaffold clamp)",
+   0.96,
+   0.38
+  ],
+  [
+   "tube 50 x 5",
+   "base free",
+   0.27,
+   0.11
+  ],
+  [
+   "tube 50 x 5",
+   "ground mu 0.5",
+   0.47,
+   0.19
+  ],
+  [
+   "tube 50 x 5",
+   "base held (scaffold clamp)",
+   0.75,
+   0.3
+  ],
+  [
+   "30 x 3 (jack under the hook)",
+   "base free",
+   0.0,
+   0.3
+  ],
+  [
+   "30 x 3 (jack under the hook)",
+   "ground mu 0.5",
+   0.0,
+   0.52
+  ],
+  [
+   "30 x 3 (jack under the hook)",
+   "base held (scaffold clamp)",
+   0.0,
+   0.83
+  ]
+ ]
+}

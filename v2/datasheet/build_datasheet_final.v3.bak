@@ -1,0 +1,621 @@
+"""DS-FMS-FINAL (Rev B): datasheet for the 25.9.2026 final model, built only from final/final_results.json (single source).
+The superseded DS-FMS-ASIS Rev A page (web/_asis_rev_a.html, as published) is kept unchanged in a second tab, with a
+correction notice for the tread values the precise audit overturned. Output: web/index.html (published with web/img/)."""
+import json, math, html, os, re
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+R = json.load(open(os.path.join(HERE, "..", "final", "final_results.json")))
+ASIS = open(os.path.join(HERE, "web", "_asis_rev_a.html"), encoding="utf8").read()
+AUD = json.load(open(os.path.join(HERE, "..", "audit", "tread_checks.json")))       # Rev A model, precise audit
+REPORT = "https://claude.ai/artifact/1ZGWmdUZyFepc1gGMdCkok"
+BRIEF = "https://claude.ai/artifact/Biz2ptYvZVvXxDctWsHCE5"
+FD = 250 / 1.1
+
+esc = lambda s: html.escape(str(s), quote=True)
+def n(x, d=0): return f"{x:,.{d}f}"
+def chip(kind, text): return f'<span class="chip {kind}">{esc(text)}</span>'
+def res(u, pass_txt="Pass", fail_txt="Fail"): return chip("pass", pass_txt) if u <= 1 else chip("fail", fail_txt)
+def ucell(u): return f'<td class="num {"ok" if u <= 1 else "bad"}">{u:.2f}</td>'
+
+T = {r["check"]: r for r in R["tread"]["checks"]}
+TC = R["tread"]["cases"]
+def comp(item, start, base="slides"):
+    return next(r for r in R["components"] if r["item"] == item and r["check"].startswith(start) and r["base"] == base)
+# as drawn the jacks stand free (no fixing) and the hooks have no keeper: base free to slide is the consistent case.
+# "fixed" = base pegged/bolted; then the top hooks lift and need a keeper (not drawn).
+ENV = R["frame_envelopes"]["slides"]; ENVH = R["frame_envelopes"]["held"]
+SLS = R["frame_sls"]; PO = R["pole_options"]; BOX = R["tread_box_check"]
+EDGE = R["lo_r_hole_edge"]
+AUDR = {r["check"]: r for r in AUD["rows"]}
+
+# ------------------------------------------------------------------ derived headline numbers
+def tu(key):
+    return next(r for k, r in T.items() if key in k)
+t_front = tu("ULS 4 kN patch front, mid-span"); t_centre = tu("ULS 4 kN patch centre, mid-span"); t_back = tu("ULS 4 kN patch back, mid-span")
+t_end = next(r for k, r in T.items() if "Frame stress" in k and "front, at right end" in k)
+bar_end = next(r for k, r in T.items() if "Grating bar" in k and "front, at right end" in k)
+bar_mid = next(r for k, r in T.items() if "Grating bar" in k and "front, mid-span" in k)
+flat_mid = next(r for k, r in T.items() if "Flat 2.7x25" in k and "front, mid-span" in k)
+t_crowd = next(r for k, r in T.items() if "Frame stress" in k and "ULS crowd" in k)
+d_crowd = tu("Crowd 7.5 kN/m2: nosing"); d_person = tu("One person"); d4f = tu("4 kN patch (front)"); d4c = tu("4 kN patch (centre)"); d4b = tu("4 kN patch (back)")
+pin_rf = tu("Pin R_front bending, cap"); pin_rf_t = tu("Pin R_front bending incl")
+latch = comp("Latch pins O2 (per pole)", "Vertical"); pin_v = comp("Tread pins O10 (with link force)", "Shear"); pin_m = comp("Tread pins O10 (with link force)", "Bending")
+ax_b = comp("Base axle O25x2.5", "Bending"); ax_v = comp("Base axle O25x2.5", "Shear"); ax_t = comp("Top axle O25x2.5", "Bending")
+hk_b = comp("Hook plate 10 mm (base)", "Throat"); hk_t = comp("Hook plate 10 mm (top)", "Throat")
+hk_bb = comp("Hook plate 10 mm (base)", "Bearing"); hk_tb = comp("Hook plate 10 mm (top)", "Bearing")
+jack = comp("Base jack rod M24", "Axial"); foot = comp("Footplate 100x100x5", "Plate"); tpin = comp("Top bracket pin O20", "Pin"); tplate = comp("Top bracket plate 5 mm", "Pin")
+H = {k: comp(*k, base="held") for k in [("Base axle O25x2.5", "Bending"), ("Base axle O25x2.5", "Shear"), ("Top axle O25x2.5", "Bending"),
+     ("Hook plate 10 mm (base)", "Throat"), ("Hook plate 10 mm (top)", "Throat"), ("Hook plate 10 mm (base)", "Bearing"), ("Base jack rod M24", "Axial"),
+     ("Footplate 100x100x5", "Plate"), ("Top bracket pin O20", "Pin"), ("Top bracket plate 5 mm", "Pin"), ("Latch pins O2 (per pole)", "Vertical"),
+     ("Tread pins O10 (with link force)", "Shear"), ("Tread pins O10 (with link force)", "Bending")]}
+def hu(item, start): return H[(item, start)]["util"]
+jackM = comp("Base jack rod M24", "Axial + bending", base="held"); footM = comp("Footplate 100x100x5", "Plate bending with", base="held")
+fric = comp("Base held by friction alone", "Friction", base="held")
+def w2(r_s, item, start): return max(r_s["util"], hu(item, start))      # worst of base free / base held (hooks lock: both are real)
+TL = {r["check"]: r for r in json.load(open(os.path.join(HERE, "..", "final", "tread2_checks_loose.json")))}
+def tl(key): return next(r for k, r in TL.items() if key in k)
+L_front = tl("ULS 4 kN patch front, mid-span"); L_crowd = tl("Crowd 7.5 kN/m2: nosing")
+L_bar = next(r for k, r in TL.items() if "Grating bar" in k and "front, at right end" in k)
+pole = {r["ref"]: r for r in R["components"] if r["item"] == "Pole RHS 25x10x2"}
+trail_v = comp("Top rail U25x25x5", "Vertical"); trail_h = comp("Top rail U25x25x5", "Horizontal"); hbr = comp("Handrail bracket 15x5 bent flat", "1.25")
+
+rails_p, rails_s = R["rails"]["pinned_base"], R["rails"]["sliding_base"]
+def rail_worst(d, rn): return max(v["util"] for k, v in d.items() if k.startswith(rn + " "))
+RAILS = {rn: (rail_worst(rails_p, rn), rail_worst(rails_s, rn)) for rn in ("Lo_L", "Up_L", "Lo_R", "Up_R")}
+rail_p_max = max(v[0] for v in RAILS.values()); rail_s_max = max(v[1] for v in RAILS.values())
+edge_p = max(e["F_perp"] for e in EDGE["worst"] if not e["slide"]); edge_s = max(e["F_perp"] for e in EDGE["worst"] if e["slide"])
+edge_req = lambda F: F * 1.25 / (2 * 5 * 250) + 20 / 3
+edge_up, edge_us = edge_req(edge_p) / 7.5, edge_req(edge_s) / 7.5
+edge_tread_only = max(edge_req(e["F_perp"]) / 7.5 for e in EDGE["worst"] if e["tread"] != 5)
+crowd_carried = 7.5 / latch["util"]
+barrier_carried = 3.0 / pole["R142"]["util"]
+sls_lim = 1831 / 250
+
+# pole options: W needed per load from the solid required depths (same formula as pole_options_final)
+REQ = PO["required_solid_depth_across_mm"]
+LOADS = [("R142 line 3.0 kN/m", "3.0 kN/m"), ("R143 point 1.25 kN", "1.25 kN"), ("R179 post 1.5 kN", "1.5 kN post"), ("R142 viewing 5.0 kN/m", "5.0 kN/m")]
+W_REQ = {k: 25 * REQ[k] ** 2 / 6 for k, _ in LOADS}
+def rhs(b, h, t): return (b * h ** 3 - (b - 2 * t) * (h - 2 * t) ** 3) / 12 / (h / 2), b * h - (b - 2 * t) * (h - 2 * t)
+POLE_L = 1138
+def pole_row(name, fits, W, A, note=""):
+    cells = "".join(ucell(W_REQ[k] / W) for k, _ in LOADS)
+    return (f'<tr><th scope="row">{name}{f"<span class=note>{note}</span>" if note else ""}</th><td>{fits}</td>{cells}'
+            f'<td class="num">{12 * A * POLE_L * 2.7e-6:.1f}</td></tr>')
+W_rhs_now, A_rhs_now = 1706 / 5, 124
+pole_rows = [
+    pole_row("Hollow RHS 25 × 10 × 2 <em>(as drawn)</em>", "Yes", W_rhs_now, A_rhs_now),
+    pole_row("Solid bar 25 × 10", "Yes", 25 * 10 ** 2 / 6, 250),
+    pole_row("Solid bar 25 × 15", "Right rail slot is 15: widest that fits", 25 * 15 ** 2 / 6, 375),
+    pole_row("Solid bar 25 × 25", "Left rail slot is 25: widest that fits; right slot too narrow", 25 * 25 ** 2 / 6, 625),
+    pole_row("Solid bar 25 × 39", "No: slots must widen, or poles go outside the rails", 25 * 39 ** 2 / 6, 25 * 39),
+    pole_row("Solid bar 25 × 51", "No", 25 * 51 ** 2 / 6, 25 * 51),
+    pole_row("Hollow RHS 25 × 60 × 3", "No", *rhs(25, 60, 3)),
+    pole_row("Hollow RHS 25 × 85 × 3", "No", *rhs(25, 85, 3)),
+]
+d_pure = REQ["R179 post 1.5 kN"] * math.sqrt(250 / 85)
+
+# ------------------------------------------------------------------ utilisation ladder (log scale)
+LO, HI = 0.03, 40.0
+def pos(u): return max(0.0, min(100.0, (math.log10(u) - math.log10(LO)) / (math.log10(HI) - math.log10(LO)) * 100))
+ladder = [
+    ("Handrail poles", "RHS 25 × 10 × 2 · 1.5 kN on a post (R179)", pole["R179"]["util"]),
+    ("Pole locking pegs", f"Ø2 pegs on each pole's locking end · {latch['value'] / 1000:.1f} kN to transfer", latch["util"]),
+    ("Base axle", "Ø25 × 2.5 · hook 70 mm from the jack", w2(ax_b, "Base axle O25x2.5", "Bending")),
+    ("Tread pins", "Ø10 · bending with the frame link force", pin_m["util"]),
+    ("Guide rails", "Net section at the pin holes", rail_s_max),
+    ("Tread, 4 kN sag", "Nosing deflection vs L/100 (R115)", d4f["util"]),
+    ("Top axle", "Ø25 × 2.5 on the landing brackets", w2(ax_t, "Top axle O25x2.5", "Bending")),
+    ("Tread, crowd sag", "Nosing deflection vs L/250 (R115)", d_crowd["util"]),
+    ("Tread, 4 kN stress", "Nosing lip at mid-span (R114)", t_front["util"]),
+    ("Hook plates", "10 mm, base hooks, throat", w2(hk_b, "Hook plate 10 mm (base)", "Throat")),
+    ("Top hook plates", "10 mm, throat", w2(hk_t, "Hook plate 10 mm (top)", "Throat")),
+    ("Handrail brackets", "Bent flat 15 wide · 1.25 kN (R143)", hbr["util"]),
+    ("Grating bars", "3 × 25 · 4 kN on the step (flats joined)", max(bar_end["util"], bar_mid["util"])),
+    ("Flats", "2.7 × 25 · 4 kN on the step, top edge in compression", flat_mid["util"]),
+    ("Right lower rail hole", "Edge distance at the top tread", edge_us),
+    ("Footplates", "100 × 100 × 5, rod moment when the base holds", max(foot["util"], footM["util"])),
+    ("Tread, crowd stress", "Frame stress at 7.5 kN/m² (R113)", t_crowd["util"]),
+    ("Top landing bracket", "Ø20 pin and 5 mm plate", w2(tplate, "Top bracket plate 5 mm", "Pin")),
+    ("Jack rods", "M24, sideways load when the base holds", max(jack["util"], jackM["util"])),
+    ("Top rail & handrail", "U 25 × 25 × 5 · 3.0 kN/m (R142)", trail_h["util"]),
+]
+ladder.sort(key=lambda r: -r[2])
+n_fail = sum(1 for r in ladder if r[2] > 1); n_pass = len(ladder) - n_fail
+ticks = [0.1, 0.3, 1, 3, 10, 30]
+ladder_html = "".join(
+    f'<div class="lrow"><div class="lname"><b>{esc(a)}</b><span>{esc(b)}</span></div>'
+    f'<div class="ltrack"><i class="{"pass" if u <= 1 else "fail"}" style="width:{pos(u):.1f}%"></i></div>'
+    f'<div class="lval {"ok" if u <= 1 else "bad"}">{u:.2f}</div></div>' for a, b, u in ladder)
+ladder_axis = "".join(f'<span style="left:{pos(t):.1f}%">{t:g}</span>' for t in ticks)
+
+# ------------------------------------------------------------------ mass
+MASS_NAMES = {"treads": "Tread frames 6×", "grating": "Grating bars 360×", "longitudinal": "Flats 12×", "rails": "Guide rails 4×",
+              "poles": "Poles 12×", "lock": "Lock pins 12×", "top rails": "Top rails + handrails 4×", "top posts": "Top posts, pivots",
+              "handrail brackets": "Handrail brackets 12×", "axles": "Axles 3×", "hooks": "Hooks, fixings"}
+mp = sorted(((next(v for k, v in MASS_NAMES.items() if name.startswith(k)), kg) for name, kg in R["mass"]["parts"].items()), key=lambda r: -r[1])
+mmax = mp[0][1]
+mass_html = "".join(f'<div class="mrow"><span>{esc(a)}</span><span class="bar"><i style="width:{kg / mmax * 100:.1f}%"></i></span><span class="mono">{kg:.2f}</span></div>' for a, kg in mp)
+mass_total = R["mass"]["total_kg"]
+
+A_ax = math.pi / 4 * (25 ** 2 - 20 ** 2); I_ax = math.pi / 64 * (25 ** 4 - 20 ** 4)
+S = R["rails"]["sections"]
+def wnet(rn): return min(S[rn]["net"]["W_top"], S[rn]["net"]["W_bot"])
+
+# ------------------------------------------------------------------ FINAL document
+a_tread = AUDR
+aud_front = next(r for k, r in a_tread.items() if "4 kN patch front, mid-span" in k and "Profile stress" in k)
+aud_crowd = next(r for k, r in a_tread.items() if "Crowd 7.5" in k)
+aud_person = next(r for k, r in a_tread.items() if "One person" in k)
+aud_4f = next(r for k, r in a_tread.items() if "4 kN patch (front)" in k)
+aud_stress = next(r for k, r in a_tread.items() if "ULS crowd" in k and "Profile stress" in k)
+aud_pin = next(r for k, r in a_tread.items() if "Pin R_front bending, cantilever" in k)
+aud_pin_t = next(r for k, r in a_tread.items() if "Pin R_front bending incl" in k)
+aud_edge = next(r for k, r in a_tread.items() if "edge distance" in k and "R_front" in k)
+
+FINAL = f"""
+<main class="sheet">
+  <div class="control" role="group" aria-label="Document control">
+    <div><span>Document</span><b>DS-FMS-FINAL</b></div>
+    <div><span>Revision</span><b>B · 25 Sep 2026</b></div>
+    <div><span>Source model</span><b>IFC 25-09-2026 · standard 35°</b></div>
+    <div><span>Material</span><b>EN AW-6082-T6</b></div>
+    <div class="status"><span>Status</span><b>Final model · not rated for events</b></div>
+  </div>
+
+  <header class="title">
+    <div class="eyebrow">Technical datasheet · final model as drawn · part-by-part audit</div>
+    <h1>Folding modular stair unit</h1>
+    <p>Rev B covers the final model (<span class="mono">25.9.2026 final STEP LADDER-standard.ifc</span>) in the standard 35° state.
+       Every part was measured from the model: 791 elements, 665 distinct meshes, 1,673 contacts. Each part was then checked against the Aug-2026 events sheet with the
+       load path traced part to part. The treads were run as a shell FE that balances exactly, cross-checked by an independent thin-walled hand method.
+       The side frames were run as 2D frames with every pin, hook and lock modelled. Pass or fail is by EN 1999-1-1 for 6082-T6.</p>
+  </header>
+
+  <section id="f-overview">
+    <div class="lab"><h2>Overview</h2><p>Per unit, standard stair. Loads carried are the required load divided by the governing utilisation.</p></div>
+    <div class="body">
+      <div class="hero">
+        <img src="img/final_hero.jpg" alt="Final model, standard stair, with base jacks and landing brackets" width="1600" height="1000">
+        <div class="figs">
+          <div><span>Mass per unit (measured sections)</span><b>{mass_total:.1f}<small>kg</small></b></div>
+          <div><span>Treads</span><b>6<small>× 280 × 1,200 grating</small></b></div>
+          <div><span>Clear width</span><b>1,101<small>mm</small></b></div>
+          <div><span>Pitch · rise · going</span><b>35°<small>175 / 250</small></b></div>
+          <div class="bad"><span>Crowd load carried</span><b>≈ {crowd_carried:.1f}<small>kN/m² (7.5 req.)</small></b></div>
+          <div class="bad"><span>Barrier line load carried</span><b>{barrier_carried:.2f}<small>kN/m (3.0 req.)</small></b></div>
+          <div class="bad"><span>Tread, 4 kN at the nosing</span><b>{t_front['util']:.2f}×<small>{t_front['value']:.0f} MPa</small></b></div>
+          <div class="bad"><span>Worst part</span><b>{pole['R179']['util']:.1f}×<small>handrail poles</small></b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="f-verdict">
+    <div class="lab"><h2>Verdict by part</h2><p>Worst check of each part, as utilisation (demand ÷ resistance). Log scale; the black line is 1.0, the pass limit.</p></div>
+    <div class="body">
+      <div class="tally">{chip("fail", f"{n_fail} parts fail")} {chip("pass", f"{n_pass} parts pass")} <span>ULS 1.35 G + 1.5 Q (R153), crowd 7.5 kN/m² with going 250 (R113).</span></div>
+      <div class="ladder" role="img" aria-label="Utilisation of each part on a log scale from 0.03 to 40; {n_fail} of {len(ladder)} parts are above 1.0">
+        {ladder_html}
+        <div class="laxis"><div></div><div class="ticks">{ladder_axis}</div><div></div></div>
+      </div>
+      <p class="dim">The hooks lock onto the axles, so the unit sits somewhere between two limits, depending on how well the ground holds the jacks.
+      With the base free to slide, the rails and frame are worst ({rail_s_max:.2f}). With the base held, the supports are worst (base axle {hu('Base axle O25x2.5', 'Bending'):.1f}×), and each top hook pulls {ENVH['uplift_top'] / 1000:.1f} kN on its lock. Each part above shows the worse of the two.
+      The hook locks aren't drawn: they carry {ENV['lock_base'] / 1000:.1f}–{ENVH['lock_base'] / 1000:.1f} kN per side at the base and up to {ENVH['lock_top'] / 1000:.1f} kN at the top (see Supports).
+      The crowd load carried (≈ {crowd_carried:.1f} kN/m²) is set by the pegs on the poles' locking ends. Without them seated in both rails, each side frame is a mechanism and carries nothing.</p>
+    </div>
+  </section>
+
+  <section id="f-changes">
+    <div class="lab"><h2>What changed since Rev A</h2><p>22 Sep model (Rev A, corrected values) against the 25 Sep model.</p></div>
+    <div class="body">
+      <div class="tw"><table>
+        <thead><tr><th>Part</th><th>22 Sep model</th><th>25 Sep model</th><th>Effect</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Tread</th><td>Open J + L extrusion with a 5 mm top deck, 280 × 50</td>
+              <td>Open J (back) + L (nosing) frame with <b>no deck</b>. 60 grating bars 3 × 25 run front to back at 20 mm; 2 flats 2.7 × 25 run along the span, drawn stopping 6.5 mm short of the end plates and to be joined to them (checked joined)</td>
+              <td class="bad">Much softer. 4 kN at the nosing {aud_front['value']:.0f} → {t_front['value']:.0f} MPa; crowd sag {aud_crowd['value']:.1f} → {d_crowd['value']:.1f} mm</td></tr>
+          <tr><th scope="row">Handrail poles</th><td>Solid flat 25 × 10</td><td>Hollow RHS 25 × 10 × 2</td>
+              <td class="bad">18 % less bending strength across the stair (W 341 vs 417 mm³)</td></tr>
+          <tr><th scope="row">Right lower rail</th><td>25-wide inverted channel, hole 2.5 mm from the free edge</td><td>Inverted U 25 × 25 × 5, hole centre 12.5 mm above the free edge</td>
+              <td>Edge distance passes at the lower five treads ({edge_tread_only:.2f}); fails at the top tread, where the frame link force adds ({edge_up:.2f}–{edge_us:.2f})</td></tr>
+          <tr><th scope="row">Top rail and handrail</th><td>25 × 25 hollow / 25 × 25 solid</td><td>U 25 × 25 × 5 channels, both</td>
+              <td>Strength passes ({trail_h['util']:.2f}). The channel isn't a graspable handrail (R64)</td></tr>
+          <tr><th scope="row">Handrail brackets</th><td>none</td><td>12 bent flats, 15 wide, 57 mm offset</td><td class="bad">{hbr['util']:.2f}× under 1.25 kN</td></tr>
+          <tr><th scope="row">Base</th><td>Axle tube Ø25.2 × 2.74 on hooks</td><td>Axle Ø25 × 2.5 on M24 screw jacks with 100 × 100 × 5 footplates; 10 mm hooks 70 mm inboard of the jacks</td>
+              <td class="bad">Axle {ax_b['util']:.1f}× in bending, because the hook load sits 70 mm from the jack ({hu('Base axle O25x2.5', 'Bending'):.1f}× if the base holds)</td></tr>
+          <tr><th scope="row">Top</th><td>5 mm hooks over a fixed bar (11.9 mm throat)</td><td>Landing brackets, 137/140 × 5 plates with Ø20 pins; 10 mm hooks</td>
+              <td>Pin, plate and hook pass ({tpin['util']:.2f} / {tplate['util']:.2f} / {hk_t['util']:.2f}); top axle {ax_t['util']:.2f}×</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <section id="f-tread">
+    <div class="lab"><h2>Tread</h2><p>Measured in tread axes: x from the back face, z from the bottom. Span between pin bearings 1,215.75 mm.</p></div>
+    <div class="body">
+      <div class="details">
+        <figure class="det"><img src="img/final_tread_end.jpg" alt="Tread end at the base, rear and front pins in the rails" loading="lazy" width="1600" height="1000">
+          <figcaption><b>Tread end and pins</b><p>Rear pin (x 25, z 12.5) in the lower rail, front pin (x 225, z 37.5) in the upper rail. The left pins bear 6.75 mm from the end plate; the right ones bear 14 mm out, past a washer and a 7 mm spacer.</p></figcaption></figure>
+        <figure class="det"><img src="img/final_tread_under.jpg" alt="Tread underside showing grating bars and the two flats" loading="lazy" width="1600" height="1000">
+          <figcaption><b>Underside</b><p>Grating bars span the 250 mm between the back box and the nosing. Only the J, the L and two thin flats span the 1.2 m between the rails, so the nosing sags and the tread twists.</p></figcaption></figure>
+      </div>
+      <div class="tw"><table>
+        <thead><tr><th>Element</th><th>Size as drawn</th><th class="num">A mm²</th><th class="num">I<sub>x</sub> mm⁴</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Back J</th><td>rear wall 5 × 50, bottom flange 50 × 5, upturn 5 × 17.5</td><td class="num">537.5</td><td class="num">113,845</td><td>Carries the back half; closed into a box by the end plates</td></tr>
+          <tr><th scope="row">Front L (nosing)</th><td>lip 5 × 25 (z 25–50), return 27.5 × 5</td><td class="num">237.5</td><td class="num">12,666</td><td class="bad">Carries the front half alone: this is what fails</td></tr>
+          <tr><th scope="row">Grating bars</th><td>60 × 3 × 25 × 270, z 25–50, 20 mm pitch</td><td class="num">75</td><td class="num">3,906</td><td>Span front to back only; welded to the rear wall and the lip</td></tr>
+          <tr><th scope="row">Flats</th><td>2 × 2.7 × 25 at x 83.65 and 190.8</td><td class="num">67.5</td><td class="num">3,516</td><td>Drawn 6.5 mm short of the end plates; checked joined to them, as confirmed. They hold the grating bars at mid-depth</td></tr>
+          <tr><th scope="row">End plates</th><td>5 mm at y 15–20 and 1,210–1,215</td><td class="num">—</td><td class="num">—</td><td>Close the back box; 20 mm band (z 30–50) across the depth</td></tr>
+          <tr><th scope="row">Pins</th><td>rear Ø10.73 (left) / Ø10 (right); front Ø10; castle nuts, split pins</td><td class="num">78.5</td><td class="num">—</td><td>Split pins sit beyond the pin ends and don't engage</td></tr>
+        </tbody>
+      </table></div>
+      <div class="tw"><table>
+        <thead><tr><th>Ref</th><th>Check</th><th class="num">Shell FE</th><th class="num">Hand check</th><th class="num">Limit</th><th class="num">Util.</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td class="mono ref">R115</td><td>Crowd 7.5 kN/m², sag at the nosing<span class="note">twist {TC['SLS crowd 7.5 kN/m2']['twist']:.2f}° (FE) / 3.45° (hand)</span></td><td class="num">{d_crowd['value']:.1f} mm</td><td class="num">20.2 mm</td><td class="num">4.86 mm</td>{ucell(d_crowd['util'])}<td>{res(d_crowd['util'])}</td></tr>
+          <tr><td class="mono ref">R115</td><td>One person, 1 kN at the nosing</td><td class="num">{d_person['value']:.1f} mm</td><td class="num dim">—</td><td class="num">10 mm</td>{ucell(d_person['util'])}<td>{res(d_person['util'])}</td></tr>
+          <tr><td class="mono ref">R115</td><td>4 kN on 200 × 200, sag · front / centre / back<span class="note">twist up to {TC['SLS 4 kN patch front, mid-span']['twist']:.0f}°</span></td><td class="num">{d4f['value']:.1f} / {d4c['value']:.1f} / {d4b['value']:.1f} mm</td><td class="num dim">—</td><td class="num">12.2 mm</td>{ucell(d4f['util'])}<td>{res(d4f['util'])}</td></tr>
+          <tr><td class="mono ref">R113</td><td>Crowd 7.5 kN/m², frame stress (ULS)</td><td class="num">{t_crowd['value']:.0f} MPa</td><td class="num dim">—</td><td class="num">227 MPa</td>{ucell(t_crowd['util'])}<td>{res(t_crowd['util'])}</td></tr>
+          <tr><td class="mono ref">R114</td><td>4 kN, frame stress · front / centre / back<span class="note">peak in the nosing lip at mid-span</span></td><td class="num">{t_front['value']:.0f} / {t_centre['value']:.0f} / {t_back['value']:.0f} MPa</td><td class="num dim">—</td><td class="num">227 MPa</td>{ucell(t_front['util'])}<td>{res(t_front['util'])}</td></tr>
+          <tr><td class="mono ref">R114</td><td>4 kN at the tread end, frame stress</td><td class="num">{t_end['value']:.0f} MPa</td><td class="num dim">—</td><td class="num">227 MPa</td>{ucell(t_end['util'])}<td>{res(t_end['util'])}</td></tr>
+          <tr><td class="mono ref">R114</td><td>Grating bar stress · 4 kN at the end / mid-span</td><td class="num">{bar_end['value']:.0f} / {bar_mid['value']:.0f} MPa</td><td class="num dim">—</td><td class="num">227 MPa</td>{ucell(bar_end['util'])}<td>{res(bar_end['util'])}</td></tr>
+          <tr><td class="mono ref">R114</td><td>Flats 2.7 × 25 stress · 4 kN at mid-span<span class="note">compression along the top edge</span></td><td class="num">{flat_mid['value']:.0f} MPa</td><td class="num dim">—</td><td class="num">227 MPa</td>{ucell(flat_mid['util'])}<td>{res(flat_mid['util'])}</td></tr>
+          <tr><td class="mono ref">R170</td><td>Right front pin Ø10, bending over the 14 mm lever<span class="note">{pin_rf_t['util']:.2f} if the pin also holds the rail's twist</span></td><td class="num">{pin_rf['value'] / 1000:.1f} kNmm</td><td class="num dim">—</td><td class="num">{pin_rf['limit'] / 1000:.1f} kNmm</td>{ucell(pin_rf['util'])}<td>{res(pin_rf['util'])}</td></tr>
+        </tbody>
+      </table></div>
+      <div class="fix">
+        <span class="eyebrow">Smallest tread that passes · FE-verified</span>
+        <b>Closed box 280 × 50: 5 mm serrated deck, 3 mm bottom plate, 5 mm front and back webs</b>
+        <span>4 kN at the nosing: {BOX['ULS 4 kN front patch']['vm']:.0f} MPa (utilisation {BOX['ULS 4 kN front patch']['vm'] / FD:.2f}), {abs(BOX['SLS 4 kN front patch']['uz_min']):.1f} mm local sag against 12.2 · crowd {abs(BOX['SLS crowd (going 250)']['uz_min']):.2f} mm against 4.86 · one person {abs(BOX['SLS person nosing']['uz_min']):.1f} mm against 10 · twist {BOX['ULS 4 kN front patch']['twist']:.2f}°.
+        No open profile passes, with or without a deck: the section must be closed so it can't twist.</span>
+      </div>
+      <p class="dim">Flats joined against flats loose: 4 kN at the nosing {t_front['value']:.0f} against {L_front['value']:.0f} MPa, crowd sag {d_crowd['value']:.1f} against {L_crowd['value']:.1f} mm, grating bars at the tread end {bar_end['value']:.0f} against {L_bar['value']:.0f} MPa.
+      Joining the flats makes the grating bars pass. The flats themselves are {flat_mid['util']:.1f}× over either way, and the J and L still carry the span, so the tread still fails.</p>
+      <p class="dim">Cross-checks: the shell FE balances every load case to rounding. A variant with the bars as shells agrees within 3 %.
+      The independent branched-section thin-walled calculation agrees within 12 %. A beam grillage gives a lower bound. The Rev A model re-run the same way gives {aud_front['value']:.0f} MPa and {aud_crowd['value']:.1f} mm.</p>
+    </div>
+  </section>
+
+  <section id="f-frame">
+    <div class="lab"><h2>Side frame &amp; fold lock</h2><p>Each side as a 2D frame: two rails, six treads as pinned links (rear pin to front pin, about 7°), six poles, hooks on the base and top axles.</p></div>
+    <div class="body">
+      <div class="details">
+        <figure class="det"><img src="img/final_lock.jpg" alt="Guide rails with tread pins and poles passing through" loading="lazy" width="1600" height="1000">
+          <figcaption><b>How the frame stands</b><p>The treads are pinned at both ends, so rails and treads alone form a parallelogram that folds. The frame locks only through the poles. Each pole's bottom end (one piece with the pole) drops through both rails, and its Ø2 cross-pegs sit in J-notches in the rail walls. Without those pegs bearing, the frame sways 0.55–0.68 m at the design load.</p></figcaption></figure>
+        <figure class="det"><img src="img/final_side.jpg" alt="Side view of rails, poles, top rail and handrail" loading="lazy" width="1600" height="1000">
+          <figcaption><b>Rails, poles and rails above</b><p>The upper rail's slots are out of line with the poles by about 9 mm on the left (14 mm of play, 3.6 mm clash), 1.6–2.6 mm on the lower rails, and tight on the right upper rail.</p></figcaption></figure>
+      </div>
+      <div class="tw"><table>
+        <thead><tr><th>Part</th><th>Check</th><th class="num">Demand</th><th class="num">Resistance</th><th class="num">Base free</th><th class="num">Base held</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Lower rail, left<span class="note">U 35 × 25 × 5, net W {wnet('Lo_L'):.0f} mm³</span></th><td>Bending + axial at the pin holes</td><td class="num dim">frame FE</td><td class="num">227 MPa</td>{ucell(RAILS['Lo_L'][1])}{ucell(RAILS['Lo_L'][0])}<td>{res(RAILS['Lo_L'][1])}</td></tr>
+          <tr><th scope="row">Upper rail, left<span class="note">U 35 × 25 × 5, net W {wnet('Up_L'):.0f} mm³</span></th><td>Bending + axial at the pin holes</td><td class="num dim">frame FE</td><td class="num">227 MPa</td>{ucell(RAILS['Up_L'][1])}{ucell(RAILS['Up_L'][0])}<td>{res(RAILS['Up_L'][1])}</td></tr>
+          <tr><th scope="row">Lower rail, right<span class="note">inverted U 25 × 25 × 5, net W {wnet('Lo_R'):.0f} mm³</span></th><td>Bending + axial at the pin holes</td><td class="num dim">frame FE</td><td class="num">227 MPa</td>{ucell(RAILS['Lo_R'][1])}{ucell(RAILS['Lo_R'][0])}<td>{res(RAILS['Lo_R'][1])}</td></tr>
+          <tr><th scope="row">Upper rail, right<span class="note">inverted U 25 × 20 × 5, net W {wnet('Up_R'):.0f} mm³</span></th><td>Bending + axial at the pin holes</td><td class="num dim">frame FE</td><td class="num">227 MPa</td>{ucell(RAILS['Up_R'][1])}{ucell(RAILS['Up_R'][0])}<td>{res(RAILS['Up_R'][1])}</td></tr>
+          <tr><th scope="row">Right lower rail hole<span class="note">7.5 mm of metal below the Ø10 hole</span></th><td>Edge distance, top tread (T8.8)</td><td class="num">{edge_s / 1000:.1f} kN</td><td class="num">7.5 mm</td>{ucell(edge_us)}{ucell(edge_up)}<td>{res(edge_us)}</td></tr>
+          <tr><th scope="row">Pole locking pegs Ø2<span class="note">per pole, double shear; one piece with the pole</span></th><td>Rail-to-rail transfer through the pole</td><td class="num">{latch['value'] / 1000:.2f} kN</td><td class="num">{latch['limit'] / 1000:.2f} kN</td>{ucell(latch['util'])}{ucell(hu('Latch pins O2 (per pole)', 'Vertical'))}<td>{res(latch['util'])}</td></tr>
+          <tr><th scope="row">Tread pins Ø10<span class="note">link force {ENV['link'] / 1000:.1f} kN at the top tread + tread reaction</span></th><td>Shear</td><td class="num">{pin_v['value'] / 1000:.1f} kN</td><td class="num">{pin_v['limit'] / 1000:.1f} kN</td>{ucell(pin_v['util'])}{ucell(hu('Tread pins O10 (with link force)', 'Shear'))}<td>{res(pin_v['util'])}</td></tr>
+          <tr><th scope="row">Tread pins Ø10</th><td>Bending, 6.75–14 mm lever</td><td class="num">{pin_m['value'] / 1000:.0f} kNmm</td><td class="num">{pin_m['limit'] / 1000:.1f} kNmm</td>{ucell(pin_m['util'])}{ucell(hu('Tread pins O10 (with link force)', 'Bending'))}<td>{res(pin_m['util'])}</td></tr>
+          <tr><th scope="row">Frame deflection (R115)<span class="note">SLS crowd, worst side</span></th><td>L/250 on the 1,831 mm span</td><td class="num">{SLS['R base slides']['defl_sls']:.1f} mm</td><td class="num">{sls_lim:.2f} mm</td>{ucell(SLS['R base slides']['defl_sls'] / sls_lim)}{ucell(SLS['R base pinned']['defl_sls'] / sls_lim)}<td>{res(SLS['R base slides']['defl_sls'] / sls_lim)}</td></tr>
+          <tr><th scope="row">Natural frequency (R177)</th><td>f₁ ≥ 6 Hz</td><td class="num">{min(v['f1'] for v in SLS.values()):.1f}–{max(v['f1'] for v in SLS.values()):.1f} Hz</td><td class="num">6 Hz</td><td class="num" colspan="2">≈ 6 Hz with tread flex</td><td>{chip("warn", "At limit")}</td></tr>
+        </tbody>
+      </table></div>
+      <p class="dim">The hooks lock onto the axles, so both limits are real. “Base free” means the jacks slide on the ground; “Base held” means friction or a fixing stops them. The result column shows the worse of the two.
+      Cross-check: a hand calculation of the lower rail alone gives about 7.7×, which brackets the frame results.</p>
+    </div>
+  </section>
+
+  <section id="f-supports">
+    <div class="lab"><h2>Supports</h2><p>Base: hooks on the axle, axle on two screw jacks. Top: hooks on the top axle, axle in the landing brackets.</p></div>
+    <div class="body">
+      <div class="details">
+        <figure class="det"><img src="img/final_base.jpg" alt="Base jacks, footplates, axles and hooks" loading="lazy" width="1600" height="1000">
+          <figcaption><b>Base</b><p>The hooks sit 70 mm (left) and 62 mm (right) inboard of the jacks, so the Ø25 × 2.5 axle carries the full reaction in bending. The base hook plate wraps the underside and downhill side of the axle; the stair pushes on its open side, so the hook's lock carries the base reaction. The axle is drawn as two 1,309 mm tubes offset 53 mm, each reaching one jack; the second base axle at x 9,936 carries no load.</p></figcaption></figure>
+        <figure class="det"><img src="img/final_top.jpg" alt="Top landing bracket with pin and axle" loading="lazy" width="1600" height="1000">
+          <figcaption><b>Top landing bracket</b><p>5 mm plate and Ø20 pin pass. The model doesn't show how the bracket fixes to the landing or cabin. That fixing must take {ENVH['R_top'] / 1000:.1f} kN per side (ULS) when the base holds, {ENV['R_top'] / 1000:.1f} kN when it slides.</p></figcaption></figure>
+      </div>
+      <div class="figs">
+        <div><span>Base free to slide</span><b>{ENV['R_base'] / 1000:.1f}<small>kN at the base, vertical</small></b><em>top {ENV['R_top'] / 1000:.1f} kN down; nothing sideways at the base</em></div>
+        <div class="bad"><span>Base held (friction or a fixing)</span><b>{ENVH['R_base'] / 1000:.1f}<small>kN at the base</small></b><em>{ENVH['H_base'] / 1000:.1f} kN sideways into each jack; the top hook locks take {ENVH['uplift_top'] / 1000:.1f} kN uplift</em></div>
+      </div>
+      <div class="tw"><table>
+        <thead><tr><th>Part</th><th>Ref</th><th>Check</th><th class="num">Demand, base free</th><th class="num">Resistance</th><th class="num">Base free</th><th class="num">Base held</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Base axle Ø25 × 2.5</th><td class="mono ref">R147</td><td>Bending, hook 70 mm from the jack</td><td class="num">{ax_b['value']:.0f} MPa</td><td class="num">227 MPa</td>{ucell(ax_b['util'])}{ucell(hu('Base axle O25x2.5', 'Bending'))}<td>{res(w2(ax_b, 'Base axle O25x2.5', 'Bending'))}</td></tr>
+          <tr><th scope="row">Base axle Ø25 × 2.5</th><td class="mono ref">R147</td><td>Shear</td><td class="num">{ax_v['value'] / 1000:.1f} kN</td><td class="num">{ax_v['limit'] / 1000:.1f} kN</td>{ucell(ax_v['util'])}{ucell(hu('Base axle O25x2.5', 'Shear'))}<td>{res(w2(ax_v, 'Base axle O25x2.5', 'Shear'))}</td></tr>
+          <tr><th scope="row">Top axle Ø25 × 2.5<span class="note">bracket 70 mm from the hook assumed</span></th><td class="mono ref">R147</td><td>Bending on the landing brackets</td><td class="num">{ax_t['value']:.0f} MPa</td><td class="num">227 MPa</td>{ucell(ax_t['util'])}{ucell(hu('Top axle O25x2.5', 'Bending'))}<td>{res(w2(ax_t, 'Top axle O25x2.5', 'Bending'))}</td></tr>
+          <tr><th scope="row">Hook plates 10 mm, base<span class="note">hand check (curved beam); an FE of the hook is advised for sign-off</span></th><td class="mono ref">R150</td><td>Throat, ring ≈ 22 mm wide</td><td class="num">{hk_b['value']:.0f} MPa</td><td class="num">227 MPa</td>{ucell(hk_b['util'])}{ucell(hu('Hook plate 10 mm (base)', 'Throat'))}<td>{res(w2(hk_b, 'Hook plate 10 mm (base)', 'Throat'))}</td></tr>
+          <tr><th scope="row">Hook plates 10 mm, top</th><td class="mono ref">R150</td><td>Throat</td><td class="num">{hk_t['value']:.0f} MPa</td><td class="num">227 MPa</td>{ucell(hk_t['util'])}{ucell(hu('Hook plate 10 mm (top)', 'Throat'))}<td>{res(w2(hk_t, 'Hook plate 10 mm (top)', 'Throat'))}</td></tr>
+          <tr><th scope="row">Hook lock, base<span class="note">the plate opens where the stair pushes</span></th><td class="mono ref">R150</td><td>Lock carries the base reaction</td><td class="num">{ENV['lock_base'] / 1000:.1f} kN</td><td class="num">not drawn</td><td class="num bad">{ENV['lock_base'] / 1000:.1f} kN</td><td class="num bad">{ENVH['lock_base'] / 1000:.1f} kN</td><td>{chip("fail", "Design it")}</td></tr>
+          <tr><th scope="row">Hook lock, top<span class="note">plate carries it while the base slides</span></th><td class="mono ref">R150</td><td>Lock carries the top reaction when the base holds</td><td class="num">0</td><td class="num">not drawn</td><td class="num ok">0</td><td class="num bad">{ENVH['lock_top'] / 1000:.1f} kN</td><td>{chip("fail", "Design it")}<span class="note">incl. {ENVH['uplift_top'] / 1000:.1f} kN uplift</span></td></tr>
+          <tr><th scope="row">Hook plates 10 mm</th><td class="mono ref">R170</td><td>Axle bearing on the hook</td><td class="num">{hk_bb['value'] / 1000:.1f} kN</td><td class="num">{hk_bb['limit'] / 1000:.0f} kN</td>{ucell(hk_bb['util'])}{ucell(hu('Hook plate 10 mm (base)', 'Bearing'))}<td>{res(w2(hk_bb, 'Hook plate 10 mm (base)', 'Bearing'))}</td></tr>
+          <tr><th scope="row">Jack rod M24<span class="note">held: axial + {ENVH['H_base'] / 1000:.1f} kN sideways, 30 mm above the footplate</span></th><td class="mono ref">R174</td><td>Axial (+ bending when held)</td><td class="num">{jack['value']:.0f} MPa</td><td class="num">227 MPa</td>{ucell(jack['util'])}{ucell(jackM['util'])}<td>{res(max(jack['util'], jackM['util']))}</td></tr>
+          <tr><th scope="row">Footplate 100 × 100 × 5<span class="note">held: rod moment makes the ground pressure uneven</span></th><td class="mono ref">R174</td><td>Plate bending from the rod</td><td class="num">{foot['value']:.0f} MPa</td><td class="num">227 MPa</td>{ucell(foot['util'])}{ucell(footM['util'])}<td>{res(max(foot['util'], footM['util']))}<span class="note">R73 asks for 150 × 150</span></td></tr>
+          <tr><th scope="row">Ground friction<span class="note">aluminium on timber or concrete ≈ 0.4–0.5</span></th><td class="mono ref">R174</td><td>Friction needed to hold the base (H ÷ V)</td><td class="num">0</td><td class="num">≈ 0.5</td><td class="num ok">0</td><td class="num bad">{fric['value']:.2f}</td><td>{chip("warn", "Partly holds")}<span class="note">the real state lies between the two limits</span></td></tr>
+          <tr><th scope="row">Top bracket pin Ø20</th><td class="mono ref">R170</td><td>Single shear</td><td class="num">{tpin['value'] / 1000:.1f} kN</td><td class="num">{tpin['limit'] / 1000:.1f} kN</td>{ucell(tpin['util'])}{ucell(hu('Top bracket pin O20', 'Pin'))}<td>{res(w2(tpin, 'Top bracket pin O20', 'Pin'))}</td></tr>
+          <tr><th scope="row">Top bracket plate 5 mm</th><td class="mono ref">R170</td><td>Pin bearing</td><td class="num">{tplate['value'] / 1000:.1f} kN</td><td class="num">{tplate['limit'] / 1000:.1f} kN</td>{ucell(tplate['util'])}{ucell(hu('Top bracket plate 5 mm', 'Pin'))}<td>{res(w2(tplate, 'Top bracket plate 5 mm', 'Pin'))}</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <section id="f-barrier">
+    <div class="lab"><h2>Barrier &amp; handrail</h2><p>Poles at 250 mm in plan (305 mm along the slope), lever 1,050 mm from the upper rail web to the top rail.</p></div>
+    <div class="body">
+      <div class="details">
+        <figure class="det"><img src="img/final_pole_top.jpg" alt="Pole tops with top rail, handrail and brackets" loading="lazy" width="1600" height="1000">
+          <figcaption><b>Pole tops</b><p>Top rail (U 25 × 25 × 5) on pivot pins at the pole tops; handrail (the same channel) on bent 15 mm brackets 57 mm off the poles.</p></figcaption></figure>
+      </div>
+      <div class="tw"><table>
+        <thead><tr><th>Ref</th><th>Load</th><th>Part</th><th class="num">Stress</th><th class="num">Util.</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td class="mono ref">R142</td><td>3.0 kN/m at the top rail</td><td>Pole RHS 25 × 10 × 2</td><td class="num">{pole['R142']['value']:,.0f} MPa</td>{ucell(pole['R142']['util'])}<td>{res(pole['R142']['util'])}</td></tr>
+          <tr><td class="mono ref">R143</td><td>1.25 kN point on the top rail</td><td>Pole RHS 25 × 10 × 2</td><td class="num">{pole['R143']['value']:,.0f} MPa</td>{ucell(pole['R143']['util'])}<td>{res(pole['R143']['util'])}</td></tr>
+          <tr><td class="mono ref">R179</td><td>1.5 kN at the top of a post</td><td>Pole RHS 25 × 10 × 2</td><td class="num">{pole['R179']['value']:,.0f} MPa</td>{ucell(pole['R179']['util'])}<td>{res(pole['R179']['util'])}</td></tr>
+          <tr><td class="mono ref">R142</td><td>5.0 kN/m, viewing areas</td><td>Pole RHS 25 × 10 × 2</td><td class="num">{pole['R142 (5.0)']['value']:,.0f} MPa</td>{ucell(pole['R142 (5.0)']['util'])}<td>{res(pole['R142 (5.0)']['util'])}</td></tr>
+          <tr><td class="mono ref">R178</td><td>1.0 kN/m vertical</td><td>Top rail U 25 × 25 × 5</td><td class="num">{trail_v['value']:.0f} MPa</td>{ucell(trail_v['util'])}<td>{res(trail_v['util'])}</td></tr>
+          <tr><td class="mono ref">R142</td><td>3.0 kN/m horizontal</td><td>Top rail U 25 × 25 × 5</td><td class="num">{trail_h['value']:.0f} MPa</td>{ucell(trail_h['util'])}<td>{res(trail_h['util'])}</td></tr>
+          <tr><td class="mono ref">R143</td><td>1.25 kN on the handrail</td><td>Bracket, bent flat 15 wide<span class="note">5 mm thickness assumed; the thinner 4.2 mm measured gives about {hbr['util'] * 5 / 4.2:.1f}</span></td><td class="num">{hbr['value']:.0f} MPa</td>{ucell(hbr['util'])}<td>{res(hbr['util'])}</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Pole options: hollow or solid bar</h3>
+      <p>Utilisation of each pole option under each barrier load, 6082-T6. The size across the stair is what counts; the pole's lock pin is part of the pole, so the same size runs down through both rails.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Pole (along × across the stair)</th><th>Fits the rail slots?</th>{"".join(f'<th class="num">{b}</th>' for _, b in LOADS)}<th class="num">12 poles, kg</th></tr></thead>
+        <tbody>{"".join(pole_rows)}</tbody>
+      </table></div>
+      <div class="matl">
+        <span class="eyebrow">Solid bar · which aluminium</span>
+        <b>Use 6082-T6 (or 6061-T6) bar, not pure aluminium</b>
+        <span>A solid bar only passes at 25 × 39 for the 3.0 kN/m line load, or 25 × 51 for every barrier load. Neither fits through the current slots, so the slots must widen or the poles must mount outside the rails.
+        “Pure” aluminium (1000 series, e.g. EN AW-1050A H14, proof strength about 85 MPa) is about a third as strong as 6082-T6 and isn't one of the structural alloys in EN 1999-1-1. A pure-aluminium pole would need about 25 × {d_pure:.0f} for the 1.5 kN post load.
+        A hollow 25 × 85 × 3 does the same job at less than half the mass of the solid 25 × 51.</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="f-compliance">
+    <div class="lab"><h2>Compliance, Aug-2026 events sheet</h2><p>R-numbers are rows of the sheet. The last column is the Rev A (22 Sep) model re-checked by the same method.</p></div>
+    <div class="body">
+      <h3>Loads</h3>
+      <div class="tw"><table>
+        <thead><tr><th>Ref</th><th>Requirement</th><th>25 Sep model</th><th class="num">Util.</th><th>Result</th><th>22 Sep model, corrected</th></tr></thead>
+        <tbody>
+          <tr><td class="mono ref">R113</td><td>Crowd 7.5 kN/m²: tread stress</td><td class="mono">{t_crowd['value']:.0f} MPa</td>{ucell(t_crowd['util'])}<td>{res(t_crowd['util'])}</td><td class="mono">{aud_stress['value']:.0f} MPa · {aud_stress['util']:.2f} pass</td></tr>
+          <tr><td class="mono ref">R113</td><td>Crowd 7.5 kN/m²: side frame, pins, lock, supports</td><td class="mono">carries ≈ {crowd_carried:.1f} kN/m²</td>{ucell(latch['util'])}<td>{res(latch['util'])}</td><td class="mono">1.0 kN/m² (Rev A)</td></tr>
+          <tr><td class="mono ref">R114</td><td>4.0 kN on 200 × 200: tread stress</td><td class="mono">{t_front['value']:.0f} MPa at the nosing</td>{ucell(t_front['util'])}<td>{res(t_front['util'])}</td><td class="mono bad">{aud_front['value']:.0f} MPa · {aud_front['util']:.2f} fail<span class="note">Rev A showed a pass</span></td></tr>
+          <tr><td class="mono ref">R115</td><td>Tread sag ≤ L/250 under crowd (4.86 mm)</td><td class="mono">{d_crowd['value']:.1f} mm</td>{ucell(d_crowd['util'])}<td>{res(d_crowd['util'])}</td><td class="mono bad">{aud_crowd['value']:.1f} mm · fail</td></tr>
+          <tr><td class="mono ref">R115</td><td>&lt; 10 mm under one person</td><td class="mono">{d_person['value']:.1f} mm</td>{ucell(d_person['util'])}<td>{res(d_person['util'])}</td><td class="mono">{aud_person['value']:.1f} mm · pass</td></tr>
+          <tr><td class="mono ref">R115</td><td>4 kN sag ≤ L/100 (12.2 mm)</td><td class="mono">{d4f['value']:.1f} mm</td>{ucell(d4f['util'])}<td>{res(d4f['util'])}</td><td class="mono bad">{aud_4f['value']:.1f} mm · fail</td></tr>
+          <tr><td class="mono ref">R115</td><td>Frame sag ≤ L/250 (7.32 mm)</td><td class="mono">{SLS['L base slides']['defl_sls']:.1f}–{SLS['R base slides']['defl_sls']:.1f} mm<span class="note">{SLS['L base pinned']['defl_sls']:.1f}–{SLS['R base pinned']['defl_sls']:.1f} if the base is fixed</span></td>{ucell(SLS['R base slides']['defl_sls'] / sls_lim)}<td>{res(SLS['R base slides']['defl_sls'] / sls_lim)}</td><td class="mono">2.36 kN/m² rating (Rev A)</td></tr>
+          <tr><td class="mono ref">R170</td><td>Tread pins Ø10</td><td class="mono">{pin_rf['util']:.2f} tread only · {pin_m['util']:.2f} with link</td>{ucell(pin_m['util'])}<td>{res(pin_m['util'])}</td><td class="mono bad">{aud_pin['util']:.2f} · {aud_pin_t['util']:.2f} with rail twist</td></tr>
+          <tr><td class="mono ref">R170</td><td>Pin hole edge distance, right lower rail</td><td class="mono">7.5 mm, needs {edge_req(edge_s):.1f}</td>{ucell(edge_us)}<td>{res(edge_us)}</td><td class="mono bad">2.5 mm, needed {aud_edge['limit']:.1f}</td></tr>
+          <tr><td class="mono ref">R78/R104</td><td>Positive, captive fold lock</td><td class="mono">Ø2 pegs on the pole ends</td>{ucell(latch['util'])}<td>{res(latch['util'])}</td><td class="mono">lock pins loose</td></tr>
+          <tr><td class="mono ref">R147</td><td>Supports: axle, hooks, jacks</td><td class="mono">axle {hu('Base axle O25x2.5', 'Bending'):.1f}×, hooks {hu('Hook plate 10 mm (base)', 'Throat'):.1f}×, jacks {jackM['util']:.1f}×; hook locks not drawn</td>{ucell(hu('Base axle O25x2.5', 'Bending'))}<td>{res(hu('Base axle O25x2.5', 'Bending'))}</td><td class="mono">top hook 1.36 vs 4.13 kN</td></tr>
+          <tr><td class="mono ref">R73</td><td>Base plates 150 × 150</td><td class="mono">100 × 100 × 5 (strength {max(foot['util'], footM['util']):.2f})</td><td class="num dim">—</td><td>{chip("fail", "Fail")}</td><td class="mono dim">none</td></tr>
+          <tr><td class="mono ref">R142</td><td>Barrier 3.0 kN/m</td><td class="mono">{barrier_carried:.2f} kN/m carried</td>{ucell(pole['R142']['util'])}<td>{res(pole['R142']['util'])}</td><td class="mono">0.16 kN/m</td></tr>
+          <tr><td class="mono ref">R143</td><td>Point 1.25 kN on the top rail</td><td class="mono">poles</td>{ucell(pole['R143']['util'])}<td>{res(pole['R143']['util'])}</td><td class="mono dim">—</td></tr>
+          <tr><td class="mono ref">R179</td><td>Post load 1.5 kN</td><td class="mono">{1.5 / pole['R179']['util']:.2f} kN carried</td>{ucell(pole['R179']['util'])}<td>{res(pole['R179']['util'])}</td><td class="mono">0.24 kN</td></tr>
+          <tr><td class="mono ref">R178</td><td>Top rail vertical 1.0 kN/m</td><td class="mono">U 25 × 25 × 5</td>{ucell(trail_v['util'])}<td>{res(trail_v['util'])}</td><td class="mono">pass</td></tr>
+          <tr><td class="mono ref">R177</td><td>Vertical f₁ ≥ 6 Hz</td><td class="mono">{min(v['f1'] for v in SLS.values()):.1f}–{max(v['f1'] for v in SLS.values()):.1f} Hz frame; ≈ 6 with tread flex</td><td class="num dim">—</td><td>{chip("warn", "At limit")}</td><td class="mono">18 Hz</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Geometry and detailing</h3>
+      <div class="tw"><table>
+        <thead><tr><th>Ref</th><th>Requirement</th><th>25 Sep model</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td class="mono ref">R9</td><td>Stair pitch ≤ 35°</td><td class="mono">35.0°</td><td>{chip("pass", "Pass")}<span class="note">at the limit</span></td></tr>
+          <tr><td class="mono ref">R4</td><td>Going ≥ 250</td><td class="mono">250 mm</td><td>{chip("pass", "Pass")}<span class="note">at the limit</span></td></tr>
+          <tr><td class="mono ref">R5</td><td>Riser 100–200 (170 recommended)</td><td class="mono">175 mm</td><td>{chip("pass", "Pass")}</td></tr>
+          <tr><td class="mono ref">R8</td><td>2 × rise + going 540–660</td><td class="mono">600 mm</td><td>{chip("pass", "Pass")}</td></tr>
+          <tr><td class="mono ref">R7</td><td>Open riser gap ≤ 120</td><td class="mono">125 mm under the back box</td><td>{chip("fail", "Fail")}</td></tr>
+          <tr><td class="mono ref">R3</td><td>Clear width ≥ 1,100</td><td class="mono">1,101 mm</td><td>{chip("pass", "Pass")}</td></tr>
+          <tr><td class="mono ref">R63</td><td>Top rail ≥ 1,100 above the pitch line</td><td class="mono">≈ 1,010 mm</td><td>{chip("fail", "Fail")}<span class="note">raise about 90 mm</span></td></tr>
+          <tr><td class="mono ref">R64</td><td>Graspable handrail, 25–50</td><td class="mono">U 25 × 25 channel, ≈ 900 above the pitch line</td><td>{chip("fail", "Fail")}<span class="note">a channel isn't graspable</span></td></tr>
+          <tr><td class="mono ref">R65/R68</td><td>No gap &gt; 470 in the side protection</td><td class="mono">poles at ≈ 225 clear; nothing between tread and handrail</td><td>{chip("warn", "By others")}<span class="note">no infill, mid rail or toe board, by decision</span></td></tr>
+          <tr><td class="mono ref">R104</td><td>Slots line up for the lock</td><td class="mono">left upper rail ≈ 9 mm out</td><td>{chip("fail", "Fail")}</td></tr>
+          <tr><td class="mono ref">R16/R94</td><td>Slip resistance PTV ≥ 36 (40 events)</td><td class="mono">3 mm plain bar tops</td><td>{chip("warn", "Specify")}</td></tr>
+          <tr><td class="mono ref">R17</td><td>Contrasting nosings</td><td class="mono">none</td><td>{chip("warn", "Specify")}</td></tr>
+          <tr><td class="mono ref">R106</td><td>Post spacing ≤ 2.5 m</td><td class="mono">305 mm</td><td>{chip("pass", "Pass")}</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <section id="f-components">
+    <div class="lab"><h2>Components &amp; material</h2><p>Sections measured on the model; masses at 2,700 kg/m³, drawn duplicates not counted.</p></div>
+    <div class="body">
+      <div class="tw"><table>
+        <thead><tr><th>Component</th><th>Qty</th><th>Section as modelled</th><th class="num">A mm²</th><th class="num">I mm⁴</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Tread frame</th><td class="mono">6</td><td>Back J + front L, 1,200 between end plates</td><td class="num">537.5 + 237.5</td><td class="num">113,845 + 12,666</td></tr>
+          <tr><th scope="row">Grating bars</th><td class="mono">360</td><td>3 × 25 × 270</td><td class="num">75</td><td class="num">3,906</td></tr>
+          <tr><th scope="row">Flats (to be joined)</th><td class="mono">12</td><td>2.7 × 25 × 1,177 as drawn</td><td class="num">67.5</td><td class="num">3,516</td></tr>
+          <tr><th scope="row">Guide rails, left</th><td class="mono">1 + 1</td><td>U 35 × 25 × 5, open at the top</td><td class="num">{S['Lo_L']['gross']['A']:.0f}</td><td class="num">{S['Lo_L']['gross']['I']:,.0f}</td></tr>
+          <tr><th scope="row">Guide rail, right lower</th><td class="mono">1</td><td>Inverted U 25 × 25 × 5</td><td class="num">{S['Lo_R']['gross']['A']:.0f}</td><td class="num">{S['Lo_R']['gross']['I']:,.0f}</td></tr>
+          <tr><th scope="row">Guide rail, right upper</th><td class="mono">1</td><td>Inverted U 25 × 20 × 5</td><td class="num">{S['Up_R']['gross']['A']:.0f}</td><td class="num">{S['Up_R']['gross']['I']:,.0f}</td></tr>
+          <tr><th scope="row">Poles</th><td class="mono">12</td><td>Hollow RHS 25 × 10 × 2, 1,138 long</td><td class="num">124</td><td class="num">1,706 across</td></tr>
+          <tr><th scope="row">Pole locking ends</th><td class="mono">12</td><td>25 × 10 × 245, one piece with the pole, Ø2 cross-pegs</td><td class="num">250</td><td class="num">2,083</td></tr>
+          <tr><th scope="row">Top rails + handrails</th><td class="mono">2 + 2</td><td>U 25 × 25 × 5, 1,726 long</td><td class="num">325</td><td class="num">18,947</td></tr>
+          <tr><th scope="row">Axles</th><td class="mono">3</td><td>Tube Ø25 × 2.5, drawn as two 1,309 tubes offset 53 mm</td><td class="num">{A_ax:.0f}</td><td class="num">{I_ax:,.0f}</td></tr>
+          <tr><th scope="row">Hooks</th><td class="mono">4</td><td>10 mm plate, ring ≈ 22 mm wide</td><td class="num">—</td><td class="num">—</td></tr>
+          <tr><th scope="row">Base jacks</th><td class="mono">2</td><td>M24 rod, footplate 100 × 100 × 5</td><td class="num">353</td><td class="num">—</td></tr>
+          <tr><th scope="row">Top landing brackets</th><td class="mono">2</td><td>137/140 × 5 plates, Ø20 pin</td><td class="num">—</td><td class="num">—</td></tr>
+          <tr><th scope="row">Handrail brackets</th><td class="mono">12</td><td>Bent flat 15 × ≈ 4.5, 57 mm offset</td><td class="num">—</td><td class="num">—</td></tr>
+        </tbody>
+      </table></div>
+      <div class="split">
+        <div class="mass">{mass_html}<div class="mtot"><span>Total per unit</span><span class="mono">{mass_total:.1f} kg</span></div></div>
+        <div class="matl">
+          <span class="eyebrow">Material, all parts</span>
+          <b>Aluminium EN AW-6082-T6</b>
+          <span class="mono">Extrusions t ≤ 5: f₀ 250 · f<sub>u</sub> 290 MPa<br>Bar and rod: f₀ 250 · f<sub>u</sub> 295 MPa<br>Welded zone: f₀,haz 125 · f<sub>u</sub>,haz 185 MPa<br>E 70 GPa · γM1 1.10 · γM2 = γMp 1.25</span>
+          <span>EN 1999-1-1 Table 3.2b. Rev A listed 260 MPa for t ≤ 5 mm; 260 is the value for 5 &lt; t ≤ 25.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="f-model">
+    <div class="lab"><h2>Model issues</h2><p>Found while mapping every part and contact. They don't change the checks above, but the drawings should fix them.</p></div>
+    <div class="body">
+      <ul class="cond">
+        <li class="info">Duplicates: 18 parts drawn twice in the same place (4 right poles with their lock pins and both top pivot parts, and the 2 right hooks). Each is counted once in the checks.</li>
+        <li>The base axle is drawn as two 1,309 mm tubes offset 53 mm, each reaching only one jack. It must be one tube from jack to jack.</li>
+        <li>As drawn, the base hook plates wrap the underside and downhill side of the axle, so the stair pushes on their open side. The hooks lock onto the axles (confirmed), but the lock isn't drawn and carries the whole base reaction.</li>
+        <li class="info">The two flats in each step stop 6.5 mm short of the end plates. They will be joined (confirmed), and the checks use them joined.</li>
+        <li>Left rear tread pin is Ø10.73 in a Ø10 hole: it can't be assembled.</li>
+        <li>Split pins sit beyond the pin ends, so they don't retain the nuts.</li>
+        <li>Each pole and its locking end are one piece in reality but drawn as two overlapping bodies (z 87.5–225); pins, poles and slots are drawn line-to-line with no clearance.</li>
+        <li>Left upper rail slots are about 9 mm out of line with the poles (3.6 mm clash); lower rails 1.6–2.6 mm.</li>
+        <li class="info">The second base axle (x 9,936) isn't in the load path; the top bracket's fixing to the landing isn't modelled.</li>
+        <li class="info">Zero-thickness “none” planes are in the file; they were ignored in all checks.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="f-sizes">
+    <div class="lab"><h2>Smallest sizes that pass</h2><p>Same loads, same formulas. Treads re-run in FE; the rest sized by hand from the frame forces.</p></div>
+    <div class="body">
+      <div class="tw"><table>
+        <thead><tr><th>Part</th><th>Now</th><th>Smallest that passes</th><th>For</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Tread</th><td>Open J + L, grating, no deck</td><td class="strong">Closed box 280 × 50: 5 mm serrated deck, 3 mm bottom, 5 mm webs</td><td>4 kN, crowd, one person (FE {BOX['ULS 4 kN front patch']['vm'] / FD:.2f})</td></tr>
+          <tr><th scope="row">Tread pins</th><td>Ø10</td><td class="strong">Ø20 6082-T6, or Ø16 steel 8.8</td><td>{pin_v['value'] / 1000:.1f} kN + {pin_m['value'] / 1000:.0f} kNmm</td></tr>
+          <tr><th scope="row">Pole locking pegs</th><td>Ø2</td><td class="strong">Ø8 pegs (or a solid shoulder), notches widened and lined up</td><td>{latch['value'] / 1000:.1f} kN per pole</td></tr>
+          <tr><th scope="row">Guide rails</th><td>net W {min(wnet(k) for k in S):.0f}–{max(wnet(k) for k in S):.0f} mm³</td><td class="strong">net W ≥ 2,900 mm³ at the pin holes, or a mid support plus a proper lock</td><td>ULS crowd</td></tr>
+          <tr><th scope="row">Right lower rail hole</th><td>12.5 above the edge</td><td class="strong">≥ {edge_req(edge_s) + 5:.1f} above the free edge</td><td>top-tread link force</td></tr>
+          <tr><th scope="row">Base axle</th><td>Ø25 × 2.5, hook 70 mm off the jack, drawn as two tubes</td><td class="strong">One tube Ø45 × 5, or jacks straight under the hooks with Ø30 × 3; top axle Ø40 × 4</td><td>{ENVH['R_base'] / 1000:.1f} / {ENVH['R_top'] / 1000:.1f} kN per side (base held)</td></tr>
+          <tr><th scope="row">Hooks</th><td>10 mm plate, ring ≈ 22</td><td class="strong">Ring ≥ 57.5 mm at the base, ≥ 40 mm at the top</td><td>{ENVH['R_base'] / 1000:.1f} / {ENVH['R_top'] / 1000:.1f} kN</td></tr>
+          <tr><th scope="row">Hook locks</th><td>not drawn</td><td class="strong">Ø14 keeper pin at the base (single shear 21.8 kN), Ø12 at the top (16.0 kN); or turn the base hook so the plate sits on top of the axle</td><td>{ENVH['lock_base'] / 1000:.1f} / {ENVH['lock_top'] / 1000:.1f} kN</td></tr>
+          <tr><th scope="row">Base jacks</th><td>M24 on 100 × 100 × 5</td><td class="strong">M30 rods on 150 × 150 × 8 footplates, with a fixing for {ENVH['H_base'] / 1000:.1f} kN sideways</td><td>R73, R174</td></tr>
+          <tr><th scope="row">Poles</th><td>RHS 25 × 10 × 2</td><td class="strong">Solid 25 × 39 (3.0 kN/m) to 25 × 51 (all barrier loads), or RHS 25 × 60 × 3 / 25 × 85 × 3; slots widen or poles go outside the rails</td><td>R142, R143, R179</td></tr>
+          <tr><th scope="row">Top rail height</th><td>≈ 1,010</td><td class="strong">1,100 above the pitch line (+90 mm)</td><td>R63</td></tr>
+          <tr><th scope="row">Open riser</th><td>125</td><td class="strong">≤ 120</td><td>R7</td></tr>
+        </tbody>
+      </table></div>
+      <p class="dim">Each change, with drawings, is in the <a href="{BRIEF}">change brief</a>.</p>
+    </div>
+  </section>
+
+  <section id="f-use">
+    <div class="lab"><h2>Conditions of use</h2></div>
+    <div class="body">
+      <ul class="cond">
+        <li>Not rated for public event use. The treads fail the 4 kN point load at the nosing ({t_front['util']:.1f}×) and sag {d_crowd['value']:.0f} mm under a crowd.</li>
+        <li>The side frames stand only with every pole seated, its Ø2 pegs in both rails' notches. At the design crowd load those pegs are {latch['util']:.1f}× overloaded.</li>
+        <li>Nobody may lean on the barriers: the poles carry {barrier_carried:.2f} kN/m against 3.0 required.</li>
+        <li>The hooks lock, so the unit works between a sliding and a held base. Sliding, the frame sags {SLS['R base slides']['defl_sls']:.1f} mm against {sls_lim:.1f}. Held, each jack takes {ENVH['H_base'] / 1000:.1f} kN sideways and the hook locks carry up to {ENVH['lock_base'] / 1000:.1f} kN. Both have to pass.</li>
+        <li class="info">The top brackets need an anchor to the landing or cabin for {ENVH['R_top'] / 1000:.1f} kN per side (ULS). It's outside this model.</li>
+        <li class="info">Capacities are calculated, not type-tested. Padding on the top rail is a user note, not part of these checks.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <span>Basis: v2/final/final_results.json, from tread_fe2.py (MITC4 shell FE, exact equilibrium), tread_vlasov2.py (branched thin-walled check), side_frame.py (OpenSees 2D frame), rail_checks_final.py, component_checks_final.py and tread_fe_box.py. Loads from v2/spec/sheet_2026-09-23_events.txt.</span>
+    <span>Model: 25.9.2026 final STEP LADDER-standard.ifc · Blender: v2/final/FINAL_standard.blend (viewport colours show each part's result). Earlier load test: <a href="{REPORT}">Step Ladder Load Verdict</a>.</span>
+  </footer>
+</main>
+"""
+
+# ------------------------------------------------------------------ Rev A (kept as issued) + correction notice
+head = ASIS[:ASIS.index("</style>")]
+asis_main = ASIS[ASIS.index('<main class="sheet">'):ASIS.index("</main>") + 7]
+asis_main = asis_main.replace('<section id="', '<section id="a-')
+CORR = f"""
+  <div class="corr">
+    <span class="eyebrow">Correction · 25 Sep 2026</span>
+    <b>Rev A's tread values were wrong</b>
+    <p>Rev A treated the tread as a 280 × 50 plank. Measured part by part, it is an open J + L extrusion with a 5 mm deck, and the treads fail. Values for the 22 Sep model, re-run as a shell FE with a thin-walled cross-check:</p>
+    <ul>
+      <li>4 kN at the nosing: {aud_front['value']:.0f} MPa, {aud_front['util']:.2f}× · <b>fail</b> (Rev A showed a 7.67 kN capacity, pass)</li>
+      <li>Crowd sag at the nosing {aud_crowd['value']:.1f} mm against 4.86 · <b>fail</b>; one person {aud_person['value']:.1f} mm · pass; 4 kN sag {aud_4f['value']:.1f} mm against 12.2 · <b>fail</b></li>
+      <li>Tread pins Ø10, bending {aud_pin['util']:.2f}× on the right (14 mm lever), {aud_pin_t['util']:.2f}× with the rail's twist · <b>fail</b></li>
+      <li>Right rail hole 2.5 mm from the free edge, {aud_edge['limit']:.1f} mm needed · <b>fail</b></li>
+      <li>Material: f₀ is 250 MPa for t ≤ 5 mm (EN 1999-1-1 Table 3.2b); Rev A had 260 and 250 the wrong way round</li>
+    </ul>
+    <p>Everything else below is as issued on 23 Sep. The current issue is <a href="#final">DS-FMS-FINAL, Rev B</a>.</p>
+  </div>
+"""
+asis_main = asis_main.replace("</header>", "</header>\n" + CORR, 1)
+asis_main = asis_main.replace("<p>Issued after the final design has been load-tested, in this same layout so the two sheets compare line by line.</p>",
+                              "<p>Issued after the final design has been load-tested, in this same layout so the two sheets compare line by line.</p>\n        <p>Now issued: <a href=\"#final\">DS-FMS-FINAL, Rev B</a>.</p>")
+
+EXTRA_CSS = """
+/* issue tabs */
+.issues { max-width:1180px; margin:0 auto 26px; display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); border:1px solid var(--rule); background:var(--surface); }
+.issues button { all:unset; box-sizing:border-box; cursor:pointer; display:grid; gap:3px; padding:10px 14px 9px; border-right:1px solid var(--rule); border-bottom:3px solid transparent; color:var(--ink); }
+.issues button:last-child { border-right:0; }
+.issues button[aria-selected="true"] { background:var(--accentbg); border-bottom-color:var(--accent); }
+.issues button:focus-visible { outline:2px solid var(--accent); outline-offset:-3px; }
+.issues span { font:500 11px/1 var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--ink2); }
+.issues b { font:600 18px/1.2 var(--display); }
+.issues i { font-style:normal; font-size:12.5px; color:var(--ink2); }
+/* utilisation ladder */
+.ladder { background:var(--surface); border:1px solid var(--rule); padding:12px 14px 8px; display:grid; gap:7px; }
+.lrow, .laxis { display:grid; grid-template-columns:minmax(150px,270px) minmax(0,1fr) 52px; gap:4px 14px; align-items:center; }
+.lname { display:grid; gap:1px; min-width:0; }
+.lname b { font-weight:600; font-size:13.5px; }
+.lname span { font-size:12px; color:var(--ink2); }
+.ltrack { position:relative; height:12px; background:var(--soft); }
+.ltrack i { position:absolute; left:0; top:0; bottom:0; }
+.ltrack i.pass { background:var(--pass); }
+.ltrack i.fail { background:var(--fail); }
+.ltrack::after { content:""; position:absolute; left:48.7%; top:-4px; bottom:-4px; border-left:2px solid var(--ink); }
+.lval { font:500 13px var(--mono); font-variant-numeric:tabular-nums; text-align:right; }
+.lval.ok { color:var(--pass); } .lval.bad { color:var(--fail); }
+.laxis .ticks { position:relative; height:16px; font:500 11px/16px var(--mono); color:var(--ink2); }
+.laxis .ticks span { position:absolute; top:0; transform:translateX(-50%); }
+@media (max-width: 560px) {
+  .lrow, .laxis { grid-template-columns:minmax(0,1fr) 46px; }
+  .lname { grid-column:1 / -1; }
+  .laxis > div:first-child { display:none; }
+}
+/* smallest-size box and correction notice */
+.figs em { font-style:normal; font-size:12.5px; color:var(--ink2); }
+.fix { background:var(--passbg); border:1px solid var(--rule); border-left:3px solid var(--pass); padding:12px 14px; display:grid; gap:6px; font-size:13.5px; }
+.fix b { font:600 18px/1.25 var(--display); }
+.corr { background:var(--surface); border:1px solid var(--rule); border-left:3px solid var(--fail); padding:14px 16px; display:grid; gap:8px; }
+.corr b { font:600 20px/1.2 var(--display); }
+.corr ul { margin:0; padding-left:18px; display:grid; gap:3px; }
+td.bad { color:var(--fail); }
+h3 { font-size:19px; font-weight:600; }
+"""
+LADDER_ONE = f"{pos(1.0):.1f}%"
+EXTRA_CSS = EXTRA_CSS.replace("left:48.7%", f"left:{LADDER_ONE}")
+
+SCRIPT = """
+<script>
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.issues button'));
+  function show(id, scroll) {
+    document.querySelectorAll('.doc').forEach(function (d) { d.hidden = d.id !== id; });
+    tabs.forEach(function (t) { t.setAttribute('aria-selected', String(t.dataset.doc === id)); });
+    if (scroll) window.scrollTo(0, 0);
+  }
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () { show(t.dataset.doc, false); try { history.replaceState(null, '', '#' + t.dataset.doc); } catch (e) {} });
+  });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href="#final"], a[href="#asis"]');
+    if (!a) return;
+    e.preventDefault(); var id = a.getAttribute('href').slice(1); show(id, true);
+    try { history.replaceState(null, '', '#' + id); } catch (err) {}
+  });
+  if (location.hash === '#asis') show('asis', false);
+})();
+</script>
+"""
+
+page = (head + EXTRA_CSS + "</style>\n\n"
+        + '<nav class="issues" role="tablist" aria-label="Datasheet issue">\n'
+        + '  <button type="button" role="tab" data-doc="final" aria-selected="true"><span>Current issue</span><b>DS-FMS-FINAL · Rev B</b><i>25 Sep 2026 final model</i></button>\n'
+        + '  <button type="button" role="tab" data-doc="asis" aria-selected="false"><span>Superseded</span><b>DS-FMS-ASIS · Rev A</b><i>22 Sep 2026 model, with corrections</i></button>\n'
+        + '</nav>\n'
+        + '<div class="doc" id="final">' + FINAL + '</div>\n'
+        + '<div class="doc" id="asis" hidden>\n' + asis_main + '\n</div>\n' + SCRIPT)
+out = os.path.join(HERE, "web", "index.html")
+open(out, "w", encoding="utf8").write(page)
+print(f"wrote {out}: {len(page):,} chars; ladder {n_fail} fail / {n_pass} pass; crowd carried {crowd_carried:.2f}; barrier {barrier_carried:.3f}; edge {edge_up:.2f}/{edge_us:.2f} (tread-only {edge_tread_only:.2f})")

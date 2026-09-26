@@ -1,0 +1,136 @@
+{
+ "steps": {
+  "A_extruded_6082": {
+   "util": 0.4112692975494805,
+   "mass": 5.9321025,
+   "note": "one extrusion, no welds"
+  },
+  "A_bent_6082_welded": {
+   "util": 0.822538595098961,
+   "mass": 5.9321025,
+   "note": "bent 6082-T6 sheet, bottom and webs welded"
+  },
+  "A_bent_5083_welded": {
+   "util": 0.822538595098961,
+   "mass": 5.9321025,
+   "note": "bent 5083-H111 sheet, welded anywhere (no weld weakening)"
+  },
+  "B_owner_2mm_riveted": {
+   "util": 0.5644214663509526,
+   "mass": 6.95995875
+  },
+  "B_owner_3mm_welded": {
+   "util": 0.93,
+   "mass": 7.8472462499999995,
+   "note": "weld-zone value from each plate's peak next to the J and L"
+  },
+  "C_grating_46_nosing8": {
+   "util": 0.8096300512740058,
+   "mass": 6.1759125
+  },
+  "C_grating_34_nosing8": {
+   "util": 0.7227335247320983,
+   "mass": 7.1438625
+  },
+  "sls": {
+   "A": {
+    "sag4": 3.5692187556165234,
+    "crowd": 1.1472369594035694,
+    "person": 1.201919561581714
+   },
+   "C46": {
+    "sag4": 9.203296553225627,
+    "crowd": 3.042055974679496,
+    "person": 3.1128408824440137
+   },
+   "C34": {
+    "sag4": 8.248413698570795,
+    "crowd": 2.475894174933019,
+    "person": 2.8966879007398965
+   },
+   "B2": {
+    "sag4": 6.662614715297988,
+    "crowd": 2.254571646536186,
+    "person": 1.907611418311285
+   }
+  }
+ },
+ "step_pins": {
+  "d20": {
+   "bending": 0.6628234666114127,
+   "shear": 0.25076569727020054
+  },
+  "d16_gap7": {
+   "bending": 0.6472885416127077,
+   "shear": 0.39182140198468834
+  }
+ },
+ "pegs": {
+  "d": 12,
+  "bending": 0.578832773894339,
+  "shear": 0.18395109339862467,
+  "bearing": 0.16366111111111112
+ },
+ "poles": {
+  "R1_tapered_solid_25x55": {
+   "util": 0.8397223140495869,
+   "mass12": 35.42174316205038
+  },
+  "R2_flat_bar_60x25": {
+   "util": 0.7056,
+   "mass12": 55.3068
+  },
+  "R2_rhs_80x40x3": {
+   "util": 0.7579870088016444,
+   "mass12": 25.2199008
+  }
+ },
+ "pole_fix": {
+  "F_kN": 14.391616596551598,
+  "pin16_6082_shear": 0.505494553412903,
+  "bearing_5mm_wall_d16": 0.5996506915229832
+ },
+ "rails": {
+  "net_W_left": 7494,
+  "net_W_right": 7193,
+  "W_needed": 2900,
+  "util_net": 0.4031697483664674,
+  "lateral_left": 0.51,
+  "lateral_right": 0.82,
+  "edge_util_18mm": 0.9665100918771423,
+  "edge_util_20mm": 0.869859082689428
+ },
+ "axles": {
+  "scaffold_ground": 0.6,
+  "scaffold_clamped": 0.96,
+  "jack_under_hook_d30_clamped_shear": 0.83,
+  "top_scaffold_clamped": 0.6116136565631376,
+  "top_scaffold_ground": 0.2722325493482303
+ },
+ "hook_locks": {
+  "base_kN": 17.746580009633064,
+  "top_kN": 11.320530660478145,
+  "d14_single_shear": 0.8141519461284785,
+  "d12_single_shear": 0.7068888940044161
+ },
+ "jacks": {
+  "m24_ground": 0.820798459304225,
+  "m30_clamped": 0.8775786400365848,
+  "footplate_150x8_clamped": 0.89
+ },
+ "brackets": {
+  "w25": 0.9035999999999998
+ },
+ "landing_bracket": {
+  "pin": 0.25,
+  "plate": 0.38,
+  "anchor_kN": 11.320530660478145
+ },
+ "mass_unit": {
+  "route1": 98.2105062117642,
+  "route2": 88.00866384971381,
+  "now": 61.20133063,
+  "rails": 14.65182,
+  "axles": 4.208578049713802
+ }
+}

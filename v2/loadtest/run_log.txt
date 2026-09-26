@@ -1,0 +1,842 @@
+
+=== SINGLE_CATWALK  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.676 / 3.585      kNm  util   0.188  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                3.143 / 0.501      kNm  util   6.277  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              196.561 / 18.31      mm   util  10.735  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=26 mm)              446.966 / 355.0      MPa  util   1.259  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                     31.888 / 18.31      mm   util   1.742  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     3.129 / 0.21       kNm  util  14.918  INFO  hand SS moment 3.143 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            2572.377 / 355.0      MPa  util   7.246  FAIL  upper 803 / lower 2572 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                  45.558 / 18.31      mm   util   2.488  FAIL  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 2542.178 / 355.0      MPa  util   7.161  INFO  diag force 30.7 kN
+  L61     hand Axle tube shear (per side)                                      77.109 / 204.959    MPa  util   0.376  PASS  
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)               11.212 / 532.5      MPa  util   0.021  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.083 / 0.148      kNm  util  14.046  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.526 / 0.148      kNm  util  10.289  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.393 / 0.148      kNm  util   2.651  FAIL  top defl 347 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.439 / 0.148      kNm  util   9.705  FAIL  top defl 1350 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1111.1     mm   util    0.99  PASS  
+  L40     hand Overturning (EQU) crowd on outer rail, self-weight only          9.794 / 0.713      kNm  util  13.739  FAIL  FoS=0.12 (need 1.5); ballast/anchor 1444 kg
+  L7/L24  hand Sliding under crowd line load (mu=0.30, no crowd weight)         7.766 / 0.337      kN   util  23.079  FAIL  
+  L30     hand Vertical natural frequency >= 5 Hz (else dynamic check)            5.0 / 6.237      Hz   util   0.802  PASS  unbraced bars, self weight only
+  L26     hand Footbridge 10 kN point (informative): girder                     3.433 / 0.501      kNm  util   6.856  INFO  only if the catwalk is classed as a footbridge (service-vehicle access)
+
+=== SINGLE_STANDARD  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.556 / 3.585      kNm  util   0.155  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                2.137 / 0.501      kNm  util   4.267  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              134.206 / 18.31      mm   util    7.33  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=136 mm)              57.281 / 355.0      MPa  util   0.161  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      0.917 / 18.31      mm   util    0.05  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     2.125 / 0.21       kNm  util  10.133  INFO  hand SS moment 2.137 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            1424.315 / 355.0      MPa  util   4.012  FAIL  upper 129 / lower 1424 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                   7.293 / 18.31      mm   util   0.398  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 1429.412 / 355.0      MPa  util   4.027  INFO  diag force 12.8 kN
+  L61     hand Axle tube shear (per side)                                      51.236 / 204.959    MPa  util    0.25  PASS  
+  L61     hand Top hook (5x11.9 throat) tension+bending                       740.497 / 355.0      MPa  util   2.086  FAIL  hook load 4.25 kN, e=18.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                9.286 / 532.5      MPa  util   0.017  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.113 / 0.148      kNm  util  14.247  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.548 / 0.148      kNm  util  10.436  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)             0.43 / 0.148      kNm  util   2.897  FAIL  top defl 322 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.808 / 0.148      kNm  util  12.189  FAIL  top defl 1359 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1127.0     mm   util   0.976  PASS  
+  L40     hand Overturning                                                        0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+
+=== SINGLE_STEEP  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.445 / 3.585      kNm  util   0.124  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                1.371 / 0.501      kNm  util   2.737  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                                86.49 / 18.31      mm   util   4.724  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=169 mm)              29.558 / 355.0      MPa  util   0.083  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      0.384 / 18.31      mm   util   0.021  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     1.361 / 0.21       kNm  util   6.489  INFO  hand SS moment 1.371 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)             810.722 / 355.0      MPa  util   2.284  FAIL  upper 74 / lower 811 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                   3.458 / 18.31      mm   util   0.189  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                  813.937 / 355.0      MPa  util   2.293  INFO  diag force 6.6 kN
+  L61     hand Axle tube shear (per side)                                      32.177 / 204.959    MPa  util   0.157  PASS  
+  L61     hand Top hook (5x11.9 throat) tension+bending                       488.152 / 355.0      MPa  util   1.375  FAIL  hook load 2.80 kN, e=18.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                7.492 / 532.5      MPa  util   0.014  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.179 / 0.148      kNm  util   14.69  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.596 / 0.148      kNm  util   10.76  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)             0.45 / 0.148      kNm  util   3.032  FAIL  top defl 311 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.893 / 0.148      kNm  util  12.762  FAIL  top defl 1320 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1162.0     mm   util   0.947  PASS  
+  L40     hand Overturning                                                        0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+
+=== SINGLE_BAR  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.556 / 3.585      kNm  util   0.155  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                2.137 / 0.501      kNm  util   4.267  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              134.206 / 18.31      mm   util    7.33  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=136 mm)              57.281 / 355.0      MPa  util   0.161  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      0.917 / 18.31      mm   util    0.05  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     2.125 / 0.21       kNm  util  10.133  INFO  hand SS moment 2.137 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            1424.315 / 355.0      MPa  util   4.012  FAIL  upper 129 / lower 1424 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                   7.293 / 18.31      mm   util   0.398  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 1429.412 / 355.0      MPa  util   4.027  INFO  diag force 12.8 kN
+  L61     hand Axle tube shear (per side)                                      51.236 / 204.959    MPa  util    0.25  PASS  
+  L61     hand Top hook (5x11.9 throat) tension+bending                       740.497 / 355.0      MPa  util   2.086  FAIL  hook load 4.25 kN, e=18.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                9.286 / 532.5      MPa  util   0.017  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.113 / 0.148      kNm  util  14.247  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.548 / 0.148      kNm  util  10.436  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)             0.43 / 0.148      kNm  util   2.897  FAIL  top defl 322 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.808 / 0.148      kNm  util  12.189  FAIL  top defl 1359 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1127.0     mm   util   0.976  PASS  
+  L40     hand Overturning                                                        0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+
+=== DOUBLE_CATWALK  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.676 / 3.585      kNm  util   0.188  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                3.143 / 0.501      kNm  util   6.277  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              196.561 / 18.31      mm   util  10.735  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=26 mm)              446.966 / 355.0      MPa  util   1.259  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                     31.888 / 18.31      mm   util   1.742  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     3.129 / 0.21       kNm  util  14.918  INFO  hand SS moment 3.143 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            2572.377 / 355.0      MPa  util   7.246  FAIL  upper 803 / lower 2572 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                  45.558 / 18.31      mm   util   2.488  FAIL  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 2542.178 / 355.0      MPa  util   7.161  INFO  diag force 30.7 kN
+  L61     hand Axle tube shear (per side)                                      77.109 / 204.959    MPa  util   0.376  PASS  
+  L61     hand Top hook (5x11.9 throat) tension+bending                      1061.013 / 355.0      MPa  util   2.989  FAIL  hook load 6.09 kN, e=18.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)               11.212 / 532.5      MPa  util   0.021  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.083 / 0.148      kNm  util  14.046  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.526 / 0.148      kNm  util  10.289  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.393 / 0.148      kNm  util   2.651  FAIL  top defl 347 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.439 / 0.148      kNm  util   9.705  FAIL  top defl 1350 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1111.1     mm   util    0.99  PASS  
+  L40     hand Overturning (EQU) crowd on outer rail, self-weight only         19.588 / 1.426      kNm  util  13.739  FAIL  FoS=0.12 (need 1.5); ballast/anchor 2888 kg
+  L7/L24  hand Sliding under crowd line load (mu=0.30, no crowd weight)        15.532 / 0.673      kN   util  23.079  FAIL  
+  L30     hand Vertical natural frequency >= 5 Hz (else dynamic check)            5.0 / 6.237      Hz   util   0.802  PASS  unbraced bars, self weight only
+  L26     hand Footbridge 10 kN point (informative): girder                     3.433 / 0.501      kNm  util   6.856  INFO  only if the catwalk is classed as a footbridge (service-vehicle access)
+  L61     hand Joint WITHOUT mid support: moment vs hook+connector couple      12.413 / 0.32       kNm  util  38.791  FAIL  => a support/trestle under the joint is REQUIRED
+  L51     hand Joint WITH mid support: support reaction (per side)             12.184 / 1000000000.0 kN   util     0.0  INFO  design trestle for 24.4 kN ULS total
+
+=== DOUBLE_STANDARD  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.556 / 3.585      kNm  util   0.155  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                2.137 / 0.501      kNm  util   4.267  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              134.206 / 18.31      mm   util    7.33  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=136 mm)              57.281 / 355.0      MPa  util   0.161  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      0.917 / 18.31      mm   util    0.05  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     2.125 / 0.21       kNm  util  10.133  INFO  hand SS moment 2.137 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            1424.315 / 355.0      MPa  util   4.012  FAIL  upper 129 / lower 1424 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                   7.293 / 18.31      mm   util   0.398  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 1429.412 / 355.0      MPa  util   4.027  INFO  diag force 12.8 kN
+  L61     hand Axle tube shear (per side)                                      51.236 / 204.959    MPa  util    0.25  PASS  
+  L61     hand Top hook (5x11.9 throat) tension+bending                       740.497 / 355.0      MPa  util   2.086  FAIL  hook load 4.25 kN, e=18.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                9.286 / 532.5      MPa  util   0.017  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.113 / 0.148      kNm  util  14.247  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.548 / 0.148      kNm  util  10.436  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)             0.43 / 0.148      kNm  util   2.897  FAIL  top defl 322 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.808 / 0.148      kNm  util  12.189  FAIL  top defl 1359 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1127.0     mm   util   0.976  PASS  
+  L40     hand Overturning                                                        0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+  L61     hand Joint WITHOUT mid support: moment vs hook+connector couple       8.435 / 0.32       kNm  util  26.358  FAIL  => a support/trestle under the joint is REQUIRED
+  L51     hand Joint WITH mid support: support reaction (per side)              8.503 / 1000000000.0 kN   util     0.0  INFO  design trestle for 17.0 kN ULS total
+
+=== DOUBLE_STEEP  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.445 / 3.585      kNm  util   0.124  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                1.371 / 0.501      kNm  util   2.737  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                                86.49 / 18.31      mm   util   4.724  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=169 mm)              29.558 / 355.0      MPa  util   0.083  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      0.384 / 18.31      mm   util   0.021  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     1.361 / 0.21       kNm  util   6.489  INFO  hand SS moment 1.371 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)             810.722 / 355.0      MPa  util   2.284  FAIL  upper 74 / lower 811 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                   3.458 / 18.31      mm   util   0.189  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                  813.937 / 355.0      MPa  util   2.293  INFO  diag force 6.6 kN
+  L61     hand Axle tube shear (per side)                                      32.177 / 204.959    MPa  util   0.157  PASS  
+  L61     hand Top hook (5x11.9 throat) tension+bending                       488.152 / 355.0      MPa  util   1.375  FAIL  hook load 2.80 kN, e=18.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                7.492 / 532.5      MPa  util   0.014  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.179 / 0.148      kNm  util   14.69  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.596 / 0.148      kNm  util   10.76  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)             0.45 / 0.148      kNm  util   3.032  FAIL  top defl 311 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.893 / 0.148      kNm  util  12.762  FAIL  top defl 1320 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1162.0     mm   util   0.947  PASS  
+  L40     hand Overturning                                                        0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+  L61     hand Joint WITHOUT mid support: moment vs hook+connector couple       5.419 / 0.32       kNm  util  16.933  FAIL  => a support/trestle under the joint is REQUIRED
+  L51     hand Joint WITH mid support: support reaction (per side)              5.606 / 1000000000.0 kN   util     0.0  INFO  design trestle for 11.2 kN ULS total
+
+=== WIDE_CATWALK_FULL  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.676 / 3.585      kNm  util   0.188  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                3.143 / 0.501      kNm  util   6.277  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              196.561 / 18.31      mm   util  10.735  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=26 mm)              446.966 / 355.0      MPa  util   1.259  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                     31.888 / 18.31      mm   util   1.742  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     3.129 / 0.21       kNm  util  14.918  INFO  hand SS moment 3.143 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            2572.377 / 355.0      MPa  util   7.246  FAIL  upper 803 / lower 2572 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                  45.558 / 18.31      mm   util   2.488  FAIL  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 2542.178 / 355.0      MPa  util   7.161  INFO  diag force 30.7 kN
+  L61     hand Axle tube shear (per side)                                      77.109 / 204.959    MPa  util   0.376  PASS  
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)               11.212 / 532.5      MPa  util   0.021  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.083 / 0.148      kNm  util  14.046  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.526 / 0.148      kNm  util  10.289  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.393 / 0.148      kNm  util   2.651  FAIL  top defl 347 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.439 / 0.148      kNm  util   9.705  FAIL  top defl 1350 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1111.1     mm   util    0.99  PASS  
+  L40     hand Overturning (EQU) crowd on outer rail, self-weight only          9.794 / 2.851      kNm  util   3.435  FAIL  FoS=0.49 (need 1.5); ballast/anchor 531 kg
+  L7/L24  hand Sliding under crowd line load (mu=0.30, no crowd weight)         7.766 / 0.673      kN   util  11.539  FAIL  
+  L30     hand Vertical natural frequency >= 5 Hz (else dynamic check)            5.0 / 6.237      Hz   util   0.802  PASS  unbraced bars, self weight only
+  L26     hand Footbridge 10 kN point (informative): girder                     3.433 / 0.501      kNm  util   6.856  INFO  only if the catwalk is classed as a footbridge (service-vehicle access)
+
+=== WIDE_CATWALK_MINI  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.676 / 3.585      kNm  util   0.188  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                3.143 / 0.501      kNm  util   6.277  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              196.561 / 18.31      mm   util  10.735  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=26 mm)              446.966 / 355.0      MPa  util   1.259  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                     31.888 / 18.31      mm   util   1.742  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     3.129 / 0.21       kNm  util  14.918  INFO  hand SS moment 3.143 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            2572.377 / 355.0      MPa  util   7.246  FAIL  upper 803 / lower 2572 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                  45.558 / 18.31      mm   util   2.488  FAIL  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 2542.178 / 355.0      MPa  util   7.161  INFO  diag force 30.7 kN
+  L61     hand Axle tube shear (per side)                                      77.109 / 204.959    MPa  util   0.376  PASS  
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)               11.212 / 532.5      MPa  util   0.021  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.083 / 0.148      kNm  util  14.046  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.526 / 0.148      kNm  util  10.289  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.393 / 0.148      kNm  util   2.651  FAIL  top defl 347 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.439 / 0.148      kNm  util   9.705  FAIL  top defl 1350 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1111.1     mm   util    0.99  PASS  
+  L40     hand Overturning (EQU) crowd on outer rail, self-weight only          9.794 / 2.851      kNm  util   3.435  FAIL  FoS=0.49 (need 1.5); ballast/anchor 531 kg
+  L7/L24  hand Sliding under crowd line load (mu=0.30, no crowd weight)         7.766 / 0.673      kN   util  11.539  FAIL  
+  L30     hand Vertical natural frequency >= 5 Hz (else dynamic check)            5.0 / 6.237      Hz   util   0.802  PASS  unbraced bars, self weight only
+  L26     hand Footbridge 10 kN point (informative): girder                     3.433 / 0.501      kNm  util   6.856  INFO  only if the catwalk is classed as a footbridge (service-vehicle access)
+
+=== WIDE_STANDARD  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.556 / 3.585      kNm  util   0.155  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                2.137 / 0.501      kNm  util   4.267  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              134.206 / 18.31      mm   util    7.33  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=136 mm)              57.281 / 355.0      MPa  util   0.161  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      0.917 / 18.31      mm   util    0.05  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     2.125 / 0.21       kNm  util  10.133  INFO  hand SS moment 2.137 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            1424.315 / 355.0      MPa  util   4.012  FAIL  upper 129 / lower 1424 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                   7.293 / 18.31      mm   util   0.398  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 1429.412 / 355.0      MPa  util   4.027  INFO  diag force 12.8 kN
+  L61     hand Axle tube shear (per side)                                      51.236 / 204.959    MPa  util    0.25  PASS  
+  L61     hand Top hook (5x11.9 throat) tension+bending                       740.497 / 355.0      MPa  util   2.086  FAIL  hook load 4.25 kN, e=18.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                9.286 / 532.5      MPa  util   0.017  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.113 / 0.148      kNm  util  14.247  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.548 / 0.148      kNm  util  10.436  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)             0.43 / 0.148      kNm  util   2.897  FAIL  top defl 322 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.808 / 0.148      kNm  util  12.189  FAIL  top defl 1359 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1127.0     mm   util   0.976  PASS  
+  L40     hand Overturning                                                        0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+
+=== WIDE_STEEP  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.445 / 3.585      kNm  util   0.124  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                1.371 / 0.501      kNm  util   2.737  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                                86.49 / 18.31      mm   util   4.724  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=169 mm)              29.558 / 355.0      MPa  util   0.083  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      0.384 / 18.31      mm   util   0.021  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     1.361 / 0.21       kNm  util   6.489  INFO  hand SS moment 1.371 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)             810.722 / 355.0      MPa  util   2.284  FAIL  upper 74 / lower 811 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                   3.458 / 18.31      mm   util   0.189  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                  813.937 / 355.0      MPa  util   2.293  INFO  diag force 6.6 kN
+  L61     hand Axle tube shear (per side)                                      32.177 / 204.959    MPa  util   0.157  PASS  
+  L61     hand Top hook (5x11.9 throat) tension+bending                       488.152 / 355.0      MPa  util   1.375  FAIL  hook load 2.80 kN, e=18.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                7.492 / 532.5      MPa  util   0.014  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.179 / 0.148      kNm  util   14.69  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.596 / 0.148      kNm  util   10.76  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)             0.45 / 0.148      kNm  util   3.032  FAIL  top defl 311 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.893 / 0.148      kNm  util  12.762  FAIL  top defl 1320 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1162.0     mm   util   0.947  PASS  
+  L40     hand Overturning                                                        0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+
+BASIS A: self weight per unit 127.0 kg
+Max characteristic UDL (kN/m2) per lock: {"CATWALK": {"unbraced": 0.81, "truss": 5.87, "locked_fe": 0.66}, "STANDARD": {"unbraced": 1.33, "truss": 30.0, "locked_fe": 1.47}, "STEEP": {"unbraced": 2.3, "truss": 30.0, "locked_fe": 2.91}}
+Lower bar depth needed (25 wide, locked FE, 7.5 kN/m2): {"CATWALK": 42, "STANDARD": 25, "STEEP": 21}
+Hook throat needed for 6.09 kN: {"t=5": 24.5, "t=8": 18.0, "t=10": 15.5}
+Post: 6137 mm3 -> SHS 40x40x4
+
+=== SINGLE_CATWALK  [B]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.676 / 3.585      kNm  util   0.188  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                3.068 / 0.308      kNm  util    9.97  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              585.702 / 18.31      mm   util  31.988  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=26 mm)              436.326 / 218.182    MPa  util     2.0  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                     95.018 / 18.31      mm   util   5.189  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     3.064 / 0.129      kNm  util   23.77  INFO  hand SS moment 3.068 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            2515.692 / 218.182    MPa  util   11.53  FAIL  upper 785 / lower 2516 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                 133.107 / 18.31      mm   util    7.27  FAIL  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 2482.518 / 218.182    MPa  util  11.378  INFO  diag force 29.2 kN
+  L61     hand Axle tube shear (per side)                                      75.303 / 125.967    MPa  util   0.598  PASS  
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                 11.0 / 327.273    MPa  util   0.034  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.083 / 0.091      kNm  util  22.854  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.526 / 0.091      kNm  util   16.74  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.394 / 0.091      kNm  util   4.318  FAIL  top defl 1055 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.439 / 0.091      kNm  util   15.79  FAIL  top defl 4108 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.469      kNm  util   0.305  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1111.1     mm   util    0.99  PASS  
+  L40     hand Overturning (EQU) crowd on outer rail, self-weight only          9.794 / 0.402      kNm  util  24.376  FAIL  FoS=0.07 (need 1.5); ballast/anchor 1499 kg
+  L7/L24  hand Sliding under crowd line load (mu=0.30, no crowd weight)         7.766 / 0.19       kN   util  40.945  FAIL  
+  L30     hand Vertical natural frequency >= 5 Hz (else dynamic check)            5.0 / 4.762      Hz   util    1.05  FAIL  unbraced bars, self weight only
+  L26     hand Footbridge 10 kN point (informative): girder                     3.433 / 0.308      kNm  util  11.155  INFO  only if the catwalk is classed as a footbridge (service-vehicle access)
+
+=== SINGLE_STANDARD  [B]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.556 / 3.585      kNm  util   0.155  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                2.076 / 0.308      kNm  util   6.744  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              398.137 / 18.31      mm   util  21.744  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=136 mm)              55.638 / 218.182    MPa  util   0.255  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      2.721 / 18.31      mm   util   0.149  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     2.072 / 0.129      kNm  util  16.075  INFO  hand SS moment 2.076 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            1385.644 / 218.182    MPa  util   6.351  FAIL  upper 126 / lower 1386 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                  21.434 / 18.31      mm   util   1.171  FAIL  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 1390.591 / 218.182    MPa  util   6.374  INFO  diag force 12.5 kN
+  L61     hand Axle tube shear (per side)                                      49.783 / 125.967    MPa  util   0.395  PASS  
+  L61     hand Top hook (5x11.9 throat) tension+bending                       718.826 / 218.182    MPa  util   3.295  FAIL  hook load 4.13 kN, e=18.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                9.073 / 327.273    MPa  util   0.028  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.113 / 0.091      kNm  util  23.181  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.548 / 0.091      kNm  util   16.98  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.429 / 0.091      kNm  util   4.705  FAIL  top defl 981 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.804 / 0.091      kNm  util  19.795  FAIL  top defl 4141 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.469      kNm  util   0.305  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1127.0     mm   util   0.976  PASS  
+  L40     hand Overturning                                                        0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+
+=== SINGLE_STEEP  [B]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.445 / 3.585      kNm  util   0.124  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                1.322 / 0.308      kNm  util   4.296  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              255.003 / 18.31      mm   util  13.927  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=169 mm)              28.511 / 218.182    MPa  util   0.131  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      1.131 / 18.31      mm   util   0.062  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     1.319 / 0.129      kNm  util  10.232  INFO  hand SS moment 1.322 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)             783.515 / 218.182    MPa  util   3.591  FAIL  upper 72 / lower 784 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                   10.09 / 18.31      mm   util   0.551  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                  786.609 / 218.182    MPa  util   3.605  INFO  diag force 6.4 kN
+  L61     hand Axle tube shear (per side)                                      31.044 / 125.967    MPa  util   0.246  PASS  
+  L61     hand Top hook (5x11.9 throat) tension+bending                       470.585 / 218.182    MPa  util   2.157  FAIL  hook load 2.70 kN, e=18.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                7.279 / 327.273    MPa  util   0.022  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.179 / 0.091      kNm  util  23.901  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.596 / 0.091      kNm  util  17.507  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.449 / 0.091      kNm  util   4.928  FAIL  top defl 947 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.891 / 0.091      kNm  util   20.74  FAIL  top defl 4024 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.469      kNm  util   0.305  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1162.0     mm   util   0.947  PASS  
+  L40     hand Overturning                                                        0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+
+=== SINGLE_BAR  [B]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.556 / 3.585      kNm  util   0.155  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                2.076 / 0.308      kNm  util   6.744  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              398.137 / 18.31      mm   util  21.744  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=136 mm)              55.638 / 218.182    MPa  util   0.255  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      2.721 / 18.31      mm   util   0.149  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     2.072 / 0.129      kNm  util  16.075  INFO  hand SS moment 2.076 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            1385.644 / 218.182    MPa  util   6.351  FAIL  upper 126 / lower 1386 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                  21.434 / 18.31      mm   util   1.171  FAIL  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 1390.591 / 218.182    MPa  util   6.374  INFO  diag force 12.5 kN
+  L61     hand Axle tube shear (per side)                                      49.783 / 125.967    MPa  util   0.395  PASS  
+  L61     hand Top hook (5x11.9 throat) tension+bending                       718.826 / 218.182    MPa  util   3.295  FAIL  hook load 4.13 kN, e=18.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                9.073 / 327.273    MPa  util   0.028  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.113 / 0.091      kNm  util  23.181  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.548 / 0.091      kNm  util   16.98  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.429 / 0.091      kNm  util   4.705  FAIL  top defl 981 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.804 / 0.091      kNm  util  19.795  FAIL  top defl 4141 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.469      kNm  util   0.305  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1127.0     mm   util   0.976  PASS  
+  L40     hand Overturning                                                        0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+
+=== DOUBLE_CATWALK  [B]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.676 / 3.585      kNm  util   0.188  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                3.068 / 0.308      kNm  util    9.97  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              585.702 / 18.31      mm   util  31.988  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=26 mm)              436.326 / 218.182    MPa  util     2.0  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                     95.018 / 18.31      mm   util   5.189  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     3.064 / 0.129      kNm  util   23.77  INFO  hand SS moment 3.068 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            2515.692 / 218.182    MPa  util   11.53  FAIL  upper 785 / lower 2516 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                 133.107 / 18.31      mm   util    7.27  FAIL  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 2482.518 / 218.182    MPa  util  11.378  INFO  diag force 29.2 kN
+  L61     hand Axle tube shear (per side)                                      75.303 / 125.967    MPa  util   0.598  PASS  
+  L61     hand Top hook (5x11.9 throat) tension+bending                        1035.1 / 218.182    MPa  util   4.744  FAIL  hook load 5.94 kN, e=18.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                 11.0 / 327.273    MPa  util   0.034  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.083 / 0.091      kNm  util  22.854  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.526 / 0.091      kNm  util   16.74  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.394 / 0.091      kNm  util   4.318  FAIL  top defl 1055 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.439 / 0.091      kNm  util   15.79  FAIL  top defl 4108 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.469      kNm  util   0.305  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1111.1     mm   util    0.99  PASS  
+  L40     hand Overturning (EQU) crowd on outer rail, self-weight only         19.588 / 0.804      kNm  util  24.376  FAIL  FoS=0.07 (need 1.5); ballast/anchor 2999 kg
+  L7/L24  hand Sliding under crowd line load (mu=0.30, no crowd weight)        15.532 / 0.379      kN   util  40.945  FAIL  
+  L30     hand Vertical natural frequency >= 5 Hz (else dynamic check)            5.0 / 4.762      Hz   util    1.05  FAIL  unbraced bars, self weight only
+  L26     hand Footbridge 10 kN point (informative): girder                     3.433 / 0.308      kNm  util  11.155  INFO  only if the catwalk is classed as a footbridge (service-vehicle access)
+  L61     hand Joint WITHOUT mid support: moment vs hook+connector couple      12.117 / 0.197      kNm  util   61.61  FAIL  => a support/trestle under the joint is REQUIRED
+  L51     hand Joint WITH mid support: support reaction (per side)             11.886 / 1000000000.0 kN   util     0.0  INFO  design trestle for 23.8 kN ULS total
+
+=== DOUBLE_STANDARD  [B]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.556 / 3.585      kNm  util   0.155  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                2.076 / 0.308      kNm  util   6.744  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              398.137 / 18.31      mm   util  21.744  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=136 mm)              55.638 / 218.182    MPa  util   0.255  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      2.721 / 18.31      mm   util   0.149  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     2.072 / 0.129      kNm  util  16.075  INFO  hand SS moment 2.076 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            1385.644 / 218.182    MPa  util   6.351  FAIL  upper 126 / lower 1386 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                  21.434 / 18.31      mm   util   1.171  FAIL  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 1390.591 / 218.182    MPa  util   6.374  INFO  diag force 12.5 kN
+  L61     hand Axle tube shear (per side)                                      49.783 / 125.967    MPa  util   0.395  PASS  
+  L61     hand Top hook (5x11.9 throat) tension+bending                       718.826 / 218.182    MPa  util   3.295  FAIL  hook load 4.13 kN, e=18.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                9.073 / 327.273    MPa  util   0.028  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.113 / 0.091      kNm  util  23.181  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.548 / 0.091      kNm  util   16.98  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.429 / 0.091      kNm  util   4.705  FAIL  top defl 981 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.804 / 0.091      kNm  util  19.795  FAIL  top defl 4141 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.469      kNm  util   0.305  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1127.0     mm   util   0.976  PASS  
+  L40     hand Overturning                                                        0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+  L61     hand Joint WITHOUT mid support: moment vs hook+connector couple       8.192 / 0.197      kNm  util  41.653  FAIL  => a support/trestle under the joint is REQUIRED
+  L51     hand Joint WITH mid support: support reaction (per side)              8.254 / 1000000000.0 kN   util     0.0  INFO  design trestle for 16.5 kN ULS total
+
+=== DOUBLE_STEEP  [B]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.445 / 3.585      kNm  util   0.124  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                1.322 / 0.308      kNm  util   4.296  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              255.003 / 18.31      mm   util  13.927  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=169 mm)              28.511 / 218.182    MPa  util   0.131  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      1.131 / 18.31      mm   util   0.062  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     1.319 / 0.129      kNm  util  10.232  INFO  hand SS moment 1.322 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)             783.515 / 218.182    MPa  util   3.591  FAIL  upper 72 / lower 784 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                   10.09 / 18.31      mm   util   0.551  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                  786.609 / 218.182    MPa  util   3.605  INFO  diag force 6.4 kN
+  L61     hand Axle tube shear (per side)                                      31.044 / 125.967    MPa  util   0.246  PASS  
+  L61     hand Top hook (5x11.9 throat) tension+bending                       470.585 / 218.182    MPa  util   2.157  FAIL  hook load 2.70 kN, e=18.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                7.279 / 327.273    MPa  util   0.022  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.179 / 0.091      kNm  util  23.901  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.596 / 0.091      kNm  util  17.507  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.449 / 0.091      kNm  util   4.928  FAIL  top defl 947 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.891 / 0.091      kNm  util   20.74  FAIL  top defl 4024 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.469      kNm  util   0.305  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1162.0     mm   util   0.947  PASS  
+  L40     hand Overturning                                                        0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+  L61     hand Joint WITHOUT mid support: moment vs hook+connector couple       5.226 / 0.197      kNm  util  26.571  FAIL  => a support/trestle under the joint is REQUIRED
+  L51     hand Joint WITH mid support: support reaction (per side)              5.404 / 1000000000.0 kN   util     0.0  INFO  design trestle for 10.8 kN ULS total
+
+=== WIDE_CATWALK_FULL  [B]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.676 / 3.585      kNm  util   0.188  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                3.068 / 0.308      kNm  util    9.97  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              585.702 / 18.31      mm   util  31.988  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=26 mm)              436.326 / 218.182    MPa  util     2.0  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                     95.018 / 18.31      mm   util   5.189  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     3.064 / 0.129      kNm  util   23.77  INFO  hand SS moment 3.068 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            2515.692 / 218.182    MPa  util   11.53  FAIL  upper 785 / lower 2516 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                 133.107 / 18.31      mm   util    7.27  FAIL  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 2482.518 / 218.182    MPa  util  11.378  INFO  diag force 29.2 kN
+  L61     hand Axle tube shear (per side)                                      75.303 / 125.967    MPa  util   0.598  PASS  
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                 11.0 / 327.273    MPa  util   0.034  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.083 / 0.091      kNm  util  22.854  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.526 / 0.091      kNm  util   16.74  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.394 / 0.091      kNm  util   4.318  FAIL  top defl 1055 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.439 / 0.091      kNm  util   15.79  FAIL  top defl 4108 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.469      kNm  util   0.305  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1111.1     mm   util    0.99  PASS  
+  L40     hand Overturning (EQU) crowd on outer rail, self-weight only          9.794 / 1.607      kNm  util   6.094  FAIL  FoS=0.27 (need 1.5); ballast/anchor 642 kg
+  L7/L24  hand Sliding under crowd line load (mu=0.30, no crowd weight)         7.766 / 0.379      kN   util  20.473  FAIL  
+  L30     hand Vertical natural frequency >= 5 Hz (else dynamic check)            5.0 / 4.762      Hz   util    1.05  FAIL  unbraced bars, self weight only
+  L26     hand Footbridge 10 kN point (informative): girder                     3.433 / 0.308      kNm  util  11.155  INFO  only if the catwalk is classed as a footbridge (service-vehicle access)
+
+=== WIDE_CATWALK_MINI  [B]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.676 / 3.585      kNm  util   0.188  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                3.068 / 0.308      kNm  util    9.97  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              585.702 / 18.31      mm   util  31.988  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=26 mm)              436.326 / 218.182    MPa  util     2.0  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                     95.018 / 18.31      mm   util   5.189  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     3.064 / 0.129      kNm  util   23.77  INFO  hand SS moment 3.068 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            2515.692 / 218.182    MPa  util   11.53  FAIL  upper 785 / lower 2516 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                 133.107 / 18.31      mm   util    7.27  FAIL  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 2482.518 / 218.182    MPa  util  11.378  INFO  diag force 29.2 kN
+  L61     hand Axle tube shear (per side)                                      75.303 / 125.967    MPa  util   0.598  PASS  
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                 11.0 / 327.273    MPa  util   0.034  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.083 / 0.091      kNm  util  22.854  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.526 / 0.091      kNm  util   16.74  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.394 / 0.091      kNm  util   4.318  FAIL  top defl 1055 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.439 / 0.091      kNm  util   15.79  FAIL  top defl 4108 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.469      kNm  util   0.305  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1111.1     mm   util    0.99  PASS  
+  L40     hand Overturning (EQU) crowd on outer rail, self-weight only          9.794 / 1.607      kNm  util   6.094  FAIL  FoS=0.27 (need 1.5); ballast/anchor 642 kg
+  L7/L24  hand Sliding under crowd line load (mu=0.30, no crowd weight)         7.766 / 0.379      kN   util  20.473  FAIL  
+  L30     hand Vertical natural frequency >= 5 Hz (else dynamic check)            5.0 / 4.762      Hz   util    1.05  FAIL  unbraced bars, self weight only
+  L26     hand Footbridge 10 kN point (informative): girder                     3.433 / 0.308      kNm  util  11.155  INFO  only if the catwalk is classed as a footbridge (service-vehicle access)
+
+=== WIDE_STANDARD  [B]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.556 / 3.585      kNm  util   0.155  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                2.076 / 0.308      kNm  util   6.744  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              398.137 / 18.31      mm   util  21.744  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=136 mm)              55.638 / 218.182    MPa  util   0.255  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      2.721 / 18.31      mm   util   0.149  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     2.072 / 0.129      kNm  util  16.075  INFO  hand SS moment 2.076 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            1385.644 / 218.182    MPa  util   6.351  FAIL  upper 126 / lower 1386 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                  21.434 / 18.31      mm   util   1.171  FAIL  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 1390.591 / 218.182    MPa  util   6.374  INFO  diag force 12.5 kN
+  L61     hand Axle tube shear (per side)                                      49.783 / 125.967    MPa  util   0.395  PASS  
+  L61     hand Top hook (5x11.9 throat) tension+bending                       718.826 / 218.182    MPa  util   3.295  FAIL  hook load 4.13 kN, e=18.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                9.073 / 327.273    MPa  util   0.028  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.113 / 0.091      kNm  util  23.181  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.548 / 0.091      kNm  util   16.98  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.429 / 0.091      kNm  util   4.705  FAIL  top defl 981 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.804 / 0.091      kNm  util  19.795  FAIL  top defl 4141 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.469      kNm  util   0.305  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1127.0     mm   util   0.976  PASS  
+  L40     hand Overturning                                                        0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+
+=== WIDE_STEEP  [B]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                     0.445 / 3.585      kNm  util   0.124  PASS  
+  L5      hand Tread bending, 3 kN point                                        1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                              3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                1.322 / 0.308      kNm  util   4.296  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              255.003 / 18.31      mm   util  13.927  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=169 mm)              28.511 / 218.182    MPa  util   0.131  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      1.131 / 18.31      mm   util   0.062  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     1.319 / 0.129      kNm  util  10.232  INFO  hand SS moment 1.322 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)             783.515 / 218.182    MPa  util   3.591  FAIL  upper 72 / lower 784 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                   10.09 / 18.31      mm   util   0.551  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                          1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                  786.609 / 218.182    MPa  util   3.605  INFO  diag force 6.4 kN
+  L61     hand Axle tube shear (per side)                                      31.044 / 125.967    MPa  util   0.246  PASS  
+  L61     hand Top hook (5x11.9 throat) tension+bending                       470.585 / 218.182    MPa  util   2.157  FAIL  hook load 2.70 kN, e=18.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)                7.279 / 327.273    MPa  util   0.022  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                 2.179 / 0.091      kNm  util  23.901  FAIL  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                          1.596 / 0.091      kNm  util  17.507  FAIL  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.449 / 0.091      kNm  util   4.928  FAIL  top defl 947 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                          1.891 / 0.091      kNm  util   20.74  FAIL  top defl 4024 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                  0.143 / 0.469      kNm  util   0.305  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                       1100.0 / 1162.0     mm   util   0.947  PASS  
+  L40     hand Overturning                                                        0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+
+BASIS B: self weight per unit 71.6 kg
+Max characteristic UDL (kN/m2) per lock: {"CATWALK": {"unbraced": 0.51, "truss": 3.62, "locked_fe": 0.41}, "STANDARD": {"unbraced": 0.84, "truss": 30.0, "locked_fe": 0.91}, "STEEP": {"unbraced": 1.43, "truss": 30.0, "locked_fe": 1.8}}
+Lower bar depth needed (25 wide, locked FE, 7.5 kN/m2): {"CATWALK": 54, "STANDARD": 31, "STEEP": 23}
+Hook throat needed for 5.94 kN: {"t=5": 34.0, "t=8": 24.5, "t=10": 21.0}
+Post: 9986 mm3 -> SHS 50x50x4
+
+=== SINGLE_CATWALK  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                    0.676 / 3.585      kNm  util   0.188  PASS  
+  L5      hand Tread bending, 3 kN point                                       1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                             3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)               3.232 / 3.286      kNm  util   0.983  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              17.479 / 18.31      mm   util   0.955  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=26 mm)             459.602 / 355.0      MPa  util   1.295  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                    10.136 / 18.31      mm   util   0.554  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                    3.208 / 2.995      kNm  util   1.071  INFO  hand SS moment 3.232 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            314.655 / 355.0      MPa  util   0.886  PASS  upper 315 / lower 277 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                 11.164 / 18.31      mm   util    0.61  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                         1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 313.009 / 355.0      MPa  util   0.882  INFO  diag force 4.8 kN
+  L61     hand Axle tube shear (per side)                                     79.217 / 204.959    MPa  util   0.386  PASS  
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)              11.398 / 532.5      MPa  util   0.021  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                2.083 / 2.236      kNm  util   0.932  PASS  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                         1.526 / 2.236      kNm  util   0.683  PASS  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)           0.434 / 2.236      kNm  util   0.194  PASS  top defl 7 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                         1.456 / 2.236      kNm  util   0.651  PASS  top defl 23 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                 0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                      1100.0 / 1111.1     mm   util    0.99  PASS  
+  L40/L41 hand Overturning: 4 ground anchors (design tension per anchor)       3.447 / 3.447      kN   util     1.0  PASS  specify anchors >= 3.4 kN tension + 1.8 kN shear each (or 1387 kg ballast)
+  L30     hand Vertical natural frequency >= 5 Hz (else dynamic check)           5.0 / 13.79      Hz   util   0.363  PASS  unbraced bars, self weight only
+
+=== SINGLE_STANDARD  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                    0.556 / 3.585      kNm  util   0.155  PASS  
+  L5      hand Tread bending, 3 kN point                                       1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                             3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                2.21 / 3.286      kNm  util   0.672  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              11.979 / 18.31      mm   util   0.654  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=136 mm)             59.232 / 355.0      MPa  util   0.167  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      0.56 / 18.31      mm   util   0.031  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     2.19 / 2.995      kNm  util   0.731  INFO  hand SS moment 2.210 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            111.883 / 355.0      MPa  util   0.315  PASS  upper 64 / lower 112 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                  0.773 / 18.31      mm   util   0.042  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                         1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 112.765 / 355.0      MPa  util   0.318  INFO  diag force 4.5 kN
+  L61     hand Axle tube shear (per side)                                     52.939 / 204.959    MPa  util   0.258  PASS  
+  L61     hand Top hook (10x16.0 throat) tension+bending                      240.27 / 355.0      MPa  util   0.677  PASS  hook load 4.40 kN, e=20.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)               9.472 / 532.5      MPa  util   0.018  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                2.113 / 2.236      kNm  util   0.945  PASS  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                         1.548 / 2.236      kNm  util   0.692  PASS  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.41 / 2.236      kNm  util   0.183  PASS  top defl 6 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                         1.828 / 2.236      kNm  util   0.818  PASS  top defl 27 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                 0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                      1100.0 / 1127.0     mm   util   0.976  PASS  
+  L40     hand Overturning                                                       0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+
+=== SINGLE_STEEP  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                    0.445 / 3.585      kNm  util   0.124  PASS  
+  L5      hand Tread bending, 3 kN point                                       1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                             3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)               1.428 / 3.286      kNm  util   0.435  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                               7.759 / 18.31      mm   util   0.424  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=169 mm)               30.8 / 355.0      MPa  util   0.087  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                     0.239 / 18.31      mm   util   0.013  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                    1.412 / 2.995      kNm  util   0.472  INFO  hand SS moment 1.428 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)             63.892 / 355.0      MPa  util    0.18  PASS  upper 34 / lower 64 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                   0.31 / 18.31      mm   util   0.017  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                         1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                  64.355 / 355.0      MPa  util   0.181  INFO  diag force 3.1 kN
+  L61     hand Axle tube shear (per side)                                     33.512 / 204.959    MPa  util   0.164  PASS  
+  L61     hand Top hook (10x16.0 throat) tension+bending                       159.6 / 355.0      MPa  util    0.45  PASS  hook load 2.92 kN, e=20.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)               7.678 / 532.5      MPa  util   0.014  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                2.179 / 2.236      kNm  util   0.975  PASS  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                         1.596 / 2.236      kNm  util   0.714  PASS  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)           0.399 / 2.236      kNm  util   0.178  PASS  top defl 6 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                         2.039 / 2.236      kNm  util   0.912  PASS  top defl 31 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                 0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                      1100.0 / 1162.0     mm   util   0.947  PASS  
+  L40     hand Overturning                                                       0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+
+=== SINGLE_BAR  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                    0.556 / 3.585      kNm  util   0.155  PASS  
+  L5      hand Tread bending, 3 kN point                                       1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                             3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                2.21 / 3.286      kNm  util   0.672  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              11.979 / 18.31      mm   util   0.654  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=136 mm)             59.232 / 355.0      MPa  util   0.167  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      0.56 / 18.31      mm   util   0.031  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     2.19 / 2.995      kNm  util   0.731  INFO  hand SS moment 2.210 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            111.883 / 355.0      MPa  util   0.315  PASS  upper 64 / lower 112 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                  0.773 / 18.31      mm   util   0.042  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                         1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 112.765 / 355.0      MPa  util   0.318  INFO  diag force 4.5 kN
+  L61     hand Axle tube shear (per side)                                     52.939 / 204.959    MPa  util   0.258  PASS  
+  L61     hand Top hook (10x16.0 throat) tension+bending                      240.27 / 355.0      MPa  util   0.677  PASS  hook load 4.40 kN, e=20.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)               9.472 / 532.5      MPa  util   0.018  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                2.113 / 2.236      kNm  util   0.945  PASS  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                         1.548 / 2.236      kNm  util   0.692  PASS  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.41 / 2.236      kNm  util   0.183  PASS  top defl 6 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                         1.828 / 2.236      kNm  util   0.818  PASS  top defl 27 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                 0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                      1100.0 / 1127.0     mm   util   0.976  PASS  
+  L40     hand Overturning                                                       0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+
+=== DOUBLE_CATWALK  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                    0.676 / 3.585      kNm  util   0.188  PASS  
+  L5      hand Tread bending, 3 kN point                                       1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                             3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)               3.232 / 3.286      kNm  util   0.983  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              17.479 / 18.31      mm   util   0.955  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=26 mm)             459.602 / 355.0      MPa  util   1.295  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                    10.136 / 18.31      mm   util   0.554  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                    3.208 / 2.995      kNm  util   1.071  INFO  hand SS moment 3.232 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            314.655 / 355.0      MPa  util   0.886  PASS  upper 315 / lower 277 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                 11.164 / 18.31      mm   util    0.61  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                         1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 313.009 / 355.0      MPa  util   0.882  INFO  diag force 4.8 kN
+  L61     hand Axle tube shear (per side)                                     79.217 / 204.959    MPa  util   0.386  PASS  
+  L61     hand Top hook (10x16.0 throat) tension+bending                     342.375 / 355.0      MPa  util   0.964  PASS  hook load 6.27 kN, e=20.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)              11.398 / 532.5      MPa  util   0.021  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                2.083 / 2.236      kNm  util   0.932  PASS  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                         1.526 / 2.236      kNm  util   0.683  PASS  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)           0.434 / 2.236      kNm  util   0.194  PASS  top defl 7 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                         1.456 / 2.236      kNm  util   0.651  PASS  top defl 23 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                 0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                      1100.0 / 1111.1     mm   util    0.99  PASS  
+  L40/L41 hand Overturning: 4 ground anchors (design tension per anchor)       6.893 / 6.893      kN   util     1.0  PASS  specify anchors >= 6.9 kN tension + 3.6 kN shear each (or 2774 kg ballast)
+  L30     hand Vertical natural frequency >= 5 Hz (else dynamic check)           5.0 / 13.79      Hz   util   0.363  PASS  unbraced bars, self weight only
+  L51     hand Joint WITH mid support: support reaction (per side)            12.546 / 1000000000.0 kN   util     0.0  INFO  design trestle for 25.1 kN ULS total
+
+=== DOUBLE_STANDARD  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                    0.556 / 3.585      kNm  util   0.155  PASS  
+  L5      hand Tread bending, 3 kN point                                       1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                             3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                2.21 / 3.286      kNm  util   0.672  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              11.979 / 18.31      mm   util   0.654  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=136 mm)             59.232 / 355.0      MPa  util   0.167  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      0.56 / 18.31      mm   util   0.031  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     2.19 / 2.995      kNm  util   0.731  INFO  hand SS moment 2.210 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            111.883 / 355.0      MPa  util   0.315  PASS  upper 64 / lower 112 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                  0.773 / 18.31      mm   util   0.042  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                         1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 112.765 / 355.0      MPa  util   0.318  INFO  diag force 4.5 kN
+  L61     hand Axle tube shear (per side)                                     52.939 / 204.959    MPa  util   0.258  PASS  
+  L61     hand Top hook (10x16.0 throat) tension+bending                      240.27 / 355.0      MPa  util   0.677  PASS  hook load 4.40 kN, e=20.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)               9.472 / 532.5      MPa  util   0.018  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                2.113 / 2.236      kNm  util   0.945  PASS  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                         1.548 / 2.236      kNm  util   0.692  PASS  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.41 / 2.236      kNm  util   0.183  PASS  top defl 6 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                         1.828 / 2.236      kNm  util   0.818  PASS  top defl 27 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                 0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                      1100.0 / 1127.0     mm   util   0.976  PASS  
+  L40     hand Overturning                                                       0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+  L51     hand Joint WITH mid support: support reaction (per side)             8.805 / 1000000000.0 kN   util     0.0  INFO  design trestle for 17.6 kN ULS total
+
+=== DOUBLE_STEEP  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                    0.445 / 3.585      kNm  util   0.124  PASS  
+  L5      hand Tread bending, 3 kN point                                       1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                             3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)               1.428 / 3.286      kNm  util   0.435  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                               7.759 / 18.31      mm   util   0.424  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=169 mm)               30.8 / 355.0      MPa  util   0.087  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                     0.239 / 18.31      mm   util   0.013  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                    1.412 / 2.995      kNm  util   0.472  INFO  hand SS moment 1.428 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)             63.892 / 355.0      MPa  util    0.18  PASS  upper 34 / lower 64 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                   0.31 / 18.31      mm   util   0.017  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                         1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                  64.355 / 355.0      MPa  util   0.181  INFO  diag force 3.1 kN
+  L61     hand Axle tube shear (per side)                                     33.512 / 204.959    MPa  util   0.164  PASS  
+  L61     hand Top hook (10x16.0 throat) tension+bending                       159.6 / 355.0      MPa  util    0.45  PASS  hook load 2.92 kN, e=20.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)               7.678 / 532.5      MPa  util   0.014  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                2.179 / 2.236      kNm  util   0.975  PASS  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                         1.596 / 2.236      kNm  util   0.714  PASS  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)           0.399 / 2.236      kNm  util   0.178  PASS  top defl 6 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                         2.039 / 2.236      kNm  util   0.912  PASS  top defl 31 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                 0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                      1100.0 / 1162.0     mm   util   0.947  PASS  
+  L40     hand Overturning                                                       0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+  L51     hand Joint WITH mid support: support reaction (per side)             5.848 / 1000000000.0 kN   util     0.0  INFO  design trestle for 11.7 kN ULS total
+
+=== WIDE_CATWALK_FULL  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                    0.676 / 3.585      kNm  util   0.188  PASS  
+  L5      hand Tread bending, 3 kN point                                       1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                             3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)               3.232 / 3.286      kNm  util   0.983  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              17.479 / 18.31      mm   util   0.955  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=26 mm)             459.602 / 355.0      MPa  util   1.295  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                    10.136 / 18.31      mm   util   0.554  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                    3.208 / 2.995      kNm  util   1.071  INFO  hand SS moment 3.232 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            314.655 / 355.0      MPa  util   0.886  PASS  upper 315 / lower 277 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                 11.164 / 18.31      mm   util    0.61  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                         1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 313.009 / 355.0      MPa  util   0.882  INFO  diag force 4.8 kN
+  L61     hand Axle tube shear (per side)                                     79.217 / 204.959    MPa  util   0.386  PASS  
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)              11.398 / 532.5      MPa  util   0.021  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                2.083 / 2.236      kNm  util   0.932  PASS  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                         1.526 / 2.236      kNm  util   0.683  PASS  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)           0.434 / 2.236      kNm  util   0.194  PASS  top defl 7 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                         1.456 / 2.236      kNm  util   0.651  PASS  top defl 23 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                 0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                      1100.0 / 1111.1     mm   util    0.99  PASS  
+  L40/L41 hand Overturning: 4 ground anchors (design tension per anchor)       1.114 / 1.114      kN   util     1.0  PASS  specify anchors >= 1.1 kN tension + 1.7 kN shear each (or 417 kg ballast)
+  L30     hand Vertical natural frequency >= 5 Hz (else dynamic check)           5.0 / 13.79      Hz   util   0.363  PASS  unbraced bars, self weight only
+
+=== WIDE_CATWALK_MINI  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                    0.676 / 3.585      kNm  util   0.188  PASS  
+  L5      hand Tread bending, 3 kN point                                       1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                             3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)               3.232 / 3.286      kNm  util   0.983  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              17.479 / 18.31      mm   util   0.955  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=26 mm)             459.602 / 355.0      MPa  util   1.295  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                    10.136 / 18.31      mm   util   0.554  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                    3.208 / 2.995      kNm  util   1.071  INFO  hand SS moment 3.232 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            314.655 / 355.0      MPa  util   0.886  PASS  upper 315 / lower 277 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                 11.164 / 18.31      mm   util    0.61  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                         1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 313.009 / 355.0      MPa  util   0.882  INFO  diag force 4.8 kN
+  L61     hand Axle tube shear (per side)                                     79.217 / 204.959    MPa  util   0.386  PASS  
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)              11.398 / 532.5      MPa  util   0.021  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                2.083 / 2.236      kNm  util   0.932  PASS  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                         1.526 / 2.236      kNm  util   0.683  PASS  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)           0.434 / 2.236      kNm  util   0.194  PASS  top defl 7 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                         1.456 / 2.236      kNm  util   0.651  PASS  top defl 23 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                 0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                      1100.0 / 1111.1     mm   util    0.99  PASS  
+  L40/L41 hand Overturning: 4 ground anchors (design tension per anchor)       1.114 / 1.114      kN   util     1.0  PASS  specify anchors >= 1.1 kN tension + 1.7 kN shear each (or 417 kg ballast)
+  L30     hand Vertical natural frequency >= 5 Hz (else dynamic check)           5.0 / 13.79      Hz   util   0.363  PASS  unbraced bars, self weight only
+
+=== WIDE_STANDARD  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                    0.556 / 3.585      kNm  util   0.155  PASS  
+  L5      hand Tread bending, 3 kN point                                       1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                             3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)                2.21 / 3.286      kNm  util   0.672  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                              11.979 / 18.31      mm   util   0.654  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=136 mm)             59.232 / 355.0      MPa  util   0.167  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                      0.56 / 18.31      mm   util   0.031  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                     2.19 / 2.995      kNm  util   0.731  INFO  hand SS moment 2.210 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)            111.883 / 355.0      MPa  util   0.315  PASS  upper 64 / lower 112 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                  0.773 / 18.31      mm   util   0.042  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                         1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                 112.765 / 355.0      MPa  util   0.318  INFO  diag force 4.5 kN
+  L61     hand Axle tube shear (per side)                                     52.939 / 204.959    MPa  util   0.258  PASS  
+  L61     hand Top hook (10x16.0 throat) tension+bending                      240.27 / 355.0      MPa  util   0.677  PASS  hook load 4.40 kN, e=20.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)               9.472 / 532.5      MPa  util   0.018  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                2.113 / 2.236      kNm  util   0.945  PASS  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                         1.548 / 2.236      kNm  util   0.692  PASS  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)            0.41 / 2.236      kNm  util   0.183  PASS  top defl 6 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                         1.828 / 2.236      kNm  util   0.818  PASS  top defl 27 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                 0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                      1100.0 / 1127.0     mm   util   0.976  PASS  
+  L40     hand Overturning                                                       0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+
+=== WIDE_STEEP  [A]
+  L4      hand Tread bending, 7.5 kN/m2 UDL                                    0.445 / 3.585      kNm  util   0.124  PASS  
+  L5      hand Tread bending, 3 kN point                                       1.411 / 3.585      kNm  util   0.393  PASS  
+  L6      hand Tread deflection (SLS) <= L/100 & 25                             3.01 / 12.41      mm   util   0.243  PASS  
+  L4/L60  hand Girder bending, UNBRACED bars (upper+lower share)               1.428 / 3.286      kNm  util   0.435  INFO  optimistic bound: both bars at yield together
+  L6      hand Girder deflection, UNBRACED (SLS)                               7.759 / 18.31      mm   util   0.424  INFO  
+  L4/L60  hand Girder chord stress, LOCKED truss bound (d=169 mm)               30.8 / 355.0      MPa  util   0.087  INFO  ideal triangulated upper bound
+  L6      hand Girder deflection, LOCKED truss bound (SLS)                     0.239 / 18.31      mm   util   0.013  INFO  
+  L4/L60  FE   FE: lower bar alone (validates hand statics)                    1.412 / 2.995      kNm  util   0.472  INFO  hand SS moment 1.428 kNm
+  L4/L60  FE   FE: girder stress, LOCKED Vierendeel (actual lock)             63.892 / 355.0      MPa  util    0.18  PASS  upper 34 / lower 64 MPa
+  L6      FE   FE: girder deflection, LOCKED Vierendeel (SLS)                   0.31 / 18.31      mm   util   0.017  PASS  
+  -       FE   FE: UNLOCKED parallelogram is a mechanism                         1.0 / 0.5        flag util     2.0  CONDITION  handrails/minis MUST be inserted before loading
+  L4/L60  FE   FE: UPGRADE braced (25x10 diagonal per panel)                  64.355 / 355.0      MPa  util   0.181  INFO  diag force 3.1 kN
+  L61     hand Axle tube shear (per side)                                     33.512 / 204.959    MPa  util   0.164  PASS  
+  L61     hand Top hook (10x16.0 throat) tension+bending                       159.6 / 355.0      MPa  util    0.45  PASS  hook load 2.92 kN, e=20.6 mm
+  L61     hand Nosing pin bearing on 2x5 mm skins (d=20 assumed)               7.678 / 532.5      MPa  util   0.014  PASS  
+  L34     hand Post bending, 1.25 kN point at top (single post)                2.179 / 2.236      kNm  util   0.975  PASS  
+  L33     hand Post bending, 3.0 kN/m line (tributary)                         1.596 / 2.236      kNm  util   0.714  PASS  
+  L34     FE   FE grillage: post moment, 1.25 kN point (rails share)           0.399 / 2.236      kNm  util   0.178  PASS  top defl 6 mm (ULS)
+  L33     FE   FE grillage: post moment, 3.0 kN/m line                         2.039 / 2.236      kNm  util   0.912  PASS  top defl 31 mm (ULS)
+  L33/34  hand Guardrail bending between posts                                 0.143 / 0.764      kNm  util   0.187  PASS  
+  G64     hand Guardrail height >= 1100 above pitch line                      1100.0 / 1162.0     mm   util   0.947  PASS  
+  L40     hand Overturning                                                       0.0 / 1.0        -    util     0.0  PASS  restrained: top hooked to landing/bar (bar must be anchored)
+UPGRADE SPEC: {"lower_guide_bar": "25 x 45 solid flat S355 (both sides)", "posts": "SHS 40x40x4 S355", "hooks": "10 mm plate, 16 mm throat, S355", "catwalk_free_standing": "4 ground anchors or ballast (see rows)", "double_joint": "support trestle under every end-to-end joint", "lock": "handrails/bottom minis inserted before any load (unlocked = mechanism)"}
+UPGRADED BASIS A: 166 code checks, 0 FAIL
+
+BASIS A: 257 checks, 78 FAIL

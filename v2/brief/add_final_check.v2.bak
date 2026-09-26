@@ -1,0 +1,196 @@
+"""Adds the "25 Sep model check" section to the change brief (web/index.html), between FINAL-CHECK markers so it can be
+re-applied after build_brief.py. Numbers come from final/final_results.json (same source as datasheet DS-FMS-FINAL).
+Pictures are the final-model renders, copied into the brief artifact from the datasheet artifact at publish time."""
+import json, math, os, re
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+R = json.load(open(os.path.join(HERE, "..", "final", "final_results.json")))
+PAGE = os.path.join(HERE, "web", "index.html")
+DATASHEET = "https://claude.ai/artifact/GLipbqMzpRje8YZFLYTeL7"
+FD = 250 / 1.1
+
+T = {r["check"]: r for r in R["tread"]["checks"]}
+def tu(key): return next(r for k, r in T.items() if key in k)
+def comp(item, start, base="slides"):
+    return next(r for r in R["components"] if r["item"] == item and r["check"].startswith(start) and r["base"] == base)
+ENV, ENVH = R["frame_envelopes"]["slides"], R["frame_envelopes"]["held"]
+BOX = R["tread_box_check"]; PO = R["pole_options"]["required_solid_depth_across_mm"]
+t_front = tu("ULS 4 kN patch front, mid-span"); d_crowd = tu("Crowd 7.5 kN/m2: nosing"); d4f = tu("4 kN patch (front)")
+latch = comp("Latch pins O2 (per pole)", "Vertical"); pin_v = comp("Tread pins O10 (with link force)", "Shear"); pin_m = comp("Tread pins O10 (with link force)", "Bending")
+ax_b = comp("Base axle O25x2.5", "Bending"); ax_t = comp("Top axle O25x2.5", "Bending"); hk_b = comp("Hook plate 10 mm (base)", "Throat")
+hbr = comp("Handrail bracket 15x5 bent flat", "1.25")
+poles = {r["ref"]: r["util"] for r in R["components"] if r["item"] == "Pole RHS 25x10x2" and r["base"] == "slides"}
+rails_s = max(v["util"] for v in R["rails"]["sliding_base"].values()); rails_p = max(v["util"] for v in R["rails"]["pinned_base"].values())
+rails_lo = min(max(v["util"] for k, v in R["rails"]["sliding_base"].items() if k.startswith(rn + " ")) for rn in ("Lo_L", "Up_L", "Lo_R", "Up_R"))
+
+# after-values for the proposed sizes (same formulas as the checks)
+pin20_m = pin_m["value"] / (1.5 * math.pi * 20 ** 3 / 32 * 250 / 1.25)
+pin20_v = pin_v["value"] / (0.6 * math.pi * 10 ** 2 * 295 / 1.25)
+latch8 = latch["value"] / (2 * 0.6 * math.pi * 4 ** 2 * 295 / 1.25)
+def tubeW(D, t): return math.pi / 64 * (D ** 4 - (D - 2 * t) ** 4) / (D / 2)
+ax35 = ENV["R_base"] * 70 / tubeW(35, 3) / FD; ax30t = ENV["R_top"] * 70 / tubeW(30, 3) / FD
+W_req = {k: 25 * v ** 2 / 6 for k, v in PO.items()}
+def rhsW(b, h, t): return (b * h ** 3 - (b - 2 * t) * (h - 2 * t) ** 3) / 12 / (h / 2)
+u_rhs85 = max(W_req[k] for k in W_req) / rhsW(25, 85, 3); u_sol51 = max(W_req[k] for k in W_req) / (25 * 51 ** 2 / 6)
+u_rhs60 = W_req["R142 line 3.0 kN/m"] / rhsW(25, 60, 3); u_sol39 = W_req["R142 line 3.0 kN/m"] / (25 * 39 ** 2 / 6)
+m12 = lambda A: 12 * A * 1138 * 2.7e-6
+brk25 = hbr["util"] * (5 * 15 ** 2 / 6) / (5 * 25 ** 2 / 6)
+d_pure = PO["R179 post 1.5 kN"] * math.sqrt(250 / 85)
+
+
+# ---------------------------------------------------------------- 25 Sep check: held-base (hooks lock) values
+def cu(item, start, base): return comp(item, start, base)["util"]
+ax_bh = cu("Base axle O25x2.5", "Bending", "held"); ax_th = cu("Top axle O25x2.5", "Bending", "held")
+hk_bh = cu("Hook plate 10 mm (base)", "Throat", "held"); hk_th = cu("Hook plate 10 mm (top)", "Throat", "held")
+jackM = cu("Base jack rod M24", "Axial + bending", "held"); footM = cu("Footplate 100x100x5", "Plate bending with", "held")
+fric = comp("Base held by friction alone", "Friction", "held")["value"]
+ax45 = ENVH["R_base"] * 70 / tubeW(45, 5) / FD; ax40t = ENVH["R_top"] * 70 / tubeW(40, 4) / FD
+lock14 = ENVH["lock_base"] / (0.6 * math.pi * 7 ** 2 * 295 / 1.25); lock12 = ENVH["lock_top"] / (0.6 * math.pi * 6 ** 2 * 295 / 1.25)
+jack30 = (ENVH["V_base"] / 561 + ENVH["H_base"] * 30 / (math.pi * 26.7 ** 3 / 32)) / FD
+TL = {r["check"]: r for r in json.load(open(os.path.join(HERE, "..", "final", "tread2_checks_loose.json")))}
+L_front = next(r for k, r in TL.items() if "ULS 4 kN patch front, mid-span" in k and "Frame" in k)
+bar_j = max(r["util"] for k, r in T.items() if "Grating bar" in k); flat_u = max(r["util"] for k, r in T.items() if "Flat 2.7x25" in k); bar_l = max(r["util"] for k, r in TL.items() if "Grating bar" in k)
+MK = json.load(open(os.path.join(HERE, "web", "img", "final", "f_markers.json")))
+# keep markers apart (≥ 3.5 % in both axes): nudge the later one to the right
+ids = sorted(MK); pos_ = {}
+for k in ids:
+    x, y = MK[k]
+    for _ in range(6):
+        if any(abs(x - a) < 3.5 and abs(y - b) < 4.5 for a, b in pos_.values()): x += 3.0
+    pos_[k] = (x, y)
+
+def card(fid, title, meta, now, to, imgs, how, before=None, after=None, why=(), crit=True, first=False):
+    figs = "".join(f'<figure><img src="img/final/{src}" alt="{alt}" width="1000" height="625" loading="lazy"><figcaption>{alt}</figcaption></figure>' for src, alt in imgs)
+    load = ""
+    if before:
+        load = f"""
+      <div class="whyload">
+        <div class="why"><span>Why (code sheet)</span><ul>{"".join(f'<li><span class="ref">{r}</span>{t}</li>' for r, t in why)}</ul></div>
+        <div class="load"><span>Load effect</span>
+          <div class="ba"><div><i>25 Sep model</i>{before}</div><div><i>After</i>{after}</div></div></div>
+      </div>"""
+    return f"""
+    <article class="card" id="{fid}">
+      <header><span class="num{' fcrit' if crit else ''}">{fid.upper()}</span><div><h3>{title}</h3><p class="meta">{meta}</p></div></header>
+      <div class="nowto">
+        <div class="now"><span>In the 25 Sep model</span><p>{now}</p></div>
+        <div class="to"><span>Draw it like this</span><p>{to}</p></div>
+      </div>
+      <div class="refs">{figs}</div>
+      <div class="how"><span>In SketchUp</span><ul>{"".join(f"<li>{h}</li>" for h in how)}</ul></div>{load}
+    </article>"""
+
+cards = [
+    card("f1", "Steps: close the box", "6 per unit · replaces change 1 · critical",
+         f"Open J at the back and an L at the front edge, joined by 60 grating bars (3 × 25) that run front to back, and two thin flats (2.7 × 25) along the step. There's no top plate. "
+         f"The flats are drawn 6.5 mm short of the end plates; you'll join them, and this check includes that. Joined, they make the grating bars pass ({bar_l:.2f} → {bar_j:.2f}). "
+         f"The flats themselves are {flat_u:.1f}× over under 4 kN, and the step still fails: only the J and the small L carry the 1.2 m span, so the front edge sags and the step twists.",
+         "A closed box 280 × 50, the full length between the end plates: 5 mm serrated top plate, 3 mm bottom plate, 5 mm front and back walls. Keep the end plates. Add the lip turned down along the front edge from change 1 (35 mm brings the gap under each step from 125 to 100; at least 5 mm is needed to reach 120).",
+         [("f1_where.jpg", "Where: all 6 steps (orange)"), ("f1_close1.jpg", "The steps as drawn: grating, no top plate"), ("f1_close2.jpg", "From below: J, L, bars and flats")],
+         ["Keep the walking surface height and every pin hole exactly where they are.", "The top plate replaces the grating bars and flats.",
+          "You may draw it as a solid 280 × 50 block labelled “closed box: 5 top / 3 bottom / 5 walls”."],
+         f"4 kN on the front edge {t_front['util']:.1f}× over ({t_front['value']:.0f} MPa; {L_front['value']:.0f} with loose flats); crowd sags the front edge {d_crowd['value']:.1f} mm (limit 4.9); 4 kN sags it {d4f['value']:.0f} mm",
+         f"4 kN at {BOX['ULS 4 kN front patch']['vm'] / FD:.2f} of capacity; crowd {abs(BOX['SLS crowd (going 250)']['uz_min']):.1f} mm; twist {BOX['ULS 4 kN front patch']['twist']:.1f}° (checked in FE)",
+         [("R114", "4 kN on a 200 mm square anywhere on a step."), ("R115", "Sag no more than span/250 under the crowd; under 10 mm for one person."), ("R7", "Open gap under each step at most 120 mm.")]),
+    card("f2", "Step pins and guide rails", "4 rails, 24 pins per unit · replaces changes 2 and 3 · critical",
+         f"Ø10 pins through 25 mm rails with 5 mm walls. With a crowd on, the frame pushes the top step's pins with up to {pin_v['value'] / 1000:.1f} kN, and the rails are thinnest right at the pin holes. The left rear pin is drawn Ø10.73 in a Ø10 hole.",
+         "Ø20 pins (6082-T6) with matching holes in the rails and the step end plates. Grow each rail away from its holes until every hole has at least 18 mm of metal to the nearest free edge: about 65 deep overall (now 20–25), same widths and 5 mm walls.",
+         [("f2_where.jpg", "Where: the 4 guide rails and the pin hardware"), ("f2_close1.jpg", "Pins through the rails at the base")],
+         ["Keep every hole centre where it is; the rails grow around them.", "Right rails grow downwards; the left channels deepen by the same amount so a neighbour’s right rail still drops fully in.",
+          "Put the split-pin hole through the pin just outside the nut; now it sits past the pin end."],
+         f"Rails {rails_lo:.1f}–{rails_s:.1f}× over at the pin holes; pins {pin_m['util']:.1f}× over in bending",
+         f"Pins {pin20_m:.2f} in bending, {pin20_v:.2f} in shear; rail net section about 2.5× what’s needed (re-check once drawn)",
+         [("R113", "Crowd 7.5 kN/m² on the stair."), ("R170", "Pins and holes: shear, bending, and enough metal around every hole.")]),
+    card("f3", "Pole locking end: the pegs that hold the rails", "12 poles · critical",
+         f"The bottom end of each pole is one piece with the pole and drops down through both rails. At each rail it has small 2 mm cross-pegs that sit in the J-shaped notches in the rail walls. "
+         f"Those pegs are what hold the upper and lower rail at their spacing, and that is the only thing stopping each side folding flat under load (the steps are pinned at both ends). "
+         f"Each pole has to pass {latch['value'] / 1000:.1f} kN between the rails; 2 mm pegs take {latch['limit'] / 1000:.2f} kN. The left upper rail’s notches are about 9 mm off the pole line (3.6 mm clash); the lower rails 1.6–2.6 mm.",
+         "Keep the pole and its locking end as one piece. Make the pegs about 8 mm thick (or a solid shoulder on the pole that bears on the rail), with the notches in the rail walls widened to match. Line every notch up with its pole, with about 0.5 mm clearance each side.",
+         [("f3_where.jpg", "Where: all 12 poles, one piece with their locking ends"), ("f3_close1.jpg", "Bottom of a pole passing through a rail; the dot is a 2 mm peg end")],
+         ["Draw each pole and its locking end as a single part (in the model they are two overlapping bodies).", "Move the left upper rail’s notches onto the pole line (the other rails need 1.6–2.6 mm)."],
+         f"Pegs {latch['util']:.1f}× over; without them each side is a mechanism",
+         f"8 mm pegs at {latch8:.2f} of capacity",
+         [("R78 R104", "Positive, captive locking with no accidental release."), ("R113", "The lock carries the crowd load between the rails.")]),
+    card("f4", "Handrail poles", "12 per unit · replaces change 4 · critical",
+         f"12 hollow poles 25 × 10 × 2. The pole bends across the stair over 1,050 mm, from the upper rail to the top rail. At 3.0 kN/m on the top rail it is {poles['R142']:.1f}× over; with 1.5 kN on one post, {poles['R179']:.1f}×.",
+         f"Much deeper across the stair, for the full height including the pin part. Either solid 6082-T6 bar 25 × 39 for the 3.0 kN/m crowd push or 25 × 51 for every barrier load, or hollow 25 × 60 × 3 / 25 × 85 × 3 at about half the weight. The rail slots (25 left, 15 right) must widen to suit, or the poles mount on the outside of the rails.",
+         [("f4_where.jpg", "Where: the 12 poles (the size runs down through the locking end)"), ("f4_close1.jpg", "Poles along the left side")],
+         ["Keep all 12 poles and their positions; the pin stays part of the pole.", "Grow each pole across the stair (the direction people push); keep 25 along the stair.",
+          f"Use 6082-T6 (or 6061-T6) bar. Pure aluminium is about a third as strong and would need about 25 × {d_pure:.0f}."],
+         f"{poles['R142']:.1f}× over at 3.0 kN/m, {poles['R179']:.1f}× under a 1.5 kN post load",
+         f"Solid 25 × 39: {u_sol39:.2f} at 3.0 kN/m ({m12(25 * 39):.0f} kg for 12) · solid 25 × 51: {u_sol51:.2f} at every load ({m12(25 * 51):.0f} kg) · hollow 25 × 85 × 3: {u_rhs85:.2f} ({m12(624):.0f} kg)",
+         [("R142", "Top rail holds a crowd pushing 3.0 kN/m (5.0 where people stand and watch)."), ("R143 R179", "1.25 kN on the rail, 1.5 kN on top of a post.")]),
+    card("f5", "Base and top supports, hook locks", "2 jacks, 2 axles, 4 hooks · replaces change 10 · critical",
+         f"The hooks lock onto the axles, so depending on how well the ground holds the jacks, the unit works anywhere between a base that slides and one that's held. Both have to pass. "
+         f"Held, the Ø25 × 2.5 base axle bends {ax_bh:.1f}× over (each hook sits 70 mm from its jack), the top axle {ax_th:.1f}×, the hook plates {hk_bh:.1f}× (about 22 mm of plate round the axle), the M24 jacks {jackM:.1f}× and the 100 × 100 × 5 footplates {footM:.1f}×. "
+         f"The base hook plate wraps the underside and downhill side of the axle, so the stair pushes on its open side and the lock carries the whole base reaction. No lock is drawn. "
+         f"The base axle is drawn as two tubes that each reach only one jack. The second axle and its jacks (red) carry nothing.",
+         f"One base axle Ø45 × 5 from jack to jack, or put each jack straight under its hook (then Ø30 × 3). Top axle Ø40 × 4. Hook plates with at least 57.5 mm of 10 mm plate round the axle at the base and 40 mm at the top. "
+         f"Draw the hook locks: for example a Ø14 keeper pin at the base and Ø12 at the top. Or turn the base hook so its plate sits on top of the axle, and the lock only has to stop it lifting. "
+         f"M30 jack rods on 150 × 150 × 8 footplates, with a fixing to the ground or scaffold for {ENVH['H_base'] / 1000:.1f} kN sideways per side. Draw the landing bracket’s bolts into the landing or cabin for {ENVH['R_top'] / 1000:.1f} kN per side.",
+         [("f5_where.jpg", "Where: axles, hooks, jacks, landing brackets (orange); second axle and jacks (red)"), ("f5_close1.jpg", "Base: offset jack, hook, second axle"), ("f5_close2.jpg", "Top: landing bracket and axle")],
+         ["Remove the second base axle and its jacks if they have no other job.", f"Friction alone won’t hold the base (it needs {fric:.2f}; aluminium on timber or concrete gives about 0.5), so plan the fixing.",
+          "The duplicate hooks are in F9."],
+         f"Base axle {ax_bh:.1f}×, top axle {ax_th:.1f}×, hook plates {hk_bh:.1f}×, footplates {footM:.1f}×, jacks {jackM:.1f}× over; locks not drawn ({ENV['lock_base'] / 1000:.1f}–{ENVH['lock_base'] / 1000:.1f} kN at the base)",
+         f"Base axle {ax45:.2f} (Ø45 × 5); top axle {ax40t:.2f} (Ø40 × 4); locks {lock14:.2f} (Ø14) / {lock12:.2f} (Ø12); jacks {jack30:.2f} (M30); footplates 0.89 (150 × 150 × 8)",
+         [("R147", "Supports carry the stair’s full reaction."), ("R150", "Hooks, locks and connections, including uplift."), ("R73 R174", "Base plates 150 × 150, jacks and their fixing.")]),
+    card("f6", "Top rail height", "2 per unit", "About 1,010 mm above the step line.", "Raise it about 90 mm, to 1,100 above the step line. The padding you plan to add is your note, not part of this check.",
+         [("f6_where.jpg", "Where: both top rails"), ("f6_close1.jpg", "Top rail on the pole tops")], ["Raise the pole tops (or the pivot posts) by 90 mm; keep the rail itself."],
+         "≈ 1,010 mm", "1,100 mm", [("R63", "Top rail at least 1,100 above the pitch line.")], crit=False),
+    card("f7", "Handrail grip", "2 per unit · change 7, still to decide", "U 25 × 25 channel, about 900 above the step line.", "A graspable 25–50 mm profile when you decide change 7. Strength is fine as it is.",
+         [("f7_where.jpg", "Where: both handrails"), ("f7_close1.jpg", "Handrail channel on its brackets")], ["Keep the height; change only the profile."],
+         "Channel: not graspable", "Round or oval 25–50", [("R64", "Handrail grip 25–50 mm.")], crit=False),
+    card("f8", "Handrail brackets", "12 per unit", f"Bent flats 15 wide with a 57 mm offset: {hbr['util']:.1f}× over under 1.25 kN on the handrail.",
+         f"25 wide at the same thickness ({brk25:.2f}).", [("f8_where.jpg", "Where: the 12 brackets"), ("f8_close1.jpg", "Brackets from below")], ["Widen each bracket to 25; keep the offset and fixing points."],
+         f"{hbr['util']:.1f}× over", f"{brk25:.2f}", [("R143", "1.25 kN on the handrail.")], crit=False),
+    card("f9", "Clean-up: duplicates and fits", "drawing only",
+         "18 parts are drawn twice in the same place: 4 right poles with their lock pins and both top pivot parts, and the 2 right hooks. Pole and lock pin overlap between 87.5 and 225 mm up. Pins, poles and slots are drawn line-to-line. There are zero-thickness “none” faces.",
+         "Delete one of each pair (both copies are shown red). Give pins and slots about 0.5 mm clearance per side. Delete the empty faces.",
+         [("f9_close1.jpg", "Right poles drawn twice (red)"), ("f9_close2.jpg", "Right base hook drawn twice (red)")],
+         ["Check the counts after cleaning: 12 poles, 12 lock pins, 4 hooks."]),
+]
+
+mk = "".join(f'<a class="mk{" fcrit" if k in ("f1", "f2", "f3", "f4", "f5") else ""}" href="#{k}" style="left:{x:.2f}%;top:{y:.2f}%" aria-label="Change {k.upper()}">{k.upper()}</a>' for k, (x, y) in sorted(pos_.items()))
+
+SECTION = f"""<!-- FINAL-CHECK -->
+  <section id="final-check">
+    <h2>25 Sep model check: what’s still needed</h2>
+    <p>The 25 Sep model was checked part by part: shell FE for the steps and a frame model for each side, with every pin, hook and lock included. The flats are checked joined to the end plates and the hooks locked onto the axles, as you confirmed. F1–F5 are needed before it meets the sheet; F6–F9 are smaller fixes. They replace changes 1–4 and 10 below where the two differ. Full results are in the <a href="{DATASHEET}">datasheet, Rev B</a>.</p>
+    <div class="result">
+      <div><span>4 kN on the front of a step</span><b>{t_front['util']:.1f}× over</b></div>
+      <div><span>Crowd the unit carries</span><b>≈ {7.5 / latch['util']:.1f}<small class="unit"> of 7.5 kN/m²</small></b></div>
+      <div><span>Push on the top rail</span><b>{3.0 / poles['R142']:.2f}<small class="unit"> of 3.0 kN/m</small></b></div>
+      <div><span>Weight per unit, as drawn</span><b>{R['mass']['total_kg']:.1f} kg</b></div>
+    </div>
+    <div class="key"><span><i style="background:var(--fail)"></i>needed to pass (F1–F5)</span><span><i style="background:var(--accent)"></i>smaller fix (F6–F9)</span><span>Click a number to jump to its change. In each change’s pictures, <b style="color:#E8590C">orange</b> = change, <b style="color:#D11A1A">red</b> = remove or not in the load path.</span></div>
+    <figure class="fig" id="figG">
+      <div class="shot"><img src="img/final/f_overview.jpg" alt="25 Sep model, standard stair, with the changes numbered" width="1600" height="1000" loading="lazy">{mk}</div>
+      <figcaption><b>Fig G</b> 25 Sep model, standard stair: what’s still needed</figcaption>
+    </figure>
+    <div class="cards">{"".join(cards)}
+    </div>
+  </section>
+<!-- /FINAL-CHECK -->
+"""
+CSS = """<!-- FINAL-CHECK-CSS -->
+<style>
+.num.fcrit, .mk.fcrit { background:var(--fail); }
+.card .num { font-size:14px; }
+.mk { width:32px; height:32px; line-height:32px; font-size:12px; }
+.result small.unit { font:500 13px var(--mono); color:var(--ink2); }
+#final-check .refs { grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); }
+#figG { grid-column:auto; }
+</style>
+<!-- /FINAL-CHECK-CSS -->
+"""
+s = open(PAGE, encoding="utf8").read()
+s = re.sub(r"<!-- FINAL-CHECK -->.*?<!-- /FINAL-CHECK -->\n?", "", s, flags=re.S)
+s = re.sub(r"<!-- FINAL-CHECK-CSS -->.*?<!-- /FINAL-CHECK-CSS -->\n?", "", s, flags=re.S)
+i = s.index("</header>") + len("</header>")
+s = s[:i] + "\n\n  " + SECTION + s[i:]
+s = s.replace("</style>\n\n<main", "</style>\n" + CSS + "\n<main", 1)
+s = s.replace('Current design and ratings: <a href="https://claude.ai/artifact/GLipbqMzpRje8YZFLYTeL7">as-is datasheet</a>.',
+              'Current design and ratings: <a href="https://claude.ai/artifact/GLipbqMzpRje8YZFLYTeL7">datasheet (Rev B, 25 Sep model; Rev A in the second tab)</a>.')
+open(PAGE, "w", encoding="utf8").write(s)
+print("brief updated:", len(s), "chars | markers", {k: tuple(round(v, 1) for v in p) for k, p in pos_.items()},
+      "| ax45", round(ax45, 2), "ax40t", round(ax40t, 2), "lock14", round(lock14, 2), "lock12", round(lock12, 2), "jack30", round(jack30, 2), "bars", round(bar_l, 2), "->", round(bar_j, 2))

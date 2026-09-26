@@ -1,0 +1,47 @@
+Item,Qty,Material,Stock / section,Cut length (mm),Width (mm),Thk (mm),Machining / ops,EN ref / audit
+Ball-lock pin Ø12 (secondary),2,A4-80 stainless,Ø12 A4-80 QR pin,60,12,12,through both cheeks + leg boss at detent; SS lanyard; independent lock,G105 [3]
+Ballast/anchor lug,4,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",PL 8,90,52,8,Ø18 slot; kentledge 1400 kg OR ground anchors,L40 [0]
+Base pivot bracket,4,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",PL 8 + PL 12,330,130,8,2x Ø20 H7 reamed ground pivots; ears astride SHS60; EXC2,EN 12811-1/1090-2
+Bolt M12x110 8.8 HDG + nut,12,8.8 HDG,ISO 4014/4032,110,18,12,saddle through-pair,L33 [14]
+Bolt M8x25 csk A4,48,A4-80,ISO 10642,25,13,8,tread to carrier seat (through Ø9 csk),L5
+Bridge bearing pad,4,EPDM 60ShA,200x150x20,200,150,20,slotted (sliding) fixing one end = thermal joint,G87 [29]
+Carrier (seam-clipped),12,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",PL 8 x2 + PL 4,155,70,8,2x Ø20 H7 (lower slotted ±0.8 exc. node-3 master); 2x Ø9 csk; cheeks astride stringer; seam side clipped to 35/38,EN 12811-1
+Carrier (twin cheek),12,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",PL 8 x2 + PL 4,155,70,8,2x Ø20 H7 (lower slotted ±0.8 exc. node-3 master); 2x Ø9 csk; cheeks astride stringer,EN 12811-1
+Contrast nosing strip,12,PA/alu hi-vis,snap strip 24x2,860.0,24,2,"snap-in front edge, rounded",G18 [30]
+Control bar,4,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",SHS 40x40x4,1770.9,40,40,6x Ø20 H7 line-reamed,EN 12811-1 [12]
+DU bush 20/16.1x20,40,Steel-backed PTFE composite (DU) + isolating washers,Ø20 DU bush,20,20,20,press in welded boss; isolating washers,L61 [11]
+Diagonal brace CHS33.7,1,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",CHS 33.7x2.6,1450,34,2.6,flattened ends Ø16 pin holes + bushes,G78 [0]
+Diagonal brace CHS33.7,1,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",CHS 33.7x2.6,1450,34,2.6,flattened ends Ø16 pin holes + bushes; per bay free-standing,G78 [0]
+EN 131-3 pictogram plate,1,alu 1.5 printed,60x60,60,60,1.5,ladder-mode base end,G98 [27]
+End guardrail panel,2,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",SHS 40x4 + CHS26.9,1100,1700,40,demountable drop-in; rails at 467/783/1100 + toe; sockets on stringer ends,G56/70 [7]
+Follower pin Ø16,2,A4-80 stainless,Ø16 h9 bar,124,16,16,through LEG socket + both cheeks; circlips + R-clip; DOUBLE SHEAR primary lock,L61 [1]
+Guardrail post + saddle,6,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",SHS 50x50x5 + PL6 saddle,1072.0,50,50,wrap saddle both webs; 2x M12 8.8 pairs lever>=100 [14],L33/34
+Guide cover strip,2,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",PL 3 laser,420,60,3,"M6x12 @100 crs into outer cheek (finger-guard, G96)",G96 [9]
+Handhold extension (ladder),2,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",CHS 40x3,1100.0,40,3,clip sockets on top post; >=1000 above step-off,G30 [19]
+Index plunger Ø12,2,A4-80 stainless,GN 617 type,44,12,12,INDEXING ONLY (not load path); lanyard tab,G105
+Leg slider + footplate,2,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",SHS 40x40x4 + PL8,900.0,150,150,engagement >=300 at full ext; datum groove for 165 bottom-rise gauge [18],G74/75
+Leg slider + footplate,2,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",SHS 40x40x4 + PL8,900.0,150,150,engagement >=300 at full ext; datum groove for 165 bottom-rise gauge [18]; foot offset 40 inboard,G74/75
+Leg upper (single head),2,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",SHS 50x50x4 + PL8 head,440,90,50,PIVOTS at node5: Ø20 bore + VERTICAL FLOAT SLOT +10 (J-lock seat); Ø16.1 follower bore @R180; 5x Ø13 @45; single outboard head,G75 [1]
+Leg upper (twin head),2,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",SHS 50x50x4 + PL8 head,440,90,50,PIVOTS at node5: Ø20 bore + VERTICAL FLOAT SLOT +10 (J-lock seat); Ø16.1 follower bore @R180; 5x Ø13 @45,G75 [1]
+Lifting lug,4,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",PL 8,80,70,8,Ø18 shackle hole; below deck line; rated w/ dyn factor,L62 [25]
+Mesh infill panel,2,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",welded mesh 3mm/90ap + PL3 frame,991,700,3,clip-in; aperture <=100 (public/event),G8/59/71 [6]
+Mid rail 1 CHS26.9,2,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",CHS 26.9x2.6,1681,40,3,returned ends [26]; ext>=300 (G20); 950 rail = ramp config,G64-69/G47
+Mid rail 2 CHS26.9,2,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",CHS 26.9x2.6,1681,40,3,returned ends [26]; ext>=300 (G20); 950 rail = ramp config,G64-69/G47
+Module coupler (spigot+cam),3,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",machined + Ø16 spigot h9,60,19,44,MID-CELL seam filler + Ø15.96 spigot through Ø16.05 web bores; lip<=1 by fit; over-centre cam; 15deg nosing chamfers (G96),G104/106 [15]
+Pivot pin Ø16,40,A4-80 stainless,Ø16 h9 bar,100,16,16,circlip grooves DIN 471 + R-clip retainer,L61
+Pivot pin Ø16 (base ctl),4,A4-80 stainless,Ø16 h9 bar,100,16,16,circlips+R-clip,L61
+Pivot pin Ø16 (base main),4,A4-80 stainless,Ø16 h9 bar,100,16,16,in vertical float slot; circlips+R-clip,L61
+Rail return + end cap,4,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",CHS 40x3 bend,120,40,3,"90deg return into post + domed cap, no snag (G72)",G72 [26]
+Ramp overlay threshold,2,EN AW-6082-T6 serrated plank extrusion (web pitch <=50),PL 6 folded chamfer,220,1700,36,hooks tread nosing; <=15mm chamfered lip (G84); REQUIRED for ramp detents,G38/84 [10]
+Ramp rail 950 CHS26.9 (clip-on),2,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",CHS 26.9x2.6,1681,40,3,returned ends [26]; ext>=300 (G20); 950 rail = ramp config,G64-69/G47
+Rating plate,4,SS 1.4301,PL 1.5 etched,100,75,1.5,class 6 / 7.5 kN/m2 / modes+detents / ballast rule / EN refs / ID / date; 4x Ø3.2 rivets,G94
+Rubber foot pad,4,NBR 70ShA,PL 10 rubber,150,150,10,bonded + 4x M5 csk retained,G34/L14 [23]
+Self-closing gate,1,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",SHS 40x4 frame,980,700,40,double torsion-spring hinges; inward opening; hooks std posts,G21 [8]
+Sole board,2,C24 timber,500x225x38,500,225,38,locating studs for footplate,G77 [24]
+Stabiliser crossbar,1,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",SHS 40x40x4,2000.0,40,40,pins to base brackets Ø16; rubber swivel feet; REQUIRED ladder mode >=3m,G27 [22]
+Stringer,4,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",SHS 60x60x5,1910.9,60,60,6x Ø20 H7 line-reamed; 1x Ø16.1; ends mitre 30.0deg; EXC2,EN 12811-1/1993 L26
+Toe board FB150x3,2,EN AW-6082-T6 serrated plank extrusion (web pitch <=50),FB 150x3 alu,1681,40,3,returned ends [26]; ext>=300 (G20); 950 rail = ramp config,G64-69/G47
+Top grip rail CHS40x3,2,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",CHS 40x3,1681,40,3,returned ends [26]; ext>=300 (G20); 950 rail = ramp config,G64-69/G47
+Tread plank,12,EN AW-6082-T6 serrated plank extrusion (web pitch <=50),plank 308x55x3 (web pitch 45),860.0,308.0,55.0,4x Ø9 csk; serrated (R11); web pitch<=50 [13],G4-7/L26
+U-guide cheek (inner),2,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",PL 8 laser,460,300,8,REAR LEG-TOP fan @node5; arc slot R180x16.5; 5x J-dip 16.5w x 30 SQUARE +2.5deg undercut; end stops; 5x Ø12.2; welds to stringer,G105/G96 [1][2]
+U-guide cheek (outer),2,"S355J2H SHS/plate, hot-dip galv EN ISO 1461 + black powder (duplex)",PL 8 laser,460,300,8,identical to inner cheek; spacer bosses 18,G105/G96

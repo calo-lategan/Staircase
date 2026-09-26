@@ -1,0 +1,18 @@
+00:01.516  blend            | Read blend: "C:\Users\USER\Desktop\Staircases\idea one\v2\final\FINAL_standard.blend"
+C:\Users\USER\Desktop\Staircases\idea one\v2\brief\render_final_check_refs.py:17: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  w = sc.world or bpy.data.worlds.new("W"); sc.world = w; w.use_nodes = True
+C:\Users\USER\Desktop\Staircases\idea one\v2\brief\render_final_check_refs.py:27: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes = True
+C:\Users\USER\Desktop\Staircases\idea one\v2\brief\render_final_check_refs.py:35: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mt = bpy.data.materials.new(name); mt.use_nodes = True
+00:03.891  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f5_where.jpg'
+00:04.516  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f5_close1.jpg'
+00:05.172  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f5_close2.jpg'
+00:05.813  render           | Saved: 'C:\Users\USER\Desktop\Staircases\idea one\v2\brief\web\img\final\f5_close3.jpg'
+counts 378 102 14 16 14 0
+OVERVIEW dist 5.66
+MARKERS {'f1': [48.72, 59.24], 'f2': [50.66, 77.65], 'f3': [39.84, 61.33], 'f4': [39.24, 46.88], 'f5': [58.47, 92.58], 'f6': [38.64, 19.63], 'f7': [53.29, 42.78], 'f8': [54.95, 47.13], 'f9': [46.88, 24.52]}
+RENDERS done
+Blender 5.1.2 (hash ec6e62d40fa9 built 2026-05-19 01:37:34)
+
+Blender quit

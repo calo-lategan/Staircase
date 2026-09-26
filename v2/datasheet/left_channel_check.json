@@ -1,0 +1,84 @@
+{
+ "left U-channels, 3 mm walls": {
+  "lower": "31 x 48",
+  "upper": "31 x 28",
+  "A_lo": 363,
+  "A_up": 243,
+  "mass_2bars_kg": 2.95,
+  "standard": {
+   "stress": 1.142,
+   "defl_L250": 0.508,
+   "person_10mm": 0.046
+  },
+  "catwalk_midfoot": {
+   "stress": 0.717,
+   "defl_L250": 0.614,
+   "person_10mm": 0.075
+  },
+  "steep_crew": {
+   "stress": 0.315
+  },
+  "f1": 46.55
+ },
+ "left U-channels, 4 mm walls": {
+  "lower": "33 x 49",
+  "upper": "33 x 29",
+  "A_lo": 492,
+  "A_up": 332,
+  "mass_2bars_kg": 4.02,
+  "standard": {
+   "stress": 0.834,
+   "defl_L250": 0.372,
+   "person_10mm": 0.034
+  },
+  "catwalk_midfoot": {
+   "stress": 0.524,
+   "defl_L250": 0.45,
+   "person_10mm": 0.055
+  },
+  "steep_crew": {
+   "stress": 0.231
+  },
+  "f1": 53.42
+ },
+ "left U-channels, 5 mm walls": {
+  "lower": "35 x 50",
+  "upper": "35 x 30",
+  "A_lo": 625,
+  "A_up": 425,
+  "mass_2bars_kg": 5.12,
+  "standard": {
+   "stress": 0.65,
+   "defl_L250": 0.291,
+   "person_10mm": 0.027
+  },
+  "catwalk_midfoot": {
+   "stress": 0.409,
+   "defl_L250": 0.352,
+   "person_10mm": 0.043
+  },
+  "steep_crew": {
+   "stress": 0.181
+  },
+  "f1": 59.33
+ },
+ "right RHS 25x45x3 / 25x25x2.5 (spec)": {
+  "A_lo": 384,
+  "A_up": 225,
+  "mass_2bars_kg": 2.97,
+  "standard": {
+   "stress": 0.806,
+   "defl_L250": 0.489,
+   "person_10mm": 0.045
+  },
+  "catwalk_midfoot": {
+   "stress": 0.529,
+   "defl_L250": 0.571,
+   "person_10mm": 0.07
+  },
+  "steep_crew": {
+   "stress": 0.231
+  }
+ },
+ "spec assumed left = right x 35/25 (kg)": 4.15
+}

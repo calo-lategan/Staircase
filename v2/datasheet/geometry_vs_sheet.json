@@ -1,0 +1,128 @@
+[
+ [
+  "R9",
+  "Stair pitch <= 35 deg",
+  "35.0 / 49.4 deg",
+  "standard PASS (at limit) / steep FAIL - crew step-ladder only"
+ ],
+ [
+  "R4",
+  "Going >= 250 (riser <= 175)",
+  "250 / 199 mm",
+  "standard PASS (at limit) / steep FAIL"
+ ],
+ [
+  "R5",
+  "Riser 100-200 (rec 170); riser <= going x tan35",
+  "175 / 232 mm",
+  "standard PASS (5 mm over the 170 rec) / steep FAIL"
+ ],
+ [
+  "R8",
+  "2h + g 540-660 (design aid)",
+  "600 / 662 mm",
+  "standard PASS / steep FAIL (663)"
+ ],
+ [
+  "R12",
+  "Uniform risers",
+  "standard 175 all / steep first 211 vs 232",
+  "standard PASS / steep FAIL"
+ ],
+ [
+  "R7",
+  "Open riser gap <= 120 max / 100 rec",
+  "125 mm (175 rise - 50 tread)",
+  "FAIL - close with a 50 mm nosing lip or riser plate"
+ ],
+ [
+  "R48",
+  "Deck gap <= 25 (catwalk)",
+  "25.2 mm",
+  "FAIL by 0.2 mm - tread depth 285"
+ ],
+ [
+  "R3",
+  "Clear width >= 1100 (industry anchor, flow calc)",
+  "1023 between handrails / 1211 between rails",
+  "BELOW anchor for a single unit; wide config PASS - confirm by flow calc"
+ ],
+ [
+  "R63",
+  "Top rail >= 1100 above pitch line",
+  "1111 / 1127 / 1162",
+  "PASS"
+ ],
+ [
+  "R64",
+  "Grip 25-50 (40 target)",
+  "25x25 square bars",
+  "PASS range, not round - specify CHS 40"
+ ],
+ [
+  "R65/R68",
+  "No gap > 470 in side protection",
+  "about 1000 mm tread-to-handrail",
+  "FAIL - add intermediate rail"
+ ],
+ [
+  "R66",
+  "Toe board 150 (event)",
+  "none",
+  "FAIL - add 150 mm toe board"
+ ],
+ [
+  "R70",
+  "Lower child rail ~600 (event)",
+  "none",
+  "FAIL - intermediate rail at ~575 mm serves both"
+ ],
+ [
+  "R19",
+  "Handrail extension >= 300 past top/bottom nosing",
+  "~80 mm",
+  "FAIL - extend handrail (stair variant only)"
+ ],
+ [
+  "R18/R109",
+  "Centre handrail if > 28 deg and > 1800 wide",
+  "wide stair 2.54 m at 35 deg",
+  "PASS only with the inner handrail FULL (not mini) on wide stairs"
+ ],
+ [
+  "R103",
+  "Module join gap <= 25 / lip <= 4",
+  "wide join 5 mm (right rails nest in left channels); double join 19 mm",
+  "PASS - wide and double"
+ ],
+ [
+  "R104",
+  "Positive captive locking",
+  "lock pins (bottom minis) loose",
+  "specify captive (lanyard / spring detent)"
+ ],
+ [
+  "R16/R94",
+  "Slip PTV >= 36 wet (40 event)",
+  "not specified",
+  "specify serrated top, PTV >= 40 test"
+ ],
+ [
+  "R17",
+  "55 mm contrasting nosings",
+  "none",
+  "specify contrasting nosing insert"
+ ],
+ [
+  "R106",
+  "Post spacing <= 2.5 m",
+  "305 mm",
+  "PASS"
+ ],
+ [
+  "R54",
+  "Free-standing height:base <= 3:1",
+  "0.7:1 standard",
+  "PASS"
+ ]
+]

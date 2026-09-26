@@ -1,0 +1,852 @@
+"""Storyline v3 - close-up camera on every join and handrail insertion, showcase cabin from the IFC,
+aluminium look + EEVEE daylight lighting.
+
+Run (headless, RIGGED2.blend is only read - result is saved as RIGGED3.blend):
+  blender -b "STEP LADDER RIGGED2.blend" --factory-startup --python build_story_v3.py
+
+Writes  v2/out/Latest 21-09-2026/STEP LADDER RIGGED3.blend  and  v2/story/story_v3.json
+The staircase model/rig itself is not modified: only animation, camera, lights, render look and the
+cabin instance are added.
+"""
+import bpy, sys, types, math, json, os, time
+from mathutils import Vector, Matrix
+
+HERE = r"C:\Users\USER\Desktop\Staircases\idea one\v2\story"
+BLEND_OUT = r"C:\Users\USER\Desktop\Staircases\idea one\v2\out\Latest 21-09-2026\STEP LADDER RIGGED3.blend"
+t_start = time.time()
+
+# ------------------------------------------------------------------ UI module (updated: cabin + story camera)
+src = open(os.path.join(HERE, "staircase_ui.py"), encoding="utf-8").read()
+txt = bpy.data.texts["staircase_ui.py"]
+txt.clear()
+txt.write(src)
+m = types.ModuleType("staircase_ui_live")
+sys.modules["staircase_ui_live"] = m
+exec(compile(src, "staircase_ui.py", "exec"), m.__dict__)
+ctx = bpy.context
+sc = ctx.scene
+cfg, set_angle, arm = m.cfg, m.set_angle, m.arm
+A, B = arm("A"), arm("B")
+A0 = A.location.copy()
+X, Y, Z = Vector((1, 0, 0)), Vector((0, 1, 0)), Vector((0, 0, 1))
+
+STORY = ["WIDE_CATWALK_MINI", "DOUBLE_CATWALK", "WIDE_CATWALK_FULL", "SINGLE_BAR", "DOUBLE_STANDARD",
+         "WIDE_STANDARD", "WIDE_STEEP", "DOUBLE_STEEP", "SINGLE_STEEP", "SINGLE_CATWALK", "SINGLE_STANDARD"]
+HOLD0, HOLD, LIFT, LIFT_SLOW, MOVE, DOCK, INS, INS_FAST, FINAL = 60, 64, 30, 18, 72, 40, 48, 16, 120
+DOCK_LEN = {"wide": 60, "double": DOCK, "bar": DOCK}   # the nesting slide gets the most time
+RAISE, PIN, HOOK, AWAY, DY, CAB_UP = 1.5, 0.15, 0.25, 3.0, 0.30, 7.0
+LOCK_NAME = {0.0: "CATWALK", 35.0: "STANDARD", 49.4: "STEEP"}
+
+# ------------------------------------------------------------------ 1. showcase cabin (instance of the IFC cabin)
+# female door of the toilet cabin: outer door-frame face, door centre line, door sill  (IFC coordinates)
+CAB_SILL_SRC = Vector((-92.56, -21.52, 1.01))
+# stair top: just past the top end (min x 8.119 at 35 deg), sill at the landing level (old stage top 6.097)
+CAB_SILL_DST = Vector((8.10, 45.615, 6.097))
+RIG_GROUND = 4.875
+CAB_GROUND_SRC = 0.0059
+
+
+def setup_cabin():
+    src_col = bpy.data.collections.get("Showcase_Cabin_Src") or bpy.data.collections.new("Showcase_Cabin_Src")
+    n = 0
+    for o in bpy.data.collections["Unsorted"].objects:
+        if o.type != 'MESH':
+            continue
+        c = o.matrix_world @ (sum((Vector(v) for v in o.bound_box), Vector()) / 8)
+        if c.x < -90 and o.name not in src_col.objects:
+            src_col.objects.link(o)
+            n += 1
+    # packers under the skid: the cabin sits 218 mm up so its door sill is flush with the landing
+    h = (CAB_SILL_DST.z - (CAB_SILL_SRC.z - CAB_GROUND_SRC)) - RIG_GROUND
+    conc = mat("Concrete packer", (0.52, 0.51, 0.49), 0.0, 0.85)
+    for i, (x, y) in enumerate([(x, y) for x in (-92.66, -96.28) for y in (-22.62, -16.82, -11.02)]):
+        nm = f"Showcase_Packer_{i}"
+        ob = bpy.data.objects.get(nm)
+        if not ob:
+            me = bpy.data.meshes.new(nm)
+            s = 0.175
+            vs = [(-s, -s, 0), (s, -s, 0), (s, s, 0), (-s, s, 0), (-s, -s, 1), (s, -s, 1), (s, s, 1), (-s, s, 1)]
+            fs = [(0, 3, 2, 1), (4, 5, 6, 7), (0, 1, 5, 4), (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)]
+            me.from_pydata(vs, [], fs)
+            me.materials.append(conc)
+            ob = bpy.data.objects.new(nm, me)
+            src_col.objects.link(ob)
+        ob.location = (x, y, CAB_GROUND_SRC - h)
+        ob.scale = (1, 1, h)
+    src_col.instance_offset = CAB_SILL_SRC
+    cab = bpy.data.objects.get(m.CABIN) or bpy.data.objects.new(m.CABIN, None)
+    cab.instance_type = 'COLLECTION'
+    cab.instance_collection = src_col
+    cab.empty_display_size = 0.5
+    cab.location = CAB_SILL_DST
+    link_showcase(cab)
+    return cab, n, h
+
+
+def link_showcase(ob):
+    col = bpy.data.collections.get("Showcase") or bpy.data.collections.new("Showcase")
+    if col.name not in sc.collection.children:
+        sc.collection.children.link(col)
+    if ob.name not in col.objects:
+        col.objects.link(ob)
+
+
+# ------------------------------------------------------------------ 2. materials / world / lights / ground
+def mat(name, base, metal, rough, bump=0.0, bump_scale=300.0):
+    mt = bpy.data.materials.get(name) or bpy.data.materials.new(name)
+    try:
+        mt.use_nodes = True
+    except Exception:
+        pass
+    nt = mt.node_tree
+    nt.nodes.clear()
+    out = nt.nodes.new("ShaderNodeOutputMaterial")
+    bs = nt.nodes.new("ShaderNodeBsdfPrincipled")
+    bs.inputs["Base Color"].default_value = (*base, 1.0)
+    bs.inputs["Metallic"].default_value = metal
+    bs.inputs["Roughness"].default_value = rough
+    nt.links.new(bs.outputs[0], out.inputs[0])
+    if bump:
+        nz = nt.nodes.new("ShaderNodeTexNoise")
+        nz.inputs["Scale"].default_value = bump_scale
+        bp = nt.nodes.new("ShaderNodeBump")
+        bp.inputs["Strength"].default_value = bump
+        bp.inputs["Distance"].default_value = 0.0005
+        nt.links.new(nz.outputs["Fac"], bp.inputs["Height"])
+        nt.links.new(bp.outputs["Normal"], bs.inputs["Normal"])
+    mt.diffuse_color = (*base, 1.0)
+    mt.metallic, mt.roughness = metal, rough
+    return mt
+
+
+def bone_of(o):
+    if o.parent_type == 'BONE':
+        return o.parent_bone
+    for c in o.constraints:
+        if c.type == 'CHILD_OF' and getattr(c, "subtarget", ""):
+            return c.subtarget
+    return ""
+
+
+def apply_aluminium():
+    M = dict(
+        struct=mat("AL 6082-T6 clear anodised", (0.84, 0.85, 0.86), 0.75, 0.30),
+        tread=mat("AL 6082-T6 serrated tread", (0.70, 0.71, 0.72), 0.6, 0.45, bump=0.35),
+        rail=mat("AL 6082-T6 satin rail", (0.88, 0.88, 0.89), 0.8, 0.24),
+        pin=mat("AL 6082-T6 pins and axles", (0.76, 0.77, 0.78), 0.85, 0.2),
+        bar=mat("Galvanised steel hook bar", (0.62, 0.64, 0.65), 1.0, 0.45),
+    )
+    cnt = {k: 0 for k in M}
+    for o in bpy.data.objects:
+        if o.type != 'MESH':
+            continue
+        if o.get("static_bar"):
+            kind = "bar"
+        elif o.get("unit") in ("A", "B"):
+            if o.get("hr_variant"):
+                kind = "rail"
+            else:
+                d = sorted(o.dimensions)
+                bn = bone_of(o)
+                if bn.startswith("Tread"):
+                    kind = "tread" if d[2] > 1.0 else "pin"
+                elif d[2] > 1.2 and d[1] < 0.05:
+                    kind = "pin"          # axles
+                else:
+                    kind = "struct"
+        else:
+            continue
+        if not o.material_slots:
+            o.data.materials.append(None)
+        for sl in o.material_slots:
+            sl.link = 'OBJECT'          # object-level: shared mesh data / IFC colours stay untouched
+            sl.material = M[kind]
+        cnt[kind] += 1
+    return cnt
+
+
+def setup_look():
+    # neutral daylight world (no tinted HDRI -> aluminium stays silver): ground / horizon / sky gradient
+    w = bpy.data.worlds.get("Showcase_World") or bpy.data.worlds.new("Showcase_World")
+    try:
+        w.use_nodes = True
+    except Exception:
+        pass
+    nt = w.node_tree
+    nt.nodes.clear()
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    sep = nt.nodes.new("ShaderNodeSeparateXYZ")
+    ma = nt.nodes.new("ShaderNodeMath")
+    ma.operation = 'MULTIPLY_ADD'
+    ma.inputs[1].default_value = 0.5
+    ma.inputs[2].default_value = 0.5
+    ramp = nt.nodes.new("ShaderNodeValToRGB")
+    cr = ramp.color_ramp
+    cr.elements[0].position, cr.elements[0].color = 0.0, (0.20, 0.20, 0.20, 1)
+    cr.elements[1].position, cr.elements[1].color = 1.0, (0.50, 0.58, 0.72, 1)
+    for pos, col in ((0.495, (0.30, 0.30, 0.29, 1)), (0.505, (0.88, 0.89, 0.90, 1)), (0.62, (0.72, 0.76, 0.82, 1))):
+        e = cr.elements.new(pos)
+        e.color = col
+    bg = nt.nodes.new("ShaderNodeBackground")
+    bg.inputs["Strength"].default_value = 0.75
+    out = nt.nodes.new("ShaderNodeOutputWorld")
+    L = nt.links.new
+    L(tc.outputs["Generated"], sep.inputs[0])
+    L(sep.outputs["Z"], ma.inputs[0])
+    L(ma.outputs[0], ramp.inputs["Fac"])
+    L(ramp.outputs["Color"], bg.inputs["Color"])
+    L(bg.outputs[0], out.inputs["Surface"])
+    sc.world = w
+    # sun: high, from the front-left of the story camera -> modelled shadows on rails and treads
+    sun = bpy.data.objects.get("Showcase_Sun")
+    if not sun:
+        ld = bpy.data.lights.new("Showcase_Sun", 'SUN')
+        sun = bpy.data.objects.new("Showcase_Sun", ld)
+    sun.data.energy = 4.0
+    sun.data.color = (1.0, 0.97, 0.92)
+    sun.data.angle = math.radians(2.0)
+    sun.data.use_shadow = True
+    d = Vector((-0.55, 0.50, -0.67)).normalized()
+    sun.rotation_euler = d.to_track_quat('-Z', 'Y').to_euler()
+    link_showcase(sun)
+    # ground
+    g = bpy.data.objects.get("Showcase_Ground")
+    if not g:
+        me = bpy.data.meshes.new("Showcase_Ground")
+        s = 400.0
+        me.from_pydata([(-s, -s, 0), (s, -s, 0), (s, s, 0), (-s, s, 0)], [], [(0, 1, 2, 3)])
+        g = bpy.data.objects.new("Showcase_Ground", me)
+        gm = mat("Site ground (paving)", (0.20, 0.20, 0.19), 0.0, 0.92, bump=0.25, bump_scale=60.0)
+        me.materials.append(gm)
+    g.location = (8.5, 45.6, RIG_GROUND - 0.0015)
+    link_showcase(g)
+    # EEVEE: fast settings that still give soft shadows + metal reflections
+    R = sc.render
+    R.engine = 'BLENDER_EEVEE'
+    ee = sc.eevee
+    ee.taa_render_samples = 16
+    ee.use_raytracing = True
+    ee.ray_tracing_method = 'PROBE'
+    ee.use_fast_gi = True
+    ee.fast_gi_method = 'GLOBAL_ILLUMINATION'
+    ee.fast_gi_distance = 0.5
+    ee.use_shadows = True
+    ee.shadow_ray_count = 1
+    ee.shadow_step_count = 6
+    R.resolution_x, R.resolution_y, R.resolution_percentage = 1920, 1080, 100
+    R.fps = 24
+    R.filter_size = 1.2
+    try:
+        sc.view_settings.view_transform = 'AgX'
+        sc.view_settings.look = 'AgX - Medium High Contrast'
+    except Exception:
+        try:
+            sc.view_settings.look = 'Medium High Contrast'
+        except Exception:
+            pass
+
+
+# ------------------------------------------------------------------ 3. storyline helpers
+def ang(k):
+    return cfg(k)[3]
+
+
+def lay(k):
+    return cfg(k)[4]
+
+
+def has_b(k):
+    return lay(k) in ("DOUBLE", "WIDE")
+
+
+def pos_b(k, a=None):
+    a = ang(k) if a is None else a
+    if lay(k) == "DOUBLE":
+        return A0 + Matrix.Rotation(math.radians(a), 3, 'Y') @ m.D_END
+    if lay(k) == "WIDE":
+        return A0 - Y * m.W_SIDE
+    return A0 - Y * (m.W_SIDE + AWAY)
+
+
+def ease(t):
+    t = min(max(t, 0.0), 1.0)
+    return t * t * (3 - 2 * t)
+
+
+def clamp01(t):
+    return min(max(t, 0.0), 1.0)
+
+
+def poly(pts, t):
+    n = len(pts) - 1
+    if n == 0:
+        return pts[0].copy()
+    x = clamp01(t) * n
+    i = min(int(x), n - 1)
+    return pts[i].lerp(pts[i + 1], ease(x - i))
+
+
+def lift_profile(t):
+    """0 -> PIN slowly (pins leave the sockets), then PIN -> RAISE quickly."""
+    s = LIFT_SLOW / LIFT
+    return PIN * ease(t / s) if t < s else PIN + (RAISE - PIN) * ease((t - s) / (1 - s))
+
+
+def drop_profile(t):
+    """RAISE -> PIN quickly, then PIN -> 0 slowly (poles slide into the guide rails)."""
+    s = INS_FAST / INS
+    return RAISE - (RAISE - PIN) * ease(t / s) if t < s else PIN * (1 - ease((t - s) / (1 - s)))
+
+
+tracked = [o for o in bpy.data.objects
+           if (o.get("unit") and o.type in ('MESH', 'ARMATURE')) or o.get("static_bar")]
+lifts = {(u, s): bpy.data.objects[f"HR_Lift_{u}_{s}"] for u in "AB" for s in "RL"}
+tube = bpy.data.objects["StaticBar_Tube"]
+stage = bpy.data.objects["StaticBar_Stage"]
+TUBE0 = tube.location.copy()
+
+
+def clear_story(objs):
+    for o in objs:
+        ad = o.animation_data
+        if not ad:
+            continue
+        for tr in list(ad.nla_tracks):
+            if tr.name == "Storyline":
+                for st in tr.strips:
+                    if st.action and st.action.users <= 1:
+                        bpy.data.actions.remove(st.action)
+                ad.nla_tracks.remove(tr)
+        if ad.action and ad.action.name.startswith("SL_"):
+            act = ad.action
+            ad.action = None
+            bpy.data.actions.remove(act)
+        for tr in ad.nla_tracks:
+            tr.mute = True
+    for mk in list(sc.timeline_markers):
+        if mk.name in [c[0] for c in m.CONFIGS]:
+            sc.timeline_markers.remove(mk)
+
+
+def fcurves_of(idb):
+    ad = idb.animation_data
+    if not ad or not ad.action:
+        return []
+    out = []
+    for layer in ad.action.layers:
+        for strip in layer.strips:
+            cb = strip.channelbag(ad.action_slot)
+            if cb:
+                out.extend(cb.fcurves)
+    return out
+
+
+def push_to_nla(objs):
+    n = 0
+    for o in objs:
+        ad = o.animation_data
+        if not ad or not ad.action:
+            continue
+        for fc in fcurves_of(o):
+            for kp in fc.keyframe_points:
+                kp.interpolation = 'CONSTANT' if fc.data_path.startswith("hide_") else 'LINEAR'
+        act = ad.action
+        act.name = "SL_" + o.name
+        slot = ad.action_slot
+        tr = ad.nla_tracks.new()
+        tr.name = "Storyline"
+        st = tr.strips.new(act.name, int(act.frame_range[0]), act)
+        if slot is not None and hasattr(st, "action_slot"):
+            st.action_slot = slot
+        ad.action = None
+        tr.mute = True
+        n += 1
+    return n
+
+
+def set_story_mute(mute):
+    for o in bpy.data.objects:
+        ad = o.animation_data
+        if ad:
+            for tr in ad.nla_tracks:
+                if tr.name == "Storyline":
+                    tr.mute = mute
+
+
+# ------------------------------------------------------------------ build scene additions
+cab, n_cab, packer_h = setup_cabin()
+mat_counts = apply_aluminium()
+setup_look()
+cam = bpy.data.objects.get(m.STORY_CAM)
+if not cam:
+    cam = bpy.data.objects.new(m.STORY_CAM, bpy.data.cameras.new(m.STORY_CAM))
+focus = bpy.data.objects.get("StoryCam_Focus") or bpy.data.objects.new("StoryCam_Focus", None)
+focus.empty_display_size = 0.05
+link_showcase(cam)
+link_showcase(focus)
+cam.data.lens = 35.0
+cam.data.sensor_width = 36.0
+cam.data.clip_start = 0.02
+cam.data.clip_end = 250.0
+cam.data.dof.use_dof = True
+cam.data.dof.focus_object = focus
+cam.data.dof.aperture_fstop = 8.0
+for c in list(cam.constraints):
+    cam.constraints.remove(c)
+tt = cam.constraints.new('TRACK_TO')
+tt.target = focus
+tt.track_axis = 'TRACK_NEGATIVE_Z'
+tt.up_axis = 'UP_Y'
+
+animated = set(tracked) | set(lifts.values()) | {A, B, cab, tube, stage}
+clear_story(animated | {cam, focus})
+
+VIS = {}
+for k in set(STORY):
+    m.goto_config(ctx, k)
+    VIS[k] = {o.name: not o.hide_render for o in tracked}
+    VIS[k][stage.name] = False                   # the cabin replaces the stage block
+    VIS[k][cab.name] = k in m.CABIN_STATES
+
+vis_now, vis_keys = {}, {}
+
+
+def set_vis_at(frame, d):
+    for n, v in d.items():
+        if n not in vis_now:
+            vis_now[n] = v
+            vis_keys[n] = [(frame, v)]
+        elif vis_now[n] != v:
+            vis_now[n] = v
+            vis_keys[n].append((frame, v))
+
+
+def is_hr(n):
+    return bool(bpy.data.objects[n].get("hr_variant"))
+
+
+def unit(n):
+    return bpy.data.objects[n].get("unit")
+
+
+def base(k, u, s):
+    inner = (u == "A" and s == "L") or (u == "B" and s == "R")
+    return -m.POLE_DROP if (k == "WIDE_CATWALK_MINI" and inner) else 0.0
+
+
+def key_arm(fr, u, a):
+    set_angle(u, a)
+    arm(u).pose.bones["GuideFrame_IK_Target"].keyframe_insert("location", frame=fr)
+
+
+def key_loc(ob, fr, loc):
+    ob.location = loc
+    ob.keyframe_insert("location", frame=fr)
+
+
+def key_lift(fr, u, s, z):
+    e = lifts[(u, s)]
+    e.location = (0.0, 0.0, z)
+    e.keyframe_insert("location", index=2, frame=fr)
+
+
+def key_cab(fr, up, with_tube):
+    key_loc(cab, fr, CAB_SILL_DST + Z * up)
+    if with_tube:
+        key_loc(tube, fr, TUBE0 + Z * up)
+
+
+def label(k):
+    return cfg(k)[1].replace(" - ", " \u2013 ").replace(" deg", "\u00b0")
+
+
+captions, camkeys, phases = [], [], []
+
+
+def cap(f0, f1, text, slot="bottom"):
+    captions.append(dict(f0=int(f0), f1=int(f1), text=text, slot=slot))
+
+
+# camera shot specs --------------------------------------------------------------------------
+def S(anchor, az, el, d=None):
+    return dict(a=anchor, az=az, el=el, d=d)
+
+
+def wide_shot(k, az=-52.0, el=22.0):
+    if k in m.CABIN_STATES:
+        return S(("site",), az + 12, 15, 8.6)
+    return S(("wide", ["A", "B"] if has_b(k) else ["A"]), az, el)
+
+
+def pole_shot(k, at, close=True):
+    lock = LOCK_NAME[ang(k)]
+    if lay(k) == "WIDE":           # inner side between the units, seen from the bottom end
+        role = "toppost" if k == "WIDE_CATWALK_MINI" else "mini"
+        return S(("pole", "A", "L", lock, role, "max_x", at), -16, 30 if close else 28, 0.75 if close else 1.35)
+    if lay(k) == "DOUBLE":         # pole next to the end-to-end joint
+        return S(("pole", "A", "L", lock, "mini", "min_x", at), -76, 26 if close else 22, 0.8 if close else 1.4)
+    pick = "mid"
+    return S(("pole", "A", "L", lock, "mini", pick, at), -70, 26 if close else 22, 0.8 if close else 1.4)
+
+
+# ------------------------------------------------------------------ 4. storyline
+f = 1
+k0 = STORY[0]
+set_vis_at(f, VIS[k0])
+angB = ang(k0)
+bpos = pos_b(k0)
+key_arm(f, "A", ang(k0))
+key_arm(f, "B", angB)
+key_loc(B, f, bpos)
+key_loc(A, f, A0)
+key_cab(f, 0.0 if k0 in m.CABIN_STATES else CAB_UP, True)
+for u in "AB":
+    for s in "RL":
+        key_lift(f, u, s, base(k0, u, s))
+sc.timeline_markers.new(k0, frame=f)
+cap(1, HOLD0 + 10, "Folding modular stair  \u00b7  one unit, eleven configurations", "title")
+cap(1, HOLD0, f"1 / {len(STORY)}   {label(k0)}", "top")
+camkeys += [(1, wide_shot(k0, az=-64)), (HOLD0 - 24, wide_shot(k0, az=-56))]
+f += HOLD0
+
+for idx, (P, N) in enumerate(zip(STORY, STORY[1:])):
+    T = f
+    aP, aN = ang(P), ang(N)
+    lP, lN = lay(P), lay(N)
+    pP, pN = pos_b(P), pos_b(N)
+    both, arrive, leave = has_b(P) and has_b(N), has_b(N) and not has_b(P), has_b(P) and not has_b(N)
+    cab_in = N in m.CABIN_STATES and P not in m.CABIN_STATES
+    cab_out = P in m.CABIN_STATES and N not in m.CABIN_STATES
+    last = idx == len(STORY) - 2
+
+    # ---- LIFT: handrails of P come out (slow first 150 mm = pins leaving the sockets)
+    key_arm(T, "A", aP)
+    key_arm(T, "B", angB)
+    key_loc(B, T, bpos)
+    for i in range(LIFT + 1):
+        for u in "AB":
+            for s in "RL":
+                key_lift(T + i, u, s, base(P, u, s) + lift_profile(i / LIFT))
+    f1 = T + LIFT
+    mv = {n: (v and not is_hr(n)) for n, v in VIS[P].items()}
+    if has_b(N) and not has_b(P):
+        for n, v in VIS[N].items():
+            if unit(n) == "B":
+                mv[n] = v and not is_hr(n)
+    mv[tube.name] = lP == "BAR"                 # the hook bar leaves with the cabin
+    mv[cab.name] = P in m.CABIN_STATES
+    mv[stage.name] = False
+    set_vis_at(f1, mv)
+
+    # ---- MOVE: fold and / or bring unit B to its pre-dock position
+    dock = None
+    # side-by-side = NESTED: unit B's right rails (25 mm inverted channels) run inside unit A's left 25 mm
+    # U-channels. Upper and lower channels are stacked, so the only way in or out is lengthwise, along the frame.
+    D_P = Matrix.Rotation(math.radians(aP), 3, 'Y') @ m.D_END      # one frame length toward the top end
+    D_N = Matrix.Rotation(math.radians(aN), 3, 'Y') @ m.D_END
+    W = Y * m.W_SIDE
+    if both and lP == "WIDE" and lN == "DOUBLE":
+        pts = [pP, pP + D_P, pP + D_P + Z * HOOK, pN + Z * HOOK]   # slide out, lift, shift over the top axle
+        dock = "double"
+    elif both and lP == "DOUBLE" and lN == "WIDE":
+        pts = [pP, pP + Z * HOOK, pP + Z * HOOK - W, pP - W]       # lift off, shift sideways, line up the rails
+        dock = "wide"
+    elif both:
+        pts = None
+    elif arrive:
+        if lN == "WIDE":
+            pts, dock = [pN + D_N - Y * AWAY, pN + D_N], "wide"
+        else:
+            pts, dock = [pN - Y * AWAY + Z * HOOK, pN + Z * HOOK], "double"
+    elif leave:
+        pts = [pP, pP + D_P, pP + D_P - Y * AWAY] if lP == "WIDE" else [pP, pP + Z * HOOK, pP - Y * AWAY + Z * HOOK]
+    else:
+        pts = [bpos, bpos]
+    if lN == "BAR":
+        dock = "bar"
+    b_delay = 0.4 if cab_out else 0.0            # unit B waits until the cabin has been craned away
+    slide_out = leave and lP == "WIDE"           # B must leave A's channels before A may fold or lift
+    for i in range(MOVE + 1):
+        t = i / MOVE
+        fr = f1 + i
+        tf = clamp01((t - 0.4) / 0.5) if slide_out else t
+        a = aP + (aN - aP) * ease(tf)
+        key_arm(fr, "A", a)
+        if both:
+            angB = a
+        elif arrive:
+            angB = aN
+        key_arm(fr, "B", angB)
+        if pts is None:
+            bpos = pos_b(N, a) if lN == "DOUBLE" else pos_b(N)
+        elif slide_out:                          # 40 % of the move sliding out, the rest carrying B away
+            bpos = pts[0].lerp(pts[1], ease(t / 0.4)) if t < 0.4 else pts[1].lerp(pts[2], ease((t - 0.4) / 0.6))
+        else:
+            bpos = poly(pts, clamp01((t - b_delay) / (1 - b_delay)))
+        key_loc(B, fr, bpos)
+        if lN == "BAR":
+            key_loc(A, fr, A0 + Z * HOOK * ease(tf))
+        if cab_in:
+            key_cab(fr, CAB_UP * (1 - ease((t - 0.55) / 0.45)), lN == "BAR")
+        if cab_out:
+            key_cab(fr, CAB_UP * ease(t / 0.4), lP == "BAR")
+    if cab_in:
+        set_vis_at(f1 + int(0.55 * MOVE), {cab.name: True, tube.name: lN == "BAR"})
+    if cab_out:
+        set_vis_at(f1 + int(0.4 * MOVE) + 1, {cab.name: False, tube.name: False})
+    f2 = f1 + MOVE
+
+    # ---- DOCK: the joint closes slowly (close-up)
+    if dock:
+        DK = DOCK_LEN[dock]
+        pre = {"wide": pN + D_N, "double": pN + Z * HOOK}.get(dock)
+        for i in range(DK + 1):
+            t = i / DK
+            fr = f2 + i
+            if dock in ("wide", "double"):
+                bpos = pre.lerp(pN, ease(t))
+                key_loc(B, fr, bpos)
+            else:
+                key_loc(A, fr, A0 + Z * HOOK * (1 - ease(t)))
+        key_arm(f2 + DK, "A", aN)
+        key_arm(f2 + DK, "B", angB)
+        f3 = f2 + DK
+    else:
+        f3 = f2
+
+    # ---- INSERT: handrails of N drop in (fast to 150 mm, then slow into the guide rails)
+    set_vis_at(f3, VIS[N])
+    for i in range(INS + 1):
+        for u in "AB":
+            for s in "RL":
+                key_lift(f3 + i, u, s, base(N, u, s) + drop_profile(i / INS))
+    f4 = f3 + INS
+    if not has_b(N):
+        bpos = pos_b(N)
+        key_loc(B, f4, bpos)
+    sc.timeline_markers.new(N, frame=f4)
+    f = f4 + (FINAL if last else HOLD)
+
+    # ---- captions
+    lock_txt = {0.0: "locked flat (catwalk)", 35.0: "locked at 35\u00b0", 49.4: "locked at 49.4\u00b0"}[aN]
+    cap(T, f1 + 4, "Handrails lifted out \u2013 the steps are unlocked and free to fold")
+    if both and lP != lN:
+        mtxt = ("Unit B slides out along unit A's channels and moves over the top axle" if lP == "WIDE"
+                else "Unit B lifts off the top axle and lines its right rails up with unit A's left channels")
+    elif both:
+        mtxt = f"Both units fold together {aP:g}\u00b0 \u2192 {aN:g}\u00b0 \u2013 guide rails slide on the tread pins"
+    elif arrive:
+        mtxt = "Unit B brought alongside" if lN == "WIDE" else "Unit B brought to the top end"
+        if cab_out:
+            mtxt = "Cabin craned away \u2013 " + mtxt[0].lower() + mtxt[1:]
+    elif leave:
+        mtxt = ("Unit B slides out of unit A's channels and is removed" if lP == "WIDE" else "Unit B removed") \
+            + (f" \u2013 unit A folds {aP:g}\u00b0 \u2192 {aN:g}\u00b0" if aP != aN else "")
+    else:
+        mtxt = f"Steps fold {aP:g}\u00b0 \u2192 {aN:g}\u00b0 \u2013 guide rails slide on the tread pins"
+    if cab_in:
+        mtxt += " \u2013 cabin placed, door sill at landing level"
+    cap(f1 + 4, f2 + 2, mtxt)
+    if dock:
+        cap(f2 + 2, f3 + 2, {"wide": "Side-by-side join \u2013 unit B's right guide rails slide inside unit A's left 25 mm channels",
+                             "double": "End-to-end join \u2013 unit B's guide plates hook over unit A's top axle",
+                             "bar": "Top axle hooks onto the cabin's static bar under the door sill"}[dock])
+    cap(f3 + 2, f4 + 6, f"One handrail drops through both nested guide rails \u2013 both units {lock_txt}" if lN == "WIDE"
+        else f"Handrail poles drop into the guide rails \u2013 steps {lock_txt}")
+    cap(f4, f, f"{idx + 2} / {len(STORY)}   {label(N)}", "top")
+    phases.append(dict(P=P, N=N, T=T, lift_end=f1, move_end=f2, dock=dock, dock_end=f3, ins_end=f4, hold_end=f))
+
+    # ---- camera keys
+    if lN == "WIDE" and lP == "WIDE":
+        ms = S(("fold", "B"), -78, 12, 2.2)
+    elif both:
+        ms = S(("wide", ["A", "B"]), -50, 26)
+    elif cab_in or cab_out:
+        ms = S(("site",), -38, 16, 10.0)
+    elif leave or arrive:
+        ms = S(("wide", ["A"]), -52, 22)
+    else:
+        ms = S(("fold", "A"), -76, 12, 2.2)
+    camkeys += [(T - 2, pole_shot(P, T, close=False)), (T + LIFT_SLOW + 6, pole_shot(P, T, close=False)),
+                (f1 + 26, ms), (f2 - (22 if dock else 16), ms)]
+    if dock:
+        if dock == "wide":      # follow the slide from above, then look straight down the channel mouths
+            sw = S(("chan", "MainRig_026", "mid", f3), -34, 38, 1.5)
+            se = S(("chan", "MainRig_037", "end", f3), -9, 16, 0.5)
+            camkeys += [(f2 + 8, sw), (f2 + int(0.45 * DK), sw), (f3 - 12, se), (f3, se)]
+        else:
+            ds = {"double": S(("axle", "MainRig_010", "ymin", f3), -76, 16, 0.7),
+                  "bar": S(("axle", "MainRig_010", "ymin", f3), -60, 30, 0.95)}[dock]
+            camkeys += [(f2 + 8, ds), (f3, ds)]
+    camkeys += [(f3 + INS_FAST, pole_shot(N, f4)), (f4, pole_shot(N, f4)), (f4 + 24, wide_shot(N, az=-58))]
+    if last:
+        camkeys += [(f4 + 56, wide_shot(N, az=-50)), (f - 6, S(("site",), 24, 12, 8.0))]
+    else:
+        camkeys += [(f - 24, wide_shot(N, az=-52))]
+
+F_END = f
+key_arm(F_END, "A", ang(STORY[-1]))
+key_arm(F_END, "B", angB)
+key_loc(B, F_END, bpos)
+key_loc(A, F_END, A0)
+for n, ks in vis_keys.items():
+    o = bpy.data.objects[n]
+    for fr, v in ks:
+        o.hide_viewport = not v
+        o.hide_render = not v
+        o.keyframe_insert("hide_viewport", frame=fr)
+        o.keyframe_insert("hide_render", frame=fr)
+pushed = push_to_nla(animated)
+sc.frame_start, sc.frame_end = 1, F_END
+t_story = time.time() - t_start
+
+# ------------------------------------------------------------------ 5. camera bake (anchors read from the rig)
+VF = 2 * math.atan(10.125 / cam.data.lens)       # vertical field of view, 16:9, 36 mm sensor
+excl = []
+for lc in ctx.view_layer.layer_collection.children:
+    if lc.name in ("IfcProject/Undefined", "MainStaircase_Source") and not lc.exclude:
+        lc.exclude = True                          # speed only; restored before saving
+        excl.append(lc)
+set_story_mute(False)
+local = {}
+
+
+def verts(n):
+    if n not in local:
+        local[n] = [v.co.copy() for v in bpy.data.objects[n].data.vertices]
+    return local[n]
+
+
+def wpts(n):
+    mw = bpy.data.objects[n].matrix_world
+    return [mw @ v for v in verts(n)]
+
+
+def axle_end(n, which):
+    p = wpts(n)
+    c = sum(p, Vector()) / len(p)
+    y = min(q.y for q in p) + 0.012 if which == "ymin" else max(q.y for q in p) - 0.012
+    return Vector((c.x, y, c.z))
+
+
+POLES = {}
+
+
+def pole_pt(u, s, lock, role, pick):
+    key = (u, s, lock, role)
+    if key not in POLES:
+        POLES[key] = [o.name for o in bpy.data.objects if o.get("unit") == u and o.get("side") == s
+                      and o.get("hr_variant") == lock and o.get("role") == role and o.type == 'MESH']
+    cs = []
+    for n in POLES[key]:
+        p = wpts(n)
+        cs.append(sum(p, Vector()) / len(p))
+    cs.sort(key=lambda c: c.x)
+    if not cs:
+        return None
+    return cs[-1] if pick == "max_x" else cs[0] if pick == "min_x" else cs[len(cs) // 2]
+
+
+SITE = CAB_SILL_DST + Vector((0.55, -0.35, 0.25))
+AX = {"A": ("MainRig_006", "MainRig_010"), "B": ("UnitB_006", "UnitB_010")}
+
+
+def anchor(a):
+    kind = a[0]
+    if kind == "site":
+        return SITE, 0.0
+    if kind == "axle":
+        return axle_end(a[1], a[2]), 0.0
+    if kind == "chan":
+        p = wpts(a[1])
+        if a[2] == "end":
+            xm = max(q.x for q in p)
+            p = [q for q in p if q.x > xm - 0.012]
+        return sum(p, Vector()) / len(p), 0.0
+    if kind == "pole":
+        return pole_pt(*a[1:6]), 0.0
+    if kind == "fold":
+        e0, e1 = (axle_end(n, "ymin") for n in AX[a[1]])
+        return (e0 + e1) / 2 + Z * 0.35, 0.0
+    if kind == "wide":
+        pts = []
+        for u in a[1]:
+            if bpy.data.objects[AX[u][0]].hide_render:
+                continue
+            for n in AX[u]:
+                for w in ("ymin", "ymax"):
+                    q = axle_end(n, w)
+                    pts += [q, q + Z * 1.2]
+        lo = Vector((min(p.x for p in pts), min(p.y for p in pts), min(p.z for p in pts)))
+        hi = Vector((max(p.x for p in pts), max(p.y for p in pts), max(p.z for p in pts)))
+        return (lo + hi) / 2, (hi - lo).length / 2
+    raise ValueError(kind)
+
+
+frozen = {}
+need = sorted({sh["a"][-1] for _, sh in camkeys if sh["a"][0] in ("axle", "pole", "chan")})
+for fr in need:
+    sc.frame_set(fr)
+    for _, sh in camkeys:
+        if sh["a"][0] in ("axle", "pole", "chan") and sh["a"][-1] == fr:
+            frozen[sh["a"]] = anchor(sh["a"])
+
+
+def shot_eval(sh):
+    a = sh["a"]
+    T, r = frozen[a] if a[0] in ("axle", "pole", "chan") else anchor(a)
+    d = sh["d"] if sh["d"] else max(2.5, r / math.sin(VF / 2) * 0.9)
+    return T, sh["az"], sh["el"], d
+
+
+def cam_pos(T, az, el, d):
+    az, el = math.radians(az), math.radians(el)
+    return T + d * Vector((math.cos(el) * math.cos(az), math.cos(el) * math.sin(az), math.sin(el)))
+
+
+camkeys.sort(key=lambda k: k[0])
+t_bake = time.time()
+for fr in range(1, F_END + 1):
+    sc.frame_set(fr)
+    i = 0
+    while i + 1 < len(camkeys) and camkeys[i + 1][0] <= fr:
+        i += 1
+    k0f, s0 = camkeys[i]
+    if i + 1 < len(camkeys) and fr > k0f:
+        k1f, s1 = camkeys[i + 1]
+        w = ease((fr - k0f) / (k1f - k0f))
+    else:
+        s1, w = s0, 0.0
+    T0, az0, el0, d0 = shot_eval(s0)
+    if w > 0:
+        T1, az1, el1, d1 = shot_eval(s1)
+        T = T0.lerp(T1, w)
+        az, el = az0 + (az1 - az0) * w, el0 + (el1 - el0) * w
+        d = math.exp(math.log(d0) + (math.log(d1) - math.log(d0)) * w)
+    else:
+        T, az, el, d = T0, az0, el0, d0
+    key_loc(focus, fr, T)
+    key_loc(cam, fr, cam_pos(T, az, el, d))
+t_bake = time.time() - t_bake
+push_to_nla([cam, focus])
+set_story_mute(True)
+for lc in excl:
+    lc.exclude = False
+
+# ------------------------------------------------------------------ 6. interactive defaults + save
+sc["storyline_on"] = False
+sc.camera = cam
+cab.location = CAB_SILL_DST
+tube.location = TUBE0
+A.location = A0
+for e in lifts.values():
+    e.location = (0, 0, 0)
+m.goto_config(ctx, "SINGLE_STANDARD")
+res = dict(frames=F_END, fps=24, seconds=round(F_END / 24, 1), tracks=pushed, cabin_objects=n_cab,
+           packer_h_mm=round(packer_h * 1000, 1), materials=mat_counts, captions=captions, phases=phases,
+           markers=[(mk.name, mk.frame) for mk in sorted(sc.timeline_markers, key=lambda mk: mk.frame)],
+           camkeys=[(k, s["a"][0], s["az"], s["el"], s["d"]) for k, s in camkeys],
+           t_story_s=round(t_story, 1), t_bake_s=round(t_bake, 1))
+json.dump(res, open(os.path.join(HERE, "story_v3.json"), "w"), indent=1)
+bpy.ops.wm.save_as_mainfile(filepath=BLEND_OUT, copy=False)
+print("STORY_V3_DONE", F_END, "frames", round(time.time() - t_start, 1), "s")

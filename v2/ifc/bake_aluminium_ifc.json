@@ -1,0 +1,54 @@
+{
+ "src": "C:\\Users\\USER\\Desktop\\Staircases\\idea one\\v2\\out\\Latest 21-09-2026\\final STEP LADDER 22-9-2026.ifc",
+ "dst": "C:\\Users\\USER\\Desktop\\Staircases\\idea one\\v2\\out\\Latest 21-09-2026\\final STEP LADDER 22-9-2026 - ALUMINIUM.ifc",
+ "elements": 1291,
+ "classes": {
+  "stair": 648,
+  "cabin": 641,
+  "other": 2
+ },
+ "restyled_items": 688,
+ "new_styled_items": 0,
+ "removed_unused_materials": 13,
+ "material_count_after": {
+  "Aluminium EN AW-6082-T6": 648,
+  "M00_Soft_Cloud": 460,
+  "null": 76,
+  "[Color_006]1": 32,
+  "Aircon White": 12,
+  "bronze": 12
+ },
+ "material_psets": {
+  "Pset_MaterialCommon": {
+   "MassDensity": 2700.0
+  },
+  "Pset_MaterialMechanical": {
+   "YoungModulus": 70000000000.0,
+   "ShearModulus": 27000000000.0,
+   "PoissonRatio": 0.3,
+   "ThermalExpansionCoefficient": 2.3e-05
+  },
+  "Pset_MaterialThermal": {
+   "ThermalConductivity": 170.0,
+   "SpecificHeatCapacity": 900.0
+  },
+  "Pset_AluminiumAlloy_EN": {
+   "Designation": "EN AW-6082",
+   "ChemicalDesignation": "EN AW-AlSi1MgMn",
+   "Temper": "T6",
+   "ProductStandard": "EN 755-2 extrusions / EN 485-2 plate",
+   "DesignStandard": "EN 1999-1-1",
+   "ProofStrength_f0_t_le_5mm_MPa": 260.0,
+   "UltimateStrength_fu_t_le_5mm_MPa": 310.0,
+   "ProofStrength_f0_t_gt_5mm_MPa": 250.0,
+   "UltimateStrength_fu_t_gt_5mm_MPa": 290.0,
+   "HAZ_Factor_rho_o_haz": 0.48,
+   "PartialFactor_gamma_M1": 1.1,
+   "PartialFactor_gamma_M2": 1.25,
+   "BucklingClass": "A",
+   "Finish": "Clear anodised 20 um (EN ISO 7599 AA20); treads mill finish, serrated",
+   "Recyclable": true
+  }
+ },
+ "material_has_style": true
+}

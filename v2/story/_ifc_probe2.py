@@ -1,0 +1,18 @@
+import ifcopenshell, ifcopenshell.util.unit as U, ifcopenshell.util.element as E, collections
+f = ifcopenshell.open(r"C:\Users\USER\Desktop\Staircases\idea one\v2\out\Latest 21-09-2026\final STEP LADDER 22-9-2026.ifc")
+print("length unit scale", U.calculate_unit_scale(f))
+print("units", [(u.UnitType, getattr(u,'Name',None), getattr(u,'Prefix',None)) for u in f.by_type("IfcUnitAssignment")[0].Units])
+print("styleditems", len(f.by_type("IfcStyledItem")), "mapped", len(f.by_type("IfcMappedItem")), "shapereps", len(f.by_type("IfcShapeRepresentation")))
+print("rep types", collections.Counter((r.RepresentationIdentifier, r.RepresentationType) for r in f.by_type("IfcShapeRepresentation")).most_common(8))
+print("item types", collections.Counter(i.is_a() for r in f.by_type("IfcShapeRepresentation") for i in r.Items).most_common(8))
+print("contexts", [(c.id(), c.is_a(), c.ContextIdentifier, c.ContextType) for c in f.by_type("IfcGeometricRepresentationContext")])
+p = f.by_type("IfcBuildingElementProxy")
+print("proxy with material", sum(1 for e in p if E.get_material(e)))
+print("mat assoc sizes", [(r.RelatingMaterial.is_a(), getattr(r.RelatingMaterial,'Name',None), len(r.RelatedObjects)) for r in f.by_type("IfcRelAssociatesMaterial")][:8])
+si = f.by_type("IfcStyledItem")[:3]
+for s in si: print(s)
+print("matdefrep", len(f.by_type("IfcMaterialDefinitionRepresentation")))
+print("aggregates", len(f.by_type("IfcRelAggregates")), "contained", [(r.RelatingStructure.is_a(), len(r.RelatedElements)) for r in f.by_type("IfcRelContainedInSpatialStructure")])
+print("types", collections.Counter(e.is_a() for e in f.by_type("IfcTypeObject")).most_common(5))
+print("names", collections.Counter(e.Name for e in p).most_common(8))
+print("objtype", collections.Counter(e.ObjectType for e in p).most_common(8))

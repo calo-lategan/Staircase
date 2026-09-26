@@ -1,0 +1,352 @@
+[
+ {
+  "ref": "R113",
+  "check": "Frame stress (von Mises) - ULS crowd",
+  "value": 213.3,
+  "limit": 227.27,
+  "unit": "MPa",
+  "util": 0.939,
+  "status": "PASS",
+  "note": "at front lip x=277.5 y=482.5 z=48.8"
+ },
+ {
+  "ref": "R113",
+  "check": "Grating bar 3x25 stress - ULS crowd",
+  "value": 98.02,
+  "limit": 227.27,
+  "unit": "MPa",
+  "util": 0.431,
+  "status": "PASS",
+  "note": "bar at y=1205.0"
+ },
+ {
+  "ref": "R114",
+  "check": "Frame stress (von Mises) - ULS 4 kN patch front, mid-span",
+  "value": 844.42,
+  "limit": 227.27,
+  "unit": "MPa",
+  "util": 3.715,
+  "status": "FAIL",
+  "note": "at front lip x=277.5 y=582.5 z=48.8"
+ },
+ {
+  "ref": "R114",
+  "check": "Grating bar 3x25 stress - ULS 4 kN patch front, mid-span",
+  "value": 252.73,
+  "limit": 227.27,
+  "unit": "MPa",
+  "util": 1.112,
+  "status": "FAIL",
+  "note": "bar at y=1205.0"
+ },
+ {
+  "ref": "R114",
+  "check": "Frame stress (von Mises) - ULS 4 kN patch centre, mid-span",
+  "value": 689.19,
+  "limit": 227.27,
+  "unit": "MPa",
+  "util": 3.032,
+  "status": "FAIL",
+  "note": "at front lip x=277.5 y=582.5 z=48.8"
+ },
+ {
+  "ref": "R114",
+  "check": "Grating bar 3x25 stress - ULS 4 kN patch centre, mid-span",
+  "value": 189.95,
+  "limit": 227.27,
+  "unit": "MPa",
+  "util": 0.836,
+  "status": "PASS",
+  "note": "bar at y=1205.0"
+ },
+ {
+  "ref": "R114",
+  "check": "Frame stress (von Mises) - ULS 4 kN patch back, mid-span",
+  "value": 537.61,
+  "limit": 227.27,
+  "unit": "MPa",
+  "util": 2.365,
+  "status": "FAIL",
+  "note": "at front lip x=277.5 y=602.5 z=48.8"
+ },
+ {
+  "ref": "R114",
+  "check": "Grating bar 3x25 stress - ULS 4 kN patch back, mid-span",
+  "value": 130.3,
+  "limit": 227.27,
+  "unit": "MPa",
+  "util": 0.573,
+  "status": "PASS",
+  "note": "bar at y=1205.0"
+ },
+ {
+  "ref": "R114",
+  "check": "Frame stress (von Mises) - ULS 4 kN patch front, at left end",
+  "value": 404.99,
+  "limit": 227.27,
+  "unit": "MPa",
+  "util": 1.782,
+  "status": "FAIL",
+  "note": "at front lip x=277.5 y=182.5 z=48.8"
+ },
+ {
+  "ref": "R114",
+  "check": "Grating bar 3x25 stress - ULS 4 kN patch front, at left end",
+  "value": 325.96,
+  "limit": 227.27,
+  "unit": "MPa",
+  "util": 1.434,
+  "status": "FAIL",
+  "note": "bar at y=25.0"
+ },
+ {
+  "ref": "R114",
+  "check": "Frame stress (von Mises) - ULS 4 kN patch back, at left end",
+  "value": 237.04,
+  "limit": 227.27,
+  "unit": "MPa",
+  "util": 1.043,
+  "status": "FAIL",
+  "note": "at front lip x=277.5 y=202.5 z=48.8"
+ },
+ {
+  "ref": "R114",
+  "check": "Grating bar 3x25 stress - ULS 4 kN patch back, at left end",
+  "value": 179.0,
+  "limit": 227.27,
+  "unit": "MPa",
+  "util": 0.788,
+  "status": "PASS",
+  "note": "bar at y=25.0"
+ },
+ {
+  "ref": "R114",
+  "check": "Frame stress (von Mises) - ULS 4 kN patch front, at right end",
+  "value": 407.05,
+  "limit": 227.27,
+  "unit": "MPa",
+  "util": 1.791,
+  "status": "FAIL",
+  "note": "at front lip x=277.5 y=1047.5 z=48.8"
+ },
+ {
+  "ref": "R114",
+  "check": "Grating bar 3x25 stress - ULS 4 kN patch front, at right end",
+  "value": 346.57,
+  "limit": 227.27,
+  "unit": "MPa",
+  "util": 1.525,
+  "status": "FAIL",
+  "note": "bar at y=1205.0"
+ },
+ {
+  "ref": "R115",
+  "check": "Crowd 7.5 kN/m2: nosing deflection vs L/250",
+  "value": 18.12,
+  "limit": 4.86,
+  "unit": "mm",
+  "util": 3.727,
+  "status": "FAIL",
+  "note": "twist 2.79 deg; back edge 4.75 mm"
+ },
+ {
+  "ref": "R115",
+  "check": "One person 1 kN at the nosing: deflection < 10 mm",
+  "value": 19.31,
+  "limit": 10.0,
+  "unit": "mm",
+  "util": 1.931,
+  "status": "FAIL",
+  "note": ""
+ },
+ {
+  "ref": "R115 / EN 12811",
+  "check": "4 kN patch (front): deflection vs L/100 (and <= 25 mm)",
+  "value": 60.08,
+  "limit": 12.16,
+  "unit": "mm",
+  "util": 4.942,
+  "status": "FAIL",
+  "note": "twist 10.0 deg"
+ },
+ {
+  "ref": "R115 / EN 12811",
+  "check": "4 kN patch (centre): deflection vs L/100 (and <= 25 mm)",
+  "value": 49.54,
+  "limit": 12.16,
+  "unit": "mm",
+  "util": 4.075,
+  "status": "FAIL",
+  "note": "twist 7.6 deg"
+ },
+ {
+  "ref": "R115 / EN 12811",
+  "check": "4 kN patch (back): deflection vs L/100 (and <= 25 mm)",
+  "value": 39.01,
+  "limit": 12.16,
+  "unit": "mm",
+  "util": 3.209,
+  "status": "FAIL",
+  "note": "twist 5.2 deg"
+ },
+ {
+  "ref": "R170",
+  "check": "Pin L_rear shear (ULS 4 kN patch back, at left end)",
+  "value": 3293.37,
+  "limit": 11121.24,
+  "unit": "N",
+  "util": 0.296,
+  "status": "PASS",
+  "note": ""
+ },
+ {
+  "ref": "R170",
+  "check": "Pin L_rear bearing on the 5 mm rail wall",
+  "value": 3293.37,
+  "limit": 15000.0,
+  "unit": "N",
+  "util": 0.22,
+  "status": "PASS",
+  "note": ""
+ },
+ {
+  "ref": "R170",
+  "check": "Pin L_rear bending, cap -> wall lever 6.75 mm",
+  "value": 22230.26,
+  "limit": 29452.43,
+  "unit": "Nmm",
+  "util": 0.755,
+  "status": "PASS",
+  "note": ""
+ },
+ {
+  "ref": "R170",
+  "check": "Pin L_rear bending incl. rail torsion (+15.0 mm)",
+  "value": 69157.6,
+  "limit": 29452.43,
+  "unit": "Nmm",
+  "util": 2.348,
+  "status": "FAIL",
+  "note": "upper bound: the pin holds the rail's twist"
+ },
+ {
+  "ref": "R170",
+  "check": "Pin L_front shear (ULS 4 kN patch front, at left end)",
+  "value": 4120.58,
+  "limit": 11121.24,
+  "unit": "N",
+  "util": 0.371,
+  "status": "PASS",
+  "note": ""
+ },
+ {
+  "ref": "R170",
+  "check": "Pin L_front bearing on the 5 mm rail wall",
+  "value": 4120.58,
+  "limit": 15000.0,
+  "unit": "N",
+  "util": 0.275,
+  "status": "PASS",
+  "note": ""
+ },
+ {
+  "ref": "R170",
+  "check": "Pin L_front bending, cap -> wall lever 6.75 mm",
+  "value": 27813.94,
+  "limit": 29452.43,
+  "unit": "Nmm",
+  "util": 0.944,
+  "status": "PASS",
+  "note": ""
+ },
+ {
+  "ref": "R170",
+  "check": "Pin L_front bending incl. rail torsion (+15.0 mm)",
+  "value": 89569.95,
+  "limit": 29452.43,
+  "unit": "Nmm",
+  "util": 3.041,
+  "status": "FAIL",
+  "note": "upper bound: the pin holds the rail's twist"
+ },
+ {
+  "ref": "R170",
+  "check": "Pin R_rear shear (ULS 4 kN patch back, mid-span)",
+  "value": 1840.01,
+  "limit": 11121.24,
+  "unit": "N",
+  "util": 0.165,
+  "status": "PASS",
+  "note": ""
+ },
+ {
+  "ref": "R170",
+  "check": "Pin R_rear bearing on the 5 mm rail wall",
+  "value": 1840.01,
+  "limit": 15000.0,
+  "unit": "N",
+  "util": 0.123,
+  "status": "PASS",
+  "note": ""
+ },
+ {
+  "ref": "R170",
+  "check": "Pin R_rear bending, cap -> wall lever 14.0 mm",
+  "value": 25760.2,
+  "limit": 29452.43,
+  "unit": "Nmm",
+  "util": 0.875,
+  "status": "PASS",
+  "note": ""
+ },
+ {
+  "ref": "R170",
+  "check": "Pin R_rear bending incl. rail torsion (+10.0 mm)",
+  "value": 42809.62,
+  "limit": 29452.43,
+  "unit": "Nmm",
+  "util": 1.454,
+  "status": "FAIL",
+  "note": "upper bound: the pin holds the rail's twist"
+ },
+ {
+  "ref": "R170",
+  "check": "Pin R_front shear (ULS 4 kN patch front, at right end)",
+  "value": 4062.57,
+  "limit": 11121.24,
+  "unit": "N",
+  "util": 0.365,
+  "status": "PASS",
+  "note": ""
+ },
+ {
+  "ref": "R170",
+  "check": "Pin R_front bearing on the 5 mm rail wall",
+  "value": 4062.57,
+  "limit": 15000.0,
+  "unit": "N",
+  "util": 0.271,
+  "status": "PASS",
+  "note": ""
+ },
+ {
+  "ref": "R170",
+  "check": "Pin R_front bending, cap -> wall lever 14.0 mm",
+  "value": 56875.96,
+  "limit": 29452.43,
+  "unit": "Nmm",
+  "util": 1.931,
+  "status": "FAIL",
+  "note": ""
+ },
+ {
+  "ref": "R170",
+  "check": "Pin R_front bending incl. rail torsion (+10.0 mm)",
+  "value": 97427.74,
+  "limit": 29452.43,
+  "unit": "Nmm",
+  "util": 3.308,
+  "status": "FAIL",
+  "note": "upper bound: the pin holds the rail's twist"
+ }
+]

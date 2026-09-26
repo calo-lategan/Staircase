@@ -1,0 +1,30 @@
+== SINGLE_BAR
+MainRig_006 [9.631, 44.962, 4.887, 9.656, 46.267, 4.912] vis=True
+MainRig_010 [8.131, 44.962, 5.937, 8.156, 46.267, 5.962] vis=True
+UnitB_006 [-0.013, -0.646, -0.012, 0.012, 0.659, 0.013] vis=False
+UnitB_010 [-0.012, -0.646, -0.012, 0.013, 0.659, 0.013] vis=False
+MainRig_037 [8.176, 44.988, 4.927, 9.648, 45.023, 5.968] vis=True
+UnitB_179 [-0.6, -0.011, -0.666, 0.573, 0.014, 0.698] vis=False
+BAR StaticBar_Stage MESH [6.948, 44.528, 4.875, 8.135, 46.728, 6.097] vis=True anim=True parent=None loc=(7.542, 45.628, 5.486)
+BAR StaticBar_Tube MESH [8.135, 44.528, 5.934, 8.161, 46.728, 5.959] vis=True anim=True parent=None loc=(8.148, 45.628, 5.947)
+B parts at A top-axle R end: 
+== DOUBLE_STANDARD
+MainRig_006 [9.631, 44.962, 4.887, 9.656, 46.267, 4.912] vis=True
+MainRig_010 [8.131, 44.962, 5.937, 8.156, 46.267, 5.962] vis=True
+UnitB_006 [8.135, 44.962, 5.934, 8.16, 46.267, 5.959] vis=True
+UnitB_010 [6.635, 44.962, 6.984, 6.66, 46.267, 7.009] vis=True
+MainRig_037 [8.176, 44.988, 4.927, 9.648, 45.023, 5.968] vis=True
+UnitB_179 [6.679, 46.217, 5.693, 8.153, 46.274, 7.305] vis=True
+BAR StaticBar_Stage MESH [6.948, 44.528, 4.875, 8.135, 46.728, 6.097] vis=False anim=True parent=None loc=(7.542, 45.628, 5.486)
+BAR StaticBar_Tube MESH [8.135, 44.528, 5.934, 8.161, 46.728, 5.959] vis=False anim=True parent=None loc=(8.148, 45.628, 5.947)
+B parts at A top-axle R end: UnitB_006, UnitB_138, UnitB_177, UnitB_179
+== WIDE_STANDARD
+MainRig_006 [9.631, 44.962, 4.887, 9.656, 46.267, 4.912] vis=True
+MainRig_010 [8.131, 44.962, 5.937, 8.156, 46.267, 5.962] vis=True
+UnitB_006 [9.631, 43.691, 4.887, 9.656, 44.996, 4.912] vis=True
+UnitB_010 [8.131, 43.691, 5.937, 8.156, 44.996, 5.962] vis=True
+MainRig_037 [8.176, 44.988, 4.927, 9.648, 45.023, 5.968] vis=True
+UnitB_179 [8.174, 44.946, 4.646, 9.649, 45.003, 6.258] vis=True
+BAR StaticBar_Stage MESH [6.948, 44.528, 4.875, 8.135, 46.728, 6.097] vis=False anim=True parent=None loc=(7.542, 45.628, 5.486)
+BAR StaticBar_Tube MESH [8.135, 44.528, 5.934, 8.161, 46.728, 5.959] vis=False anim=True parent=None loc=(8.148, 45.628, 5.947)
+B parts at A top-axle R end: 

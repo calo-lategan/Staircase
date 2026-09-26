@@ -1,0 +1,10 @@
+B3 box 3 / 2 / 3, one mid web 3 {'welded corners': 1.39, 'bent top U': 1.39, 'bent top U, riveted webs': 0.69, 'extruded': 0.69}
+     welded corners ('ULS 4 kN front, mid-span', 'deck', 141.2, 47.5, 157.6, 'HAZ')
+     bent top U ('ULS 4 kN front, mid-span', 'deck', 141.2, 47.5, 157.6, 'HAZ')
+     bent top U, riveted webs ('ULS 4 kN front, mid-span', 'deck', 141.2, 47.5, 157.6, 'parent')
+     extruded ('ULS 4 kN front, mid-span', 'deck', 141.2, 47.5, 157.6, 'parent')
+B4 box 3 / 2 / 2, two webs 2 {'welded corners': 0.82, 'bent top U': 0.82, 'bent top U, riveted webs': 0.64, 'extruded': 0.41}
+     welded corners ('ULS 4 kN front, mid-span', 'deck', 186.2, 47.5, 93.5, 'HAZ')
+     bent top U ('ULS 4 kN front, mid-span', 'deck', 186.2, 47.5, 93.5, 'HAZ')
+     bent top U, riveted webs ('ULS 4 kN front, mid-span', 'bottom', 276.2, 2.5, 73.0, 'HAZ')
+     extruded ('ULS 4 kN front, mid-span', 'deck', 186.2, 47.5, 93.5, 'parent')

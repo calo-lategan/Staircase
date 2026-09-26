@@ -1,0 +1,7152 @@
+[
+ {
+  "mesh": "188/46378.001",
+  "dims_sorted": [
+   25.0,
+   1142.1,
+   1326.6
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 1078627.7,
+  "members": [
+   {
+    "name": "HRS_A_040",
+    "role": "guardrail",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/46383.002",
+  "dims_sorted": [
+   25.0,
+   25.0,
+   1725.8
+  ],
+  "verts": 16,
+  "faces": 28,
+  "closed": true,
+  "vol_mm3": 560895.3,
+  "members": [
+   {
+    "name": "HRC_A_037",
+    "role": "guardrail",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/46388.003",
+  "dims_sorted": [
+   25.0,
+   25.0,
+   1725.8
+  ],
+  "verts": 16,
+  "faces": 28,
+  "closed": true,
+  "vol_mm3": 560977.4,
+  "members": [
+   {
+    "name": "HRC_A_015",
+    "role": "guardrail",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/46595.007",
+  "dims_sorted": [
+   5.0,
+   37.6,
+   62.6
+  ],
+  "verts": 52,
+  "faces": 100,
+  "closed": true,
+  "vol_mm3": 4872.0,
+  "members": [
+   {
+    "name": "MainRig_178",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/46602.007",
+  "dims_sorted": [
+   5.0,
+   41.4,
+   61.4
+  ],
+  "verts": 52,
+  "faces": 100,
+  "closed": true,
+  "vol_mm3": 4872.0,
+  "members": [
+   {
+    "name": "MainRig_177",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/46645.009",
+  "dims_sorted": [
+   25.0,
+   25.0,
+   1305.0
+  ],
+  "verts": 97,
+  "faces": 194,
+  "closed": true,
+  "vol_mm3": 227995.4,
+  "members": [
+   {
+    "name": "MainRig_006",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/46678.009",
+  "dims_sorted": [
+   25.0,
+   35.0,
+   37.0
+  ],
+  "verts": 60,
+  "faces": 116,
+  "closed": true,
+  "vol_mm3": 10698.9,
+  "members": [
+   {
+    "name": "MainRig_007",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/46683.006",
+  "dims_sorted": [
+   5.0,
+   75.0,
+   85.0
+  ],
+  "verts": 16,
+  "faces": 34,
+  "closed": false,
+  "vol_mm3": 28228.9,
+  "members": [
+   {
+    "name": "MainRig_003",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/46690.004",
+  "dims_sorted": [
+   25.0,
+   25.0,
+   1305.0
+  ],
+  "verts": 97,
+  "faces": 194,
+  "closed": true,
+  "vol_mm3": 227996.0,
+  "members": [
+   {
+    "name": "MainRig_010",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/46706.003",
+  "dims_sorted": [
+   25.0,
+   35.0,
+   37.0
+  ],
+  "verts": 60,
+  "faces": 116,
+  "closed": true,
+  "vol_mm3": 10698.8,
+  "members": [
+   {
+    "name": "MainRig_011",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/46711.004",
+  "dims_sorted": [
+   5.0,
+   75.0,
+   85.0
+  ],
+  "verts": 16,
+  "faces": 34,
+  "closed": false,
+  "vol_mm3": 28229.8,
+  "members": [
+   {
+    "name": "MainRig_009",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/46923.003",
+  "dims_sorted": [
+   50.0,
+   280.0,
+   1236.0
+  ],
+  "verts": 245,
+  "faces": 510,
+  "closed": false,
+  "vol_mm3": 2565945.6,
+  "members": [
+   {
+    "name": "MainRig_019",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/46944.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_020",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/46952.003",
+  "dims_sorted": [
+   7.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 679.3,
+  "members": [
+   {
+    "name": "MainRig_013",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/46957.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_014",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/46962.003",
+  "dims_sorted": [
+   7.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 679.3,
+  "members": [
+   {
+    "name": "MainRig_015",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/46967.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_016",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/46972.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_018",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/46977.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_017",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/46982.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_021",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/46987.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_022",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47089.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "vol_mm3": 274.9,
+  "members": [
+   {
+    "name": "MainRig_023",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47470.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_054",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47479.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "vol_mm3": 274.9,
+  "members": [
+   {
+    "name": "MainRig_024",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47485.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_058",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47523.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "vol_mm3": 275.2,
+  "members": [
+   {
+    "name": "MainRig_025",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47884.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_057",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47893.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "vol_mm3": 275.2,
+  "members": [
+   {
+    "name": "MainRig_028",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47899.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_060",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47910.003",
+  "dims_sorted": [
+   50.0,
+   280.0,
+   1236.0
+  ],
+  "verts": 245,
+  "faces": 510,
+  "closed": false,
+  "vol_mm3": 2565945.3,
+  "members": [
+   {
+    "name": "MainRig_030",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47916.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_027",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47921.003",
+  "dims_sorted": [
+   7.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 679.3,
+  "members": [
+   {
+    "name": "MainRig_029",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47926.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_031",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47931.003",
+  "dims_sorted": [
+   7.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 679.3,
+  "members": [
+   {
+    "name": "MainRig_032",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47936.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_033",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47941.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_034",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47946.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_035",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47951.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_036",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47956.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_038",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47963.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "vol_mm3": 274.9,
+  "members": [
+   {
+    "name": "MainRig_039",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47969.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_073",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47978.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "vol_mm3": 274.9,
+  "members": [
+   {
+    "name": "MainRig_040",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47984.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "vol_mm3": -18.2,
+  "members": [
+   {
+    "name": "MainRig_069",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47993.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "vol_mm3": 275.2,
+  "members": [
+   {
+    "name": "MainRig_041",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/47999.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_074",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48008.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "vol_mm3": 275.2,
+  "members": [
+   {
+    "name": "MainRig_043",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48014.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_072",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48025.003",
+  "dims_sorted": [
+   50.0,
+   280.0,
+   1236.0
+  ],
+  "verts": 245,
+  "faces": 510,
+  "closed": false,
+  "vol_mm3": 2565945.4,
+  "members": [
+   {
+    "name": "MainRig_042",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48031.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_045",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48036.003",
+  "dims_sorted": [
+   7.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 679.3,
+  "members": [
+   {
+    "name": "MainRig_044",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48041.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_046",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48046.003",
+  "dims_sorted": [
+   7.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 679.3,
+  "members": [
+   {
+    "name": "MainRig_047",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48051.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_049",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48056.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_048",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48061.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_051",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48066.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_050",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48071.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_052",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48078.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "vol_mm3": 274.9,
+  "members": [
+   {
+    "name": "MainRig_053",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48084.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_084",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48093.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "vol_mm3": 274.9,
+  "members": [
+   {
+    "name": "MainRig_055",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48099.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "vol_mm3": -18.2,
+  "members": [
+   {
+    "name": "MainRig_085",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48108.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "vol_mm3": 275.2,
+  "members": [
+   {
+    "name": "MainRig_056",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48114.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_091",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48123.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "vol_mm3": 275.2,
+  "members": [
+   {
+    "name": "MainRig_059",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48129.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_099",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48140.004",
+  "dims_sorted": [
+   50.0,
+   280.0,
+   1236.0
+  ],
+  "verts": 245,
+  "faces": 510,
+  "closed": false,
+  "vol_mm3": 2565947.3,
+  "members": [
+   {
+    "name": "MainRig_061",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48146.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_062",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48151.003",
+  "dims_sorted": [
+   7.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 679.3,
+  "members": [
+   {
+    "name": "MainRig_063",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48156.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_064",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48161.003",
+  "dims_sorted": [
+   7.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 679.3,
+  "members": [
+   {
+    "name": "MainRig_065",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48166.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_066",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48171.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_068",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48176.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_067",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48181.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_071",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48186.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_070",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48193.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "vol_mm3": 274.9,
+  "members": [
+   {
+    "name": "MainRig_075",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48199.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_109",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48208.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "vol_mm3": 274.9,
+  "members": [
+   {
+    "name": "MainRig_076",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48214.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_110",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48223.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "vol_mm3": 275.2,
+  "members": [
+   {
+    "name": "MainRig_077",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48229.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_111",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48238.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "vol_mm3": 275.2,
+  "members": [
+   {
+    "name": "MainRig_078",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48244.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_112",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48255.004",
+  "dims_sorted": [
+   50.0,
+   280.0,
+   1236.0
+  ],
+  "verts": 245,
+  "faces": 510,
+  "closed": false,
+  "vol_mm3": 2565946.4,
+  "members": [
+   {
+    "name": "MainRig_079",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48261.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_081",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48266.003",
+  "dims_sorted": [
+   7.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 679.3,
+  "members": [
+   {
+    "name": "MainRig_080",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48271.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_082",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48276.003",
+  "dims_sorted": [
+   7.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 679.3,
+  "members": [
+   {
+    "name": "MainRig_083",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48281.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_087",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48286.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_088",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48291.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_086",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48296.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_089",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48301.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_090",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48308.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "vol_mm3": 274.9,
+  "members": [
+   {
+    "name": "MainRig_092",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48314.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_119",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48323.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "vol_mm3": 274.9,
+  "members": [
+   {
+    "name": "MainRig_093",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48329.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_116",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48338.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "vol_mm3": 275.2,
+  "members": [
+   {
+    "name": "MainRig_095",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48344.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_117",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48353.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "vol_mm3": 275.2,
+  "members": [
+   {
+    "name": "MainRig_094",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48359.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_120",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48370.003",
+  "dims_sorted": [
+   50.0,
+   280.0,
+   1236.0
+  ],
+  "verts": 245,
+  "faces": 510,
+  "closed": false,
+  "vol_mm3": 2565945.6,
+  "members": [
+   {
+    "name": "MainRig_096",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48376.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_097",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48381.003",
+  "dims_sorted": [
+   7.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 679.3,
+  "members": [
+   {
+    "name": "MainRig_098",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48386.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_100",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48391.003",
+  "dims_sorted": [
+   7.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 679.3,
+  "members": [
+   {
+    "name": "MainRig_101",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48396.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_102",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48401.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_103",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48406.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_104",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48411.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_105",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48416.003",
+  "dims_sorted": [
+   2.0,
+   15.0,
+   15.0
+  ],
+  "verts": 96,
+  "faces": 192,
+  "closed": true,
+  "vol_mm3": 194.1,
+  "members": [
+   {
+    "name": "MainRig_106",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48423.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "vol_mm3": 274.9,
+  "members": [
+   {
+    "name": "MainRig_107",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48429.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_121",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48438.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 199,
+  "faces": 391,
+  "closed": false,
+  "vol_mm3": 274.9,
+  "members": [
+   {
+    "name": "MainRig_108",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48444.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 529,
+  "faces": 897,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_122",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48453.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "vol_mm3": 275.2,
+  "members": [
+   {
+    "name": "MainRig_113",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48459.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_123",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48468.003",
+  "dims_sorted": [
+   10.5,
+   12.8,
+   14.8
+  ],
+  "verts": 200,
+  "faces": 392,
+  "closed": false,
+  "vol_mm3": 275.2,
+  "members": [
+   {
+    "name": "MainRig_114",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48474.003",
+  "dims_sorted": [
+   1.1,
+   10.1,
+   13.6
+  ],
+  "verts": 525,
+  "faces": 909,
+  "closed": false,
+  "vol_mm3": -18.1,
+  "members": [
+   {
+    "name": "MainRig_124",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48568.003",
+  "dims_sorted": [
+   15.0,
+   104.3,
+   122.9
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 33747.7,
+  "members": [
+   {
+    "name": "MainRig_115",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48575.003",
+  "dims_sorted": [
+   25.0,
+   1074.5,
+   1500.1
+  ],
+  "verts": 580,
+  "faces": 1108,
+  "closed": false,
+  "vol_mm3": 500367.3,
+  "members": [
+   {
+    "name": "MainRig_118",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/48712.004",
+  "dims_sorted": [
+   25.0,
+   1172.8,
+   1363.5
+  ],
+  "verts": 672,
+  "faces": 1034,
+  "closed": false,
+  "vol_mm3": 381382.0,
+  "members": [
+   {
+    "name": "MainRig_179",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/49644.001",
+  "dims_sorted": [
+   15.0,
+   70.0,
+   75.0
+  ],
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "vol_mm3": 8356.0,
+  "members": [
+   {
+    "name": "HRS_A_041",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49650.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 34,
+  "closed": false,
+  "vol_mm3": -29041.1,
+  "members": [
+   {
+    "name": "HRS_A_042",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49656.001",
+  "dims_sorted": [
+   15.0,
+   70.0,
+   75.0
+  ],
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "vol_mm3": 8356.7,
+  "members": [
+   {
+    "name": "HRS_A_043",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49663.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol_mm3": 2390138.8,
+  "members": [
+   {
+    "name": "HRS_A_045",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49668.001",
+  "dims_sorted": [
+   0.0,
+   25.0,
+   25.0
+  ],
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "vol_mm3": 2424974.1,
+  "members": [
+   {
+    "name": "HRS_A_044",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49675.001",
+  "dims_sorted": [
+   25.0,
+   1142.1,
+   1326.6
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 1078688.0,
+  "members": [
+   {
+    "name": "HRS_A_026",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49680.001",
+  "dims_sorted": [
+   15.0,
+   70.0,
+   75.0
+  ],
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "vol_mm3": 8356.5,
+  "members": [
+   {
+    "name": "HRS_A_047",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49685.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol_mm3": 2384346.1,
+  "members": [
+   {
+    "name": "HRS_A_046",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49690.001",
+  "dims_sorted": [
+   0.0,
+   25.0,
+   25.0
+  ],
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "vol_mm3": 2424974.1,
+  "members": [
+   {
+    "name": "HRS_A_048",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49697.001",
+  "dims_sorted": [
+   15.0,
+   70.0,
+   75.0
+  ],
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "vol_mm3": 8356.5,
+  "members": [
+   {
+    "name": "HRS_A_050",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49702.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol_mm3": 2378657.2,
+  "members": [
+   {
+    "name": "HRS_A_038",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49707.001",
+  "dims_sorted": [
+   0.0,
+   25.0,
+   25.0
+  ],
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "vol_mm3": 2425078.1,
+  "members": [
+   {
+    "name": "HRS_A_049",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49714.001",
+  "dims_sorted": [
+   15.0,
+   70.0,
+   75.0
+  ],
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "vol_mm3": 8356.6,
+  "members": [
+   {
+    "name": "HRS_A_053",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49719.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol_mm3": 2372853.0,
+  "members": [
+   {
+    "name": "HRS_A_052",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49724.001",
+  "dims_sorted": [
+   0.0,
+   25.0,
+   25.0
+  ],
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "vol_mm3": 2425066.6,
+  "members": [
+   {
+    "name": "HRS_A_051",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49731.001",
+  "dims_sorted": [
+   15.0,
+   70.0,
+   75.0
+  ],
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "vol_mm3": 8356.5,
+  "members": [
+   {
+    "name": "HRS_A_055",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49736.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol_mm3": 2367071.8,
+  "members": [
+   {
+    "name": "HRS_A_056",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49741.001",
+  "dims_sorted": [
+   0.0,
+   25.0,
+   25.0
+  ],
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "vol_mm3": 2425078.1,
+  "members": [
+   {
+    "name": "HRS_A_054",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49749.001",
+  "dims_sorted": [
+   25.0,
+   1142.1,
+   1326.6
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 1078627.7,
+  "members": [
+   {
+    "name": "HRS_A_057",
+    "role": "guardrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49821.001",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol_mm3": 18214.6,
+  "members": [
+   {
+    "name": "HRS_A_001",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49826.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "HRS_A_015",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49833.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 41463.6,
+  "members": [
+   {
+    "name": "HRS_A_013",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49859.001",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25094.3,
+  "members": [
+   {
+    "name": "HRS_A_002",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49864.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "HRS_A_017",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49869.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 30072.0,
+  "members": [
+   {
+    "name": "HRS_A_039",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49877.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   95.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 23750.2,
+  "members": [
+   {
+    "name": "HRS_A_058",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49886.001",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25094.3,
+  "members": [
+   {
+    "name": "HRS_A_004",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49891.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "HRS_A_019",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49896.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 10763.7,
+  "members": [
+   {
+    "name": "HRS_A_036",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49901.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   95.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 23750.2,
+  "members": [
+   {
+    "name": "HRS_A_059",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49910.001",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25095.2,
+  "members": [
+   {
+    "name": "HRS_A_006",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49915.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250011.4,
+  "members": [
+   {
+    "name": "HRS_A_021",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49920.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": -8544.9,
+  "members": [
+   {
+    "name": "HRS_A_061",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49925.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   95.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 23751.1,
+  "members": [
+   {
+    "name": "HRS_A_060",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49934.001",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25095.3,
+  "members": [
+   {
+    "name": "HRS_A_011",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49939.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250011.4,
+  "members": [
+   {
+    "name": "HRS_A_023",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49944.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": -27854.0,
+  "members": [
+   {
+    "name": "HRS_A_035",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49949.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   95.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 23751.1,
+  "members": [
+   {
+    "name": "HRS_A_062",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49956.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250011.4,
+  "members": [
+   {
+    "name": "HRS_A_024",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49961.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": -47163.0,
+  "members": [
+   {
+    "name": "HRS_A_034",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49968.001",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol_mm3": 18942.9,
+  "members": [
+   {
+    "name": "HRS_A_009",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49973.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   95.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 23751.1,
+  "members": [
+   {
+    "name": "HRS_A_063",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/49981.003",
+  "dims_sorted": [
+   25.0,
+   1010.2,
+   1428.2
+  ],
+  "verts": 16,
+  "faces": 28,
+  "closed": true,
+  "vol_mm3": 560916.3,
+  "members": [
+   {
+    "name": "MainRig_125",
+    "role": "guardrail",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50011.003",
+  "dims_sorted": [
+   25.0,
+   95.0,
+   100.0
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": 19356.2,
+  "members": [
+   {
+    "name": "MainRig_128",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50016.003",
+  "dims_sorted": [
+   25.0,
+   95.0,
+   100.0
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": 19356.1,
+  "members": [
+   {
+    "name": "MainRig_126",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50021.003",
+  "dims_sorted": [
+   25.0,
+   95.0,
+   100.0
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": 19356.2,
+  "members": [
+   {
+    "name": "MainRig_129",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50026.003",
+  "dims_sorted": [
+   25.0,
+   1010.2,
+   1428.2
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 1078675.8,
+  "members": [
+   {
+    "name": "MainRig_127",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50031.003",
+  "dims_sorted": [
+   25.0,
+   95.0,
+   100.0
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": 19356.1,
+  "members": [
+   {
+    "name": "MainRig_130",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50036.003",
+  "dims_sorted": [
+   25.0,
+   95.0,
+   100.0
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": 19356.1,
+  "members": [
+   {
+    "name": "MainRig_133",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50041.003",
+  "dims_sorted": [
+   25.0,
+   95.0,
+   100.0
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": 19356.1,
+  "members": [
+   {
+    "name": "MainRig_131",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50050.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25094.3,
+  "members": [
+   {
+    "name": "MainRig_141",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50055.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "MainRig_132",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50060.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 37802.0,
+  "members": [
+   {
+    "name": "MainRig_135",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50069.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25094.3,
+  "members": [
+   {
+    "name": "MainRig_143",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50074.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "MainRig_134",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50099.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 264,
+  "closed": false,
+  "vol_mm3": 25090.5,
+  "members": [
+   {
+    "name": "MainRig_147",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50104.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "MainRig_136",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50109.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 37802.0,
+  "members": [
+   {
+    "name": "MainRig_138",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50118.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25094.3,
+  "members": [
+   {
+    "name": "MainRig_151",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50123.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "MainRig_137",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50128.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 37802.0,
+  "members": [
+   {
+    "name": "MainRig_139",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50137.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25094.3,
+  "members": [
+   {
+    "name": "MainRig_146",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50142.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "MainRig_140",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50147.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 37802.0,
+  "members": [
+   {
+    "name": "MainRig_142",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50156.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25094.3,
+  "members": [
+   {
+    "name": "MainRig_152",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50161.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "MainRig_144",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50174.003",
+  "dims_sorted": [
+   25.0,
+   1010.2,
+   1428.2
+  ],
+  "verts": 16,
+  "faces": 28,
+  "closed": true,
+  "vol_mm3": 560916.3,
+  "members": [
+   {
+    "name": "MainRig_145",
+    "role": "guardrail",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50207.003",
+  "dims_sorted": [
+   25.0,
+   95.0,
+   100.0
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": 19356.5,
+  "members": [
+   {
+    "name": "MainRig_148",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50212.003",
+  "dims_sorted": [
+   25.0,
+   95.0,
+   100.0
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": 19356.4,
+  "members": [
+   {
+    "name": "MainRig_150",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50217.003",
+  "dims_sorted": [
+   25.0,
+   95.0,
+   100.0
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": 19356.5,
+  "members": [
+   {
+    "name": "MainRig_153",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50222.003",
+  "dims_sorted": [
+   25.0,
+   1010.2,
+   1428.2
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 1078634.6,
+  "members": [
+   {
+    "name": "MainRig_149",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50227.003",
+  "dims_sorted": [
+   25.0,
+   95.0,
+   100.0
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": 19356.4,
+  "members": [
+   {
+    "name": "MainRig_155",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50232.003",
+  "dims_sorted": [
+   25.0,
+   95.0,
+   100.0
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": 19356.4,
+  "members": [
+   {
+    "name": "MainRig_171",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50237.003",
+  "dims_sorted": [
+   25.0,
+   95.0,
+   100.0
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": 19356.4,
+  "members": [
+   {
+    "name": "MainRig_157",
+    "role": "handrail",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50300.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25094.3,
+  "members": [
+   {
+    "name": "MainRig_162",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50305.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "MainRig_154",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50321.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25094.3,
+  "members": [
+   {
+    "name": "MainRig_161",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50326.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "MainRig_156",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50364.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 264,
+  "closed": false,
+  "vol_mm3": 25090.5,
+  "members": [
+   {
+    "name": "MainRig_166",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50369.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "MainRig_158",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50374.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 37802.0,
+  "members": [
+   {
+    "name": "MainRig_159",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50383.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25094.3,
+  "members": [
+   {
+    "name": "MainRig_168",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50388.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "MainRig_160",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50393.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 37802.1,
+  "members": [
+   {
+    "name": "MainRig_164",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50402.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25094.3,
+  "members": [
+   {
+    "name": "MainRig_169",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50407.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "MainRig_163",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50412.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 37802.0,
+  "members": [
+   {
+    "name": "MainRig_165",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50421.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25094.3,
+  "members": [
+   {
+    "name": "MainRig_170",
+    "role": "toppost",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/50426.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "MainRig_167",
+    "role": "pole",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/51226.001",
+  "dims_sorted": [
+   15.0,
+   70.0,
+   75.0
+  ],
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "vol_mm3": 8356.0,
+  "members": [
+   {
+    "name": "HRS_A_064",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51231.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 34,
+  "closed": false,
+  "vol_mm3": -29041.1,
+  "members": [
+   {
+    "name": "HRS_A_065",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51237.001",
+  "dims_sorted": [
+   15.0,
+   70.0,
+   75.0
+  ],
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "vol_mm3": 8356.7,
+  "members": [
+   {
+    "name": "HRS_A_066",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51242.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol_mm3": -2712053.5,
+  "members": [
+   {
+    "name": "HRS_A_067",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51247.001",
+  "dims_sorted": [
+   0.0,
+   25.0,
+   25.0
+  ],
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "vol_mm3": -2677218.2,
+  "members": [
+   {
+    "name": "HRS_A_068",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51254.001",
+  "dims_sorted": [
+   25.0,
+   1142.1,
+   1326.6
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 1078688.0,
+  "members": [
+   {
+    "name": "HRS_A_027",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51259.001",
+  "dims_sorted": [
+   15.0,
+   70.0,
+   75.0
+  ],
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "vol_mm3": 8356.5,
+  "members": [
+   {
+    "name": "HRS_A_069",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51264.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol_mm3": -2717846.2,
+  "members": [
+   {
+    "name": "HRS_A_070",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51269.001",
+  "dims_sorted": [
+   0.0,
+   25.0,
+   25.0
+  ],
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "vol_mm3": -2677218.2,
+  "members": [
+   {
+    "name": "HRS_A_071",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51276.001",
+  "dims_sorted": [
+   15.0,
+   70.0,
+   75.0
+  ],
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "vol_mm3": 8356.5,
+  "members": [
+   {
+    "name": "HRS_A_072",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51281.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol_mm3": -2723754.1,
+  "members": [
+   {
+    "name": "HRS_A_037",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51286.001",
+  "dims_sorted": [
+   0.0,
+   25.0,
+   25.0
+  ],
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "vol_mm3": -2677333.1,
+  "members": [
+   {
+    "name": "HRS_A_073",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51293.001",
+  "dims_sorted": [
+   15.0,
+   70.0,
+   75.0
+  ],
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "vol_mm3": 8356.6,
+  "members": [
+   {
+    "name": "HRS_A_075",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51298.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol_mm3": -2729534.0,
+  "members": [
+   {
+    "name": "HRS_A_074",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51303.001",
+  "dims_sorted": [
+   0.0,
+   25.0,
+   25.0
+  ],
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "vol_mm3": -2677320.4,
+  "members": [
+   {
+    "name": "HRS_A_076",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51310.001",
+  "dims_sorted": [
+   15.0,
+   70.0,
+   75.0
+  ],
+  "verts": 48,
+  "faces": 84,
+  "closed": false,
+  "vol_mm3": 8356.5,
+  "members": [
+   {
+    "name": "HRS_A_079",
+    "role": "handrail",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51315.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   25.0
+  ],
+  "verts": 16,
+  "faces": 32,
+  "closed": false,
+  "vol_mm3": -2735339.5,
+  "members": [
+   {
+    "name": "HRS_A_077",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51320.001",
+  "dims_sorted": [
+   0.0,
+   25.0,
+   25.0
+  ],
+  "verts": 4,
+  "faces": 2,
+  "closed": false,
+  "vol_mm3": -2677333.1,
+  "members": [
+   {
+    "name": "HRS_A_078",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51362.001",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol_mm3": 18719.3,
+  "members": [
+   {
+    "name": "HRS_A_000",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51367.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "HRS_A_014",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51372.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 41463.6,
+  "members": [
+   {
+    "name": "HRS_A_012",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51381.001",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25171.0,
+  "members": [
+   {
+    "name": "HRS_A_003",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51386.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "HRS_A_016",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51391.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 27988.7,
+  "members": [
+   {
+    "name": "HRS_A_031",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51396.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   70.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 17500.1,
+  "members": [
+   {
+    "name": "HRS_A_080",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51405.001",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25170.2,
+  "members": [
+   {
+    "name": "HRS_A_005",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51410.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "HRS_A_018",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51415.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 8680.3,
+  "members": [
+   {
+    "name": "HRS_A_029",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51420.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   70.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 17500.1,
+  "members": [
+   {
+    "name": "HRS_A_081",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51429.001",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25165.8,
+  "members": [
+   {
+    "name": "HRS_A_007",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51434.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250011.4,
+  "members": [
+   {
+    "name": "HRS_A_020",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51439.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": -10628.4,
+  "members": [
+   {
+    "name": "HRS_A_030",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51444.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   70.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 17500.8,
+  "members": [
+   {
+    "name": "HRS_A_082",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51453.001",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 268,
+  "closed": false,
+  "vol_mm3": 25172.1,
+  "members": [
+   {
+    "name": "HRS_A_010",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51458.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250011.4,
+  "members": [
+   {
+    "name": "HRS_A_022",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51463.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": -29937.5,
+  "members": [
+   {
+    "name": "HRS_A_028",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51468.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   70.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 17500.8,
+  "members": [
+   {
+    "name": "HRS_A_083",
+    "role": "fitting",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51477.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol_mm3": 19345.8,
+  "members": [
+   {
+    "name": "HRC_A_014",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51482.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250011.4,
+  "members": [
+   {
+    "name": "HRC_A_007",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51487.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44095.1,
+  "members": [
+   {
+    "name": "HRC_A_059",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51496.002",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol_mm3": 19350.5,
+  "members": [
+   {
+    "name": "HRC_A_034",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51501.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250011.4,
+  "members": [
+   {
+    "name": "HRC_A_028",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51506.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44095.1,
+  "members": [
+   {
+    "name": "HRC_A_058",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51515.002",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol_mm3": 19537.1,
+  "members": [
+   {
+    "name": "HRC_A_033",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51520.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "HRC_A_026",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51525.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44093.4,
+  "members": [
+   {
+    "name": "HRC_A_036",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51534.002",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol_mm3": 19727.1,
+  "members": [
+   {
+    "name": "HRC_A_032",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51539.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250011.4,
+  "members": [
+   {
+    "name": "HRC_A_024",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51544.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44095.1,
+  "members": [
+   {
+    "name": "HRC_A_025",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51553.002",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol_mm3": 19913.6,
+  "members": [
+   {
+    "name": "HRC_A_031",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51558.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "HRC_A_023",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51563.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44093.4,
+  "members": [
+   {
+    "name": "HRC_A_057",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51572.002",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol_mm3": 20102.0,
+  "members": [
+   {
+    "name": "HRC_A_030",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51577.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "HRC_A_022",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51582.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44093.4,
+  "members": [
+   {
+    "name": "HRC_A_021",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51591.002",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol_mm3": 20292.4,
+  "members": [
+   {
+    "name": "HRC_A_029",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51596.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250011.4,
+  "members": [
+   {
+    "name": "HRC_A_019",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51601.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44095.0,
+  "members": [
+   {
+    "name": "HRC_A_056",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51610.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol_mm3": 19533.3,
+  "members": [
+   {
+    "name": "HRC_A_013",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51615.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "HRC_A_006",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51620.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44093.5,
+  "members": [
+   {
+    "name": "HRC_A_018",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51629.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol_mm3": 19721.4,
+  "members": [
+   {
+    "name": "HRC_A_012",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51634.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "HRC_A_004",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51639.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44093.5,
+  "members": [
+   {
+    "name": "HRC_A_005",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51648.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol_mm3": 19909.8,
+  "members": [
+   {
+    "name": "HRC_A_010",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51653.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250011.4,
+  "members": [
+   {
+    "name": "HRC_A_003",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51658.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44095.0,
+  "members": [
+   {
+    "name": "HRC_A_055",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51667.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol_mm3": 20097.2,
+  "members": [
+   {
+    "name": "HRC_A_011",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51672.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "HRC_A_001",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51677.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44093.5,
+  "members": [
+   {
+    "name": "HRC_A_002",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51686.003",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol_mm3": 20286.7,
+  "members": [
+   {
+    "name": "HRC_A_009",
+    "role": "toppost",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51691.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250001.9,
+  "members": [
+   {
+    "name": "HRC_A_000",
+    "role": "pole",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51696.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44093.4,
+  "members": [
+   {
+    "name": "HRC_A_054",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51703.002",
+  "dims_sorted": [
+   25.0,
+   25.0,
+   1725.8
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 1078660.6,
+  "members": [
+   {
+    "name": "HRC_A_045",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51708.002",
+  "dims_sorted": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": -9958.7,
+  "members": [
+   {
+    "name": "HRC_A_049",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51713.002",
+  "dims_sorted": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": -10118.6,
+  "members": [
+   {
+    "name": "HRC_A_051",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51718.002",
+  "dims_sorted": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": -10279.6,
+  "members": [
+   {
+    "name": "HRC_A_050",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51723.002",
+  "dims_sorted": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": -10442.6,
+  "members": [
+   {
+    "name": "HRC_A_048",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51728.002",
+  "dims_sorted": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": -10601.2,
+  "members": [
+   {
+    "name": "HRC_A_047",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51733.002",
+  "dims_sorted": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": -10762.3,
+  "members": [
+   {
+    "name": "HRC_A_046",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51740.001",
+  "dims_sorted": [
+   25.0,
+   25.0,
+   1725.8
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 1078619.2,
+  "members": [
+   {
+    "name": "HRC_A_038",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51745.001",
+  "dims_sorted": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": -9976.0,
+  "members": [
+   {
+    "name": "HRC_A_042",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51750.001",
+  "dims_sorted": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": -10135.6,
+  "members": [
+   {
+    "name": "HRC_A_041",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51755.001",
+  "dims_sorted": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": -10298.4,
+  "members": [
+   {
+    "name": "HRC_A_039",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51760.001",
+  "dims_sorted": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": -10458.2,
+  "members": [
+   {
+    "name": "HRC_A_040",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51765.001",
+  "dims_sorted": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": -10619.7,
+  "members": [
+   {
+    "name": "HRC_A_044",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/51770.001",
+  "dims_sorted": [
+   25.5,
+   95.0,
+   100.3
+  ],
+  "verts": 82,
+  "faces": 170,
+  "closed": false,
+  "vol_mm3": -10781.0,
+  "members": [
+   {
+    "name": "HRC_A_043",
+    "role": "handrail",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/52314.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   1000.0
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 250011.4,
+  "members": [
+   {
+    "name": "HRS_A_025",
+    "role": "pole",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/52321.001",
+  "dims_sorted": [
+   20.0,
+   25.0,
+   100.0
+  ],
+  "verts": 260,
+  "faces": 266,
+  "closed": false,
+  "vol_mm3": 19417.7,
+  "members": [
+   {
+    "name": "HRS_A_008",
+    "role": "toppost",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/52348.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   343.8
+  ],
+  "verts": 30,
+  "faces": 56,
+  "closed": true,
+  "vol_mm3": 81618.6,
+  "members": [
+   {
+    "name": "HRS_A_033",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/52353.001",
+  "dims_sorted": [
+   25.0,
+   823.2,
+   959.2
+  ],
+  "verts": 12,
+  "faces": 20,
+  "closed": true,
+  "vol_mm3": 157389.8,
+  "members": [
+   {
+    "name": "HRS_A_084",
+    "role": "guardrail",
+    "variant": "STEEP",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/52380.001",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   343.8
+  ],
+  "verts": 30,
+  "faces": 56,
+  "closed": true,
+  "vol_mm3": 81618.6,
+  "members": [
+   {
+    "name": "HRS_A_032",
+    "role": "mini",
+    "variant": "STEEP",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/52387.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   221.9
+  ],
+  "verts": 30,
+  "faces": 56,
+  "closed": true,
+  "vol_mm3": 52590.3,
+  "members": [
+   {
+    "name": "MainRig_172",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/52392.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   221.9
+  ],
+  "verts": 30,
+  "faces": 56,
+  "closed": true,
+  "vol_mm3": 52590.3,
+  "members": [
+   {
+    "name": "MainRig_173",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/52402.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   221.9
+  ],
+  "verts": 30,
+  "faces": 56,
+  "closed": true,
+  "vol_mm3": 52590.3,
+  "members": [
+   {
+    "name": "MainRig_174",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "L",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/52409.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   221.9
+  ],
+  "verts": 30,
+  "faces": 56,
+  "closed": true,
+  "vol_mm3": 52590.3,
+  "members": [
+   {
+    "name": "MainRig_175",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/52424.003",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   221.9
+  ],
+  "verts": 30,
+  "faces": 56,
+  "closed": true,
+  "vol_mm3": 52590.3,
+  "members": [
+   {
+    "name": "MainRig_176",
+    "role": "mini",
+    "variant": "STANDARD",
+    "side": "R",
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "188/52431.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44095.1,
+  "members": [
+   {
+    "name": "HRC_A_027",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/52436.002",
+  "dims_sorted": [
+   5.0,
+   25.0,
+   1550.8
+  ],
+  "verts": 12,
+  "faces": 20,
+  "closed": true,
+  "vol_mm3": 193849.4,
+  "members": [
+   {
+    "name": "HRC_A_053",
+    "role": "deckbar",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/52441.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44095.0,
+  "members": [
+   {
+    "name": "HRC_A_020",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/52446.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44093.4,
+  "members": [
+   {
+    "name": "HRC_A_035",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "R",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/52453.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44095.1,
+  "members": [
+   {
+    "name": "HRC_A_008",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/52458.002",
+  "dims_sorted": [
+   5.0,
+   25.0,
+   1550.8
+  ],
+  "verts": 12,
+  "faces": 20,
+  "closed": true,
+  "vol_mm3": 193864.2,
+  "members": [
+   {
+    "name": "HRC_A_052",
+    "role": "deckbar",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/52463.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44093.4,
+  "members": [
+   {
+    "name": "HRC_A_016",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "188/52468.002",
+  "dims_sorted": [
+   10.0,
+   25.0,
+   150.0
+  ],
+  "verts": 30,
+  "faces": 58,
+  "closed": false,
+  "vol_mm3": 44095.0,
+  "members": [
+   {
+    "name": "HRC_A_017",
+    "role": "mini",
+    "variant": "CATWALK",
+    "side": "L",
+    "bone": "",
+    "hide_render": true
+   }
+  ]
+ },
+ {
+  "mesh": "MainRig_000_orig",
+  "dims_sorted": [
+   5.0,
+   41.4,
+   61.4
+  ],
+  "verts": 52,
+  "faces": 100,
+  "closed": true,
+  "vol_mm3": 4872.0,
+  "members": [
+   {
+    "name": "MainRig_000",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "MainRig_001_orig",
+  "dims_sorted": [
+   5.0,
+   37.6,
+   62.6
+  ],
+  "verts": 52,
+  "faces": 100,
+  "closed": true,
+  "vol_mm3": 4872.0,
+  "members": [
+   {
+    "name": "MainRig_001",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "MainRig_002_orig",
+  "dims_sorted": [
+   5.0,
+   75.0,
+   85.0
+  ],
+  "verts": 16,
+  "faces": 34,
+  "closed": false,
+  "vol_mm3": 28229.5,
+  "members": [
+   {
+    "name": "MainRig_002",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "MainRig_004_orig",
+  "dims_sorted": [
+   5.0,
+   75.0,
+   85.0
+  ],
+  "verts": 16,
+  "faces": 34,
+  "closed": false,
+  "vol_mm3": 28230.3,
+  "members": [
+   {
+    "name": "MainRig_004",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "MainRig_005_orig",
+  "dims_sorted": [
+   25.0,
+   35.0,
+   37.0
+  ],
+  "verts": 60,
+  "faces": 116,
+  "closed": true,
+  "vol_mm3": 10698.5,
+  "members": [
+   {
+    "name": "MainRig_005",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "MainRig_008_orig",
+  "dims_sorted": [
+   25.0,
+   110.4,
+   122.9
+  ],
+  "verts": 8,
+  "faces": 12,
+  "closed": true,
+  "vol_mm3": 75000.5,
+  "members": [
+   {
+    "name": "MainRig_008",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "MainRig_012_orig",
+  "dims_sorted": [
+   25.0,
+   35.0,
+   37.0
+  ],
+  "verts": 60,
+  "faces": 116,
+  "closed": true,
+  "vol_mm3": 10698.4,
+  "members": [
+   {
+    "name": "MainRig_012",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "MainRig_026_orig",
+  "dims_sorted": [
+   35.0,
+   1082.1,
+   1499.1
+  ],
+  "verts": 758,
+  "faces": 1229,
+  "closed": false,
+  "vol_mm3": 817756.9,
+  "members": [
+   {
+    "name": "MainRig_026",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ },
+ {
+  "mesh": "MainRig_037_orig",
+  "dims_sorted": [
+   35.0,
+   1040.5,
+   1471.5
+  ],
+  "verts": 844,
+  "faces": 1423,
+  "closed": false,
+  "vol_mm3": 671013.1,
+  "members": [
+   {
+    "name": "MainRig_037",
+    "role": null,
+    "variant": null,
+    "side": null,
+    "bone": "",
+    "hide_render": false
+   }
+  ]
+ }
+]

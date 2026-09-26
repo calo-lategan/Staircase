@@ -1,0 +1,123 @@
+{
+ "SINGLE_CATWALK": {
+  "label": "Catwalk (flat)",
+  "group": "Single",
+  "deg": 0.0,
+  "layout": "SINGLE",
+  "parts": 188,
+  "L": 1977,
+  "W": 1305,
+  "zmin": 4.9,
+  "zmax": 6.1611
+ },
+ "SINGLE_STANDARD": {
+  "label": "Standard stair (35 deg)",
+  "group": "Single",
+  "deg": 35.0,
+  "layout": "SINGLE",
+  "parts": 180,
+  "L": 1670,
+  "W": 1305,
+  "zmin": 4.875,
+  "zmax": 7.0928
+ },
+ "SINGLE_STEEP": {
+  "label": "Steep steps (49.4 deg)",
+  "group": "Single",
+  "deg": 49.4,
+  "layout": "SINGLE",
+  "parts": 212,
+  "L": 1401,
+  "W": 1305,
+  "zmin": 4.839,
+  "zmax": 7.3923
+ },
+ "SINGLE_BAR": {
+  "label": "Standard on static hook bar",
+  "group": "Single",
+  "deg": 35.0,
+  "layout": "BAR",
+  "parts": 180,
+  "L": 1670,
+  "W": 1305,
+  "zmin": 4.875,
+  "zmax": 7.0928
+ },
+ "DOUBLE_CATWALK": {
+  "label": "Double catwalk",
+  "group": "Double (end-to-end)",
+  "deg": 0.0,
+  "layout": "DOUBLE",
+  "parts": 376,
+  "L": 3803,
+  "W": 1305,
+  "zmin": 4.9,
+  "zmax": 6.1611
+ },
+ "DOUBLE_STANDARD": {
+  "label": "Double staircase",
+  "group": "Double (end-to-end)",
+  "deg": 35.0,
+  "layout": "DOUBLE",
+  "parts": 360,
+  "L": 3165,
+  "W": 1305,
+  "zmin": 4.875,
+  "zmax": 8.1399
+ },
+ "DOUBLE_STEEP": {
+  "label": "Double steep",
+  "group": "Double (end-to-end)",
+  "deg": 49.4,
+  "layout": "DOUBLE",
+  "parts": 424,
+  "L": 2589,
+  "W": 1305,
+  "zmin": 4.839,
+  "zmax": 8.7783
+ },
+ "WIDE_CATWALK_FULL": {
+  "label": "Wide catwalk - handrail between",
+  "group": "Wide (side-by-side)",
+  "deg": 0.0,
+  "layout": "WIDE",
+  "parts": 346,
+  "L": 1977,
+  "W": 2546,
+  "zmin": 4.9,
+  "zmax": 6.1611
+ },
+ "WIDE_CATWALK_MINI": {
+  "label": "Wide catwalk - mini handrails only",
+  "group": "Wide (side-by-side)",
+  "deg": 0.0,
+  "layout": "WIDE",
+  "parts": 324,
+  "L": 1977,
+  "W": 2546,
+  "zmin": 4.9,
+  "zmax": 6.1611
+ },
+ "WIDE_STANDARD": {
+  "label": "Wide staircase",
+  "group": "Wide (side-by-side)",
+  "deg": 35.0,
+  "layout": "WIDE",
+  "parts": 334,
+  "L": 1670,
+  "W": 2546,
+  "zmin": 4.875,
+  "zmax": 7.0928
+ },
+ "WIDE_STEEP": {
+  "label": "Wide steep staircase",
+  "group": "Wide (side-by-side)",
+  "deg": 49.4,
+  "layout": "WIDE",
+  "parts": 380,
+  "L": 1401,
+  "W": 2546,
+  "zmin": 4.839,
+  "zmax": 7.3923
+ }
+}

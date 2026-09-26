@@ -1,0 +1,331 @@
+# Staircase Rig UI - single / double (end-to-end) / wide (side-by-side) states
+import bpy, math
+from mathutils import Vector, Matrix
+
+ARMS = {"A": "MainStaircase_Armature", "B": "UnitB_Armature"}
+PIV_L = Vector((9.6337, -14.3723, 0.0249))    # fold pivot, armature space (tread0 nosing peg)
+FRAME_LEN = 1.5258
+LOCKS = (("CATWALK", 0.0), ("STANDARD", 35.0), ("STEEP", 49.4))
+D_END = Vector((-1.82544, 0.0, 0.0))          # end-to-end pitch, from the original double catwalk
+W_SIDE = 1.2410                               # side-by-side pitch: unit B's right rails NEST in unit A's left 25 mm channels
+POLE_DROP = 1.0                               # main pole length: mini handrail drops onto the rails
+MINI_ROLES = {"guardrail", "toppost", "deckbar"}
+CABIN = "Showcase_Cabin"                      # toilet cabin from the IFC: stair runs up to its door
+CABIN_STATES = {"SINGLE_STANDARD"}
+STORY_CAM = "StoryCam"
+
+CONFIGS = [  # key, label, group, angle, layout
+    ("SINGLE_CATWALK",    "Catwalk (flat)",                     "Single", 0.0,  "SINGLE"),
+    ("SINGLE_STANDARD",   "Standard stair (35 deg)",            "Single", 35.0, "SINGLE"),
+    ("SINGLE_STEEP",      "Steep steps (49.4 deg)",             "Single", 49.4, "SINGLE"),
+    ("SINGLE_BAR",        "Standard on static hook bar",        "Single", 35.0, "BAR"),
+    ("DOUBLE_CATWALK",    "Double catwalk",                     "Double (end-to-end)", 0.0,  "DOUBLE"),
+    ("DOUBLE_STANDARD",   "Double staircase",                   "Double (end-to-end)", 35.0, "DOUBLE"),
+    ("DOUBLE_STEEP",      "Double steep",                       "Double (end-to-end)", 49.4, "DOUBLE"),
+    ("WIDE_CATWALK_FULL", "Wide catwalk - handrail between",   "Wide (side-by-side)", 0.0,  "WIDE"),
+    ("WIDE_CATWALK_MINI", "Wide catwalk - mini handrails only", "Wide (side-by-side)", 0.0,  "WIDE"),
+    ("WIDE_STANDARD",     "Wide staircase",                     "Wide (side-by-side)", 35.0, "WIDE"),
+    ("WIDE_STEEP",        "Wide steep staircase",               "Wide (side-by-side)", 49.4, "WIDE"),
+]
+GROUPS = ["Single", "Double (end-to-end)", "Wide (side-by-side)"]
+INNER_DEFAULT = {"WIDE_CATWALK_FULL": "FULL", "WIDE_CATWALK_MINI": "MINI", "WIDE_STANDARD": "FULL", "WIDE_STEEP": "FULL"}
+
+
+def arm(u):
+    return bpy.data.objects.get(ARMS[u])
+
+
+def cfg(key):
+    for c in CONFIGS:
+        if c[0] == key:
+            return c
+    return CONFIGS[1]
+
+
+def set_angle(u, deg):
+    a = arm(u)
+    pb = a.pose.bones["GuideFrame_IK_Target"]
+    rest = a.data.bones["GuideFrame_IK_Target"].matrix_local.copy()
+    t = math.radians(deg)
+    tip = PIV_L + FRAME_LEN * Vector((-math.cos(t), 0.0, math.sin(t)))
+    pb.matrix = Matrix.Translation(tip - rest.translation) @ rest
+
+
+def current_angle(u):
+    a = arm(u)
+    if not a:
+        return 0.0
+    m = a.pose.bones["GuideFrame"].matrix
+    d = (m @ Vector((0, 1, 0))) - (m @ Vector((0, 0, 0)))
+    d.normalize()
+    return math.degrees(math.atan2(d.z, -d.x))
+
+
+def lock_of(deg):
+    return min(LOCKS, key=lambda l: abs(l[1] - deg))
+
+
+def place_b(layout, deg):
+    a, b = arm("A"), arm("B")
+    if layout == "DOUBLE":
+        b.location = a.location + Matrix.Rotation(math.radians(deg), 3, 'Y') @ D_END
+    elif layout == "WIDE":
+        b.location = a.location + Vector((0.0, -W_SIDE, 0.0))
+
+
+def side_mode(sc, u, s, layout):
+    if layout == "WIDE":
+        if u == "B" and s == "R":
+            return "NONE"          # nested inside A's left channels: A's one inner handrail pins through both
+        if u == "A" and s == "L":
+            return sc.staircase_inner
+    return "FULL"
+
+
+def set_vis(o, show):
+    if o.hide_viewport == show:
+        o.hide_viewport = not show
+    if o.hide_render == show:
+        o.hide_render = not show
+
+
+def apply_state(ctx):
+    sc = ctx.scene
+    c = cfg(sc.staircase_config)
+    layout = c[4]
+    on = sc.staircase_handrail_on
+    units = ["A"] + (["B"] if layout in ("DOUBLE", "WIDE") else [])
+    for u in ("A", "B"):
+        if arm(u):
+            set_vis(arm(u), u in units)
+    ctx.view_layer.update()        # a unit that was hidden keeps a stale pose until it is evaluated again
+    for u in ("A", "B"):
+        a = arm(u)
+        if not a:
+            continue
+        live = u in units
+        ang = current_angle(u)
+        lk, lk_deg = lock_of(ang)
+        at_lock = abs(ang - lk_deg) < 0.5
+        for s in ("R", "L"):
+            e = bpy.data.objects.get(f"HR_Lift_{u}_{s}")
+            if e:
+                e.location.z = -POLE_DROP if side_mode(sc, u, s, layout) == "MINI" else 0.0
+        for o in bpy.data.objects:
+            if o.get("unit") != u or o.type != 'MESH':
+                continue
+            if o.get("hr_variant"):
+                mode = side_mode(sc, u, o.get("side", "R"), layout)
+                show = (live and on and at_lock and o["hr_variant"] == lk and
+                        (mode == "FULL" or (mode == "MINI" and o.get("role") in MINI_ROLES)))
+            else:
+                show = live and lk not in o.get("hide_in", "").split(",")
+            set_vis(o, show)
+    cab = bpy.data.objects.get(CABIN)
+    bar = bpy.data.collections.get("StaticBar")
+    if bar:
+        for o in bar.objects:
+            # with the showcase cabin in the file, the cabin replaces the stage block
+            set_vis(o, layout == "BAR" and not (cab and o.name == "StaticBar_Stage"))
+    if cab:
+        set_vis(cab, sc.staircase_config in CABIN_STATES)
+    # hooking on uses the ONE static axle / bar: the hooking unit's own axle is left out
+    axb, axa = bpy.data.objects.get("UnitB_006"), bpy.data.objects.get("MainRig_010")
+    if axb and layout == "DOUBLE":
+        set_vis(axb, False)
+    if axa and layout == "BAR":
+        set_vis(axa, False)
+    ctx.view_layer.update()
+
+
+def goto_config(ctx, key):
+    c = cfg(key)
+    sc = ctx.scene
+    sc.staircase_config = key
+    if key in INNER_DEFAULT:
+        sc.staircase_inner = INNER_DEFAULT[key]
+    set_angle("A", c[3])
+    if arm("B"):
+        set_angle("B", c[3])
+        place_b(c[4], c[3])
+    ctx.view_layer.update()
+    apply_state(ctx)
+
+
+def _inner_update(self, ctx):
+    apply_state(ctx)
+
+
+def storyline_on(sc):
+    return bool(sc.get("storyline_on", False))
+
+
+def storyline_set(ctx, on):
+    sc = ctx.scene
+    for o in bpy.data.objects:
+        ad = o.animation_data
+        if ad:
+            for tr in ad.nla_tracks:
+                if tr.name == "Storyline":
+                    tr.mute = not on
+    sc["storyline_on"] = on
+    cam = bpy.data.objects.get(STORY_CAM)
+    if on and cam:
+        sc.camera = cam
+    if on:
+        m = sc.timeline_markers.get(sc.staircase_config)
+        sc.frame_set(m.frame if m else sc.frame_start)
+    else:
+        goto_config(ctx, sc.staircase_config)
+
+
+class STAIRCASE_OT_storyline(bpy.types.Operator):
+    bl_idname = "staircase.storyline"
+    bl_label = "Storyline Animation"
+    bl_description = "Play the state-to-state storyline (off = interactive rig control)"
+    enable: bpy.props.BoolProperty()
+
+    def execute(self, ctx):
+        storyline_set(ctx, self.enable)
+        return {'FINISHED'}
+
+
+class STAIRCASE_OT_set_config(bpy.types.Operator):
+    bl_idname = "staircase.set_config"
+    bl_label = "Set Configuration"
+    bl_options = {'REGISTER', 'UNDO'}
+    target: bpy.props.StringProperty()
+
+    def execute(self, ctx):
+        sc = ctx.scene
+        m = sc.timeline_markers.get(self.target)
+        if storyline_on(sc) and m:
+            sc.staircase_config = self.target
+            sc.frame_set(m.frame)
+        else:
+            goto_config(ctx, self.target)
+        self.report({'INFO'}, cfg(self.target)[1])
+        return {'FINISHED'}
+
+
+class STAIRCASE_OT_handrail_remove(bpy.types.Operator):
+    bl_idname = "staircase.handrail_remove"
+    bl_label = "Remove Handrails"
+    bl_description = "Lift the handrails out so the steps can be folded freely"
+    bl_options = {'REGISTER', 'UNDO'}
+
+    def execute(self, ctx):
+        if storyline_on(ctx.scene):
+            storyline_set(ctx, False)
+        ctx.scene.staircase_handrail_on = False
+        apply_state(ctx)
+        self.report({'INFO'}, "Handrails removed - steps free to fold")
+        return {'FINISHED'}
+
+
+class STAIRCASE_OT_handrail_insert(bpy.types.Operator):
+    bl_idname = "staircase.handrail_insert"
+    bl_label = "Insert Handrails (lock)"
+    bl_description = "Snap to the nearest lock angle and insert that state's handrails"
+    bl_options = {'REGISTER', 'UNDO'}
+
+    def execute(self, ctx):
+        sc = ctx.scene
+        if storyline_on(sc):
+            storyline_set(ctx, False)
+        layout = cfg(sc.staircase_config)[4]
+        lk, deg = lock_of(current_angle("A"))
+        match = [c for c in CONFIGS if c[4] == layout and abs(c[3] - deg) < 1e-6]
+        if layout == "WIDE" and deg == 0.0:
+            want = "MINI" if sc.staircase_inner == "MINI" else "FULL"
+            match = [c for c in match if c[0].endswith(want)] or match
+        if match:
+            sc.staircase_config = match[0][0]
+        set_angle("A", deg)
+        if arm("B"):
+            set_angle("B", deg)
+            place_b(layout, deg)
+        sc.staircase_handrail_on = True
+        ctx.view_layer.update()
+        apply_state(ctx)
+        self.report({'INFO'}, f"Locked at {lk.title()} ({deg:.1f} deg) - handrails inserted")
+        return {'FINISHED'}
+
+
+class STAIRCASE_PT_panel(bpy.types.Panel):
+    bl_label = "Staircase Rig"
+    bl_idname = "STAIRCASE_PT_panel"
+    bl_space_type = 'VIEW_3D'
+    bl_region_type = 'UI'
+    bl_category = "Staircase"
+
+    def draw(self, ctx):
+        L = self.layout
+        sc = ctx.scene
+        if not arm("A"):
+            L.label(text="Rig not found", icon='ERROR')
+            return
+        c = cfg(sc.staircase_config)
+        box = L.box()
+        box.label(text=c[1], icon='MOD_ARRAY')
+        for u in ("A", "B"):
+            a = arm(u)
+            if a and not a.hide_viewport:
+                ang = current_angle(u)
+                lk, _ = lock_of(ang)
+                box.label(text=f"Unit {u}: {ang:.1f} deg  (lock: {lk.title()})",
+                          icon='DRIVER_ROTATIONAL_DIFFERENCE')
+        on = sc.staircase_handrail_on
+        box.label(text="Handrails: " + ("INSERTED (locked)" if on else "REMOVED (free)"),
+                  icon='LOCKED' if on else 'UNLOCKED')
+        sb = L.box()
+        on_s = storyline_on(sc)
+        sb.label(text=f"Storyline: frames {sc.frame_start}-{sc.frame_end}", icon='SEQUENCE')
+        rr = sb.row(align=True)
+        rr.operator("staircase.storyline", text="Storyline ON", depress=on_s,
+                    icon='PLAY').enable = True
+        rr.operator("staircase.storyline", text="Interactive", depress=not on_s,
+                    icon='POSE_HLT').enable = False
+        r = L.row(align=True)
+        r.operator("staircase.handrail_remove", icon='UNLINKED')
+        r.operator("staircase.handrail_insert", icon='LINKED')
+        for g in GROUPS:
+            L.separator()
+            L.label(text=g)
+            col = L.column(align=True)
+            for k, lab, grp, deg, lay in CONFIGS:
+                if grp == g:
+                    col.operator("staircase.set_config", text=lab,
+                                 depress=(k == sc.staircase_config)).target = k
+        if c[4] == "WIDE":
+            L.separator()
+            L.label(text="Between the two units:")
+            L.row().prop(sc, "staircase_inner", expand=True)
+
+
+CLASSES = (STAIRCASE_OT_storyline, STAIRCASE_OT_set_config, STAIRCASE_OT_handrail_remove,
+           STAIRCASE_OT_handrail_insert, STAIRCASE_PT_panel)
+OLD = ("STAIRCASE_OT_goto_state",)
+
+
+def register():
+    for name in OLD + tuple(c.__name__ for c in CLASSES):
+        cls = getattr(bpy.types, name, None)
+        if cls:
+            try:
+                bpy.utils.unregister_class(cls)
+            except Exception:
+                pass
+    for c in CLASSES:
+        bpy.utils.register_class(c)
+    bpy.types.Scene.staircase_config = bpy.props.StringProperty(default="SINGLE_STANDARD")
+    bpy.types.Scene.staircase_handrail_on = bpy.props.BoolProperty(default=True)
+    bpy.types.Scene.staircase_inner = bpy.props.EnumProperty(
+        name="Between units",
+        items=[("FULL", "Handrail", "One full handrail, its pins through both nested guide rails"),
+               ("MINI", "Mini handrail", "Only the mini handrail (guardrail + mini poles) seated on the rails"),
+               ("NONE", "None", "No handrail between the units")],
+        default="FULL", update=_inner_update)
+
+
+register()

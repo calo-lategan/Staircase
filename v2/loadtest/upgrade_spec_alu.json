@@ -1,0 +1,124 @@
+{
+ "basis": "all-aluminium: EN AW-6061-T6 structure + 6082-T6 treads (v1 revision)",
+ "fy_design_MPa": 218.2,
+ "checks": {
+  "total": 166,
+  "fail": 0,
+  "fails": [],
+  "as_modelled_fail": 86,
+  "as_modelled_total": 173
+ },
+ "upper_bar": {
+  "depth_mm": 35.0,
+  "widths_mm": [
+   25.0,
+   35.0
+  ]
+ },
+ "fit": {
+  "ground_clearance_catwalk_mm": 5.2,
+  "tread_clearance_catwalk_mm": 4.5
+ },
+ "lower_bar": {
+  "depth_mm": 50.0,
+  "widths_mm": [
+   25.0,
+   35.0
+  ],
+  "util_before": 11.53,
+  "util_after": 0.811,
+  "defl_before": 7.27,
+  "defl_after": 0.912
+ },
+ "post": {
+  "section": "SHS 50x50x4",
+  "W_mm3": 10461,
+  "util_before": 23.901,
+  "util_after": 0.955,
+  "line_before": 20.74,
+  "line_after": 0.892
+ },
+ "post_base": {
+  "M_Ed_kNm": 2.18,
+  "mini_as_base_MRd_kNm": 0.091,
+  "bolt_force_kN_at_100mm": 21.8,
+  "M12_A4_80_shear_kN": 32.4,
+  "min_alu_plate_for_bearing_mm": 5.0
+ },
+ "lock_pin": {
+  "per_lock": {
+   "CATWALK": {
+    "M_joint_kNm": 0.856,
+    "lever_mm": 100.0,
+    "pin_force_kN": 8.56
+   },
+   "STANDARD": {
+    "M_joint_kNm": 1.06,
+    "lever_mm": 122.0,
+    "pin_force_kN": 8.69
+   },
+   "STEEP": {
+    "M_joint_kNm": 0.749,
+    "lever_mm": 153.6,
+    "pin_force_kN": 4.88
+   }
+  },
+  "shear_util": 0.276,
+  "bearing_util": 0.266
+ },
+ "hooks": {
+  "V_ULS_kN": 6.05,
+  "throat_for_plate": {
+   "8 mm plate": 25.0,
+   "10 mm plate": 21.5,
+   "12 mm plate": 19.0
+  },
+  "twin_5mm_throat": 21.5,
+  "chosen": "10 mm plate, 22 mm throat",
+  "util_before": 4.744,
+  "util_after": 0.937
+ },
+ "axle": {
+  "util_before": 0.598,
+  "util_after": 0.607,
+  "change": null
+ },
+ "upper_bar_util_after": 0.811,
+ "treads": {
+  "util": 0.393,
+  "defl": 0.243
+ },
+ "guardrail": {
+  "util_before": 0.305,
+  "util_after": 0.305
+ },
+ "anchors": {
+  "single": "specify anchors >= 3.6 kN tension + 1.9 kN shear each (or 1464 kg ballast)",
+  "wide": "specify anchors >= 1.5 kN tension + 1.8 kN shear each (or 572 kg ballast)"
+ },
+ "trestle": [
+  "design trestle for 24.2 kN ULS total"
+ ],
+ "frequency_Hz": 14.75,
+ "weight_kg": {
+  "before": 71.6,
+  "after": 107.0
+ },
+ "ratings_after_kN_m2": {
+  "CATWALK": {
+   "unbraced": 8.18,
+   "truss": 11.98,
+   "locked_fe": 9.34
+  },
+  "STANDARD": {
+   "unbraced": 12.29,
+   "truss": 30.0,
+   "locked_fe": 19.25
+  },
+  "STEEP": {
+   "unbraced": 19.66,
+   "truss": 30.0,
+   "locked_fe": 30.0
+  }
+ }
+}

@@ -1,0 +1,63 @@
+{
+ "left U35x47 (slot 42) / U35x25": {
+  "standard": 0.734,
+  "standard_parts": {
+   "stress": 0.734,
+   "defl_L250": 0.334,
+   "person": 0.031
+  },
+  "catwalk_mid": 0.472,
+  "catwalk_mid_parts": {
+   "stress": 0.472,
+   "defl_L250": 0.416,
+   "person": 0.037
+  },
+  "steep_crew": 0.205
+ },
+ "right 25x42 / 25x20": {
+  "standard": 0.971,
+  "standard_parts": {
+   "stress": 0.971,
+   "defl_L250": 0.473,
+   "person": 0.044
+  },
+  "catwalk_mid": 0.625,
+  "catwalk_mid_parts": {
+   "stress": 0.625,
+   "defl_L250": 0.614,
+   "person": 0.055
+  },
+  "steep_crew": 0.27
+ },
+ "pole RHS 25x50x3": {
+  "full": 1.597,
+  "points": 0.824,
+  "area": 414,
+  "kg12": 13.4
+ },
+ "pole RHS 25x60x3": {
+  "full": 1.174,
+  "points": 0.637,
+  "area": 474,
+  "kg12": 15.4
+ },
+ "pole RHS 25x70x3": {
+  "full": 0.899,
+  "points": 0.51,
+  "area": 534,
+  "kg12": 17.3
+ },
+ "pole RHS 25x75x3": {
+  "full": 0.795,
+  "points": 0.46,
+  "area": 564,
+  "kg12": 18.3
+ },
+ "pole RHS 25x80x3": {
+  "full": 0.709,
+  "points": 0.418,
+  "area": 594,
+  "kg12": 19.2
+ },
+ "pin 25x10 moment capacity kNm": 0.095
+}

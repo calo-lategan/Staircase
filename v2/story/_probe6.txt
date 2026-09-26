@@ -1,0 +1,5 @@
+SINGLE_CATWALK: lo=[7.8114, 44.9622, 4.9] hi=[9.7888, 46.2672, 6.1611] lowest_struct=(4.93366813659668, 'MainRig_004') tread_tops={'Tread0': 5.05, 'Tread1': 5.05, 'Tread2': 5.05, 'Tread3': 5.05, 'Tread4': 5.05, 'Tread5': 5.05}
+SINGLE_STANDARD: lo=[8.1188, 44.9622, 4.875] hi=[9.7888, 46.2672, 7.0928] lowest_struct=(4.875001430511475, 'MainRig_002') tread_tops={'Tread0': 5.05, 'Tread1': 5.225, 'Tread2': 5.4001, 'Tread3': 5.5751, 'Tread4': 5.7501, 'Tread5': 5.9252}
+SINGLE_STEEP: lo=[8.3876, 44.9622, 4.839] hi=[9.7888, 46.2672, 7.3923] lowest_struct=(4.839049339294434, 'MainRig_002') tread_tops={'Tread0': 5.05, 'Tread1': 5.2817, 'Tread2': 5.5133, 'Tread3': 5.745, 'Tread4': 5.9767, 'Tread5': 6.2084}
+StaticBar_Stage: lo=[-0.5, -0.5, -0.5] hi=[0.5, 0.5, 0.5]
+StaticBar_Tube: lo=[-0.0126, -0.0126, -1.1] hi=[0.0126, 0.0126, 1.1]

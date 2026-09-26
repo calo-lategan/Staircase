@@ -1,0 +1,34 @@
+{
+ "options": {
+  "as modelled: hollow RHS 25x10x2": {
+   "R142 line 3.0 kN/m": 18.6,
+   "R143 point 1.25 kN": 25.4,
+   "R179 post 1.5 kN": 30.48,
+   "R142 viewing 5.0 kN/m": 31.01
+  },
+  "solid bar 25x10 (same size)": {
+   "R142 line 3.0 kN/m": 15.23,
+   "R143 point 1.25 kN": 20.79,
+   "R179 post 1.5 kN": 24.95,
+   "R142 viewing 5.0 kN/m": 25.38
+  },
+  "solid bar 25x25 (max across that fits the left 35 U web slot, 25 inner)": {
+   "R142 line 3.0 kN/m": 2.44,
+   "R143 point 1.25 kN": 3.33,
+   "R179 post 1.5 kN": 3.99,
+   "R142 viewing 5.0 kN/m": 4.06
+  },
+  "solid bar 25x15 (max across that fits the right 25 inverted-U web slot, 15 inner)": {
+   "R142 line 3.0 kN/m": 6.77,
+   "R143 point 1.25 kN": 9.24,
+   "R179 post 1.5 kN": 11.09,
+   "R142 viewing 5.0 kN/m": 11.28
+  }
+ },
+ "required_solid_depth_across_mm": {
+  "R142 line 3.0 kN/m": 39.0,
+  "R143 point 1.25 kN": 45.6,
+  "R179 post 1.5 kN": 49.9,
+  "R142 viewing 5.0 kN/m": 50.4
+ }
+}

@@ -1,0 +1,14 @@
+U2 your box: top 3, mid 2, ribs 2 at 60    ULS 4 kN front, mid-span       ok=0 eq [6105.0, 6105.0] nosing  -8.44 min  -8.44 twist  0.51 vm (105.4, 'mid plate', 276.2, 586.3, 25.0) u 0.46
+U2 your box: top 3, mid 2, ribs 2 at 60    ULS 4 kN centre, mid-span      ok=0 eq [6105.0, 6105.0] nosing  -7.80 min  -7.80 twist  0.35 vm (102.1, 'top plate', 3.8, 586.3, 50.0) u 0.45
+U2 your box: top 3, mid 2, ribs 2 at 60    ULS 4 kN front, at the end     ok=0 eq [6105.0, 6105.0] nosing  -2.39 min  -2.50 twist  0.14 vm (62.5, 'mid plate', 188.8, 47.4, 25.0) u 0.27
+U2 your box: top 3, mid 2, ribs 2 at 60    ULS crowd                      ok=0 eq [3465.9, 3465.9] nosing  -2.86 min  -2.86 twist  0.12 vm (31.2, 'top plate', 3.8, 586.3, 50.0) u 0.14
+U2 your box: top 3, mid 2, ribs 2 at 60    SLS 4 kN front, mid-span       ok=0 eq [4077.8, 4077.8] nosing  -5.64 min  -5.64 twist  0.34 vm (70.3, 'mid plate', 276.2, 586.3, 25.0) u 0.31
+U2 your box: top 3, mid 2, ribs 2 at 60    SLS crowd                      ok=0 eq [2318.4, 2318.4] nosing  -1.91 min  -1.91 twist  0.08 vm (20.9, 'top plate', 3.8, 586.3, 50.0) u 0.09
+U2 your box: top 3, mid 2, ribs 2 at 60    SLS person 1 kN at the nosing  ok=0 eq [1077.8, 1077.8] nosing  -1.62 min  -1.62 twist  0.13 vm (23.4, 'mid plate', 276.2, 646.2, 25.0) u 0.10
+U3 your box: top 2, mid 2, ribs 2 at 60    ULS 4 kN front, mid-span       ok=0 eq [6093.2, 6093.2] nosing  -9.98 min  -9.98 twist  0.61 vm (121.4, 'top plate', 3.8, 586.3, 50.0) u 0.53
+U3 your box: top 2, mid 2, ribs 2 at 60    ULS 4 kN centre, mid-span      ok=0 eq [6093.2, 6093.2] nosing  -9.23 min  -9.23 twist  0.41 vm (128.3, 'top plate', 3.8, 586.3, 50.0) u 0.56
+U3 your box: top 2, mid 2, ribs 2 at 60    ULS 4 kN front, at the end     ok=0 eq [6093.2, 6093.2] nosing  -2.81 min  -2.95 twist  0.16 vm (74.6, 'top plate', 136.2, 167.2, 50.0) u 0.33
+U3 your box: top 2, mid 2, ribs 2 at 60    ULS crowd                      ok=0 eq [3454.2, 3454.2] nosing  -3.37 min  -3.37 twist  0.15 vm (39.5, 'top plate', 3.8, 586.3, 50.0) u 0.17
+U3 your box: top 2, mid 2, ribs 2 at 60    SLS 4 kN front, mid-span       ok=0 eq [4069.1, 4069.1] nosing  -6.66 min  -6.66 twist  0.40 vm (81.0, 'top plate', 3.8, 586.3, 50.0) u 0.36
+U3 your box: top 2, mid 2, ribs 2 at 60    SLS crowd                      ok=0 eq [2309.7, 2309.7] nosing  -2.25 min  -2.25 twist  0.10 vm (26.4, 'top plate', 3.8, 586.3, 50.0) u 0.12
+U3 your box: top 2, mid 2, ribs 2 at 60    SLS person 1 kN at the nosing  ok=0 eq [1069.1, 1069.1] nosing  -1.91 min  -1.91 twist  0.15 vm (36.0, 'top plate', 233.8, 646.2, 50.0) u 0.16

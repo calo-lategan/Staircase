@@ -1,0 +1,399 @@
+{
+ "basis": "as modelled (IFC 22-09-2026), EN AW-6082-T6 throughout, Aug-2026 events loads, EN 1990 1.35G + 1.5Q",
+ "mass_per_unit_kg": 71.6,
+ "mass_breakdown": {
+  "treads 6x": 42.55,
+  "guide bars 4x": 6.82,
+  "axles 2x": 1.36,
+  "posts 12x1000": 8.11,
+  "top posts 12x100": 0.81,
+  "bottom minis 12x~165": 1.34,
+  "guardrails 2x": 3.03,
+  "cyan handrails 2x": 5.82,
+  "rail brackets 12x": 1.09,
+  "hooks/connectors/brackets (lump)": 0.69,
+  "TOTAL": 71.61
+ },
+ "girder": {
+  "CATWALK": {
+   "R (25 wide, governs)": {
+    "uls_rating_kN_m2": 0.55,
+    "sls_rating_kN_m2": 0.14,
+    "util_at_7_5_uls": 9.57,
+    "util_at_7_5_sls": 17.98,
+    "self_weight_only_uls": 0.327
+   },
+   "L (35 wide)": {
+    "uls_rating_kN_m2": 1.18,
+    "sls_rating_kN_m2": 0.43,
+    "util_at_7_5_uls": 5.33,
+    "util_at_7_5_sls": 10.52,
+    "self_weight_only_uls": 0.189
+   },
+   "person_1kN_defl_mm": 12.8
+  },
+  "STANDARD": {
+   "R (25 wide, governs)": {
+    "uls_rating_kN_m2": 1.0,
+    "sls_rating_kN_m2": 2.36,
+    "util_at_7_5_uls": 5.92,
+    "util_at_7_5_sls": 2.89,
+    "self_weight_only_uls": 0.245
+   },
+   "L (35 wide)": {
+    "uls_rating_kN_m2": 2.03,
+    "sls_rating_kN_m2": 5.19,
+    "util_at_7_5_uls": 3.31,
+    "util_at_7_5_sls": 1.42,
+    "self_weight_only_uls": 0.142
+   },
+   "person_1kN_defl_mm": 2.6
+  },
+  "STEEP": {
+   "R (25 wide, governs)": {
+    "uls_rating_kN_m2": 1.93,
+    "sls_rating_kN_m2": 5.39,
+    "util_at_7_5_uls": 3.38,
+    "util_at_7_5_sls": 1.36,
+    "self_weight_only_uls": 0.174
+   },
+   "L (35 wide)": {
+    "uls_rating_kN_m2": 3.76,
+    "sls_rating_kN_m2": 11.64,
+    "util_at_7_5_uls": 1.9,
+    "util_at_7_5_sls": 0.66,
+    "self_weight_only_uls": 0.101
+   },
+   "person_1kN_defl_mm": 1.5
+  }
+ },
+ "tread": {
+  "section": "280 x 50 extruded plank (A 2125 mm2, I 0.567e6 mm4)",
+  "mass_each_kg": 7.09,
+  "util_aug2026": {
+   "bend_udl": 0.188,
+   "bend_point": 0.523,
+   "defl_udl": 0.359,
+   "defl_point": 0.323,
+   "defl_person": 0.1
+  },
+  "point_rating_kN": 7.67,
+  "point_bending_kN": 7.67,
+  "point_defl_kN": 12.37,
+  "person_defl_mm": 1.0,
+  "open_riser_gap_mm": 125.0,
+  "deck_gap_mm": 25.2,
+  "udl_rating": {
+   "CATWALK": {
+    "rating_kN_m2": 20.9,
+    "bending": 40.52,
+    "defl_L250": 20.9
+   },
+   "STANDARD": {
+    "rating_kN_m2": 25.51,
+    "bending": 49.46,
+    "defl_L250": 25.51
+   },
+   "STEEP": {
+    "rating_kN_m2": 32.11,
+    "bending": 62.26,
+    "defl_L250": 32.11
+   }
+  }
+ },
+ "barrier": {
+  "CATWALK": {
+   "line_util_at_3kN_m": 15.16,
+   "line_rating_kN_m": 0.2,
+   "post_util_at_1_5kN": 4.98,
+   "post_point_rating_kN": 0.3,
+   "top_defl_mm_at_rating": 178.0,
+   "guard_height_mm": 1111.1,
+   "hand_height_mm": 1000.0
+  },
+  "STANDARD": {
+   "line_util_at_3kN_m": 18.98,
+   "line_rating_kN_m": 0.16,
+   "post_util_at_1_5kN": 6.21,
+   "post_point_rating_kN": 0.24,
+   "top_defl_mm_at_rating": 143.0,
+   "guard_height_mm": 1127.0,
+   "hand_height_mm": 1011.7
+  },
+  "STEEP": {
+   "line_util_at_3kN_m": 19.9,
+   "line_rating_kN_m": 0.15,
+   "post_util_at_1_5kN": 6.52,
+   "post_point_rating_kN": 0.23,
+   "top_defl_mm_at_rating": 133.0,
+   "guard_height_mm": 1162.0,
+   "hand_height_mm": 1018.0
+  }
+ },
+ "hooks": {
+  "STANDARD": {
+   "capacity_kN": 1.36,
+   "demand_at_7_5_kN": 4.13,
+   "util": 3.04,
+   "udl_rating_kN_m2": 2.25
+  },
+  "STEEP": {
+   "capacity_kN": 1.36,
+   "demand_at_7_5_kN": 2.7,
+   "util": 1.99,
+   "udl_rating_kN_m2": 3.56
+  }
+ },
+ "axle_shear_capacity_per_side_kN": 13.2,
+ "lock_pin_shear_capacity_kN": 32.8,
+ "catwalk_overturning": {
+  "FoS": 0.07,
+  "required": 1.5,
+  "ballast_or_anchor_kg": 1499
+ },
+ "frequency": {
+  "standard_Hz": 18.0,
+  "catwalk_Hz": 8.0,
+  "required_Hz": 6.0
+ },
+ "states": [
+  {
+   "key": "SINGLE_CATWALK",
+   "label": "Catwalk (flat)",
+   "group": "Single",
+   "deg": 0.0,
+   "layout": "SINGLE",
+   "units": 1,
+   "L_mm": 1977,
+   "W_mm": 1305,
+   "H_mm": 1261,
+   "udl_rating_kN_m2": 0.14,
+   "governs": "side girder SLS L/250",
+   "candidates": {
+    "side girder ULS": 0.55,
+    "side girder SLS L/250": 0.14,
+    "tread": 20.9
+   },
+   "util_vs_7_5": 53.6,
+   "persons_at_rating": 0,
+   "mass_kg": 71.6
+  },
+  {
+   "key": "SINGLE_STANDARD",
+   "label": "Standard stair (35 deg)",
+   "group": "Single",
+   "deg": 35.0,
+   "layout": "SINGLE",
+   "units": 1,
+   "L_mm": 1670,
+   "W_mm": 1305,
+   "H_mm": 2218,
+   "udl_rating_kN_m2": 1.0,
+   "governs": "side girder ULS",
+   "candidates": {
+    "side girder ULS": 1.0,
+    "side girder SLS L/250": 2.36,
+    "tread": 25.51,
+    "top hooks": 2.25
+   },
+   "util_vs_7_5": 7.5,
+   "persons_at_rating": 2,
+   "mass_kg": 71.6
+  },
+  {
+   "key": "SINGLE_STEEP",
+   "label": "Steep steps (49.4 deg)",
+   "group": "Single",
+   "deg": 49.4,
+   "layout": "SINGLE",
+   "units": 1,
+   "L_mm": 1401,
+   "W_mm": 1305,
+   "H_mm": 2553,
+   "udl_rating_kN_m2": 1.93,
+   "governs": "side girder ULS",
+   "candidates": {
+    "side girder ULS": 1.93,
+    "side girder SLS L/250": 5.39,
+    "tread": 32.11,
+    "top hooks": 3.56
+   },
+   "util_vs_7_5": 3.9,
+   "persons_at_rating": 3,
+   "mass_kg": 71.6
+  },
+  {
+   "key": "SINGLE_BAR",
+   "label": "Standard on static hook bar",
+   "group": "Single",
+   "deg": 35.0,
+   "layout": "BAR",
+   "units": 1,
+   "L_mm": 1670,
+   "W_mm": 1305,
+   "H_mm": 2218,
+   "udl_rating_kN_m2": 1.0,
+   "governs": "side girder ULS",
+   "candidates": {
+    "side girder ULS": 1.0,
+    "side girder SLS L/250": 2.36,
+    "tread": 25.51,
+    "top hooks": 2.25
+   },
+   "util_vs_7_5": 7.5,
+   "persons_at_rating": 2,
+   "mass_kg": 71.6
+  },
+  {
+   "key": "DOUBLE_CATWALK",
+   "label": "Double catwalk",
+   "group": "Double (end-to-end)",
+   "deg": 0.0,
+   "layout": "DOUBLE",
+   "units": 2,
+   "L_mm": 3803,
+   "W_mm": 1305,
+   "H_mm": 1261,
+   "udl_rating_kN_m2": 0.14,
+   "governs": "side girder SLS L/250",
+   "candidates": {
+    "side girder ULS": 0.55,
+    "side girder SLS L/250": 0.14,
+    "tread": 20.9
+   },
+   "util_vs_7_5": 53.6,
+   "persons_at_rating": 0,
+   "mass_kg": 143.2
+  },
+  {
+   "key": "DOUBLE_STANDARD",
+   "label": "Double staircase",
+   "group": "Double (end-to-end)",
+   "deg": 35.0,
+   "layout": "DOUBLE",
+   "units": 2,
+   "L_mm": 3165,
+   "W_mm": 1305,
+   "H_mm": 3265,
+   "udl_rating_kN_m2": 1.0,
+   "governs": "side girder ULS",
+   "candidates": {
+    "side girder ULS": 1.0,
+    "side girder SLS L/250": 2.36,
+    "tread": 25.51,
+    "top hooks": 2.25
+   },
+   "util_vs_7_5": 7.5,
+   "persons_at_rating": 4,
+   "mass_kg": 143.2
+  },
+  {
+   "key": "DOUBLE_STEEP",
+   "label": "Double steep",
+   "group": "Double (end-to-end)",
+   "deg": 49.4,
+   "layout": "DOUBLE",
+   "units": 2,
+   "L_mm": 2589,
+   "W_mm": 1305,
+   "H_mm": 3939,
+   "udl_rating_kN_m2": 1.93,
+   "governs": "side girder ULS",
+   "candidates": {
+    "side girder ULS": 1.93,
+    "side girder SLS L/250": 5.39,
+    "tread": 32.11,
+    "top hooks": 3.56
+   },
+   "util_vs_7_5": 3.9,
+   "persons_at_rating": 7,
+   "mass_kg": 143.2
+  },
+  {
+   "key": "WIDE_CATWALK_FULL",
+   "label": "Wide catwalk - handrail between",
+   "group": "Wide (side-by-side)",
+   "deg": 0.0,
+   "layout": "WIDE",
+   "units": 2,
+   "L_mm": 1977,
+   "W_mm": 2546,
+   "H_mm": 1261,
+   "udl_rating_kN_m2": 0.14,
+   "governs": "side girder SLS L/250",
+   "candidates": {
+    "side girder ULS": 0.55,
+    "side girder SLS L/250": 0.14,
+    "tread": 20.9
+   },
+   "util_vs_7_5": 53.6,
+   "persons_at_rating": 0,
+   "mass_kg": 133.1
+  },
+  {
+   "key": "WIDE_CATWALK_MINI",
+   "label": "Wide catwalk - mini handrails only",
+   "group": "Wide (side-by-side)",
+   "deg": 0.0,
+   "layout": "WIDE",
+   "units": 2,
+   "L_mm": 1977,
+   "W_mm": 2546,
+   "H_mm": 1261,
+   "udl_rating_kN_m2": 0.14,
+   "governs": "side girder SLS L/250",
+   "candidates": {
+    "side girder ULS": 0.55,
+    "side girder SLS L/250": 0.14,
+    "tread": 20.9
+   },
+   "util_vs_7_5": 53.6,
+   "persons_at_rating": 0,
+   "mass_kg": 133.1
+  },
+  {
+   "key": "WIDE_STANDARD",
+   "label": "Wide staircase",
+   "group": "Wide (side-by-side)",
+   "deg": 35.0,
+   "layout": "WIDE",
+   "units": 2,
+   "L_mm": 1670,
+   "W_mm": 2546,
+   "H_mm": 2218,
+   "udl_rating_kN_m2": 1.0,
+   "governs": "side girder ULS",
+   "candidates": {
+    "side girder ULS": 1.0,
+    "side girder SLS L/250": 2.36,
+    "tread": 25.51,
+    "top hooks": 2.25
+   },
+   "util_vs_7_5": 7.5,
+   "persons_at_rating": 4,
+   "mass_kg": 133.1
+  },
+  {
+   "key": "WIDE_STEEP",
+   "label": "Wide steep staircase",
+   "group": "Wide (side-by-side)",
+   "deg": 49.4,
+   "layout": "WIDE",
+   "units": 2,
+   "L_mm": 1401,
+   "W_mm": 2546,
+   "H_mm": 2553,
+   "udl_rating_kN_m2": 1.93,
+   "governs": "side girder ULS",
+   "candidates": {
+    "side girder ULS": 1.93,
+    "side girder SLS L/250": 5.39,
+    "tread": 32.11,
+    "top hooks": 3.56
+   },
+   "util_vs_7_5": 3.9,
+   "persons_at_rating": 7,
+   "mass_kg": 133.1
+  }
+ ]
+}

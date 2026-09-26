@@ -1,0 +1,940 @@
+{
+ "frames": 2733,
+ "fps": 24,
+ "seconds": 113.9,
+ "tracks": 659,
+ "cabin_objects": 571,
+ "packer_h_mm": 217.9,
+ "materials": {
+  "objects": 652,
+  "paints": 15
+ },
+ "captions": [
+  {
+   "f0": 1,
+   "f1": 70,
+   "text": "Folding modular stair  \u00b7  one unit, eleven configurations",
+   "slot": "title"
+  },
+  {
+   "f0": 1,
+   "f1": 60,
+   "text": "1 / 11   Wide catwalk \u2013 mini handrails only",
+   "slot": "top"
+  },
+  {
+   "f0": 61,
+   "f1": 95,
+   "text": "Handrails lifted out \u2013 the steps are unlocked and free to fold",
+   "slot": "bottom"
+  },
+  {
+   "f0": 95,
+   "f1": 165,
+   "text": "Unit B lifts out of unit A's channels and moves over the top axle",
+   "slot": "bottom"
+  },
+  {
+   "f0": 165,
+   "f1": 231,
+   "text": "End-to-end join \u2013 unit B's hooks drop onto unit A's top axle (unit B's own bottom axle stays out)",
+   "slot": "bottom"
+  },
+  {
+   "f0": 231,
+   "f1": 283,
+   "text": "Handrail poles drop into the guide rails \u2013 steps locked flat (catwalk)",
+   "slot": "bottom"
+  },
+  {
+   "f0": 277,
+   "f1": 341,
+   "text": "2 / 11   Double catwalk",
+   "slot": "top"
+  },
+  {
+   "f0": 341,
+   "f1": 375,
+   "text": "Handrails lifted out \u2013 the steps are unlocked and free to fold",
+   "slot": "bottom"
+  },
+  {
+   "f0": 375,
+   "f1": 445,
+   "text": "Unit B lifts off the top axle and moves over unit A's left channels",
+   "slot": "bottom"
+  },
+  {
+   "f0": 445,
+   "f1": 519,
+   "text": "Side-by-side join \u2013 unit B drops in from above: its right guide rails sit inside unit A's left channels",
+   "slot": "bottom"
+  },
+  {
+   "f0": 519,
+   "f1": 571,
+   "text": "One handrail drops through both nested guide rails \u2013 both units locked flat (catwalk)",
+   "slot": "bottom"
+  },
+  {
+   "f0": 565,
+   "f1": 629,
+   "text": "3 / 11   Wide catwalk \u2013 handrail between",
+   "slot": "top"
+  },
+  {
+   "f0": 629,
+   "f1": 663,
+   "text": "Handrails lifted out \u2013 the steps are unlocked and free to fold",
+   "slot": "bottom"
+  },
+  {
+   "f0": 663,
+   "f1": 733,
+   "text": "Unit B lifts out of unit A's channels and is removed \u2013 unit A folds 0\u00b0 \u2192 35\u00b0 and moves over the static bar",
+   "slot": "bottom"
+  },
+  {
+   "f0": 733,
+   "f1": 799,
+   "text": "Top hooks drop onto the static bar (the stair's own top axle stays out)",
+   "slot": "bottom"
+  },
+  {
+   "f0": 799,
+   "f1": 851,
+   "text": "Handrail poles drop into the guide rails \u2013 steps locked at 35\u00b0",
+   "slot": "bottom"
+  },
+  {
+   "f0": 845,
+   "f1": 909,
+   "text": "4 / 11   Standard on static hook bar",
+   "slot": "top"
+  },
+  {
+   "f0": 909,
+   "f1": 943,
+   "text": "Handrails lifted out \u2013 the steps are unlocked and free to fold",
+   "slot": "bottom"
+  },
+  {
+   "f0": 943,
+   "f1": 1013,
+   "text": "Stair lifts its hooks off the bar \u2013 unit B brought to the top end",
+   "slot": "bottom"
+  },
+  {
+   "f0": 1013,
+   "f1": 1079,
+   "text": "End-to-end join \u2013 unit B's hooks drop onto unit A's top axle (unit B's own bottom axle stays out)",
+   "slot": "bottom"
+  },
+  {
+   "f0": 1079,
+   "f1": 1131,
+   "text": "Handrail poles drop into the guide rails \u2013 steps locked at 35\u00b0",
+   "slot": "bottom"
+  },
+  {
+   "f0": 1125,
+   "f1": 1189,
+   "text": "5 / 11   Double staircase",
+   "slot": "top"
+  },
+  {
+   "f0": 1189,
+   "f1": 1223,
+   "text": "Handrails lifted out \u2013 the steps are unlocked and free to fold",
+   "slot": "bottom"
+  },
+  {
+   "f0": 1223,
+   "f1": 1293,
+   "text": "Unit B lifts off the top axle and moves over unit A's left channels",
+   "slot": "bottom"
+  },
+  {
+   "f0": 1293,
+   "f1": 1367,
+   "text": "Side-by-side join \u2013 unit B drops in from above: its right guide rails sit inside unit A's left channels",
+   "slot": "bottom"
+  },
+  {
+   "f0": 1367,
+   "f1": 1419,
+   "text": "One handrail drops through both nested guide rails \u2013 both units locked at 35\u00b0",
+   "slot": "bottom"
+  },
+  {
+   "f0": 1413,
+   "f1": 1493,
+   "text": "6 / 11   Wide staircase",
+   "slot": "top"
+  },
+  {
+   "f0": 1493,
+   "f1": 1527,
+   "text": "Handrails lifted out \u2013 the steps are unlocked and free to fold",
+   "slot": "bottom"
+  },
+  {
+   "f0": 1527,
+   "f1": 1597,
+   "text": "Both units fold together 35\u00b0 \u2192 49.4\u00b0 \u2013 guide rails slide on the tread pins",
+   "slot": "bottom"
+  },
+  {
+   "f0": 1609,
+   "f1": 1661,
+   "text": "One handrail drops through both nested guide rails \u2013 both units locked at 49.4\u00b0",
+   "slot": "bottom"
+  },
+  {
+   "f0": 1655,
+   "f1": 1719,
+   "text": "7 / 11   Wide steep staircase",
+   "slot": "top"
+  },
+  {
+   "f0": 1719,
+   "f1": 1753,
+   "text": "Handrails lifted out \u2013 the steps are unlocked and free to fold",
+   "slot": "bottom"
+  },
+  {
+   "f0": 1753,
+   "f1": 1823,
+   "text": "Unit B lifts out of unit A's channels and moves over the top axle",
+   "slot": "bottom"
+  },
+  {
+   "f0": 1823,
+   "f1": 1889,
+   "text": "End-to-end join \u2013 unit B's hooks drop onto unit A's top axle (unit B's own bottom axle stays out)",
+   "slot": "bottom"
+  },
+  {
+   "f0": 1889,
+   "f1": 1941,
+   "text": "Handrail poles drop into the guide rails \u2013 steps locked at 49.4\u00b0",
+   "slot": "bottom"
+  },
+  {
+   "f0": 1935,
+   "f1": 1999,
+   "text": "8 / 11   Double steep",
+   "slot": "top"
+  },
+  {
+   "f0": 1999,
+   "f1": 2033,
+   "text": "Handrails lifted out \u2013 the steps are unlocked and free to fold",
+   "slot": "bottom"
+  },
+  {
+   "f0": 2033,
+   "f1": 2103,
+   "text": "Unit B removed",
+   "slot": "bottom"
+  },
+  {
+   "f0": 2115,
+   "f1": 2167,
+   "text": "Handrail poles drop into the guide rails \u2013 steps locked at 49.4\u00b0",
+   "slot": "bottom"
+  },
+  {
+   "f0": 2161,
+   "f1": 2225,
+   "text": "9 / 11   Steep steps (49.4\u00b0)",
+   "slot": "top"
+  },
+  {
+   "f0": 2225,
+   "f1": 2259,
+   "text": "Handrails lifted out \u2013 the steps are unlocked and free to fold",
+   "slot": "bottom"
+  },
+  {
+   "f0": 2259,
+   "f1": 2329,
+   "text": "Steps fold 49.4\u00b0 \u2192 0\u00b0 \u2013 guide rails slide on the tread pins",
+   "slot": "bottom"
+  },
+  {
+   "f0": 2341,
+   "f1": 2393,
+   "text": "Handrail poles drop into the guide rails \u2013 steps locked flat (catwalk)",
+   "slot": "bottom"
+  },
+  {
+   "f0": 2387,
+   "f1": 2451,
+   "text": "10 / 11   Catwalk (flat)",
+   "slot": "top"
+  },
+  {
+   "f0": 2451,
+   "f1": 2485,
+   "text": "Handrails lifted out \u2013 the steps are unlocked and free to fold",
+   "slot": "bottom"
+  },
+  {
+   "f0": 2485,
+   "f1": 2555,
+   "text": "Steps fold 0\u00b0 \u2192 35\u00b0 \u2013 guide rails slide on the tread pins \u2013 cabin placed, door sill at landing level",
+   "slot": "bottom"
+  },
+  {
+   "f0": 2567,
+   "f1": 2619,
+   "text": "Handrail poles drop into the guide rails \u2013 steps locked at 35\u00b0",
+   "slot": "bottom"
+  },
+  {
+   "f0": 2613,
+   "f1": 2733,
+   "text": "11 / 11   Standard stair (35\u00b0)",
+   "slot": "top"
+  }
+ ],
+ "phases": [
+  {
+   "P": "WIDE_CATWALK_MINI",
+   "N": "DOUBLE_CATWALK",
+   "T": 61,
+   "lift_end": 91,
+   "move_end": 163,
+   "dock": "double",
+   "dock_end": 229,
+   "ins_end": 277,
+   "hold_end": 341
+  },
+  {
+   "P": "DOUBLE_CATWALK",
+   "N": "WIDE_CATWALK_FULL",
+   "T": 341,
+   "lift_end": 371,
+   "move_end": 443,
+   "dock": "wide",
+   "dock_end": 517,
+   "ins_end": 565,
+   "hold_end": 629
+  },
+  {
+   "P": "WIDE_CATWALK_FULL",
+   "N": "SINGLE_BAR",
+   "T": 629,
+   "lift_end": 659,
+   "move_end": 731,
+   "dock": "bar",
+   "dock_end": 797,
+   "ins_end": 845,
+   "hold_end": 909
+  },
+  {
+   "P": "SINGLE_BAR",
+   "N": "DOUBLE_STANDARD",
+   "T": 909,
+   "lift_end": 939,
+   "move_end": 1011,
+   "dock": "double",
+   "dock_end": 1077,
+   "ins_end": 1125,
+   "hold_end": 1189
+  },
+  {
+   "P": "DOUBLE_STANDARD",
+   "N": "WIDE_STANDARD",
+   "T": 1189,
+   "lift_end": 1219,
+   "move_end": 1291,
+   "dock": "wide",
+   "dock_end": 1365,
+   "ins_end": 1413,
+   "hold_end": 1493
+  },
+  {
+   "P": "WIDE_STANDARD",
+   "N": "WIDE_STEEP",
+   "T": 1493,
+   "lift_end": 1523,
+   "move_end": 1595,
+   "dock": null,
+   "dock_end": 1607,
+   "ins_end": 1655,
+   "hold_end": 1719
+  },
+  {
+   "P": "WIDE_STEEP",
+   "N": "DOUBLE_STEEP",
+   "T": 1719,
+   "lift_end": 1749,
+   "move_end": 1821,
+   "dock": "double",
+   "dock_end": 1887,
+   "ins_end": 1935,
+   "hold_end": 1999
+  },
+  {
+   "P": "DOUBLE_STEEP",
+   "N": "SINGLE_STEEP",
+   "T": 1999,
+   "lift_end": 2029,
+   "move_end": 2101,
+   "dock": null,
+   "dock_end": 2113,
+   "ins_end": 2161,
+   "hold_end": 2225
+  },
+  {
+   "P": "SINGLE_STEEP",
+   "N": "SINGLE_CATWALK",
+   "T": 2225,
+   "lift_end": 2255,
+   "move_end": 2327,
+   "dock": null,
+   "dock_end": 2339,
+   "ins_end": 2387,
+   "hold_end": 2451
+  },
+  {
+   "P": "SINGLE_CATWALK",
+   "N": "SINGLE_STANDARD",
+   "T": 2451,
+   "lift_end": 2481,
+   "move_end": 2553,
+   "dock": null,
+   "dock_end": 2565,
+   "ins_end": 2613,
+   "hold_end": 2733
+  }
+ ],
+ "markers": [
+  [
+   "WIDE_CATWALK_MINI",
+   1
+  ],
+  [
+   "DOUBLE_CATWALK",
+   277
+  ],
+  [
+   "WIDE_CATWALK_FULL",
+   565
+  ],
+  [
+   "SINGLE_BAR",
+   845
+  ],
+  [
+   "DOUBLE_STANDARD",
+   1125
+  ],
+  [
+   "WIDE_STANDARD",
+   1413
+  ],
+  [
+   "WIDE_STEEP",
+   1655
+  ],
+  [
+   "DOUBLE_STEEP",
+   1935
+  ],
+  [
+   "SINGLE_STEEP",
+   2161
+  ],
+  [
+   "SINGLE_CATWALK",
+   2387
+  ],
+  [
+   "SINGLE_STANDARD",
+   2613
+  ]
+ ],
+ "camkeys": [
+  [
+   1,
+   "wide",
+   -64,
+   22.0,
+   null
+  ],
+  [
+   36,
+   "wide",
+   -56,
+   22.0,
+   null
+  ],
+  [
+   67,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   113,
+   "wide",
+   -50,
+   26,
+   null
+  ],
+  [
+   133,
+   "wide",
+   -50,
+   26,
+   null
+  ],
+  [
+   179,
+   "axle",
+   -76,
+   16,
+   0.75
+  ],
+  [
+   203,
+   "axle",
+   -76,
+   16,
+   0.75
+  ],
+  [
+   227,
+   "wide",
+   -58,
+   22.0,
+   null
+  ],
+  [
+   321,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   347,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   393,
+   "wide",
+   -50,
+   26,
+   null
+  ],
+  [
+   413,
+   "wide",
+   -50,
+   26,
+   null
+  ],
+  [
+   459,
+   "chan",
+   -14,
+   20,
+   0.95
+  ],
+  [
+   485,
+   "chan",
+   -10,
+   17,
+   0.62
+  ],
+  [
+   491,
+   "chan",
+   -10,
+   17,
+   0.62
+  ],
+  [
+   515,
+   "wide",
+   -58,
+   22.0,
+   null
+  ],
+  [
+   609,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   635,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   681,
+   "wide",
+   -52,
+   22,
+   null
+  ],
+  [
+   701,
+   "wide",
+   -52,
+   22,
+   null
+  ],
+  [
+   747,
+   "fixed",
+   -60,
+   28,
+   1.0
+  ],
+  [
+   771,
+   "fixed",
+   -60,
+   28,
+   1.0
+  ],
+  [
+   795,
+   "wide",
+   -58,
+   22.0,
+   null
+  ],
+  [
+   889,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   915,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   961,
+   "wide",
+   -52,
+   22,
+   null
+  ],
+  [
+   981,
+   "wide",
+   -52,
+   22,
+   null
+  ],
+  [
+   1027,
+   "axle",
+   -76,
+   16,
+   0.75
+  ],
+  [
+   1051,
+   "axle",
+   -76,
+   16,
+   0.75
+  ],
+  [
+   1075,
+   "wide",
+   -58,
+   22.0,
+   null
+  ],
+  [
+   1169,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   1195,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   1241,
+   "wide",
+   -50,
+   26,
+   null
+  ],
+  [
+   1261,
+   "wide",
+   -50,
+   26,
+   null
+  ],
+  [
+   1307,
+   "chan",
+   -14,
+   20,
+   0.95
+  ],
+  [
+   1333,
+   "chan",
+   -10,
+   17,
+   0.62
+  ],
+  [
+   1339,
+   "chan",
+   -10,
+   17,
+   0.62
+  ],
+  [
+   1381,
+   "pole",
+   -24,
+   32,
+   1.15
+  ],
+  [
+   1413,
+   "pole",
+   -24,
+   32,
+   1.15
+  ],
+  [
+   1459,
+   "wide",
+   -58,
+   22.0,
+   null
+  ],
+  [
+   1499,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   1545,
+   "fold",
+   -78,
+   20,
+   2.3
+  ],
+  [
+   1585,
+   "fold",
+   -78,
+   20,
+   2.3
+  ],
+  [
+   1605,
+   "wide",
+   -58,
+   22.0,
+   null
+  ],
+  [
+   1699,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   1725,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   1771,
+   "wide",
+   -50,
+   26,
+   null
+  ],
+  [
+   1791,
+   "wide",
+   -50,
+   26,
+   null
+  ],
+  [
+   1837,
+   "axle",
+   -76,
+   16,
+   0.75
+  ],
+  [
+   1861,
+   "axle",
+   -76,
+   16,
+   0.75
+  ],
+  [
+   1885,
+   "wide",
+   -58,
+   22.0,
+   null
+  ],
+  [
+   1979,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   2005,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   2051,
+   "wide",
+   -52,
+   22,
+   null
+  ],
+  [
+   2091,
+   "wide",
+   -52,
+   22,
+   null
+  ],
+  [
+   2111,
+   "wide",
+   -58,
+   22.0,
+   null
+  ],
+  [
+   2205,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   2231,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   2277,
+   "fold",
+   -76,
+   20,
+   2.3
+  ],
+  [
+   2317,
+   "fold",
+   -76,
+   20,
+   2.3
+  ],
+  [
+   2337,
+   "wide",
+   -58,
+   22.0,
+   null
+  ],
+  [
+   2431,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   2457,
+   "wide",
+   -52,
+   22.0,
+   null
+  ],
+  [
+   2503,
+   "site",
+   -38,
+   16,
+   10.0
+  ],
+  [
+   2543,
+   "site",
+   -38,
+   16,
+   10.0
+  ],
+  [
+   2563,
+   "site",
+   -46,
+   15,
+   8.6
+  ],
+  [
+   2669,
+   "site",
+   -38,
+   15,
+   8.6
+  ],
+  [
+   2727,
+   "site",
+   24,
+   12,
+   8.0
+  ]
+ ],
+ "t_story_s": 10.9,
+ "t_bake_s": 40.0
+}
