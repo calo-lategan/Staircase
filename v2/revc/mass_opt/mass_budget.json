@@ -1,11 +1,11 @@
 {
  "parts": {
   "rails 4 (guide rails)": {
-   "RC_R": 21.24846,
-   "OPT": 23.68521,
+   "RC_R": 23.72,
+   "OPT": 26.15675,
    "tag_RC_R": "C",
-   "tag_OPT": "C (placeholder: RC_R section widened for the box pole)",
-   "src": "RC_R: inv. U 82 / U 94 x 70 x 5 (poles_barrier C3, steps_pins_rails 70 deep) x (1761+1849) per side; OPT: rail_design.md (pending)"
+   "tag_OPT": "C",
+   "src": "RC_R: INTERIM rails/rail_design.json mass.total_4_rails (POLE_W 55); rail_design.md not yet published (poles_barrier 82/94 x 70 x 5 would be 21.2); OPT: same + webs widened 25 mm for the box pole"
   },
   "barrier poles 12": {
    "RC_R": 43.47289705669585,
@@ -86,18 +86,23 @@
   }
  },
  "step": {
-  "kg_each": null,
-  "src": "step_optimisation.md (pending)",
+  "kg_each": 6.14,
+  "src": "INTERIM steps_opt/opt_skin.log iter 0 (L envelope, u 0.83); step_optimisation.md not yet published",
   "includes_end_plates": true,
   "includes_pins": false
  },
  "rail": {
-  "kg_unit": null,
-  "src": "rail_design.md (pending)"
+  "kg_unit": 23.72,
+  "src": "INTERIM rails/rail_design.json mass.total_4_rails (POLE_W 55); rail_design.md not yet published"
  },
  "non_step": {
-  "RC_R": 87.42062400889536,
-  "OPT": 68.12918577781426
+  "RC_R": 89.89216400889535,
+  "OPT": 70.60072577781426
+ },
+ "unit": {
+  "RC_R": 126.73216400889535,
+  "OPT": 107.44072577781427,
+  "steps": 36.839999999999996
  },
  "relaxations_kg": {
   "A. barrier poles + top rail on ONE exposed side only; other side: 6 short lock posts through both rails (fold lock kept)": -11.567290206403696,
