@@ -43,8 +43,20 @@ def descend(start, space, log, workers=4, max_iter=30):
         for r in res: log.append(r); print("   ", json.dumps({k: r.get(k) for k in ("mass", "u", "u_str", "sls4", "crowd", "where")}), {k: v for k, v in r["D"].items() if cur["D"].get(k) != v}, flush=True)
         feas = [r for r in res if r.get("ok")]
         if not feas: break
-        # best mass saving per utilisation increase
+        # combine all feasible single moves (best mass-saving per utilisation rise first); drop the worst until feasible
+        def ratio(r): return (cur["mass"] - r["mass"]) / max(1e-3, r["u"] - cur["u"] + 0.01)
+        feas.sort(key=ratio, reverse=True)
         best = min(feas, key=lambda r: r["mass"])
+        moves = [{k: v for k, v in r["D"].items() if cur["D"].get(k) != v} for r in feas]
+        while len(moves) > 1:
+            comb = dict(cur["D"])
+            for mv in moves: comb.update(mv)
+            rc = evaluate(comb); log.append(rc)
+            print("   combined", len(moves), json.dumps({k: rc.get(k) for k in ("mass", "u", "where")}), flush=True)
+            if rc.get("ok") and rc["mass"] < best["mass"]:
+                best = rc; break
+            moves = moves[:-1] if len(moves) > 2 else moves[:1]
+            if len(moves) == 1: break
         cur = best; print(f"iter {it}: accept {json.dumps({k: v for k, v in cur['D'].items() if k in space})} mass {cur['mass']} u {cur['u']}", flush=True)
     return cur
 

@@ -3,8 +3,9 @@ Same model idea, loads and supports as v2/final/side_frame.py (measured geometry
 frame), with these changes:
   * rail axes = centroid lines of the new sections, offset from the (unchanged) pin lines;
   * pins at the owner's positions (rear 25/12.5, front 225/37.5 in step coords) - same as side_frame.py;
-  * poles: solid 25 along x 55 across (pole review); they meet the LOWER rail at its far web (shoulder + latch: x and z
-    held) and the UPPER rail at its far web (slot: x held only). Lock at the lower rail only (poles review C3).
+  * poles (rails_lib.POLE: production box 25 x 80 or prototype plate 25 x 55) meet each rail at its mid flange (on the
+    pin line). Fold lock at BOTH rails (x and z held at both crossings); lock_upper=False reproduces the poles review's
+    lower-only lock, which is a mechanism (reported, not designed for).
 """
 import json, math, os, sys
 import numpy as np
@@ -19,24 +20,21 @@ TH = math.radians(35.0)
 U = np.array([-math.cos(TH), math.sin(TH)]); NU = np.array([math.sin(TH), math.cos(TH)])
 REAR0 = np.array([TREADS[0]["back"] + L.REAR[0], L.REAR[1]])
 FRONT0 = np.array([TREADS[0]["back"] + L.FRONT[0], L.FRONT[1]])
-POLE_SEC = dict(A=25 * 55.0, I=55 * 25.0 ** 3 / 12)
+POLE_SEC = dict(A=L.POLE["A"], I=L.POLE["I_inplane"])
 OTHER = {"U25": dict(A=325.0, I=18948.0), "link": dict(A=1e5, I=1e8)}
 
 
 def rail_props(side):
-    out = {}
-    for lev in ("lo", "up"):
-        kind = L.RAIL_OF[(side, lev)]; p = L.Sec(L.profile(kind)).props()
-        out[lev] = dict(kind=kind, A=p["A"], I=p["Iy"], nc=p["nc"], D=L.DEPTH[kind])
-    return out
+    p = L.Sec(L.profile()).props()
+    return {lev: dict(kind="H", A=p["A"], I=p["Iy"], nc=p["nc"], D=L.D) for lev in ("lo", "up")}
 
 
 def rail_line(side, lev, rp):
     """rail axis: point + direction; also the web mid-plane offset. Normal offsets are measured with NU (up)."""
     if lev == "lo":
-        base = REAR0; n_axis = L.C_PIN - rp["nc"]; n_web = L.C_PIN - (rp["D"] - L.T_WEB / 2)
+        base = REAR0; n_axis = L.C_PIN - rp["nc"]; n_web = L.C_PIN - L.N_MF
     else:
-        base = FRONT0; n_axis = rp["nc"] - L.C_PIN; n_web = (rp["D"] - L.T_WEB / 2) - L.C_PIN
+        base = FRONT0; n_axis = rp["nc"] - L.C_PIN; n_web = L.N_MF - L.C_PIN
     return base, n_axis, n_web
 
 
@@ -45,7 +43,7 @@ def x_at(base, n_off, x):
     p0 = base + NU * n_off; s = (x - p0[0]) / U[0]; return p0 + U * s, s
 
 
-def build(side, base_slides=False, lock_upper=False):
+def build(side, base_slides=False, lock_upper=True):
     rp = rail_props(side); g = G[side]
     ops.wipe(); ops.model("basic", "-ndm", 2, "-ndf", 3); ops.geomTransf("Linear", 1)
     nt = [0]; et = [0]; els = {}; SEC = {}
@@ -135,7 +133,7 @@ def pin_forces(case, side, only=None):
     return {i: ({"rear": (-r[0], -r[2]), "front": (-f[0], -f[2])} if (only is None or i in only) else {"rear": (0, 0), "front": (0, 0)}) for i in range(6)}
 
 
-def run(side, forces, factor_sw=1.35, base_slides=False, lock_upper=False):
+def run(side, forces, factor_sw=1.35, base_slides=False, lock_upper=True):
     m = build(side, base_slides, lock_upper)
     ops.timeSeries("Linear", 1); ops.pattern("Plain", 1, 1)
     for (i, nr, nf) in m["link_tags"]:

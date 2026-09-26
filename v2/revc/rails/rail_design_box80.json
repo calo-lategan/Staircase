@@ -1,0 +1,4814 @@
+{
+ "pole": "box80",
+ "pole_note": "production: custom 6082-T6 box 25 along x 80 across, walls 5.5 (across faces) / 2.5",
+ "geometry": {
+  "pin_line_separation": {
+   "catwalk": 25.0,
+   "standard": 135.2,
+   "steep": 168.1
+  },
+  "tip_gap": {
+   "catwalk": -0.0,
+   "standard": 110.2,
+   "steep": 143.1
+  },
+  "slot_len": {
+   "standard": 34.3,
+   "catwalk": 26.0,
+   "steep": 44.1
+  },
+  "slots": {
+   "L": [
+    {
+     "x": 8396.8,
+     "up_std_cw": 1634.8,
+     "up_steep": 1701.4,
+     "lo_std_steep": 1385.4,
+     "lo_catwalk": 1434.8,
+     "vert_between_flanges_catwalk": 32.4,
+     "cap_gap_up_catwalk": 81.5,
+     "cap_gap_lo_catwalk": 63.5,
+     "vert_between_flanges_standard": 174.1,
+     "cap_gap_up_standard": 72.8,
+     "cap_gap_lo_standard": 104.2,
+     "vert_between_flanges_steep": 269.7,
+     "cap_gap_up_steep": 91.6,
+     "cap_gap_lo_steep": 93.8,
+     "upper_slots_web_between": 27.4,
+     "lower_slots_web_between": 14.3,
+     "upper_slots_to_cap_cut": 73.8,
+     "lower_slots_to_cap_cut": 60.0
+    },
+    {
+     "x": 8646.8,
+     "up_std_cw": 1329.6,
+     "up_steep": 1396.2,
+     "lo_std_steep": 1080.2,
+     "lo_catwalk": 1129.6,
+     "vert_between_flanges_catwalk": 32.4,
+     "cap_gap_up_catwalk": 81.4,
+     "cap_gap_lo_catwalk": 63.6,
+     "vert_between_flanges_standard": 174.1,
+     "cap_gap_up_standard": 72.8,
+     "cap_gap_lo_standard": 104.3,
+     "vert_between_flanges_steep": 269.7,
+     "cap_gap_up_steep": 91.7,
+     "cap_gap_lo_steep": 93.8,
+     "upper_slots_web_between": 27.4,
+     "lower_slots_web_between": 14.3,
+     "upper_slots_to_cap_cut": 73.8,
+     "lower_slots_to_cap_cut": 60.1
+    },
+    {
+     "x": 8896.8,
+     "up_std_cw": 1024.4,
+     "up_steep": 1091.0,
+     "lo_std_steep": 775.0,
+     "lo_catwalk": 824.4,
+     "vert_between_flanges_catwalk": 32.4,
+     "cap_gap_up_catwalk": 81.4,
+     "cap_gap_lo_catwalk": 63.6,
+     "vert_between_flanges_standard": 174.1,
+     "cap_gap_up_standard": 72.7,
+     "cap_gap_lo_standard": 104.3,
+     "vert_between_flanges_steep": 269.7,
+     "cap_gap_up_steep": 91.7,
+     "cap_gap_lo_steep": 93.9,
+     "upper_slots_web_between": 27.4,
+     "lower_slots_web_between": 14.3,
+     "upper_slots_to_cap_cut": 73.7,
+     "lower_slots_to_cap_cut": 60.1
+    },
+    {
+     "x": 9146.8,
+     "up_std_cw": 719.2,
+     "up_steep": 785.8,
+     "lo_std_steep": 469.9,
+     "lo_catwalk": 519.2,
+     "vert_between_flanges_catwalk": 32.4,
+     "cap_gap_up_catwalk": 81.4,
+     "cap_gap_lo_catwalk": 63.6,
+     "vert_between_flanges_standard": 174.1,
+     "cap_gap_up_standard": 72.7,
+     "cap_gap_lo_standard": 104.3,
+     "vert_between_flanges_steep": 269.7,
+     "cap_gap_up_steep": 91.7,
+     "cap_gap_lo_steep": 93.9,
+     "upper_slots_web_between": 27.4,
+     "lower_slots_web_between": 14.3,
+     "upper_slots_to_cap_cut": 73.7,
+     "lower_slots_to_cap_cut": 60.1
+    },
+    {
+     "x": 9396.8,
+     "up_std_cw": 414.0,
+     "up_steep": 480.6,
+     "lo_std_steep": 164.7,
+     "lo_catwalk": 214.0,
+     "vert_between_flanges_catwalk": 32.4,
+     "cap_gap_up_catwalk": 81.3,
+     "cap_gap_lo_catwalk": 63.7,
+     "vert_between_flanges_standard": 174.1,
+     "cap_gap_up_standard": 72.7,
+     "cap_gap_lo_standard": 104.3,
+     "vert_between_flanges_steep": 269.7,
+     "cap_gap_up_steep": 91.8,
+     "cap_gap_lo_steep": 93.9,
+     "upper_slots_web_between": 27.4,
+     "lower_slots_web_between": 14.3,
+     "upper_slots_to_cap_cut": 73.7,
+     "lower_slots_to_cap_cut": 60.2
+    },
+    {
+     "x": 9646.8,
+     "up_std_cw": 108.8,
+     "up_steep": 175.4,
+     "lo_std_steep": -140.5,
+     "lo_catwalk": -91.2,
+     "vert_between_flanges_catwalk": 32.4,
+     "cap_gap_up_catwalk": 81.3,
+     "cap_gap_lo_catwalk": 63.7,
+     "vert_between_flanges_standard": 174.1,
+     "cap_gap_up_standard": 72.6,
+     "cap_gap_lo_standard": 104.4,
+     "vert_between_flanges_steep": 269.7,
+     "cap_gap_up_steep": 91.8,
+     "cap_gap_lo_steep": 94.0,
+     "upper_slots_web_between": 27.4,
+     "lower_slots_web_between": 14.3,
+     "upper_slots_to_cap_cut": 73.7,
+     "lower_slots_to_cap_cut": 60.2
+    }
+   ],
+   "R": [
+    {
+     "x": 8398.8,
+     "up_std_cw": 1632.3,
+     "up_steep": 1699.0,
+     "lo_std_steep": 1383.0,
+     "lo_catwalk": 1432.3,
+     "vert_between_flanges_catwalk": 32.4,
+     "cap_gap_up_catwalk": 79.0,
+     "cap_gap_lo_catwalk": 66.0,
+     "vert_between_flanges_standard": 174.1,
+     "cap_gap_up_standard": 70.4,
+     "cap_gap_lo_standard": 106.7,
+     "vert_between_flanges_steep": 269.7,
+     "cap_gap_up_steep": 94.1,
+     "cap_gap_lo_steep": 96.2,
+     "upper_slots_web_between": 27.4,
+     "lower_slots_web_between": 14.3,
+     "upper_slots_to_cap_cut": 71.4,
+     "lower_slots_to_cap_cut": 62.5
+    },
+    {
+     "x": 8648.8,
+     "up_std_cw": 1327.1,
+     "up_steep": 1393.8,
+     "lo_std_steep": 1077.8,
+     "lo_catwalk": 1127.1,
+     "vert_between_flanges_catwalk": 32.4,
+     "cap_gap_up_catwalk": 79.0,
+     "cap_gap_lo_catwalk": 66.0,
+     "vert_between_flanges_standard": 174.1,
+     "cap_gap_up_standard": 70.3,
+     "cap_gap_lo_standard": 106.7,
+     "vert_between_flanges_steep": 269.7,
+     "cap_gap_up_steep": 94.1,
+     "cap_gap_lo_steep": 96.3,
+     "upper_slots_web_between": 27.4,
+     "lower_slots_web_between": 14.3,
+     "upper_slots_to_cap_cut": 71.3,
+     "lower_slots_to_cap_cut": 62.5
+    },
+    {
+     "x": 8898.8,
+     "up_std_cw": 1022.0,
+     "up_steep": 1088.6,
+     "lo_std_steep": 772.6,
+     "lo_catwalk": 822.0,
+     "vert_between_flanges_catwalk": 32.4,
+     "cap_gap_up_catwalk": 79.0,
+     "cap_gap_lo_catwalk": 66.0,
+     "vert_between_flanges_standard": 174.1,
+     "cap_gap_up_standard": 70.3,
+     "cap_gap_lo_standard": 106.7,
+     "vert_between_flanges_steep": 269.7,
+     "cap_gap_up_steep": 94.1,
+     "cap_gap_lo_steep": 96.3,
+     "upper_slots_web_between": 27.4,
+     "lower_slots_web_between": 14.3,
+     "upper_slots_to_cap_cut": 71.3,
+     "lower_slots_to_cap_cut": 62.5
+    },
+    {
+     "x": 9148.8,
+     "up_std_cw": 716.8,
+     "up_steep": 783.4,
+     "lo_std_steep": 467.4,
+     "lo_catwalk": 516.8,
+     "vert_between_flanges_catwalk": 32.4,
+     "cap_gap_up_catwalk": 78.9,
+     "cap_gap_lo_catwalk": 66.1,
+     "vert_between_flanges_standard": 174.1,
+     "cap_gap_up_standard": 70.3,
+     "cap_gap_lo_standard": 106.8,
+     "vert_between_flanges_steep": 269.7,
+     "cap_gap_up_steep": 94.2,
+     "cap_gap_lo_steep": 96.3,
+     "upper_slots_web_between": 27.4,
+     "lower_slots_web_between": 14.3,
+     "upper_slots_to_cap_cut": 71.3,
+     "lower_slots_to_cap_cut": 62.6
+    },
+    {
+     "x": 9398.8,
+     "up_std_cw": 411.6,
+     "up_steep": 478.2,
+     "lo_std_steep": 162.2,
+     "lo_catwalk": 211.6,
+     "vert_between_flanges_catwalk": 32.4,
+     "cap_gap_up_catwalk": 78.9,
+     "cap_gap_lo_catwalk": 66.1,
+     "vert_between_flanges_standard": 174.1,
+     "cap_gap_up_standard": 70.2,
+     "cap_gap_lo_standard": 106.8,
+     "vert_between_flanges_steep": 269.7,
+     "cap_gap_up_steep": 94.2,
+     "cap_gap_lo_steep": 96.4,
+     "upper_slots_web_between": 27.4,
+     "lower_slots_web_between": 14.3,
+     "upper_slots_to_cap_cut": 71.2,
+     "lower_slots_to_cap_cut": 62.6
+    },
+    {
+     "x": 9648.8,
+     "up_std_cw": 106.4,
+     "up_steep": 173.0,
+     "lo_std_steep": -143.0,
+     "lo_catwalk": -93.6,
+     "vert_between_flanges_catwalk": 32.4,
+     "cap_gap_up_catwalk": 78.9,
+     "cap_gap_lo_catwalk": 66.1,
+     "vert_between_flanges_standard": 174.1,
+     "cap_gap_up_standard": 70.2,
+     "cap_gap_lo_standard": 106.8,
+     "vert_between_flanges_steep": 269.7,
+     "cap_gap_up_steep": 94.2,
+     "cap_gap_lo_steep": 96.4,
+     "upper_slots_web_between": 27.4,
+     "lower_slots_web_between": 14.3,
+     "upper_slots_to_cap_cut": 71.2,
+     "lower_slots_to_cap_cut": 62.6
+    }
+   ]
+  },
+  "cap_pole_min_gap": 63.5,
+  "tab": {
+   "radius": 24.2,
+   "width": 48.4,
+   "reach_beyond_touching_plane": 11.7,
+   "notch_depth": 13.7,
+   "notch_width": 56.4,
+   "notch_centres_upper_rail_s": [
+    200.0,
+    505.2,
+    810.3,
+    1115.5,
+    1420.7,
+    1725.8
+   ],
+   "notch_centres_lower_rail_s": [
+    -200.0,
+    105.2,
+    410.3,
+    715.5,
+    1020.7,
+    1325.8
+   ],
+   "notch_to_own_hole_min": 68.5,
+   "notch_to_slot_min": {
+    "gap": -25.8,
+    "side": "L",
+    "rail": "upper",
+    "slot_s": 1701.4,
+    "note": "notch is in the pin wall (n 0-13.7), slot in the mid flange (n 14.2-18.2): different elements; a negative gap means both cuts share one station - checked as section 'notch+slot'"
+   }
+  },
+  "fold_out": {
+   "angle_tabs_clear_deg": 4.1,
+   "drift_at_clear_mm": 2.3,
+   "notch_side_clearance": 4.0,
+   "max_drift_before_clear": 2.3
+  },
+  "base_end": {
+   "L": {
+    "end_x_measured": 9651.1,
+    "z_far_corner_at_measured_end": -96.2,
+    "clear_to_footplate_top": 23.7,
+    "axle_centre_s": -142.2,
+    "axle_centre_n_away": 37.3,
+    "end_cut_s": -115.7,
+    "end_cut_x_far": 9610.0,
+    "z_far_corner_at_cut": -80.5,
+    "clear_far_corner_to_footplate": 39.4,
+    "end_cut_x_tip": 9635.8,
+    "cut_back_along_rail_from_measured_end": 27.4,
+    "note": "square end normal to the rail, 2 mm clear of the D48.3 axle; hook plate (supports review) bridges to the axle"
+   },
+   "R": {
+    "end_x_measured": 9691.0,
+    "z_far_corner_at_measured_end": -124.2,
+    "clear_to_footplate_top": -4.3,
+    "axle_centre_s": -142.2,
+    "axle_centre_n_away": 37.3,
+    "end_cut_s": -115.7,
+    "end_cut_x_far": 9610.0,
+    "z_far_corner_at_cut": -80.5,
+    "clear_far_corner_to_footplate": 39.4,
+    "end_cut_x_tip": 9635.8,
+    "cut_back_along_rail_from_measured_end": 76.2,
+    "note": "square end normal to the rail, 2 mm clear of the D48.3 axle; hook plate (supports review) bridges to the axle"
+   }
+  }
+ },
+ "frame": {
+  "lock_lower_only": {
+   "L": {
+    "max_displacement_mm": 530.0,
+    "note": "mechanism - not a valid lock"
+   },
+   "R": {
+    "max_displacement_mm": 522.0,
+    "note": "mechanism - not a valid lock"
+   }
+  },
+  "uls": {
+   "L | crowd all | base held": {
+    "lo": {
+     "sigma": 129.3,
+     "util": 0.569,
+     "s": 1526.0,
+     "N": -8900.0,
+     "M": -431431.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 97.5,
+     "util": 0.429,
+     "s": 1526.0,
+     "N": -8007.0,
+     "M": 318363.0,
+     "section": "hole"
+    },
+    "links_kN": [
+     1.83,
+     5.63,
+     2.81,
+     -0.0,
+     -0.37,
+     -7.52
+    ]
+   },
+   "L | crowd lower 3 | base held": {
+    "lo": {
+     "sigma": 41.3,
+     "util": 0.182,
+     "s": -149.0,
+     "N": -6227.0,
+     "M": 130298.0,
+     "section": "slot_lo"
+    },
+    "up": {
+     "sigma": 45.7,
+     "util": 0.201,
+     "s": 109.0,
+     "N": -2111.0,
+     "M": 166701.0,
+     "section": "slot_up"
+    },
+    "links_kN": [
+     1.34,
+     3.26,
+     0.33,
+     -1.1,
+     -0.84,
+     -1.79
+    ]
+   },
+   "L | crowd upper 3 | base held": {
+    "lo": {
+     "sigma": 108.5,
+     "util": 0.478,
+     "s": 1526.0,
+     "N": -6121.0,
+     "M": -369653.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 76.8,
+     "util": 0.338,
+     "s": 1526.0,
+     "N": -6530.0,
+     "M": 249653.0,
+     "section": "hole"
+    },
+    "links_kN": [
+     0.53,
+     2.53,
+     2.55,
+     1.08,
+     0.45,
+     -5.97
+    ]
+   },
+   "L | ULS 4 kN patch front, mid-span on tread 0 | base held": {
+    "lo": {
+     "sigma": 24.7,
+     "util": 0.109,
+     "s": 0.0,
+     "N": -1172.0,
+     "M": -85178.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 30.6,
+     "util": 0.135,
+     "s": 109.0,
+     "N": 2135.0,
+     "M": 106858.0,
+     "section": "slot_up"
+    }
+   },
+   "L | ULS 4 kN patch front, mid-span on tread 1 | base held": {
+    "lo": {
+     "sigma": 24.1,
+     "util": 0.106,
+     "s": -149.0,
+     "N": -3610.0,
+     "M": 76387.0,
+     "section": "slot_lo"
+    },
+    "up": {
+     "sigma": 38.1,
+     "util": 0.167,
+     "s": 305.0,
+     "N": -1980.0,
+     "M": -130522.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, mid-span on tread 2 | base held": {
+    "lo": {
+     "sigma": 31.8,
+     "util": 0.14,
+     "s": -149.0,
+     "N": -5082.0,
+     "M": 98994.0,
+     "section": "slot_lo"
+    },
+    "up": {
+     "sigma": 35.5,
+     "util": 0.156,
+     "s": 610.0,
+     "N": -4175.0,
+     "M": -109186.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, mid-span on tread 3 | base held": {
+    "lo": {
+     "sigma": 43.7,
+     "util": 0.192,
+     "s": 1526.0,
+     "N": -3803.0,
+     "M": -141523.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 40.3,
+     "util": 0.177,
+     "s": 1526.0,
+     "N": -2953.0,
+     "M": 133463.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, mid-span on tread 4 | base held": {
+    "lo": {
+     "sigma": 61.2,
+     "util": 0.269,
+     "s": 1526.0,
+     "N": -4055.0,
+     "M": -204959.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 60.3,
+     "util": 0.265,
+     "s": 1526.0,
+     "N": -4198.0,
+     "M": 201159.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, mid-span on tread 5 | base held": {
+    "lo": {
+     "sigma": 81.8,
+     "util": 0.36,
+     "s": 1526.0,
+     "N": -3328.0,
+     "M": -285553.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 32.0,
+     "util": 0.141,
+     "s": 1526.0,
+     "N": -4748.0,
+     "M": 92918.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch centre, mid-span on tread 0 | base held": {
+    "lo": {
+     "sigma": 25.5,
+     "util": 0.112,
+     "s": 0.0,
+     "N": -1206.0,
+     "M": -88026.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 28.1,
+     "util": 0.124,
+     "s": 109.0,
+     "N": 1459.0,
+     "M": 101566.0,
+     "section": "slot_up"
+    }
+   },
+   "L | ULS 4 kN patch centre, mid-span on tread 1 | base held": {
+    "lo": {
+     "sigma": 25.2,
+     "util": 0.111,
+     "s": -149.0,
+     "N": -3821.0,
+     "M": 79632.0,
+     "section": "slot_lo"
+    },
+    "up": {
+     "sigma": 37.1,
+     "util": 0.163,
+     "s": 305.0,
+     "N": -2422.0,
+     "M": -124512.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch centre, mid-span on tread 2 | base held": {
+    "lo": {
+     "sigma": 32.4,
+     "util": 0.143,
+     "s": -149.0,
+     "N": -5209.0,
+     "M": 100816.0,
+     "section": "slot_lo"
+    },
+    "up": {
+     "sigma": 34.5,
+     "util": 0.152,
+     "s": 610.0,
+     "N": -4632.0,
+     "M": -102982.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch centre, mid-span on tread 3 | base held": {
+    "lo": {
+     "sigma": 46.1,
+     "util": 0.203,
+     "s": 1526.0,
+     "N": -3843.0,
+     "M": -150230.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 42.4,
+     "util": 0.187,
+     "s": 1526.0,
+     "N": -3109.0,
+     "M": 140501.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch centre, mid-span on tread 4 | base held": {
+    "lo": {
+     "sigma": 63.8,
+     "util": 0.281,
+     "s": 1526.0,
+     "N": -4006.0,
+     "M": -215235.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 62.7,
+     "util": 0.276,
+     "s": 1526.0,
+     "N": -4376.0,
+     "M": 208895.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch centre, mid-span on tread 5 | base held": {
+    "lo": {
+     "sigma": 84.7,
+     "util": 0.373,
+     "s": 1526.0,
+     "N": -3206.0,
+     "M": -297105.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 33.5,
+     "util": 0.147,
+     "s": 1526.0,
+     "N": -4243.0,
+     "M": 101127.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, mid-span on tread 0 | base held": {
+    "lo": {
+     "sigma": 27.6,
+     "util": 0.122,
+     "s": 0.0,
+     "N": -1623.0,
+     "M": -93812.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 25.8,
+     "util": 0.113,
+     "s": 109.0,
+     "N": -287.0,
+     "M": 100500.0,
+     "section": "slot_up"
+    }
+   },
+   "L | ULS 4 kN patch back, mid-span on tread 1 | base held": {
+    "lo": {
+     "sigma": 26.3,
+     "util": 0.116,
+     "s": -149.0,
+     "N": -4031.0,
+     "M": 82876.0,
+     "section": "slot_lo"
+    },
+    "up": {
+     "sigma": 36.5,
+     "util": 0.16,
+     "s": 305.0,
+     "N": -2316.0,
+     "M": -122720.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, mid-span on tread 2 | base held": {
+    "lo": {
+     "sigma": 33.1,
+     "util": 0.146,
+     "s": -149.0,
+     "N": -5337.0,
+     "M": 102639.0,
+     "section": "slot_lo"
+    },
+    "up": {
+     "sigma": 33.6,
+     "util": 0.148,
+     "s": 610.0,
+     "N": -5021.0,
+     "M": -97303.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, mid-span on tread 3 | base held": {
+    "lo": {
+     "sigma": 48.5,
+     "util": 0.213,
+     "s": 1526.0,
+     "N": -3884.0,
+     "M": -158939.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 44.5,
+     "util": 0.196,
+     "s": 1526.0,
+     "N": -3265.0,
+     "M": 147540.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, mid-span on tread 4 | base held": {
+    "lo": {
+     "sigma": 66.5,
+     "util": 0.293,
+     "s": 1526.0,
+     "N": -3957.0,
+     "M": -225511.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 65.0,
+     "util": 0.286,
+     "s": 1526.0,
+     "N": -4554.0,
+     "M": 216631.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, mid-span on tread 5 | base held": {
+    "lo": {
+     "sigma": 87.6,
+     "util": 0.386,
+     "s": 1526.0,
+     "N": -3084.0,
+     "M": -308657.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 34.9,
+     "util": 0.154,
+     "s": 1526.0,
+     "N": -3737.0,
+     "M": 109338.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at left end on tread 0 | base held": {
+    "lo": {
+     "sigma": 44.8,
+     "util": 0.197,
+     "s": 0.0,
+     "N": -1842.0,
+     "M": -156335.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 54.3,
+     "util": 0.239,
+     "s": 109.0,
+     "N": 3865.0,
+     "M": 188666.0,
+     "section": "slot_up"
+    }
+   },
+   "L | ULS 4 kN patch front, at left end on tread 1 | base held": {
+    "lo": {
+     "sigma": 41.2,
+     "util": 0.181,
+     "s": -149.0,
+     "N": -6131.0,
+     "M": 130425.0,
+     "section": "slot_lo"
+    },
+    "up": {
+     "sigma": 67.4,
+     "util": 0.297,
+     "s": 305.0,
+     "N": -3400.0,
+     "M": -231860.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at left end on tread 2 | base held": {
+    "lo": {
+     "sigma": 55.0,
+     "util": 0.242,
+     "s": -149.0,
+     "N": -8778.0,
+     "M": 171092.0,
+     "section": "slot_lo"
+    },
+    "up": {
+     "sigma": 63.1,
+     "util": 0.278,
+     "s": 610.0,
+     "N": -7261.0,
+     "M": -194781.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at left end on tread 3 | base held": {
+    "lo": {
+     "sigma": 75.6,
+     "util": 0.332,
+     "s": 1526.0,
+     "N": -6622.0,
+     "M": -244397.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 69.8,
+     "util": 0.307,
+     "s": 1526.0,
+     "N": -5121.0,
+     "M": 231258.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at left end on tread 4 | base held": {
+    "lo": {
+     "sigma": 106.9,
+     "util": 0.471,
+     "s": 1526.0,
+     "N": -7074.0,
+     "M": -358528.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 105.9,
+     "util": 0.466,
+     "s": 1526.0,
+     "N": -7363.0,
+     "M": 353110.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at left end on tread 5 | base held": {
+    "lo": {
+     "sigma": 144.0,
+     "util": 0.634,
+     "s": 1526.0,
+     "N": -5770.0,
+     "M": -503437.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 54.9,
+     "util": 0.241,
+     "s": 1526.0,
+     "N": -8348.0,
+     "M": 158200.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, at left end on tread 0 | base held": {
+    "lo": {
+     "sigma": 50.1,
+     "util": 0.22,
+     "s": 0.0,
+     "N": -2626.0,
+     "M": -171754.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 45.3,
+     "util": 0.199,
+     "s": 109.0,
+     "N": -441.0,
+     "M": 176905.0,
+     "section": "slot_up"
+    }
+   },
+   "L | ULS 4 kN patch back, at left end on tread 1 | base held": {
+    "lo": {
+     "sigma": 45.1,
+     "util": 0.199,
+     "s": -149.0,
+     "N": -6889.0,
+     "M": 142102.0,
+     "section": "slot_lo"
+    },
+    "up": {
+     "sigma": 64.4,
+     "util": 0.284,
+     "s": 305.0,
+     "N": -4092.0,
+     "M": -216957.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, at left end on tread 2 | base held": {
+    "lo": {
+     "sigma": 57.2,
+     "util": 0.252,
+     "s": -149.0,
+     "N": -9237.0,
+     "M": 177648.0,
+     "section": "slot_lo"
+    },
+    "up": {
+     "sigma": 59.5,
+     "util": 0.262,
+     "s": 610.0,
+     "N": -8822.0,
+     "M": -172889.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, at left end on tread 3 | base held": {
+    "lo": {
+     "sigma": 84.2,
+     "util": 0.37,
+     "s": 1526.0,
+     "N": -6768.0,
+     "M": -275731.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 77.4,
+     "util": 0.341,
+     "s": 1526.0,
+     "N": -5683.0,
+     "M": 256572.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, at left end on tread 4 | base held": {
+    "lo": {
+     "sigma": 116.6,
+     "util": 0.513,
+     "s": 1526.0,
+     "N": -6899.0,
+     "M": -395484.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 114.3,
+     "util": 0.503,
+     "s": 1526.0,
+     "N": -8001.0,
+     "M": 380861.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, at left end on tread 5 | base held": {
+    "lo": {
+     "sigma": 154.6,
+     "util": 0.68,
+     "s": 1526.0,
+     "N": -5330.0,
+     "M": -545038.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 60.2,
+     "util": 0.265,
+     "s": 1526.0,
+     "N": -6531.0,
+     "M": 187840.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at right end on tread 0 | base held": {
+    "lo": {
+     "sigma": 5.6,
+     "util": 0.024,
+     "s": -149.0,
+     "N": -793.0,
+     "M": 17791.0,
+     "section": "slot_lo"
+    },
+    "up": {
+     "sigma": 7.0,
+     "util": 0.031,
+     "s": 109.0,
+     "N": 392.0,
+     "M": 25101.0,
+     "section": "slot_up"
+    }
+   },
+   "L | ULS 4 kN patch front, at right end on tread 1 | base held": {
+    "lo": {
+     "sigma": 7.1,
+     "util": 0.031,
+     "s": -149.0,
+     "N": -1092.0,
+     "M": 22403.0,
+     "section": "slot_lo"
+    },
+    "up": {
+     "sigma": 8.7,
+     "util": 0.038,
+     "s": 305.0,
+     "N": -571.0,
+     "M": -29268.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at right end on tread 2 | base held": {
+    "lo": {
+     "sigma": 8.7,
+     "util": 0.038,
+     "s": -149.0,
+     "N": -1387.0,
+     "M": 26931.0,
+     "section": "slot_lo"
+    },
+    "up": {
+     "sigma": 8.1,
+     "util": 0.036,
+     "s": 1526.0,
+     "N": -576.0,
+     "M": 26837.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at right end on tread 3 | base held": {
+    "lo": {
+     "sigma": 11.9,
+     "util": 0.052,
+     "s": 1526.0,
+     "N": -984.0,
+     "M": -38797.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 10.8,
+     "util": 0.048,
+     "s": 1526.0,
+     "N": -787.0,
+     "M": 35803.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at right end on tread 4 | base held": {
+    "lo": {
+     "sigma": 15.4,
+     "util": 0.068,
+     "s": 1526.0,
+     "N": -1033.0,
+     "M": -51588.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 14.8,
+     "util": 0.065,
+     "s": 1526.0,
+     "N": -1038.0,
+     "M": 49435.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at right end on tread 5 | base held": {
+    "lo": {
+     "sigma": 19.6,
+     "util": 0.086,
+     "s": 1526.0,
+     "N": -886.0,
+     "M": -67832.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 9.1,
+     "util": 0.04,
+     "s": 1526.0,
+     "N": -1138.0,
+     "M": 27666.0,
+     "section": "hole"
+    }
+   },
+   "L | crowd all | base slides": {
+    "lo": {
+     "sigma": 173.8,
+     "util": 0.765,
+     "s": 1526.0,
+     "N": 2519.0,
+     "M": -631594.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 117.7,
+     "util": 0.518,
+     "s": 1526.0,
+     "N": -9266.0,
+     "M": 386331.0,
+     "section": "hole"
+    },
+    "links_kN": [
+     2.52,
+     5.77,
+     2.73,
+     -0.07,
+     0.33,
+     -8.9
+    ]
+   },
+   "L | crowd lower 3 | base slides": {
+    "lo": {
+     "sigma": 37.9,
+     "util": 0.167,
+     "s": 1526.0,
+     "N": 548.0,
+     "M": -137613.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 50.6,
+     "util": 0.223,
+     "s": 109.0,
+     "N": -2402.0,
+     "M": 184451.0,
+     "section": "slot_up"
+    },
+    "links_kN": [
+     1.56,
+     3.3,
+     0.31,
+     -1.12,
+     -0.62,
+     -2.23
+    ]
+   },
+   "L | crowd upper 3 | base slides": {
+    "lo": {
+     "sigma": 141.1,
+     "util": 0.621,
+     "s": 1526.0,
+     "N": 2045.0,
+     "M": -512806.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 91.2,
+     "util": 0.401,
+     "s": 1526.0,
+     "N": -7430.0,
+     "M": 298263.0,
+     "section": "hole"
+    },
+    "links_kN": [
+     1.03,
+     2.63,
+     2.49,
+     1.03,
+     0.95,
+     -6.96
+    ]
+   },
+   "L | ULS 4 kN patch front, mid-span on tread 0 | base slides": {
+    "lo": {
+     "sigma": 24.6,
+     "util": 0.108,
+     "s": 0.0,
+     "N": -951.0,
+     "M": -86256.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 30.9,
+     "util": 0.136,
+     "s": 109.0,
+     "N": 2126.0,
+     "M": 107830.0,
+     "section": "slot_up"
+    }
+   },
+   "L | ULS 4 kN patch front, mid-span on tread 1 | base slides": {
+    "lo": {
+     "sigma": 21.4,
+     "util": 0.094,
+     "s": 1526.0,
+     "N": 310.0,
+     "M": -77904.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 38.6,
+     "util": 0.17,
+     "s": 305.0,
+     "N": -2159.0,
+     "M": -131732.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, mid-span on tread 2 | base slides": {
+    "lo": {
+     "sigma": 41.5,
+     "util": 0.183,
+     "s": 1526.0,
+     "N": 601.0,
+     "M": -150859.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 36.8,
+     "util": 0.162,
+     "s": 610.0,
+     "N": -4379.0,
+     "M": -112568.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, mid-span on tread 3 | base slides": {
+    "lo": {
+     "sigma": 61.6,
+     "util": 0.271,
+     "s": 1526.0,
+     "N": 892.0,
+     "M": -223815.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 48.6,
+     "util": 0.214,
+     "s": 1526.0,
+     "N": -3470.0,
+     "M": 161406.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, mid-span on tread 4 | base slides": {
+    "lo": {
+     "sigma": 81.6,
+     "util": 0.359,
+     "s": 1526.0,
+     "N": 1183.0,
+     "M": -296770.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 69.6,
+     "util": 0.306,
+     "s": 1526.0,
+     "N": -4775.0,
+     "M": 232335.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, mid-span on tread 5 | base slides": {
+    "lo": {
+     "sigma": 101.7,
+     "util": 0.448,
+     "s": 1526.0,
+     "N": 1474.0,
+     "M": -369725.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 40.5,
+     "util": 0.178,
+     "s": 1526.0,
+     "N": -5277.0,
+     "M": 121500.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch centre, mid-span on tread 0 | base slides": {
+    "lo": {
+     "sigma": 25.5,
+     "util": 0.112,
+     "s": 0.0,
+     "N": -619.0,
+     "M": -91199.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 28.8,
+     "util": 0.127,
+     "s": 109.0,
+     "N": 1434.0,
+     "M": 104254.0,
+     "section": "slot_up"
+    }
+   },
+   "L | ULS 4 kN patch centre, mid-span on tread 1 | base slides": {
+    "lo": {
+     "sigma": 24.2,
+     "util": 0.107,
+     "s": 1526.0,
+     "N": 350.0,
+     "M": -88031.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 37.8,
+     "util": 0.166,
+     "s": 305.0,
+     "N": -2604.0,
+     "M": -126025.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch centre, mid-span on tread 2 | base slides": {
+    "lo": {
+     "sigma": 44.3,
+     "util": 0.195,
+     "s": 1526.0,
+     "N": 641.0,
+     "M": -160987.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 35.8,
+     "util": 0.158,
+     "s": 610.0,
+     "N": -4844.0,
+     "M": -106515.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch centre, mid-span on tread 3 | base slides": {
+    "lo": {
+     "sigma": 64.4,
+     "util": 0.283,
+     "s": 1526.0,
+     "N": 933.0,
+     "M": -233942.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 50.8,
+     "util": 0.224,
+     "s": 1526.0,
+     "N": -3635.0,
+     "M": 168927.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch centre, mid-span on tread 4 | base slides": {
+    "lo": {
+     "sigma": 84.4,
+     "util": 0.372,
+     "s": 1526.0,
+     "N": 1224.0,
+     "M": -306898.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 71.9,
+     "util": 0.316,
+     "s": 1526.0,
+     "N": -4952.0,
+     "M": 240020.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch centre, mid-span on tread 5 | base slides": {
+    "lo": {
+     "sigma": 104.5,
+     "util": 0.46,
+     "s": 1526.0,
+     "N": 1515.0,
+     "M": -379853.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 41.8,
+     "util": 0.184,
+     "s": 1526.0,
+     "N": -4763.0,
+     "M": 129226.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, mid-span on tread 0 | base slides": {
+    "lo": {
+     "sigma": 27.6,
+     "util": 0.122,
+     "s": 0.0,
+     "N": -661.0,
+     "M": -99011.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 27.1,
+     "util": 0.119,
+     "s": 109.0,
+     "N": -361.0,
+     "M": 105034.0,
+     "section": "slot_up"
+    }
+   },
+   "L | ULS 4 kN patch back, mid-span on tread 1 | base slides": {
+    "lo": {
+     "sigma": 27.0,
+     "util": 0.119,
+     "s": 1526.0,
+     "N": 391.0,
+     "M": -98160.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 37.2,
+     "util": 0.164,
+     "s": 305.0,
+     "N": -2518.0,
+     "M": -124402.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, mid-span on tread 2 | base slides": {
+    "lo": {
+     "sigma": 47.1,
+     "util": 0.207,
+     "s": 1526.0,
+     "N": 682.0,
+     "M": -171115.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 37.9,
+     "util": 0.167,
+     "s": 1526.0,
+     "N": -2643.0,
+     "M": 126261.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, mid-span on tread 3 | base slides": {
+    "lo": {
+     "sigma": 67.1,
+     "util": 0.295,
+     "s": 1526.0,
+     "N": 973.0,
+     "M": -244071.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 53.1,
+     "util": 0.234,
+     "s": 1526.0,
+     "N": -3800.0,
+     "M": 176448.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, mid-span on tread 4 | base slides": {
+    "lo": {
+     "sigma": 87.2,
+     "util": 0.384,
+     "s": 1526.0,
+     "N": 1264.0,
+     "M": -317026.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 74.2,
+     "util": 0.327,
+     "s": 1526.0,
+     "N": -5129.0,
+     "M": 247706.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, mid-span on tread 5 | base slides": {
+    "lo": {
+     "sigma": 107.3,
+     "util": 0.472,
+     "s": 1526.0,
+     "N": 1555.0,
+     "M": -389982.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 43.1,
+     "util": 0.19,
+     "s": 1526.0,
+     "N": -4249.0,
+     "M": 136952.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at left end on tread 0 | base slides": {
+    "lo": {
+     "sigma": 44.8,
+     "util": 0.197,
+     "s": 0.0,
+     "N": -1747.0,
+     "M": -156797.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 54.4,
+     "util": 0.239,
+     "s": 109.0,
+     "N": 3861.0,
+     "M": 189083.0,
+     "section": "slot_up"
+    }
+   },
+   "L | ULS 4 kN patch front, at left end on tread 1 | base slides": {
+    "lo": {
+     "sigma": 36.2,
+     "util": 0.159,
+     "s": 165.0,
+     "N": 3465.0,
+     "M": -125039.0,
+     "section": "slot_lo"
+    },
+    "up": {
+     "sigma": 68.4,
+     "util": 0.301,
+     "s": 305.0,
+     "N": -3696.0,
+     "M": -233869.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at left end on tread 2 | base slides": {
+    "lo": {
+     "sigma": 70.5,
+     "util": 0.31,
+     "s": 1526.0,
+     "N": 1022.0,
+     "M": -256336.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 65.2,
+     "util": 0.287,
+     "s": 610.0,
+     "N": -7612.0,
+     "M": -200615.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at left end on tread 3 | base slides": {
+    "lo": {
+     "sigma": 106.6,
+     "util": 0.469,
+     "s": 1526.0,
+     "N": 1546.0,
+     "M": -387565.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 84.2,
+     "util": 0.371,
+     "s": 1526.0,
+     "N": -6021.0,
+     "M": 279873.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at left end on tread 4 | base slides": {
+    "lo": {
+     "sigma": 142.7,
+     "util": 0.628,
+     "s": 1526.0,
+     "N": 2069.0,
+     "M": -518794.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 122.0,
+     "util": 0.537,
+     "s": 1526.0,
+     "N": -8370.0,
+     "M": 407531.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at left end on tread 5 | base slides": {
+    "lo": {
+     "sigma": 178.8,
+     "util": 0.787,
+     "s": 1526.0,
+     "N": 2593.0,
+     "M": -650023.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 69.6,
+     "util": 0.306,
+     "s": 1526.0,
+     "N": -9269.0,
+     "M": 207976.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, at left end on tread 0 | base slides": {
+    "lo": {
+     "sigma": 50.1,
+     "util": 0.22,
+     "s": 0.0,
+     "N": -1185.0,
+     "M": -179541.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 47.2,
+     "util": 0.208,
+     "s": 109.0,
+     "N": -552.0,
+     "M": 183696.0,
+     "section": "slot_up"
+    }
+   },
+   "L | ULS 4 kN patch back, at left end on tread 1 | base slides": {
+    "lo": {
+     "sigma": 44.4,
+     "util": 0.196,
+     "s": 1526.0,
+     "N": 644.0,
+     "M": -161548.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 65.7,
+     "util": 0.289,
+     "s": 305.0,
+     "N": -4432.0,
+     "M": -219796.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, at left end on tread 2 | base slides": {
+    "lo": {
+     "sigma": 80.5,
+     "util": 0.354,
+     "s": 1526.0,
+     "N": 1167.0,
+     "M": -292777.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 65.0,
+     "util": 0.286,
+     "s": 1526.0,
+     "N": -4534.0,
+     "M": 216645.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, at left end on tread 3 | base slides": {
+    "lo": {
+     "sigma": 116.7,
+     "util": 0.513,
+     "s": 1526.0,
+     "N": 1691.0,
+     "M": -424007.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 92.4,
+     "util": 0.406,
+     "s": 1526.0,
+     "N": -6615.0,
+     "M": 306921.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, at left end on tread 4 | base slides": {
+    "lo": {
+     "sigma": 152.8,
+     "util": 0.672,
+     "s": 1526.0,
+     "N": 2215.0,
+     "M": -555236.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 130.4,
+     "util": 0.574,
+     "s": 1526.0,
+     "N": -9005.0,
+     "M": 435107.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch back, at left end on tread 5 | base slides": {
+    "lo": {
+     "sigma": 188.9,
+     "util": 0.831,
+     "s": 1526.0,
+     "N": 2738.0,
+     "M": -686465.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 74.4,
+     "util": 0.327,
+     "s": 1526.0,
+     "N": -7420.0,
+     "M": 235864.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at right end on tread 0 | base slides": {
+    "lo": {
+     "sigma": 4.5,
+     "util": 0.02,
+     "s": 1526.0,
+     "N": 64.0,
+     "M": -16188.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 7.4,
+     "util": 0.032,
+     "s": 109.0,
+     "N": 378.0,
+     "M": 26651.0,
+     "section": "slot_up"
+    }
+   },
+   "L | ULS 4 kN patch front, at right end on tread 1 | base slides": {
+    "lo": {
+     "sigma": 8.5,
+     "util": 0.037,
+     "s": 1526.0,
+     "N": 122.0,
+     "M": -30872.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 8.9,
+     "util": 0.039,
+     "s": 305.0,
+     "N": -632.0,
+     "M": -29683.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at right end on tread 2 | base slides": {
+    "lo": {
+     "sigma": 12.5,
+     "util": 0.055,
+     "s": 1526.0,
+     "N": 181.0,
+     "M": -45556.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 9.9,
+     "util": 0.044,
+     "s": 1526.0,
+     "N": -691.0,
+     "M": 33000.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at right end on tread 3 | base slides": {
+    "lo": {
+     "sigma": 16.6,
+     "util": 0.073,
+     "s": 1526.0,
+     "N": 239.0,
+     "M": -60240.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 13.0,
+     "util": 0.057,
+     "s": 1526.0,
+     "N": -922.0,
+     "M": 43084.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at right end on tread 4 | base slides": {
+    "lo": {
+     "sigma": 20.6,
+     "util": 0.091,
+     "s": 1526.0,
+     "N": 298.0,
+     "M": -74924.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 17.2,
+     "util": 0.076,
+     "s": 1526.0,
+     "N": -1185.0,
+     "M": 57359.0,
+     "section": "hole"
+    }
+   },
+   "L | ULS 4 kN patch front, at right end on tread 5 | base slides": {
+    "lo": {
+     "sigma": 24.7,
+     "util": 0.108,
+     "s": 1526.0,
+     "N": 357.0,
+     "M": -89608.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 11.3,
+     "util": 0.05,
+     "s": 1526.0,
+     "N": -1275.0,
+     "M": 35060.0,
+     "section": "hole"
+    }
+   },
+   "R | crowd all | base held": {
+    "lo": {
+     "sigma": 165.4,
+     "util": 0.728,
+     "s": -197.0,
+     "N": -13326.0,
+     "M": 512014.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 98.8,
+     "util": 0.435,
+     "s": 1526.0,
+     "N": -8119.0,
+     "M": 322747.0,
+     "section": "hole"
+    },
+    "links_kN": [
+     1.86,
+     5.53,
+     2.72,
+     -0.06,
+     -0.31,
+     -7.68
+    ]
+   },
+   "R | crowd lower 3 | base held": {
+    "lo": {
+     "sigma": 93.2,
+     "util": 0.41,
+     "s": -197.0,
+     "N": -5435.0,
+     "M": 297407.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 45.4,
+     "util": 0.2,
+     "s": 106.0,
+     "N": -2134.0,
+     "M": 165381.0,
+     "section": "slot_up"
+    },
+    "links_kN": [
+     1.33,
+     3.17,
+     0.29,
+     -1.1,
+     -0.79,
+     -1.87
+    ]
+   },
+   "R | crowd upper 3 | base held": {
+    "lo": {
+     "sigma": 110.2,
+     "util": 0.485,
+     "s": 1526.0,
+     "N": -5154.0,
+     "M": -381202.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 77.2,
+     "util": 0.34,
+     "s": 1526.0,
+     "N": -6573.0,
+     "M": 250936.0,
+     "section": "hole"
+    },
+    "links_kN": [
+     0.58,
+     2.51,
+     2.51,
+     1.02,
+     0.46,
+     -6.06
+    ]
+   },
+   "R | ULS 4 kN patch front, mid-span on tread 0 | base held": {
+    "lo": {
+     "sigma": 54.3,
+     "util": 0.239,
+     "s": -197.0,
+     "N": -1730.0,
+     "M": 179472.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 30.5,
+     "util": 0.134,
+     "s": 106.0,
+     "N": 2081.0,
+     "M": 106628.0,
+     "section": "slot_up"
+    }
+   },
+   "R | ULS 4 kN patch front, mid-span on tread 1 | base held": {
+    "lo": {
+     "sigma": 56.7,
+     "util": 0.249,
+     "s": -197.0,
+     "N": -3170.0,
+     "M": 181305.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 37.9,
+     "util": 0.167,
+     "s": 305.0,
+     "N": -2014.0,
+     "M": -129687.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, mid-span on tread 2 | base held": {
+    "lo": {
+     "sigma": 58.8,
+     "util": 0.259,
+     "s": -197.0,
+     "N": -4577.0,
+     "M": 182556.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 35.5,
+     "util": 0.156,
+     "s": 610.0,
+     "N": -4200.0,
+     "M": -108749.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, mid-span on tread 3 | base held": {
+    "lo": {
+     "sigma": 55.9,
+     "util": 0.246,
+     "s": -197.0,
+     "N": -5189.0,
+     "M": 170198.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 41.0,
+     "util": 0.181,
+     "s": 1526.0,
+     "N": -3021.0,
+     "M": 135854.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, mid-span on tread 4 | base held": {
+    "lo": {
+     "sigma": 62.9,
+     "util": 0.277,
+     "s": 1526.0,
+     "N": -3484.0,
+     "M": -214473.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 61.0,
+     "util": 0.268,
+     "s": 1526.0,
+     "N": -4276.0,
+     "M": 203161.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, mid-span on tread 5 | base held": {
+    "lo": {
+     "sigma": 83.4,
+     "util": 0.367,
+     "s": 1526.0,
+     "N": -2767.0,
+     "M": -294743.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 32.8,
+     "util": 0.144,
+     "s": 1526.0,
+     "N": -4784.0,
+     "M": 95559.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch centre, mid-span on tread 0 | base held": {
+    "lo": {
+     "sigma": 55.3,
+     "util": 0.243,
+     "s": -197.0,
+     "N": -2033.0,
+     "M": 181535.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 28.1,
+     "util": 0.123,
+     "s": 106.0,
+     "N": 1415.0,
+     "M": 101616.0,
+     "section": "slot_up"
+    }
+   },
+   "R | ULS 4 kN patch centre, mid-span on tread 1 | base held": {
+    "lo": {
+     "sigma": 57.0,
+     "util": 0.251,
+     "s": -197.0,
+     "N": -3370.0,
+     "M": 181591.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 37.0,
+     "util": 0.163,
+     "s": 305.0,
+     "N": -2432.0,
+     "M": -123943.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch centre, mid-span on tread 2 | base held": {
+    "lo": {
+     "sigma": 58.6,
+     "util": 0.258,
+     "s": -197.0,
+     "N": -4697.0,
+     "M": 181478.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 34.5,
+     "util": 0.152,
+     "s": 610.0,
+     "N": -4651.0,
+     "M": -102665.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch centre, mid-span on tread 3 | base held": {
+    "lo": {
+     "sigma": 55.2,
+     "util": 0.243,
+     "s": -197.0,
+     "N": -5226.0,
+     "M": 167687.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 43.1,
+     "util": 0.19,
+     "s": 1526.0,
+     "N": -3176.0,
+     "M": 142780.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch centre, mid-span on tread 4 | base held": {
+    "lo": {
+     "sigma": 65.5,
+     "util": 0.288,
+     "s": 1526.0,
+     "N": -3435.0,
+     "M": -224627.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 63.3,
+     "util": 0.279,
+     "s": 1526.0,
+     "N": -4452.0,
+     "M": 210775.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch centre, mid-span on tread 5 | base held": {
+    "lo": {
+     "sigma": 86.3,
+     "util": 0.38,
+     "s": 1526.0,
+     "N": -2647.0,
+     "M": -306140.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 34.2,
+     "util": 0.15,
+     "s": 1526.0,
+     "N": -4286.0,
+     "M": 103547.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, mid-span on tread 0 | base held": {
+    "lo": {
+     "sigma": 56.3,
+     "util": 0.248,
+     "s": -197.0,
+     "N": -2337.0,
+     "M": 183603.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 26.0,
+     "util": 0.114,
+     "s": 106.0,
+     "N": -328.0,
+     "M": 100859.0,
+     "section": "slot_up"
+    }
+   },
+   "R | ULS 4 kN patch back, mid-span on tread 1 | base held": {
+    "lo": {
+     "sigma": 57.3,
+     "util": 0.252,
+     "s": -197.0,
+     "N": -3570.0,
+     "M": 181882.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 36.3,
+     "util": 0.16,
+     "s": 305.0,
+     "N": -2329.0,
+     "M": -122217.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, mid-span on tread 2 | base held": {
+    "lo": {
+     "sigma": 58.4,
+     "util": 0.257,
+     "s": -197.0,
+     "N": -4817.0,
+     "M": 180405.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 33.6,
+     "util": 0.148,
+     "s": 610.0,
+     "N": -5025.0,
+     "M": -97175.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, mid-span on tread 3 | base held": {
+    "lo": {
+     "sigma": 54.5,
+     "util": 0.24,
+     "s": -197.0,
+     "N": -5262.0,
+     "M": 165182.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 45.2,
+     "util": 0.199,
+     "s": 1526.0,
+     "N": -3332.0,
+     "M": 149710.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, mid-span on tread 4 | base held": {
+    "lo": {
+     "sigma": 68.2,
+     "util": 0.3,
+     "s": 1526.0,
+     "N": -3386.0,
+     "M": -234788.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 65.6,
+     "util": 0.289,
+     "s": 1526.0,
+     "N": -4629.0,
+     "M": 218395.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, mid-span on tread 5 | base held": {
+    "lo": {
+     "sigma": 89.2,
+     "util": 0.393,
+     "s": 1526.0,
+     "N": -2527.0,
+     "M": -317546.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 35.6,
+     "util": 0.157,
+     "s": 1526.0,
+     "N": -3789.0,
+     "M": 111538.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at left end on tread 0 | base held": {
+    "lo": {
+     "sigma": 14.9,
+     "util": 0.065,
+     "s": -197.0,
+     "N": -677.0,
+     "M": 48231.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 6.9,
+     "util": 0.031,
+     "s": 106.0,
+     "N": 370.0,
+     "M": 24982.0,
+     "section": "slot_up"
+    }
+   },
+   "R | ULS 4 kN patch front, at left end on tread 1 | base held": {
+    "lo": {
+     "sigma": 15.3,
+     "util": 0.067,
+     "s": -197.0,
+     "N": -961.0,
+     "M": 48549.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 8.6,
+     "util": 0.038,
+     "s": 305.0,
+     "N": -578.0,
+     "M": -28858.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at left end on tread 2 | base held": {
+    "lo": {
+     "sigma": 15.7,
+     "util": 0.069,
+     "s": -197.0,
+     "N": -1240.0,
+     "M": 48763.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 8.2,
+     "util": 0.036,
+     "s": 1526.0,
+     "N": -591.0,
+     "M": 27324.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at left end on tread 3 | base held": {
+    "lo": {
+     "sigma": 15.1,
+     "util": 0.067,
+     "s": -197.0,
+     "N": -1360.0,
+     "M": 46260.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 10.9,
+     "util": 0.048,
+     "s": 1526.0,
+     "N": -801.0,
+     "M": 36200.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at left end on tread 4 | base held": {
+    "lo": {
+     "sigma": 15.8,
+     "util": 0.069,
+     "s": 1526.0,
+     "N": -872.0,
+     "M": -53764.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 14.9,
+     "util": 0.066,
+     "s": 1526.0,
+     "N": -1052.0,
+     "M": 49643.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at left end on tread 5 | base held": {
+    "lo": {
+     "sigma": 19.9,
+     "util": 0.087,
+     "s": 1526.0,
+     "N": -727.0,
+     "M": -69810.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 9.3,
+     "util": 0.041,
+     "s": 1526.0,
+     "N": -1136.0,
+     "M": 28193.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, at left end on tread 0 | base held": {
+    "lo": {
+     "sigma": 15.2,
+     "util": 0.067,
+     "s": -197.0,
+     "N": -792.0,
+     "M": 49020.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 6.3,
+     "util": 0.028,
+     "s": 106.0,
+     "N": -147.0,
+     "M": 24127.0,
+     "section": "slot_up"
+    }
+   },
+   "R | ULS 4 kN patch back, at left end on tread 1 | base held": {
+    "lo": {
+     "sigma": 15.4,
+     "util": 0.068,
+     "s": -197.0,
+     "N": -1037.0,
+     "M": 48663.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 8.4,
+     "util": 0.037,
+     "s": 305.0,
+     "N": -539.0,
+     "M": -28207.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, at left end on tread 2 | base held": {
+    "lo": {
+     "sigma": 15.7,
+     "util": 0.069,
+     "s": -197.0,
+     "N": -1286.0,
+     "M": 48358.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 9.0,
+     "util": 0.039,
+     "s": 1526.0,
+     "N": -645.0,
+     "M": 29758.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, at left end on tread 3 | base held": {
+    "lo": {
+     "sigma": 14.9,
+     "util": 0.065,
+     "s": -197.0,
+     "N": -1374.0,
+     "M": 45311.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 11.7,
+     "util": 0.052,
+     "s": 1526.0,
+     "N": -860.0,
+     "M": 38836.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, at left end on tread 4 | base held": {
+    "lo": {
+     "sigma": 16.8,
+     "util": 0.074,
+     "s": 1526.0,
+     "N": -853.0,
+     "M": -57629.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 15.8,
+     "util": 0.069,
+     "s": 1526.0,
+     "N": -1119.0,
+     "M": 52543.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, at left end on tread 5 | base held": {
+    "lo": {
+     "sigma": 21.0,
+     "util": 0.092,
+     "s": 1526.0,
+     "N": -681.0,
+     "M": -74149.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 9.8,
+     "util": 0.043,
+     "s": 1526.0,
+     "N": -947.0,
+     "M": 31230.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at right end on tread 0 | base held": {
+    "lo": {
+     "sigma": 93.8,
+     "util": 0.413,
+     "s": -197.0,
+     "N": -2777.0,
+     "M": 310667.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 54.1,
+     "util": 0.238,
+     "s": 106.0,
+     "N": 3803.0,
+     "M": 188441.0,
+     "section": "slot_up"
+    }
+   },
+   "R | ULS 4 kN patch front, at right end on tread 1 | base held": {
+    "lo": {
+     "sigma": 98.0,
+     "util": 0.431,
+     "s": -197.0,
+     "N": -5376.0,
+     "M": 314055.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 67.2,
+     "util": 0.296,
+     "s": 305.0,
+     "N": -3437.0,
+     "M": -230782.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at right end on tread 2 | base held": {
+    "lo": {
+     "sigma": 101.8,
+     "util": 0.448,
+     "s": -197.0,
+     "N": -7912.0,
+     "M": 316369.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 63.1,
+     "util": 0.277,
+     "s": 610.0,
+     "N": -7291.0,
+     "M": -194349.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at right end on tread 3 | base held": {
+    "lo": {
+     "sigma": 96.7,
+     "util": 0.425,
+     "s": -197.0,
+     "N": -9018.0,
+     "M": 294180.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 71.1,
+     "util": 0.313,
+     "s": 1526.0,
+     "N": -5239.0,
+     "M": 235399.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at right end on tread 4 | base held": {
+    "lo": {
+     "sigma": 109.9,
+     "util": 0.484,
+     "s": 1526.0,
+     "N": -6096.0,
+     "M": -375023.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 107.1,
+     "util": 0.471,
+     "s": 1526.0,
+     "N": -7499.0,
+     "M": 356605.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at right end on tread 5 | base held": {
+    "lo": {
+     "sigma": 146.9,
+     "util": 0.647,
+     "s": 1526.0,
+     "N": -4810.0,
+     "M": -519461.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 56.2,
+     "util": 0.247,
+     "s": 1526.0,
+     "N": -8439.0,
+     "M": 162726.0,
+     "section": "hole"
+    }
+   },
+   "R | crowd all | base slides": {
+    "lo": {
+     "sigma": 171.9,
+     "util": 0.756,
+     "s": 1526.0,
+     "N": 2492.0,
+     "M": -624667.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 115.9,
+     "util": 0.51,
+     "s": 1526.0,
+     "N": -9196.0,
+     "M": 380228.0,
+     "section": "hole"
+    },
+    "links_kN": [
+     2.46,
+     5.63,
+     2.66,
+     -0.12,
+     0.28,
+     -8.86
+    ]
+   },
+   "R | crowd lower 3 | base slides": {
+    "lo": {
+     "sigma": 75.6,
+     "util": 0.333,
+     "s": -197.0,
+     "N": -2598.0,
+     "M": 248833.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 49.3,
+     "util": 0.217,
+     "s": 106.0,
+     "N": -2366.0,
+     "M": 179292.0,
+     "section": "slot_up"
+    },
+    "links_kN": [
+     1.51,
+     3.2,
+     0.27,
+     -1.11,
+     -0.62,
+     -2.21
+    ]
+   },
+   "R | crowd upper 3 | base slides": {
+    "lo": {
+     "sigma": 139.5,
+     "util": 0.614,
+     "s": 1526.0,
+     "N": 2023.0,
+     "M": -506995.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 89.8,
+     "util": 0.395,
+     "s": 1526.0,
+     "N": -7368.0,
+     "M": 293390.0,
+     "section": "hole"
+    },
+    "links_kN": [
+     1.02,
+     2.59,
+     2.46,
+     0.98,
+     0.9,
+     -6.93
+    ]
+   },
+   "R | ULS 4 kN patch front, mid-span on tread 0 | base slides": {
+    "lo": {
+     "sigma": 55.4,
+     "util": 0.244,
+     "s": -197.0,
+     "N": -1906.0,
+     "M": 182486.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 30.3,
+     "util": 0.133,
+     "s": 106.0,
+     "N": 2089.0,
+     "M": 105790.0,
+     "section": "slot_up"
+    }
+   },
+   "R | ULS 4 kN patch front, mid-span on tread 1 | base slides": {
+    "lo": {
+     "sigma": 47.0,
+     "util": 0.207,
+     "s": -197.0,
+     "N": -1615.0,
+     "M": 154668.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 38.3,
+     "util": 0.169,
+     "s": 305.0,
+     "N": -2153.0,
+     "M": -130637.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, mid-span on tread 2 | base slides": {
+    "lo": {
+     "sigma": 41.4,
+     "util": 0.182,
+     "s": 1526.0,
+     "N": 601.0,
+     "M": -150661.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 36.5,
+     "util": 0.161,
+     "s": 610.0,
+     "N": -4377.0,
+     "M": -111663.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, mid-span on tread 3 | base slides": {
+    "lo": {
+     "sigma": 61.5,
+     "util": 0.27,
+     "s": 1526.0,
+     "N": 891.0,
+     "M": -223456.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 48.3,
+     "util": 0.213,
+     "s": 1526.0,
+     "N": -3482.0,
+     "M": 160435.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, mid-span on tread 4 | base slides": {
+    "lo": {
+     "sigma": 81.5,
+     "util": 0.359,
+     "s": 1526.0,
+     "N": 1182.0,
+     "M": -296250.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 69.2,
+     "util": 0.304,
+     "s": 1526.0,
+     "N": -4793.0,
+     "M": 230760.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, mid-span on tread 5 | base slides": {
+    "lo": {
+     "sigma": 101.5,
+     "util": 0.447,
+     "s": 1526.0,
+     "N": 1472.0,
+     "M": -369045.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 40.2,
+     "util": 0.177,
+     "s": 1526.0,
+     "N": -5254.0,
+     "M": 120636.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch centre, mid-span on tread 0 | base slides": {
+    "lo": {
+     "sigma": 54.3,
+     "util": 0.239,
+     "s": -197.0,
+     "N": -1866.0,
+     "M": 178668.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 28.2,
+     "util": 0.124,
+     "s": 106.0,
+     "N": 1407.0,
+     "M": 102413.0,
+     "section": "slot_up"
+    }
+   },
+   "R | ULS 4 kN patch centre, mid-span on tread 1 | base slides": {
+    "lo": {
+     "sigma": 45.8,
+     "util": 0.202,
+     "s": -197.0,
+     "N": -1575.0,
+     "M": 150850.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 37.5,
+     "util": 0.165,
+     "s": 305.0,
+     "N": -2579.0,
+     "M": -125147.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch centre, mid-span on tread 2 | base slides": {
+    "lo": {
+     "sigma": 44.2,
+     "util": 0.194,
+     "s": 1526.0,
+     "N": 640.0,
+     "M": -160652.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 35.6,
+     "util": 0.157,
+     "s": 610.0,
+     "N": -4836.0,
+     "M": -105722.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch centre, mid-span on tread 3 | base slides": {
+    "lo": {
+     "sigma": 64.2,
+     "util": 0.283,
+     "s": 1526.0,
+     "N": 931.0,
+     "M": -233447.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 50.5,
+     "util": 0.222,
+     "s": 1526.0,
+     "N": -3645.0,
+     "M": 167812.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch centre, mid-span on tread 4 | base slides": {
+    "lo": {
+     "sigma": 84.3,
+     "util": 0.371,
+     "s": 1526.0,
+     "N": 1221.0,
+     "M": -306242.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 71.5,
+     "util": 0.315,
+     "s": 1526.0,
+     "N": -4968.0,
+     "M": 238319.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch centre, mid-span on tread 5 | base slides": {
+    "lo": {
+     "sigma": 104.3,
+     "util": 0.459,
+     "s": 1526.0,
+     "N": 1512.0,
+     "M": -379037.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 41.5,
+     "util": 0.183,
+     "s": 1526.0,
+     "N": -4747.0,
+     "M": 128149.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, mid-span on tread 0 | base slides": {
+    "lo": {
+     "sigma": 53.1,
+     "util": 0.234,
+     "s": -197.0,
+     "N": -1826.0,
+     "M": 174855.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 26.7,
+     "util": 0.117,
+     "s": 106.0,
+     "N": -370.0,
+     "M": 103364.0,
+     "section": "slot_up"
+    }
+   },
+   "R | ULS 4 kN patch back, mid-span on tread 1 | base slides": {
+    "lo": {
+     "sigma": 44.7,
+     "util": 0.197,
+     "s": -197.0,
+     "N": -1535.0,
+     "M": 147037.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 36.9,
+     "util": 0.163,
+     "s": 305.0,
+     "N": -2495.0,
+     "M": -123582.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, mid-span on tread 2 | base slides": {
+    "lo": {
+     "sigma": 46.9,
+     "util": 0.207,
+     "s": 1526.0,
+     "N": 680.0,
+     "M": -170647.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 37.7,
+     "util": 0.166,
+     "s": 1526.0,
+     "N": -2650.0,
+     "M": 125359.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, mid-span on tread 3 | base slides": {
+    "lo": {
+     "sigma": 67.0,
+     "util": 0.295,
+     "s": 1526.0,
+     "N": 971.0,
+     "M": -243444.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 52.8,
+     "util": 0.232,
+     "s": 1526.0,
+     "N": -3809.0,
+     "M": 175194.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, mid-span on tread 4 | base slides": {
+    "lo": {
+     "sigma": 87.0,
+     "util": 0.383,
+     "s": 1526.0,
+     "N": 1261.0,
+     "M": -316241.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 73.8,
+     "util": 0.325,
+     "s": 1526.0,
+     "N": -5144.0,
+     "M": 245885.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, mid-span on tread 5 | base slides": {
+    "lo": {
+     "sigma": 107.0,
+     "util": 0.471,
+     "s": 1526.0,
+     "N": 1552.0,
+     "M": -389039.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 42.8,
+     "util": 0.188,
+     "s": 1526.0,
+     "N": -4241.0,
+     "M": 135666.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at left end on tread 0 | base slides": {
+    "lo": {
+     "sigma": 13.6,
+     "util": 0.06,
+     "s": -197.0,
+     "N": -466.0,
+     "M": 44618.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 7.2,
+     "util": 0.032,
+     "s": 106.0,
+     "N": 360.0,
+     "M": 25987.0,
+     "section": "slot_up"
+    }
+   },
+   "R | ULS 4 kN patch front, at left end on tread 1 | base slides": {
+    "lo": {
+     "sigma": 11.9,
+     "util": 0.052,
+     "s": -197.0,
+     "N": -408.0,
+     "M": 39069.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 8.8,
+     "util": 0.039,
+     "s": 305.0,
+     "N": -623.0,
+     "M": -29229.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at left end on tread 2 | base slides": {
+    "lo": {
+     "sigma": 12.4,
+     "util": 0.055,
+     "s": 1526.0,
+     "N": 180.0,
+     "M": -45184.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 9.8,
+     "util": 0.043,
+     "s": 1526.0,
+     "N": -690.0,
+     "M": 32589.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at left end on tread 3 | base slides": {
+    "lo": {
+     "sigma": 16.4,
+     "util": 0.072,
+     "s": 1526.0,
+     "N": 238.0,
+     "M": -59705.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 12.8,
+     "util": 0.056,
+     "s": 1526.0,
+     "N": -919.0,
+     "M": 42517.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at left end on tread 4 | base slides": {
+    "lo": {
+     "sigma": 20.4,
+     "util": 0.09,
+     "s": 1526.0,
+     "N": 295.0,
+     "M": -74226.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 17.0,
+     "util": 0.075,
+     "s": 1526.0,
+     "N": -1181.0,
+     "M": 56549.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at left end on tread 5 | base slides": {
+    "lo": {
+     "sigma": 24.4,
+     "util": 0.107,
+     "s": 1526.0,
+     "N": 353.0,
+     "M": -88748.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 11.2,
+     "util": 0.049,
+     "s": 1526.0,
+     "N": -1255.0,
+     "M": 34584.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, at left end on tread 0 | base slides": {
+    "lo": {
+     "sigma": 13.1,
+     "util": 0.058,
+     "s": -197.0,
+     "N": -451.0,
+     "M": 43173.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 6.8,
+     "util": 0.03,
+     "s": 106.0,
+     "N": -175.0,
+     "M": 25802.0,
+     "section": "slot_up"
+    }
+   },
+   "R | ULS 4 kN patch back, at left end on tread 1 | base slides": {
+    "lo": {
+     "sigma": 11.4,
+     "util": 0.05,
+     "s": -197.0,
+     "N": -393.0,
+     "M": 37623.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 8.6,
+     "util": 0.038,
+     "s": 305.0,
+     "N": -592.0,
+     "M": -28639.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, at left end on tread 2 | base slides": {
+    "lo": {
+     "sigma": 13.5,
+     "util": 0.059,
+     "s": 1526.0,
+     "N": 195.0,
+     "M": -48984.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 10.6,
+     "util": 0.047,
+     "s": 1526.0,
+     "N": -751.0,
+     "M": 35383.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, at left end on tread 3 | base slides": {
+    "lo": {
+     "sigma": 17.5,
+     "util": 0.077,
+     "s": 1526.0,
+     "N": 253.0,
+     "M": -63508.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 13.6,
+     "util": 0.06,
+     "s": 1526.0,
+     "N": -982.0,
+     "M": 45325.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, at left end on tread 4 | base slides": {
+    "lo": {
+     "sigma": 21.5,
+     "util": 0.094,
+     "s": 1526.0,
+     "N": 311.0,
+     "M": -78031.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 17.8,
+     "util": 0.078,
+     "s": 1526.0,
+     "N": -1248.0,
+     "M": 59429.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch back, at left end on tread 5 | base slides": {
+    "lo": {
+     "sigma": 25.5,
+     "util": 0.112,
+     "s": 1526.0,
+     "N": 369.0,
+     "M": -92555.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 11.6,
+     "util": 0.051,
+     "s": 1526.0,
+     "N": -1063.0,
+     "M": 37442.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at right end on tread 0 | base slides": {
+    "lo": {
+     "sigma": 97.3,
+     "util": 0.428,
+     "s": -197.0,
+     "N": -3346.0,
+     "M": 320417.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 53.5,
+     "util": 0.235,
+     "s": 106.0,
+     "N": 3829.0,
+     "M": 185729.0,
+     "section": "slot_up"
+    }
+   },
+   "R | ULS 4 kN patch front, at right end on tread 1 | base slides": {
+    "lo": {
+     "sigma": 82.1,
+     "util": 0.361,
+     "s": -197.0,
+     "N": -2823.0,
+     "M": 270331.0,
+     "section": "notch"
+    },
+    "up": {
+     "sigma": 68.0,
+     "util": 0.299,
+     "s": 305.0,
+     "N": -3666.0,
+     "M": -232341.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at right end on tread 2 | base slides": {
+    "lo": {
+     "sigma": 70.4,
+     "util": 0.31,
+     "s": 1526.0,
+     "N": 1021.0,
+     "M": -255969.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 64.9,
+     "util": 0.285,
+     "s": 610.0,
+     "N": -7595.0,
+     "M": -199377.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at right end on tread 3 | base slides": {
+    "lo": {
+     "sigma": 106.5,
+     "util": 0.469,
+     "s": 1526.0,
+     "N": 1544.0,
+     "M": -387038.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 83.8,
+     "util": 0.369,
+     "s": 1526.0,
+     "N": -6042.0,
+     "M": 278237.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at right end on tread 4 | base slides": {
+    "lo": {
+     "sigma": 142.5,
+     "util": 0.627,
+     "s": 1526.0,
+     "N": 2067.0,
+     "M": -518107.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 121.4,
+     "util": 0.534,
+     "s": 1526.0,
+     "N": -8403.0,
+     "M": 404894.0,
+     "section": "hole"
+    }
+   },
+   "R | ULS 4 kN patch front, at right end on tread 5 | base slides": {
+    "lo": {
+     "sigma": 178.6,
+     "util": 0.786,
+     "s": 1526.0,
+     "N": 2590.0,
+     "M": -649176.0,
+     "section": "hole"
+    },
+    "up": {
+     "sigma": 69.2,
+     "util": 0.305,
+     "s": 1526.0,
+     "N": -9259.0,
+     "M": 206503.0,
+     "section": "hole"
+    }
+   }
+  },
+  "sls": {
+   "L base held": {
+    "sag": 1.13,
+    "limit": 7.32,
+    "util": 0.154,
+    "f1": 28.5
+   },
+   "L base slides": {
+    "sag": 1.74,
+    "limit": 7.32,
+    "util": 0.237,
+    "f1": 23.0
+   },
+   "R base held": {
+    "sag": 1.1,
+    "limit": 7.32,
+    "util": 0.15,
+    "f1": 28.9
+   },
+   "R base slides": {
+    "sag": 1.56,
+    "limit": 7.32,
+    "util": 0.213,
+    "f1": 24.2
+   }
+  },
+  "pins": [
+   {
+    "case": "L | crowd all | base slides",
+    "i": 5,
+    "link": -8904.13842118415,
+    "lo": [
+     6481.5408261692855,
+     -6853.16184473152
+    ],
+    "up": [
+     -7479.907971281916,
+     5427.345796442101
+    ],
+    "lo_abs": 9432.719584053326,
+    "up_abs": 9241.488281278318
+   },
+   {
+    "case": "R | crowd all | base slides",
+    "i": 5,
+    "link": -8856.400551822097,
+    "lo": [
+     6409.036812581783,
+     -6782.591615317005
+    ],
+    "up": [
+     -7395.588283105582,
+     5373.650099139939
+    ],
+    "lo_abs": 9331.629112068107,
+    "up_abs": 9141.70889063939
+   },
+   {
+    "case": "L | ULS 4 kN patch back, at left end on tread 4 | base slides",
+    "i": 5,
+    "link": -9200.70068610293,
+    "lo": [
+     6824.003748508527,
+     -6171.3747216966585
+    ],
+    "up": [
+     -6824.003748508527,
+     6171.3747216966585
+    ],
+    "lo_abs": 9200.70068610293,
+    "up_abs": 9200.70068610293
+   },
+   {
+    "case": "L | ULS 4 kN patch front, at left end on tread 5 | base slides",
+    "i": 5,
+    "link": -7230.433467617137,
+    "lo": [
+     5387.048674116788,
+     -6710.853150396308
+    ],
+    "up": [
+     -8529.788684171439,
+     2222.5552693280642
+    ],
+    "lo_abs": 8605.57048797391,
+    "up_abs": 8814.592839254521
+   },
+   {
+    "case": "R | ULS 4 kN patch front, at right end on tread 5 | base slides",
+    "i": 5,
+    "link": -7227.678159192779,
+    "lo": [
+     5368.76856301271,
+     -6704.472411962283
+    ],
+    "up": [
+     -8507.66561094381,
+     2221.6628495907757
+    ],
+    "lo_abs": 8589.157479401394,
+    "up_abs": 8792.960819023801
+   },
+   {
+    "case": "L | ULS 4 kN patch front, at left end on tread 4 | base slides",
+    "i": 5,
+    "link": -8564.588881559843,
+    "lo": [
+     6352.21040507012,
+     -5744.702401330934
+    ],
+    "up": [
+     -6352.21040507012,
+     5744.702401330934
+    ],
+    "lo_abs": 8564.588881559843,
+    "up_abs": 8564.588881559843
+   },
+   {
+    "case": "R | ULS 4 kN patch front, at right end on tread 4 | base slides",
+    "i": 5,
+    "link": -8562.966774210001,
+    "lo": [
+     6351.0073155431965,
+     -5743.614371990971
+    ],
+    "up": [
+     -6351.0073155431965,
+     5743.614371990971
+    ],
+    "lo_abs": 8562.966774210003,
+    "up_abs": 8562.966774210003
+   },
+   {
+    "case": "R | crowd all | base held",
+    "i": 5,
+    "link": -7677.4059695645965,
+    "lo": [
+     5534.5965146870185,
+     -5991.780392324912
+    ],
+    "up": [
+     -6521.147985210818,
+     4582.838876147846
+    ],
+    "lo_abs": 8156.788022882229,
+    "up_abs": 7970.431808236688
+   }
+  ],
+  "lock_forces": null,
+  "worst_inplane": {
+   "L_lo": {
+    "case": "L | ULS 4 kN patch back, at left end on tread 5 | base slides",
+    "sigma": 188.9,
+    "util": 0.831,
+    "s": 1526.0,
+    "N": 2738.0,
+    "M": -686465.0,
+    "section": "hole"
+   },
+   "R_lo": {
+    "case": "R | ULS 4 kN patch front, at right end on tread 5 | base slides",
+    "sigma": 178.6,
+    "util": 0.786,
+    "s": 1526.0,
+    "N": 2590.0,
+    "M": -649176.0,
+    "section": "hole"
+   },
+   "L_up": {
+    "case": "L | ULS 4 kN patch back, at left end on tread 4 | base slides",
+    "sigma": 130.4,
+    "util": 0.574,
+    "s": 1526.0,
+    "N": -9005.0,
+    "M": 435107.0,
+    "section": "hole"
+   },
+   "R_up": {
+    "case": "R | ULS 4 kN patch front, at right end on tread 4 | base slides",
+    "sigma": 121.4,
+    "util": 0.534,
+    "s": 1526.0,
+    "N": -8403.0,
+    "M": 404894.0,
+    "section": "hole"
+   }
+  },
+  "pin_force_max": {
+   "N": 9433.0,
+   "case": "L | crowd all | base slides",
+   "tread": 5
+  },
+  "pin_force_toward_tip_max": 4547.0,
+  "fold_lock_Fz_max_kN": {
+   "lo": 5.87,
+   "up": 5.46
+  },
+  "fold_lock_Fx_max_kN": {
+   "lo": 0.17,
+   "up": 0.22
+  }
+ },
+ "sections": {
+  "gross": {
+   "A": 893.5,
+   "yc": 53.0,
+   "nc": 20.2,
+   "Iy": 98088.9,
+   "In": 1855125.9,
+   "W_tip": 4866.7,
+   "W_far": 3948.1,
+   "Wlat_in": 34976.1,
+   "Wlat_out": 28339.8,
+   "nmin": 0.0,
+   "nmax": 45.0,
+   "ymin": 0.0,
+   "ymax": 118.5
+  },
+  "hole": {
+   "A": 679.5,
+   "yc": 66.0,
+   "nc": 21.9,
+   "Iy": 85614.4,
+   "In": 1355750.3,
+   "W_tip": 3900.8,
+   "W_far": 3714.0,
+   "Wlat_in": 20542.5,
+   "Wlat_out": 25822.5,
+   "nmin": 0.0,
+   "nmax": 45.0,
+   "ymin": 0.0,
+   "ymax": 118.5
+  },
+  "notch": {
+   "A": 811.0,
+   "yc": 58.1,
+   "nc": 21.5,
+   "Iy": 80759.2,
+   "In": 1627285.2,
+   "W_tip": 3755.2,
+   "W_far": 3437.5,
+   "Wlat_in": 27993.8,
+   "Wlat_out": 26955.3,
+   "nmin": 0.0,
+   "nmax": 45.0,
+   "ymin": 0.0,
+   "ymax": 118.5
+  },
+  "slot_up": {
+   "A": 569.5,
+   "yc": 52.2,
+   "nc": 22.4,
+   "Iy": 89905.9,
+   "In": 1676896.8,
+   "W_tip": 4017.8,
+   "W_far": 3974.1,
+   "Wlat_in": 32118.8,
+   "Wlat_out": 25296.1,
+   "nmin": 0.0,
+   "nmax": 45.0,
+   "ymin": 0.0,
+   "ymax": 118.5
+  },
+  "slot_lo": {
+   "A": 749.5,
+   "yc": 52.8,
+   "nc": 20.9,
+   "Iy": 95279.5,
+   "In": 1839208.6,
+   "W_tip": 4557.6,
+   "W_far": 3954.4,
+   "Wlat_in": 34860.3,
+   "Wlat_out": 27976.7,
+   "nmin": 0.0,
+   "nmax": 45.0,
+   "ymin": 0.0,
+   "ymax": 118.5
+  },
+  "notch+slot_up": {
+   "A": 487.0,
+   "yc": 60.5,
+   "nc": 25.0,
+   "Iy": 65421.9,
+   "In": 1443029.3,
+   "W_tip": 2616.5,
+   "W_far": 3271.6,
+   "Wlat_in": 23833.8,
+   "Wlat_out": 24899.3,
+   "nmin": 0.0,
+   "nmax": 45.0,
+   "ymin": 0.0,
+   "ymax": 118.5
+  },
+  "notch+slot_lo": {
+   "A": 667.0,
+   "yc": 58.9,
+   "nc": 22.6,
+   "Iy": 75730.6,
+   "In": 1609426.5,
+   "W_tip": 3344.8,
+   "W_far": 3387.0,
+   "Wlat_in": 27318.2,
+   "Wlat_out": 27010.1,
+   "nmin": 0.0,
+   "nmax": 45.0,
+   "ymin": 0.0,
+   "ymax": 118.5
+  }
+ },
+ "classes": {
+  "pin wall, far part": {
+   "b": 26.8,
+   "t": 6.0,
+   "beta": 4.47,
+   "cls": 1,
+   "rho": 1.0
+  },
+  "pin wall, tip part": {
+   "b": 14.2,
+   "t": 6.0,
+   "beta": 2.37,
+   "cls": 1,
+   "rho": 1.0
+  },
+  "outer wall, far part": {
+   "b": 26.8,
+   "t": 3.5,
+   "beta": 7.65,
+   "cls": 1,
+   "rho": 1.0
+  },
+  "outer wall, tip part": {
+   "b": 14.2,
+   "t": 3.5,
+   "beta": 4.06,
+   "cls": 2,
+   "rho": 1.0
+  },
+  "mid flange": {
+   "b": 109.0,
+   "t": 4.0,
+   "beta": 27.25,
+   "cls": 4,
+   "rho": 0.878
+  },
+  "mid flange, outer ligament at slot": {
+   "b": 20.0,
+   "t": 4.0,
+   "beta": 5.0,
+   "cls": 3,
+   "rho": 1.0
+  },
+  "lip": {
+   "b": 5.0,
+   "t": 3.0,
+   "beta": 1.67,
+   "cls": 1,
+   "rho": 1.0
+  }
+ },
+ "barrier": {
+  "L | R142 5.0 kN/m viewing | outward": {
+   "poles": [
+    {
+     "x": 8396.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 18.07,
+     "F_lo": 15.48
+    },
+    {
+     "x": 8646.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 18.07,
+     "F_lo": 15.49
+    },
+    {
+     "x": 8896.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 18.07,
+     "F_lo": 15.49
+    },
+    {
+     "x": 9146.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 18.07,
+     "F_lo": 15.49
+    },
+    {
+     "x": 9396.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 18.07,
+     "F_lo": 15.49
+    },
+    {
+     "x": 9646.8,
+     "L1": 1043.0,
+     "s_vert": 174.0,
+     "F_up": 18.08,
+     "F_lo": 15.49
+    }
+   ],
+   "up": {
+    "M_lat_max_kNm": 1.969,
+    "pin_pull_max_kN": 30.08,
+    "pin_push_max_kN": 0.0,
+    "T_pin_max_kNmm": 90.9,
+    "cap_tension_max_kN": 30.08,
+    "defl_lat_mm": 0.34
+   },
+   "lo": {
+    "M_lat_max_kNm": 0.656,
+    "pin_pull_max_kN": 0.0,
+    "pin_push_max_kN": 16.61,
+    "T_pin_max_kNmm": 83.9,
+    "cap_tension_max_kN": 0.0,
+    "defl_lat_mm": 0.02
+   }
+  },
+  "L | R142 5.0 kN/m viewing | inward": {
+   "poles": [
+    {
+     "x": 8396.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 18.07,
+     "F_lo": 15.48
+    },
+    {
+     "x": 8646.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 18.07,
+     "F_lo": 15.49
+    },
+    {
+     "x": 8896.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 18.07,
+     "F_lo": 15.49
+    },
+    {
+     "x": 9146.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 18.07,
+     "F_lo": 15.49
+    },
+    {
+     "x": 9396.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 18.07,
+     "F_lo": 15.49
+    },
+    {
+     "x": 9646.8,
+     "L1": 1043.0,
+     "s_vert": 174.0,
+     "F_up": 18.08,
+     "F_lo": 15.49
+    }
+   ],
+   "up": {
+    "M_lat_max_kNm": 1.969,
+    "pin_pull_max_kN": 0.0,
+    "pin_push_max_kN": 30.08,
+    "T_pin_max_kNmm": 90.9,
+    "cap_tension_max_kN": 0.0,
+    "defl_lat_mm": 0.34
+   },
+   "lo": {
+    "M_lat_max_kNm": 0.656,
+    "pin_pull_max_kN": 16.61,
+    "pin_push_max_kN": 0.0,
+    "T_pin_max_kNmm": 83.9,
+    "cap_tension_max_kN": 16.61,
+    "defl_lat_mm": 0.02
+   }
+  },
+  "L | R142 3.0 kN/m | outward": {
+   "poles": [
+    {
+     "x": 8396.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 10.84,
+     "F_lo": 9.29
+    },
+    {
+     "x": 8646.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 10.84,
+     "F_lo": 9.29
+    },
+    {
+     "x": 8896.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 10.84,
+     "F_lo": 9.29
+    },
+    {
+     "x": 9146.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 10.84,
+     "F_lo": 9.29
+    },
+    {
+     "x": 9396.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 10.84,
+     "F_lo": 9.29
+    },
+    {
+     "x": 9646.8,
+     "L1": 1043.0,
+     "s_vert": 174.0,
+     "F_up": 10.85,
+     "F_lo": 9.29
+    }
+   ],
+   "up": {
+    "M_lat_max_kNm": 1.181,
+    "pin_pull_max_kN": 18.05,
+    "pin_push_max_kN": 0.0,
+    "T_pin_max_kNmm": 54.6,
+    "cap_tension_max_kN": 18.05,
+    "defl_lat_mm": 0.21
+   },
+   "lo": {
+    "M_lat_max_kNm": 0.393,
+    "pin_pull_max_kN": 0.0,
+    "pin_push_max_kN": 9.97,
+    "T_pin_max_kNmm": 50.3,
+    "cap_tension_max_kN": 0.0,
+    "defl_lat_mm": 0.01
+   }
+  },
+  "L | R142 3.0 kN/m | inward": {
+   "poles": [
+    {
+     "x": 8396.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 10.84,
+     "F_lo": 9.29
+    },
+    {
+     "x": 8646.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 10.84,
+     "F_lo": 9.29
+    },
+    {
+     "x": 8896.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 10.84,
+     "F_lo": 9.29
+    },
+    {
+     "x": 9146.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 10.84,
+     "F_lo": 9.29
+    },
+    {
+     "x": 9396.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 10.84,
+     "F_lo": 9.29
+    },
+    {
+     "x": 9646.8,
+     "L1": 1043.0,
+     "s_vert": 174.0,
+     "F_up": 10.85,
+     "F_lo": 9.29
+    }
+   ],
+   "up": {
+    "M_lat_max_kNm": 1.181,
+    "pin_pull_max_kN": 0.0,
+    "pin_push_max_kN": 18.05,
+    "T_pin_max_kNmm": 54.6,
+    "cap_tension_max_kN": 0.0,
+    "defl_lat_mm": 0.21
+   },
+   "lo": {
+    "M_lat_max_kNm": 0.393,
+    "pin_pull_max_kN": 9.97,
+    "pin_push_max_kN": 0.0,
+    "T_pin_max_kNmm": 50.3,
+    "cap_tension_max_kN": 9.97,
+    "defl_lat_mm": 0.01
+   }
+  },
+  "L | R179 1.5 kN post | outward": {
+   "poles": [
+    {
+     "x": 8396.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 15.72,
+     "F_lo": 13.47
+    },
+    {
+     "x": 8646.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 15.72,
+     "F_lo": 13.47
+    },
+    {
+     "x": 8896.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 15.72,
+     "F_lo": 13.47
+    },
+    {
+     "x": 9146.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 15.72,
+     "F_lo": 13.47
+    },
+    {
+     "x": 9396.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 15.72,
+     "F_lo": 13.47
+    },
+    {
+     "x": 9646.8,
+     "L1": 1043.0,
+     "s_vert": 174.0,
+     "F_up": 15.72,
+     "F_lo": 13.47
+    }
+   ],
+   "up": {
+    "M_lat_max_kNm": 1.713,
+    "pin_pull_max_kN": 26.17,
+    "pin_push_max_kN": 0.0,
+    "T_pin_max_kNmm": 79.1,
+    "cap_tension_max_kN": 26.17,
+    "defl_lat_mm": 0.3
+   },
+   "lo": {
+    "M_lat_max_kNm": 0.57,
+    "pin_pull_max_kN": 0.0,
+    "pin_push_max_kN": 14.45,
+    "T_pin_max_kNmm": 73.0,
+    "cap_tension_max_kN": 0.0,
+    "defl_lat_mm": 0.02
+   }
+  },
+  "L | R179 1.5 kN post | inward": {
+   "poles": [
+    {
+     "x": 8396.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 15.72,
+     "F_lo": 13.47
+    },
+    {
+     "x": 8646.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 15.72,
+     "F_lo": 13.47
+    },
+    {
+     "x": 8896.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 15.72,
+     "F_lo": 13.47
+    },
+    {
+     "x": 9146.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 15.72,
+     "F_lo": 13.47
+    },
+    {
+     "x": 9396.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 15.72,
+     "F_lo": 13.47
+    },
+    {
+     "x": 9646.8,
+     "L1": 1043.0,
+     "s_vert": 174.0,
+     "F_up": 15.72,
+     "F_lo": 13.47
+    }
+   ],
+   "up": {
+    "M_lat_max_kNm": 1.713,
+    "pin_pull_max_kN": 0.0,
+    "pin_push_max_kN": 26.17,
+    "T_pin_max_kNmm": 79.1,
+    "cap_tension_max_kN": 0.0,
+    "defl_lat_mm": 0.3
+   },
+   "lo": {
+    "M_lat_max_kNm": 0.57,
+    "pin_pull_max_kN": 14.45,
+    "pin_push_max_kN": 0.0,
+    "T_pin_max_kNmm": 73.0,
+    "cap_tension_max_kN": 14.45,
+    "defl_lat_mm": 0.02
+   }
+  },
+  "L | R143 1.25 kN | outward": {
+   "poles": [
+    {
+     "x": 8396.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 13.1,
+     "F_lo": 11.22
+    },
+    {
+     "x": 8646.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 13.1,
+     "F_lo": 11.23
+    },
+    {
+     "x": 8896.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 13.1,
+     "F_lo": 11.23
+    },
+    {
+     "x": 9146.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 13.1,
+     "F_lo": 11.23
+    },
+    {
+     "x": 9396.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 13.1,
+     "F_lo": 11.23
+    },
+    {
+     "x": 9646.8,
+     "L1": 1043.0,
+     "s_vert": 174.0,
+     "F_up": 13.1,
+     "F_lo": 11.23
+    }
+   ],
+   "up": {
+    "M_lat_max_kNm": 1.427,
+    "pin_pull_max_kN": 21.81,
+    "pin_push_max_kN": 0.0,
+    "T_pin_max_kNmm": 65.9,
+    "cap_tension_max_kN": 21.81,
+    "defl_lat_mm": 0.25
+   },
+   "lo": {
+    "M_lat_max_kNm": 0.475,
+    "pin_pull_max_kN": 0.0,
+    "pin_push_max_kN": 12.04,
+    "T_pin_max_kNmm": 60.8,
+    "cap_tension_max_kN": 0.0,
+    "defl_lat_mm": 0.02
+   }
+  },
+  "L | R143 1.25 kN | inward": {
+   "poles": [
+    {
+     "x": 8396.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 13.1,
+     "F_lo": 11.22
+    },
+    {
+     "x": 8646.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 13.1,
+     "F_lo": 11.23
+    },
+    {
+     "x": 8896.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 13.1,
+     "F_lo": 11.23
+    },
+    {
+     "x": 9146.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 13.1,
+     "F_lo": 11.23
+    },
+    {
+     "x": 9396.8,
+     "L1": 1042.0,
+     "s_vert": 174.0,
+     "F_up": 13.1,
+     "F_lo": 11.23
+    },
+    {
+     "x": 9646.8,
+     "L1": 1043.0,
+     "s_vert": 174.0,
+     "F_up": 13.1,
+     "F_lo": 11.23
+    }
+   ],
+   "up": {
+    "M_lat_max_kNm": 1.427,
+    "pin_pull_max_kN": 0.0,
+    "pin_push_max_kN": 21.81,
+    "T_pin_max_kNmm": 65.9,
+    "cap_tension_max_kN": 0.0,
+    "defl_lat_mm": 0.25
+   },
+   "lo": {
+    "M_lat_max_kNm": 0.475,
+    "pin_pull_max_kN": 12.04,
+    "pin_push_max_kN": 0.0,
+    "T_pin_max_kNmm": 60.8,
+    "cap_tension_max_kN": 12.04,
+    "defl_lat_mm": 0.02
+   }
+  },
+  "R | R142 5.0 kN/m viewing | outward": {
+   "poles": [
+    {
+     "x": 8398.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 18.09,
+     "F_lo": 15.51
+    },
+    {
+     "x": 8648.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 18.09,
+     "F_lo": 15.51
+    },
+    {
+     "x": 8898.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 18.1,
+     "F_lo": 15.51
+    },
+    {
+     "x": 9148.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 18.1,
+     "F_lo": 15.51
+    },
+    {
+     "x": 9398.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 18.1,
+     "F_lo": 15.51
+    },
+    {
+     "x": 9648.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 18.1,
+     "F_lo": 15.51
+    }
+   ],
+   "up": {
+    "M_lat_max_kNm": 1.927,
+    "pin_pull_max_kN": 29.82,
+    "pin_push_max_kN": 0.0,
+    "T_pin_max_kNmm": 90.5,
+    "cap_tension_max_kN": 29.82,
+    "defl_lat_mm": 0.27
+   },
+   "lo": {
+    "M_lat_max_kNm": 0.629,
+    "pin_pull_max_kN": 0.0,
+    "pin_push_max_kN": 16.08,
+    "T_pin_max_kNmm": 84.5,
+    "cap_tension_max_kN": 0.0,
+    "defl_lat_mm": 0.02
+   }
+  },
+  "R | R142 5.0 kN/m viewing | inward": {
+   "poles": [
+    {
+     "x": 8398.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 18.09,
+     "F_lo": 15.51
+    },
+    {
+     "x": 8648.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 18.09,
+     "F_lo": 15.51
+    },
+    {
+     "x": 8898.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 18.1,
+     "F_lo": 15.51
+    },
+    {
+     "x": 9148.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 18.1,
+     "F_lo": 15.51
+    },
+    {
+     "x": 9398.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 18.1,
+     "F_lo": 15.51
+    },
+    {
+     "x": 9648.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 18.1,
+     "F_lo": 15.51
+    }
+   ],
+   "up": {
+    "M_lat_max_kNm": 1.927,
+    "pin_pull_max_kN": 0.0,
+    "pin_push_max_kN": 29.82,
+    "T_pin_max_kNmm": 90.5,
+    "cap_tension_max_kN": 0.0,
+    "defl_lat_mm": 0.27
+   },
+   "lo": {
+    "M_lat_max_kNm": 0.629,
+    "pin_pull_max_kN": 16.08,
+    "pin_push_max_kN": 0.0,
+    "T_pin_max_kNmm": 84.5,
+    "cap_tension_max_kN": 16.08,
+    "defl_lat_mm": 0.02
+   }
+  },
+  "R | R142 3.0 kN/m | outward": {
+   "poles": [
+    {
+     "x": 8398.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 10.86,
+     "F_lo": 9.3
+    },
+    {
+     "x": 8648.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 10.86,
+     "F_lo": 9.3
+    },
+    {
+     "x": 8898.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 10.86,
+     "F_lo": 9.31
+    },
+    {
+     "x": 9148.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 10.86,
+     "F_lo": 9.31
+    },
+    {
+     "x": 9398.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 10.86,
+     "F_lo": 9.31
+    },
+    {
+     "x": 9648.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 10.86,
+     "F_lo": 9.31
+    }
+   ],
+   "up": {
+    "M_lat_max_kNm": 1.156,
+    "pin_pull_max_kN": 17.89,
+    "pin_push_max_kN": 0.0,
+    "T_pin_max_kNmm": 54.3,
+    "cap_tension_max_kN": 17.89,
+    "defl_lat_mm": 0.16
+   },
+   "lo": {
+    "M_lat_max_kNm": 0.377,
+    "pin_pull_max_kN": 0.0,
+    "pin_push_max_kN": 9.65,
+    "T_pin_max_kNmm": 50.7,
+    "cap_tension_max_kN": 0.0,
+    "defl_lat_mm": 0.01
+   }
+  },
+  "R | R142 3.0 kN/m | inward": {
+   "poles": [
+    {
+     "x": 8398.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 10.86,
+     "F_lo": 9.3
+    },
+    {
+     "x": 8648.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 10.86,
+     "F_lo": 9.3
+    },
+    {
+     "x": 8898.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 10.86,
+     "F_lo": 9.31
+    },
+    {
+     "x": 9148.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 10.86,
+     "F_lo": 9.31
+    },
+    {
+     "x": 9398.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 10.86,
+     "F_lo": 9.31
+    },
+    {
+     "x": 9648.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 10.86,
+     "F_lo": 9.31
+    }
+   ],
+   "up": {
+    "M_lat_max_kNm": 1.156,
+    "pin_pull_max_kN": 0.0,
+    "pin_push_max_kN": 17.89,
+    "T_pin_max_kNmm": 54.3,
+    "cap_tension_max_kN": 0.0,
+    "defl_lat_mm": 0.16
+   },
+   "lo": {
+    "M_lat_max_kNm": 0.377,
+    "pin_pull_max_kN": 9.65,
+    "pin_push_max_kN": 0.0,
+    "T_pin_max_kNmm": 50.7,
+    "cap_tension_max_kN": 9.65,
+    "defl_lat_mm": 0.01
+   }
+  },
+  "R | R179 1.5 kN post | outward": {
+   "poles": [
+    {
+     "x": 8398.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 15.74,
+     "F_lo": 13.49
+    },
+    {
+     "x": 8648.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 15.74,
+     "F_lo": 13.49
+    },
+    {
+     "x": 8898.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 15.74,
+     "F_lo": 13.49
+    },
+    {
+     "x": 9148.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 15.74,
+     "F_lo": 13.49
+    },
+    {
+     "x": 9398.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 15.74,
+     "F_lo": 13.49
+    },
+    {
+     "x": 9648.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 15.74,
+     "F_lo": 13.49
+    }
+   ],
+   "up": {
+    "M_lat_max_kNm": 1.677,
+    "pin_pull_max_kN": 25.94,
+    "pin_push_max_kN": 0.0,
+    "T_pin_max_kNmm": 78.7,
+    "cap_tension_max_kN": 25.94,
+    "defl_lat_mm": 0.24
+   },
+   "lo": {
+    "M_lat_max_kNm": 0.547,
+    "pin_pull_max_kN": 0.0,
+    "pin_push_max_kN": 13.99,
+    "T_pin_max_kNmm": 73.5,
+    "cap_tension_max_kN": 0.0,
+    "defl_lat_mm": 0.02
+   }
+  },
+  "R | R179 1.5 kN post | inward": {
+   "poles": [
+    {
+     "x": 8398.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 15.74,
+     "F_lo": 13.49
+    },
+    {
+     "x": 8648.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 15.74,
+     "F_lo": 13.49
+    },
+    {
+     "x": 8898.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 15.74,
+     "F_lo": 13.49
+    },
+    {
+     "x": 9148.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 15.74,
+     "F_lo": 13.49
+    },
+    {
+     "x": 9398.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 15.74,
+     "F_lo": 13.49
+    },
+    {
+     "x": 9648.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 15.74,
+     "F_lo": 13.49
+    }
+   ],
+   "up": {
+    "M_lat_max_kNm": 1.677,
+    "pin_pull_max_kN": 0.0,
+    "pin_push_max_kN": 25.94,
+    "T_pin_max_kNmm": 78.7,
+    "cap_tension_max_kN": 0.0,
+    "defl_lat_mm": 0.24
+   },
+   "lo": {
+    "M_lat_max_kNm": 0.547,
+    "pin_pull_max_kN": 13.99,
+    "pin_push_max_kN": 0.0,
+    "T_pin_max_kNmm": 73.5,
+    "cap_tension_max_kN": 13.99,
+    "defl_lat_mm": 0.02
+   }
+  },
+  "R | R143 1.25 kN | outward": {
+   "poles": [
+    {
+     "x": 8398.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 13.12,
+     "F_lo": 11.24
+    },
+    {
+     "x": 8648.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 13.12,
+     "F_lo": 11.24
+    },
+    {
+     "x": 8898.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 13.12,
+     "F_lo": 11.24
+    },
+    {
+     "x": 9148.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 13.12,
+     "F_lo": 11.24
+    },
+    {
+     "x": 9398.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 13.12,
+     "F_lo": 11.24
+    },
+    {
+     "x": 9648.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 13.12,
+     "F_lo": 11.24
+    }
+   ],
+   "up": {
+    "M_lat_max_kNm": 1.397,
+    "pin_pull_max_kN": 21.62,
+    "pin_push_max_kN": 0.0,
+    "T_pin_max_kNmm": 65.6,
+    "cap_tension_max_kN": 21.62,
+    "defl_lat_mm": 0.2
+   },
+   "lo": {
+    "M_lat_max_kNm": 0.456,
+    "pin_pull_max_kN": 0.0,
+    "pin_push_max_kN": 11.66,
+    "T_pin_max_kNmm": 61.2,
+    "cap_tension_max_kN": 0.0,
+    "defl_lat_mm": 0.02
+   }
+  },
+  "R | R143 1.25 kN | inward": {
+   "poles": [
+    {
+     "x": 8398.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 13.12,
+     "F_lo": 11.24
+    },
+    {
+     "x": 8648.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 13.12,
+     "F_lo": 11.24
+    },
+    {
+     "x": 8898.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 13.12,
+     "F_lo": 11.24
+    },
+    {
+     "x": 9148.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 13.12,
+     "F_lo": 11.24
+    },
+    {
+     "x": 9398.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 13.12,
+     "F_lo": 11.24
+    },
+    {
+     "x": 9648.8,
+     "L1": 1044.0,
+     "s_vert": 174.0,
+     "F_up": 13.12,
+     "F_lo": 11.24
+    }
+   ],
+   "up": {
+    "M_lat_max_kNm": 1.397,
+    "pin_pull_max_kN": 0.0,
+    "pin_push_max_kN": 21.62,
+    "T_pin_max_kNmm": 65.6,
+    "cap_tension_max_kN": 0.0,
+    "defl_lat_mm": 0.2
+   },
+   "lo": {
+    "M_lat_max_kNm": 0.456,
+    "pin_pull_max_kN": 11.66,
+    "pin_push_max_kN": 0.0,
+    "T_pin_max_kNmm": 61.2,
+    "cap_tension_max_kN": 11.66,
+    "defl_lat_mm": 0.02
+   }
+  }
+ },
+ "pins": {
+  "V_design_N": 9433.0,
+  "stud fixed in step end block": {
+   "lever": 4.0,
+   "M_kNmm": 37.7,
+   "bending": 0.153,
+   "shear": 0.15,
+   "interaction": 0.046
+  },
+  "pin in 8 mm end plate, simply bearing": {
+   "lever": 8.0,
+   "M_kNmm": 75.5,
+   "bending": 0.306,
+   "shear": 0.15,
+   "interaction": 0.116
+  },
+  "6082-T6 D16 (stud, lever 4)": {
+   "bending": 0.313,
+   "shear": 0.331
+  },
+  "6082-T6 D20 (stud, lever 4)": {
+   "bending": 0.16,
+   "shear": 0.212
+  },
+  "bearing on 6 mm pin wall (T8.8 1.5 t d f0/gMp)": 0.328
+ },
+ "edges": {
+  "t": 6.0,
+  "a_req_full_resultant": 15.26,
+  "a_at_tab": 15.71,
+  "util_at_tab": 0.972,
+  "force_toward_tip_max_N": 4547.0,
+  "a_req_toward_tip": 13.23,
+  "a_between_tabs_to_tip": 4.0,
+  "note": "between tabs the pin wall ends 4 mm below the hole; the tab (radius TAB_R) gives the edge metal at every pin"
+ },
+ "caps": {
+  "design_pull_kN": 30.08,
+  "governing_case": "L | R142 5.0 kN/m viewing | outward",
+  "inward_R143_pull_kN": 12.04,
+  "owner detail: plain cap + cross pin D6 (carries the pull)": {
+   "cross_pin_double_shear": 1.705,
+   "pin_net_tension_at_cross_hole": 0.631,
+   "cap_wall_bearing": 0.71,
+   "cap_end_tearout_8mm": 0.838
+  },
+  "owner detail: plain cap + cross pin D8 (carries the pull)": {
+   "cross_pin_double_shear": 0.959,
+   "pin_net_tension_at_cross_hole": 0.92,
+   "cap_wall_bearing": 0.533,
+   "cap_end_tearout_8mm": 1.048
+  },
+  "recommended: castle cap nut M16 on the pin's threaded end + D4 cross pin (locking only)": {
+   "thread_tension": 0.409,
+   "thread_tension_at_cross_hole": 0.641,
+   "nut_thread_strip": "castle nut M16 A4-80 / duplex, m = 0.8 d: full strength of the bolt (EN ISO 898-2 logic)",
+   "pin_cross_hole_outside_bending_zone": true
+  },
+  "D30 washer bearing on 6 mm pin wall": 0.209,
+  "pull-through, 6 mm wall, D30 washer (punching)": 0.461
+ },
+ "combined": {
+  "L_lo": {
+   "sigma": 195.8,
+   "util": 0.861,
+   "case": "L | R142 5.0 kN/m viewing | outward",
+   "s": 305.0,
+   "section": "hole",
+   "sigma_inplane_uls_crowd": 173.8,
+   "sigma_lateral": 31.4,
+   "combo": "crowd leads",
+   "note": "in-plane stress = worst crowd case anywhere on the rail, put at this section (conservative)"
+  },
+  "L_up": {
+   "sigma": 194.4,
+   "util": 0.855,
+   "case": "L | R142 5.0 kN/m viewing | outward",
+   "s": 1416.0,
+   "section": "notch+slot_up",
+   "sigma_inplane_uls_crowd": 175.5,
+   "sigma_lateral": 27.1,
+   "combo": "crowd leads",
+   "note": "in-plane stress = worst crowd case anywhere on the rail, put at this section (conservative)"
+  },
+  "R_lo": {
+   "sigma": 193.0,
+   "util": 0.849,
+   "case": "R | R142 5.0 kN/m viewing | outward",
+   "s": 305.0,
+   "section": "hole",
+   "sigma_inplane_uls_crowd": 171.9,
+   "sigma_lateral": 30.1,
+   "combo": "crowd leads",
+   "note": "in-plane stress = worst crowd case anywhere on the rail, put at this section (conservative)"
+  },
+  "R_up": {
+   "sigma": 190.9,
+   "util": 0.84,
+   "case": "R | R142 5.0 kN/m viewing | outward",
+   "s": 1414.0,
+   "section": "notch+slot_up",
+   "sigma_inplane_uls_crowd": 172.8,
+   "sigma_lateral": 25.8,
+   "combo": "crowd leads",
+   "note": "in-plane stress = worst crowd case anywhere on the rail, put at this section (conservative)"
+  }
+ },
+ "local": {
+  "upper slot outer chord, standard slot, R142 5.0 kN/m": {
+   "F_kN": 18.1,
+   "slot_len": 34.3,
+   "chord_W": 571.0,
+   "M_kNmm": 51.8,
+   "util": 0.399,
+   "status": "estimate: fixed-ended chord (outer ligament + outer wall), load over the slot"
+  },
+  "upper slot outer chord, steep slot, R143 1.25 kN (crew stair)": {
+   "F_kN": 13.12,
+   "slot_len": 44.1,
+   "chord_W": 571.0,
+   "M_kNmm": 48.2,
+   "util": 0.372,
+   "status": "estimate: fixed-ended chord (outer ligament + outer wall), load over the slot"
+  },
+  "pole bearing on slot edge (6082)": 0.494,
+  "tongue bearing on lower slot edge": 0.424,
+  "lower mid flange under the shoulder": {
+   "Fz_kN": 5.87,
+   "strip_b": 36.5,
+   "util": 0.854,
+   "status": "estimate"
+  },
+  "upper mid flange on the upper latch (2 x D10 under the flange, 8 mm from slot)": {
+   "Fz_kN": 5.46,
+   "util": 0.879,
+   "status": "estimate"
+  }
+ },
+ "mass": {
+  "section_area_mm2": 894.0,
+  "kg_per_m": 2.41,
+  "four_rails_kg": 17.51,
+  "machining_removed_kg": 1.25,
+  "rev_c_after_changes_rails_kg": 14.65
+ },
+ "params": {
+  "HERE": "/home/user/staircase/v2/revc/rails",
+  "FIN": "/home/user/staircase/v2/revc/rails/../../final",
+  "F0": 250.0,
+  "GM1": 1.1,
+  "GMP": 1.25,
+  "FD": 227.273,
+  "E_AL": 70000.0,
+  "REAR": [
+   25.0,
+   12.5
+  ],
+  "FRONT": [
+   225.0,
+   37.5
+  ],
+  "LINK": [
+   200.0,
+   25.0
+  ],
+  "L_LINK": 201.556,
+  "PHI": 7.125,
+  "PITCH": 305.164,
+  "C_PIN": 12.5,
+  "POLE_KEY": "box80",
+  "TONGUE_W": 35.0,
+  "PIN_D": 16.0,
+  "HOLE_D": 17.0,
+  "CAP_OD": 28.0,
+  "CAP_LEN": 24.0,
+  "PAD": 1.0,
+  "T_P": 6.0,
+  "T_O": 3.5,
+  "T_MF": 4.0,
+  "LIG_IN": 8.0,
+  "LIG_OUT": 20.0,
+  "LIG": 8.0,
+  "W_INT": 109.0,
+  "W": 118.5,
+  "D": 45.0,
+  "F_PIN_DESIGN": 9300.0,
+  "TAB_R": 24.208,
+  "TAB_W": 48.417,
+  "TAB_H": 11.708,
+  "NOTCH_DEPTH": 13.708,
+  "NOTCH_CLR": 4.0,
+  "NOTCH_W": 56.417,
+  "N_MF0": 14.208,
+  "N_MF": 16.208,
+  "E_TORQUE": 3.708,
+  "LIP": [
+   5.0,
+   3.0
+  ],
+  "SLOT_UP_W": 81.0,
+  "SLOT_LO_W": 36.0,
+  "SLOT_Y0": 14.0,
+  "CAP_CUT": [
+   36.0,
+   28.0
+  ],
+  "G": 0.25
+ }
+}

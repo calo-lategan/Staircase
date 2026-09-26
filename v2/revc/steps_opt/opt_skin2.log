@@ -1,0 +1,23 @@
+{"D": {"slot_dir": "x", "rib_through_box": true, "ws": 10.0, "wsol": 8.0, "Ls": 40.0, "Lbx": 10.0, "b_r": 12.0, "tb": 3.0, "tb_bot": 4.0, "tb_top": 3.0, "ts": 2.5, "tn": 2.5, "tn_bot": 2.5, "tn_top": 2.5, "nose_type": "box", "p_r": 50.0, "tr": 2.5, "bulb": [12.0, 3.0], "t_cap": 8.0}, "mass": 6.14, "vm": 162.3, "u_str": 0.83, "sls4": 9.78, "crowd": 3.14, "u": 0.83, "ok": true, "where": "skin | ULS 4 kN front, mid-span | (54.1, 631.0, 48.8)", "open": 0.197, "parts": {"box rear wall": 0.457, "box front wall": 0.457, "box bottom": 0.607, "box top": 0.455, "nosing front wall": 0.181, "nosing inner wall": 0.181, "nosing bottom": 0.434, "nosing top": 0.434, "skin": 0.98, "rib web": 0.61, "rib diaphragm in box": 0.345, "end plate": 0.605, "rib bottom flange": 0.395}, "sec": 115}
+    {"mass": 6.005, "u": 0.943, "u_str": 0.943, "sls4": 9.98, "crowd": 3.19, "where": "box front wall | ULS 4 kN front, mid-span | (48.8, 612.0, 26.4)"} {'tb': 2.5}
+    {"mass": 6.064, "u": 0.84, "u_str": 0.84, "sls4": 10.08, "crowd": 3.24, "where": "skin | ULS 4 kN front, mid-span | (54.1, 631.0, 48.8)"} {'tb_bot': 3.5}
+    {"mass": 6.064, "u": 0.901, "u_str": 0.901, "sls4": 10.11, "crowd": 3.25, "where": "skin | ULS 4 kN front, mid-span | (54.1, 631.0, 48.8)"} {'tb_top': 2.5}
+    {"mass": 5.961, "u": 0.859, "u_str": 0.859, "sls4": 9.81, "crowd": 3.15, "where": "skin | ULS 4 kN front, mid-span | (111.2, 690.0, 49.0)"} {'ts': 2.0}
+    {"mass": 6.075, "u": 0.843, "u_str": 0.843, "sls4": 9.8, "crowd": 3.14, "where": "nosing inner wall | ULS 4 kN front, mid-span | (225.0, 606.5, 26.2)"} {'tn': 2.0}
+    {"mass": 6.053, "u": 0.843, "u_str": 0.843, "sls4": 10.06, "crowd": 3.22, "where": "skin | ULS 4 kN front, mid-span | (54.1, 599.0, 48.8)"} {'tn_bot': 2.0}
+    {"mass": 6.053, "u": 0.845, "u_str": 0.845, "sls4": 9.98, "crowd": 3.19, "where": "skin | ULS 4 kN front, mid-span | (54.1, 599.0, 48.8)"} {'tn_top': 2.0}
+    {"mass": 5.706, "u": 1.682, "u_str": 1.682, "sls4": 13.74, "crowd": 4.17, "where": "nosing inner wall | ULS 4 kN front, mid-span | (225.0, 606.5, 26.4)"} {'nose_type': 'C'}
+    {"mass": 5.789, "u": 1.086, "u_str": 1.086, "sls4": 10.0, "crowd": 3.17, "where": "nosing inner wall | ULS 4 kN front, mid-span | (225.0, 608.5, 26.4)"} {'p_r': 60.0}
+    {"mass": 5.949, "u": 0.846, "u_str": 0.846, "sls4": 9.81, "crowd": 3.14, "where": "box front wall | ULS 4 kN front, mid-span | (48.5, 612.0, 26.4)"} {'tr': 2.0}
+    {"mass": 6.074, "u": 0.838, "u_str": 0.838, "sls4": 9.8, "crowd": 3.14, "where": "box front wall | ULS 4 kN front, mid-span | (48.5, 612.5, 26.4)"} {'bulb': [10.0, 3.0]}
+    {"mass": 5.989, "u": 0.83, "u_str": 0.83, "sls4": 9.85, "crowd": 3.16, "where": "skin | ULS 4 kN front, mid-span | (54.1, 631.0, 48.8)"} {'t_cap': 6.0}
+   combined 10 {"mass": 5.022, "u": 1.07, "where": "box front wall | ULS 4 kN front, mid-span | (48.8, 612.5, 26.2)"}
+   combined 9 {"mass": 5.099, "u": 1.08, "where": "box front wall | ULS 4 kN front, mid-span | (48.8, 612.5, 26.2)"}
+   combined 8 {"mass": 5.236, "u": 0.919, "where": "box front wall | ULS 4 kN front, mid-span | (48.5, 612.5, 26.2)"}
+iter 0: accept {"tb": 3.0, "tb_bot": 3.5, "tb_top": 3.0, "ts": 2.0, "tn": 2.0, "tn_bot": 2.0, "tn_top": 2.0, "nose_type": "box", "p_r": 50.0, "tr": 2.0, "bulb": [10.0, 3.0], "t_cap": 6.0} mass 5.236 u 0.919
+    {"mass": 5.099, "u": 1.08, "u_str": 1.08, "sls4": 11.03, "crowd": 3.51, "where": "box front wall | ULS 4 kN front, mid-span | (48.8, 612.5, 26.2)"} {'tb': 2.5}
+    {"mass": 5.16, "u": 0.925, "u_str": 0.925, "sls4": 11.18, "crowd": 3.58, "where": "skin | ULS 4 kN front, mid-span | (111.2, 699.0, 49.0)"} {'tb_bot': 3.0}
+    {"mass": 5.16, "u": 0.961, "u_str": 0.961, "sls4": 11.17, "crowd": 3.57, "where": "skin | ULS 4 kN front, mid-span | (111.2, 699.0, 49.0)"} {'tb_top': 2.5}
+    {"mass": 4.887, "u": 1.741, "u_str": 1.741, "sls4": 15.31, "crowd": 4.61, "where": "nosing inner wall | ULS 4 kN front, mid-span | (225.0, 607.0, 26.2)"} {'nose_type': 'C'}
+    {"mass": 4.952, "u": 1.3, "u_str": 1.3, "sls4": 11.04, "crowd": 3.48, "where": "skin | ULS 4 kN front, mid-span | (111.2, 645.0, 49.0)"} {'p_r': 60.0}
+    {"mass": 5.17, "u": 0.966, "u_str": 0.966, "sls4": 10.82, "crowd": 3.45, "where": "box front wall | ULS 4 kN front, mid-span | (48.5, 613.0, 26.2)"} {'bulb': [8.0, 3.0]}
