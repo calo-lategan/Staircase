@@ -28,6 +28,15 @@
   "section_loss_solid": 0.01320510894064613,
   "section_loss_rhs": 0.001966762871241039
  },
+ "snap_socket": {
+  "lock_F_kN": 5.891794209530463,
+  "plunger_d12_single_shear": 0.3679018252224496,
+  "bearing_solid_25": 0.06546438010589403,
+  "bearing_rhs_one_3mm_wall": 0.5455365008824503,
+  "socket_bolts_tension": 0.16936414492543164,
+  "socket_pull_through_5mm_rail": 0.15671161196117583,
+  "socket_wall_5mm_bending_note": "socket back wall spans the pole width; size with the reviewer"
+ },
  "rails_in_5083": {
   "net": 0.8063394967329348,
   "lateral_right": 1.64

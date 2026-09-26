@@ -31,6 +31,13 @@ FLk = FL
 out["crosspin_upper"] = dict(F_kN=FLk / 1000, double_shear=FLk / (2 * 0.6 * math.pi * 36 * 295 / 1.25),
                              bearing_solid_25=FLk / (1.5 * 25 * 12 * 250 / 1.25), bearing_rhs_2x3mm=FLk / (2 * 1.5 * 3 * 12 * 250 / 1.25),
                              section_loss_solid=(25 * 13 ** 3 / 12) / (25 * 55 ** 3 / 12), section_loss_rhs=(2 * 3 * 13 ** 3 / 12) / rhsI(40, 80, 3))
+# snap-in option (owner, 27 Sep): the pole drops into a socket bolted to the outside face of each rail; a spring plunger on each socket
+# snaps into a Ø13 hole on the pole's centre line (along the stair, mid-depth). Upper socket: 2 x M12 into the rail carry the couple
+# (same as the strap). Plunger nose Ø12 in single shear carries the lock force; checked with 6082-T6 values (a steel plunger is stronger).
+out["snap_socket"] = dict(lock_F_kN=FL / 1000, plunger_d12_single_shear=FL / (0.6 * math.pi * 36 * 295 / 1.25),
+                          bearing_solid_25=FL / (1.5 * 25 * 12 * 250 / 1.25), bearing_rhs_one_3mm_wall=FL / (1.5 * 3 * 12 * 250 / 1.25),
+                          socket_bolts_tension=F / 2 / Ft, socket_pull_through_5mm_rail=F / 2 / Bp,
+                          socket_wall_5mm_bending_note="socket back wall spans the pole width; size with the reviewer")
 # route 2 rails if bent from 5083-H111 sheet instead of 6082-T6 extrusion (f0 125 instead of 250)
 out["rails_in_5083"] = dict(net=AC["rails"]["util_net"] * 2, lateral_right=AC["rails"]["lateral_right"] * 2)
 json.dump(out, open(os.path.join(HERE, "pole_fixing.json"), "w"), indent=1)
