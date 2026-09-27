@@ -1,0 +1,1123 @@
+{
+ "geometry": {
+  "base_axle_centre": {
+   "x": 9468.9,
+   "z": -0.0,
+   "above_ground": 125.0,
+   "lower_rail_s": 46.0,
+   "n": 60.0,
+   "moved_from": [
+    9636.1,
+    -89.4
+   ],
+   "note": "188 mm up the rail from Rev C; 125 above the ground (z -125)"
+  },
+  "top_axle_centre": {
+   "x": 8150.0,
+   "z": 923.4,
+   "lower_rail_s": 1656.0,
+   "n": 60.0,
+   "moved_from": [
+    8135.8,
+    960.6
+   ]
+  },
+  "support_centres_y": {
+   "left": -18327.5,
+   "right": -17096.5,
+   "spacing": 1231.0,
+   "rev_c": [
+    -18404,
+    -17031
+   ],
+   "note": "1,373 no longer possible: the old jack centres fall inside the new 108/115 rail channels"
+  },
+  "axle_length": 1343,
+  "axle_half": 671.5,
+  "collar_positions_from_CL": [
+   636.5,
+   661.5
+  ],
+  "fork": {
+   "jaw_t": 8.0,
+   "gap": 24.0,
+   "inner_faces_from_pin_leg": [
+    -2.0,
+    22.0
+   ],
+   "seat_radius": 24.5
+  },
+  "lower_rail_cuts": {
+   "base_end_s": -30.0,
+   "top_end": "vertical cut at x = top axle - 22 (s 1,724.6 at n 0, 1,682.9 at n 60)",
+   "saddle": "R 24.5 (D49.0 +0.3/0), centre n 60, s 46 (base) / 1,656 (top), through pin leg + bulb",
+   "keeper_hole": "D12.5 at n 36, s 82 (base, uphill) / s 1,620 (top, downhill)",
+   "web_window": "web y 6..70 over s_c +-45; y 6..32 over s_c+45..s_c+58 (base) / s_c-58..s_c-45 (top)",
+   "A_only": "pin leg trimmed to n 60 over the window (A pin leg runs to 61)"
+  },
+  "lever_barrier_mm": 1374
+ },
+ "loads": {
+  "in_plane_envelope_ULS": {
+   "held": {
+    "R_base": 11636.0,
+    "R_top": 5597.5,
+    "V_base": 10694.9,
+    "H_base": 4899.5,
+    "H_top": 5596.7,
+    "top_uplift": 989.4,
+    "base_uplift": 0.0,
+    "ang_base": [
+     61.7,
+     132.2
+    ],
+    "ang_top": [
+     -25.30000000000001,
+     157.1
+    ]
+   },
+   "slides": {
+    "R_base": 7595.0,
+    "R_top": 4479.7,
+    "V_base": 7595.0,
+    "H_base": 0.0,
+    "H_top": 1012.5,
+    "top_uplift": 696.0,
+    "base_uplift": 0.0,
+    "ang_base": [
+     90.0,
+     90.0
+    ],
+    "ang_top": [
+     -90.0,
+     139.0
+    ]
+   }
+  },
+  "in_plane_envelope_EQU": {
+   "held": {
+    "R_base": 7983.4,
+    "R_top": 4716.3,
+    "V_base": 6918.2,
+    "H_base": 4715.0,
+    "H_top": 4715.0,
+    "top_uplift": 991.2,
+    "base_uplift": 0.0,
+    "ang_base": [
+     61.2,
+     132.4
+    ],
+    "ang_top": [
+     -25.69999999999999,
+     157.3
+    ]
+   },
+   "slides": {
+    "R_base": 6668.2,
+    "R_top": 4461.8,
+    "V_base": 6668.2,
+    "H_base": 0.0,
+    "H_top": 0.0,
+    "top_uplift": 715.4,
+    "base_uplift": 0.0,
+    "ang_base": [
+     90.0,
+     90.0
+    ],
+    "ang_top": [
+     -90.0,
+     90.0
+    ]
+   }
+  },
+  "friction": {
+   "ground mu 0.3": {
+    "case": "L | ULS crowd all + sway uphill",
+    "a": 0.766,
+    "H": -2884.4,
+    "V": 9614.7,
+    "R": 10038.0,
+    "top_H": 3896.9,
+    "top_V": 1341.1,
+    "R_top": 4121.2
+   },
+   "ground mu 0.5": {
+    "case": "R | ULS crowd all + sway uphill",
+    "a": 1.0,
+    "H": -4584.2,
+    "V": 10694.9,
+    "R": 11636.0,
+    "top_H": 5596.7,
+    "top_V": 94.2,
+    "R_top": 5597.5
+   }
+  },
+  "barrier_ULS_kN": {
+   "3.0 kN/m": 8.24,
+   "5.0 kN/m": 13.73
+  },
+  "barrier_length_m": 1.831,
+  "sway_R176_ULS_kN": 2.03,
+  "wind": {
+   "qp_storm_kPa": 0.85,
+   "qp_OWS_kPa": 0.2,
+   "cf": 2.0,
+   "eta_leeward": 0.8,
+   "area_per_side_m2": 0.618,
+   "centroid_above_support_line_mm": 575,
+   "Fw_k_storm_kN": 1.89,
+   "uplift_treads_k_kN": 0.86,
+   "parts": [
+    [
+     "lower rail (60-68 deep incl. lip)",
+     0.116,
+     37
+    ],
+    [
+     "upper rail (49-62 deep)",
+     0.104,
+     180
+    ],
+    [
+     "6 box poles 25 wide x 1,344",
+     0.202,
+     690
+    ],
+    [
+     "top rail D40 x 1,750",
+     0.07,
+     1374
+    ],
+    [
+     "handrail D40 x 1,750",
+     0.07,
+     1177
+    ],
+    [
+     "6 step ends (L 280x25 + 50x50)",
+     0.057,
+     260
+    ]
+   ]
+  },
+  "lever_barrier_above_support_line_mm": 1374,
+  "hold_down": {
+   "base_per_jack_kN": [
+    7.19,
+    "scaffold | r1 | EQU 0.9G + barrier 5.0 kN/m +y",
+    "BL"
+   ],
+   "top_per_bracket_r1_kN": [
+    7.65,
+    "scaffold | r1 | EQU 0.9G + barrier 5.0 kN/m -y",
+    "TR"
+   ],
+   "top_per_bracket_if_base_not_anchored_kN": [
+    8.51,
+    "ground (friction mu 0.5 = held) | r0 | EQU 0.9G + barrier 5.0 kN/m -y",
+    "TR"
+   ],
+   "base_per_jack_barrier3_or_wind_kN": [
+    4.13,
+    "scaffold | r1 | EQU 0.9G + barrier 3.0 kN/m +y"
+   ],
+   "top_if_base_not_anchored_barrier3_or_wind_kN": [
+    5.1,
+    "ground (friction mu 0.5 = held) | r0 | EQU 0.9G + barrier 3.0 kN/m -y"
+   ]
+  },
+  "keeper_design_N": {
+   "base": [
+    0.0,
+    -7193.0
+   ],
+   "top": [
+    0.0,
+    -7653.0
+   ],
+   "top_pull": [
+    -2636.5,
+    1130.7
+   ]
+  },
+  "pull_out_top_case": [
+   "R | ULS 4 kN patch front, at right end on tread 0, 0.9 G (EQU) | base held",
+   -2636.5,
+   1130.7
+  ],
+  "support_envelopes": {
+   "base ground (r1)": {
+    "z_max": [
+     [
+      -4.741899999999999,
+      0.0,
+      14.71023001286559
+     ],
+     "ground (friction mu 0.5 = held) | r1 | STR crowd + barrier 5.0 kN/m +y",
+     "BR"
+    ],
+    "z_min": [
+     [
+      0.0,
+      0.0,
+      -3.946530012865592
+     ],
+     "ground | r1 | EQU 0.9G + barrier 5.0 kN/m -y",
+     "BR"
+    ],
+    "x_max": [
+     [
+      0.0,
+      0.0,
+      2.9822699871519287
+     ],
+     "ground | r1 | STR crowd + barrier 5.0 kN/m +y",
+     "BL"
+    ],
+    "x_min": [
+     [
+      -4.741899999999999,
+      0.0,
+      14.71023001286559
+     ],
+     "ground (friction mu 0.5 = held) | r1 | STR crowd + barrier 5.0 kN/m +y",
+     "BR"
+    ],
+    "y_abs": [
+     [
+      0.0,
+      0.0,
+      2.9822699871519287
+     ],
+     "ground | r1 | STR crowd + barrier 5.0 kN/m +y",
+     "BL"
+    ],
+    "h_res": [
+     [
+      -4.741899999999999,
+      0.0,
+      14.71023001286559
+     ],
+     "ground (friction mu 0.5 = held) | r1 | STR crowd + barrier 5.0 kN/m +y",
+     "BR"
+    ]
+   },
+   "base scaffold": {
+    "z_max": [
+     [
+      -4.7419,
+      -4.539049110205625,
+      18.115284031551077
+     ],
+     "scaffold | r1 | STR crowd + barrier 5.0 kN/m +y",
+     "BR"
+    ],
+    "z_min": [
+     [
+      -0.20196000000001565,
+      -4.5390491102056245,
+      -7.193004031557414
+     ],
+     "scaffold | r1 | EQU 0.9G + barrier 5.0 kN/m +y",
+     "BL"
+    ],
+    "x_max": [
+     [
+      -0.20195999999970027,
+      2.7234294661234726,
+      5.069210418939103
+     ],
+     "scaffold | r1 | EQU 0.9G + barrier 3.0 kN/m -y",
+     "BL"
+    ],
+    "x_min": [
+     [
+      -4.7419,
+      -4.539049110205625,
+      18.115284031551077
+     ],
+     "scaffold | r1 | STR crowd + barrier 5.0 kN/m +y",
+     "BR"
+    ],
+    "y_abs": [
+     [
+      -4.7419,
+      -4.539049110205625,
+      18.115284031551077
+     ],
+     "scaffold | r1 | STR crowd + barrier 5.0 kN/m +y",
+     "BR"
+    ],
+    "h_res": [
+     [
+      -4.7419,
+      -4.539049110205625,
+      18.115284031551077
+     ],
+     "scaffold | r1 | STR crowd + barrier 5.0 kN/m +y",
+     "BR"
+    ]
+   },
+   "top, base anchored/scaffold (r1)": {
+    "z_max": [
+     [
+      3.9855000000000205,
+      2.3278079515777677,
+      8.587884031550836
+     ],
+     "scaffold | r1 | STR crowd + barrier 5.0 kN/m -y",
+     "TL"
+    ],
+    "z_min": [
+     [
+      0.22725000000533557,
+      2.3278079515777677,
+      -7.652544031557662
+     ],
+     "scaffold | r1 | EQU 0.9G + barrier 5.0 kN/m -y",
+     "TR"
+    ],
+    "x_max": [
+     [
+      14.467742219311857,
+      -6.866857061782782,
+      4.596530012846684
+     ],
+     "ground (friction mu 0.5 = held) | r1 | STR crowd + barrier 5.0 kN/m +y",
+     "TR"
+    ],
+    "x_min": [
+     [
+      -9.725842219311858,
+      6.866857061782782,
+      -0.6008300128466844
+     ],
+     "ground | r1 | STR crowd + barrier 5.0 kN/m -y",
+     "TR"
+    ],
+    "y_abs": [
+     [
+      9.725842219311858,
+      -6.866857061782782,
+      7.916830012846685
+     ],
+     "ground | r1 | STR crowd + barrier 5.0 kN/m +y",
+     "TR"
+    ],
+    "h_res": [
+     [
+      14.467742219311857,
+      -6.866857061782782,
+      4.596530012846684
+     ],
+     "ground (friction mu 0.5 = held) | r1 | STR crowd + barrier 5.0 kN/m +y",
+     "TR"
+    ]
+   },
+   "top, base NOT anchored (r0)": {
+    "z_max": [
+     [
+      9.725842219288625,
+      6.866857061784276,
+      12.232260025790385
+     ],
+     "ground | r0 | STR crowd + barrier 5.0 kN/m -y",
+     "TL"
+    ],
+    "z_min": [
+     [
+      -9.498592219293096,
+      6.866857061784275,
+      -8.506320025632244
+     ],
+     "ground (friction mu 0.5 = held) | r0 | EQU 0.9G + barrier 5.0 kN/m -y",
+     "TR"
+    ],
+    "x_max": [
+     [
+      14.467742219293095,
+      -6.866857061784275,
+      8.855360025632244
+     ],
+     "ground (friction mu 0.5 = held) | r0 | STR crowd + barrier 5.0 kN/m +y",
+     "TR"
+    ],
+    "x_min": [
+     [
+      -9.725842219293096,
+      6.866857061784275,
+      -4.859660025632245
+     ],
+     "ground | r0 | STR crowd + barrier 5.0 kN/m -y",
+     "TR"
+    ],
+    "y_abs": [
+     [
+      -9.725842219288625,
+      -6.866857061784276,
+      -4.803060025790386
+     ],
+     "ground | r0 | STR crowd + barrier 5.0 kN/m +y",
+     "TL"
+    ],
+    "h_res": [
+     [
+      14.467742219293095,
+      -6.866857061784275,
+      8.855360025632244
+     ],
+     "ground (friction mu 0.5 = held) | r0 | STR crowd + barrier 5.0 kN/m +y",
+     "TR"
+    ]
+   }
+  },
+  "ground_bearing": {
+   "V_SLS_kN": 9.86,
+   "board_mm": [
+    450.0,
+    600.0
+   ],
+   "ecc_mm": 94,
+   "p_max_kPa": 84,
+   "p_mean_kPa": 37
+  }
+ },
+ "checks": [
+  {
+   "item": "Base hook (saddle over the axle)",
+   "check": "Reaction angle inside the saddle (-35..145 deg, 5 deg margin)",
+   "Ed": 132.4,
+   "Rd": 140.0,
+   "unit": "deg",
+   "util": 0.95,
+   "status": "PASS",
+   "ref": "R147/R170",
+   "tag": "[C]",
+   "note": "range [61.7, 132.2] (held), 90 (slides); the keeper takes nothing in the crowd cases"
+  },
+  {
+   "item": "Top hook (saddle over the axle)",
+   "check": "Crowd-case reaction angle inside the saddle (5 deg margin)",
+   "Ed": 139.0,
+   "Rd": 140.0,
+   "unit": "deg",
+   "util": 0.99,
+   "status": "PASS",
+   "ref": "R147/R170",
+   "tag": "[C]",
+   "note": "slides +sway 139 deg is 6 deg inside the 145 edge (friction covers it); the -90 (uplift, 0.7 kN, person on tread 0) and 157 deg (pull 2.9 kN, base held + person on tread 0) cases go to the keeper"
+  },
+  {
+   "item": "Hook base L (A_lo) - rail end with saddle",
+   "check": "Plane-stress FE von Mises (>= 2 mm from contact)",
+   "Ed": 94.6,
+   "Rd": 227.27,
+   "unit": "MPa",
+   "util": 0.42,
+   "status": "PASS",
+   "ref": "R147/R170",
+   "tag": "[C] hook_fe.py",
+   "note": "peak at contact 157.4 MPa (local bearing, see pin-bearing row); contact arc [83.6, 138.2]"
+  },
+  {
+   "item": "Hook base L - keeper hole region",
+   "check": "Plane-stress FE von Mises, keeper load",
+   "Ed": 158.9,
+   "Rd": 227.27,
+   "unit": "MPa",
+   "util": 0.7,
+   "status": "PASS",
+   "ref": "R78/R150",
+   "tag": "[C] hook_fe.py",
+   "note": "keeper load [0.0, -7193.0] N"
+  },
+  {
+   "item": "Hook top L (A_lo) - rail end with saddle",
+   "check": "Plane-stress FE von Mises (>= 2 mm from contact)",
+   "Ed": 59.1,
+   "Rd": 227.27,
+   "unit": "MPa",
+   "util": 0.26,
+   "status": "PASS",
+   "ref": "R147/R170",
+   "tag": "[C] hook_fe.py",
+   "note": "peak at contact 67.7 MPa (local bearing, see pin-bearing row); contact arc [1.9, 360.0]"
+  },
+  {
+   "item": "Hook top L - keeper hole region",
+   "check": "Plane-stress FE von Mises, keeper load",
+   "Ed": 174.6,
+   "Rd": 227.27,
+   "unit": "MPa",
+   "util": 0.77,
+   "status": "PASS",
+   "ref": "R78/R150",
+   "tag": "[C] hook_fe.py",
+   "note": "keeper load [0.0, -7653.0] N"
+  },
+  {
+   "item": "Hook base R (B_lo) - rail end with saddle",
+   "check": "Plane-stress FE von Mises (>= 2 mm from contact)",
+   "Ed": 49.2,
+   "Rd": 227.27,
+   "unit": "MPa",
+   "util": 0.22,
+   "status": "PASS",
+   "ref": "R147/R170",
+   "tag": "[C] hook_fe.py",
+   "note": "peak at contact 69.8 MPa (local bearing, see pin-bearing row); contact arc [88.7, 135.5]"
+  },
+  {
+   "item": "Hook base R - keeper hole region",
+   "check": "Plane-stress FE von Mises, keeper load",
+   "Ed": 63.8,
+   "Rd": 227.27,
+   "unit": "MPa",
+   "util": 0.28,
+   "status": "PASS",
+   "ref": "R78/R150",
+   "tag": "[C] hook_fe.py",
+   "note": "keeper load [0.0, -7193.0] N"
+  },
+  {
+   "item": "Hook top R (B_lo) - rail end with saddle",
+   "check": "Plane-stress FE von Mises (>= 2 mm from contact)",
+   "Ed": 37.4,
+   "Rd": 227.27,
+   "unit": "MPa",
+   "util": 0.16,
+   "status": "PASS",
+   "ref": "R147/R170",
+   "tag": "[C] hook_fe.py",
+   "note": "peak at contact 37.4 MPa (local bearing, see pin-bearing row); contact arc [1.9, 360.0]"
+  },
+  {
+   "item": "Hook top R - keeper hole region",
+   "check": "Plane-stress FE von Mises, keeper load",
+   "Ed": 74.2,
+   "Rd": 227.27,
+   "unit": "MPa",
+   "util": 0.33,
+   "status": "PASS",
+   "ref": "R78/R150",
+   "tag": "[C] hook_fe.py",
+   "note": "keeper load [0.0, -7653.0] N"
+  },
+  {
+   "item": "Hook saddle (6 mm pin leg) on the D48.3 tube",
+   "check": "Pin-type bearing 1.5 t d f_o / gamma_Mp (EN 1999-1-1 Tab 8.8)",
+   "Ed": 11.64,
+   "Rd": 86.94,
+   "unit": "kN",
+   "util": 0.13,
+   "status": "PASS",
+   "ref": "R170",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Base axle 48.3x4 S355J2H (EN 10219)",
+   "check": "Bending in the fork (jaws 32 c/c, hook 7 off centre)",
+   "Ed": 0.08,
+   "Rd": 2.79,
+   "unit": "kNm",
+   "util": 0.03,
+   "status": "PASS",
+   "ref": "R147",
+   "tag": "[C]",
+   "note": "R = 11.6 kN; the Rev C 70 mm lever is gone (supports review M1)"
+  },
+  {
+   "item": "Base axle 48.3x4 S355",
+   "check": "Scaffold case: bending fork -> coupler (60 mm), H resultant",
+   "Ed": 0.39,
+   "Rd": 2.79,
+   "unit": "kNm",
+   "util": 0.14,
+   "status": "PASS",
+   "ref": "R147/R170",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Top axle 48.3x4 6082-T6",
+   "check": "Bending in the fork",
+   "Ed": 0.04,
+   "Rd": 1.79,
+   "unit": "kNm",
+   "util": 0.02,
+   "status": "PASS",
+   "ref": "R147",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Base axle tube, local crushing WITHOUT insert",
+   "check": "Ring bending (L_eff 30), N/N_pl + M/M_pl",
+   "Ed": 1.4,
+   "Rd": 1.0,
+   "unit": "-",
+   "util": 1.4,
+   "status": "FAIL",
+   "ref": "R147/R170",
+   "tag": "[C] ring_fe.py",
+   "note": "supports review M2 confirmed: plain tube fails -> insert required"
+  },
+  {
+   "item": "Base axle tube WITH solid insert D40 x 90",
+   "check": "Ring bending (L_eff 30), N/N_pl + M/M_pl",
+   "Ed": 0.18,
+   "Rd": 1.0,
+   "unit": "-",
+   "util": 0.18,
+   "status": "PASS",
+   "ref": "R147/R170",
+   "tag": "[C] ring_fe.py",
+   "note": ""
+  },
+  {
+   "item": "Top axle tube, local crushing WITHOUT insert",
+   "check": "Ring bending (L_eff 30), N/N_pl + M/M_pl",
+   "Ed": 1.41,
+   "Rd": 1.0,
+   "unit": "-",
+   "util": 1.41,
+   "status": "FAIL",
+   "ref": "R147/R170",
+   "tag": "[C] ring_fe.py",
+   "note": "supports review M2 confirmed: plain tube fails -> insert required"
+  },
+  {
+   "item": "Top axle tube WITH solid insert D40 x 90",
+   "check": "Ring bending (L_eff 30), N/N_pl + M/M_pl",
+   "Ed": 0.25,
+   "Rd": 1.0,
+   "unit": "-",
+   "util": 0.25,
+   "status": "PASS",
+   "ref": "R147/R170",
+   "tag": "[C] ring_fe.py",
+   "note": ""
+  },
+  {
+   "item": "Insert D40x90 6082-T6 (in both axles)",
+   "check": "Bearing under hook + jaws (22 mm long x 20 mm chord)",
+   "Ed": 26.45,
+   "Rd": 227.27,
+   "unit": "MPa",
+   "util": 0.12,
+   "status": "PASS",
+   "ref": "R170",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Insert D40 x 90 + roll pin D8 (axle hole at the fork centre)",
+   "check": "Axle net section at the D8.5 hole, M in the fork",
+   "Ed": 0.08,
+   "Rd": 2.26,
+   "unit": "kNm",
+   "util": 0.03,
+   "status": "PASS",
+   "ref": "R147",
+   "tag": "[C]",
+   "note": "hole where the moment is ~0.08 kNm - allowed here, unlike Rev C (M1)"
+  },
+  {
+   "item": "Axle collar (split, 2 x M10 8.8 @ 40 Nm)",
+   "check": "Slip, scaffold case (whole base lateral through one collar)",
+   "Ed": 9.08,
+   "Rd": 12.8,
+   "unit": "kN",
+   "util": 0.71,
+   "status": "PASS",
+   "ref": "R170/R78",
+   "tag": "[E]",
+   "note": "mu 0.2, total normal = 2 x bolt force; confirm by a slip test (target >= 1.5 x demand)"
+  },
+  {
+   "item": "Keeper pin D12 A4-80 (base and top)",
+   "check": "Bending EN 1993-1-8 Tab 3.10: M = F/8 (b + 4c + 2a)",
+   "Ed": 24.87,
+   "Rd": 152.68,
+   "unit": "kNmm",
+   "util": 0.16,
+   "status": "PASS",
+   "ref": "R78/R150/R170",
+   "tag": "[C]",
+   "note": "F = 7.7 kN (governing hold-down); b 6 (pin leg), c 1 (spacer bush D16x2 on the outboard side), a 8 (jaws)"
+  },
+  {
+   "item": "Keeper pin D12 A4-80",
+   "check": "Shear per plane",
+   "Ed": 3.83,
+   "Rd": 43.43,
+   "unit": "kN",
+   "util": 0.09,
+   "status": "PASS",
+   "ref": "R170",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Keeper pin D12",
+   "check": "Combined (M/M_Rd)^2 + (V/V_Rd)^2",
+   "Ed": 0.03,
+   "Rd": 1.0,
+   "unit": "-",
+   "util": 0.03,
+   "status": "PASS",
+   "ref": "R170",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Keeper hole D12.5 in the 6 mm pin leg",
+   "check": "Bearing 1.5 t d f_o / gamma_Mp",
+   "Ed": 7.65,
+   "Rd": 21.6,
+   "unit": "kN",
+   "util": 0.35,
+   "status": "PASS",
+   "ref": "R170",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Keeper hole in the 8 mm steel jaw",
+   "check": "Bearing 1.5 t d f_y / gamma_M0 (pin, EN 1993-1-8 Tab 3.10)",
+   "Ed": 3.83,
+   "Rd": 51.12,
+   "unit": "kN",
+   "util": 0.07,
+   "status": "PASS",
+   "ref": "R170",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Keeper hole D12.5, edge to the rail far face",
+   "check": "EN 1999-1-1 Tab 8.8 a >= F gamma / 2 t f_o + 2 d0/3",
+   "Ed": 11.52,
+   "Rd": 17.75,
+   "unit": "mm",
+   "util": 0.65,
+   "status": "PASS",
+   "ref": "R170",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Jack spindle M36 8.8 (steel), max extension 82 (axle 150 above plate underside)",
+   "check": "N/A_s + M/W_pl(d3), H = 0.5 V at the head",
+   "Ed": 194.4,
+   "Rd": 640.0,
+   "unit": "MPa",
+   "util": 0.3,
+   "status": "PASS",
+   "ref": "R147/R74/R174",
+   "tag": "[C]",
+   "note": "V 14.7 kN (crowd + 5.0 kN/m barrier, compression side), H 7.4 kN, lever 120 mm"
+  },
+  {
+   "item": "Jack spindle M36",
+   "check": "Buckling K = 2 (curve c) + bending",
+   "Ed": 0.32,
+   "Rd": 1.0,
+   "unit": "-",
+   "util": 0.32,
+   "status": "PASS",
+   "ref": "R74",
+   "tag": "[C]",
+   "note": "lambda 0.72, chi 0.71"
+  },
+  {
+   "item": "Fork base to spindle weld a6 all round (S355)",
+   "check": "Simplified resultant <= f_u / (sqrt3 beta gamma_M2)",
+   "Ed": 48.83,
+   "Rd": 241.2,
+   "unit": "MPa",
+   "util": 0.2,
+   "status": "PASS",
+   "ref": "EN 1993-1-8 4.5.3.3",
+   "tag": "[C]",
+   "note": "the thread engagement (36 mm) carries the axial load; the weld carries H and M"
+  },
+  {
+   "item": "Fork jaw 8 mm S355 (60 deep below the notch)",
+   "check": "Bending R/2 x 30 mm",
+   "Ed": 36.36,
+   "Rd": 355.0,
+   "unit": "MPa",
+   "util": 0.1,
+   "status": "PASS",
+   "ref": "R147",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Jack base plate 250x250x12 S355 (R73)",
+   "check": "Plate bending from the nut, peak pressure over the whole cantilever",
+   "Ed": 147.51,
+   "Rd": 355.0,
+   "unit": "MPa",
+   "util": 0.42,
+   "status": "PASS",
+   "ref": "R73/R174",
+   "tag": "[C]",
+   "note": "e = 75 mm (H x h / V, H = 0.5 V, h 150), p_max 0.78 MPa on the board"
+  },
+  {
+   "item": "Jack tipping on its own plate",
+   "check": "e <= (B/2)/1.5",
+   "Ed": 75.0,
+   "Rd": 83.33,
+   "unit": "mm",
+   "util": 0.9,
+   "status": "PASS",
+   "ref": "R149",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Base plate on timber sole boards (C24)",
+   "check": "Bearing perpendicular to grain (k_c90 1.5, k_mod 0.9, gamma_M 1.3)",
+   "Ed": 0.78,
+   "Rd": 2.6,
+   "unit": "MPa",
+   "util": 0.3,
+   "status": "PASS",
+   "ref": "R76",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Ground under 2 sole boards 450x600 (R174)",
+   "check": "Peak SLS pressure vs required allowable 150 kPa (site to confirm)",
+   "Ed": 83.62,
+   "Rd": 150.0,
+   "unit": "kPa",
+   "util": 0.56,
+   "status": "PASS",
+   "ref": "R174/R76",
+   "tag": "[C]/[E]",
+   "note": "150 kPa = firm ground; on turf/soft ground use a bigger spreader or site-tested bearing"
+  },
+  {
+   "item": "Sole boards (resultant inside the boards)",
+   "check": "e = mu h <= (B/2)/1.5",
+   "Ed": 94.0,
+   "Rd": 150.0,
+   "unit": "mm",
+   "util": 0.63,
+   "status": "PASS",
+   "ref": "R149/R76",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Base hold-down per jack (ground, 5.0 kN/m barrier EQU)",
+   "check": "REQUIRED anchor capacity (stakes / anchors through the base plate)",
+   "Ed": 7.19,
+   "Rd": 7.19,
+   "unit": "kN",
+   "util": 1.0,
+   "status": "REQ",
+   "ref": "R150/R181",
+   "tag": "[C]",
+   "note": "site-tested stakes on soil (4 x D20 x 750 typical) or 2 x M12 anchors on hard standing; if no anchors: the top brackets take all (r0) - see landing rows"
+  },
+  {
+   "item": "Scaffold case: 2 x EN 74-1 class B right-angle couplers per jack on the steel axle",
+   "check": "Slip (F_s,k 15 kN / gamma_M 1.5 each)",
+   "Ed": 6.56,
+   "Rd": 20.0,
+   "unit": "kN",
+   "util": 0.33,
+   "status": "PASS",
+   "ref": "R78/R170",
+   "tag": "[C]",
+   "note": "one coupler each side of the fork within 100 mm; to a scaffold standard or ledger at axle level"
+  },
+  {
+   "item": "Scaffold case couplers",
+   "check": "Uplift (pull-apart) per jack vs 2 x 10 kN (supplier value to confirm)",
+   "Ed": 7.19,
+   "Rd": 20.0,
+   "unit": "kN",
+   "util": 0.36,
+   "status": "PASS",
+   "ref": "R150/R170",
+   "tag": "[E]",
+   "note": ""
+  },
+  {
+   "item": "Landing bracket bolts 4 x M12 8.8 (through-bolts, washers)",
+   "check": "Tension per bolt",
+   "Ed": 5.38,
+   "Rd": 48.56,
+   "unit": "kN",
+   "util": 0.11,
+   "status": "PASS",
+   "ref": "R170/R150",
+   "tag": "[C]",
+   "note": "ground | r0 | EQU 0.9G + barrier 5.0 kN/m -y TR"
+  },
+  {
+   "item": "Landing bracket bolts",
+   "check": "Shear per bolt",
+   "Ed": 3.51,
+   "Rd": 32.37,
+   "unit": "kN",
+   "util": 0.11,
+   "status": "PASS",
+   "ref": "R170",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Landing bracket bolts",
+   "check": "Combined F_v/F_v,Rd + F_t/(1.4 F_t,Rd)",
+   "Ed": 0.19,
+   "Rd": 1.0,
+   "unit": "-",
+   "util": 0.19,
+   "status": "PASS",
+   "ref": "EN 1993-1-8 Tab 3.4",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Landing bracket jaw 8 mm S355",
+   "check": "Bending, R/2 at 40 mm from the back plate weld (jaw 110 deep)",
+   "Ed": 22.69,
+   "Rd": 355.0,
+   "unit": "MPa",
+   "util": 0.06,
+   "status": "PASS",
+   "ref": "R170",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Landing bracket jaw-to-plate fillet welds a5 both sides",
+   "check": "Resultant stress (weld length 2 x 110 per jaw)",
+   "Ed": 32.56,
+   "Rd": 417.78,
+   "unit": "MPa",
+   "util": 0.08,
+   "status": "PASS",
+   "ref": "EN 1993-1-8",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Back plate 12 mm S355",
+   "check": "Bending between bolt rows (prying, bolt tension x 20 mm)",
+   "Ed": 56.08,
+   "Rd": 355.0,
+   "unit": "MPa",
+   "util": 0.16,
+   "status": "PASS",
+   "ref": "R170",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Old wing clamps (IFC)",
+   "check": "Not rated - not accepted for any anchor force",
+   "Ed": 1.0,
+   "Rd": 1.0,
+   "unit": "-",
+   "util": 1.0,
+   "status": "REPLACED",
+   "ref": "R78",
+   "tag": "[C]",
+   "note": "replace with bolts or EN 74 couplers"
+  },
+  {
+   "item": "Free-standing unit, no ties: barrier 5.0 kN/m (char)",
+   "check": "Overturning FoS = M_res / M_ov >= 1.5 (R149)",
+   "Ed": 1.5,
+   "Rd": 0.06,
+   "unit": "-",
+   "util": 26.8,
+   "status": "FAIL",
+   "ref": "R149/R181",
+   "tag": "[C]",
+   "note": "M_ov 12.58 kNm vs M_res 0.70 kNm (G at the centre line, 1.231 track) -> ties REQUIRED"
+  },
+  {
+   "item": "Free-standing unit, no ties: barrier 3.0 kN/m (char)",
+   "check": "Overturning FoS = M_res / M_ov >= 1.5 (R149)",
+   "Ed": 1.5,
+   "Rd": 0.09,
+   "unit": "-",
+   "util": 16.08,
+   "status": "FAIL",
+   "ref": "R149/R181",
+   "tag": "[C]",
+   "note": "M_ov 7.55 kNm vs M_res 0.70 kNm (G at the centre line, 1.231 track) -> ties REQUIRED"
+  },
+  {
+   "item": "Free-standing unit, no ties: storm wind (char)",
+   "check": "Overturning FoS = M_res / M_ov >= 1.5 (R149)",
+   "Ed": 1.5,
+   "Rd": 0.44,
+   "unit": "-",
+   "util": 3.44,
+   "status": "FAIL",
+   "ref": "R149/R181",
+   "tag": "[C]",
+   "note": "M_ov 1.61 kNm vs M_res 0.70 kNm (G at the centre line, 1.231 track) -> ties REQUIRED"
+  },
+  {
+   "item": "Free-standing unit, storm wind",
+   "check": "Sliding FoS mu 0.3 (R149)",
+   "Ed": 1.5,
+   "Rd": 0.05,
+   "unit": "-",
+   "util": 32.95,
+   "status": "FAIL",
+   "ref": "R149/R181",
+   "tag": "[C]",
+   "note": "-> top brackets bolted, base anchored or scaffold-clamped"
+  },
+  {
+   "item": "Tied unit, EQU 0.9G + 1.5W storm",
+   "check": "Top bracket hold-down, base anchored (r1)",
+   "Ed": 0.97,
+   "Rd": 194.23,
+   "unit": "kN",
+   "util": 0.01,
+   "status": "PASS",
+   "ref": "R181",
+   "tag": "[C]",
+   "note": ""
+  },
+  {
+   "item": "Rails in-plane (new support positions), conservative weakest-section envelope",
+   "check": "max |N|/A + |M|/W",
+   "Ed": 82.6,
+   "Rd": 227.3,
+   "unit": "MPa",
+   "util": 0.36,
+   "status": "PASS",
+   "ref": "R147",
+   "tag": "[C] frame_supports.py",
+   "note": "same formula on the rail agent's supports: 142.7 MPa (shorter span helps)"
+  }
+ ],
+ "masses_kg": {
+  "base axle 48.3x4 S355 x 1343 [C]": 5.87,
+  "top axle 48.3x4 6082-T6 x 1343 [C]": 2.02,
+  "inserts 4 x 6082-T6 D40x90 [C]": 1.22,
+  "collars 4 x 6082-T6 split OD70x25 [C]": 0.54,
+  "keeper pins 4 x D12x60 A4 + R-clips + bushes [E]": 0.27,
+  "rail hooks (net change in the lower rails) [C]": -0.14,
+  "unit subtotal (carried) [C/E]": 9.79,
+  "vs mass budget OPT: axles 4.4 + hooks 2.0 + collars ~1.0 + keeper pins 0.3 [mass_budget.md]": 7.7,
+  "jack each (site kit, steel) [C]": 9.64,
+  "landing bracket each (steel) [C]": 4.53
+ }
+}

@@ -1,0 +1,5 @@
+{"name": "V5 V2 + lip 2.0 bulb 14x3", "mass": 5.439, "u": 0.936, "u_6005A": 0.936, "u_eb": 0.513, "sls4": 5.36, "where_ext": "lip bulb | ULS 4 kN front, mid-span | (276.7, 617.5, -23.5)", "where_eb": "end plate | ULS 4 kN front, mid-span | (192.6, 1212.5, 25.5)"}
+{"name": "V6 V2 + box front 2.5 bot 2.0, lip bulb 12x3", "mass": 5.342, "u": 0.967, "u_6005A": 0.967, "u_eb": 0.493, "sls4": 5.51, "where_ext": "nosing top | ULS 4 kN front, mid-span | (277.0, 612.5, 49.0)", "where_eb": "end plate | ULS 4 kN front, mid-span | (192.6, 1212.5, 25.5)"}
+{"name": "V7 V2 + rib bulb 8x3, lip bulb 12x3", "mass": 5.432, "u": 0.944, "u_6005A": 0.944, "u_eb": 0.515, "sls4": 5.31, "where_ext": "nosing top | ULS 4 kN front, mid-span | (277.0, 613.0, 49.0)", "where_eb": "end plate | ULS 4 kN front, mid-span | (192.6, 1212.5, 25.5)"}
+{"name": "V8 V2 + open nosing (no bottom), lip bulb 12x3", "mass": 5.149, "u": 2.288, "u_6005A": 2.288, "u_eb": 0.649, "sls4": 7.58, "where_ext": "nosing top | ULS 4 kN front, mid-span | (226.3, 617.5, 49.0)", "where_eb": "end plate | ULS 4 kN front, mid-span | (192.6, 1212.5, 25.5)"}
+Process 0 Terminating

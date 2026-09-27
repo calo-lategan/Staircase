@@ -1,0 +1,6 @@
+{
+"V1 box 2/3/2.5/2.5 diag 2": {"tb": 2.0, "tb_front": 3.0, "tb_bot": 2.5, "tb_top": 2.5, "box_diag": 2.0, "bulb": [10.0, 3.0]},
+"V2 V1 no diagonal": {"tb": 2.0, "tb_front": 3.0, "tb_bot": 2.5, "tb_top": 2.5, "box_diag": 0.0, "bulb": [10.0, 3.0]},
+"V3 V1 ribs @60": {"tb": 2.0, "tb_front": 3.0, "tb_bot": 2.5, "tb_top": 2.5, "box_diag": 2.0, "bulb": [10.0, 3.0], "p_r": 60.0},
+"V4 V1 bulb 8, lip 2.0 + 8x3": {"tb": 2.0, "tb_front": 3.0, "tb_bot": 2.5, "tb_top": 2.5, "box_diag": 2.0, "bulb": [8.0, 3.0], "t_lip": 2.0, "lip_bulb": [8.0, 3.0]}
+}

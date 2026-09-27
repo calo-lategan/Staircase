@@ -1,0 +1,6 @@
+{
+"V9 box 2/2.5/2.0/2.5, ribs 2+8x3, lip 2.0+14x3, nosing top 2.5, slots 8": {"tb": 2.0, "tb_front": 2.5, "tb_bot": 2.0, "tb_top": 2.5, "box_diag": 0.0, "bulb": [8.0, 3.0], "t_lip": 2.0, "lip_bulb": [14.0, 3.0], "tn_top": 2.5, "ws": 8.0},
+"V10 V9 nosing top 2.0": {"tb": 2.0, "tb_front": 2.5, "tb_bot": 2.0, "tb_top": 2.5, "box_diag": 0.0, "bulb": [8.0, 3.0], "t_lip": 2.0, "lip_bulb": [14.0, 3.0], "tn_top": 2.0, "ws": 8.0},
+"V11 V9 box top 2.0": {"tb": 2.0, "tb_front": 2.5, "tb_bot": 2.0, "tb_top": 2.0, "box_diag": 0.0, "bulb": [8.0, 3.0], "t_lip": 2.0, "lip_bulb": [14.0, 3.0], "tn_top": 2.5, "ws": 8.0},
+"V12 V9 slots 10": {"tb": 2.0, "tb_front": 2.5, "tb_bot": 2.0, "tb_top": 2.5, "box_diag": 0.0, "bulb": [8.0, 3.0], "t_lip": 2.0, "lip_bulb": [14.0, 3.0], "tn_top": 2.5, "ws": 10.0}
+}

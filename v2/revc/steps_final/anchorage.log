@@ -1,0 +1,248 @@
+{
+ "loads_N": {
+  "front_cap": 41140,
+  "front_pad": 17640,
+  "front_pull": 27430,
+  "rear_cap": 17980,
+  "rear_pad": 9200,
+  "rear_pull": 9370,
+  "push_max": 17640,
+  "V": 8771,
+  "V_tip": 6746,
+  "front_pad_with_cap": 15020
+ },
+ "governing_case": "L | R142 5.0 kN/m viewing | outward",
+ "pin_bearing_edges": {
+  "front": {
+   "pin": [
+    225.0,
+    25.0
+   ],
+   "t": 16.0,
+   "V": 8771.0,
+   "bearing": 0.119,
+   "a_req": 12.76,
+   "a_min": 16.5,
+   "a_min_direction_deg": 90.0,
+   "util_a": 0.773,
+   "metal_above_hole": 16.5,
+   "note": "full resultant applied in every direction (conservative, as rail_design.md)"
+  },
+  "rear": {
+   "pin": [
+    25.0,
+    0.0
+   ],
+   "t": 16.0,
+   "V": 8771.0,
+   "bearing": 0.119,
+   "a_req": 12.76,
+   "a_min": 14.3,
+   "a_min_direction_deg": 217.5,
+   "util_a": 0.892,
+   "metal_above_hole": 41.5,
+   "note": "full resultant applied in every direction (conservative, as rail_design.md)"
+  },
+  "front_old_(225,37.5)": {
+   "a_min": 4.0,
+   "a_req_16mm": 12.76,
+   "util": 3.19
+  },
+  "rear_old_(25,12.5)": {
+   "a_min": 4.0,
+   "a_req_16mm": 12.76,
+   "util": 3.19
+  }
+ },
+ "stud": {
+  "tension": 0.56,
+  "shear_shank": 0.14,
+  "combined_EN1993_1_8": 0.615,
+  "note": "thread M16 only inside the end block and beyond the rail; plain D16 h9 shank through pad + pin leg. Bending: rail_design check 7/7a (0.39/0.53), lever unchanged.",
+  "thread strip front stud in EB (Le 15)": {
+   "A_shear": 660.0,
+   "FRd_kN": 71.9,
+   "util": 0.572,
+   "status": "[H] estimate; prototype pull test to 1.5 x 41 kN = 62 kN"
+  },
+  "thread strip rear stud in EB (Le 15)": {
+   "A_shear": 660.0,
+   "FRd_kN": 71.9,
+   "util": 0.25,
+   "status": "[H] estimate; prototype pull test to 1.5 x 41 kN = 62 kN"
+  }
+ },
+ "front_connection": {
+  "plug_to_nosing_3xM8_bearing": {
+   "rows": [
+    {
+     "y": 17.0,
+     "inner_wall_N": 4498.0,
+     "front_wall_N": 5138.0,
+     "alpha_b": 0.63,
+     "k1_inner": 2.189
+    },
+    {
+     "y": 50.0,
+     "inner_wall_N": 6946.0,
+     "front_wall_N": 7933.0,
+     "alpha_b": 0.972,
+     "k1_inner": 2.189
+    },
+    {
+     "y": 76.0,
+     "inner_wall_N": 5094.0,
+     "front_wall_N": 5818.0,
+     "alpha_b": 0.713,
+     "k1_inner": 2.189
+    }
+   ],
+   "FRd_kN": 35.4,
+   "F_kN": 27.43,
+   "util": 0.774
+  },
+  "M8_through_bolts_double_shear": 0.446,
+  "block_tearing_walls": {
+   "net_shear_length": 53.5,
+   "FRd_kN": 42.5,
+   "util": 0.645
+  },
+  "nosing_net_tension": {
+   "A_net": 423.0,
+   "sigma": 64.8,
+   "util": 0.353
+  }
+ },
+ "end_block_plate_fe": {
+  "front stud 41.1 kN + tab pad 15.0 kN, standard 35": {
+   "pad_centre": [
+    213.8,
+    9.0
+   ],
+   "vm_peak_outside_thread_and_screw_zones": 117.4,
+   "at": [
+    241.2,
+    46.2
+   ],
+   "t": 16.0,
+   "util": 0.538,
+   "vm_peak_incl_thread_ring": 182.2,
+   "at_all": [
+    238.8,
+    38.8
+   ],
+   "screw_tension_N": {
+    "(6.5, 6.5)": -25.0,
+    "(43.5, 6.5)": 175.0,
+    "(6.0, 44.0)": -42.0,
+    "(44.0, 44.0)": 219.0,
+    "(238.0, 37.5)": 28582.0,
+    "(264.0, 37.5)": 6049.0
+   },
+   "contact_compression_N": 8838.0,
+   "contact_nodes": 102,
+   "iterations": 11,
+   "equilibrium_N": 0.0
+  },
+  "rear stud 18.0 kN + tab pad 9.2 kN, standard 35": {
+   "pad_centre": [
+    36.2,
+    16.0
+   ],
+   "vm_peak_outside_thread_and_screw_zones": 112.9,
+   "at": [
+    48.8,
+    23.8
+   ],
+   "t": 16.0,
+   "util": 0.517,
+   "vm_peak_incl_thread_ring": 112.9,
+   "at_all": [
+    48.8,
+    23.8
+   ],
+   "screw_tension_N": {
+    "(6.5, 6.5)": 8571.0,
+    "(43.5, 6.5)": 5619.0,
+    "(6.0, 44.0)": -365.0,
+    "(44.0, 44.0)": -885.0,
+    "(238.0, 37.5)": 4.0,
+    "(264.0, 37.5)": 2.0
+   },
+   "contact_compression_N": 4165.0,
+   "contact_nodes": 131,
+   "iterations": 5,
+   "equilibrium_N": 1.0
+  },
+  "front stud 41.1 kN + tab pad 15.0 kN, catwalk 0": {
+   "pad_centre": [
+    225.0,
+    5.5
+   ],
+   "vm_peak_outside_thread_and_screw_zones": 174.3,
+   "at": [
+    241.2,
+    46.2
+   ],
+   "t": 16.0,
+   "util": 0.799,
+   "vm_peak_incl_thread_ring": 244.7,
+   "at_all": [
+    238.8,
+    38.8
+   ],
+   "screw_tension_N": {
+    "(6.5, 6.5)": -45.0,
+    "(43.5, 6.5)": 229.0,
+    "(6.0, 44.0)": -61.0,
+    "(44.0, 44.0)": 366.0,
+    "(238.0, 37.5)": 32738.0,
+    "(264.0, 37.5)": 3313.0
+   },
+   "contact_compression_N": 10422.0,
+   "contact_nodes": 122,
+   "iterations": 11,
+   "equilibrium_N": -2.0
+  },
+  "rear stud 18.0 kN + tab pad 9.2 kN, catwalk 0": {
+   "pad_centre": [
+    25.0,
+    19.5
+   ],
+   "vm_peak_outside_thread_and_screw_zones": 101.9,
+   "at": [
+    48.8,
+    23.8
+   ],
+   "t": 16.0,
+   "util": 0.467,
+   "vm_peak_incl_thread_ring": 101.9,
+   "at_all": [
+    48.8,
+    23.8
+   ],
+   "screw_tension_N": {
+    "(6.5, 6.5)": 7289.0,
+    "(43.5, 6.5)": 7481.0,
+    "(6.0, 44.0)": -895.0,
+    "(44.0, 44.0)": -672.0,
+    "(238.0, 37.5)": 8.0,
+    "(264.0, 37.5)": -6.0
+   },
+   "contact_compression_N": 4425.0,
+   "contact_nodes": 74,
+   "iterations": 6,
+   "equilibrium_N": -0.0
+  }
+ },
+ "screws_from_plate_fe": {
+  "M12_A4_80_plug_tension_max_N": 32738.0,
+  "M12_util_tension": 0.674,
+  "M12_combined_EN1993_1_8": 0.644,
+  "M12_in_plug_thread_strip_Le24": 0.379,
+  "box_lower_port_M10_A4_70_tension_max_N": 8571.0,
+  "M10_bolt_util": 0.293,
+  "box_port_pullout": "[J] screw-port pull-out, 6005A-T6, M10 at 20 mm engagement taken as 12 kN design -> util 0.71; prototype pull-out test required (>= 1.5 x 8.6 kN)"
+ }
+}
+Process 0 Terminating

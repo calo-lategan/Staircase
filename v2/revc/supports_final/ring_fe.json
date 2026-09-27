@@ -1,0 +1,1346 @@
+[
+ {
+  "ok": 0,
+  "util_plastic": 1.229,
+  "util_elastic": 1.826,
+  "at": {
+   "N": 1526.5,
+   "M": 50848.5,
+   "sigma_elastic": 648.3,
+   "angle": 112.5
+  },
+  "ovalisation_mm": -0.296,
+  "load": 11200.6,
+  "seat_arc": [
+   257.5,
+   325.0
+  ],
+  "iterations": 3,
+  "insert": false,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS crowd all + sway uphill | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 1.833,
+  "util_elastic": 2.722,
+  "at": {
+   "N": 1559.4,
+   "M": 50499.9,
+   "sigma_elastic": 966.4,
+   "angle": 112.5
+  },
+  "ovalisation_mm": -0.436,
+  "load": 11200.6,
+  "seat_arc": [
+   257.5,
+   325.0
+  ],
+  "iterations": 3,
+  "insert": false,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS crowd all + sway uphill | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.126,
+  "util_elastic": 0.186,
+  "at": {
+   "N": 195.1,
+   "M": -5154.7,
+   "sigma_elastic": 66.1,
+   "angle": 110.0
+  },
+  "ovalisation_mm": -0.015,
+  "load": 11200.6,
+  "seat_arc": [
+   257.5,
+   325.0
+  ],
+  "iterations": 2,
+  "insert": true,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS crowd all + sway uphill | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.145,
+  "util_elastic": 0.215,
+  "at": {
+   "N": 181.2,
+   "M": -3945.6,
+   "sigma_elastic": 76.2,
+   "angle": 110.0
+  },
+  "ovalisation_mm": -0.015,
+  "load": 11200.6,
+  "seat_arc": [
+   257.5,
+   325.0
+  ],
+  "iterations": 3,
+  "insert": true,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS crowd all + sway uphill | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 1.893,
+  "util_elastic": 2.811,
+  "at": {
+   "N": 1603.6,
+   "M": 50032.3,
+   "sigma_elastic": 638.8,
+   "angle": 112.5
+  },
+  "ovalisation_mm": -0.854,
+  "load": 11200.6,
+  "seat_arc": [
+   257.5,
+   325.0
+  ],
+  "iterations": 4,
+  "insert": false,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS crowd all + sway uphill | base held",
+  "material": "6082-T6",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 2.83,
+  "util_elastic": 4.2,
+  "at": {
+   "N": 1623.4,
+   "M": 49823.7,
+   "sigma_elastic": 954.5,
+   "angle": 112.5
+  },
+  "ovalisation_mm": -1.268,
+  "load": 11200.6,
+  "seat_arc": [
+   257.5,
+   325.0
+  ],
+  "iterations": 4,
+  "insert": false,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS crowd all + sway uphill | base held",
+  "material": "6082-T6",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.096,
+  "util_elastic": 0.141,
+  "at": {
+   "N": 143.7,
+   "M": -2463.7,
+   "sigma_elastic": 32.0,
+   "angle": 110.0
+  },
+  "ovalisation_mm": -0.016,
+  "load": 11200.6,
+  "seat_arc": [
+   257.5,
+   325.0
+  ],
+  "iterations": 3,
+  "insert": true,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS crowd all + sway uphill | base held",
+  "material": "6082-T6",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.108,
+  "util_elastic": 0.159,
+  "at": {
+   "N": -117.6,
+   "M": 1852.0,
+   "sigma_elastic": 36.2,
+   "angle": 112.5
+  },
+  "ovalisation_mm": -0.016,
+  "load": 11200.6,
+  "seat_arc": [
+   257.5,
+   325.0
+  ],
+  "iterations": 4,
+  "insert": true,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS crowd all + sway uphill | base held",
+  "material": "6082-T6",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.594,
+  "util_elastic": 0.884,
+  "at": {
+   "N": 551.4,
+   "M": 24739.7,
+   "sigma_elastic": 313.8,
+   "angle": 130.0
+  },
+  "ovalisation_mm": -0.035,
+  "load": 4867.3,
+  "seat_arc": [
+   277.5,
+   345.0
+  ],
+  "iterations": 3,
+  "insert": false,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS 4 kN patch front, at left end on tread 5, 0.9 G (EQU) | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.886,
+  "util_elastic": 1.319,
+  "at": {
+   "N": 565.8,
+   "M": 24586.4,
+   "sigma_elastic": 468.1,
+   "angle": 130.0
+  },
+  "ovalisation_mm": -0.052,
+  "load": 4867.3,
+  "seat_arc": [
+   277.5,
+   345.0
+  ],
+  "iterations": 3,
+  "insert": false,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS 4 kN patch front, at left end on tread 5, 0.9 G (EQU) | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.084,
+  "util_elastic": 0.124,
+  "at": {
+   "N": -168.7,
+   "M": 3399.7,
+   "sigma_elastic": 43.9,
+   "angle": 127.5
+  },
+  "ovalisation_mm": -0.0,
+  "load": 4867.3,
+  "seat_arc": [
+   277.5,
+   345.0
+  ],
+  "iterations": 3,
+  "insert": true,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS 4 kN patch front, at left end on tread 5, 0.9 G (EQU) | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.101,
+  "util_elastic": 0.15,
+  "at": {
+   "N": -153.5,
+   "M": 2728.5,
+   "sigma_elastic": 53.1,
+   "angle": 127.5
+  },
+  "ovalisation_mm": -0.0,
+  "load": 4867.3,
+  "seat_arc": [
+   277.5,
+   345.0
+  ],
+  "iterations": 3,
+  "insert": true,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS 4 kN patch front, at left end on tread 5, 0.9 G (EQU) | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.916,
+  "util_elastic": 1.363,
+  "at": {
+   "N": 585.0,
+   "M": 24384.0,
+   "sigma_elastic": 309.7,
+   "angle": 130.0
+  },
+  "ovalisation_mm": -0.104,
+  "load": 4867.3,
+  "seat_arc": [
+   277.5,
+   345.0
+  ],
+  "iterations": 4,
+  "insert": false,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS 4 kN patch front, at left end on tread 5, 0.9 G (EQU) | base held",
+  "material": "6082-T6",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 1.369,
+  "util_elastic": 2.037,
+  "at": {
+   "N": 593.9,
+   "M": 24290.4,
+   "sigma_elastic": 462.9,
+   "angle": 130.0
+  },
+  "ovalisation_mm": -0.156,
+  "load": 4867.3,
+  "seat_arc": [
+   277.5,
+   345.0
+  ],
+  "iterations": 4,
+  "insert": false,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS 4 kN patch front, at left end on tread 5, 0.9 G (EQU) | base held",
+  "material": "6082-T6",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.071,
+  "util_elastic": 0.105,
+  "at": {
+   "N": -119.0,
+   "M": 1830.8,
+   "sigma_elastic": 23.9,
+   "angle": 127.5
+  },
+  "ovalisation_mm": 0.001,
+  "load": 4867.3,
+  "seat_arc": [
+   277.5,
+   345.0
+  ],
+  "iterations": 3,
+  "insert": true,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS 4 kN patch front, at left end on tread 5, 0.9 G (EQU) | base held",
+  "material": "6082-T6",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.084,
+  "util_elastic": 0.123,
+  "at": {
+   "N": -97.9,
+   "M": 1423.8,
+   "sigma_elastic": 27.9,
+   "angle": 127.5
+  },
+  "ovalisation_mm": 0.001,
+  "load": 4867.3,
+  "seat_arc": [
+   277.5,
+   345.0
+  ],
+  "iterations": 4,
+  "insert": true,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS 4 kN patch front, at left end on tread 5, 0.9 G (EQU) | base held",
+  "material": "6082-T6",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.672,
+  "util_elastic": 1.001,
+  "at": {
+   "N": 651.8,
+   "M": 27995.3,
+   "sigma_elastic": 355.4,
+   "angle": 62.5
+  },
+  "ovalisation_mm": -0.119,
+  "load": 5594.4,
+  "seat_arc": [
+   210.0,
+   277.5
+  ],
+  "iterations": 3,
+  "insert": false,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS 4 kN patch front, at left end on tread 0, 0.9 G (EQU) | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 1.003,
+  "util_elastic": 1.493,
+  "at": {
+   "N": 668.4,
+   "M": 27819.5,
+   "sigma_elastic": 530.0,
+   "angle": 62.5
+  },
+  "ovalisation_mm": -0.176,
+  "load": 5594.4,
+  "seat_arc": [
+   210.0,
+   277.5
+  ],
+  "iterations": 3,
+  "insert": false,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS 4 kN patch front, at left end on tread 0, 0.9 G (EQU) | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.091,
+  "util_elastic": 0.135,
+  "at": {
+   "N": -179.6,
+   "M": 3716.4,
+   "sigma_elastic": 48.0,
+   "angle": 60.0
+  },
+  "ovalisation_mm": -0.005,
+  "load": 5594.4,
+  "seat_arc": [
+   210.0,
+   277.5
+  ],
+  "iterations": 3,
+  "insert": true,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS 4 kN patch front, at left end on tread 0, 0.9 G (EQU) | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.111,
+  "util_elastic": 0.163,
+  "at": {
+   "N": -164.6,
+   "M": 2980.7,
+   "sigma_elastic": 57.9,
+   "angle": 60.0
+  },
+  "ovalisation_mm": -0.005,
+  "load": 5594.4,
+  "seat_arc": [
+   210.0,
+   277.5
+  ],
+  "iterations": 3,
+  "insert": true,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS 4 kN patch front, at left end on tread 0, 0.9 G (EQU) | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 1.037,
+  "util_elastic": 1.543,
+  "at": {
+   "N": 690.4,
+   "M": 27586.8,
+   "sigma_elastic": 350.6,
+   "angle": 62.5
+  },
+  "ovalisation_mm": -0.344,
+  "load": 5594.4,
+  "seat_arc": [
+   210.0,
+   277.5
+  ],
+  "iterations": 4,
+  "insert": false,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS 4 kN patch front, at left end on tread 0, 0.9 G (EQU) | base held",
+  "material": "6082-T6",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 1.55,
+  "util_elastic": 2.306,
+  "at": {
+   "N": 700.6,
+   "M": 27479.6,
+   "sigma_elastic": 524.0,
+   "angle": 62.5
+  },
+  "ovalisation_mm": -0.511,
+  "load": 5594.4,
+  "seat_arc": [
+   210.0,
+   277.5
+  ],
+  "iterations": 4,
+  "insert": false,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS 4 kN patch front, at left end on tread 0, 0.9 G (EQU) | base held",
+  "material": "6082-T6",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.078,
+  "util_elastic": 0.115,
+  "at": {
+   "N": -128.7,
+   "M": 2009.2,
+   "sigma_elastic": 26.2,
+   "angle": 60.0
+  },
+  "ovalisation_mm": -0.005,
+  "load": 5594.4,
+  "seat_arc": [
+   210.0,
+   277.5
+  ],
+  "iterations": 3,
+  "insert": true,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS 4 kN patch front, at left end on tread 0, 0.9 G (EQU) | base held",
+  "material": "6082-T6",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.093,
+  "util_elastic": 0.136,
+  "at": {
+   "N": 107.2,
+   "M": -1576.1,
+   "sigma_elastic": 30.9,
+   "angle": 57.5
+  },
+  "ovalisation_mm": -0.005,
+  "load": 5594.4,
+  "seat_arc": [
+   210.0,
+   277.5
+  ],
+  "iterations": 3,
+  "insert": true,
+  "side": "L",
+  "end": "base",
+  "case": "L | ULS 4 kN patch front, at left end on tread 0, 0.9 G (EQU) | base held",
+  "material": "6082-T6",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 1.08,
+  "util_elastic": 1.615,
+  "at": {
+   "N": 315.4,
+   "M": 29147.9,
+   "sigma_elastic": 367.0,
+   "angle": 182.5
+  },
+  "ovalisation_mm": 0.558,
+  "load": 4898.5,
+  "seat_arc": [
+   180.0,
+   247.5
+  ],
+  "iterations": 5,
+  "insert": false,
+  "side": "L",
+  "end": "top",
+  "case": "L | ULS crowd all + sway uphill | base held",
+  "material": "6082-T6",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 1.63,
+  "util_elastic": 2.436,
+  "at": {
+   "N": -335.5,
+   "M": -29304.3,
+   "sigma_elastic": 553.6,
+   "angle": 177.5
+  },
+  "ovalisation_mm": 0.833,
+  "load": 4898.5,
+  "seat_arc": [
+   180.0,
+   247.5
+  ],
+  "iterations": 6,
+  "insert": false,
+  "side": "L",
+  "end": "top",
+  "case": "L | ULS crowd all + sway uphill | base held",
+  "material": "6082-T6",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.107,
+  "util_elastic": 0.157,
+  "at": {
+   "N": -187.3,
+   "M": 2721.4,
+   "sigma_elastic": 35.6,
+   "angle": 185.0
+  },
+  "ovalisation_mm": 0.006,
+  "load": 4898.5,
+  "seat_arc": [
+   180.0,
+   210.0
+  ],
+  "iterations": 5,
+  "insert": true,
+  "side": "L",
+  "end": "top",
+  "case": "L | ULS crowd all + sway uphill | base held",
+  "material": "6082-T6",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.133,
+  "util_elastic": 0.195,
+  "at": {
+   "N": 155.0,
+   "M": -2257.3,
+   "sigma_elastic": 44.3,
+   "angle": 182.5
+  },
+  "ovalisation_mm": 0.006,
+  "load": 4898.5,
+  "seat_arc": [
+   180.0,
+   210.0
+  ],
+  "iterations": 5,
+  "insert": true,
+  "side": "L",
+  "end": "top",
+  "case": "L | ULS crowd all + sway uphill | base held",
+  "material": "6082-T6",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 1.397,
+  "util_elastic": 2.078,
+  "at": {
+   "N": -1437.3,
+   "M": -58069.7,
+   "sigma_elastic": 737.8,
+   "angle": 110.0
+  },
+  "ovalisation_mm": -0.29,
+  "load": 11846.7,
+  "seat_arc": [
+   260.0,
+   327.5
+  ],
+  "iterations": 3,
+  "insert": false,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS crowd all + sway uphill | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 2.083,
+  "util_elastic": 3.099,
+  "at": {
+   "N": -1472.3,
+   "M": -57698.2,
+   "sigma_elastic": 1100.2,
+   "angle": 110.0
+  },
+  "ovalisation_mm": -0.428,
+  "load": 11846.7,
+  "seat_arc": [
+   260.0,
+   327.5
+  ],
+  "iterations": 3,
+  "insert": false,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS crowd all + sway uphill | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.179,
+  "util_elastic": 0.264,
+  "at": {
+   "N": -334.5,
+   "M": 7276.3,
+   "sigma_elastic": 93.7,
+   "angle": 112.5
+  },
+  "ovalisation_mm": -0.014,
+  "load": 11846.7,
+  "seat_arc": [
+   260.0,
+   327.5
+  ],
+  "iterations": 3,
+  "insert": true,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS crowd all + sway uphill | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.213,
+  "util_elastic": 0.315,
+  "at": {
+   "N": -304.8,
+   "M": 5758.3,
+   "sigma_elastic": 111.8,
+   "angle": 112.5
+  },
+  "ovalisation_mm": -0.014,
+  "load": 11846.7,
+  "seat_arc": [
+   260.0,
+   327.5
+  ],
+  "iterations": 3,
+  "insert": true,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS crowd all + sway uphill | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 2.153,
+  "util_elastic": 3.202,
+  "at": {
+   "N": -1518.9,
+   "M": -57204.9,
+   "sigma_elastic": 727.7,
+   "angle": 110.0
+  },
+  "ovalisation_mm": -0.838,
+  "load": 11846.7,
+  "seat_arc": [
+   260.0,
+   327.5
+  ],
+  "iterations": 4,
+  "insert": false,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS crowd all + sway uphill | base held",
+  "material": "6082-T6",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 3.219,
+  "util_elastic": 4.785,
+  "at": {
+   "N": -1540.3,
+   "M": -56979.5,
+   "sigma_elastic": 1087.6,
+   "angle": 110.0
+  },
+  "ovalisation_mm": -1.245,
+  "load": 11846.7,
+  "seat_arc": [
+   260.0,
+   327.5
+  ],
+  "iterations": 4,
+  "insert": false,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS crowd all + sway uphill | base held",
+  "material": "6082-T6",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.147,
+  "util_elastic": 0.217,
+  "at": {
+   "N": -236.3,
+   "M": 3785.1,
+   "sigma_elastic": 49.3,
+   "angle": 112.5
+  },
+  "ovalisation_mm": -0.014,
+  "load": 11846.7,
+  "seat_arc": [
+   260.0,
+   327.5
+  ],
+  "iterations": 4,
+  "insert": true,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS crowd all + sway uphill | base held",
+  "material": "6082-T6",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.171,
+  "util_elastic": 0.252,
+  "at": {
+   "N": -194.7,
+   "M": 2921.6,
+   "sigma_elastic": 57.2,
+   "angle": 112.5
+  },
+  "ovalisation_mm": -0.013,
+  "load": 11846.7,
+  "seat_arc": [
+   260.0,
+   327.5
+  ],
+  "iterations": 3,
+  "insert": true,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS crowd all + sway uphill | base held",
+  "material": "6082-T6",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.704,
+  "util_elastic": 1.049,
+  "at": {
+   "N": -609.5,
+   "M": -29380.1,
+   "sigma_elastic": 372.3,
+   "angle": 127.5
+  },
+  "ovalisation_mm": -0.022,
+  "load": 5619.9,
+  "seat_arc": [
+   277.5,
+   345.0
+  ],
+  "iterations": 3,
+  "insert": false,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS 4 kN patch front, at right end on tread 5, 0.9 G (EQU) | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 1.05,
+  "util_elastic": 1.565,
+  "at": {
+   "N": -626.2,
+   "M": -29202.8,
+   "sigma_elastic": 555.4,
+   "angle": 127.5
+  },
+  "ovalisation_mm": -0.033,
+  "load": 5619.9,
+  "seat_arc": [
+   277.5,
+   345.0
+  ],
+  "iterations": 3,
+  "insert": false,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS 4 kN patch front, at right end on tread 5, 0.9 G (EQU) | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.108,
+  "util_elastic": 0.16,
+  "at": {
+   "N": -222.1,
+   "M": 4398.6,
+   "sigma_elastic": 56.8,
+   "angle": 130.0
+  },
+  "ovalisation_mm": 0.0,
+  "load": 5619.9,
+  "seat_arc": [
+   277.5,
+   345.0
+  ],
+  "iterations": 3,
+  "insert": true,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS 4 kN patch front, at right end on tread 5, 0.9 G (EQU) | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.133,
+  "util_elastic": 0.196,
+  "at": {
+   "N": -201.8,
+   "M": 3578.5,
+   "sigma_elastic": 69.6,
+   "angle": 130.0
+  },
+  "ovalisation_mm": 0.001,
+  "load": 5619.9,
+  "seat_arc": [
+   277.5,
+   345.0
+  ],
+  "iterations": 3,
+  "insert": true,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS 4 kN patch front, at right end on tread 5, 0.9 G (EQU) | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 1.086,
+  "util_elastic": 1.617,
+  "at": {
+   "N": -648.2,
+   "M": -28969.4,
+   "sigma_elastic": 367.5,
+   "angle": 127.5
+  },
+  "ovalisation_mm": -0.067,
+  "load": 5619.9,
+  "seat_arc": [
+   277.5,
+   345.0
+  ],
+  "iterations": 4,
+  "insert": false,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS 4 kN patch front, at right end on tread 5, 0.9 G (EQU) | base held",
+  "material": "6082-T6",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 1.624,
+  "util_elastic": 2.417,
+  "at": {
+   "N": -658.6,
+   "M": -28860.6,
+   "sigma_elastic": 549.4,
+   "angle": 127.5
+  },
+  "ovalisation_mm": -0.1,
+  "load": 5619.9,
+  "seat_arc": [
+   277.5,
+   345.0
+  ],
+  "iterations": 4,
+  "insert": false,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS 4 kN patch front, at right end on tread 5, 0.9 G (EQU) | base held",
+  "material": "6082-T6",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.096,
+  "util_elastic": 0.141,
+  "at": {
+   "N": 158.3,
+   "M": -2464.7,
+   "sigma_elastic": 32.1,
+   "angle": 127.5
+  },
+  "ovalisation_mm": 0.002,
+  "load": 5619.9,
+  "seat_arc": [
+   277.5,
+   345.0
+  ],
+  "iterations": 3,
+  "insert": true,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS 4 kN patch front, at right end on tread 5, 0.9 G (EQU) | base held",
+  "material": "6082-T6",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.114,
+  "util_elastic": 0.168,
+  "at": {
+   "N": 132.1,
+   "M": -1948.5,
+   "sigma_elastic": 38.2,
+   "angle": 127.5
+  },
+  "ovalisation_mm": 0.002,
+  "load": 5619.9,
+  "seat_arc": [
+   277.5,
+   345.0
+  ],
+  "iterations": 4,
+  "insert": true,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS 4 kN patch front, at right end on tread 5, 0.9 G (EQU) | base held",
+  "material": "6082-T6",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.686,
+  "util_elastic": 1.021,
+  "at": {
+   "N": -608.3,
+   "M": -28603.5,
+   "sigma_elastic": 362.6,
+   "angle": 57.5
+  },
+  "ovalisation_mm": -0.108,
+  "load": 5530.3,
+  "seat_arc": [
+   207.5,
+   275.0
+  ],
+  "iterations": 3,
+  "insert": false,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS 4 kN patch front, at right end on tread 0, 0.9 G (EQU) | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 1.023,
+  "util_elastic": 1.524,
+  "at": {
+   "N": -624.8,
+   "M": -28429.3,
+   "sigma_elastic": 540.9,
+   "angle": 57.5
+  },
+  "ovalisation_mm": -0.16,
+  "load": 5530.3,
+  "seat_arc": [
+   207.5,
+   275.0
+  ],
+  "iterations": 3,
+  "insert": false,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS 4 kN patch front, at right end on tread 0, 0.9 G (EQU) | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.103,
+  "util_elastic": 0.153,
+  "at": {
+   "N": 207.6,
+   "M": -4197.4,
+   "sigma_elastic": 54.2,
+   "angle": 57.5
+  },
+  "ovalisation_mm": -0.005,
+  "load": 5530.3,
+  "seat_arc": [
+   207.5,
+   275.0
+  ],
+  "iterations": 3,
+  "insert": true,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS 4 kN patch front, at right end on tread 0, 0.9 G (EQU) | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.127,
+  "util_elastic": 0.187,
+  "at": {
+   "N": 189.8,
+   "M": -3408.2,
+   "sigma_elastic": 66.3,
+   "angle": 57.5
+  },
+  "ovalisation_mm": -0.004,
+  "load": 5530.3,
+  "seat_arc": [
+   207.5,
+   275.0
+  ],
+  "iterations": 3,
+  "insert": true,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS 4 kN patch front, at right end on tread 0, 0.9 G (EQU) | base held",
+  "material": "steel S355 (EN 10219)",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 1.058,
+  "util_elastic": 1.575,
+  "at": {
+   "N": -646.5,
+   "M": -28199.5,
+   "sigma_elastic": 357.9,
+   "angle": 57.5
+  },
+  "ovalisation_mm": -0.314,
+  "load": 5530.3,
+  "seat_arc": [
+   207.5,
+   275.0
+  ],
+  "iterations": 4,
+  "insert": false,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS 4 kN patch front, at right end on tread 0, 0.9 G (EQU) | base held",
+  "material": "6082-T6",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 1.581,
+  "util_elastic": 2.354,
+  "at": {
+   "N": -656.6,
+   "M": -28092.8,
+   "sigma_elastic": 534.9,
+   "angle": 57.5
+  },
+  "ovalisation_mm": -0.466,
+  "load": 5530.3,
+  "seat_arc": [
+   207.5,
+   275.0
+  ],
+  "iterations": 4,
+  "insert": false,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS 4 kN patch front, at right end on tread 0, 0.9 G (EQU) | base held",
+  "material": "6082-T6",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.092,
+  "util_elastic": 0.135,
+  "at": {
+   "N": 149.9,
+   "M": -2346.6,
+   "sigma_elastic": 30.6,
+   "angle": 57.5
+  },
+  "ovalisation_mm": -0.004,
+  "load": 5530.3,
+  "seat_arc": [
+   207.5,
+   275.0
+  ],
+  "iterations": 4,
+  "insert": true,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS 4 kN patch front, at right end on tread 0, 0.9 G (EQU) | base held",
+  "material": "6082-T6",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.109,
+  "util_elastic": 0.16,
+  "at": {
+   "N": 125.3,
+   "M": -1857.5,
+   "sigma_elastic": 36.4,
+   "angle": 57.5
+  },
+  "ovalisation_mm": -0.003,
+  "load": 5530.3,
+  "seat_arc": [
+   207.5,
+   275.0
+  ],
+  "iterations": 4,
+  "insert": true,
+  "side": "R",
+  "end": "base",
+  "case": "R | ULS 4 kN patch front, at right end on tread 0, 0.9 G (EQU) | base held",
+  "material": "6082-T6",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 1.407,
+  "util_elastic": 2.108,
+  "at": {
+   "N": -125.8,
+   "M": -38244.3,
+   "sigma_elastic": 479.1,
+   "angle": 177.5
+  },
+  "ovalisation_mm": 0.723,
+  "load": 5658.5,
+  "seat_arc": [
+   180.0,
+   185.0
+  ],
+  "iterations": 6,
+  "insert": false,
+  "side": "R",
+  "end": "top",
+  "case": "R | ULS crowd all + sway uphill | base held",
+  "material": "6082-T6",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 2.11,
+  "util_elastic": 3.162,
+  "at": {
+   "N": -125.8,
+   "M": -38244.5,
+   "sigma_elastic": 718.7,
+   "angle": 177.5
+  },
+  "ovalisation_mm": 1.084,
+  "load": 5658.5,
+  "seat_arc": [
+   180.0,
+   185.0
+  ],
+  "iterations": 7,
+  "insert": false,
+  "side": "R",
+  "end": "top",
+  "case": "R | ULS crowd all + sway uphill | base held",
+  "material": "6082-T6",
+  "L_eff": 20.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.254,
+  "util_elastic": 0.375,
+  "at": {
+   "N": -367.0,
+   "M": 6571.9,
+   "sigma_elastic": 85.2,
+   "angle": 180.0
+  },
+  "ovalisation_mm": 0.007,
+  "load": 5658.5,
+  "seat_arc": [
+   180.0,
+   185.0
+  ],
+  "iterations": 7,
+  "insert": true,
+  "side": "R",
+  "end": "top",
+  "case": "R | ULS crowd all + sway uphill | base held",
+  "material": "6082-T6",
+  "L_eff": 30.0
+ },
+ {
+  "ok": 0,
+  "util_plastic": 0.344,
+  "util_elastic": 0.506,
+  "at": {
+   "N": -325.9,
+   "M": 5920.1,
+   "sigma_elastic": 115.1,
+   "angle": 180.0
+  },
+  "ovalisation_mm": 0.006,
+  "load": 5658.5,
+  "seat_arc": [
+   180.0,
+   185.0
+  ],
+  "iterations": 7,
+  "insert": true,
+  "side": "R",
+  "end": "top",
+  "case": "R | ULS crowd all + sway uphill | base held",
+  "material": "6082-T6",
+  "L_eff": 20.0
+ }
+]

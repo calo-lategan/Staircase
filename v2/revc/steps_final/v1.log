@@ -1,0 +1,5 @@
+{"name": "V1 box 2/3/2.5/2.5 diag 2", "mass": 5.82, "u": 0.927, "u_6005A": 0.927, "u_eb": 0.513, "sls4": 5.32, "where_ext": "lip bulb | ULS 4 kN front, mid-span | (276.5, 612.5, -23.5)", "where_eb": "end plate | ULS 4 kN front, mid-span | (192.6, 1212.5, 25.5)"}
+{"name": "V2 V1 no diagonal", "mass": 5.478, "u": 0.958, "u_6005A": 0.958, "u_eb": 0.524, "sls4": 5.47, "where_ext": "lip bulb | ULS 4 kN front, mid-span | (276.5, 617.5, -23.5)", "where_eb": "end plate | ULS 4 kN front, mid-span | (192.6, 1212.5, 25.5)"}
+{"name": "V3 V1 ribs @60", "mass": 5.585, "u": 1.056, "u_6005A": 1.056, "u_eb": 0.568, "sls4": 5.42, "where_ext": "skin | ULS 4 kN back, mid-span | (111.2, 645.0, 49.0)", "where_eb": "end plate | ULS 4 kN front, mid-span | (192.6, 17.5, 25.5)"}
+{"name": "V4 V1 bulb 8, lip 2.0 + 8x3", "mass": 5.653, "u": 1.067, "u_6005A": 1.067, "u_eb": 0.554, "sls4": 5.76, "where_ext": "lip bulb | ULS 4 kN front, mid-span | (277.0, 617.0, -23.5)", "where_eb": "end plate | ULS 4 kN front, mid-span | (192.6, 17.5, 25.5)"}
+Process 0 Terminating

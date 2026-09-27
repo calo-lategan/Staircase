@@ -1,0 +1,206 @@
+{
+ "V9 box 2/2.5/2.0/2.5, ribs 2+8x3, lip 2.0+14x3, nosing top 2.5, slots 8": {
+  "name": "V9 box 2/2.5/2.0/2.5, ribs 2+8x3, lip 2.0+14x3, nosing top 2.5, slots 8",
+  "over": {
+   "tb": 2.0,
+   "tb_front": 2.5,
+   "tb_bot": 2.0,
+   "tb_top": 2.5,
+   "box_diag": 0.0,
+   "bulb": [
+    8.0,
+    3.0
+   ],
+   "t_lip": 2.0,
+   "lip_bulb": [
+    14.0,
+    3.0
+   ],
+   "tn_top": 2.5,
+   "ws": 8.0
+  },
+  "vm_ext": 185.5,
+  "where_ext": "lip bulb | ULS 4 kN front, mid-span | (276.7, 617.0, -23.5)",
+  "u_6005A": 0.949,
+  "u_6082": 0.816,
+  "vm_eb": 101.2,
+  "where_eb": "end plate | ULS 4 kN front, mid-span | (192.6, 1212.5, 25.5)",
+  "u_eb": 0.464,
+  "sls4": 5.25,
+  "u_sls4": 0.432,
+  "mass": 5.376,
+  "open": 0.1573,
+  "parts": {
+   "box rear wall": 0.31,
+   "box front wall": 0.387,
+   "box bottom": 0.31,
+   "box top": 0.387,
+   "nosing front wall": 0.148,
+   "lip": 0.319,
+   "lip bulb": 0.136,
+   "nosing inner wall": 0.148,
+   "nosing bottom": 0.348,
+   "nosing top": 0.436,
+   "skin": 0.852,
+   "rib web": 0.492,
+   "end plate": 0.524,
+   "end plate lug": 0.317,
+   "rib bottom flange": 0.262
+  },
+  "u": 0.949,
+  "sec": 501
+ },
+ "V10 V9 nosing top 2.0": {
+  "name": "V10 V9 nosing top 2.0",
+  "over": {
+   "tb": 2.0,
+   "tb_front": 2.5,
+   "tb_bot": 2.0,
+   "tb_top": 2.5,
+   "box_diag": 0.0,
+   "bulb": [
+    8.0,
+    3.0
+   ],
+   "t_lip": 2.0,
+   "lip_bulb": [
+    14.0,
+    3.0
+   ],
+   "tn_top": 2.0,
+   "ws": 8.0
+  },
+  "vm_ext": 188.0,
+  "where_ext": "lip bulb | ULS 4 kN front, mid-span | (276.7, 617.0, -23.5)",
+  "u_6005A": 0.962,
+  "u_6082": 0.827,
+  "vm_eb": 104.9,
+  "where_eb": "end plate | ULS 4 kN front, mid-span | (192.6, 1212.5, 25.5)",
+  "u_eb": 0.481,
+  "sls4": 5.51,
+  "u_sls4": 0.454,
+  "mass": 5.289,
+  "open": 0.1573,
+  "parts": {
+   "box rear wall": 0.31,
+   "box front wall": 0.387,
+   "box bottom": 0.31,
+   "box top": 0.387,
+   "nosing front wall": 0.148,
+   "lip": 0.319,
+   "lip bulb": 0.136,
+   "nosing inner wall": 0.148,
+   "nosing bottom": 0.348,
+   "nosing top": 0.348,
+   "skin": 0.852,
+   "rib web": 0.492,
+   "end plate": 0.524,
+   "end plate lug": 0.317,
+   "rib bottom flange": 0.262
+  },
+  "u": 0.962,
+  "sec": 511
+ },
+ "V11 V9 box top 2.0": {
+  "name": "V11 V9 box top 2.0",
+  "over": {
+   "tb": 2.0,
+   "tb_front": 2.5,
+   "tb_bot": 2.0,
+   "tb_top": 2.0,
+   "box_diag": 0.0,
+   "bulb": [
+    8.0,
+    3.0
+   ],
+   "t_lip": 2.0,
+   "lip_bulb": [
+    14.0,
+    3.0
+   ],
+   "tn_top": 2.5,
+   "ws": 8.0
+  },
+  "vm_ext": 195.7,
+  "where_ext": "skin | ULS 4 kN back, mid-span | (55.5, 598.0, 49.0)",
+  "u_6005A": 1.001,
+  "u_6082": 0.861,
+  "vm_eb": 97.8,
+  "where_eb": "end plate | ULS 4 kN front, mid-span | (192.6, 1212.5, 25.5)",
+  "u_eb": 0.448,
+  "sls4": 5.32,
+  "u_sls4": 0.438,
+  "mass": 5.299,
+  "open": 0.1573,
+  "parts": {
+   "box rear wall": 0.31,
+   "box front wall": 0.387,
+   "box bottom": 0.31,
+   "box top": 0.31,
+   "nosing front wall": 0.148,
+   "lip": 0.319,
+   "lip bulb": 0.136,
+   "nosing inner wall": 0.148,
+   "nosing bottom": 0.348,
+   "nosing top": 0.436,
+   "skin": 0.852,
+   "rib web": 0.492,
+   "end plate": 0.524,
+   "end plate lug": 0.317,
+   "rib bottom flange": 0.262
+  },
+  "u": 1.001,
+  "sec": 504
+ },
+ "V12 V9 slots 10": {
+  "name": "V12 V9 slots 10",
+  "over": {
+   "tb": 2.0,
+   "tb_front": 2.5,
+   "tb_bot": 2.0,
+   "tb_top": 2.5,
+   "box_diag": 0.0,
+   "bulb": [
+    8.0,
+    3.0
+   ],
+   "t_lip": 2.0,
+   "lip_bulb": [
+    14.0,
+    3.0
+   ],
+   "tn_top": 2.5,
+   "ws": 10.0
+  },
+  "vm_ext": 187.1,
+  "where_ext": "lip bulb | ULS 4 kN front, mid-span | (276.7, 613.0, -23.5)",
+  "u_6005A": 0.957,
+  "u_6082": 0.823,
+  "vm_eb": 105.5,
+  "where_eb": "end plate | ULS 4 kN front, mid-span | (192.6, 1212.5, 25.5)",
+  "u_eb": 0.484,
+  "sls4": 5.3,
+  "u_sls4": 0.436,
+  "mass": 5.305,
+  "open": 0.1966,
+  "parts": {
+   "box rear wall": 0.31,
+   "box front wall": 0.387,
+   "box bottom": 0.31,
+   "box top": 0.387,
+   "nosing front wall": 0.148,
+   "lip": 0.319,
+   "lip bulb": 0.136,
+   "nosing inner wall": 0.148,
+   "nosing bottom": 0.348,
+   "nosing top": 0.436,
+   "skin": 0.781,
+   "rib web": 0.492,
+   "end plate": 0.524,
+   "end plate lug": 0.317,
+   "rib bottom flange": 0.262
+  },
+  "u": 0.957,
+  "sec": 498
+ }
+}

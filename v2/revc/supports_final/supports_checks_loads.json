@@ -1,0 +1,17 @@
+{
+ "keeper_design": {
+  "base": [
+   0.0,
+   -7193.0
+  ],
+  "top": [
+   0.0,
+   -7653.0
+  ],
+  "top_pull": [
+   -2636.5,
+   1130.7
+  ]
+ },
+ "note": "force ON THE RAIL from the keeper pin (global x, z), N; base/top = EQU uplift with r = 1 (base anchored)"
+}

@@ -1,0 +1,6 @@
+{
+"V5 V2 + lip 2.0 bulb 14x3": {"tb": 2.0, "tb_front": 3.0, "tb_bot": 2.5, "tb_top": 2.5, "box_diag": 0.0, "bulb": [10.0, 3.0], "t_lip": 2.0, "lip_bulb": [14.0, 3.0]},
+"V6 V2 + box front 2.5 bot 2.0, lip bulb 12x3": {"tb": 2.0, "tb_front": 2.5, "tb_bot": 2.0, "tb_top": 2.5, "box_diag": 0.0, "bulb": [10.0, 3.0], "lip_bulb": [12.0, 3.0]},
+"V7 V2 + rib bulb 8x3, lip bulb 12x3": {"tb": 2.0, "tb_front": 3.0, "tb_bot": 2.5, "tb_top": 2.5, "box_diag": 0.0, "bulb": [8.0, 3.0], "lip_bulb": [12.0, 3.0]},
+"V8 V2 + open nosing (no bottom), lip bulb 12x3": {"tb": 2.0, "tb_front": 3.0, "tb_bot": 2.5, "tb_top": 2.5, "box_diag": 0.0, "bulb": [10.0, 3.0], "lip_bulb": [12.0, 3.0], "nose_type": "C"}
+}
