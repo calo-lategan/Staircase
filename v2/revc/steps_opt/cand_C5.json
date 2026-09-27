@@ -1,0 +1,1582 @@
+{
+ "name": "C5 owner option: 30 mm nosing lip, lighter box",
+ "D": {
+  "slot_dir": "x",
+  "rib_through_box": true,
+  "ws": 10.0,
+  "wsol": 8.0,
+  "Ls": 40.0,
+  "Lbx": 10.0,
+  "b_r": 12.0,
+  "tb": 2.5,
+  "tb_bot": 2.5,
+  "tb_top": 2.5,
+  "ts": 2.0,
+  "tn": 2.0,
+  "tn_bot": 2.0,
+  "tn_top": 2.0,
+  "nose_type": "box",
+  "p_r": 50.0,
+  "tr": 2.0,
+  "bulb": [
+   8.0,
+   3.0
+  ],
+  "t_cap": 6.0,
+  "lip": 30.0
+ },
+ "cases": {
+  "ULS 4 kN front, mid-span": {
+   "label": "ULS 4 kN front, mid-span",
+   "ok": 0,
+   "n_nodes": 33059,
+   "n_elems": 32530,
+   "eq": [
+    6066.3,
+    6066.3
+   ],
+   "uz_min": -14.040365508365507,
+   "front_mid": -14.03651493666205,
+   "back_mid": -9.74793711003707,
+   "twist_deg": 0.8774935641247928,
+   "by_part": {
+    "box rear wall (within 30 of end plate)": [
+     22.1,
+     1.2,
+     1191.0,
+     6.9
+    ],
+    "box rear wall": [
+     151.7,
+     1.2,
+     613.0,
+     3.1
+    ],
+    "box front wall (within 30 of end plate)": [
+     64.6,
+     48.8,
+     1208.2,
+     6.9
+    ],
+    "box front wall": [
+     164.8,
+     48.8,
+     613.0,
+     26.2
+    ],
+    "box bottom (within 30 of end plate)": [
+     72.4,
+     46.4,
+     1208.2,
+     1.2
+    ],
+    "box bottom": [
+     159.8,
+     3.6,
+     617.0,
+     1.2
+    ],
+    "box top (within 30 of end plate)": [
+     51.8,
+     46.4,
+     1208.2,
+     49.0
+    ],
+    "box top": [
+     156.9,
+     46.4,
+     613.0,
+     49.0
+    ],
+    "nosing front wall (within 30 of end plate)": [
+     39.8,
+     279.0,
+     1191.0,
+     43.2
+    ],
+    "nosing front wall": [
+     287.5,
+     279.0,
+     617.0,
+     -2.5
+    ],
+    "nosing inner wall (within 30 of end plate)": [
+     46.8,
+     225.0,
+     1208.2,
+     43.2
+    ],
+    "nosing inner wall": [
+     158.6,
+     225.0,
+     613.0,
+     26.2
+    ],
+    "nosing bottom (within 30 of end plate)": [
+     28.7,
+     227.5,
+     1199.6,
+     26.0
+    ],
+    "nosing bottom": [
+     121.5,
+     227.5,
+     622.5,
+     26.0
+    ],
+    "nosing top (within 30 of end plate)": [
+     35.7,
+     227.5,
+     1208.2,
+     49.0
+    ],
+    "nosing top": [
+     176.3,
+     276.5,
+     613.0,
+     49.0
+    ],
+    "skin (within 30 of end plate)": [
+     57.3,
+     101.3,
+     39.0,
+     49.0
+    ],
+    "skin": [
+     186.1,
+     220.5,
+     599.0,
+     49.0
+    ],
+    "rib web": [
+     66.4,
+     50.6,
+     565.0,
+     47.1
+    ],
+    "rib diaphragm in box": [
+     132.2,
+     46.4,
+     615.0,
+     26.2
+    ],
+    "end plate": [
+     106.0,
+     50.6,
+     1212.5,
+     0.6
+    ],
+    "end plate (pin zone, rigid-link peak)": [
+     90.8,
+     232.4,
+     1212.5,
+     32.0
+    ],
+    "rib bottom flange": [
+     112.5,
+     50.6,
+     613.0,
+     26.5
+    ]
+   },
+   "pins": {
+    "L_rear": [
+     1822.4,
+     -0.0,
+     779.9
+    ],
+    "L_front": [
+     -1822.4,
+     0.0,
+     2271.3
+    ],
+    "R_rear": [
+     890.6,
+     0.0,
+     693.4
+    ],
+    "R_front": [
+     -890.6,
+     0.0,
+     2321.6
+    ]
+   },
+   "mass_model_kg": 5.003069624999838,
+   "mass_parts": {
+    "box rear wall": 0.385,
+    "box front wall": 0.385,
+    "box bottom": 0.383,
+    "box top": 0.383,
+    "nosing front wall": 0.348,
+    "nosing inner wall": 0.148,
+    "nosing bottom": 0.348,
+    "nosing top": 0.348,
+    "skin": 0.782,
+    "rib web": 0.493,
+    "rib diaphragm in box": 0.282,
+    "end plate": 0.454,
+    "rib bottom flange": 0.263
+   },
+   "open_area": 0.19659294680215184,
+   "sec": 40.2
+  },
+  "ULS 4 kN centre, mid-span": {
+   "label": "ULS 4 kN centre, mid-span",
+   "ok": 0,
+   "n_nodes": 33059,
+   "n_elems": 32530,
+   "eq": [
+    6066.3,
+    6066.3
+   ],
+   "uz_min": -12.689445394620861,
+   "front_mid": -12.43686441621479,
+   "back_mid": -10.452795852173281,
+   "twist_deg": 0.40598875859672595,
+   "by_part": {
+    "box rear wall (within 30 of end plate)": [
+     11.1,
+     1.2,
+     1191.0,
+     3.1
+    ],
+    "box rear wall": [
+     157.6,
+     1.2,
+     617.0,
+     3.1
+    ],
+    "box front wall (within 30 of end plate)": [
+     41.4,
+     48.8,
+     1208.2,
+     6.9
+    ],
+    "box front wall": [
+     143.8,
+     48.8,
+     617.0,
+     3.1
+    ],
+    "box bottom (within 30 of end plate)": [
+     40.4,
+     46.4,
+     1208.2,
+     1.2
+    ],
+    "box bottom": [
+     167.3,
+     3.6,
+     617.0,
+     1.2
+    ],
+    "box top (within 30 of end plate)": [
+     32.7,
+     46.4,
+     1208.2,
+     49.0
+    ],
+    "box top": [
+     153.4,
+     46.4,
+     613.0,
+     49.0
+    ],
+    "nosing front wall (within 30 of end plate)": [
+     24.6,
+     279.0,
+     1191.0,
+     35.7
+    ],
+    "nosing front wall": [
+     247.0,
+     279.0,
+     617.0,
+     -2.5
+    ],
+    "nosing inner wall (within 30 of end plate)": [
+     34.0,
+     225.0,
+     1208.2,
+     28.3
+    ],
+    "nosing inner wall": [
+     146.1,
+     225.0,
+     617.0,
+     26.2
+    ],
+    "nosing bottom (within 30 of end plate)": [
+     19.9,
+     232.4,
+     1208.2,
+     26.0
+    ],
+    "nosing bottom": [
+     120.4,
+     227.5,
+     613.0,
+     26.0
+    ],
+    "nosing top (within 30 of end plate)": [
+     23.7,
+     227.5,
+     1208.2,
+     49.0
+    ],
+    "nosing top": [
+     151.8,
+     227.5,
+     617.0,
+     49.0
+    ],
+    "skin (within 30 of end plate)": [
+     49.3,
+     101.3,
+     1191.0,
+     49.0
+    ],
+    "skin": [
+     188.9,
+     106.2,
+     699.0,
+     49.0
+    ],
+    "rib web": [
+     57.5,
+     50.6,
+     565.0,
+     47.1
+    ],
+    "rib diaphragm in box": [
+     87.5,
+     46.4,
+     615.0,
+     26.2
+    ],
+    "end plate": [
+     62.4,
+     50.6,
+     1212.5,
+     0.6
+    ],
+    "end plate (pin zone, rigid-link peak)": [
+     83.0,
+     32.1,
+     1212.5,
+     18.8
+    ],
+    "rib bottom flange": [
+     87.6,
+     223.5,
+     713.0,
+     26.5
+    ]
+   },
+   "pins": {
+    "L_rear": [
+     1123.6,
+     -0.0,
+     1416.1
+    ],
+    "L_front": [
+     -1123.6,
+     0.0,
+     1635.1
+    ],
+    "R_rear": [
+     543.7,
+     0.0,
+     1345.6
+    ],
+    "R_front": [
+     -543.7,
+     0.0,
+     1669.5
+    ]
+   },
+   "mass_model_kg": 5.003069624999838,
+   "mass_parts": {
+    "box rear wall": 0.385,
+    "box front wall": 0.385,
+    "box bottom": 0.383,
+    "box top": 0.383,
+    "nosing front wall": 0.348,
+    "nosing inner wall": 0.148,
+    "nosing bottom": 0.348,
+    "nosing top": 0.348,
+    "skin": 0.782,
+    "rib web": 0.493,
+    "rib diaphragm in box": 0.282,
+    "end plate": 0.454,
+    "rib bottom flange": 0.263
+   },
+   "open_area": 0.19659294680215184,
+   "sec": 40.2
+  },
+  "ULS 4 kN back, mid-span": {
+   "label": "ULS 4 kN back, mid-span",
+   "ok": 0,
+   "n_nodes": 33059,
+   "n_elems": 32530,
+   "eq": [
+    6066.3,
+    6066.3
+   ],
+   "uz_min": -11.554530111855264,
+   "front_mid": -10.954432270894472,
+   "back_mid": -11.18944318143898,
+   "twist_deg": -0.04808975054221078,
+   "by_part": {
+    "box rear wall (within 30 of end plate)": [
+     23.2,
+     1.2,
+     1208.2,
+     32.0
+    ],
+    "box rear wall": [
+     162.2,
+     1.2,
+     617.0,
+     3.1
+    ],
+    "box front wall (within 30 of end plate)": [
+     27.0,
+     48.8,
+     1208.2,
+     32.0
+    ],
+    "box front wall": [
+     162.0,
+     48.8,
+     613.0,
+     3.1
+    ],
+    "box bottom (within 30 of end plate)": [
+     29.3,
+     27.4,
+     1208.2,
+     1.2
+    ],
+    "box bottom": [
+     173.7,
+     3.6,
+     613.0,
+     1.2
+    ],
+    "box top (within 30 of end plate)": [
+     19.3,
+     22.6,
+     1208.2,
+     49.0
+    ],
+    "box top": [
+     147.0,
+     3.6,
+     617.0,
+     49.0
+    ],
+    "nosing front wall (within 30 of end plate)": [
+     16.7,
+     279.0,
+     1191.0,
+     25.5
+    ],
+    "nosing front wall": [
+     215.4,
+     279.0,
+     613.0,
+     -2.5
+    ],
+    "nosing inner wall (within 30 of end plate)": [
+     27.0,
+     225.0,
+     1208.2,
+     28.3
+    ],
+    "nosing inner wall": [
+     103.1,
+     225.0,
+     640.0,
+     47.1
+    ],
+    "nosing bottom (within 30 of end plate)": [
+     20.9,
+     227.5,
+     1199.6,
+     26.0
+    ],
+    "nosing bottom": [
+     80.7,
+     227.5,
+     613.0,
+     26.0
+    ],
+    "nosing top (within 30 of end plate)": [
+     19.0,
+     232.4,
+     1208.2,
+     49.0
+    ],
+    "nosing top": [
+     120.4,
+     227.5,
+     617.0,
+     49.0
+    ],
+    "skin (within 30 of end plate)": [
+     40.8,
+     101.3,
+     1191.0,
+     49.0
+    ],
+    "skin": [
+     187.7,
+     106.2,
+     699.0,
+     49.0
+    ],
+    "rib web": [
+     45.6,
+     50.6,
+     665.0,
+     47.1
+    ],
+    "rib diaphragm in box": [
+     50.5,
+     3.6,
+     615.0,
+     3.1
+    ],
+    "end plate": [
+     21.0,
+     8.4,
+     1212.5,
+     39.4
+    ],
+    "end plate (pin zone, rigid-link peak)": [
+     99.1,
+     32.1,
+     1212.5,
+     18.8
+    ],
+    "rib bottom flange": [
+     59.1,
+     223.5,
+     713.0,
+     26.5
+    ]
+   },
+   "pins": {
+    "L_rear": [
+     393.5,
+     -0.0,
+     2073.8
+    ],
+    "L_front": [
+     -393.5,
+     0.0,
+     977.4
+    ],
+    "R_rear": [
+     188.2,
+     0.0,
+     2021.1
+    ],
+    "R_front": [
+     -188.2,
+     0.0,
+     994.0
+    ]
+   },
+   "mass_model_kg": 5.003069624999838,
+   "mass_parts": {
+    "box rear wall": 0.385,
+    "box front wall": 0.385,
+    "box bottom": 0.383,
+    "box top": 0.383,
+    "nosing front wall": 0.348,
+    "nosing inner wall": 0.148,
+    "nosing bottom": 0.348,
+    "nosing top": 0.348,
+    "skin": 0.782,
+    "rib web": 0.493,
+    "rib diaphragm in box": 0.282,
+    "end plate": 0.454,
+    "rib bottom flange": 0.263
+   },
+   "open_area": 0.19659294680215184,
+   "sec": 40.4
+  },
+  "ULS 4 kN front, at the end": {
+   "label": "ULS 4 kN front, at the end",
+   "ok": 0,
+   "n_nodes": 33059,
+   "n_elems": 32530,
+   "eq": [
+    6066.3,
+    6066.3
+   ],
+   "uz_min": -3.784792799205855,
+   "front_mid": -3.6275164229113606,
+   "back_mid": -2.5550737445133342,
+   "twist_deg": 0.2194504956074479,
+   "by_part": {
+    "box rear wall (within 30 of end plate)": [
+     20.0,
+     1.2,
+     39.0,
+     3.1
+    ],
+    "box rear wall": [
+     46.9,
+     1.2,
+     213.0,
+     3.1
+    ],
+    "box front wall (within 30 of end plate)": [
+     60.6,
+     48.8,
+     21.8,
+     6.9
+    ],
+    "box front wall": [
+     115.3,
+     48.8,
+     163.0,
+     26.2
+    ],
+    "box bottom (within 30 of end plate)": [
+     63.1,
+     46.4,
+     21.8,
+     1.2
+    ],
+    "box bottom": [
+     48.4,
+     3.6,
+     213.0,
+     1.2
+    ],
+    "box top (within 30 of end plate)": [
+     38.8,
+     46.4,
+     21.8,
+     49.0
+    ],
+    "box top": [
+     61.2,
+     46.4,
+     163.0,
+     49.0
+    ],
+    "nosing front wall (within 30 of end plate)": [
+     48.2,
+     279.0,
+     39.0,
+     47.1
+    ],
+    "nosing front wall": [
+     108.2,
+     279.0,
+     190.0,
+     -2.5
+    ],
+    "nosing inner wall (within 30 of end plate)": [
+     78.9,
+     225.0,
+     21.8,
+     28.3
+    ],
+    "nosing inner wall": [
+     109.7,
+     225.0,
+     167.0,
+     26.2
+    ],
+    "nosing bottom (within 30 of end plate)": [
+     45.9,
+     227.5,
+     39.0,
+     26.0
+    ],
+    "nosing bottom": [
+     94.9,
+     227.5,
+     167.0,
+     26.0
+    ],
+    "nosing top (within 30 of end plate)": [
+     49.2,
+     227.5,
+     30.4,
+     49.0
+    ],
+    "nosing top": [
+     103.1,
+     276.5,
+     167.0,
+     49.0
+    ],
+    "skin (within 30 of end plate)": [
+     71.2,
+     173.7,
+     39.0,
+     49.0
+    ],
+    "skin": [
+     102.3,
+     163.8,
+     190.0,
+     49.0
+    ],
+    "rib web": [
+     45.7,
+     50.6,
+     165.0,
+     28.3
+    ],
+    "rib diaphragm in box": [
+     87.2,
+     46.4,
+     165.0,
+     26.2
+    ],
+    "end plate": [
+     94.2,
+     50.6,
+     17.5,
+     0.6
+    ],
+    "end plate (pin zone, rigid-link peak)": [
+     125.2,
+     232.4,
+     17.5,
+     32.0
+    ],
+    "rib bottom flange": [
+     80.5,
+     50.6,
+     163.0,
+     26.5
+    ]
+   },
+   "pins": {
+    "L_rear": [
+     2062.0,
+     -0.0,
+     1352.2
+    ],
+    "L_front": [
+     -2062.0,
+     0.0,
+     4166.5
+    ],
+    "R_rear": [
+     174.4,
+     0.0,
+     103.3
+    ],
+    "R_front": [
+     -174.4,
+     0.0,
+     444.2
+    ]
+   },
+   "mass_model_kg": 5.003069624999838,
+   "mass_parts": {
+    "box rear wall": 0.385,
+    "box front wall": 0.385,
+    "box bottom": 0.383,
+    "box top": 0.383,
+    "nosing front wall": 0.348,
+    "nosing inner wall": 0.148,
+    "nosing bottom": 0.348,
+    "nosing top": 0.348,
+    "skin": 0.782,
+    "rib web": 0.493,
+    "rib diaphragm in box": 0.282,
+    "end plate": 0.454,
+    "rib bottom flange": 0.263
+   },
+   "open_area": 0.19659294680215184,
+   "sec": 38.6
+  },
+  "ULS crowd": {
+   "label": "ULS crowd",
+   "ok": 0,
+   "n_nodes": 33059,
+   "n_elems": 32530,
+   "eq": [
+    3427.2,
+    3427.2
+   ],
+   "uz_min": -4.538078012826607,
+   "front_mid": -4.53692194840416,
+   "back_mid": -3.7851160391909056,
+   "twist_deg": 0.1538400074876625,
+   "by_part": {
+    "box rear wall (within 30 of end plate)": [
+     5.7,
+     1.2,
+     1191.0,
+     3.1
+    ],
+    "box rear wall": [
+     48.2,
+     1.2,
+     613.0,
+     3.1
+    ],
+    "box front wall (within 30 of end plate)": [
+     20.5,
+     48.8,
+     1208.2,
+     6.9
+    ],
+    "box front wall": [
+     47.5,
+     48.8,
+     613.0,
+     3.1
+    ],
+    "box bottom (within 30 of end plate)": [
+     19.4,
+     46.4,
+     1208.2,
+     1.2
+    ],
+    "box bottom": [
+     51.4,
+     3.6,
+     617.0,
+     1.2
+    ],
+    "box top (within 30 of end plate)": [
+     15.0,
+     46.4,
+     1208.2,
+     49.0
+    ],
+    "box top": [
+     44.1,
+     46.4,
+     613.0,
+     49.0
+    ],
+    "nosing front wall (within 30 of end plate)": [
+     12.3,
+     279.0,
+     1199.6,
+     32.0
+    ],
+    "nosing front wall": [
+     77.2,
+     279.0,
+     613.0,
+     -2.5
+    ],
+    "nosing inner wall (within 30 of end plate)": [
+     21.6,
+     225.0,
+     1208.2,
+     28.3
+    ],
+    "nosing inner wall": [
+     30.8,
+     225.0,
+     590.0,
+     47.1
+    ],
+    "nosing bottom (within 30 of end plate)": [
+     12.7,
+     232.4,
+     1208.2,
+     26.0
+    ],
+    "nosing bottom": [
+     22.3,
+     276.5,
+     640.0,
+     26.0
+    ],
+    "nosing top (within 30 of end plate)": [
+     13.3,
+     227.5,
+     1199.6,
+     49.0
+    ],
+    "nosing top": [
+     35.9,
+     276.5,
+     613.0,
+     49.0
+    ],
+    "skin (within 30 of end plate)": [
+     21.3,
+     101.3,
+     1191.0,
+     49.0
+    ],
+    "skin": [
+     54.1,
+     54.2,
+     599.0,
+     49.0
+    ],
+    "rib web": [
+     13.5,
+     50.6,
+     665.0,
+     47.1
+    ],
+    "rib diaphragm in box": [
+     14.7,
+     3.6,
+     615.0,
+     3.1
+    ],
+    "end plate": [
+     30.7,
+     50.6,
+     1212.5,
+     0.6
+    ],
+    "end plate (pin zone, rigid-link peak)": [
+     45.6,
+     32.1,
+     1212.5,
+     18.8
+    ],
+    "rib bottom flange": [
+     17.1,
+     223.5,
+     513.0,
+     26.5
+    ]
+   },
+   "pins": {
+    "L_rear": [
+     564.7,
+     -0.0,
+     794.7
+    ],
+    "L_front": [
+     -564.7,
+     0.0,
+     929.1
+    ],
+    "R_rear": [
+     284.9,
+     0.0,
+     760.0
+    ],
+    "R_front": [
+     -284.9,
+     0.0,
+     943.4
+    ]
+   },
+   "mass_model_kg": 5.003069624999838,
+   "mass_parts": {
+    "box rear wall": 0.385,
+    "box front wall": 0.385,
+    "box bottom": 0.383,
+    "box top": 0.383,
+    "nosing front wall": 0.348,
+    "nosing inner wall": 0.148,
+    "nosing bottom": 0.348,
+    "nosing top": 0.348,
+    "skin": 0.782,
+    "rib web": 0.493,
+    "rib diaphragm in box": 0.282,
+    "end plate": 0.454,
+    "rib bottom flange": 0.263
+   },
+   "open_area": 0.19659294680215184,
+   "sec": 39.8
+  },
+  "SLS 4 kN front, mid-span": {
+   "label": "SLS 4 kN front, mid-span",
+   "ok": 0,
+   "n_nodes": 33059,
+   "n_elems": 32530,
+   "eq": [
+    4049.1,
+    4049.1
+   ],
+   "uz_min": -9.366047121940369,
+   "front_mid": -9.363478583956807,
+   "back_mid": -6.50377282685207,
+   "twist_deg": 0.5851549065951556,
+   "by_part": {
+    "box rear wall (within 30 of end plate)": [
+     14.7,
+     1.2,
+     1191.0,
+     6.9
+    ],
+    "box rear wall": [
+     101.2,
+     1.2,
+     613.0,
+     3.1
+    ],
+    "box front wall (within 30 of end plate)": [
+     43.1,
+     48.8,
+     1208.2,
+     6.9
+    ],
+    "box front wall": [
+     109.9,
+     48.8,
+     613.0,
+     26.2
+    ],
+    "box bottom (within 30 of end plate)": [
+     48.3,
+     46.4,
+     1208.2,
+     1.2
+    ],
+    "box bottom": [
+     106.6,
+     3.6,
+     617.0,
+     1.2
+    ],
+    "box top (within 30 of end plate)": [
+     34.5,
+     46.4,
+     1208.2,
+     49.0
+    ],
+    "box top": [
+     104.7,
+     46.4,
+     613.0,
+     49.0
+    ],
+    "nosing front wall (within 30 of end plate)": [
+     26.5,
+     279.0,
+     1191.0,
+     43.2
+    ],
+    "nosing front wall": [
+     191.8,
+     279.0,
+     613.0,
+     -2.5
+    ],
+    "nosing inner wall (within 30 of end plate)": [
+     31.2,
+     225.0,
+     1208.2,
+     43.2
+    ],
+    "nosing inner wall": [
+     105.7,
+     225.0,
+     617.0,
+     26.2
+    ],
+    "nosing bottom (within 30 of end plate)": [
+     19.1,
+     227.5,
+     1199.6,
+     26.0
+    ],
+    "nosing bottom": [
+     81.0,
+     227.5,
+     622.5,
+     26.0
+    ],
+    "nosing top (within 30 of end plate)": [
+     23.8,
+     227.5,
+     1208.2,
+     49.0
+    ],
+    "nosing top": [
+     117.6,
+     276.5,
+     613.0,
+     49.0
+    ],
+    "skin (within 30 of end plate)": [
+     38.2,
+     101.3,
+     39.0,
+     49.0
+    ],
+    "skin": [
+     124.2,
+     220.5,
+     599.0,
+     49.0
+    ],
+    "rib web": [
+     44.3,
+     50.6,
+     565.0,
+     47.1
+    ],
+    "rib diaphragm in box": [
+     88.1,
+     46.4,
+     615.0,
+     26.2
+    ],
+    "end plate": [
+     70.7,
+     50.6,
+     1212.5,
+     0.6
+    ],
+    "end plate (pin zone, rigid-link peak)": [
+     60.6,
+     232.4,
+     1212.5,
+     32.0
+    ],
+    "rib bottom flange": [
+     75.0,
+     50.6,
+     613.0,
+     26.5
+    ]
+   },
+   "pins": {
+    "L_rear": [
+     1215.5,
+     -0.0,
+     521.2
+    ],
+    "L_front": [
+     -1215.5,
+     0.0,
+     1515.4
+    ],
+    "R_rear": [
+     594.0,
+     0.0,
+     463.6
+    ],
+    "R_front": [
+     -594.0,
+     0.0,
+     1548.9
+    ]
+   },
+   "mass_model_kg": 5.003069624999838,
+   "mass_parts": {
+    "box rear wall": 0.385,
+    "box front wall": 0.385,
+    "box bottom": 0.383,
+    "box top": 0.383,
+    "nosing front wall": 0.348,
+    "nosing inner wall": 0.148,
+    "nosing bottom": 0.348,
+    "nosing top": 0.348,
+    "skin": 0.782,
+    "rib web": 0.493,
+    "rib diaphragm in box": 0.282,
+    "end plate": 0.454,
+    "rib bottom flange": 0.263
+   },
+   "open_area": 0.19659294680215184,
+   "sec": 48.7
+  },
+  "SLS crowd": {
+   "label": "SLS crowd",
+   "ok": 0,
+   "n_nodes": 33059,
+   "n_elems": 32530,
+   "eq": [
+    2289.7,
+    2289.7
+   ],
+   "uz_min": -3.0311888033454437,
+   "front_mid": -3.030416603522174,
+   "back_mid": -2.528558788760943,
+   "twist_deg": 0.10269394253671876,
+   "by_part": {
+    "box rear wall (within 30 of end plate)": [
+     3.8,
+     1.2,
+     1191.0,
+     3.1
+    ],
+    "box rear wall": [
+     32.2,
+     1.2,
+     613.0,
+     3.1
+    ],
+    "box front wall (within 30 of end plate)": [
+     13.7,
+     48.8,
+     1208.2,
+     6.9
+    ],
+    "box front wall": [
+     31.7,
+     48.8,
+     617.0,
+     3.1
+    ],
+    "box bottom (within 30 of end plate)": [
+     13.0,
+     46.4,
+     1208.2,
+     1.2
+    ],
+    "box bottom": [
+     34.4,
+     3.6,
+     613.0,
+     1.2
+    ],
+    "box top (within 30 of end plate)": [
+     10.0,
+     46.4,
+     1208.2,
+     49.0
+    ],
+    "box top": [
+     29.4,
+     46.4,
+     617.0,
+     49.0
+    ],
+    "nosing front wall (within 30 of end plate)": [
+     8.2,
+     279.0,
+     1199.6,
+     32.0
+    ],
+    "nosing front wall": [
+     51.6,
+     279.0,
+     613.0,
+     -2.5
+    ],
+    "nosing inner wall (within 30 of end plate)": [
+     14.4,
+     225.0,
+     1208.2,
+     28.3
+    ],
+    "nosing inner wall": [
+     20.6,
+     225.0,
+     640.0,
+     47.1
+    ],
+    "nosing bottom (within 30 of end plate)": [
+     8.5,
+     232.4,
+     1208.2,
+     26.0
+    ],
+    "nosing bottom": [
+     14.9,
+     276.5,
+     590.0,
+     26.0
+    ],
+    "nosing top (within 30 of end plate)": [
+     8.9,
+     227.5,
+     1199.6,
+     49.0
+    ],
+    "nosing top": [
+     24.0,
+     276.5,
+     613.0,
+     49.0
+    ],
+    "skin (within 30 of end plate)": [
+     14.2,
+     101.3,
+     1191.0,
+     49.0
+    ],
+    "skin": [
+     36.2,
+     54.2,
+     599.0,
+     49.0
+    ],
+    "rib web": [
+     9.0,
+     50.6,
+     715.0,
+     47.1
+    ],
+    "rib diaphragm in box": [
+     9.8,
+     46.4,
+     665.0,
+     47.1
+    ],
+    "end plate": [
+     20.5,
+     50.6,
+     1212.5,
+     0.6
+    ],
+    "end plate (pin zone, rigid-link peak)": [
+     30.5,
+     32.1,
+     1212.5,
+     18.8
+    ],
+    "rib bottom flange": [
+     11.4,
+     223.5,
+     717.0,
+     26.5
+    ]
+   },
+   "pins": {
+    "L_rear": [
+     377.1,
+     -0.0,
+     531.1
+    ],
+    "L_front": [
+     -377.1,
+     0.0,
+     620.6
+    ],
+    "R_rear": [
+     190.2,
+     0.0,
+     507.9
+    ],
+    "R_front": [
+     -190.2,
+     0.0,
+     630.1
+    ]
+   },
+   "mass_model_kg": 5.003069624999838,
+   "mass_parts": {
+    "box rear wall": 0.385,
+    "box front wall": 0.385,
+    "box bottom": 0.383,
+    "box top": 0.383,
+    "nosing front wall": 0.348,
+    "nosing inner wall": 0.148,
+    "nosing bottom": 0.348,
+    "nosing top": 0.348,
+    "skin": 0.782,
+    "rib web": 0.493,
+    "rib diaphragm in box": 0.282,
+    "end plate": 0.454,
+    "rib bottom flange": 0.263
+   },
+   "open_area": 0.19659294680215184,
+   "sec": 37.3
+  },
+  "SLS person 1 kN at the nosing": {
+   "label": "SLS person 1 kN at the nosing",
+   "ok": 0,
+   "n_nodes": 33059,
+   "n_elems": 32530,
+   "eq": [
+    1049.1,
+    1049.1
+   ],
+   "uz_min": -2.7020895620541405,
+   "front_mid": -2.6804333419473307,
+   "back_mid": -1.560515726888208,
+   "twist_deg": 0.22916503777592356,
+   "by_part": {
+    "box rear wall (within 30 of end plate)": [
+     6.0,
+     1.2,
+     39.0,
+     6.9
+    ],
+    "box rear wall": [
+     25.4,
+     1.2,
+     613.0,
+     3.1
+    ],
+    "box front wall (within 30 of end plate)": [
+     14.8,
+     48.8,
+     1208.2,
+     6.9
+    ],
+    "box front wall": [
+     38.5,
+     48.8,
+     613.0,
+     26.2
+    ],
+    "box bottom (within 30 of end plate)": [
+     17.5,
+     46.4,
+     1208.2,
+     1.2
+    ],
+    "box bottom": [
+     26.5,
+     3.6,
+     613.0,
+     1.2
+    ],
+    "box top (within 30 of end plate)": [
+     12.0,
+     46.4,
+     21.8,
+     49.0
+    ],
+    "box top": [
+     27.8,
+     46.4,
+     613.0,
+     49.0
+    ],
+    "nosing front wall (within 30 of end plate)": [
+     9.3,
+     279.0,
+     1191.0,
+     43.2
+    ],
+    "nosing front wall": [
+     58.9,
+     279.0,
+     617.0,
+     -2.5
+    ],
+    "nosing inner wall (within 30 of end plate)": [
+     11.2,
+     225.0,
+     1208.2,
+     43.2
+    ],
+    "nosing inner wall": [
+     38.4,
+     225.0,
+     617.0,
+     26.2
+    ],
+    "nosing bottom (within 30 of end plate)": [
+     7.6,
+     227.5,
+     21.8,
+     26.0
+    ],
+    "nosing bottom": [
+     29.8,
+     227.5,
+     607.5,
+     26.0
+    ],
+    "nosing top (within 30 of end plate)": [
+     8.3,
+     227.5,
+     1208.2,
+     49.0
+    ],
+    "nosing top": [
+     45.9,
+     276.5,
+     617.0,
+     49.0
+    ],
+    "skin (within 30 of end plate)": [
+     12.1,
+     50.6,
+     21.8,
+     49.0
+    ],
+    "skin": [
+     41.6,
+     220.5,
+     599.0,
+     49.0
+    ],
+    "rib web": [
+     15.5,
+     50.6,
+     615.0,
+     28.3
+    ],
+    "rib diaphragm in box": [
+     31.6,
+     46.4,
+     615.0,
+     26.2
+    ],
+    "end plate": [
+     25.2,
+     50.6,
+     1212.5,
+     0.6
+    ],
+    "end plate (pin zone, rigid-link peak)": [
+     19.9,
+     232.4,
+     1212.5,
+     32.0
+    ],
+    "rib bottom flange": [
+     26.5,
+     50.6,
+     613.0,
+     26.5
+    ]
+   },
+   "pins": {
+    "L_rear": [
+     424.2,
+     0.0,
+     35.3
+    ],
+    "L_front": [
+     -424.2,
+     0.0,
+     492.4
+    ],
+    "R_rear": [
+     208.2,
+     0.0,
+     17.8
+    ],
+    "R_front": [
+     -208.2,
+     0.0,
+     503.6
+    ]
+   },
+   "mass_model_kg": 5.003069624999838,
+   "mass_parts": {
+    "box rear wall": 0.385,
+    "box front wall": 0.385,
+    "box bottom": 0.383,
+    "box top": 0.383,
+    "nosing front wall": 0.348,
+    "nosing inner wall": 0.148,
+    "nosing bottom": 0.348,
+    "nosing top": 0.348,
+    "skin": 0.782,
+    "rib web": 0.493,
+    "rib diaphragm in box": 0.282,
+    "end plate": 0.454,
+    "rib bottom flange": 0.263
+   },
+   "open_area": 0.19659294680215184,
+   "sec": 37.2
+  }
+ }
+}

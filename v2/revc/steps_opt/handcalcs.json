@@ -1,0 +1,75 @@
+{
+ "mass": {
+  "fe_model": 5.54,
+  "extras": {
+   "rib top rivet/bond flange 12 x 2 (23 ribs x 175)": 0.26,
+   "serration ridges on skin/box/nosing top (~0.4 mm equivalent over 280 x 1195)": 0.36,
+   "rivets (~100 SPR/blind) + 8 screws M8/M6 A4": 0.2,
+   "grit/contrast inserts (55 mm nosing + 1 strip)": 0.1
+  },
+  "production_per_step": 6.46,
+  "six_steps": 38.8
+ },
+ "unit": {
+  "route1_solid_poles": {
+   "non_step": 62.6,
+   "unit_with_C8": 101.4,
+   "step_budget_for_60kg_each": -0.44
+  },
+  "route2_rhs_poles": {
+   "non_step": 52.4,
+   "unit_with_C8": 91.2,
+   "step_budget_for_60kg_each": 1.26
+  }
+ },
+ "riser_gap": {
+  "gap": 150,
+  "limit_max": 120,
+  "rec_sphere": 100,
+  "lip_needed_for_120": 30,
+  "lip_needed_for_100": 50
+ },
+ "front_pin_ligament": {
+  "d16": {
+   "ligament": 4.0,
+   "a_req": 16.0,
+   "max_centre_z": 25.5
+  },
+  "d20": {
+   "ligament": 2.0,
+   "a_req": 18.7,
+   "max_centre_z": 20.8
+  }
+ },
+ "end_joint": {
+  "T_half_Nmm": 465000.0,
+  "V_end_N": 5092,
+  "F_screw_N": 4116,
+  "M8_A4_70_shear_Rd": 10248,
+  "util_shear": 0.4,
+  "util_bearing_endplate": 0.25,
+  "barrier_axial_per_end_N": 9400,
+  "axial_per_screw_6_screws_N": 1567,
+  "note": "screw-port pull-out in 6005A to be confirmed by test (~8-10 kN per M8 at 16 mm engagement, judgement)"
+ },
+ "rib_joint": {
+  "flange_force_N": 6739,
+  "shear_flow_N_per_mm": 51.8,
+  "adhesive_shear_MPa_on_12mm": 4.32,
+  "rivets_4p8_at_25_each_N": 1296,
+  "blind_rivet_design_N": 2100,
+  "foot_bearing_on_ledge_N": 6739
+ },
+ "frequency_Hz": {
+  "self + 0.0 crowd": 64.7,
+  "self + 0.3 crowd": 17.7,
+  "self + 0.6 crowd": 12.8
+ },
+ "grp_same_geometry": {
+  "sls4_mm": 28.1,
+  "limit": 12.16,
+  "mass_kg": 3.9,
+  "thickness_scale_for_same_stiffness": 2.8,
+  "mass_for_same_stiffness_kg": 8.7
+ }
+}

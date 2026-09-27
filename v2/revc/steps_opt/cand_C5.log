@@ -1,0 +1,9 @@
+  ULS 4 kN front, mid-span         eq [6066.3, 6066.3] front  -14.04 min  -14.04 twist  0.88  worst nosing front wall (287.5, 279.0, 617.0, -2.5)  (40.2 s)
+  ULS 4 kN centre, mid-span        eq [6066.3, 6066.3] front  -12.44 min  -12.69 twist  0.41  worst nosing front wall (247.0, 279.0, 617.0, -2.5)  (40.2 s)
+  ULS 4 kN back, mid-span          eq [6066.3, 6066.3] front  -10.95 min  -11.55 twist -0.05  worst nosing front wall (215.4, 279.0, 613.0, -2.5)  (40.4 s)
+  ULS 4 kN front, at the end       eq [6066.3, 6066.3] front   -3.63 min   -3.78 twist  0.22  worst box front wall (115.3, 48.8, 163.0, 26.2)  (38.6 s)
+  ULS crowd                        eq [3427.2, 3427.2] front   -4.54 min   -4.54 twist  0.15  worst nosing front wall (77.2, 279.0, 613.0, -2.5)  (39.8 s)
+  SLS 4 kN front, mid-span         eq [4049.1, 4049.1] front   -9.36 min   -9.37 twist  0.59  worst nosing front wall (191.8, 279.0, 613.0, -2.5)  (48.7 s)
+  SLS crowd                        eq [2289.7, 2289.7] front   -3.03 min   -3.03 twist  0.10  worst nosing front wall (51.6, 279.0, 613.0, -2.5)  (37.3 s)
+  SLS person 1 kN at the nosing    eq [1049.1, 1049.1] front   -2.68 min   -2.70 twist  0.23  worst nosing front wall (58.9, 279.0, 617.0, -2.5)  (37.2 s)
+Process 0 Terminating

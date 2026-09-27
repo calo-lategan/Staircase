@@ -1,4 +1,4 @@
-"""Rev C guide rails (nested OPEN channels, rails_lib.py): every check. Writes rail_design_<pole>.json next to this file.
+"""Rev C guide rails (H family, rails_lib.py): every check. Writes rail_design_<pole>.json next to this file.
   python3 v2/revc/rails/run_rails.py              (production box pole 25 x 80)
   POLE=plate55 python3 v2/revc/rails/run_rails.py (prototype plate pole 25 x 55)
 Sections: A kinematics/geometry, B side frame (in-plane), C barrier (lateral, pin pull, small torque), D pins/caps/edges,
@@ -15,24 +15,20 @@ fx = lambda v, n=2: round(float(v), n)
 G = F.G
 X_REAR0 = F.REAR0[0]
 POLES_X = {s: [p["x"] for p in G[s]["poles"]] for s in SIDES}
-TOP_SHIFT = float(os.environ.get("TOP_POLE_SHIFT", 0.0))      # move the top pole downhill (+x) in the barrier model, mm
-POLES_X_BAR = {s: sorted(POLES_X[s])[:] for s in SIDES}
-for s_ in SIDES:
-    POLES_X_BAR[s_][0] += TOP_SHIFT
-KINDS = ("A_lo", "A_up", "B_lo", "B_up")
-PROPS = {k: {t: v.props() for t, v in L.sections(k).items()} for k in KINDS}
-KIND = L.RAIL_OF
-NW = {k: L.n_web(k) for k in KINDS}
+SEC = L.sections()
+SEC["notch+slot_up"] = SEC["slot_up"].cut(-1, -1, L.T_P + 0.01, L.NOTCH_DEPTH)
+SEC["notch+slot_lo"] = SEC["slot_lo"].cut(-1, -1, L.T_P + 0.01, L.NOTCH_DEPTH)
+PROPS = {k: v.props() for k, v in SEC.items()}
 
 def cross_s(x_rel, theta, lev, n_away):
     p0 = L.from_rail(0.0, n_away, theta, lev); u, nu = L.frame_state(theta)
     return (x_rel - p0[0]) / u[0]
 
 # ================================================================== A. kinematics and geometry
-def cap_gap(s_flange, theta, lev, s_pin, nw):
-    """clear distance, in the rail's side plane, between a vertical 25-along pole crossing the web (n = nw) at s_flange
-    and the cap + washer disc (radius 15 + 1) round a pin at (s_pin, n = 12.5)"""
-    r = L.WASH_R + 1.0; x_f = L.from_rail(s_flange, nw, theta, lev)[0]; half = 12.5 / math.cos(math.radians(theta))
+def cap_gap(s_flange, theta, lev, s_pin):
+    """clear distance, in the rail's side plane, between a vertical 25-along pole crossing the mid flange at s_flange
+    and the cap + washer disc (radius 15) round a pin at (s_pin, n = 12.5)"""
+    r = 15.0; x_f = L.from_rail(s_flange, L.N_MF, theta, lev)[0]; half = 12.5 / math.cos(math.radians(theta))
     best = 1e9
     for n in np.linspace(L.C_PIN - r, L.C_PIN + r, 61):
         sc = cross_s(x_f, theta, lev, n); dn = abs(n - L.C_PIN); chord = math.sqrt(max(r * r - dn * dn, 0.0))
@@ -46,24 +42,24 @@ def geometry():
     slots = {}
     for side in SIDES:
         rows = []
-        nlo, nup = NW[KIND[(side, "lo")]], NW[KIND[(side, "up")]]
         for x in POLES_X[side]:
             xr = x - X_REAR0
-            s_up = cross_s(xr, 35.0, "up", nup); s_lo = cross_s(xr, 35.0, "lo", nlo)
-            pu0 = L.from_rail(s_up, nup, 0.0, "up"); s_lo_cw = cross_s(pu0[0], 0.0, "lo", nlo)      # catwalk: same upper slot
-            pl9 = L.from_rail(s_lo, nlo, 49.4, "lo"); s_up_st = cross_s(pl9[0], 49.4, "up", nup)    # steep: same lower slot
+            s_up = cross_s(xr, 35.0, "up", L.N_MF); s_lo = cross_s(xr, 35.0, "lo", L.N_MF)
+            pu0 = L.from_rail(s_up, L.N_MF, 0.0, "up"); s_lo_cw = cross_s(pu0[0], 0.0, "lo", L.N_MF)      # catwalk: same upper slot
+            pl9 = L.from_rail(s_lo, L.N_MF, 49.4, "lo"); s_up_st = cross_s(pl9[0], 49.4, "up", L.N_MF)    # steep: same lower slot
             rec = dict(x=fx(x, 1), up_std_cw=fx(s_up, 1), up_steep=fx(s_up_st, 1), lo_std_steep=fx(s_lo, 1), lo_catwalk=fx(s_lo_cw, 1))
             use = {"standard": (s_lo, s_up), "catwalk": (s_lo_cw, s_up), "steep": (s_lo, s_up_st)}
             for st, th in L.STATES.items():
                 sl, su = use[st]
-                rec[f"vert_between_webs_{st}"] = fx(L.from_rail(su, nup, th, "up")[1] - L.from_rail(sl, nlo, th, "lo")[1], 1)
-                rec[f"cap_gap_up_{st}"] = fx(min(cap_gap(su, th, "up", i * L.PITCH, nup) for i in range(-1, 8)), 1)
-                rec[f"cap_gap_lo_{st}"] = fx(min(cap_gap(sl, th, "lo", i * L.PITCH, nlo) for i in range(-1, 8)), 1)
+                rec[f"vert_between_flanges_{st}"] = fx(L.from_rail(su, L.N_MF, th, "up")[1] - L.from_rail(sl, L.N_MF, th, "lo")[1], 1)
+                rec[f"cap_gap_up_{st}"] = fx(min(cap_gap(su, th, "up", i * L.PITCH) for i in range(-1, 8)), 1)
+                rec[f"cap_gap_lo_{st}"] = fx(min(cap_gap(sl, th, "lo", i * L.PITCH) for i in range(-1, 8)), 1)
             lu = [(s_up, L.UP_SLOTS["standard+catwalk"]), (s_up_st, L.UP_SLOTS["steep"])]
             ll = [(s_lo, L.LO_SLOTS["standard+steep"]), (s_lo_cw, L.LO_SLOTS["catwalk"])]
             gap2 = lambda a, b: abs(a[0] - b[0]) - a[1] / 2 - b[1] / 2
             rec["upper_slots_web_between"] = fx(gap2(*lu), 1); rec["lower_slots_web_between"] = fx(gap2(*ll), 1)
-
+            def cut_gap(sp): return min(abs(sp[0] - i * L.PITCH) - sp[1] / 2 - L.CAP_CUT[0] / 2 for i in range(-1, 8))
+            rec["upper_slots_to_cap_cut"] = fx(min(cut_gap(a) for a in lu), 1); rec["lower_slots_to_cap_cut"] = fx(min(cut_gap(a) for a in ll), 1)
             rec["_up"] = lu; rec["_lo"] = ll
             rows.append(rec)
         slots[side] = rows
@@ -83,7 +79,7 @@ def geometry():
             for sp in r["_up"]: ng.append((min(abs(sp[0] - c) for c in lo_tabs_on_up) - L.NOTCH_W / 2 - sp[1] / 2, side, "upper", fx(sp[0], 1)))
             for sp in r["_lo"]: ng.append((min(abs(sp[0] - c) for c in up_tabs_on_lo) - L.NOTCH_W / 2 - sp[1] / 2, side, "lower", fx(sp[0], 1)))
     w = min(ng); g["tab"]["notch_to_slot_min"] = dict(gap=fx(w[0], 1), side=w[1], rail=w[2], slot_s=w[3],
-        note="notch is in the pin leg (n 0-%.1f), slot in the web (far face): different elements; a negative gap means both cuts share one station - checked as section 'notch+slot'" % L.NOTCH_DEPTH)
+        note="notch is in the pin wall (n 0-%.1f), slot in the mid flange (n %.1f-%.1f): different elements; a negative gap means both cuts share one station - checked as section 'notch+slot'" % (L.NOTCH_DEPTH, L.N_MF0, L.N_MF0 + L.T_MF))
     drift = []
     for thd in np.linspace(0, 12, 241):
         s_now = L.to_rail(L.from_rail(0.0, 0.0, thd, "lo"), thd, "up")[0]
@@ -97,17 +93,16 @@ def geometry():
         x_end = F.G[side]["rail_lo"]["a"][0]
         s_end = cross_s(x_end - X_REAR0, 35.0, "lo", L.C_PIN)
         c = np.array(F.AXLE_BASE) - F.REAR0; s_ax, n_ax = L.to_rail(c, 35.0, "lo")
-        DL = L.DEPTH[KIND[(side, "lo")]]
-        p = L.from_rail(s_end, DL, 35.0, "lo") + F.REAR0
+        p = L.from_rail(s_end, L.D, 35.0, "lo") + F.REAR0
         rec = dict(end_x_measured=fx(x_end, 1), z_far_corner_at_measured_end=fx(p[1], 1), clear_to_footplate_top=fx(p[1] + 119.9, 1),
                    axle_centre_s=fx(s_ax, 1), axle_centre_n_away=fx(n_ax, 1))
         # rail must stop short of the D48.3 axle (+2 mm): square end at s_cut
         s_cut = s_ax + math.sqrt(max(0.0, (24.15 + 2.0) ** 2 - 0.0)) if False else None
         # square end (normal to the rail) that clears the axle circle r 26.2 anywhere in the band n = -12.5..D
         for s in np.arange(s_ax, s_ax + 150, 0.5):
-            if all(np.hypot(s - s_ax, n - n_ax) > 26.2 for n in np.linspace(0, DL, 91)):
+            if all(np.hypot(s - s_ax, n - n_ax) > 26.2 for n in np.linspace(0, L.D, 91)):
                 s_cut = s; break
-        q = L.from_rail(s_cut, DL, 35.0, "lo") + F.REAR0; q0 = L.from_rail(s_cut, 0.0, 35.0, "lo") + F.REAR0
+        q = L.from_rail(s_cut, L.D, 35.0, "lo") + F.REAR0; q0 = L.from_rail(s_cut, 0.0, 35.0, "lo") + F.REAR0
         rec.update(end_cut_s=fx(s_cut, 1), end_cut_x_far=fx(q[0], 1), z_far_corner_at_cut=fx(q[1], 1), clear_far_corner_to_footplate=fx(q[1] + 119.9, 1),
                    end_cut_x_tip=fx(q0[0], 1), cut_back_along_rail_from_measured_end=fx(s_cut - s_end, 1),
                    note="square end normal to the rail, 2 mm clear of the D48.3 axle; hook plate (supports review) bridges to the axle")
@@ -135,12 +130,12 @@ NOTCH = {"up": OUT["geometry"]["tab"]["notch_centres_upper_rail_s"], "lo": OUT["
 
 def station_types(side, lev, s):
     kinds = []
-    if any(abs(s - i * L.PITCH) <= L.HOLE_D / 2 + 1 for i in range(6)): kinds.append("hole")
+    if any(abs(s - i * L.PITCH) <= L.CAP_CUT[0] / 2 + 1 for i in range(6)): kinds.append("hole")
     nt = any(abs(s - c) <= L.NOTCH_W / 2 + 1 for c in NOTCH[lev])
     sl = any(abs(s - c) <= ln / 2 + 1 for c, ln in (SLOTS_UP[side] if lev == "up" else SLOTS_LO[side]))
-    if nt and sl: kinds.append("notch+slot")
+    if nt and sl: kinds.append("notch+slot_" + lev)
     elif nt: kinds.append("notch")
-    elif sl: kinds.append("slot")
+    elif sl: kinds.append("slot_" + lev)
     return kinds or ["gross"]
 
 def inplane_check(side, out):
@@ -149,7 +144,7 @@ def inplane_check(side, out):
         worst = (0.0, None)
         for s, N, M in out["rail_" + lev]:
             for t in station_types(side, lev, s):
-                p = PROPS[KIND[(side, lev)]][t]; sig = abs(N) / p["A"] + abs(M) / min(p["W_tip"], p["W_far"])
+                p = PROPS[t]; sig = abs(N) / p["A"] + abs(M) / min(p["W_tip"], p["W_far"])
                 if sig > worst[0]: worst = (sig, dict(s=fx(s, 0), N=fx(N, 0), M=fx(M, 0), section=t))
         res[lev] = dict(sigma=fx(worst[0], 1), util=fx(worst[0] / L.FD, 3), **worst[1])
     return res
@@ -203,7 +198,7 @@ frame["pins"] = sorted(frame["pins"], key=lambda p: -max(p["lo_abs"], p["up_abs"
 frame["lock_forces"] = None
 OUT["frame"] = frame
 
-# ================================================================== C. barrier: couple, lateral bending, torsion at the pins
+# ================================================================== C. barrier
 HK = {"R142 5.0 kN/m viewing": 5.0 * 250 / math.cos(math.radians(35)), "R142 3.0 kN/m": 3.0 * 250 / math.cos(math.radians(35)),
       "R179 1.5 kN post": 1500.0, "R143 1.25 kN": 1250.0}
 CONT = {"R142 5.0 kN/m viewing": 1.13, "R142 3.0 kN/m": 1.13, "R179 1.5 kN post": 1.0, "R143 1.25 kN": 1.0}
@@ -211,10 +206,10 @@ K05 = {s: next(h for h in G[s]["hand_rails"] if h["mat"].startswith("K05")) for 
 def zline(h, x):
     (x0, z0), (x1, z1) = h["a"], h["b"]; return z0 + (z1 - z0) * (x - x0) / (x1 - x0)
 
-def lateral_beam(kind, lev, loads, s0, s1):
+def lateral_beam(lev, loads, s0, s1):
     """continuous beam in lateral bending over the 6 pins (+ both hook ends of the lower rail). loads (s, P), P > 0 =
     pushed away from the steps. Returns M(s), pin reactions (> 0: the pin pulls the rail toward the step)."""
-    EI = L.E_AL * PROPS[kind]["gross"]["In"]
+    EI = L.E_AL * PROPS["gross"]["In"]
     xs = sorted(set(list(np.arange(min(s0, s1), max(s0, s1), 5.0)) + [max(s0, s1)] + [i * L.PITCH for i in range(6)] + [s for s, _ in loads]))
     xs = np.array(xs); n = len(xs); K = np.zeros((2 * n, 2 * n)); Fv = np.zeros(2 * n)
     for e in range(n - 1):
@@ -231,41 +226,27 @@ def lateral_beam(kind, lev, loads, s0, s1):
         Mx.append((xs[e], EI * (-6 / l ** 2 * v1 - 4 / l * t1 + 6 / l ** 2 * v2 - 2 / l * t2)))
     return dict(M=Mx, pins={i: -R[2 * sup[i]] for i in range(6)}, defl=float(max(abs(u[0::2]))))
 
-# pin-station clamp: pad on the step-side bulb/tab, washer D30 under the cap nut
-N_PAD_TIP, N_WASH_FAR = -7.0, L.C_PIN + L.WASH_R          # rail tip side pushed onto the step: pad at the tab (-7); far side held by the washer (27.5)
-N_PAD_FAR, N_WASH_TIP = 25.0, L.C_PIN - L.WASH_R          # far side pushed onto the step: pad on the pin leg (n 25); tip side held by the washer (-2.5)
-def clamp_tension(R, T):
-    """R > 0: rail pulled off the step at the pin (pin must pull); T > 0: far side pushed away from the step.
-    Returns pin (cap) tension with the step pad only in compression."""
-    if T >= 0:
-        lever = N_WASH_FAR - N_PAD_TIP
-        return max(R, (T + R * (L.C_PIN - N_PAD_TIP)) / lever) if R > 0 else max(0.0, (T + R * (L.C_PIN - N_PAD_TIP)) / lever)
-    lever = N_PAD_FAR - N_WASH_TIP
-    return max(R, (-T + R * (N_PAD_FAR - L.C_PIN)) / lever) if R > 0 else max(0.0, (-T + R * (N_PAD_FAR - L.C_PIN)) / lever)
-
+N_S = -7.0; N_C = L.C_PIN + 15.0         # rocking: step pad contact on the tab (n = -7) and the far edge of the D30 cap washer
 def barrier():
     res = {}
     for side in SIDES:
-        rl = F.G[side]; klo, kup = KIND[(side, "lo")], KIND[(side, "up")]
-        s_lo0 = OUT["geometry"]["base_end"][side]["end_cut_s"]; s_lo1 = cross_s(rl["rail_lo"]["b"][0] - X_REAR0, 35.0, "lo", L.C_PIN)
+        rl = F.G[side]
+        s_lo0 = cross_s(rl["rail_lo"]["a"][0] - X_REAR0, 35.0, "lo", L.C_PIN); s_lo1 = cross_s(rl["rail_lo"]["b"][0] - X_REAR0, 35.0, "lo", L.C_PIN)
         s_up0 = cross_s(rl["rail_up"]["a"][0] - X_REAR0, 35.0, "up", L.C_PIN); s_up1 = cross_s(rl["rail_up"]["b"][0] - X_REAR0, 35.0, "up", L.C_PIN)
         for hk, H in HK.items():
-            for direction in (("outward", "inward") if hk.startswith("R143") else ("outward",)):
+            for direction in ("outward", "inward"):
                 Hd = 1.5 * H * CONT[hk]; sg = 1 if direction == "outward" else -1
                 lu, ll, poles = [], [], []
-                for x in POLES_X_BAR[side]:
+                for x in POLES_X[side]:
                     xr = x - X_REAR0
-                    nb_u = NW[kup] if direction == "outward" else L.H_BULB / 2        # bearing level on the upper rail
-                    nb_l = L.H_BULB / 2 if direction == "outward" else NW[klo]        # ... on the lower rail
-                    s_u = cross_s(xr, 35.0, "up", nb_u); s_l = cross_s(xr, 35.0, "lo", nb_l)
+                    s_u = cross_s(xr, 35.0, "up", L.N_MF); s_l = cross_s(xr, 35.0, "lo", L.N_MF)
                     if not (min(s_lo0, s_lo1) <= s_l <= max(s_lo0, s_lo1)): continue      # bottom pole: no lower crossing (poles review A8)
-                    zu = (L.from_rail(s_u, nb_u, 35.0, "up") + F.REAR0)[1]; zl = (L.from_rail(s_l, nb_l, 35.0, "lo") + F.REAR0)[1]
+                    zu = (L.from_rail(s_u, L.N_MF, 35.0, "up") + F.REAR0)[1]; zl = (L.from_rail(s_l, L.N_MF, 35.0, "lo") + F.REAR0)[1]
                     L1 = zline(K05[side], x) - zu; sv = zu - zl
                     Fu = Hd * (1 + L1 / sv); Fl = Hd * L1 / sv
                     lu.append((s_u, sg * Fu)); ll.append((s_l, -sg * Fl))
-                    poles.append(dict(x=fx(x, 1), L1=fx(L1, 0), s_vert=fx(sv, 0), F_up=fx(Fu / 1e3, 2), F_lo=fx(Fl / 1e3, 2), s_u=s_u, s_l=s_l, Fu=sg * Fu, Fl=-sg * Fl,
-                                      eu=nb_u - L.C_PIN, el=nb_l - L.C_PIN))
-                bu = lateral_beam(kup, "up", lu, s_up0, s_up1); bl = lateral_beam(klo, "lo", ll, s_lo0, s_lo1)
+                    poles.append(dict(x=fx(x, 1), L1=fx(L1, 0), s_vert=fx(sv, 0), F_up=fx(Fu / 1e3, 2), F_lo=fx(Fl / 1e3, 2), s_u=s_u, s_l=s_l, Fu=sg * Fu, Fl=-sg * Fl))
+                bu = lateral_beam("up", lu, s_up0, s_up1); bl = lateral_beam("lo", ll, s_lo0, s_lo1)
                 def torque_to_pins(tl):
                     tp = {i: 0.0 for i in range(6)}
                     for s, T in tl:
@@ -274,33 +255,16 @@ def barrier():
                         if i0 >= 5: tp[5] += T; continue
                         a = s - i0 * L.PITCH; tp[i0] += T * (L.PITCH - a) / L.PITCH; tp[i0 + 1] += T * a / L.PITCH
                     return tp
-                # torque about the pin line, + = far side pushed away from the step (load at the web, n = NW)
-                Tu = torque_to_pins([(p["s_u"], p["Fu"] * p["eu"]) for p in poles])
-                Tl = torque_to_pins([(p["s_l"], p["Fl"] * p["el"]) for p in poles])
+                Tu = torque_to_pins([(p["s_u"], p["Fu"] * L.E_TORQUE) for p in poles]); Tl = torque_to_pins([(p["s_l"], p["Fl"] * L.E_TORQUE) for p in poles])
                 rec = dict(poles=[{k: v for k, v in p.items() if k in ("x", "L1", "s_vert", "F_up", "F_lo")} for p in poles])
-                # St Venant torsion between a pole and its nearer pin (65 % of the pole torque, clamped pins, warping ignored)
-                for lev, kk, key, skey in (("up", kup, "eu", "s_u"), ("lo", klo, "el", "s_l")):
-                    J, kt = L.torsion_J(kk); worst = (0.0, 0.0, 0.0, 0.0)
-                    for p in poles:
-                        T = abs((p["Fu"] if lev == "up" else p["Fl"]) * p[key]); sp = p[skey]
-                        i0 = math.floor(sp / L.PITCH)
-                        if 0 <= i0 < 5:
-                            a = sp - i0 * L.PITCH; share = max(a, L.PITCH - a) / L.PITCH; span = min(a, L.PITCH - a)
-                        else:                                           # pole beyond the end pin: all torque through the end span
-                            share = 1.0; span = abs(sp - (0.0 if i0 < 0 else 5 * L.PITCH))
-                        tau = share * T * kt
-                        if tau > worst[0]: worst = (tau, T, share, span)
-                    tau, T, share, span = worst
-                    rec[f"torsion_{lev}"] = dict(T_pole_kNmm=fx(T / 1e3, 1), share=fx(share, 2), J=fx(J, 0), tau=fx(tau, 1),
-                                                 twist_deg=fx(math.degrees(share * T * max(span, 1.0) / (26300.0 * J)), 2))
                 for lev, b, Tp in (("up", bu, Tu), ("lo", bl, Tl)):
                     pull = {i: b["pins"][i] for i in range(6)}
-                    cap = {i: clamp_tension(pull[i], Tp[i]) for i in range(6)}
-                    pad = {i: cap[i] - pull[i] for i in range(6)}
+                    # pin/cap tension P and pad compression S >= 0: -P + S = -R, P(n_c-12.5) + S(12.5-n_s) >= T  ->  P = max(R, (T + R(12.5-n_s))/(n_c-n_s))
+                    cap = {i: (max(pull[i], (abs(Tp[i]) + pull[i] * (L.C_PIN - N_S)) / (N_C - N_S)) if pull[i] > 0
+                               else max(0.0, (abs(Tp[i]) + pull[i] * (L.C_PIN - N_S)) / (N_C - N_S))) for i in range(6)}
                     rec[lev] = dict(M_lat_max_kNm=fx(max(abs(m) for _, m in b["M"]) / 1e6, 3), pin_pull_max_kN=fx(max(0, max(pull.values())) / 1e3, 2),
                                     pin_push_max_kN=fx(max(0, -min(pull.values())) / 1e3, 2), T_pin_max_kNmm=fx(max(abs(v) for v in Tp.values()) / 1e3, 1),
-                                    cap_tension_max_kN=fx(max(cap.values()) / 1e3, 2), pad_force_max_kN=fx(max(pad.values()) / 1e3, 2),
-                                    defl_lat_mm=fx(b["defl"], 2), M=b["M"])
+                                    cap_tension_max_kN=fx(max(cap.values()) / 1e3, 2), defl_lat_mm=fx(b["defl"], 2), M=b["M"])
                 res[f"{side} | {hk} | {direction}"] = rec
     return res
 BAR = barrier()
@@ -311,29 +275,30 @@ def pin_checks():
     V = OUT["frame"]["pin_force_max"]["N"]; d = L.PIN_D; A = math.pi * d * d / 4; Wp = math.pi * d ** 3 / 32
     MRd = 1.5 * Wp * DUP["fy"] / DUP["gM0"]; FvRd = 0.6 * A * DUP["fu"] / DUP["gM2"]
     out = {"V_design_N": V}
-    lev_stud = L.PAD + (L.T_LEG + max(L.BULB.values())) / 2
-    for model, lever in (("stud fixed in step end block", lev_stud), ("pin in 8 mm end plate, simply bearing", 4.0 + lev_stud)):
+    for model, lever in (("stud fixed in step end block", L.PAD + L.T_P / 2), ("pin in 8 mm end plate, simply bearing", 4.0 + L.PAD + L.T_P / 2)):
         M = V * lever
         out[model] = dict(lever=fx(lever, 2), M_kNmm=fx(M / 1e3, 1), bending=fx(M / MRd, 3), shear=fx(V / FvRd, 3), interaction=fx((M / MRd) ** 2 + (V / FvRd) ** 2, 3))
+    # same checks for a 6082-T6 D16 pin (owner option) and a 6082-T6 D20 pin
     for dd, lab in ((16.0, "6082-T6 D16"), (20.0, "6082-T6 D20")):
         Wa = math.pi * dd ** 3 / 32; MRa = 1.5 * Wa * 250 / 1.25; Fva = 0.6 * math.pi * dd * dd / 4 * 295 / 1.25
-        out[f"{lab}, stud lever {lev_stud:g}"] = dict(bending=fx(V * lev_stud / MRa, 3), shear=fx(V / Fva, 3))
-    out["bearing on pin leg + bulb, 14 mm (B) (T8.8 1.5 t d f0/gMp)"] = fx(V / (1.5 * L.T_PINLEG * d * L.F0 / L.GMP), 3)
+        out[f"{lab} (stud, lever {L.PAD + L.T_P / 2:g})"] = dict(bending=fx(V * (L.PAD + L.T_P / 2) / MRa, 3), shear=fx(V / Fva, 3))
+    out["bearing on 6 mm pin wall (T8.8 1.5 t d f0/gMp)"] = fx(V / (1.5 * L.T_P * d * L.F0 / L.GMP), 3)
     return out
 
 def edge_checks():
     V = OUT["frame"]["pin_force_max"]["N"]; Ft = max(0.0, OUT["frame"]["pin_force_toward_tip_max"])
     a_tab = L.TAB_R - L.HOLE_D / 2
-    return dict(t=L.T_PINLEG, a_req_full_resultant=fx(L.t88_a(V, L.T_PINLEG, L.HOLE_D), 2), a_at_tab=fx(a_tab, 2),
-                util_at_tab=fx(L.t88_a(V, L.T_PINLEG, L.HOLE_D) / a_tab, 3), force_toward_tip_max_N=fx(Ft, 0),
+    return dict(t=L.T_P, a_req_full_resultant=fx(L.t88_a(V, L.T_P, L.HOLE_D), 2), a_at_tab=fx(a_tab, 2), util_at_tab=fx(L.t88_a(V, L.T_P, L.HOLE_D) / a_tab, 3),
+                force_toward_tip_max_N=fx(Ft, 0), a_req_toward_tip=fx(L.t88_a(Ft, L.T_P, L.HOLE_D), 2) if Ft > 0 else 0.0,
                 a_between_tabs_to_tip=fx(L.C_PIN - L.HOLE_D / 2, 2),
-                note="between pins the pin leg ends 4 mm below the hole line; at every pin the tab gives TAB_R of metal all round")
+                note="between tabs the pin wall ends 4 mm below the hole; the tab (radius TAB_R) gives the edge metal at every pin")
 
 def cap_checks():
-    Tmax = max(max(c["up"]["cap_tension_max_kN"], c["lo"]["cap_tension_max_kN"]) for k, c in BAR.items()) * 1e3
-    Tcase = max(((k, max(c["up"]["cap_tension_max_kN"], c["lo"]["cap_tension_max_kN"])) for k, c in BAR.items()), key=lambda t: t[1])[0]
+    Tmax = max(max(c["up"]["cap_tension_max_kN"], c["lo"]["cap_tension_max_kN"]) for k, c in BAR.items() if "5.0" in k and "outward" in k) * 1e3
+    Tcase = max(((k, max(c["up"]["cap_tension_max_kN"], c["lo"]["cap_tension_max_kN"])) for k, c in BAR.items() if "5.0" in k and "outward" in k), key=lambda t: t[1])[0]
+    Tin = max(max(c["up"]["cap_tension_max_kN"], c["lo"]["cap_tension_max_kN"]) for k, c in BAR.items() if "R143" in k and "inward" in k) * 1e3
     d = L.PIN_D
-    out = dict(design_pull_kN=fx(Tmax / 1e3, 2), governing_case=Tcase)
+    out = dict(design_pull_kN=fx(Tmax / 1e3, 2), governing_case=Tcase, inward_R143_pull_kN=fx(Tin / 1e3, 2))
     for dc in (6.0, 8.0):
         FvRd = 2 * 0.6 * math.pi * dc * dc / 4 * DUP["fu"] / DUP["gM2"]
         net = math.pi * d * d / 4 - (dc + 0.2) * d; FtRd = 0.9 * net * DUP["fu"] / DUP["gM2"]
@@ -341,115 +306,89 @@ def cap_checks():
         bear = 2 * 1.5 * wall * dc * DUP["fy"] / DUP["gM0"]
         tear_cap = 2 * 2 * (10.0 - dc / 2) * wall * 0.6 * DUP["fu"] / DUP["gM2"]
         out[f"owner detail: plain cap + cross pin D{dc:g} (carries the pull)"] = dict(cross_pin_double_shear=fx(Tmax / FvRd, 3), pin_net_tension_at_cross_hole=fx(Tmax / FtRd, 3),
-                                                                                    cap_wall_bearing=fx(Tmax / bear, 3), cap_end_tearout_10mm=fx(Tmax / tear_cap, 3),
-                                                                                    note="no preload: end float lets the rail rock, so it cannot be the torsion clamp")
-    As = 157.0; FtRd = 0.9 * As * DUP["fu"] / DUP["gM2"]
-    out["recommended: castle cap nut M16 (duplex/A4-80) on the pin's threaded end + D4 split pin (locking only)"] = dict(
-        thread_tension=fx(Tmax / FtRd, 3), preload="tighten to 40 Nm, back off to the next castle slot (max 60 deg)",
-        cross_hole_note="cross hole in the nut crown beyond the loaded threads: carries no tension", pin_cross_hole_outside_bending_zone=True)
-    Ab = math.pi / 4 * ((2 * L.WASH_R) ** 2 - L.HOLE_D ** 2)
-    out["D30 washer bearing on the bulb"] = fx(Tmax / Ab / (1.5 * L.F0 / L.GMP), 3)
-    out["pull-through, 14 mm pin leg + bulb, D30 washer (punching)"] = fx(Tmax / (math.pi * 2 * L.WASH_R * L.T_PINLEG * L.F0 / math.sqrt(3) / L.GMP), 3)
-    padmax = max(max(c["up"]["pad_force_max_kN"], c["lo"]["pad_force_max_kN"]) for k, c in BAR.items()) * 1e3
-    out["step pad force max kN (on the bulb/tab, into the step end block)"] = fx(padmax / 1e3, 2)
-    out["pad bearing on pin-leg step face (area 30 x 10)"] = fx(padmax / 300.0 / (1.5 * L.F0 / L.GMP), 3)
+                                                                                    cap_wall_bearing=fx(Tmax / bear, 3), cap_end_tearout_10mm=fx(Tmax / tear_cap, 3))
+    As = 157.0; FtRd = 0.9 * As * DUP["fu"] / DUP["gM2"]; net_x = As - 4.2 * 13.5
+    out["recommended: castle cap nut M16 on the pin's threaded end + D4 cross pin (locking only)"] = dict(thread_tension=fx(Tmax / FtRd, 3),
+        cross_hole_note="cross hole sits in the nut crown, beyond the loaded threads: no tension there (conservative check if it were loaded: %.2f)" % (Tmax / (0.9 * net_x * DUP["fu"] / DUP["gM2"])),
+        nut_thread_strip="castle nut M16 A4-80 / duplex, m = 0.8 d: full strength of the bolt (EN ISO 898-2 logic)", pin_cross_hole_outside_bending_zone=True)
+    Ab = math.pi / 4 * (30.0 ** 2 - L.HOLE_D ** 2)
+    out["D30 washer bearing on 6 mm pin wall"] = fx(Tmax / Ab / (1.5 * L.F0 / L.GMP), 3)
+    out["pull-through, 6 mm wall, D30 washer (punching)"] = fx(Tmax / (math.pi * 30.0 * L.T_P * L.F0 / math.sqrt(3) / L.GMP), 3)
     return out
 
 PIN = pin_checks(); EDGE = edge_checks(); CAP = cap_checks()
 
-# ================================================================== E. combination (EN 1990 6.10, psi0 = 0.7)
+# ================================================================== E. combination (EN 1990 6.10: crowd + psi0 barrier, barrier + psi0 crowd)
 def combos():
     out = {}
     for side in SIDES:
         for lev in ("lo", "up"):
-            kind = KIND[(side, lev)]
             ip_all = {k: v[lev] for k, v in OUT["frame"]["uls"].items() if k.startswith(side) and "crowd" in k}
             ip = max(ip_all.values(), key=lambda v: v["util"])
             best = (0, None)
             for key, c in BAR.items():
-                if not key.startswith(side): continue
+                if not key.startswith(side) or "5.0" not in key: continue
                 for s, M in c[lev]["M"]:
                     for t in station_types(side, lev, s):
-                        p = PROPS[kind][t]; sl = abs(M) / min(p["Wlat_in"], p["Wlat_out"])
-                        sip = ip["sigma"] * (PROPS[kind][ip["section"]]["W_tip"] / p["W_tip"]) if t != ip["section"] else ip["sigma"]
+                        p = PROPS[t]; sl = abs(M) / min(p["Wlat_in"], p["Wlat_out"])
+                        sip = ip["sigma"] * (PROPS[ip["section"]]["W_tip"] / p["W_tip"]) if t != ip["section"] else ip["sigma"]
                         for name, v in (("crowd leads", sip + 0.7 * sl), ("barrier leads", 0.7 * sip + sl)):
                             if v > best[0]: best = (v, dict(case=key, s=fx(s, 0), section=t, sigma_inplane_uls_crowd=fx(sip, 1), sigma_lateral=fx(sl, 1), combo=name))
-            tau = max(c[f"torsion_{lev}"]["tau"] for k, c in BAR.items() if k.startswith(side))
-            seq = math.sqrt(best[0] ** 2 + 3 * tau ** 2)
-            out[f"{side}_{lev}"] = dict(sigma=fx(best[0], 1), util=fx(best[0] / L.FD, 3), tau_torsion=fx(tau, 1), sigma_eq=fx(seq, 1), util_with_torsion=fx(seq / L.FD, 3), **best[1],
-                                        note="in-plane stress = worst crowd case anywhere on the rail, put at this section; torsion shear added by von Mises (both conservative)")
+            out[f"{side}_{lev}"] = dict(sigma=fx(best[0], 1), util=fx(best[0] / L.FD, 3), **best[1],
+                                        note="in-plane stress = worst crowd case anywhere on the rail, put at this section (conservative)")
     return out
 COMB = combos()
 
-# ================================================================== F. local checks at the slots (estimates)
-def chord(rects):
-    A = sum((y1 - y0) * (z1 - z0) for y0, z0, y1, z1 in rects); yc = sum((y1 - y0) * (z1 - z0) * (y0 + y1) / 2 for y0, z0, y1, z1 in rects) / A
-    I = sum((z1 - z0) * (y1 - y0) ** 3 / 12 + (y1 - y0) * (z1 - z0) * ((y0 + y1) / 2 - yc) ** 2 for y0, z0, y1, z1 in rects)
-    ymax = max(r[2] for r in rects); ymin = min(r[0] for r in rects)
-    return I / max(yc - ymin, ymax - yc)
+# ================================================================== F. local checks at the slots
 def local():
     out = {}
-    for side, kind in (("L", "A_up"), ("R", "B_up")):
-        a = kind[0]; W = L.WIDTH[kind]; sy = L.slot_y(kind); b = W - sy[1]
-        # outer chord beside the upper slot, bending in the web plane (about n); coords: y from the slot edge, n from the web mid-plane
-        if a == "A":
-            tw = L.t_web(kind); rects = [(0, -tw / 2, b, tw / 2), (b - L.LIP[0], tw / 2, b, tw / 2 + L.LIP[1])]
-        else:
-            tw = L.t_web(kind); Dn = L.DEPTH[kind] - tw - L.N_OUT_B
-            rects = [(0, -tw / 2, b, tw / 2), (b - L.T_OUT, -tw / 2 - Dn, b, -tw / 2)]
-        Wc = chord(rects)
-        for lab, Ls, key in (("standard slot, R142 5.0 kN/m", L.UP_SLOTS["standard+catwalk"], "5.0"), ("steep slot, R143 1.25 kN", L.UP_SLOTS["steep"], "R143")):
-            FF = max(p["F_up"] for k, c in BAR.items() if k.startswith(side) and key in k and "outward" in k for p in c["poles"]) * 1e3
-            M = FF * Ls / 12
-            out[f"{kind} outer chord, {lab}"] = dict(ligament=fx(b, 1), F_kN=fx(FF / 1e3, 2), slot_len=fx(Ls, 1), chord_W=fx(Wc, 0), util=fx(M / Wc / L.FD, 3),
-                                                   status="estimate: fixed-ended chord over the slot, pole load spread over the slot")
-    Fu = max(p["F_up"] for k, c in BAR.items() if "5.0" in k for p in c["poles"]) * 1e3
-    out["pole bearing on upper slot edge"] = fx(Fu / (L.T_WEB_UP / math.cos(math.radians(35)) * 25.0) / (1.5 * L.F0 / L.GMP), 3)
-    Fl = max(p["F_lo"] for k, c in BAR.items() if "5.0" in k for p in c["poles"]) * 1e3
-    out["tongue bearing on lower slot edge"] = fx(Fl / (L.T_WEB_LO / math.cos(math.radians(35)) * 25.0) / (1.5 * L.F0 / L.GMP), 3)
-    # lower web under the shoulder / upper web on the latch: strip beside the slot, cantilever from the leg, width = pole along + 2 b
-    for lab, lev in (("lower web under the shoulder", "lo"), ("upper web on the upper latch", "up")):
-        Fz = OUT["frame"]["fold_lock_Fz_max_kN"][lev] * 1e3
-        for kind in [k for k in KINDS if k.endswith(lev)]:
-            a = kind[0]; W = L.WIDTH[kind]; sy = L.slot_y(kind); yc = 0.5 * (sy[0] + sy[1])
-            half = (L.TONGUE_W + 1) / 2 if lev == "lo" else (L.SLOT_W) / 2
-            b = min(yc - half - L.T_LEG, W - (yc + half))
-            arm = 8.0 if lev == "up" else b / 2
-            Mz = Fz / 2 * arm
-            out[f"{lab} ({kind})"] = dict(Fz_kN=fx(Fz / 1e3, 2), strip=fx(b, 1), util=fx(Mz / ((25.0 + 2 * min(b, 20)) * L.t_web(kind) ** 2 / 6) / L.FD, 3), status="estimate (one-way strip; the web continues past the slot ends, so two-way action makes this conservative)")
+    Fu = max(p["F_up"] for k, c in BAR.items() if "5.0" in k and "outward" in k for p in c["poles"]) * 1e3
+    # outer chord beside the upper slot: mid-flange ligament (LIG x T_MF) + outer wall (T_O x D) as an L, bending in the
+    # flange plane (about the n axis), fixed at the slot ends, pole bearing spread over its 25/cos35 = 30.5 face
+    rects = [(0, 0, L.LIG_OUT, L.T_MF), (L.LIG_OUT, -L.N_MF0, L.LIG_OUT + L.T_O, L.D - L.N_MF0)]
+    A = sum((y1 - y0) * (z1 - z0) for y0, z0, y1, z1 in rects); yc = sum((y1 - y0) * (z1 - z0) * (y0 + y1) / 2 for y0, z0, y1, z1 in rects) / A
+    I = sum((z1 - z0) * (y1 - y0) ** 3 / 12 + (y1 - y0) * (z1 - z0) * ((y0 + y1) / 2 - yc) ** 2 for y0, z0, y1, z1 in rects)
+    Wc = I / max(yc, L.LIG_OUT + L.T_O - yc)
+    for lab, Ls, FF in (("standard slot, R142 5.0 kN/m", L.UP_SLOTS["standard+catwalk"], Fu),
+                        ("steep slot, R143 1.25 kN (crew stair)", L.UP_SLOTS["steep"], max(p["F_up"] for k, c in BAR.items() if "R143" in k and "outward" in k for p in c["poles"]) * 1e3)):
+        M = FF * Ls / 12
+        out[f"upper slot outer chord, {lab}"] = dict(F_kN=fx(FF / 1e3, 2), slot_len=fx(Ls, 1), chord_W=fx(Wc, 0), M_kNmm=fx(M / 1e3, 1),
+                                                    util=fx(M / Wc / L.FD, 3), status="estimate: fixed-ended chord (outer ligament + outer wall), load over the slot")
+    out["pole bearing on slot edge (6082)"] = fx(Fu / (L.T_MF / math.cos(math.radians(35)) * 25.0) / (1.5 * L.F0 / L.GMP), 3)
+    # tongue bearing at the lower slot (lower rail push) on the mid flange
+    Fl = max(p["F_lo"] for k, c in BAR.items() if "5.0" in k and "outward" in k for p in c["poles"]) * 1e3
+    out["tongue bearing on lower slot edge"] = fx(Fl / (L.T_MF / math.cos(math.radians(35)) * 25.0) / (1.5 * L.F0 / L.GMP), 3)
+    # lower mid flange strip beside the tongue slot under the shoulder (fold lock Fz): cantilever from the wall
+    Fz = OUT["frame"]["fold_lock_Fz_max_kN"]["lo"] * 1e3
+    b = (L.W_INT - L.SLOT_LO_W) / 2; w = 25.0 / math.cos(math.radians(35)) + 2 * b
+    Mz = Fz / 2 * b / 2
+    out["lower mid flange under the shoulder"] = dict(Fz_kN=fx(Fz / 1e3, 2), strip_b=fx(b, 1), util=fx(Mz / (w * L.T_MF ** 2 / 6) / L.FD, 3), status="estimate")
+    Fzu = OUT["frame"]["fold_lock_Fz_max_kN"]["up"] * 1e3
+    out["upper mid flange on the upper latch (2 x D10 under the flange, 8 mm from slot)"] = dict(Fz_kN=fx(Fzu / 1e3, 2),
+        util=fx((Fzu / 2 * 8.0) / ((25 + 2 * 8) * L.T_MF ** 2 / 6) / L.FD, 3), status="estimate")
     return out
 LOC = local()
 
-# ================================================================== G. nesting fit and mass
-def nesting():
-    B = L.W_B["lo"]; A = L.W_A["lo"]; bA = L.T_LEG + L.BULB["A"]
-    return {"B outside width": B, "A web width": A, "A pin leg inside face to B outer leg": L.CLR, "B web under A web": L.CLR,
-            "B pin-leg step face flush with A web edge": 0.0,
-            "A bulb + washer + cap (y %.0f..%.0f, n <= %.1f) vs B outer leg (y 7..12, n >= %.0f)" % (L.T_LEG, bA + 4 + L.CAP_LEN, L.N_CAPS, L.N_OUT_B): "clear in n by %.1f" % (L.N_OUT_B - L.N_CAPS),
-            "A bulb face to nested pole (lower rails)": 0.5,
-            "entry": "sideways (across the stair) or lengthwise: B's rails slide under A's webs; A has no outer leg; tabs of each unit stay in its own pin-leg plane",
-            "catwalk": "each unit's own pin-leg tips touch (tabs in notches); A web over B web 1 mm; one pole line through both units' webs",
-            "B depth": {"lo": L.D_LO_B, "up": L.D_UP_B}, "A depth": {"lo": L.D_LO_A, "up": L.D_UP_A}}
-NEST = nesting()
+# ================================================================== G. mass
 Lr = {"lo": 1780.0, "up": 1850.0}
-MASS = {k: dict(area_mm2=fx(PROPS[k]["gross"]["A"], 0), kg_per_m=fx(PROPS[k]["gross"]["A"] * 2.7e-3, 2), kg=fx(PROPS[k]["gross"]["A"] * Lr[k[-2:]] * 2.7e-6, 2)) for k in KINDS}
-MASS["four_rails_kg"] = fx(sum(MASS[k]["kg"] for k in KINDS), 2)
-MASS["bulbs_and_lips_kg"] = fx(sum((L.BULB[k[0]] * L.H_BULB + (0 if k[0] == "B" else L.LIP[0] * L.LIP[1])) * Lr[k[-2:]] * 2.7e-6 for k in KINDS), 2)
-MASS["rev_c_after_changes_rails_kg"] = 14.65
+MASS = dict(section_area_mm2=fx(PROPS["gross"]["A"], 0), kg_per_m=fx(PROPS["gross"]["A"] * 2.7e-3, 2),
+            four_rails_kg=fx(PROPS["gross"]["A"] * 2 * (Lr["lo"] + Lr["up"]) * 2.7e-6, 2),
+            machining_removed_kg=fx(2 * 6 * 2 * (L.NOTCH_W * L.NOTCH_DEPTH * L.T_P + L.SLOT_UP_W * 45 * L.T_MF) * 2.7e-6, 2),
+            rev_c_after_changes_rails_kg=14.65)
 
-OUT["sections"] = {k: {t: {q: fx(v, 1) for q, v in p.items()} for t, p in d.items()} for k, d in PROPS.items()}
-OUT["classes"] = {k: {e: dict(b=fx(r["b"], 1), t=r["t"], beta=fx(r["beta"], 2), cls=r["class"], rho=fx(r["rho"], 3)) for e, r in L.classify(k).items()} for k in KINDS}
+OUT["sections"] = {k: {q: fx(v, 1) for q, v in p.items()} for k, p in PROPS.items()}
+OUT["classes"] = {e: dict(b=fx(r["b"], 1), t=r["t"], beta=fx(r["beta"], 2), cls=r["class"], rho=fx(r["rho"], 3)) for e, r in L.classify().items()}
 OUT["barrier"] = {k: {kk: ({q: w for q, w in vv.items() if q != "M"} if isinstance(vv, dict) else vv) for kk, vv in v.items()} for k, v in BAR.items()}
-OUT["pins"] = PIN; OUT["edges"] = EDGE; OUT["caps"] = CAP; OUT["combined"] = COMB; OUT["local"] = LOC; OUT["nesting"] = NEST; OUT["mass"] = MASS
-OUT["params"] = {k: (fx(v, 3) if isinstance(v, float) else v) for k, v in vars(L).items() if k.isupper() and (isinstance(v, (int, float, tuple, str)) or (isinstance(v, dict) and all(isinstance(q, str) for q in v)))}
-fn = os.path.join(HERE, f"rail_design_{L.POLE_KEY}" + (f"_topshift{int(TOP_SHIFT)}" if TOP_SHIFT else "") + ".json")
-OUT["top_pole_shift_mm"] = TOP_SHIFT
+OUT["pins"] = PIN; OUT["edges"] = EDGE; OUT["caps"] = CAP; OUT["combined"] = COMB; OUT["local"] = LOC; OUT["mass"] = MASS
+OUT["params"] = {k: (fx(v, 3) if isinstance(v, float) else v) for k, v in vars(L).items() if k.isupper() and isinstance(v, (int, float, tuple, str))}
+fn = os.path.join(HERE, f"rail_design_{L.POLE_KEY}.json")
 json.dump(OUT, open(fn, "w"), indent=1, default=float)
 if __name__ == "__main__":
     q = lambda o: json.dumps(o, indent=1, default=float)
+    print("PARAMS W", L.W, "D", L.D, "W_INT", L.W_INT, "N_MF", L.N_MF, "TAB_R", round(L.TAB_R, 1), "NOTCH", round(L.NOTCH_DEPTH, 1))
     g = OUT["geometry"]; print(q({k: g[k] for k in g if k != "slots"})); print(q(g["slots"]["L"][:2]))
     print(q(OUT["frame"]["worst_inplane"])); print(q(OUT["frame"]["sls"]))
-    print("pin max", OUT["frame"]["pin_force_max"], "tipward", OUT["frame"]["pin_force_toward_tip_max"], "lock", OUT["frame"]["fold_lock_Fz_max_kN"], "lower-only", OUT["frame"]["lock_lower_only"])
+    print("pin max", OUT["frame"]["pin_force_max"], "tipward", OUT["frame"]["pin_force_toward_tip_max"], "lock", OUT["frame"]["fold_lock_Fz_max_kN"], OUT["frame"]["fold_lock_Fx_max_kN"], "lower-only", OUT["frame"]["lock_lower_only"])
     for k, v in OUT["barrier"].items():
         if "5.0" in k or "R143" in k: print(k, {z: v[z] for z in ("up", "lo")})
-    print(q(PIN)); print(q(EDGE)); print(q(CAP)); print(q(COMB)); print(q(LOC)); print(q(MASS)); print(q(OUT["classes"]))
+    print(q(PIN)); print(q(EDGE)); print(q(CAP)); print(q(COMB)); print(q(LOC)); print(MASS); print(q(OUT["classes"])); print(q(OUT["sections"]))

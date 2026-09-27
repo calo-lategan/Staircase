@@ -1,0 +1,9 @@
+  ULS 4 kN front, mid-span         eq [6075.7, 6075.7] front  -15.04 min  -15.04 twist  1.22  worst rib bottom flange (189.4, 50.6, 562.0, 26.5)  (38.0 s)
+  ULS 4 kN centre, mid-span        eq [6075.7, 6075.7] front  -13.12 min  -13.13 twist  0.75  worst skin (155.8, 54.2, 599.0, 48.8)  (37.6 s)
+  ULS 4 kN back, mid-span          eq [6075.7, 6075.7] front  -11.38 min  -11.38 twist  0.31  worst skin (156.2, 54.2, 599.0, 48.8)  (37.3 s)
+  ULS 4 kN front, at the end       eq [6075.7, 6075.7] front   -3.77 min   -4.08 twist  0.28  worst rib bottom flange (128.8, 50.6, 162.0, 26.5)  (37.4 s)
+  ULS crowd                        eq [3436.7, 3436.7] front   -4.75 min   -4.75 twist  0.27  worst end plate (47.7, 50.6, 1212.5, 0.6)  (37.8 s)
+  SLS 4 kN front, mid-span         eq [4056.1, 4056.1] front  -10.03 min  -10.03 twist  0.82  worst rib bottom flange (126.3, 50.6, 562.0, 26.5)  (38.2 s)
+  SLS crowd                        eq [2296.7, 2296.7] front   -3.17 min   -3.17 twist  0.18  worst end plate (31.9, 50.6, 1212.5, 0.6)  (37.6 s)
+  SLS person 1 kN at the nosing    eq [1056.1, 1056.1] front   -2.92 min   -2.92 twist  0.29  worst nosing inner wall (42.0, 225.0, 606.5, 26.2)  (37.8 s)
+Process 0 Terminating

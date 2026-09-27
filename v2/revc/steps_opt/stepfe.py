@@ -206,7 +206,7 @@ def build(D):
 
     # ---- back box
     plate_yz(g["x_r"], g["z_b"], g["z_top"], D["tb"], "box rear wall")
-    plate_yz(g["x_f"], g["z_b"], g["z_top"], D["tb"], "box front wall")
+    plate_yz(g["x_f"], g["z_b"], g["z_top"], D.get("tb_front") or D["tb"], "box front wall")
     plate_xy(g["z_b"], g["x_r"], g["x_f"], D["tb_bot"] or D["tb"], "box bottom")
     plate_xy(g["z_top"], g["x_r"], g["x_f"], D["tb_top"], "box top", top=True)
     if D["box_mid"]:

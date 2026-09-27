@@ -1,15 +1,17 @@
-"""Rev C guide rails - FINAL family (rail agent, 26 Sep 2026): "H" rails with the cross web ("mid flange") on the pin line.
-One extrusion profile per depth; the left rails are the right rails turned over (mirror), so one die serves all four
-(lower and upper differ only if the depths differ - here one die, one depth).
-Cross-section coordinates:
-  y = across the stair, from the OUTER face of the pin wall (the face against the step end) into the rail;
-  n = square to the rail in the side plane, from the touching plane (catwalk contact face), positive AWAY from the
-      other rail (down for the lower rail, up for the upper rail). Pin line at n = C_PIN = 12.5.
-Why an H: the pole's barrier push must reach the pins at the pin line, or the open rail twists (see rail_design.md,
-nested variant: 53-61 kN cap pull). The mid flange carries the pole push at n = N_MF (4 mm off the pin line) straight
-into the pin wall. A mid flange across the rail makes nesting (one rail inside another) impossible - owner
-constraint 3 is replaced by rail-to-rail side-by-side joining.
-Material EN AW-6082-T6 extrusion, EN 1999-1-1: f0 250 (t <= 5; 260 for 5 < t <= 15 - 250 used), gM1 1.1, gM2 = gMp 1.25."""
+"""Rev C guide rails - FINAL family (rail agent, 26 Sep 2026): OPEN channels that nest (owner constraint 3).
+  B = right rails: open channel (pin leg + web + outer leg from n = 29 to the web), open toward the other rail.
+  A = left rails:  open channel (pin leg + web + edge lip), no outer leg, so a neighbour's B rail slides in sideways
+      (across the stair) and sits inside with 1 mm clearance.
+All four rails open TOWARD each other (web at the far face): the rails grow away from each other and touch at catwalk
+(pin-leg tips with interleaved tabs). Each pin leg carries an inside bulb over the tip zone (n 0..27): pin metal,
+washer seat, pole bearing at the pin line (lower rails), torsional stiffness. It sits below the nested rail's outer leg
+and the neighbour's caps, so it does not block nesting.
+Cross-section coordinates of a rail:
+  y = across the stair, from the step-side face of the pin leg (bulb excluded) into the rail;
+  n = square to the rail in the side plane, from the touching plane, positive AWAY from the other rail.
+Barrier path: the pole bears on the web slots (far face); the offset from the pin line twists the open channel, and
+every pin station is a preloaded clamp (castle cap nut M16 on a D30 washer + step-side pad) - see rail_design.md.
+Material EN AW-6082-T6 extrusion, EN 1999-1-1: f0 250 (250 used for all t), gM1 1.1, gM2 = gMp 1.25. No welds."""
 import math, os
 import numpy as np
 
@@ -19,7 +21,7 @@ F0, GM1, GMP = 250.0, 1.1, 1.25
 FD = F0 / GM1
 E_AL = 70000.0
 
-# ------------------------------------------------------------------ step pins (owner's L-step, pin positions unchanged)
+# ------------------------------------------------------------------ step pins (owner's L step, positions unchanged)
 REAR, FRONT = (25.0, 12.5), (225.0, 37.5)
 LINK = (FRONT[0] - REAR[0], FRONT[1] - REAR[1])
 L_LINK = math.hypot(*LINK); PHI = math.degrees(math.atan2(LINK[1], LINK[0]))
@@ -29,67 +31,108 @@ C_PIN = 12.5
 def sep(theta_deg):
     return L_LINK * math.sin(math.radians(theta_deg + PHI))
 
-# ------------------------------------------------------------------ pole variants (across x along)
+# ------------------------------------------------------------------ pole variants
 POLES = {"box80": dict(W=80.0, along=25.0, A=2 * 80 * 2.5 + 2 * 20 * 5.5, I_inplane=2 * 80 * 2.5 * 11.25 ** 2 + 2 * 5.5 * 20 ** 3 / 12,
-                       note="production: custom 6082-T6 box 25 along x 80 across, walls 5.5 (across faces) / 2.5"),
-         "plate55": dict(W=55.0, along=25.0, A=55 * 25.0, I_inplane=55 * 25.0 ** 3 / 12, note="prototype: 25 mm plate, 55 across")}
+                       note="production: custom 6082-T6 box 25 along x 80 across, walls 5.5 (across faces) / 2.5 (mass-budget agent)"),
+         "plate55": dict(W=55.0, along=25.0, A=55 * 25.0, I_inplane=55 * 25.0 ** 3 / 12, note="prototype: 25 mm plate, 55 across (poles review)")}
 POLE_KEY = os.environ.get("POLE", "box80")
 POLE = POLES[POLE_KEY]
-TONGUE_W = 35.0                     # pole tongue at the lower rail (both variants: end plug on the box pole)
+RAIL_POLE = POLES[os.environ.get("RAIL_POLE", "box80")]   # rails are always drawn for the production pole; a smaller pole only gets narrower slots
+TONGUE_W = 35.0
 
-# ------------------------------------------------------------------ pins and retention
-PIN_D, HOLE_D = 16.0, 17.0          # 1.4462 duplex pin, h9; hole 17.0 +0.1/0 drilled + reamed through both walls on a jig
-CAP_OD, CAP_LEN = 28.0, 24.0        # locking cap = castle cap nut M16 (28 round, 24 long incl. D30 x 3 washer)
-PAD = 1.0                           # PTFE-faced stainless thrust washer, step end block to pin wall
+# ------------------------------------------------------------------ pins and pin-station clamp
+PIN_D, HOLE_D = 16.0, 17.0          # 1.4462 duplex, h9 / hole 17.0 +0.1/0 reamed on a jig
+WASH_R = 15.0                       # D30 x 4 stainless clamp washer under the cap
+CAP_OD, CAP_LEN = 28.0, 24.0        # castle cap nut M16, round 28, 24 incl. crown
+N_CAPS = C_PIN + WASH_R             # caps/washers occupy n <= 27.5 at every pin station
+PAD = 1.0                           # PTFE-faced stainless shim, step end block to the pin-leg bulb
 
-# ------------------------------------------------------------------ profile (one die)
-T_P = 6.0            # pin wall
-T_O = 3.5            # outer wall
-T_MF = 4.0           # mid flange (cross web)
-LIG_IN = 8.0         # mid-flange ligament between the pin wall and the pole slot
-LIG_OUT = 20.0       # ligament between the pole slot and the outer wall: the chord that takes the outward pole push
-LIG = LIG_IN
-W_INT = POLE["W"] + 1.0 + LIG_IN + LIG_OUT   # clear width between walls
-W = T_P + W_INT + T_O                    # outside width
-D = float(os.environ.get("RAIL_D", 45.0))   # touching plane to far edge (lower = upper, one die)
-F_PIN_DESIGN = 9300.0                    # max pin resultant from the frame (run_rails.py verifies: 9.2 kN)
+# ------------------------------------------------------------------ profiles
+T_LEG = 6.0; T_OUT = 5.0
+T_WEB_LO = float(os.environ.get("T_WEB_LO", 7.0)); T_WEB_UP = float(os.environ.get("T_WEB_UP", 12.0))
+T_WEB = T_WEB_LO
+H_BULB = 27.0                        # inside bulb on every pin leg, n = 0..27 (tip zone): pin metal, washer seat, pole bearing, torsion
+BULB = {"A": 14.0, "B": 8.0}         # bulb thickness into the rail: A reaches the pole across the nested B's outer zone
+LIP = (6.0, 12.0)                    # A: edge lip at the web's free edge, standing away from the rail (outside the nest)
+CLR = 1.0                            # nesting clearance
+LIG_IN = 8.0                         # web ligament pin side (B)
+LIG_OUT = {"lo": 8.0, "up": 8.0}     # web ligament outer side (B), backed by B's outer leg
+SLOT_W = POLE["W"] + 1.0
+SLOT_W_RAIL = RAIL_POLE["W"] + 1.0
+N_OUT_B = N_CAPS + 1.5               # B outer leg starts above the neighbour's caps and bulb: n = 29
+OUT_UP_LEN = float(os.environ.get("OUT_UP_LEN", 8.0))    # B upper outer leg length (n 29 .. 37), web above it
+W_B = {lv: T_LEG + LIG_IN + SLOT_W_RAIL + LIG_OUT[lv] + T_OUT for lv in ("lo", "up")}
+W_A = {lv: T_LEG + CLR + W_B[lv] for lv in ("lo", "up")}   # A web ends flush with the nested B's pin-leg face
+D_LO_B = float(os.environ.get("D_LO_B", 60.0)); D_LO_A = D_LO_B + CLR + T_WEB_LO
+D_UP_B = N_OUT_B + OUT_UP_LEN + T_WEB_UP; D_UP_A = D_UP_B + CLR + T_WEB_UP
+DEPTH = {"A_lo": D_LO_A, "B_lo": D_LO_B, "A_up": D_UP_A, "B_up": D_UP_B}
+RAIL_OF = {("L", "lo"): "A_lo", ("L", "up"): "A_up", ("R", "lo"): "B_lo", ("R", "up"): "B_up"}
+WIDTH = {"A_lo": W_A["lo"], "A_up": W_A["up"], "B_lo": W_B["lo"], "B_up": W_B["up"]}
+def slot_y(kind):
+    """pole slot across the web (y from the pin leg's step-side face), starting at the bulb face so the pole bears on the
+    bulb (lower rails). For the production pole A's slot then lines up with the nested B's slot (20..101 = 115 - (95..14))."""
+    b0 = T_LEG + BULB[kind[0]]
+    return (b0, b0 + SLOT_W)
+F_PIN_DESIGN = 8200.0
 
 def t88_a(F, t, d0):
     return F * GMP / (2 * t * F0) + 2 * d0 / 3
-def t88_c(F, t, d0):
-    return F * GMP / (2 * t * F0) + d0 / 3
-TAB_R = HOLE_D / 2 + t88_a(F_PIN_DESIGN, T_P, HOLE_D) + 0.5
-TAB_W = 2 * TAB_R
-TAB_H = TAB_R - C_PIN
-NOTCH_DEPTH = TAB_H + 2.0
-NOTCH_CLR = 4.0
-NOTCH_W = TAB_W + 2 * NOTCH_CLR
-N_MF0 = NOTCH_DEPTH + 0.5                # mid flange starts just beyond the notches, so notches never cut it
-N_MF = N_MF0 + T_MF / 2                  # mid-flange mid-plane = pole bearing level
-E_TORQUE = N_MF - C_PIN                  # lever of the pole push about the pin line
-LIP = (5.0, 3.0)                         # small lips at the far edges of both walls (edge stiffeners), across x thick
-SLOT_LEN = {"standard": 25.0 / math.cos(math.radians(35)) + T_MF * math.tan(math.radians(35)) + 1.0,
+T_PINLEG = T_LEG + min(BULB.values())                    # 14 mm of metal at the hole (B governs)
+TAB_R = HOLE_D / 2 + t88_a(F_PIN_DESIGN, T_PINLEG, HOLE_D) + 0.5
+TAB_W = 2 * TAB_R; TAB_H = TAB_R - C_PIN
+NOTCH_DEPTH = TAB_H + 2.0; NOTCH_CLR = 4.0; NOTCH_W = TAB_W + 2 * NOTCH_CLR
+SLOT_LEN = {"standard": 25.0 / math.cos(math.radians(35)) + 8.0 * math.tan(math.radians(35)) + 1.0,
             "catwalk": 25.0 + 1.0,
-            "steep": 25.0 / math.cos(math.radians(49.4)) + T_MF * math.tan(math.radians(49.4)) + 1.0}
-SLOT_UP_W = POLE["W"] + 1.0
-# slot sets: upper flange - one slot shared by standard + catwalk (standard length), one steep slot;
-#            lower flange - one slot shared by standard + steep (steep length), one catwalk slot
+            "steep": 25.0 / math.cos(math.radians(49.4)) + 8.0 * math.tan(math.radians(49.4)) + 1.0}
 UP_SLOTS = {"standard+catwalk": SLOT_LEN["standard"], "steep": SLOT_LEN["steep"]}
 LO_SLOTS = {"standard+steep": SLOT_LEN["steep"], "catwalk": SLOT_LEN["catwalk"]}
-SLOT_LO_W = TONGUE_W + 1.0
-SLOT_Y0 = T_P + LIG_IN                   # slot starts 8 mm from the pin wall's inside face
-CAP_CUT = (CAP_OD + 8.0, CAP_LEN + 4.0)  # cut-out in the mid flange at every pin: along x across (from the pin wall)
 
 
-def profile():
-    r = [(0, 0, T_P, D, "pin wall"), (W - T_O, 0, W, D, "outer wall"),
-         (T_P, N_MF0, W - T_O, N_MF0 + T_MF, "mid flange")]
-    if LIP[0] > 0:
-        r += [(T_P, D - LIP[1], T_P + LIP[0], D, "lip"), (W - T_O - LIP[0], D - LIP[1], W - T_O, D, "lip")]
+def t_web(kind):
+    return T_WEB_LO if kind.endswith("lo") else T_WEB_UP
+
+def n_web(kind):
+    return DEPTH[kind] - t_web(kind) / 2
+
+def profile(kind):
+    D = DEPTH[kind]; W = WIDTH[kind]; tw = t_web(kind); bu = BULB[kind[0]]
+    r = [(0, 0, T_LEG, D - tw, "pin leg"), (T_LEG, 0, T_LEG + bu, H_BULB, "bulb"), (0, D - tw, W, D, "web")]
+    if kind[0] == "B":
+        r += [(W - T_OUT, N_OUT_B, W, D - tw, "outer leg")]
+    if kind[0] == "A":
+        r += [(W - LIP[0], D, W, D + LIP[1], "lip")]
     return r
 
 
-# ------------------------------------------------------------------ pixel section tools (0.25 mm grid)
+_BT = [(1.0, 0.141, 0.208), (1.5, 0.196, 0.231), (2.0, 0.229, 0.246), (3.0, 0.263, 0.267), (4.0, 0.281, 0.282),
+       (6.0, 0.299, 0.299), (10.0, 0.312, 0.312), (1e9, 1 / 3, 1 / 3)]
+def _ba(r):
+    """Saint-Venant rectangle factors beta (J = beta b t^3) and alpha (tau = T/(alpha b t^2)) for b/t = r"""
+    r = max(r, 1.0)
+    for (r0, b0, a0), (r1, b1, a1) in zip(_BT[:-1], _BT[1:]):
+        if r <= r1:
+            f = (r - r0) / (r1 - r0) if r1 < 1e8 else 1 - 10.0 / r
+            return b0 + f * (b1 - b0), a0 + f * (a1 - a0)
+    return 1 / 3, 1 / 3
+
+def torsion_parts(kind):
+    """open section as rectangles (b, t): bulb zone (pin leg + bulb), pin leg above the bulb, web, outer leg, lip"""
+    D = DEPTH[kind]; W = WIDTH[kind]; tw = t_web(kind); tb = T_LEG + BULB[kind[0]]
+    parts = [("bulb zone", H_BULB, tb), ("pin leg", max(0.0, D - tw - H_BULB), T_LEG), ("web", W, tw)]
+    if kind[0] == "B": parts.append(("outer leg", D - tw - N_OUT_B, T_OUT))
+    if kind[0] == "A": parts.append(("lip", LIP[1], LIP[0]))
+    return [(n, max(b, t), min(b, t)) for n, b, t in parts if b > 0]
+
+def torsion_J(kind):
+    """St Venant J = sum beta b t^3 (rectangle factors) and the peak shear per unit torque (tau = T * k)"""
+    parts = torsion_parts(kind); J = 0.0; rows = []
+    for n, b, t in parts:
+        be, al = _ba(b / t); Ji = be * b * t ** 3; J += Ji; rows.append((n, b, t, Ji, al))
+    k = max(Ji / J / (al * b * t * t) for n, b, t, Ji, al in rows)     # tau_max per unit torque
+    return J, k
+
+
+# ------------------------------------------------------------------ pixel section tools
 G = 0.25
 class Sec:
     def __init__(self, rects):
@@ -120,19 +163,17 @@ def rho_c(beta, internal):
     b3 = 22.0 if internal else 6.0
     return 1.0 if beta <= b3 else min(1.0, C1 / beta - C2 / beta ** 2)
 
-def classify():
-    """EN 1999-1-1 6.1.4: beta = b/t, eta = 1 (uniform compression, conservative). Walls: outstand from the mid flange
-    to the far edge (lipped: internal-like, taken as outstand of the lip-to-flange length for safety) and to the tip."""
-    rows = {"pin wall, far part": dict(b=D - (N_MF0 + T_MF), t=T_P, internal=False),
-            "pin wall, tip part": dict(b=N_MF0, t=T_P, internal=False),
-            "outer wall, far part": dict(b=D - (N_MF0 + T_MF), t=T_O, internal=False),
-            "outer wall, tip part": dict(b=N_MF0, t=T_O, internal=False),
-            "mid flange": dict(b=W_INT, t=T_MF, internal=True),
-            "mid flange, outer ligament at slot": dict(b=LIG_OUT, t=T_MF, internal=False)}
-    if LIP[0] > 0:
-        for k in ("pin wall, far part", "outer wall, far part"):
-            rows[k]["internal"] = True                       # lipped far edge: edge-stiffened (checked below as internal)
-        rows["lip"] = dict(b=LIP[0], t=LIP[1], internal=False)
+def classify(kind):
+    """EN 1999-1-1 6.1.4, eta = 1 (uniform compression, conservative). Pin leg: outstand from the web to the bulb (edge
+    stiffener). Web: internal between pin leg and outer leg (B_lo) / lip (A); B_up web ends free: outstand."""
+    D = DEPTH[kind]; W = WIDTH[kind]; tw = t_web(kind)
+    rows = {"pin leg (web to bulb)": dict(b=max(0.0, D - tw - H_BULB), t=T_LEG, internal=False),
+            "bulb": dict(b=H_BULB, t=T_LEG + BULB[kind[0]], internal=False)}
+    rows["web"] = dict(b=W - T_LEG - (T_OUT if kind[0] == "B" else LIP[0]), t=tw, internal=True)
+    if kind[0] == "B":
+        rows["outer leg"] = dict(b=D - tw - N_OUT_B, t=T_OUT, internal=False)
+    if kind[0] == "A":
+        rows["lip"] = dict(b=LIP[1], t=LIP[0], internal=False)
     for r in rows.values():
         r["beta"] = r["b"] / r["t"]; r["rho"] = rho_c(r["beta"], r["internal"])
         lim = (11, 16, 22) if r["internal"] else (3, 4.5, 6)
@@ -140,16 +181,20 @@ def classify():
     return rows
 
 
-def sections():
-    """gross; net at a pin (hole in the pin wall + cap cut-out in the mid flange); net at a notch (pin wall cut to the
-    notch depth); net at the upper pole slot; net at the lower tongue slot"""
-    g = Sec(profile())
-    pin = g.cut(-1, C_PIN - HOLE_D / 2, T_P + 0.01, C_PIN + HOLE_D / 2).cut(T_P - 0.01, N_MF0 - 0.01, T_P + CAP_CUT[1], N_MF0 + T_MF + 0.01)
-    notch = g.cut(-1, -1, T_P + 0.01, NOTCH_DEPTH)
-    slot_up = g.cut(SLOT_Y0, N_MF0 - 0.01, SLOT_Y0 + SLOT_UP_W, N_MF0 + T_MF + 0.01)
-    yc = SLOT_Y0 + SLOT_UP_W / 2
-    slot_lo = g.cut(yc - SLOT_LO_W / 2, N_MF0 - 0.01, yc + SLOT_LO_W / 2, N_MF0 + T_MF + 0.01)
-    return dict(gross=g, hole=pin, notch=notch, slot_up=slot_up, slot_lo=slot_lo)
+def sections(kind):
+    g = Sec(profile(kind)); cl = classify(kind)
+    for name, r in cl.items():                     # class-4 elements: effective thickness everywhere (conservative)
+        if r["class"] == 4:
+            g.rho[g.el == name.split(" (")[0]] *= r["rho"]
+    D = DEPTH[kind]; W = WIDTH[kind]; tw = t_web(kind); bu = BULB[kind[0]]
+    hole = g.cut(-1, C_PIN - HOLE_D / 2, T_LEG + bu + 0.01, C_PIN + HOLE_D / 2)
+    notch = g.cut(-1, -1, T_LEG + bu + 0.01, NOTCH_DEPTH)
+    sy = slot_y(kind)
+    if kind.endswith("up"):
+        slot = g.cut(sy[0], D - tw - 0.01, sy[1], D + 0.01)
+    else:
+        yc = 0.5 * (sy[0] + sy[1]); slot = g.cut(yc - (TONGUE_W + 1) / 2, D - tw - 0.01, yc + (TONGUE_W + 1) / 2, D + 0.01)
+    return dict(gross=g, hole=hole, notch=notch, slot=slot, **{"notch+slot": slot.cut(-1, -1, T_LEG + bu + 0.01, NOTCH_DEPTH)})
 
 
 # ------------------------------------------------------------------ fold kinematics

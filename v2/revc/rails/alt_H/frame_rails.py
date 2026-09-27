@@ -3,9 +3,9 @@ Same model idea, loads and supports as v2/final/side_frame.py (measured geometry
 frame), with these changes:
   * rail axes = centroid lines of the new sections, offset from the (unchanged) pin lines;
   * pins at the owner's positions (rear 25/12.5, front 225/37.5 in step coords) - same as side_frame.py;
-  * poles (rails_lib.POLE: production box 25 x 80 or prototype plate 25 x 55) meet each rail at its web (far face):
-    shoulder + latch at the lower web, latch at the upper web. Fold lock at BOTH rails (x and z held at both crossings);
-    lock_upper=False reproduces the poles review's lower-only lock, which is a mechanism (reported, not designed for).
+  * poles (rails_lib.POLE: production box 25 x 80 or prototype plate 25 x 55) meet each rail at its mid flange (on the
+    pin line). Fold lock at BOTH rails (x and z held at both crossings); lock_upper=False reproduces the poles review's
+    lower-only lock, which is a mechanism (reported, not designed for).
 """
 import json, math, os, sys
 import numpy as np
@@ -25,20 +25,16 @@ OTHER = {"U25": dict(A=325.0, I=18948.0), "link": dict(A=1e5, I=1e8)}
 
 
 def rail_props(side):
-    out = {}
-    for lev in ("lo", "up"):
-        kind = L.RAIL_OF[(side, lev)]; p = L.sections(kind)["gross"].props()
-        out[lev] = dict(kind=kind, A=p["A"], I=p["Iy"], nc=p["nc"], D=L.DEPTH[kind])
-    return out
+    p = L.Sec(L.profile()).props()
+    return {lev: dict(kind="H", A=p["A"], I=p["Iy"], nc=p["nc"], D=L.D) for lev in ("lo", "up")}
 
 
 def rail_line(side, lev, rp):
     """rail axis: point + direction; also the web mid-plane offset. Normal offsets are measured with NU (up)."""
-    nw = L.n_web(rp["kind"])
     if lev == "lo":
-        base = REAR0; n_axis = L.C_PIN - rp["nc"]; n_web = L.C_PIN - nw
+        base = REAR0; n_axis = L.C_PIN - rp["nc"]; n_web = L.C_PIN - L.N_MF
     else:
-        base = FRONT0; n_axis = rp["nc"] - L.C_PIN; n_web = nw - L.C_PIN
+        base = FRONT0; n_axis = rp["nc"] - L.C_PIN; n_web = L.N_MF - L.C_PIN
     return base, n_axis, n_web
 
 
