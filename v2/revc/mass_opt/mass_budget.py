@@ -20,8 +20,8 @@ def rails_kg(web_R, web_L, depth=70.0, t=5.0): return (u_rail(web_R, depth, t) +
 def tube_A(D, t): return math.pi / 4 * (D ** 2 - (D - 2 * t) ** 2)
 
 # ---------------- inputs from the other agents (update when their reports land) ----------------
-STEP = dict(kg_each=6.14, src="INTERIM steps_opt/opt_skin.log iter 0 (L envelope, u 0.83); step_optimisation.md not yet published", includes_end_plates=True, includes_pins=False)
-RAIL = dict(kg_unit=json.load(open(os.path.join(HERE, "..", "rails", "rail_design.json")))["mass"]["total_4_rails"], src="INTERIM rails/rail_design.json mass.total_4_rails (POLE_W 55); rail_design.md not yet published")
+STEP = dict(kg_each=6.35, kg_min=5.7, src="step_optimisation.md C8 as built 6.2-6.5 (mid 6.35); lowest C1 as built 5.7 (no margin)", includes_end_plates=True, includes_pins=False)
+RAIL = dict(kg_unit=json.load(open(os.path.join(HERE, "..", "rails", "rail_design_box80.json")))["mass"]["four_rails_kg"], src="rail_design.md / rails/rail_design_box80.json four_rails_kg (nested open channels, slots for the 25x80 box pole; plate55 variant same mass)")
 
 box = PO["box custom extrusion 6082-T6 extrusion (t<=5)"]["best"]
 D_box = box["D"]
@@ -30,8 +30,8 @@ def add(name, rc, opt, tag_rc, tag_opt, src):
     parts[name] = dict(RC_R=rc, OPT=opt, tag_RC_R=tag_rc, tag_OPT=tag_opt, src=src)
 
 # rails
-add("rails 4 (guide rails)", RAIL["kg_unit"], RAIL["kg_unit"] + box["rail_penalty"], "C", "C",
-    f"RC_R: {RAIL['src']} (poles_barrier 82/94 x 70 x 5 would be {rails_kg(82, 94):.1f}); OPT: same + webs widened {D_box - 55:.0f} mm for the box pole")
+add("rails 4 (guide rails)", RAIL["kg_unit"], RAIL["kg_unit"], "C", "C",
+    f"RC_R: {RAIL['src']} (poles_barrier 82/94 x 70 x 5 would be {rails_kg(82, 94):.1f}); OPT: same rails (already sized for the box pole)")
 # poles
 add("barrier poles 12", PO["solid_RevC_reviewed_25x55_6082plate"]["mass12"], box["mass12"], "C", "C",
     f"pole_opt.py: RC_R solid 25x55 sqrt-taper 6082-T651 plate, 1,344 long (40 latch + 167 rail zone + 1,137 arm), tongue 35, top 60 at 30; "
